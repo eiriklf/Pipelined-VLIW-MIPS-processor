@@ -1,0 +1,74 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work
+T_opt
+Z1 Vb[2biRY3QS7PVSIoPg;Fg1
+Z2 04 21 8 work simple_multiplexer_tb behavior 1
+Z3 =1-00215a5a7e04-523c4aaa-203-424
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt
+Z6 OE;O;6.6d;45
+Z7 dC:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work
+T_opt1
+Z8 V[Ii2F]8nBfN8ikk7LMjF82
+R2
+Z9 =1-00215a5a7e04-523c4b1c-207-1098
+Z10 o-quiet -auto_acc_if_foreign -work work +acc
+Z11 n@_opt1
+R6
+R7
+Esimple_multiplexer
+Z12 w1379683088
+Z13 DPx22 C:\modeltech_6.6d\ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+32
+R7
+Z14 8C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+Z15 FC:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+l0
+L32
+Z16 Vek4O5=J[OL^AAhRoTa7_Z2
+Z17 OE;C;6.6d;45
+Z18 o-O0 -work work
+Z19 tExplicit 1 DisableOpt 1 NoCoverage 1
+Z20 !s100 C<M?`FnXXWPM[XLkeH=C@1
+Abehavioral
+R13
+Z21 DEx69 C:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work\work 18 simple_multiplexer 0 22 ek4O5=J[OL^AAhRoTa7_Z2
+32
+Z22 Mx1 22 C:\modeltech_6.6d\ieee 14 std_logic_1164
+l41
+L39
+Z23 VdQ2iM]ZX[hRW]YfC4U@N23
+R17
+R18
+R19
+Z24 !s100 o06e5F`Gl1?7G_Ji5dSnh1
+Esimple_multiplexer_tb
+Z25 w1379682969
+R13
+32
+R7
+Z26 8C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+Z27 FC:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+l0
+L35
+Z28 V_4=IHORen^Qe`R`nM[SN?2
+R17
+R18
+R19
+Z29 !s100 ZjlD=GCD6]D[HDH:`eD;M1
+Abehavior
+R21
+R13
+DEx69 C:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work\work 21 simple_multiplexer_tb 0 22 _4=IHORen^Qe`R`nM[SN?2
+32
+R22
+l64
+L38
+Z30 VCO?0W2l2f7f:[gb9ijO:d3
+R17
+R18
+R19
+Z31 !s100 UERPA4KBfzHceBeDfIdbG3

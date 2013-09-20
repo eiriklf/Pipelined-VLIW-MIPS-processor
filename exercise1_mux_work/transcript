@@ -1,0 +1,165 @@
+# //  ModelSim SE 6.6d Nov  1 2010 
+# //
+# //  Copyright 1991-2010 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -do \{do \{simple_multiplexer_tb.fdo\}\} 
+# ** Error: (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+vlib work
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(42): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(42): Type error resolving infix expression "=" as type std.standard.boolean.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(43): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(43): Type error resolving infix expression "=" as type std.standard.boolean.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot use null waveform in concurrent signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot assign null waveform to non-guarded signal.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(46): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer_tb
+# -- Compiling architecture behavior of simple_multiplexer_tb
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(77): Illegal target for signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(77): (vcom-1136) Unknown identifier "clk".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(79): Illegal target for signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(79): (vcom-1136) Unknown identifier "clk".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(85): Illegal target for signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(85): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(87): Illegal target for signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(87): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(100): near "'": syntax error
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(108): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(42): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(42): Type error resolving infix expression "=" as type std.standard.boolean.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(43): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(43): Type error resolving infix expression "=" as type std.standard.boolean.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot use null waveform in concurrent signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot assign null waveform to non-guarded signal.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(46): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer_tb
+# -- Compiling architecture behavior of simple_multiplexer_tb
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(79): Illegal target for signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(79): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(81): Illegal target for signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(81): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(102): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(42): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(42): Type error resolving infix expression "=" as type std.standard.boolean.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(43): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(43): Type error resolving infix expression "=" as type std.standard.boolean.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot use null waveform in concurrent signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot assign null waveform to non-guarded signal.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(46): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer_tb
+# -- Compiling architecture behavior of simple_multiplexer_tb
+vsim work.simple_multiplexer_tb
+# vsim work.simple_multiplexer_tb 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Warning: [1] C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd(72): (vopt-3473) Component instance "uut : simple_multiplexer" is not bound.
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.simple_multiplexer_tb(behavior)#1
+# ** Error: (vsim-3173) Entity 'C:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work\work.simple_multiplexer' has no architecture.
+# Load interrupted
+# Error loading design
+vsim work.simple_multiplexer_tb
+# vsim work.simple_multiplexer_tb 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.simple_multiplexer_tb(behavior)#1
+# ** Error: (vsim-3173) Entity 'C:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work\work.simple_multiplexer' has no architecture.
+# Load interrupted
+# Error loading design
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(42): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(42): Type error resolving infix expression "=" as type std.standard.boolean.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(43): (vcom-1136) Unknown identifier "c".
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(43): Type error resolving infix expression "=" as type std.standard.boolean.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot use null waveform in concurrent signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot assign null waveform to non-guarded signal.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(46): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer_tb
+# -- Compiling architecture behavior of simple_multiplexer_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot use null waveform in concurrent signal assignment.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(44): Cannot assign null waveform to non-guarded signal.
+# ** Error: C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd(46): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer_tb
+# -- Compiling architecture behavior of simple_multiplexer_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer_tb
+# -- Compiling architecture behavior of simple_multiplexer_tb
+vsim -voptargs=+acc work.simple_multiplexer_tb
+# vsim -voptargs=+acc work.simple_multiplexer_tb 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.simple_multiplexer_tb(behavior)#1
+# Loading work.simple_multiplexer(behavioral)#1
+add wave sim:/simple_multiplexer_tb/*
+run
+run

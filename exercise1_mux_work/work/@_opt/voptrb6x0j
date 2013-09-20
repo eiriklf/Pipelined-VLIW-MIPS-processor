@@ -1,0 +1,54 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work
+T_opt
+Z1 Vb[2biRY3QS7PVSIoPg;Fg1
+Z2 04 21 8 work simple_multiplexer_tb behavior 1
+Z3 =1-00215a5a7e04-523c4aaa-203-424
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt
+Z6 OE;O;6.6d;45
+Z7 dC:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work
+Esimple_multiplexer
+Z8 w1379682329
+Z9 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+R7
+Z10 8C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+Z11 FC:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer.vhd
+l0
+L32
+Z12 Vek4O5=J[OL^AAhRoTa7_Z2
+Z13 OE;C;6.6d;45
+32
+Z14 o-O0 -work work
+Z15 tExplicit 1 DisableOpt 1 NoCoverage 1
+Z16 !s100 C<M?`FnXXWPM[XLkeH=C@1
+Esimple_multiplexer_tb
+Z17 w1379682969
+Z18 DPx22 C:\modeltech_6.6d\ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+32
+R7
+Z19 8C:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+Z20 FC:/Users/fadeev/Documents/dmkonsttdt4255_work/exercise1_mux_work/simple_multiplexer_tb.vhd
+l0
+L35
+Z21 V_4=IHORen^Qe`R`nM[SN?2
+R13
+R14
+R15
+Z22 !s100 ZjlD=GCD6]D[HDH:`eD;M1
+Abehavior
+DEx69 C:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work\work 18 simple_multiplexer 0 22 ek4O5=J[OL^AAhRoTa7_Z2
+R18
+DEx69 C:\Users\fadeev\Documents\dmkonsttdt4255_work\exercise1_mux_work\work 21 simple_multiplexer_tb 0 22 _4=IHORen^Qe`R`nM[SN?2
+32
+Mx1 22 C:\modeltech_6.6d\ieee 14 std_logic_1164
+l64
+L38
+Z23 VCO?0W2l2f7f:[gb9ijO:d3
+R13
+R14
+R15
+Z24 !s100 UERPA4KBfzHceBeDfIdbG3
