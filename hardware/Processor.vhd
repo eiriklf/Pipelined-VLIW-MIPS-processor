@@ -27,7 +27,7 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
---library UNISIM;
+--library UNISIM;l
 --use UNISIM.VComponents.all;
 
 entity processor is
