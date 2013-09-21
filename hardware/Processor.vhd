@@ -19,6 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use WORK.MIPS_CONSTANT_PKG.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -30,6 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity processor is
+ generic ( MEM_ADDR_BUS, MEM_DATA_BUS : natural);
 Port ( 
 		clk : in STD_LOGIC;
 		reset					: in STD_LOGIC;
@@ -79,21 +81,21 @@ end processor;
 
 architecture Behavioral of processor is
 
-	component MEMORY is
-		generic (M :NATURAL :=MEM_ADDR_COUNT; N :NATURAL :=DDATA_BUS); 
-		port(
-			CLK			: in STD_LOGIC;
-			RESET			:	in  STD_LOGIC;	
-			W_ADDR		:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to write data
-			WRITE_DATA	:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Data to be written
-			MemWrite		:	in  STD_LOGIC;									-- Write Signal
-			ADDR			:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to access data
-			READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0)		-- Data read from memory
-		);
-	end component MEMORY;
+--	component MEMORY is
+--		generic (M :NATURAL :=MEM_ADDR_COUNT; N :NATURAL :=DDATA_BUS); 
+--		port(
+--			CLK			: in STD_LOGIC;
+--			RESET			:	in  STD_LOGIC;	
+--			W_ADDR		:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to write data
+--			WRITE_DATA	:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Data to be written
+--			MemWrite		:	in  STD_LOGIC;									-- Write Signal
+--			ADDR			:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to access data
+--			READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0)		-- Data read from memory
+--		);
+--	end component MEMORY;
 	
 	component REGISTER_FILE is
-		generic (M :NATURAL :=MEM_ADDR_COUNT; N :NATURAL :=DDATA_BUS); 
+--		generic (M :NATURAL :=MEM_ADDR_COUNT; N :NATURAL :=DDATA_BUS); 
 		port(
 			CLK 			:	in	STD_LOGIC;				
 			RESET			:	in	STD_LOGIC;				
