@@ -36,12 +36,12 @@ Port (
 		clk : in STD_LOGIC;
 		reset					: in STD_LOGIC;
 		processor_enable	: in  STD_LOGIC;
-		imem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
-		imem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
-		dmem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
-		dmem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
-		dmem_address_wr	: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
-		dmem_data_out		: out  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
+		imem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS downto 0);
+		imem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS downto 0);
+		dmem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS downto 0);
+		dmem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS downto 0);
+		dmem_address_wr	: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS downto 0);
+		dmem_data_out		: out  STD_LOGIC_VECTOR (MEM_DATA_BUS downto 0);
 		dmem_write_enable	: out  STD_LOGIC
 	);
 end processor;
@@ -95,7 +95,6 @@ architecture Behavioral of processor is
 --	end component MEMORY;
 	
 	component REGISTER_FILE is
---		generic (M :NATURAL :=MEM_ADDR_COUNT; N :NATURAL :=DDATA_BUS); 
 		port(
 			CLK 			:	in	STD_LOGIC;				
 			RESET			:	in	STD_LOGIC;				
@@ -166,7 +165,18 @@ architecture Behavioral of processor is
 
 begin
 
-
-
+-- generic process, has to be replaced with something
+   process(clk)
+   begin
+   
+      if (processor_enable = '1') then
+         if (rising_edge(clk)) then
+            dmem_data_out <= (others => '1');
+         else 
+            dmem_data_out <= (others => '1');
+         end if;
+      end if;
+      
+   end process;
 
 end Behavioral;
