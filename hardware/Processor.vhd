@@ -131,11 +131,20 @@ architecture Behavioral of processor is
 		);
 	end component alu;
 
-	--Signal, categorized as outputs from:
-	--From PC
-	signal PC_Output : STD_LOGIC_VECTOR (31 downto 0); --From PC to Instruction Memory + Incrementer (may be removed)
+	--Signal, categorized as signals FROM different components:
 	
-	-- From Instruction Memory
+	--From PC
+	signal PC_Output : STD_LOGIC_VECTOR (31 downto 0); --From PC to Instruction Memory + Incrementer (currently removed)
+	signal Incremented  : STD_LOGIC_VECTOR (31 downto 0); --From PC to Instruction Memory + Incrementer (may be removed)
+	--signal Past-Incremented  : STD_LOGIC_VECTOR (31 downto 0); --Original Incrementation-form
+	
+	
+	-- From PC to Instruction Memory
+	signal InstrMem_FullOutput : STD_LOGIC_VECTOR (31 downto 0);
+	--WARNING!!
+	--InstruMem_FullOutout signal may be sufficient, if so: Delete the 8 next signals
+	--WARNING!!
+	
 	--- * Common
 	signal InstrMem_ProCon : STD_LOGIC_VECTOR (5 downto 0); -- From Instruction Memory to Processor Controller [31-26]
 	signal InstrMem_ReadReg1 : STD_LOGIC_VECTOR (4 downto 0); --From Instruction Memory to Read Register 1 [25-21] 
@@ -149,12 +158,70 @@ architecture Behavioral of processor is
 	--- * J-Type Only
 	signal Instr_Mem_Concat : STD_LOGIC_VECTOR (25 downto 0); --From Instruction Memory to Concat [25-0]
 	
+	
+	-- From Processor Controller
+	--WARNING!!
+	-- State Machine not included in signal-design, be prepared to change if necessary
+	--WARNING!!
+	signal RegDst : STD_LOGIC;
+	signal Jump : STD_LOGIC;
+	signal Branch : STD_LOGIC;
+	--WARNING!!
+	--signal MemRead : STD_LOGIC; Only in book, not in compendium schematic
+	--WARNING!!
+	signal MemtoReg : STD_LOGIC;
+	signal ALUOp : STD_LOGIC_VECTOR (1 downto 0);
+	signal MemWrite : STD_LOGIC;
+	signal ALUSrc : STD_LOGIC;
+	signal RegWrite : STD_LOGIC;
+	
+	
 	-- From Register
+	signal Read_Data1 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 1 from Register_File
+	signal Read_Data2 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 2 from Register_File
 	
 	
 	-- From ALU
+	signal ALU_Result : STD_LOGIC_VECTOR (31 downto 0); -- The ALU Result output from the ALU
+	signal Zero : STD_LOGIC; -- The Zero output from the ALU
 	
-	-- From Sign-extend
+	
+	-- From Data Memory
+	signal Read_Data : STD_LOGIC_VECTOR (31 downto 0); -- Data fetched from the ALU
+	
+	-- From Signextend
+	signal Signextended : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Signextend
+	
+	
+	-- From ALUControl
+	signal ALUControl : STD_LOGIC_VECTOR (3 downto 0); 
+	
+	-- From BranchAdder
+	signal BranchAdder : STD_LOGIC_VECTOR (31 downto 0); -- Data output signal from Branch Adder
+	
+	-- From Concat
+	signal Concat : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Concat
+	--WARNING!!
+	--Schedule specifies shift on 6 bits, but it will conflict with output from PC / Increment-Adder
+	--WARNING!!
+	
+	-- From MUX1, Between Instruction Memory and Register File (input for Write Register)
+	signal ChosenWriteReg : STD_LOGIC_VECTOR (4 downto 0);
+	
+	-- From MUX2 Between Register File/Sign Extend and ALU (ALU Input 2)
+	signal ChosenALUInput : STD_LOGIC_VECTOR (31 downto 0);
+	
+	-- From MUX3 Between ALU/Data Memory and Instruction Memory (input for Write Data)
+	signal ChosenWriteData : STD_LOGIC_VECTOR (31 downto 0);
+	
+	-- From MUX4 Between PC/Branch Adder and MUX5 (input for next Address #1, regular OR branch)
+	signal PCAddressMidMUX : STD_LOGIC_VECTOR (31 downto 0);
+	
+	-- From MUX5 Between MUX4 and PC (input for next Address #2, Reg/Bra OR Jump)
+	signal FinalPCAddress : STD_LOGIC_VECTOR (31 downto 0);
+	
+	-- From Branch-AND-gate
+	signal BranchAND_MUX4 : STD_LOGIC; -- Result from the Branch AND-gate
 	
 	
 --	signal state : std_logic_vector(1 downto 0);
