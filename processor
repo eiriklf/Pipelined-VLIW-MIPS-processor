@@ -58,7 +58,7 @@ begin
   constant FETCH  : std_logic_vector(0 to WIDTH-1) := "10";
   begin
   
-  if(rising_edge(clk))then
+  if(rising_edge(clk) and processor_enable='1')then
   if(reset='1') then
   state<=FETCH;
   else
