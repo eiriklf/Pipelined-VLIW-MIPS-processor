@@ -173,7 +173,7 @@ architecture Behavioral of processor is
 	signal MemWrite : STD_LOGIC;
 	signal ALUSrc : STD_LOGIC;
 	signal RegWrite : STD_LOGIC;
-	
+	signal increment: STD_LOGIC;
 	
 	-- From Register
 	signal Read_Data1 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 1 from Register_File
@@ -231,6 +231,28 @@ architecture Behavioral of processor is
 
 
 begin
+
+  STATE_MACHINE : process(clk, reset, MemWrite, MemRead, branch, jump)--press reset in order to start the first state which I have decided to be "Fetch"
+  constant STALL : std_logic_vector(0 to WIDTH-1) := "00";
+  constant EXECUTE : std_logic_vector(0 to WIDTH-1) := "01";
+  constant FETCH  : std_logic_vector(0 to WIDTH-1) := "10";
+  begin
+  
+  if(rising_edge(clk) and processor_enable='1')then --could implement processor enable inside the statemachine also
+  	if(reset='1') then
+  		state<=FETCH;
+  		else
+  		case state is 
+  			when FETCH=> state<=EXECUTE;
+			 increment<='1'; --increment address by 1 unit. initiate when execute or stall is done
+			 when STALL => state<=FETCH;--. (after 1 cycle, go to fetch) stall means that we wont increment the adress. initiate if instruction fetched is load stor or branch. route in the controlsignals which determine what instruction is currently running 
+  			when EXECUTE=> if(MemWrite='1' or MemRead='1' or branch='1' or jump='1')then state<=STALL; else state<=FETCH; -- initiate after fetch, if instruction is store, load or branch, go to stall, else go to fetch.  After 1 cycle, go to fetch or stall.
+ 
+  				end if;
+		end case;
+  	end if;
+  end if;
+  end process;
 
 -- generic process, has to be replaced with something
    process(clk)
