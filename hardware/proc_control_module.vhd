@@ -92,8 +92,25 @@ begin
                ALUOp1 <= '0';
                ALUOp0 <= '1';
               when others =>
+               ALUSrc <= '1';
+               RegWrite <= '1';
+               MemRead <= '1';
+               MemWrite <= '1';
+               Branch <= '1';
+               ALUOp1 <= '1';
+               ALUOp0 <= '1';
                --nothing
            end case;
+          else
+             RegDst <= '0';
+               ALUSrc <= '0';
+               MemtoReg <= '0';
+               RegWrite <= '0';
+               MemRead <= '0';
+               MemWrite <= '0';
+               Branch <= '0';
+               ALUOp1 <= '0';
+               ALUOp0 <= '0';
           end if;
             
    end process;

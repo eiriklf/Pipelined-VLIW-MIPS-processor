@@ -66,16 +66,16 @@ ARCHITECTURE behavior OF proc_control_module_tb IS
    signal reset : std_logic := '0';
 
  	--Outputs
-   signal RegDst : std_logic := '0';
-   signal RegWrite : std_logic := '0';
-   signal ALUSrc : std_logic := '0';
-   signal MemtoReg : std_logic := '0';
-   signal MemRead : std_logic := '0';
-   signal MemWrite : std_logic := '0';
-   signal ALUOp0 : std_logic := '0';
-   signal ALUOp1 : std_logic := '0';
-   signal Branch : std_logic := '0';
-   signal state_vector : std_logic_vector(1 downto 0) := "00";
+   signal RegDst : std_logic := '1';
+   signal RegWrite : std_logic := '1';
+   signal ALUSrc : std_logic := '1';
+   signal MemtoReg : std_logic := '1';
+   signal MemRead : std_logic := '1';
+   signal MemWrite : std_logic := '1';
+   signal ALUOp0 : std_logic := '1';
+   signal ALUOp1 : std_logic := '1';
+   signal Branch : std_logic := '1';
+   signal state_vector : std_logic_vector(1 downto 0) := "11";
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -113,13 +113,6 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-      ALUSrc <= '0';
-      RegWrite <= '0';
-      MemRead <= '0';
-      MemWrite <= '0';
-      Branch <= '0';
-      ALUOp1 <= '0';
-      ALUOp0 <= '0';
             
       wait for 10 ns;	
 
