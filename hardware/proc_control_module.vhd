@@ -51,48 +51,50 @@ architecture Behavioral of proc_control_module is
    signal state : STD_LOGIC_VECTOR(1 downto 0);
 begin
 
-   asserting_output_signals : process(Opcode)
+   asserting_output_signals : process(Opcode, reset)
    begin
-      case Opcode is
-         when "000000" =>
-            RegDst <= '1';
-            ALUSrc <= '0';
-            MemtoReg <= '0';
-            RegWrite <= '1';
-            MemRead <= '0';
-            MemWrite <= '0';
-            Branch <= '0';
-            ALUOp1 <= '1';
-            ALUOp0 <= '0';
-          when "100011" =>
-            RegDst <= '0';
-            ALUSrc <= '1';
-            MemtoReg <= '1';
-            RegWrite <= '1';
-            MemRead <= '1';
-            MemWrite <= '0';
-            Branch <= '0';
-            ALUOp1 <= '0';
-            ALUOp0 <= '0';
-           when "101011" =>
-            ALUSrc <= '1';
-            RegWrite <= '0';
-            MemRead <= '0';
-            MemWrite <= '1';
-            Branch <= '0';
-            ALUOp1 <= '0';
-            ALUOp0 <= '0';
-           when "000100" =>
-            ALUSrc <= '0';
-            RegWrite <= '0';
-            MemRead <= '0';
-            MemWrite <= '0';
-            Branch <= '1';
-            ALUOp1 <= '0';
-            ALUOp0 <= '1';
-           when others =>
-            --nothing
-        end case;
+      if (reset = '0') then
+         case Opcode is
+            when "000000" =>
+               RegDst <= '1';
+               ALUSrc <= '0';
+               MemtoReg <= '0';
+               RegWrite <= '1';
+               MemRead <= '0';
+               MemWrite <= '0';
+               Branch <= '0';
+               ALUOp1 <= '1';
+               ALUOp0 <= '0';
+             when "100011" =>
+               RegDst <= '0';
+               ALUSrc <= '1';
+               MemtoReg <= '1';
+               RegWrite <= '1';
+               MemRead <= '1';
+               MemWrite <= '0';
+               Branch <= '0';
+               ALUOp1 <= '0';
+               ALUOp0 <= '0';
+              when "101011" =>
+               ALUSrc <= '1';
+               RegWrite <= '0';
+               MemRead <= '0';
+               MemWrite <= '1';
+               Branch <= '0';
+               ALUOp1 <= '0';
+               ALUOp0 <= '0';
+              when "000100" =>
+               ALUSrc <= '0';
+               RegWrite <= '0';
+               MemRead <= '0';
+               MemWrite <= '0';
+               Branch <= '1';
+               ALUOp1 <= '0';
+               ALUOp0 <= '1';
+              when others =>
+               --nothing
+           end case;
+          end if;
             
    end process;
 

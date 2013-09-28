@@ -66,16 +66,16 @@ ARCHITECTURE behavior OF proc_control_module_tb IS
    signal reset : std_logic := '0';
 
  	--Outputs
-   signal RegDst : std_logic;
-   signal RegWrite : std_logic;
-   signal ALUSrc : std_logic;
-   signal MemtoReg : std_logic;
-   signal MemRead : std_logic;
-   signal MemWrite : std_logic;
-   signal ALUOp0 : std_logic;
-   signal ALUOp1 : std_logic;
-   signal Branch : std_logic;
-   signal state_vector : std_logic_vector(1 downto 0);
+   signal RegDst : std_logic := '0';
+   signal RegWrite : std_logic := '0';
+   signal ALUSrc : std_logic := '0';
+   signal MemtoReg : std_logic := '0';
+   signal MemRead : std_logic := '0';
+   signal MemWrite : std_logic := '0';
+   signal ALUOp0 : std_logic := '0';
+   signal ALUOp1 : std_logic := '0';
+   signal Branch : std_logic := '0';
+   signal state_vector : std_logic_vector(1 downto 0) := "00";
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
