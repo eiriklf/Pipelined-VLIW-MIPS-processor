@@ -52,9 +52,9 @@ begin
 
    STATE_MACHINE : process(clk, reset, processor_enable)--press reset in order to start the first state which I have decided to be "Fetch"
      constant WIDTH: integer := 2;
-     constant STALL : std_logic_vector(0 to WIDTH-1) := "00";
-     constant EXECUTE : std_logic_vector(0 to WIDTH-1) := "01";
-     constant FETCH  : std_logic_vector(0 to WIDTH-1) := "10";
+     constant STALL : std_logic_vector(WIDTH-1 downto 0) := "00";
+     constant EXECUTE : std_logic_vector(WIDTH-1 downto 0) := "01";
+     constant FETCH  : std_logic_vector(WIDTH-1 downto 0) := "10";
      begin
      
      if(rising_edge(clk) and processor_enable='1')then --could implement processor enable inside the statemachine also
