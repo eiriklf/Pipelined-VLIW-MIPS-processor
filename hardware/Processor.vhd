@@ -21,6 +21,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use WORK.MIPS_CONSTANT_PKG.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+
+
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -29,6 +32,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- any Xilinx primitives in this code.
 --library UNISIM;l
 --use UNISIM.VComponents.all;
+
+--todo: find any use for reset, remove reset fra alle registre
 
 entity processor is
  generic ( MEM_ADDR_BUS, MEM_DATA_BUS : natural := 32);
@@ -50,7 +55,7 @@ end processor;
 
 --Requirements: 
 
--- R-type function codes:
+-- R-type function codes: -- the first number in functioncode is uneccessary as it seams now because it is a "dont care bit"
 -- * ADD: 100000
 -- * SUB: 100010
 -- * SLT: 101010
@@ -80,7 +85,7 @@ end processor;
 --  
 
 architecture Behavioral of processor is
---type ALU_INPUT is (op0,op1,op2,op3);
+
 --	component MEMORY is
 --		generic (M :NATURAL :=MEM_ADDR_COUNT; N :NATURAL :=DDATA_BUS); 
 --		port(
@@ -109,7 +114,7 @@ architecture Behavioral of processor is
 	end component REGISTER_FILE;
 
 	component adder is
-		generic (N: natural);  
+		generic (N :NATURAL :=DDATA_BUS);  
 		port(
 			X	: in	STD_LOGIC_VECTOR(N-1 downto 0);
 			Y	: in	STD_LOGIC_VECTOR(N-1 downto 0);
@@ -147,12 +152,17 @@ architecture Behavioral of processor is
            output : out  STD_LOGIC_VECTOR (N-1 downto 0));
 	
 	end component simple_multiplexer;
+	
+	component control is
+    Port ( procon : in  STD_LOGIC_VECTOR (5 downto 0);
+           Ops : out ProOP);
+end component control;
 
 	--Signal, categorized as signals FROM different components:
 
 	--From PC
 	signal PC_Output : STD_LOGIC_VECTOR (31 downto 0); --From PC to Instruction Memory + Incrementer (currently removed)
-	signal Incremented  : STD_LOGIC_VECTOR (31 downto 0); --From PC to Instruction Memory + Incrementer (may be removed)
+	--signal Incremented  : STD_LOGIC_VECTOR (31 downto 0); --From PC to Instruction Memory + Incrementer (may be removed)
 	--signal Past-Incremented  : STD_LOGIC_VECTOR (31 downto 0); --Original Incrementation-form
 
 
@@ -168,7 +178,7 @@ architecture Behavioral of processor is
 	--- * R-Type Only
 	signal InstrMem_ReadReg2 : STD_LOGIC_VECTOR (4 downto 0); --From Instruction Memory to Read Register 2 [20-16], R-Type
 	signal InstrMem_WriteReg2 : STD_LOGIC_VECTOR (4 downto 0); --From Instruction Memory to Write Reg [15-11], R-type
-	signal InstrMem_ALUCon : STD_LOGIC_VECTOR (4 downto 0); --From Instruction Memory to ALU control [5-0], R-type
+	signal InstrMem_ALUCon : STD_LOGIC_VECTOR (5 downto 0); --From Instruction Memory to ALU control [5-0], R-type
 	--- * I-Type Only
 	signal InstrMem_WriteReg1 : STD_LOGIC_VECTOR (4 downto 0); --From Instruction Memory to Write Reg [20-16], I-type
 	signal InstrMem_Signext : STD_LOGIC_VECTOR (15 downto 0); --From Instruction Memory to SignExtend [15-0], I-type
@@ -180,17 +190,7 @@ architecture Behavioral of processor is
 	--WARNING!!
 	-- State Machine not included in signal-design, be prepared to change if necessary
 	--WARNING!!
-	signal RegDst : STD_LOGIC;
-	signal Jump : STD_LOGIC;
-	signal Branch : STD_LOGIC;
-	--WARNING!!
-	--signal MemRead : STD_LOGIC; Only in book, not in compendium schematic
-	--WARNING!!
-	signal MemtoReg : STD_LOGIC;
-	signal ALUOp : STD_LOGIC_VECTOR (1 downto 0);
-	signal MemWrite : STD_LOGIC;
-	signal ALUSrc : STD_LOGIC;
-	signal RegWrite : STD_LOGIC;
+
 	signal increment: STD_LOGIC;
 
 	-- From Register
@@ -244,14 +244,35 @@ architecture Behavioral of processor is
 	signal memread: std_logic;
 	signal be: std_logic;
 	signal enablepcwrite: std_logic;
---  
+	signal consignal: ProOP;
 --  constant CMD_FET    : std_logic_vector(0 to INPUT_BUS_WIDTH-1) := "00000000000000000000000000000000";
 --  constant CMD_EXE     : std_logic_vector(0 to INPUT_BUS_WIDTH-1) := "00000000000000000000000000000001";
 --  constant CMD_STA     : std_logic_vector(0 to INPUT_BUS_WIDTH-1) := "00000000000000000000000000000010";
 
 
 	begin
-enablepcwrite<=(processor_enable and (jump or branch)); -- i might not need processor_enable here, we need to create a startup sequence
+
+enablepcwrite<=(processor_enable and (consignal.jump or consignal.branch)); -- i might not need processor_enable here, we need to create a startup sequence
+Instr_Mem_Concat<=imem_data_in(25 downto 0);
+InstrMem_Signext<=Instr_Mem_Concat(15 downto 0);
+InstrMem_WriteReg1<=Instr_Mem_Concat(20 downto 16);
+InstrMem_ReadReg1<=Instr_Mem_Concat(20 downto 16);--assigning the left most bit as most significant
+InstrMem_WriteReg2<=Instr_Mem_Concat(15 downto 11);
+InstrMem_ALUCon<=Instr_Mem_Concat(5 downto 0);
+InstrMem_ProCon<=imem_data_in(31 downto 26);
+InstrMem_ReadReg2<=Instr_Mem_Concat(25 downto 21);
+
+--assignments for ai controlsignals
+ALUControl.op0<=InstrMem_ALUCon(3 );--after what i have read, the each of the types here are enumerations and have to be individually assigned with either vectors or 
+ALUControl.op1<=InstrMem_ALUCon(2 );
+ALUControl.op2<=InstrMem_ALUCon(1 );
+ALUControl.op3<=InstrMem_ALUCon(0 );
+--concat
+Concat<=Instr_Mem_Concat&PC_Output(31 downto 26);--this might be wrong
+
+--signextend
+Signextended<=InstrMem_Signext&"0000000000000000";
+
 
 	ALUtd : alu generic map ( N=>DDATA_BUS)  port map(
 		Y					=>	ChosenALUInput,
@@ -261,12 +282,21 @@ enablepcwrite<=(processor_enable and (jump or branch)); -- i might not need proc
 		FLAGS		=> ZERO
 	);
 	
+	ADDRESSADDER: adder port map(
+			X	=> PC_Output,
+			Y	=>Signextended,
+			CIN	=>'0',
+			--COUT	=>'0',
+			R	=>BranchAdder
+	
+	);
+	
 	RegisterF: REGISTER_FILE port map(
 				CLK 			=> clk,			
 			RESET			=> reset,		
 			RS				=>read_data1,				
 			RT				=>read_data2,--the dataoutput who also go to the mux
-			RW				=>RegWrite,			
+			RW				=>consignal.RegWrite,			
 			RS_ADDR 		=>	InstrMem_ReadReg1, 
 			RT_ADDR 		=> InstrMem_ReadReg2,
 			RD_ADDR 		=> ChosenWriteReg,
@@ -278,29 +308,35 @@ enablepcwrite<=(processor_enable and (jump or branch)); -- i might not need proc
            data_out =>PC_Output,
            clock =>clk,
            reset =>reset,
-           write_enable =>processor_enable--may work
+           write_enable =>enablepcwrite--may work, check this later
 	
 	);
+	
+	CONTROL_UNIT: control Port map( 
+	procon =>InstrMem_ProCon,
+           Ops => consignal);
+
 	MUX2: simple_multiplexer port map( a =>read_data2,
            b =>Signextended,
-           control_signal =>alusrc,
+           control_signal =>consignal.alusrc,
            output =>ChosenALUInput);
 	MUX1: simple_multiplexer generic map ( N=>5) port map(--you have to make the components generic
 	 a =>InstrMem_WriteReg1,
            b =>InstrMem_WriteReg2,
-           control_signal =>regdst,
+           control_signal =>consignal.regdest,
            output =>ChosenWriteReg);
 	MUX3: simple_multiplexer port map(	 b =>dmem_data_in,
            a =>ALU_Result,
-           control_signal =>memtoreg,
+           control_signal =>consignal.memtoreg,
            output =>ChosenWriteData);
 	--PCAddressMidMUX <= b when branch = '1';we dont need mux4 because there is only 1 signal
 	MUX5: simple_multiplexer port map( a =>BranchAdder,
            b =>Concat,
-           control_signal =>jump,
+           control_signal =>consignal.jump,
            output =>FinalPCAddress);
-	
-  STATE_MACHINE : process(clk, reset, MemWrite, MemRead, branch, jump,processor_enable)--press reset in order to start the first state which I have decided to be "Fetch"
+
+
+  STATE_MACHINE : process(clk, reset, consignal.MemWrite, consignal.memtoreg,consignal.regwrite,  consignal.branch, consignal.jump,processor_enable)--press reset in order to start the first state which I have decided to be "Fetch"
   constant WIDTH: integer := 2;
   constant STALL : std_logic_vector(0 to WIDTH-1) := "00";
   constant EXECUTE : std_logic_vector(0 to WIDTH-1) := "01";
@@ -315,7 +351,8 @@ enablepcwrite<=(processor_enable and (jump or branch)); -- i might not need proc
   			when FETCH=> state<=EXECUTE;
 			 increment<='1'; --increment address by 1 unit. initiate when execute or stall is done
 			 when STALL => state<=FETCH;--. (after 1 cycle, go to fetch) stall means that we wont increment the adress. Make sure that this is a NOP-instruction
-  			when EXECUTE=> if(MemWrite='1' or MemRead='1' or branch='1' or jump='1')then state<=STALL; else state<=FETCH; -- initiate after fetch, if instruction is store, load or branch, go to stall, else go to fetch.  After 1 cycle, go to fetch or stall.
+  			when EXECUTE=>increment<='0'; if(consignal.MemWrite='1' or ((consignal.memtoreg='1') and (consignal.regwrite='1'))  or consignal.branch='1' or consignal.jump='1')then state<=STALL; 
+			else state<=FETCH; -- initiate after fetch, if instruction is store, load or branch, go to stall, else go to fetch.  After 1 cycle, go to fetch or stall.
 			
   				end if;
 			when others=>state<=STALL;
@@ -327,14 +364,14 @@ enablepcwrite<=(processor_enable and (jump or branch)); -- i might not need proc
 
 -- generic process, has to be replaced with something
 
-   process(clk)--combinatorial circut::::assigns inputs and outputs to and from processor
-   begin
+   --process(clk,pc_output,alu_result,read_data2,consignal)--combinatorial circut::::assigns inputs and outputs to and from processor
+ --  begin
 	imem_address<=PC_output;
 	dmem_address<=ALU_Result;
 	dmem_address_wr<=read_data2;--??do you write and specify what adresses you are using or something? this is not needed
 	dmem_data_out<=read_data2;
-	dmem_write_enable<=memwrite;
+	dmem_write_enable<=consignal.memwrite;
       
-   end process;
+ --  end process;
 
 end Behavioral;

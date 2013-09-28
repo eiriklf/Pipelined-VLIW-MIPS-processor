@@ -340,10 +340,10 @@ BEGIN
     wait for clk_period*3;
 		
     -- Run CPU!
-		command <= CMD_RUN;					
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-		wait for clk_period*100;
+	--	command <= CMD_RUN;					
+ --   bus_address_in <= zero;
+ --   bus_data_in <= zero;
+	--	wait for clk_period*100;
 
     wait;
     

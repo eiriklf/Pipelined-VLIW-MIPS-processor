@@ -23,7 +23,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 library WORK;
 use WORK.MIPS_CONSTANT_PKG.ALL;
-
+--use customtypes.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -200,8 +200,6 @@ begin
 		dmem_data_out		=> dmem_write_data_proc,		-- DATA TO BE WRITTEN
 		dmem_write_enable	=> dmem_write_enable_proc
 	);
-	
-	
 	
 end Behavioral;
 
