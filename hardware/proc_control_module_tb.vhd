@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   02:27:18 09/28/2013
+-- Create Date:   03:04:29 09/28/2013
 -- Design Name:   
 -- Module Name:   C:/Users/fadeev/Documents/dmkonsttdt4255_work/hardware/proc_control_module_tb.vhd
 -- Project Name:  exercise1_mux_work
@@ -53,6 +53,7 @@ ARCHITECTURE behavior OF proc_control_module_tb IS
          MemWrite : OUT  std_logic;
          ALUOp0 : OUT  std_logic;
          ALUOp1 : OUT  std_logic;
+         Branch : OUT  std_logic;
          state_vector : OUT  std_logic_vector(1 downto 0)
         );
     END COMPONENT;
@@ -73,6 +74,7 @@ ARCHITECTURE behavior OF proc_control_module_tb IS
    signal MemWrite : std_logic;
    signal ALUOp0 : std_logic;
    signal ALUOp1 : std_logic;
+   signal Branch : std_logic;
    signal state_vector : std_logic_vector(1 downto 0);
 
    -- Clock period definitions
@@ -94,6 +96,7 @@ BEGIN
           MemWrite => MemWrite,
           ALUOp0 => ALUOp0,
           ALUOp1 => ALUOp1,
+          Branch => Branch,
           state_vector => state_vector
         );
 
@@ -110,6 +113,16 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
+      ALUSrc <= '0';
+      RegWrite <= '0';
+      MemRead <= '0';
+      MemWrite <= '0';
+      Branch <= '0';
+      ALUOp1 <= '0';
+      ALUOp0 <= '0';
+            
+      wait for 10 ns;	
+
       processor_enable <= '1';
       reset <= '1';
       opcode <= "000000";
@@ -117,10 +130,24 @@ BEGIN
       wait for 100 ns;	
       reset <= '0';
       
-      wait for clk_period*10;
-
-      -- insert stimulus here 
-
+      wait for clk_period*3;
+      Opcode <= "000000";
+      wait for clk_period*3;
+      Opcode <= "100011";
+      wait for clk_period*3;
+      Opcode <= "101011";   
+      wait for clk_period*3;
+      Opcode <= "000100";   
+      
+      wait for clk_period*3;
+      Opcode <= "000000";
+      wait for clk_period*3;
+      Opcode <= "100011";
+      wait for clk_period*3;
+      Opcode <= "101011";     
+      wait for clk_period*3;
+      Opcode <= "000100";  
+      
       wait;
    end process;
 

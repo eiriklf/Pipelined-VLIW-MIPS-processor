@@ -34,14 +34,15 @@ entity proc_control_module is
            clk : in STD_LOGIC;
            processor_enable : in STD_LOGIC;
            reset : in STD_LOGIC;
-           RegDst : out  STD_LOGIC;
-           RegWrite : out  STD_LOGIC;
-           ALUSrc : out  STD_LOGIC;
-           MemtoReg : out  STD_LOGIC;
-           MemRead : out  STD_LOGIC;
-           MemWrite : out  STD_LOGIC;
-           ALUOp0 : out  STD_LOGIC; -- this signal and the next one are to be worked on, they are meant to deal with branching
-           ALUOp1 : out  STD_LOGIC;
+           RegDst : out STD_LOGIC;
+           RegWrite : out STD_LOGIC;
+           ALUSrc : out STD_LOGIC;
+           MemtoReg : out STD_LOGIC;
+           MemRead : out STD_LOGIC;
+           MemWrite : out STD_LOGIC;
+           ALUOp0 : out STD_LOGIC; -- this signal and the next one are to be worked on, they are meant to deal with branching
+           ALUOp1 : out STD_LOGIC;
+           Branch : out STD_LOGIC;
            state_vector : out STD_LOGIC_VECTOR(1 downto 0));
 end proc_control_module;
 
@@ -50,6 +51,51 @@ architecture Behavioral of proc_control_module is
    signal state : STD_LOGIC_VECTOR(1 downto 0);
 begin
 
+   asserting_output_signals : process(Opcode)
+   begin
+      case Opcode is
+         when "000000" =>
+            RegDst <= '1';
+            ALUSrc <= '0';
+            MemtoReg <= '0';
+            RegWrite <= '1';
+            MemRead <= '0';
+            MemWrite <= '0';
+            Branch <= '0';
+            ALUOp1 <= '1';
+            ALUOp0 <= '0';
+          when "100011" =>
+            RegDst <= '0';
+            ALUSrc <= '1';
+            MemtoReg <= '1';
+            RegWrite <= '1';
+            MemRead <= '1';
+            MemWrite <= '0';
+            Branch <= '0';
+            ALUOp1 <= '0';
+            ALUOp0 <= '0';
+           when "101011" =>
+            ALUSrc <= '1';
+            RegWrite <= '0';
+            MemRead <= '0';
+            MemWrite <= '1';
+            Branch <= '0';
+            ALUOp1 <= '0';
+            ALUOp0 <= '0';
+           when "000100" =>
+            ALUSrc <= '0';
+            RegWrite <= '0';
+            MemRead <= '0';
+            MemWrite <= '0';
+            Branch <= '1';
+            ALUOp1 <= '0';
+            ALUOp0 <= '1';
+           when others =>
+            --nothing
+        end case;
+            
+   end process;
+
    STATE_MACHINE : process(clk, reset, processor_enable)--press reset in order to start the first state which I have decided to be "Fetch"
      constant WIDTH: integer := 2;
      constant STALL : std_logic_vector(WIDTH-1 downto 0) := "00";
@@ -57,7 +103,7 @@ begin
      constant FETCH  : std_logic_vector(WIDTH-1 downto 0) := "10";
      begin
      
-     if(rising_edge(clk) and processor_enable='1')then --could implement processor enable inside the statemachine also
+     if(rising_edge(clk) and processor_enable='1')then --WILL FIX IT TO TAKE BRANCHING INTO ACCOUNT, FEDOR
          if(reset='1') then
             state<=FETCH;
          else
