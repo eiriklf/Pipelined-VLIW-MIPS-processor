@@ -31,6 +31,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity proc_control_module is
     Port ( Opcode : in  STD_LOGIC_VECTOR (5 downto 0);
+           clk : in STD_LOGIC;
+           processor_enable : in STD_LOGIC;
+           reset : in STD_LOGIC;
            RegDst : out  STD_LOGIC;
            RegWrite : out  STD_LOGIC;
            ALUSrc : out  STD_LOGIC;
@@ -38,13 +41,46 @@ entity proc_control_module is
            MemRead : out  STD_LOGIC;
            MemWrite : out  STD_LOGIC;
            ALUOp0 : out  STD_LOGIC; -- this signal and the next one are to be worked on, they are meant to deal with branching
-           ALUOp1 : out  STD_LOGIC);
+           ALUOp1 : out  STD_LOGIC;
+           state_vector : out STD_LOGIC_VECTOR(1 downto 0));
 end proc_control_module;
 
 architecture Behavioral of proc_control_module is
 -- behavior to be implemented
+   signal state : STD_LOGIC_VECTOR(1 downto 0);
 begin
 
+   STATE_MACHINE : process(clk, reset, processor_enable)--press reset in order to start the first state which I have decided to be "Fetch"
+     constant WIDTH: integer := 2;
+     constant STALL : std_logic_vector(0 to WIDTH-1) := "00";
+     constant EXECUTE : std_logic_vector(0 to WIDTH-1) := "01";
+     constant FETCH  : std_logic_vector(0 to WIDTH-1) := "10";
+     begin
+     
+     if(rising_edge(clk) and processor_enable='1')then --could implement processor enable inside the statemachine also
+         if(reset='1') then
+            state<=FETCH;
+         else
+            case state is 
+               when FETCH=> 
+                  state<=EXECUTE;
+--                increment<='1'; --increment address by 1 unit. initiate when execute or stall is done
+               when STALL => 
+                  state<=FETCH;--. (after 1 cycle, go to fetch) stall means that we wont increment the adress. Make sure that this is a NOP-instruction
+               when EXECUTE=> 
+                  state<=STALL;
+--                  if(MemWrite='1' or MemRead='1' or branch='1' or jump='1')then 
+--                     state<=STALL; 
+--                  else 
+--                     state<=FETCH; -- initiate after fetch, if instruction is store, load or branch, go to stall, else go to fetch.  After 1 cycle, go to fetch or stall.
+--                  end if;
+               when others=>
+                  state<=STALL;
+--                  increment<='0';
+            end case;
+         end if;
+         state_vector <= state;
+     end if;
+    end process;
 
 end Behavioral;
-
