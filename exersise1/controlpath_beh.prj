@@ -1,0 +1,5 @@
+vhdl work "../Documents/supportFiles_13/hardware/full_adder.vhd"
+vhdl work "mux.vhd"
+vhdl work "../Documents/supportFiles_13/hardware/mips_constant_pkg.vhd"
+vhdl work "../Documents/supportFiles_13/hardware/adder.vhd"
+vhdl work "controlpath.vhd"

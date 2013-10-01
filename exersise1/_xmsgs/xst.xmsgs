@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">W_ADDR&lt;31:8&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">ADDR&lt;31:8&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">RESET</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/exersise1/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">274</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Carry</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUtd</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/exersise1/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">274</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUtd</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/exersise1/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">274</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Negative</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUtd</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/exersise1/controlpath.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Incrementer</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/exersise1/controlpath.vhd</arg>&quot; line <arg fmt="%d" index="2">93</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ADDRESSADDER</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">71</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">BEGIN_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[1].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[2].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[3].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[4].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[5].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[6].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[7].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[8].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[9].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[10].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[11].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[12].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[13].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[14].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[15].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[16].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[17].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[18].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[19].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[20].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[21].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[22].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[23].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[24].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[25].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[26].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[27].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[28].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[29].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[30].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">RESET</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Ops_jump</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Ops_memwrite</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Ops_regwrite</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Ops_memtoreg</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Ops_alusrc</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Ops_branch</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Ops_regdest</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Ops_ALUop0</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Ops_ALUop1</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">status_29</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TDT4255_COM</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">29 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;status_28&gt; &lt;status_27&gt; &lt;status_26&gt; &lt;status_25&gt; &lt;status_24&gt; &lt;status_23&gt; &lt;status_22&gt; &lt;status_21&gt; &lt;status_20&gt; &lt;status_19&gt; &lt;status_18&gt; &lt;status_17&gt; &lt;status_16&gt; &lt;status_15&gt; &lt;status_14&gt; &lt;status_13&gt; &lt;status_12&gt; &lt;status_11&gt; &lt;status_10&gt; &lt;status_9&gt; &lt;status_8&gt; &lt;status_7&gt; &lt;status_6&gt; &lt;status_5&gt; &lt;status_4&gt; &lt;status_3&gt; &lt;status_2&gt; &lt;status_1&gt; &lt;status_0&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">status_29</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TDT4255_COM</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">status</arg>&lt;<arg fmt="%d" index="2">0</arg>:<arg fmt="%d" index="3">1</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">com</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="3040" delta="new" >The RAM &lt;<arg fmt="%s" index="1">Mram_MEM</arg>&gt; will be implemented as a BLOCK RAM, absorbing the following register(s):</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_REGS</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_REGS1</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="warning" file="Xst" num="3002" delta="new" >This design contains one or more registers/latches that are directly
+incompatible with the <arg fmt="%s" index="1">Spartan6</arg> architecture. The two primary causes of this is
+either a register or latch described with both an asynchronous set and
+asynchronous reset, or a register or latch described with an asynchronous
+set or reset which however has an initialization value of the opposite 
+polarity (i.e. asynchronous reset with an initialization value of 1).
+ While this circuit can be built, it creates a sub-optimal implementation
+in terms of area, power and performance. For a more optimal implementation
+Xilinx highly recommends one of the following:
+
+       1) Remove either the set or reset from all registers and latches
+          if not needed for required functionality
+       2) Modify the code in order to produce a synchronous set
+          and/or reset (both is preferred)
+       3) Ensure all registers have the same initialization value as the
+          described asynchronous set or reset polarity
+       4) Use the -async_to_sync option to transform the asynchronous
+          set/reset to synchronous operation
+          (timing simulation highly recommended when using this option)
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/write_addr_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/Counter/data_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

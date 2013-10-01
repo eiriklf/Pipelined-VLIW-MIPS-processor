@@ -1,0 +1,2 @@
+vhdl work "../Documents/supportFiles_13/hardware/full_adder.vhd"
+vhdl work "../Documents/supportFiles_13/hardware/adder.vhd"

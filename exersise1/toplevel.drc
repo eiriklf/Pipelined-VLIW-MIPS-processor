@@ -1,0 +1,55 @@
+Release 12.4 Drc M.81d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Mon Sep 30 14:59:53 2013
+
+drc -z toplevel.ncd toplevel.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_branch_G is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_alusrc_G is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_regwrite_G is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_regdest_G is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS2_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS1_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS11_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS12_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS5_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS15_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS3_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS13_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS14_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS_SC_PROCESSOR/RegisterF/Mram_REGS4_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+DRC detected 0 errors and 14 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

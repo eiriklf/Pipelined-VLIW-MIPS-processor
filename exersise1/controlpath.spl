@@ -1,0 +1,8 @@
+[Inputs]
+jump
+=PC_OUTPUT[31:0]=
+=InstrMem_Signext[15:0]=
+=Instr_Mem_Concat[25:0]=
+[Outputs]
+=FinalPCAddress[31:0]=
+[BiDir]

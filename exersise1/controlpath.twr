@@ -1,0 +1,403 @@
+--------------------------------------------------------------------------------
+Release 12.4 Trace  (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml controlpath.twx controlpath.ncd -o controlpath.twr
+controlpath.pcf
+
+Design file:              controlpath.ncd
+Physical constraint file: controlpath.pcf
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.15 2010-12-02)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+--------------------+------------------+---------+
+Source Pad          |Destination Pad   |  Delay  |
+--------------------+------------------+---------+
+InstrMem_Signext<0> |FinalPCAddress<16>|   10.172|
+InstrMem_Signext<0> |FinalPCAddress<17>|   10.752|
+InstrMem_Signext<0> |FinalPCAddress<18>|   10.886|
+InstrMem_Signext<0> |FinalPCAddress<19>|   11.268|
+InstrMem_Signext<0> |FinalPCAddress<20>|   12.274|
+InstrMem_Signext<0> |FinalPCAddress<21>|   12.972|
+InstrMem_Signext<0> |FinalPCAddress<22>|   13.410|
+InstrMem_Signext<0> |FinalPCAddress<23>|   13.797|
+InstrMem_Signext<0> |FinalPCAddress<24>|   14.515|
+InstrMem_Signext<0> |FinalPCAddress<25>|   14.710|
+InstrMem_Signext<0> |FinalPCAddress<26>|   15.333|
+InstrMem_Signext<0> |FinalPCAddress<27>|   15.856|
+InstrMem_Signext<0> |FinalPCAddress<28>|   16.111|
+InstrMem_Signext<0> |FinalPCAddress<29>|   16.408|
+InstrMem_Signext<0> |FinalPCAddress<30>|   16.848|
+InstrMem_Signext<0> |FinalPCAddress<31>|   17.391|
+InstrMem_Signext<1> |FinalPCAddress<17>|   10.357|
+InstrMem_Signext<1> |FinalPCAddress<18>|   10.785|
+InstrMem_Signext<1> |FinalPCAddress<19>|   11.167|
+InstrMem_Signext<1> |FinalPCAddress<20>|   12.173|
+InstrMem_Signext<1> |FinalPCAddress<21>|   12.871|
+InstrMem_Signext<1> |FinalPCAddress<22>|   13.309|
+InstrMem_Signext<1> |FinalPCAddress<23>|   13.696|
+InstrMem_Signext<1> |FinalPCAddress<24>|   14.414|
+InstrMem_Signext<1> |FinalPCAddress<25>|   14.609|
+InstrMem_Signext<1> |FinalPCAddress<26>|   15.232|
+InstrMem_Signext<1> |FinalPCAddress<27>|   15.755|
+InstrMem_Signext<1> |FinalPCAddress<28>|   16.010|
+InstrMem_Signext<1> |FinalPCAddress<29>|   16.307|
+InstrMem_Signext<1> |FinalPCAddress<30>|   16.747|
+InstrMem_Signext<1> |FinalPCAddress<31>|   17.290|
+InstrMem_Signext<2> |FinalPCAddress<18>|   10.631|
+InstrMem_Signext<2> |FinalPCAddress<19>|   10.909|
+InstrMem_Signext<2> |FinalPCAddress<20>|   11.070|
+InstrMem_Signext<2> |FinalPCAddress<21>|   11.768|
+InstrMem_Signext<2> |FinalPCAddress<22>|   12.206|
+InstrMem_Signext<2> |FinalPCAddress<23>|   12.593|
+InstrMem_Signext<2> |FinalPCAddress<24>|   13.311|
+InstrMem_Signext<2> |FinalPCAddress<25>|   13.506|
+InstrMem_Signext<2> |FinalPCAddress<26>|   14.129|
+InstrMem_Signext<2> |FinalPCAddress<27>|   14.652|
+InstrMem_Signext<2> |FinalPCAddress<28>|   14.907|
+InstrMem_Signext<2> |FinalPCAddress<29>|   15.204|
+InstrMem_Signext<2> |FinalPCAddress<30>|   15.644|
+InstrMem_Signext<2> |FinalPCAddress<31>|   16.187|
+InstrMem_Signext<3> |FinalPCAddress<19>|   11.285|
+InstrMem_Signext<3> |FinalPCAddress<20>|   11.087|
+InstrMem_Signext<3> |FinalPCAddress<21>|   11.785|
+InstrMem_Signext<3> |FinalPCAddress<22>|   12.223|
+InstrMem_Signext<3> |FinalPCAddress<23>|   12.610|
+InstrMem_Signext<3> |FinalPCAddress<24>|   13.328|
+InstrMem_Signext<3> |FinalPCAddress<25>|   13.523|
+InstrMem_Signext<3> |FinalPCAddress<26>|   14.146|
+InstrMem_Signext<3> |FinalPCAddress<27>|   14.669|
+InstrMem_Signext<3> |FinalPCAddress<28>|   14.924|
+InstrMem_Signext<3> |FinalPCAddress<29>|   15.221|
+InstrMem_Signext<3> |FinalPCAddress<30>|   15.661|
+InstrMem_Signext<3> |FinalPCAddress<31>|   16.204|
+InstrMem_Signext<4> |FinalPCAddress<20>|   10.583|
+InstrMem_Signext<4> |FinalPCAddress<21>|   11.281|
+InstrMem_Signext<4> |FinalPCAddress<22>|   11.719|
+InstrMem_Signext<4> |FinalPCAddress<23>|   12.106|
+InstrMem_Signext<4> |FinalPCAddress<24>|   12.824|
+InstrMem_Signext<4> |FinalPCAddress<25>|   13.019|
+InstrMem_Signext<4> |FinalPCAddress<26>|   13.642|
+InstrMem_Signext<4> |FinalPCAddress<27>|   14.165|
+InstrMem_Signext<4> |FinalPCAddress<28>|   14.420|
+InstrMem_Signext<4> |FinalPCAddress<29>|   14.717|
+InstrMem_Signext<4> |FinalPCAddress<30>|   15.157|
+InstrMem_Signext<4> |FinalPCAddress<31>|   15.700|
+InstrMem_Signext<5> |FinalPCAddress<21>|   10.960|
+InstrMem_Signext<5> |FinalPCAddress<22>|   10.666|
+InstrMem_Signext<5> |FinalPCAddress<23>|   11.034|
+InstrMem_Signext<5> |FinalPCAddress<24>|   11.752|
+InstrMem_Signext<5> |FinalPCAddress<25>|   11.947|
+InstrMem_Signext<5> |FinalPCAddress<26>|   12.570|
+InstrMem_Signext<5> |FinalPCAddress<27>|   13.093|
+InstrMem_Signext<5> |FinalPCAddress<28>|   13.348|
+InstrMem_Signext<5> |FinalPCAddress<29>|   13.645|
+InstrMem_Signext<5> |FinalPCAddress<30>|   14.085|
+InstrMem_Signext<5> |FinalPCAddress<31>|   14.628|
+InstrMem_Signext<6> |FinalPCAddress<22>|   11.119|
+InstrMem_Signext<6> |FinalPCAddress<23>|   10.743|
+InstrMem_Signext<6> |FinalPCAddress<24>|   11.461|
+InstrMem_Signext<6> |FinalPCAddress<25>|   11.656|
+InstrMem_Signext<6> |FinalPCAddress<26>|   12.279|
+InstrMem_Signext<6> |FinalPCAddress<27>|   12.802|
+InstrMem_Signext<6> |FinalPCAddress<28>|   13.057|
+InstrMem_Signext<6> |FinalPCAddress<29>|   13.354|
+InstrMem_Signext<6> |FinalPCAddress<30>|   13.794|
+InstrMem_Signext<6> |FinalPCAddress<31>|   14.337|
+InstrMem_Signext<7> |FinalPCAddress<23>|   10.324|
+InstrMem_Signext<7> |FinalPCAddress<24>|   11.042|
+InstrMem_Signext<7> |FinalPCAddress<25>|   11.237|
+InstrMem_Signext<7> |FinalPCAddress<26>|   11.860|
+InstrMem_Signext<7> |FinalPCAddress<27>|   12.383|
+InstrMem_Signext<7> |FinalPCAddress<28>|   12.638|
+InstrMem_Signext<7> |FinalPCAddress<29>|   12.935|
+InstrMem_Signext<7> |FinalPCAddress<30>|   13.375|
+InstrMem_Signext<7> |FinalPCAddress<31>|   13.918|
+InstrMem_Signext<8> |FinalPCAddress<24>|   10.604|
+InstrMem_Signext<8> |FinalPCAddress<25>|   10.673|
+InstrMem_Signext<8> |FinalPCAddress<26>|   11.060|
+InstrMem_Signext<8> |FinalPCAddress<27>|   11.583|
+InstrMem_Signext<8> |FinalPCAddress<28>|   11.838|
+InstrMem_Signext<8> |FinalPCAddress<29>|   12.135|
+InstrMem_Signext<8> |FinalPCAddress<30>|   12.575|
+InstrMem_Signext<8> |FinalPCAddress<31>|   13.118|
+InstrMem_Signext<9> |FinalPCAddress<25>|   11.282|
+InstrMem_Signext<9> |FinalPCAddress<26>|   11.080|
+InstrMem_Signext<9> |FinalPCAddress<27>|   11.603|
+InstrMem_Signext<9> |FinalPCAddress<28>|   11.858|
+InstrMem_Signext<9> |FinalPCAddress<29>|   12.155|
+InstrMem_Signext<9> |FinalPCAddress<30>|   12.595|
+InstrMem_Signext<9> |FinalPCAddress<31>|   13.138|
+InstrMem_Signext<10>|FinalPCAddress<26>|   10.297|
+InstrMem_Signext<10>|FinalPCAddress<27>|   10.667|
+InstrMem_Signext<10>|FinalPCAddress<28>|   11.657|
+InstrMem_Signext<10>|FinalPCAddress<29>|   11.954|
+InstrMem_Signext<10>|FinalPCAddress<30>|   12.394|
+InstrMem_Signext<10>|FinalPCAddress<31>|   12.937|
+InstrMem_Signext<11>|FinalPCAddress<27>|   11.336|
+InstrMem_Signext<11>|FinalPCAddress<28>|   11.241|
+InstrMem_Signext<11>|FinalPCAddress<29>|   11.538|
+InstrMem_Signext<11>|FinalPCAddress<30>|   11.978|
+InstrMem_Signext<11>|FinalPCAddress<31>|   12.521|
+InstrMem_Signext<12>|FinalPCAddress<28>|   10.412|
+InstrMem_Signext<12>|FinalPCAddress<29>|   10.651|
+InstrMem_Signext<12>|FinalPCAddress<30>|   10.996|
+InstrMem_Signext<12>|FinalPCAddress<31>|   11.539|
+InstrMem_Signext<13>|FinalPCAddress<29>|   11.432|
+InstrMem_Signext<13>|FinalPCAddress<30>|   11.090|
+InstrMem_Signext<13>|FinalPCAddress<31>|   11.633|
+InstrMem_Signext<14>|FinalPCAddress<30>|   10.757|
+InstrMem_Signext<14>|FinalPCAddress<31>|   10.994|
+InstrMem_Signext<15>|FinalPCAddress<31>|   11.877|
+Instr_Mem_Concat<0> |FinalPCAddress<6> |    9.743|
+Instr_Mem_Concat<1> |FinalPCAddress<7> |   10.446|
+Instr_Mem_Concat<2> |FinalPCAddress<8> |   10.251|
+Instr_Mem_Concat<3> |FinalPCAddress<9> |    9.485|
+Instr_Mem_Concat<4> |FinalPCAddress<10>|   10.345|
+Instr_Mem_Concat<5> |FinalPCAddress<11>|   10.094|
+Instr_Mem_Concat<6> |FinalPCAddress<12>|   10.225|
+Instr_Mem_Concat<7> |FinalPCAddress<13>|    9.980|
+Instr_Mem_Concat<8> |FinalPCAddress<14>|    9.934|
+Instr_Mem_Concat<9> |FinalPCAddress<15>|    9.930|
+Instr_Mem_Concat<10>|FinalPCAddress<16>|    9.941|
+Instr_Mem_Concat<11>|FinalPCAddress<17>|   10.396|
+Instr_Mem_Concat<12>|FinalPCAddress<18>|    9.872|
+Instr_Mem_Concat<13>|FinalPCAddress<19>|   10.103|
+Instr_Mem_Concat<14>|FinalPCAddress<20>|   10.518|
+Instr_Mem_Concat<15>|FinalPCAddress<21>|   10.726|
+Instr_Mem_Concat<16>|FinalPCAddress<22>|   11.062|
+Instr_Mem_Concat<17>|FinalPCAddress<23>|   10.965|
+Instr_Mem_Concat<18>|FinalPCAddress<24>|   10.254|
+Instr_Mem_Concat<19>|FinalPCAddress<25>|   10.855|
+Instr_Mem_Concat<20>|FinalPCAddress<26>|   11.027|
+Instr_Mem_Concat<21>|FinalPCAddress<27>|   11.187|
+Instr_Mem_Concat<22>|FinalPCAddress<28>|   11.367|
+Instr_Mem_Concat<23>|FinalPCAddress<29>|   11.149|
+Instr_Mem_Concat<24>|FinalPCAddress<30>|   11.648|
+Instr_Mem_Concat<25>|FinalPCAddress<31>|   11.488|
+PC_OUTPUT<0>        |FinalPCAddress<0> |   11.839|
+PC_OUTPUT<1>        |FinalPCAddress<1> |   10.148|
+PC_OUTPUT<2>        |FinalPCAddress<2> |    9.879|
+PC_OUTPUT<3>        |FinalPCAddress<3> |    9.774|
+PC_OUTPUT<4>        |FinalPCAddress<4> |   10.487|
+PC_OUTPUT<5>        |FinalPCAddress<5> |   10.701|
+PC_OUTPUT<6>        |FinalPCAddress<6> |    9.839|
+PC_OUTPUT<7>        |FinalPCAddress<7> |   10.168|
+PC_OUTPUT<8>        |FinalPCAddress<8> |   10.226|
+PC_OUTPUT<9>        |FinalPCAddress<9> |   10.665|
+PC_OUTPUT<10>       |FinalPCAddress<10>|   10.473|
+PC_OUTPUT<11>       |FinalPCAddress<11>|    9.743|
+PC_OUTPUT<12>       |FinalPCAddress<12>|    9.808|
+PC_OUTPUT<13>       |FinalPCAddress<13>|   10.340|
+PC_OUTPUT<14>       |FinalPCAddress<14>|   10.969|
+PC_OUTPUT<15>       |FinalPCAddress<15>|    9.262|
+PC_OUTPUT<16>       |FinalPCAddress<16>|    9.611|
+PC_OUTPUT<16>       |FinalPCAddress<17>|    9.819|
+PC_OUTPUT<16>       |FinalPCAddress<18>|    9.844|
+PC_OUTPUT<16>       |FinalPCAddress<19>|   10.226|
+PC_OUTPUT<16>       |FinalPCAddress<20>|   11.232|
+PC_OUTPUT<16>       |FinalPCAddress<21>|   11.930|
+PC_OUTPUT<16>       |FinalPCAddress<22>|   12.368|
+PC_OUTPUT<16>       |FinalPCAddress<23>|   12.755|
+PC_OUTPUT<16>       |FinalPCAddress<24>|   13.473|
+PC_OUTPUT<16>       |FinalPCAddress<25>|   13.668|
+PC_OUTPUT<16>       |FinalPCAddress<26>|   14.291|
+PC_OUTPUT<16>       |FinalPCAddress<27>|   14.814|
+PC_OUTPUT<16>       |FinalPCAddress<28>|   15.069|
+PC_OUTPUT<16>       |FinalPCAddress<29>|   15.366|
+PC_OUTPUT<16>       |FinalPCAddress<30>|   15.806|
+PC_OUTPUT<16>       |FinalPCAddress<31>|   16.349|
+PC_OUTPUT<17>       |FinalPCAddress<17>|    9.248|
+PC_OUTPUT<17>       |FinalPCAddress<18>|    9.830|
+PC_OUTPUT<17>       |FinalPCAddress<19>|   10.212|
+PC_OUTPUT<17>       |FinalPCAddress<20>|   11.218|
+PC_OUTPUT<17>       |FinalPCAddress<21>|   11.916|
+PC_OUTPUT<17>       |FinalPCAddress<22>|   12.354|
+PC_OUTPUT<17>       |FinalPCAddress<23>|   12.741|
+PC_OUTPUT<17>       |FinalPCAddress<24>|   13.459|
+PC_OUTPUT<17>       |FinalPCAddress<25>|   13.654|
+PC_OUTPUT<17>       |FinalPCAddress<26>|   14.277|
+PC_OUTPUT<17>       |FinalPCAddress<27>|   14.800|
+PC_OUTPUT<17>       |FinalPCAddress<28>|   15.055|
+PC_OUTPUT<17>       |FinalPCAddress<29>|   15.352|
+PC_OUTPUT<17>       |FinalPCAddress<30>|   15.792|
+PC_OUTPUT<17>       |FinalPCAddress<31>|   16.335|
+PC_OUTPUT<18>       |FinalPCAddress<18>|    9.174|
+PC_OUTPUT<18>       |FinalPCAddress<19>|    9.254|
+PC_OUTPUT<18>       |FinalPCAddress<20>|   10.420|
+PC_OUTPUT<18>       |FinalPCAddress<21>|   11.118|
+PC_OUTPUT<18>       |FinalPCAddress<22>|   11.556|
+PC_OUTPUT<18>       |FinalPCAddress<23>|   11.943|
+PC_OUTPUT<18>       |FinalPCAddress<24>|   12.661|
+PC_OUTPUT<18>       |FinalPCAddress<25>|   12.856|
+PC_OUTPUT<18>       |FinalPCAddress<26>|   13.479|
+PC_OUTPUT<18>       |FinalPCAddress<27>|   14.002|
+PC_OUTPUT<18>       |FinalPCAddress<28>|   14.257|
+PC_OUTPUT<18>       |FinalPCAddress<29>|   14.554|
+PC_OUTPUT<18>       |FinalPCAddress<30>|   14.994|
+PC_OUTPUT<18>       |FinalPCAddress<31>|   15.537|
+PC_OUTPUT<19>       |FinalPCAddress<19>|   10.321|
+PC_OUTPUT<19>       |FinalPCAddress<20>|   10.123|
+PC_OUTPUT<19>       |FinalPCAddress<21>|   10.821|
+PC_OUTPUT<19>       |FinalPCAddress<22>|   11.259|
+PC_OUTPUT<19>       |FinalPCAddress<23>|   11.646|
+PC_OUTPUT<19>       |FinalPCAddress<24>|   12.364|
+PC_OUTPUT<19>       |FinalPCAddress<25>|   12.559|
+PC_OUTPUT<19>       |FinalPCAddress<26>|   13.182|
+PC_OUTPUT<19>       |FinalPCAddress<27>|   13.705|
+PC_OUTPUT<19>       |FinalPCAddress<28>|   13.960|
+PC_OUTPUT<19>       |FinalPCAddress<29>|   14.257|
+PC_OUTPUT<19>       |FinalPCAddress<30>|   14.697|
+PC_OUTPUT<19>       |FinalPCAddress<31>|   15.240|
+PC_OUTPUT<20>       |FinalPCAddress<20>|    9.481|
+PC_OUTPUT<20>       |FinalPCAddress<21>|   10.179|
+PC_OUTPUT<20>       |FinalPCAddress<22>|   10.617|
+PC_OUTPUT<20>       |FinalPCAddress<23>|   11.004|
+PC_OUTPUT<20>       |FinalPCAddress<24>|   11.722|
+PC_OUTPUT<20>       |FinalPCAddress<25>|   11.917|
+PC_OUTPUT<20>       |FinalPCAddress<26>|   12.540|
+PC_OUTPUT<20>       |FinalPCAddress<27>|   13.063|
+PC_OUTPUT<20>       |FinalPCAddress<28>|   13.318|
+PC_OUTPUT<20>       |FinalPCAddress<29>|   13.615|
+PC_OUTPUT<20>       |FinalPCAddress<30>|   14.055|
+PC_OUTPUT<20>       |FinalPCAddress<31>|   14.598|
+PC_OUTPUT<21>       |FinalPCAddress<21>|    9.729|
+PC_OUTPUT<21>       |FinalPCAddress<22>|    9.795|
+PC_OUTPUT<21>       |FinalPCAddress<23>|   10.271|
+PC_OUTPUT<21>       |FinalPCAddress<24>|   10.989|
+PC_OUTPUT<21>       |FinalPCAddress<25>|   11.184|
+PC_OUTPUT<21>       |FinalPCAddress<26>|   11.807|
+PC_OUTPUT<21>       |FinalPCAddress<27>|   12.330|
+PC_OUTPUT<21>       |FinalPCAddress<28>|   12.585|
+PC_OUTPUT<21>       |FinalPCAddress<29>|   12.882|
+PC_OUTPUT<21>       |FinalPCAddress<30>|   13.322|
+PC_OUTPUT<21>       |FinalPCAddress<31>|   13.865|
+PC_OUTPUT<22>       |FinalPCAddress<22>|   10.406|
+PC_OUTPUT<22>       |FinalPCAddress<23>|   10.030|
+PC_OUTPUT<22>       |FinalPCAddress<24>|   10.748|
+PC_OUTPUT<22>       |FinalPCAddress<25>|   10.943|
+PC_OUTPUT<22>       |FinalPCAddress<26>|   11.566|
+PC_OUTPUT<22>       |FinalPCAddress<27>|   12.089|
+PC_OUTPUT<22>       |FinalPCAddress<28>|   12.344|
+PC_OUTPUT<22>       |FinalPCAddress<29>|   12.641|
+PC_OUTPUT<22>       |FinalPCAddress<30>|   13.081|
+PC_OUTPUT<22>       |FinalPCAddress<31>|   13.624|
+PC_OUTPUT<23>       |FinalPCAddress<23>|    9.908|
+PC_OUTPUT<23>       |FinalPCAddress<24>|   10.626|
+PC_OUTPUT<23>       |FinalPCAddress<25>|   10.821|
+PC_OUTPUT<23>       |FinalPCAddress<26>|   11.444|
+PC_OUTPUT<23>       |FinalPCAddress<27>|   11.967|
+PC_OUTPUT<23>       |FinalPCAddress<28>|   12.222|
+PC_OUTPUT<23>       |FinalPCAddress<29>|   12.519|
+PC_OUTPUT<23>       |FinalPCAddress<30>|   12.959|
+PC_OUTPUT<23>       |FinalPCAddress<31>|   13.502|
+PC_OUTPUT<24>       |FinalPCAddress<24>|    9.534|
+PC_OUTPUT<24>       |FinalPCAddress<25>|    9.644|
+PC_OUTPUT<24>       |FinalPCAddress<26>|   10.431|
+PC_OUTPUT<24>       |FinalPCAddress<27>|   10.954|
+PC_OUTPUT<24>       |FinalPCAddress<28>|   11.209|
+PC_OUTPUT<24>       |FinalPCAddress<29>|   11.506|
+PC_OUTPUT<24>       |FinalPCAddress<30>|   11.946|
+PC_OUTPUT<24>       |FinalPCAddress<31>|   12.489|
+PC_OUTPUT<25>       |FinalPCAddress<25>|   10.801|
+PC_OUTPUT<25>       |FinalPCAddress<26>|   10.599|
+PC_OUTPUT<25>       |FinalPCAddress<27>|   11.122|
+PC_OUTPUT<25>       |FinalPCAddress<28>|   11.377|
+PC_OUTPUT<25>       |FinalPCAddress<29>|   11.674|
+PC_OUTPUT<25>       |FinalPCAddress<30>|   12.114|
+PC_OUTPUT<25>       |FinalPCAddress<31>|   12.657|
+PC_OUTPUT<26>       |FinalPCAddress<0> |   10.600|
+PC_OUTPUT<26>       |FinalPCAddress<26>|    9.813|
+PC_OUTPUT<26>       |FinalPCAddress<27>|   10.183|
+PC_OUTPUT<26>       |FinalPCAddress<28>|   11.090|
+PC_OUTPUT<26>       |FinalPCAddress<29>|   11.387|
+PC_OUTPUT<26>       |FinalPCAddress<30>|   11.827|
+PC_OUTPUT<26>       |FinalPCAddress<31>|   12.370|
+PC_OUTPUT<27>       |FinalPCAddress<1> |    9.279|
+PC_OUTPUT<27>       |FinalPCAddress<27>|   10.954|
+PC_OUTPUT<27>       |FinalPCAddress<28>|   10.859|
+PC_OUTPUT<27>       |FinalPCAddress<29>|   11.156|
+PC_OUTPUT<27>       |FinalPCAddress<30>|   11.596|
+PC_OUTPUT<27>       |FinalPCAddress<31>|   12.139|
+PC_OUTPUT<28>       |FinalPCAddress<2> |   10.235|
+PC_OUTPUT<28>       |FinalPCAddress<28>|   10.835|
+PC_OUTPUT<28>       |FinalPCAddress<29>|   10.870|
+PC_OUTPUT<28>       |FinalPCAddress<30>|   11.365|
+PC_OUTPUT<28>       |FinalPCAddress<31>|   11.908|
+PC_OUTPUT<29>       |FinalPCAddress<3> |   10.440|
+PC_OUTPUT<29>       |FinalPCAddress<29>|   11.364|
+PC_OUTPUT<29>       |FinalPCAddress<30>|   11.022|
+PC_OUTPUT<29>       |FinalPCAddress<31>|   11.565|
+PC_OUTPUT<30>       |FinalPCAddress<4> |   10.210|
+PC_OUTPUT<30>       |FinalPCAddress<30>|   10.796|
+PC_OUTPUT<30>       |FinalPCAddress<31>|   11.038|
+PC_OUTPUT<31>       |FinalPCAddress<5> |   10.222|
+PC_OUTPUT<31>       |FinalPCAddress<31>|   12.003|
+jump                |FinalPCAddress<0> |   11.730|
+jump                |FinalPCAddress<1> |   11.099|
+jump                |FinalPCAddress<2> |   10.486|
+jump                |FinalPCAddress<3> |   10.253|
+jump                |FinalPCAddress<4> |   10.256|
+jump                |FinalPCAddress<5> |   10.614|
+jump                |FinalPCAddress<6> |   10.194|
+jump                |FinalPCAddress<7> |   10.747|
+jump                |FinalPCAddress<8> |   10.783|
+jump                |FinalPCAddress<9> |   10.815|
+jump                |FinalPCAddress<10>|   10.760|
+jump                |FinalPCAddress<11>|   10.166|
+jump                |FinalPCAddress<12>|   10.218|
+jump                |FinalPCAddress<13>|   10.427|
+jump                |FinalPCAddress<14>|   10.882|
+jump                |FinalPCAddress<15>|   10.000|
+jump                |FinalPCAddress<16>|   10.153|
+jump                |FinalPCAddress<17>|   10.374|
+jump                |FinalPCAddress<18>|   10.298|
+jump                |FinalPCAddress<19>|   10.051|
+jump                |FinalPCAddress<20>|   10.496|
+jump                |FinalPCAddress<21>|   10.536|
+jump                |FinalPCAddress<22>|   10.729|
+jump                |FinalPCAddress<23>|   10.678|
+jump                |FinalPCAddress<24>|   10.617|
+jump                |FinalPCAddress<25>|   10.831|
+jump                |FinalPCAddress<26>|   11.365|
+jump                |FinalPCAddress<27>|   11.412|
+jump                |FinalPCAddress<28>|   11.484|
+jump                |FinalPCAddress<29>|   11.556|
+jump                |FinalPCAddress<30>|   11.902|
+jump                |FinalPCAddress<31>|   11.823|
+--------------------+------------------+---------+
+
+
+Analysis completed Sat Sep 28 18:19:46 2013 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 211 MB
+
+
+

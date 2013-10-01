@@ -1,0 +1,8 @@
+Release 12.4 Drc M.81d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Fri Sep 20 15:04:13 2013
+
+drc -z PC.ncd PC.pcf
+
+DRC detected 0 errors and 0 warnings.

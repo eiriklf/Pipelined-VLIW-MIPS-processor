@@ -1,0 +1,962 @@
+Release 12.4 - xst M.81d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: toplevel.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "toplevel.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "toplevel"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : toplevel
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/full_adder.vhd" into library work
+Parsing entity <full_adder>.
+Parsing architecture <Behavioral> of entity <full_adder>.
+Parsing VHDL file "\Users\eiriklf\exersise1\mux.vhd" into library work
+Parsing entity <simple_multiplexer>.
+Parsing architecture <Behavioral> of entity <simple_multiplexer>.
+Parsing VHDL file "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/mips_constant_pkg.vhd" into library work
+Parsing package <MIPS_CONSTANT_PKG>.
+Parsing VHDL file "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/alu_1bit.vhd" into library work
+Parsing entity <alu_1bit>.
+Parsing architecture <Behavioral> of entity <alu_1bit>.
+Parsing VHDL file "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/adder.vhd" into library work
+Parsing entity <adder>.
+Parsing architecture <Behavioral> of entity <adder>.
+Parsing VHDL file "\Users\eiriklf\exersise1\PC.vhd" into library work
+Parsing entity <PC>.
+Parsing architecture <Behavioral> of entity <pc>.
+Parsing VHDL file "\Users\eiriklf\exersise1\controlpath.vhd" into library work
+Parsing entity <controlpath>.
+Parsing architecture <Behavioral> of entity <controlpath>.
+Parsing VHDL file "\Users\eiriklf\exersise1\control.vhd" into library work
+Parsing entity <control>.
+Parsing architecture <Behavioral> of entity <control>.
+Parsing VHDL file "\Users\eiriklf\exersise1\ALUop.vhd" into library work
+Parsing entity <ALUoperation>.
+Parsing architecture <Behavioral> of entity <aluoperation>.
+Parsing VHDL file "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/register_file.vhd" into library work
+Parsing entity <register_file>.
+Parsing architecture <Behavioral> of entity <register_file>.
+Parsing VHDL file "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/alu.vhd" into library work
+Parsing entity <alu>.
+Parsing architecture <Behavioral> of entity <alu>.
+Parsing VHDL file "\Users\eiriklf\exersise1\processor.vhd" into library work
+Parsing entity <processor>.
+Parsing architecture <Behavioral> of entity <processor>.
+Parsing VHDL file "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/memory.vhd" into library work
+Parsing entity <memory>.
+Parsing architecture <Behavioral> of entity <memory>.
+Parsing VHDL file "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/com.vhd" into library work
+Parsing entity <com>.
+Parsing architecture <Behavioral> of entity <com>.
+Parsing VHDL file "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/toplevel.vhd" into library work
+Parsing entity <toplevel>.
+Parsing architecture <Behavioral> of entity <toplevel>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <toplevel> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <com> (architecture <Behavioral>) with generics from library <work>.
+INFO:HDLCompiler:679 - "\Users\eiriklf\exersise1\../Documents/supportFiles_13/hardware/com.vhd" Line 231. Case statement is complete. others clause is never selected
+
+Elaborating entity <memory> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <processor> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <controlpath> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <adder> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <full_adder> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <ALUoperation> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <alu> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <alu_1bit> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <register_file> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <PC> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <control> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <toplevel>.
+    Related source file is "/users/eiriklf/documents/supportfiles_13/hardware/toplevel.vhd".
+        MEM_ADDR_BUS = 32
+        MEM_DATA_BUS = 32
+    Summary:
+	inferred   6 Multiplexer(s).
+Unit <toplevel> synthesized.
+
+Synthesizing Unit <com>.
+    Related source file is "/users/eiriklf/documents/supportfiles_13/hardware/com.vhd".
+        MEM_ADDR_BUS = 32
+        MEM_DATA_BUS = 32
+        INPUT_BUS_WIDTH = 32
+    Found 32-bit register for signal <status>.
+    Found 32-bit register for signal <bus_data_out>.
+    Found 32-bit register for signal <read_addr>.
+    Found 32-bit register for signal <write_addr>.
+    Found 32-bit register for signal <write_data>.
+    Found 1-bit register for signal <write_enable>.
+    Found 1-bit register for signal <processor_enable>.
+    Found 1-bit register for signal <write_imem>.
+    Found 32-bit register for signal <internal_data_out>.
+    Found 3-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 16                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred 195 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <com> synthesized.
+
+Synthesizing Unit <memory>.
+    Related source file is "/users/eiriklf/documents/supportfiles_13/hardware/memory.vhd".
+        N = 32
+        M = 8
+WARNING:Xst:647 - Input <W_ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 256x32-bit dual-port RAM <Mram_MEM> for signal <MEM>.
+    Found 8-bit register for signal <address_reg<7:0>>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <memory> synthesized.
+
+Synthesizing Unit <processor>.
+    Related source file is "/users/eiriklf/exersise1/processor.vhd".
+        MEM_ADDR_BUS = 32
+        MEM_DATA_BUS = 32
+INFO:Xst:3010 - "/users/eiriklf/exersise1/processor.vhd" line 274: Output port <FLAGS_Carry> of the instance <ALUtd> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/exersise1/processor.vhd" line 274: Output port <FLAGS_Overflow> of the instance <ALUtd> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/exersise1/processor.vhd" line 274: Output port <FLAGS_Negative> of the instance <ALUtd> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <processor> synthesized.
+
+Synthesizing Unit <controlpath>.
+    Related source file is "/users/eiriklf/exersise1/controlpath.vhd".
+INFO:Xst:3010 - "/users/eiriklf/exersise1/controlpath.vhd" line 86: Output port <COUT> of the instance <Incrementer> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/exersise1/controlpath.vhd" line 93: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <controlpath> synthesized.
+
+Synthesizing Unit <adder>.
+    Related source file is "/users/eiriklf/documents/supportfiles_13/hardware/adder.vhd".
+        N = 32
+    Summary:
+	no macro.
+Unit <adder> synthesized.
+
+Synthesizing Unit <full_adder>.
+    Related source file is "/users/eiriklf/documents/supportfiles_13/hardware/full_adder.vhd".
+    Summary:
+Unit <full_adder> synthesized.
+
+Synthesizing Unit <simple_multiplexer_1>.
+    Related source file is "/users/eiriklf/exersise1/mux.vhd".
+        N = 32
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <simple_multiplexer_1> synthesized.
+
+Synthesizing Unit <ALUoperation>.
+    Related source file is "/users/eiriklf/exersise1/aluop.vhd".
+    Summary:
+	inferred   5 Multiplexer(s).
+Unit <ALUoperation> synthesized.
+
+Synthesizing Unit <alu>.
+    Related source file is "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd".
+        N = 32
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 71: Output port <SET> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[1].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[8].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[9].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[10].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[11].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[12].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[13].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[14].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[15].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[16].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[17].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[18].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[19].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[20].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[21].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[22].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[23].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[24].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[25].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[26].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[27].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[28].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[29].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/documents/supportfiles_13/hardware/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[30].NEXT_ALU1B> is unconnected or connected to loadless signal.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <alu> synthesized.
+
+Synthesizing Unit <alu_1bit>.
+    Related source file is "/users/eiriklf/documents/supportfiles_13/hardware/alu_1bit.vhd".
+    Summary:
+	inferred   5 Multiplexer(s).
+Unit <alu_1bit> synthesized.
+
+Synthesizing Unit <register_file>.
+    Related source file is "/users/eiriklf/documents/supportfiles_13/hardware/register_file.vhd".
+WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32x32-bit dual-port RAM <Mram_REGS> for signal <REGS>.
+    Summary:
+	inferred   2 RAM(s).
+	inferred   2 Multiplexer(s).
+Unit <register_file> synthesized.
+
+Synthesizing Unit <PC>.
+    Related source file is "/users/eiriklf/exersise1/pc.vhd".
+    Found 32-bit register for signal <data>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <PC> synthesized.
+
+Synthesizing Unit <control>.
+    Related source file is "/users/eiriklf/exersise1/control.vhd".
+    Found 2-bit register for signal <state>.
+    Found 1-bit register for signal <writenable>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <Ops_jump>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Ops_memwrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Ops_regwrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Ops_memtoreg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Ops_alusrc>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Ops_branch>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Ops_regdest>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Ops_ALUop0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Ops_ALUop1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+	inferred   9 Latch(s).
+	inferred  27 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <control> synthesized.
+
+Synthesizing Unit <simple_multiplexer_2>.
+    Related source file is "/users/eiriklf/exersise1/mux.vhd".
+        N = 5
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <simple_multiplexer_2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 256x32-bit dual-port RAM                              : 2
+ 32x32-bit dual-port RAM                               : 2
+# Registers                                            : 13
+ 1-bit register                                        : 4
+ 32-bit register                                       : 7
+ 8-bit register                                        : 2
+# Latches                                              : 9
+ 1-bit latch                                           : 9
+# Multiplexers                                         : 209
+ 1-bit 2-to-1 multiplexer                              : 190
+ 32-bit 2-to-1 multiplexer                             : 13
+ 4-bit 2-to-1 multiplexer                              : 5
+ 5-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 2
+# Xors                                                 : 193
+ 1-bit xor2                                            : 193
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <status_29> in Unit <TDT4255_COM> is equivalent to the following 29 FFs/Latches, which will be removed : <status_28> <status_27> <status_26> <status_25> <status_24> <status_23> <status_22> <status_21> <status_20> <status_19> <status_18> <status_17> <status_16> <status_15> <status_14> <status_13> <status_12> <status_11> <status_10> <status_9> <status_8> <status_7> <status_6> <status_5> <status_4> <status_3> <status_2> <status_1> <status_0> 
+WARNING:Xst:1710 - FF/Latch <status_29> (without init value) has a constant value of 0 in block <TDT4255_COM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <status<0:1>> (without init value) have a constant value of 0 in block <com>.
+
+Synthesizing (advanced) Unit <memory>.
+INFO:Xst:3040 - The RAM <Mram_MEM> will be implemented as a BLOCK RAM, absorbing the following register(s): <address_reg>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <CLK>           | rise     |
+    |     weA            | connected to signal <MemWrite>      | high     |
+    |     addrA          | connected to signal <W_ADDR>        |          |
+    |     diA            | connected to signal <WRITE_DATA>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <CLK>           | rise     |
+    |     addrB          | connected to signal <ADDR>          |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <memory> synthesized (advanced).
+
+Synthesizing (advanced) Unit <register_file>.
+INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_REGS> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <CLK>           | rise     |
+    |     weA            | connected to signal <RW>            | high     |
+    |     addrA          | connected to signal <RD_ADDR>       |          |
+    |     diA            | connected to signal <WRITE_DATA>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <RS_ADDR>       |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_REGS1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <CLK>           | rise     |
+    |     weA            | connected to signal <RW>            | high     |
+    |     addrA          | connected to signal <RD_ADDR>       |          |
+    |     diA            | connected to signal <WRITE_DATA>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <RT_ADDR>       |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <register_file> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 256x32-bit dual-port block RAM                        : 2
+ 32x32-bit dual-port distributed RAM                   : 2
+# Registers                                            : 198
+ Flip-Flops                                            : 198
+# Multiplexers                                         : 209
+ 1-bit 2-to-1 multiplexer                              : 190
+ 32-bit 2-to-1 multiplexer                             : 13
+ 4-bit 2-to-1 multiplexer                              : 5
+ 5-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 2
+# Xors                                                 : 193
+ 1-bit xor2                                            : 193
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 100   | 100
+ 001   | 001
+ 011   | 011
+ 010   | 010
+ 101   | 101
+ 110   | 110
+ 111   | 111
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <MIPS_SC_PROCESSOR/CONTROL_UNIT/FSM_1> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 10    | 10
+ 01    | 01
+-------------------
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    Ops_jump in unit <control>
+    Ops_ALUop1 in unit <control>
+    Ops_ALUop0 in unit <control>
+    Ops_branch in unit <control>
+    Ops_alusrc in unit <control>
+    Ops_regwrite in unit <control>
+    Ops_memwrite in unit <control>
+
+
+Optimizing unit <toplevel> ...
+
+Optimizing unit <com> ...
+
+Optimizing unit <processor> ...
+
+Optimizing unit <PC> ...
+
+Optimizing unit <control> ...
+
+Optimizing unit <adder> ...
+
+Optimizing unit <alu> ...
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_31> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_30> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_29> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_28> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_27> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_26> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_25> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_24> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_23> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_22> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_21> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_20> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_19> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_18> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_17> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_16> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_15> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_14> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_13> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_12> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_11> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_10> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_9> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_8> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_31> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_30> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_29> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_28> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_27> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_26> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_25> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_24> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_23> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_22> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_21> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_20> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_19> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_18> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_17> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_16> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_15> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_14> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_13> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_12> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_11> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_10> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_9> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_8> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_31> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_30> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_29> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_28> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_27> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_26> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_25> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_24> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_23> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_22> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_21> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_20> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_19> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_18> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_17> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_16> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_15> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_14> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_13> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_12> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_11> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_10> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_9> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/Counter/data_8> of sequential type is unconnected in block <toplevel>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 4.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 131
+ Flip-Flops                                            : 131
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : toplevel.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 370
+#      GND                         : 1
+#      LUT2                        : 6
+#      LUT3                        : 15
+#      LUT4                        : 149
+#      LUT5                        : 56
+#      LUT6                        : 138
+#      MUXF7                       : 4
+#      VCC                         : 1
+# FlipFlops/Latches                : 140
+#      FDE                         : 1
+#      FDR                         : 90
+#      FDRE                        : 40
+#      LD                          : 7
+#      LDCE_1                      : 2
+# RAMS                             : 16
+#      RAM32M                      : 10
+#      RAM32X1D                    : 4
+#      RAMB8BWER                   : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 137
+#      IBUF                        : 73
+#      OBUF                        : 64
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             140  out of  18224     0%  
+ Number of Slice LUTs:                  412  out of   9112     4%  
+    Number used as Logic:               364  out of   9112     3%  
+    Number used as Memory:               48  out of   2176     2%  
+       Number used as RAM:               48
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    482
+   Number with an unused Flip Flop:     342  out of    482    70%  
+   Number with an unused LUT:            70  out of    482    14%  
+   Number of fully used LUT-FF pairs:    70  out of    482    14%  
+   Number of unique control sets:        14
+
+IO Utilization: 
+ Number of IOs:                         162
+ Number of bonded IOBs:                 138  out of    232    59%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     32     3%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+-------+
+Clock Signal                                                                                                                  | Clock buffer(FF name)                               | Load  |
+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+-------+
+clk                                                                                                                           | BUFGP                                               | 147   |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/procon[5]_PWR_21_o_equal_2_o(MIPS_SC_PROCESSOR/CONTROL_UNIT/procon[5]_PWR_21_o_equal_2_o<5>1:O)| NONE(*)(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_regdest) | 2     |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_jump_G(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_jump_G:O)                                        | NONE(*)(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_jump)    | 1     |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_ALUop1_G(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_regwrite_G:O)                                  | NONE(*)(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_ALUop1)  | 2     |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_ALUop0_G(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_ALUop0_G:O)                                    | NONE(*)(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_ALUop0)  | 1     |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_branch_G(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_branch_G_f7:O)                                 | NONE(*)(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_branch)  | 1     |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_alusrc_G(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_alusrc_G:O)                                    | NONE(*)(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_alusrc)  | 1     |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_memwrite_G(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_memwrite_G:O)                                | NONE(*)(MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_memwrite)| 1     |
+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+-------+
+(*) These 7 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 19.617ns (Maximum Frequency: 50.976MHz)
+   Minimum input arrival time before clock: 6.118ns
+   Maximum output required time after clock: 3.597ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 19.617ns (frequency: 50.976MHz)
+  Total number of paths / destination ports: 98058 / 462
+-------------------------------------------------------------------------
+Delay:               19.617ns (Levels of Logic = 19)
+  Source:            INST_MEM/Mram_MEM (RAM)
+  Destination:       MIPS_SC_PROCESSOR/Counter/data_7 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: INST_MEM/Mram_MEM to MIPS_SC_PROCESSOR/Counter/data_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB8BWER:CLKBRDCLK->DOBDO2   20   1.850   1.437  INST_MEM/Mram_MEM (instr_data<18>)
+     LUT5:I0->O            8   0.203   0.803  MIPS_SC_PROCESSOR/MUX2/Mmux_output1101_1 (MIPS_SC_PROCESSOR/MUX2/Mmux_output1101)
+     LUT4:I3->O            3   0.205   0.879  MIPS_SC_PROCESSOR/MUX2/Mmux_output271 (MIPS_SC_PROCESSOR/ChosenALUInput<4>)
+     LUT6:I3->O            1   0.205   0.580  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1 (N41)
+     LUT5:I4->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[4].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<4>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[6].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<6>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[8].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<8>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[10].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<10>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[12].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<12>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[14].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<14>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[16].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<16>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<18>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<20>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<22>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<24>)
+     LUT6:I5->O            3   0.205   0.651  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<26>)
+     LUT6:I5->O            8   0.205   0.803  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<28>)
+     LUT6:I5->O            1   0.205   0.580  MIPS_SC_PROCESSOR/ALUtd/GEN_ALU[30].NEXT_ALU1B/FULLADDER_ALU/COUT1 (MIPS_SC_PROCESSOR/ALUtd/COUT_AUX<30>)
+     LUT6:I5->O            7   0.205   0.878  MIPS_SC_PROCESSOR/ALUtd/LAST_ALU1B/Mmux_RES_AUX11 (MIPS_SC_PROCESSOR/ALUtd/R_AUX<31>)
+     LUT6:I4->O            1   0.203   0.000  MIPS_SC_PROCESSOR/Controlcircut/MUX5/Mmux_output291 (MIPS_SC_PROCESSOR/FinalPCAddress<6>)
+     FDRE:D                    0.102          MIPS_SC_PROCESSOR/Counter/data_6
+    ----------------------------------------
+    Total                     19.617ns (5.843ns logic, 13.774ns route)
+                                       (29.8% logic, 70.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 274 / 182
+-------------------------------------------------------------------------
+Offset:              6.118ns (Levels of Logic = 6)
+  Source:            command<11> (PAD)
+  Destination:       TDT4255_COM/state_FSM_FFd1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: command<11> to TDT4255_COM/state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.924  command_11_IBUF (command_11_IBUF)
+     LUT5:I0->O            1   0.203   0.808  TDT4255_COM/state_FSM_FFd1-In51 (TDT4255_COM/state_FSM_FFd1-In5)
+     LUT5:I2->O            1   0.205   0.580  TDT4255_COM/state_FSM_FFd1-In54 (TDT4255_COM/state_FSM_FFd1-In53)
+     LUT6:I5->O            3   0.205   0.651  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
+     LUT2:I1->O            1   0.205   0.808  TDT4255_COM/state_FSM_FFd1-In1_SW0 (N2)
+     LUT6:I3->O            1   0.205   0.000  TDT4255_COM/state_FSM_FFd1-In1 (TDT4255_COM/state_FSM_FFd1-In)
+     FDR:D                     0.102          TDT4255_COM/state_FSM_FFd1
+    ----------------------------------------
+    Total                      6.118ns (2.347ns logic, 3.771ns route)
+                                       (38.4% logic, 61.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 34 / 34
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            TDT4255_COM/status_0 (FF)
+  Destination:       status<30> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: TDT4255_COM/status_0 to status<30>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.447   0.579  TDT4255_COM/status_0 (TDT4255_COM/status_0)
+     OBUF:I->O                 2.571          status_30_OBUF (status<30>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_ALUop0_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    5.461|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_ALUop1_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    5.856|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_alusrc_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    5.655|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_branch_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    4.572|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_jump_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    5.675|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_memwrite_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    6.464|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock MIPS_SC_PROCESSOR/CONTROL_UNIT/procon[5]_PWR_21_o_equal_2_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    5.478|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+-----------------------------------------------------------+---------+---------+---------+---------+
+                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------------------------------+---------+---------+---------+---------+
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_ALUop0_G                |         |   17.492|         |         |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_ALUop1_G                |         |   17.472|         |         |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_alusrc_G                |         |   17.416|         |         |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_branch_G                |         |    3.843|         |         |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_jump_G                  |         |    1.970|         |         |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/Ops_memwrite_G              |         |    2.215|         |         |
+MIPS_SC_PROCESSOR/CONTROL_UNIT/procon[5]_PWR_21_o_equal_2_o|    4.169|         |         |         |
+clk                                                        |   19.617|         |         |         |
+-----------------------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.03 secs
+ 
+--> 
+
+Total memory usage is 256904 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   88 (   0 filtered)
+Number of infos    :   41 (   0 filtered)
+

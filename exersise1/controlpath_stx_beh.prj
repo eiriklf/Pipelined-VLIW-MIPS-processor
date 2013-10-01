@@ -1,0 +1,5 @@
+vhdl isim_temp "../Documents/supportFiles_13/hardware/full_adder.vhd"
+vhdl isim_temp "mux.vhd"
+vhdl isim_temp "../Documents/supportFiles_13/hardware/mips_constant_pkg.vhd"
+vhdl isim_temp "../Documents/supportFiles_13/hardware/adder.vhd"
+vhdl isim_temp "controlpath.vhd"
