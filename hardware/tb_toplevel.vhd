@@ -136,10 +136,12 @@ BEGIN
   -- Stimulus process
   stim_proc: process
   begin		
-	reset<='1';
-    -- hold reset state for 20 ns.
-    wait for 20 ns;	
-	reset<='0';
+	
+    -- hold reset state for 40 ns.
+	 reset<='1';
+    wait for 40 ns;	
+	 reset<='0';
+
     -- insert stimulus here 
     
 		-- INSTR: WRITE DATA TO DMEM
@@ -342,7 +344,7 @@ BEGIN
     -- Run CPU!
 		command <= CMD_RUN;					
     bus_address_in <= zero;
-   bus_data_in <= zero;
+    bus_data_in <= zero;
 		wait for clk_period*100;
 
     wait;

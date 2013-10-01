@@ -98,7 +98,21 @@ architecture Behavioral of processor is
 --			READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0)		-- Data read from memory
 --		);
 --	end component MEMORY;
-
+component controlpath is
+    Port ( PC_OUTPUT : in  STD_LOGIC_VECTOR (31 downto 0);
+           InstrMem_Signext : in  STD_LOGIC_VECTOR (15 downto 0);
+           Instr_Mem_Concat : in  STD_LOGIC_VECTOR (25 downto 0);
+           FinalPCAddress : out  STD_LOGIC_VECTOR (31 downto 0);
+           jump : in  STD_LOGIC;
+			  branch: in std_logic;
+			  zero: in std_logic);
+end component controlpath;
+component ALUoperation is
+    Port ( aluop0 : in  STD_LOGIC;
+           aluop1 : in  STD_LOGIC;
+           funct : in  STD_LOGIC_VECTOR (3 downto 0);
+           operation : out  STD_LOGIC_VECTOR (3 downto 0));
+end component ALUoperation;
 	component REGISTER_FILE is
 		port(
 			CLK 			:	in	STD_LOGIC;				
@@ -113,17 +127,6 @@ architecture Behavioral of processor is
 		);
 	end component REGISTER_FILE;
 
-	component adder is
-		generic (N :NATURAL :=DDATA_BUS);  
-		port(
-			X	: in	STD_LOGIC_VECTOR(N-1 downto 0);
-			Y	: in	STD_LOGIC_VECTOR(N-1 downto 0);
-			CIN	: in	STD_LOGIC;
-			COUT	: out	STD_LOGIC;
-			R	: out	STD_LOGIC_VECTOR(N-1 downto 0)
-		);
-	end component adder;
-
 	component alu is
 				generic (N :NATURAL :=DDATA_BUS);
 		port(
@@ -137,7 +140,6 @@ architecture Behavioral of processor is
 	
 	component PC is
 	    Port ( Data_in : in  STD_LOGIC_VECTOR (31 downto 0);
-           increment : in  STD_LOGIC;
            data_out : out  STD_LOGIC_VECTOR (31 downto 0);--set to constant instead, 
            clock : in  STD_LOGIC;
            reset : in  STD_LOGIC;
@@ -155,7 +157,11 @@ architecture Behavioral of processor is
 	
 	component control is
     Port ( procon : in  STD_LOGIC_VECTOR (5 downto 0);
-           Ops : out ProOP);
+           Ops : out ProOP;
+			  writenable: out std_logic;
+			  reset: in std_logic;
+			  clk: in std_logic;
+			  processor_enable: in std_logic);
 end component control;
 
 	--Signal, categorized as signals FROM different components:
@@ -167,7 +173,7 @@ end component control;
 
 
 	-- From PC to Instruction Memory
-	signal InstrMem_FullOutput : STD_LOGIC_VECTOR (31 downto 0);
+--	signal InstrMem_FullOutput : STD_LOGIC_VECTOR (31 downto 0);
 	--WARNING!!
 	--InstruMem_FullOutout signal may be sufficient, if so: Delete the 8 next signals
 	--WARNING!!
@@ -178,20 +184,13 @@ end component control;
 	--- * R-Type Only
 	signal InstrMem_ReadReg2 : STD_LOGIC_VECTOR (4 downto 0); --From Instruction Memory to Read Register 2 [20-16], R-Type
 	signal InstrMem_WriteReg2 : STD_LOGIC_VECTOR (4 downto 0); --From Instruction Memory to Write Reg [15-11], R-type
-	signal InstrMem_ALUCon : STD_LOGIC_VECTOR (5 downto 0); --From Instruction Memory to ALU control [5-0], R-type
+	signal InstrMem_ALUCon : STD_LOGIC_VECTOR (3 downto 0); --From Instruction Memory to ALU control [5-0], R-type
 	--- * I-Type Only
 	signal InstrMem_WriteReg1 : STD_LOGIC_VECTOR (4 downto 0); --From Instruction Memory to Write Reg [20-16], I-type
 	signal InstrMem_Signext : STD_LOGIC_VECTOR (15 downto 0); --From Instruction Memory to SignExtend [15-0], I-type
 	--- * J-Type Only
 	signal Instr_Mem_Concat : STD_LOGIC_VECTOR (25 downto 0); --From Instruction Memory to Concat [25-0]
 
-
-	-- From Processor Controller
-	--WARNING!!
-	-- State Machine not included in signal-design, be prepared to change if necessary
-	--WARNING!!
-
-	signal increment: STD_LOGIC;
 
 	-- From Register
 	signal Read_Data1 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 1 from Register_File
@@ -204,21 +203,13 @@ end component control;
 
 
 	-- From Data Memory
-	signal Read_Data : STD_LOGIC_VECTOR (31 downto 0); -- Data fetched from the ALU
+	--signal Read_Data : STD_LOGIC_VECTOR (31 downto 0); -- Data fetched from the ALU
 
-	-- From Signextend
 	signal Signextended : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Signextend
-
 
 	-- From ALUControl
 	signal ALUControl : ALU_INPUT; 
 
-	-- From BranchAdder
-	signal BranchAdder : STD_LOGIC_VECTOR (31 downto 0); -- Data output signal from Branch Adder
-
-	-- From Concat
-	signal Concat : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Concat
-	--WARNING!!
 	--Schedule specifies shift on 6 bits, but it will conflict with output from PC / Increment-Adder
 	--WARNING!!
 
@@ -231,64 +222,61 @@ end component control;
 	-- From MUX3 Between ALU/Data Memory and Instruction Memory (input for Write Data)
 	signal ChosenWriteData : STD_LOGIC_VECTOR (31 downto 0);
 
-	-- From MUX4 Between PC/Branch Adder and MUX5 (input for next Address #1, regular OR branch)
-	signal PCAddressMidMUX : STD_LOGIC_VECTOR (31 downto 0);
-
-	-- From MUX5 Between MUX4 and PC (input for next Address #2, Reg/Bra OR Jump)
 	signal FinalPCAddress : STD_LOGIC_VECTOR (31 downto 0);
 	-- From Branch-AND-gate
-	signal BranchAND_MUX4 : STD_LOGIC; -- Result from the Branch AND-gate
+--	signal BranchAND_MUX4 : STD_LOGIC; -- !!!!!!!  Result from the Branch AND-gate
 
-
-	signal state : std_logic_vector(1 downto 0);
-	signal memread: std_logic;
-	signal be: std_logic;
+	--signal memread: std_logic;--!!!!!!
+	--signal be: std_logic;--!!!!!!
 	signal enablepcwrite: std_logic;
 	signal consignal: ProOP;
 --  constant CMD_FET    : std_logic_vector(0 to INPUT_BUS_WIDTH-1) := "00000000000000000000000000000000";
 --  constant CMD_EXE     : std_logic_vector(0 to INPUT_BUS_WIDTH-1) := "00000000000000000000000000000001";
 --  constant CMD_STA     : std_logic_vector(0 to INPUT_BUS_WIDTH-1) := "00000000000000000000000000000010";
-
+signal operation: std_logic_vector(3 downto 0);
 
 	begin
-
-enablepcwrite<=(processor_enable and (consignal.jump or consignal.branch)); -- i might not need processor_enable here, we need to create a startup sequence
+Signextended(15 downto 0) <=InstrMem_Signext;
+Signextended(31 downto 16) <= (31 downto 16 => InstrMem_Signext(15));
 Instr_Mem_Concat<=imem_data_in(25 downto 0);
 InstrMem_Signext<=Instr_Mem_Concat(15 downto 0);
 InstrMem_WriteReg1<=Instr_Mem_Concat(20 downto 16);
-InstrMem_ReadReg1<=Instr_Mem_Concat(20 downto 16);--assigning the left most bit as most significant
+InstrMem_ReadReg1<=Instr_Mem_Concat(25 downto 21);
+InstrMem_ReadReg2<=Instr_Mem_Concat(20 downto 16);--assigning the left most bit as most significant
 InstrMem_WriteReg2<=Instr_Mem_Concat(15 downto 11);
-InstrMem_ALUCon<=Instr_Mem_Concat(5 downto 0);
+InstrMem_ALUCon<=Instr_Mem_Concat(3 downto 0);
 InstrMem_ProCon<=imem_data_in(31 downto 26);
-InstrMem_ReadReg2<=Instr_Mem_Concat(25 downto 21);
+
+
 
 --assignments for ai controlsignals
-ALUControl.op0<=InstrMem_ALUCon(3 );--after what i have read, the each of the types here are enumerations and have to be individually assigned with either vectors or 
-ALUControl.op1<=InstrMem_ALUCon(2 );
-ALUControl.op2<=InstrMem_ALUCon(1 );
-ALUControl.op3<=InstrMem_ALUCon(0 );
---concat
-Concat<=Instr_Mem_Concat&PC_Output(31 downto 26);--this might be wrong
+ALUControl.op0<=operation(0 );--after what i have read, the each of the types here are enumerations and have to be individually assigned with either vectors or 
+ALUControl.op1<=operation(1 );
+ALUControl.op2<=operation(2);
+ALUControl.op3<=operation(3 );--check all these signals
 
---signextend
-Signextended<=InstrMem_Signext&"0000000000000000";
+
+Controlcircut: controlpath
+    Port map ( PC_OUTPUT => pc_output,
+           InstrMem_Signext =>InstrMem_Signext,
+           Instr_Mem_Concat =>Instr_Mem_Concat,
+           FinalPCAddress =>FinalPCAddress,
+           jump =>consignal.jump,
+			  branch=>consignal.branch,
+			  zero=>zero.zero);
+ALUopmodule:ALUoperation 
+    Port map ( aluop0 =>consignal.aluop0,
+           aluop1 =>consignal.aluop1,
+           funct =>InstrMem_ALUCon,
+           operation =>operation);
 
 
 	ALUtd : alu generic map ( N=>DDATA_BUS)  port map(
-		Y					=>	ChosenALUInput,
 		X					=> Read_Data1,
+		Y					=>	ChosenALUInput,
 		ALU_IN			=> ALUControl,
 		R					=> ALU_Result,
 		FLAGS		=> ZERO
-	);
-	
-	ADDRESSADDER: adder port map(
-			X	=> PC_Output,
-			Y	=>Signextended,
-			CIN	=>'0',
-			--COUT	=>'0',
-			R	=>BranchAdder
-	
 	);
 	
 	RegisterF: REGISTER_FILE port map(
@@ -304,7 +292,6 @@ Signextended<=InstrMem_Signext&"0000000000000000";
 	);
 	Counter: PC port map(
 	 Data_in => FinalPCAddress,
-           increment =>increment,
            data_out =>PC_Output,
            clock =>clk,
            reset =>reset,
@@ -314,9 +301,14 @@ Signextended<=InstrMem_Signext&"0000000000000000";
 	
 	CONTROL_UNIT: control Port map( 
 	procon =>InstrMem_ProCon,
-           Ops => consignal);
+           Ops => consignal,
+			  clk=>clk,
+			  reset=>reset,
+			  processor_enable=>processor_enable,
+			  writenable=>enablepcwrite);
 
-	MUX2: simple_multiplexer port map( a =>read_data2,
+	MUX2: simple_multiplexer port map( 
+	a =>read_data2,
            b =>Signextended,
            control_signal =>consignal.alusrc,
            output =>ChosenALUInput);
@@ -330,37 +322,9 @@ Signextended<=InstrMem_Signext&"0000000000000000";
            control_signal =>consignal.memtoreg,
            output =>ChosenWriteData);
 	--PCAddressMidMUX <= b when branch = '1';we dont need mux4 because there is only 1 signal
-	MUX5: simple_multiplexer port map( a =>BranchAdder,
-           b =>Concat,
-           control_signal =>consignal.jump,
-           output =>FinalPCAddress);
 
 
-  STATE_MACHINE : process(clk, reset, consignal.MemWrite, consignal.memtoreg,consignal.regwrite,  consignal.branch, consignal.jump,processor_enable)--press reset in order to start the first state which I have decided to be "Fetch"
-  constant WIDTH: integer := 2;
-  constant STALL : std_logic_vector(0 to WIDTH-1) := "00";
-  constant EXECUTE : std_logic_vector(0 to WIDTH-1) := "01";
-  constant FETCH  : std_logic_vector(0 to WIDTH-1) := "10";
-  begin
-  
-  if(rising_edge(clk) and processor_enable='1')then --could implement processor enable inside the statemachine also
-  	if(reset='1') then
-  		state<=FETCH;
-  		else
-  		case state is 
-  			when FETCH=> state<=EXECUTE;
-			 increment<='1'; --increment address by 1 unit. initiate when execute or stall is done
-			 when STALL => state<=FETCH;--. (after 1 cycle, go to fetch) stall means that we wont increment the adress. Make sure that this is a NOP-instruction
-  			when EXECUTE=>increment<='0'; if(consignal.MemWrite='1' or ((consignal.memtoreg='1') and (consignal.regwrite='1'))  or consignal.branch='1' or consignal.jump='1')then state<=STALL; 
-			else state<=FETCH; -- initiate after fetch, if instruction is store, load or branch, go to stall, else go to fetch.  After 1 cycle, go to fetch or stall.
-			
-  				end if;
-			when others=>state<=STALL;
-			increment<='0';
-		end case;
-  	end if;
-  end if;
-  end process;
+
 
 -- generic process, has to be replaced with something
 
@@ -368,7 +332,7 @@ Signextended<=InstrMem_Signext&"0000000000000000";
  --  begin
 	imem_address<=PC_output;
 	dmem_address<=ALU_Result;
-	dmem_address_wr<=read_data2;--??do you write and specify what adresses you are using or something? this is not needed
+	dmem_address_wr<=ALU_Result;--??do you write and specify what adresses you are using or something? this is not needed
 	dmem_data_out<=read_data2;
 	dmem_write_enable<=consignal.memwrite;
       

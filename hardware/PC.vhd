@@ -21,45 +21,36 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
-
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-
 entity PC is
     Port ( Data_in : in  STD_LOGIC_VECTOR (31 downto 0);
-           increment : in  STD_LOGIC;
            data_out : out  STD_LOGIC_VECTOR (31 downto 0);--set to constant instead, 
            clock : in  STD_LOGIC;
            reset : in  STD_LOGIC;
            write_enable : in  STD_LOGIC);
 end PC;
 
-
 architecture Behavioral of PC is
 signal data: STD_LOGIC_VECTOR (31 downto 0);
 constant resetstate   : std_logic_vector(0 to 31) := "00000000000000000000000000000000";
 
-
 begin
 
-
- INCREMENTER : process(clock, reset)
+ INCREMENTER : process(clock, reset,data)
  begin
  if(rising_edge(clock)) then
  if(reset='1') then
  data<=resetstate;
 elsif(write_enable='1')then
 data<=data_in;
-elsif(increment='1')then
-data<=data+32;
  end if;
  end if;
  end process;
@@ -67,6 +58,5 @@ data<=data+32;
  data_out<=data;
 
 
-
-
 end Behavioral;
+

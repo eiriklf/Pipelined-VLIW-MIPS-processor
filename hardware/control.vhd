@@ -48,15 +48,17 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity control is
 
     Port ( procon : in  STD_LOGIC_VECTOR (5 downto 0);
-           Ops : out ProOP);
+           Ops : out ProOP;
+			  clk: in std_logic;
+			  processor_enable: in std_logic;
+			  writenable: out std_logic;
+			  reset: in std_logic
+			  );
 end control;
 
 architecture Behavioral of control is
-type ProOP is (jump,memwrite,regwrite,memtoreg,alusrc,branch,regdest);
-begin
-
-process 
-
+--todo find out dont care
+signal state : std_logic_vector(1 downto 0);
 constant JMP  : std_logic_vector(5 downto 0 ) := "000010";
 constant LW  : std_logic_vector(5 downto 0 ) := "100011";
 constant SW  : std_logic_vector(5 downto 0 ) := "101011";
@@ -65,6 +67,10 @@ constant BEQ  : std_logic_vector(5 downto 0 ) := "000100";
 constant ALUOP  : std_logic_vector(5 downto 0 ) := "000000";
 begin
 
+asserting_output_signals : process(procon, reset,processor_enable)  
+begin
+
+if( processor_enable='1') then --dont really need reset ten, remember to consider dont cares
 if(procon=JMP) then
 Ops.jump<='1';
 Ops.memwrite<='0';
@@ -73,47 +79,55 @@ Ops.memtoreg<='0';
 Ops.alusrc<='0';
 Ops.branch<='0';
 Ops.regdest<='0';
+ ops.ALUOp0 <= '0';
+ ops.ALUOp1 <= '0';
 elsif(procon=SW) then
 Ops.jump<='0';
 Ops.memwrite<='1';
 Ops.regwrite<='0';
-Ops.memtoreg<='0';
-Ops.alusrc<='0';
+Ops.alusrc<='1';
 Ops.branch<='0';
-Ops.regdest<='0';
+ ops.ALUOp0 <= '0';
+ ops.ALUOp1 <= '0';
 elsif(procon=LW) then
 Ops.jump<='0';
 Ops.memwrite<='0';
 Ops.regwrite<='1';
 Ops.memtoreg<='1';
-Ops.alusrc<='0';
+Ops.alusrc<='1';
 Ops.branch<='0';
 Ops.regdest<='0';
-elsif(procon=LUI)then
+ ops.ALUOp0 <= '0';
+ ops.ALUOp1 <= '0';
+elsif(procon=LUI)then--!!!
 Ops.jump<='0';
 Ops.memwrite<='0';
 Ops.regwrite<='0';
 Ops.memtoreg<='0';
-Ops.alusrc<='1';
+Ops.alusrc<='0';
 Ops.branch<='0';
 Ops.regdest<='0';
+ ops.ALUOp0 <= '0';
+ ops.ALUOp1 <= '0';
 elsif(procon=BEQ)then
 Ops.jump<='0';
 Ops.memwrite<='0';
 Ops.regwrite<='0';
-Ops.memtoreg<='0';
 Ops.alusrc<='0';
 Ops.branch<='1';
-Ops.regdest<='0';
+ ops.ALUOp1 <= '0';              
+ops.ALUOp0 <= '1';
 elsif(procon=ALUOP)then
 Ops.jump<='0';
 Ops.memwrite<='0';
-Ops.regwrite<='0';
+Ops.regwrite<='1';
 Ops.memtoreg<='0';
 Ops.alusrc<='0';
 Ops.branch<='0';
 Ops.regdest<='1';
-
+ ops.ALUOp1 <= '1';
+ ops.ALUOp0 <= '0';
+end if;
 else
 Ops.jump<='0';
 Ops.memwrite<='0';
@@ -122,8 +136,37 @@ Ops.memtoreg<='0';
 Ops.alusrc<='0';
 Ops.branch<='0';
 Ops.regdest<='0';
+ ops.ALUOp0 <= '0';
+  ops.ALUOp1 <= '0';
 end if;
-end process;
+end process ;
 
+
+
+  STATE_MACHINE : process(clk, reset, procon,processor_enable)--press reset in order to start the first state which I have decided to be "Fetch"
+  constant WIDTH: integer := 2;
+  constant STALL : std_logic_vector(0 to WIDTH-1) := "00";
+  constant EXECUTE : std_logic_vector(0 to WIDTH-1) := "01";
+  constant FETCH  : std_logic_vector(0 to WIDTH-1) := "10";
+  begin
+  
+  if(rising_edge(clk))then --could implement processor enable inside the statemachine also
+  	if(reset='1') then
+  		state<=STALL;
+  		else
+  		case state is 
+  			when FETCH=> state<=EXECUTE;
+			 writenable<='1'; --increment address by 1 unit. initiate when execute or stall is done
+			 when STALL => if(processor_enable='1')then state<=FETCH; end if;--. (after 1 cycle, go to fetch) stall means that we wont increment the adress. Make sure that this is a NOP-instruction
+  			when EXECUTE=>writenable<='0'; if(procon=LW or procon=SW  or procon=BEQ )then state<=STALL; 
+			else state<=FETCH; -- initiate after fetch, if instruction is store, load or branch, go to stall, else go to fetch.  After 1 cycle, go to fetch or stall.
+			
+  				end if;
+			when others=>state<=STALL;
+			writenable<='0';
+		end case;
+  	end if;
+  end if;
+  end process;
 end Behavioral;
 
