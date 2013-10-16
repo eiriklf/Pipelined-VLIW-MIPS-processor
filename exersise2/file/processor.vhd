@@ -1,4 +1,3 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use WORK.MIPS_CONSTANT_PKG.ALL;
@@ -329,7 +328,7 @@ end component Forwarding;
 			  MEMWBregwrite=>MEMWBs(69),
 			  EXMEMregwrite=>EXMEMs(136),--ops
            RS =>IDEXs(183 downto 179),--check this is not crisscorssed
-           RT =>IDEXs(4 downto 0),--check this is not crisscorssed
+           RT =>IDEXs(9 downto 5),--verify this, updated in commit
            forwardA =>ctForwardA,
            forwardB =>ctForwardB);
 			  
