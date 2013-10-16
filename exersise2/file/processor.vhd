@@ -157,14 +157,14 @@ architecture Behavioral of PROCESSOR is
 	-- Output signals from the controller.
 	signal Ops : std_logic_vector (8 downto 0);
 	-- They are divided into each signal to make the overview easier
-	signal jump : std_logic;
-	signal memwrite : std_logic;
-	signal regwrite : std_logic;
-	signal memtoreg : std_logic;
-	signal alusrc : std_logic;
-	signal branch : std_logic;
-	signal regdest : std_logic;
-	signal ALUOp : std_logic_vector(1 downto 0);
+	--signal jump : std_logic;
+	--signal memwrite : std_logic;
+	--signal regwrite : std_logic;
+	--signal memtoreg : std_logic;
+	--signal alusrc : std_logic;
+	--signal branch : std_logic;
+	--signal regdest : std_logic;
+	--signal ALUOp : std_logic_vector(1 downto 0);
 	--assigned to the alu operation. We dont use the enumeration in aluOP module because its easier for us to use a vector
 	signal operation: std_logic_vector(3 downto 0);
 	--branchadder
@@ -260,7 +260,7 @@ architecture Behavioral of PROCESSOR is
            data_out => PC_Output,
            clock => clk,
            reset => reset,
-           write_enable =>'1'
+           write_enable =>enablepcwrite
 	
 	);
 	IFID: regi generic map ( N=>64) port map(
@@ -334,8 +334,8 @@ architecture Behavioral of PROCESSOR is
            output => ChosenALUInput);
 			--mux for chosing input from DMEM
 	MUX3: simple_multiplexer port map(	 
-           a =>MEMWBs(68 downto 37),--dmem_data_in, 
-			  b => MEMWBs(36 downto 5),--ALU_Result,
+           b =>MEMWBs(68 downto 37),--dmem_data_in, 
+			  a => MEMWBs(36 downto 5),--ALU_Result,
            control_signal => MEMWBs(70),--memtoreg,
            output => ChosenWriteData);
 

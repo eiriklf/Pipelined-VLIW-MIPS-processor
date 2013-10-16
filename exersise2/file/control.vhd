@@ -50,7 +50,7 @@ begin
         -- At certain points, don't cares are forced in order to prevent the synthesizer to generate latches.
         -- this can also be done combinatorial instead of using behavioural descriptions
         if(processor_enable='1') then 
-            
+            write_enable<='1';--change on hazard detection?
             -- Instruction: R-type
             if(control_input=R_TYPE)then
                 jump<='0';

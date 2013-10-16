@@ -25,9 +25,9 @@ architecture Behavioral of PC is
 		if(reset='1') then
 				data<=resetstate;
 		elsif(rising_edge(clock)) then
-		--	if(write_enable='1')then
+			if(write_enable='1')then
 				data<=data_in;
-			--end if;
+			end if;
 		end if;
 	 end process;
  

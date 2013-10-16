@@ -89,10 +89,10 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant ins0  : std_logic_vector(0 to 31) := X"8C010001";
   constant ins1  : std_logic_vector(0 to 31) := X"8C020002";
   constant ins2  : std_logic_vector(0 to 31) := X"8C020002";
-  constant ins3  : std_logic_vector(0 to 31) := X"00221820";
-  constant ins4  : std_logic_vector(0 to 31) := X"AC030005";
-  constant ins5  : std_logic_vector(0 to 31) := X"10000002";
-  constant ins6  : std_logic_vector(0 to 31) := X"AC030003";
+  constant ins3  : std_logic_vector(0 to 31) := X"00000000";
+  constant ins4  : std_logic_vector(0 to 31) := X"00000000";
+  constant ins5  : std_logic_vector(0 to 31) := X"00000000";
+  constant ins6  : std_logic_vector(0 to 31) := X"00221820";
   constant ins7  : std_logic_vector(0 to 31) := X"AC030004";
   constant ins8  : std_logic_vector(0 to 31) := X"AC030006";
   constant ins9  : std_logic_vector(0 to 31) := X"AC030007";

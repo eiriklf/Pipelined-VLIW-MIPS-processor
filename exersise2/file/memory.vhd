@@ -55,7 +55,7 @@ begin
 
 	MEM_PROC: process(CLK, RESET, MemWrite, WRITE_DATA, ADDR, W_ADDR, MEM, address_reg)
 	begin	
-		if rising_edge (CLK) then
+		if falling_edge (CLK) then
       -- RAMs don't have resets. Commented out to make it work as RAM and not 256 32bit-flipflops (which takes up too much space for the FPGA).
 			--if (RESET = '1') then 
 			--	for i in 0 to M-1 loop
