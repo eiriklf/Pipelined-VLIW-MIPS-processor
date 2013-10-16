@@ -44,24 +44,30 @@ architecture Behavioral of Forwarding is
 
 begin
 
-	process(MEMWBregwrite,  EXMEMregwrite, RS,RT, MEMWbregisterRD, ExmemregisterRD)
+	Process1:process(MEMWBregwrite,  EXMEMregwrite, RS, MEMWbregisterRD, ExmemregisterRD)
 	begin
 	--EX hazard
-	if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000"))) then
-	if(EXMEMregisterRD= RS) then
+	if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RS) ) then
 	forwardA<="10";
-	end if;
-	if(EXMEMregisterRD= RT)then
-	forwardB<="10";
-	end if;
-	elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') and not(EXMEMregisterRD="00000"))) then --and not (EXMEMregisterRD=RS))
-	if(not (EXMEMregisterRD=RS) and (MEMWBregisterRD=RS)) then
+	-- no elsif
+	elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') and not(EXMEMregisterRD="00000")) and not (EXMEMregisterRD=RS) and (MEMWBregisterRD=RS)) then --and not (EXMEMregisterRD=RS))
 	forwardA<="01";
-	elsif(not (EXMEMregisterRD=RS) and (MEMWBregisterRD=RS))then
-	forwardB<="01";
-	end if;
 	else
 	forwardA<="00";
+	end if;
+	 
+	
+	
+	end process;
+	
+		Process2:process(MEMWBregwrite,  EXMEMregwrite,RT, MEMWbregisterRD, ExmemregisterRD)
+	begin
+	--EX hazard
+	if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RT)) then
+	forwardB<="10";
+	elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') and not(EXMEMregisterRD="00000")) and not (EXMEMregisterRD=RT) and (MEMWBregisterRD=RT) ) then --and not (EXMEMregisterRD=RS))
+	forwardB<="01";
+	else
 	forwardB<="00";
 	end if;
 	

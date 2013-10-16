@@ -92,13 +92,13 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant ins3  : std_logic_vector(0 to 31) := X"00000000";
   constant ins4  : std_logic_vector(0 to 31) := X"00000000";
   constant ins5  : std_logic_vector(0 to 31) := X"00000000";
-  constant ins6  : std_logic_vector(0 to 31) := X"00221820";
+  constant ins6  : std_logic_vector(0 to 31) := X"00221820";--add $3, $1, $2
   constant ins7  : std_logic_vector(0 to 31) := X"AC030004";
   constant ins8  : std_logic_vector(0 to 31) := X"AC030006";
   constant ins9  : std_logic_vector(0 to 31) := X"AC030007";
-  constant ins10 : std_logic_vector(0 to 31) := X"3C030006";
-  constant ins11 : std_logic_vector(0 to 31) := X"AC030008";
-  constant ins12 : std_logic_vector(0 to 31) := X"00231820";
+  constant ins10 : std_logic_vector(0 to 31) := X"3C030006";--lui $3, 6 forwarded to the add insturction 
+  constant ins11 : std_logic_vector(0 to 31) := X"AC030008";--sw $3, 8($0)
+  constant ins12 : std_logic_vector(0 to 31) := X"00231820";--add $3, $1, $3
   constant ins13 : std_logic_vector(0 to 31) := X"AC030009";
   constant ins14 : std_logic_vector(0 to 31) := X"1000FFFD";
   constant ins15 : std_logic_vector(0 to 31) := X"AC03000A";

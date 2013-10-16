@@ -4,6 +4,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 use WORK.MIPS_CONSTANT_PKG.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+
+--TODO ADD PIPELINESTAGE FOR THE FORWARDING AND THE ALUOP UNITS
 entity PROCESSOR is
  generic ( MEM_ADDR_BUS, MEM_DATA_BUS : natural := 32);
 Port ( 
@@ -48,6 +50,13 @@ architecture Behavioral of PROCESSOR is
 			COUT	: out	STD_LOGIC;
 			R	: out	STD_LOGIC_VECTOR(N-1 downto 0));
 	end component adder;
+	component TriputMux is
+    Port ( A : in  STD_LOGIC_VECTOR (31 downto 0);
+           B : in  STD_LOGIC_VECTOR (31 downto 0);
+           C : in  STD_LOGIC_VECTOR (31 downto 0);
+           R : out  STD_LOGIC_VECTOR (31 downto 0);
+           control : in  STD_LOGIC_VECTOR (1 downto 0));
+end component TriputMux;
 
 	component REGISTER_FILE is
 		port(
@@ -108,6 +117,17 @@ architecture Behavioral of PROCESSOR is
 			  clk: in std_logic;
 			  processor_enable: in std_logic);
 	end component control;
+	
+	component Forwarding is
+    Port ( ExmemregisterRD : in  STD_LOGIC_VECTOR (4 downto 0);
+           MEMWbregisterRD : in  STD_LOGIC_VECTOR (4 downto 0);
+			  MEMWBregwrite: in std_logic;
+			  EXMEMregwrite: in std_logic;
+           RS : in  STD_LOGIC_VECTOR (4 downto 0);
+           RT : in  STD_LOGIC_VECTOR (4 downto 0);
+           forwardA : out  STD_LOGIC_VECTOR (1 downto 0);
+           forwardB  : out  STD_LOGIC_VECTOR (1 downto 0));
+end component Forwarding;
 
 	--Signal, categorized as signals FROM different components:
 
@@ -130,7 +150,16 @@ architecture Behavioral of PROCESSOR is
 	-- From ALUControl
 	signal ALUControl : ALU_INPUT; 
 
-
+	--controlsignal for forwardingA
+	signal ctForwardA: STD_LOGIC_VECTOR(1 downto 0);
+		--controlsignal for forwardingB
+	signal ctForwardB: STD_LOGIC_VECTOR(1 downto 0);
+	
+	--output from forwardA mux
+	signal ForwardAout: std_logic_vector(31 downto 0);
+	
+	--output from forwardB mux
+	signal ForwardBout: std_logic_vector(31 downto 0);
 	-- From MUX1, Between Instruction Memory and Register File (input for Write Register)
 	signal ChosenWriteReg : STD_LOGIC_VECTOR (4 downto 0);
 
@@ -173,7 +202,7 @@ architecture Behavioral of PROCESSOR is
 	signal IFIDs: std_logic_vector(63 downto 0);
 	
 	--ID/EX out
-	signal IDEXs: std_logic_vector(178 downto 0);
+	signal IDEXs: std_logic_vector(183 downto 0);
 	
 	--EX/MEM out
 	
@@ -237,7 +266,7 @@ architecture Behavioral of PROCESSOR is
 
 
 	ALUTD : ALU generic map ( N=>DDATA_BUS)  port map(
-			  X => IDEXs(105 downto 74),
+			  X => ForwardAout,--IDEXs(105 downto 74),
 			  Y => ChosenALUInput,
 			  ALU_IN	=> ALUControl,
 			  R => ALU_Result,
@@ -270,15 +299,17 @@ architecture Behavioral of PROCESSOR is
            reset => reset,
 			  write_enable=>'0'
 	);
-	IDEX: regi generic map (N=>179) port map(
-			 Data_in => Ops&IFIDs(31 downto 26)&IFIDs(25 downto 0)&IFIDs(63 downto 32)&read_data1&read_data2&Signextended&IFIDs(20 downto 16)&IFIDs(15 downto 11),--138+25, perform signex later?
+	IDEX: regi generic map (N=>184) port map(
+	--OMGOMGOMGOMG
+			 Data_in => IFIDs(25 downto 21)&Ops&IFIDs(31 downto 26)&IFIDs(25 downto 0)&IFIDs(63 downto 32)&read_data1&read_data2&Signextended&IFIDs(20 downto 16)&IFIDs(15 downto 11),--138+25, perform signex later?
            data_out => IDEXs,
            clock => clk,
            reset => reset,
 			  write_enable=>'0'
 	);
 	EXMEM: regi generic map (N=>139)  port map(
-			 Data_in => IDEXs(175)&IDEXs(173 downto 170)&concat&branchadder&zero.zero&ALU_Result&read_data2&ChosenWriteReg,--134, not 161 bit
+	--OOOMG
+			 Data_in => IDEXs(175)&IDEXs(173 downto 170)&concat&branchadder&zero.zero&ALU_Result&IDEXs(73 downto 42)&ChosenWriteReg,--134, not 161 bit
            data_out => EXMEMs,
            clock => clk,
            reset => reset,
@@ -292,6 +323,16 @@ architecture Behavioral of PROCESSOR is
 			  write_enable=>'0'
 	);
 	
+	Forwardunit: Forwarding
+    Port map ( ExmemregisterRD =>EXMEMs(4 downto 0),
+           MEMWbregisterRD =>MEMWBs(4 downto 0),
+			  MEMWBregwrite=>MEMWBs(69),
+			  EXMEMregwrite=>EXMEMs(136),--ops
+           RS =>IDEXs(183 downto 179),--check this is not crisscorssed
+           RT =>IDEXs(4 downto 0),--check this is not crisscorssed
+           forwardA =>ctForwardA,
+           forwardB =>ctForwardB);
+			  
 	CONTROL_UNIT: CONTROL Port map(
 			  control_input =>IFIDS(31 downto 26),
            Ops => Ops,
@@ -317,6 +358,21 @@ architecture Behavioral of PROCESSOR is
 		Y	=> IDEXs(41 downto 10),
 		R	=> BranchAdder
 	);
+	
+	ForwardmuxA: TriputMux 
+    Port map( A =>IDEXs(105 downto 74),
+           B =>EXMEMs(68 downto 37),
+           C =>ChosenWriteData,
+           R =>ForwardAout,
+           control =>ctForwardA);
+			  
+			  	ForwardmuxB: TriputMux 
+    Port map( A =>IDEXs(73 downto 42),--OOOOOOOOOMGOMGOMGOGM
+           B =>EXMEMs(68 downto 37),
+           C =>ChosenWriteData,
+           R =>ForwardBout,
+           control =>ctForwardB);
+
 			  --mux for chosing write register
 			  --need to redefine the generic by mapping it to a new value.
 	MUX1: simple_multiplexer generic map ( N=>5) port map(
@@ -328,7 +384,7 @@ architecture Behavioral of PROCESSOR is
 			  
 			  --mux for chosing alu input
 	MUX2: simple_multiplexer port map( 
-			  a => IDEXs(73 downto 42),
+			  a => ForwardBout,--IDEXs(73 downto 42),
            b => IDEXs(41 downto 10),
            control_signal => IDEXs(174),--alusrc,
            output => ChosenALUInput);
