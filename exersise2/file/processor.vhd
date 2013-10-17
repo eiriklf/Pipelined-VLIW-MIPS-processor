@@ -308,7 +308,7 @@ end component Forwarding;
 	);
 	EXMEM: regi generic map (N=>139)  port map(
 	--OOOMG
-			 Data_in => IDEXs(175)&IDEXs(173 downto 170)&concat&branchadder&zero.zero&ALU_Result&IDEXs(73 downto 42)&ChosenWriteReg,--134, not 161 bit
+			 Data_in => IDEXs(175)&IDEXs(173 downto 170)&concat&branchadder&zero.zero&ALU_Result&ForwardBout&ChosenWriteReg,--134, not 161 bit
            data_out => EXMEMs,
            clock => clk,
            reset => reset,
@@ -359,15 +359,15 @@ end component Forwarding;
 	);
 	
 	ForwardmuxA: TriputMux 
-    Port map( A =>IDEXs(105 downto 74),
-           B =>EXMEMs(68 downto 37),
+    Port map( A =>IDEXs(105 downto 74),--readdataB
+           B =>EXMEMs(68 downto 37),--aluresult
            C =>ChosenWriteData,
            R =>ForwardAout,
            control =>ctForwardA);
 			  
 			  	ForwardmuxB: TriputMux 
-    Port map( A =>IDEXs(73 downto 42),--OOOOOOOOOMGOMGOMGOGM
-           B =>EXMEMs(68 downto 37),
+    Port map( A =>IDEXs(73 downto 42),--ReaddataA
+           B =>EXMEMs(68 downto 37),--aluresult
            C =>ChosenWriteData,
            R =>ForwardBout,
            control =>ctForwardB);
