@@ -44,31 +44,33 @@ architecture Behavioral of Forwarding is
 
 begin
 
-	Process1:process(MEMWBregwrite,  EXMEMregwrite, RS, MEMWbregisterRD, ExmemregisterRD)
+	Process1: process(MEMWBregwrite,  EXMEMregwrite, RS, MEMWbregisterRD, ExmemregisterRD)
 	begin
-	--EX hazard
-	-- no elsif--and not (EXMEMregisterRD=RS) 
-	if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RS) ) then
-	forwardA<="10";
-	elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') and not(EXMEMregisterRD="00000")) and (MEMWBregisterRD=RS)) then --and not (EXMEMregisterRD=RS))
-	forwardA<="01";
-	else
-	forwardA<="00";
+		--EX hazard
+		-- no elsif--and not (EXMEMregisterRD=RS) 
+		if( (EXMEMregwrite='1' )and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RS) ) then
+			forwardA<="10";
+		elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
+			and not(EXMEMregisterRD="00000")) and (MEMWBregisterRD=RS)) then --and not (EXMEMregisterRD=RS))
+			forwardA<="01";
+		else
+			forwardA<="00";
 	end if;
 	 
 	
 	
 	end process;
 	
-		Process2:process(MEMWBregwrite,  EXMEMregwrite,RT, MEMWbregisterRD, ExmemregisterRD)
+	Process2: process(MEMWBregwrite,  EXMEMregwrite,RT, MEMWbregisterRD, ExmemregisterRD)
 	begin
 	--EX hazard--and not (EXMEMregisterRD=RT)
-	if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RT)) then
-	forwardB<="10";
-	elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') and not(EXMEMregisterRD="00000"))  and (MEMWBregisterRD=RT) ) then --and not (EXMEMregisterRD=RS))
-	forwardB<="01";
-	else
-	forwardB<="00";
+		if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RT)) then
+			forwardB<="10";
+		elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
+			and not(EXMEMregisterRD="00000"))  and (MEMWBregisterRD=RT) ) then --and not (EXMEMregisterRD=RT))
+			forwardB<="01";
+		else
+			forwardB<="00";
 	end if;
 	
 	
