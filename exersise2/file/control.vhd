@@ -10,8 +10,6 @@ entity control is
     Port ( control_input : in  STD_LOGIC_VECTOR (5 downto 0);
            Ops : out STD_LOGIC_VECTOR (8 downto 0);
               clk: in std_logic;
-              processor_enable: in std_logic;
-              write_enable: out std_logic;
               reset: in std_logic
               );
 end control;
@@ -44,13 +42,11 @@ architecture Behavioral of control is
 
 begin
     --dont really need control_input on sensitivity list in order to make this function
-    asserting_output_signals : process(control_input ,processor_enable)
+    asserting_output_signals : process(control_input)
     begin
 
         -- At certain points, don't cares are forced in order to prevent the synthesizer to generate latches.
         -- this can also be done combinatorial instead of using behavioural descriptions
-        if(processor_enable='1') then 
-            write_enable<='1';--change on hazard detection?
             -- Instruction: R-type
             if(control_input=R_TYPE)then
                 jump<='0';
@@ -136,17 +132,6 @@ begin
                 ALUOp1 <= '0';
             end if;
 
-        else --if fetch 
-            jump<='0';
-            memwrite<='0';
-            alusrc<='-'; -- Don't care
-            regwrite<='0';
-            branch<='0';
-            regdest<='-'; -- Don't care
-            memtoreg<='-'; -- Don't care
-            ALUOp0 <= '0';
-            ALUOp1 <= '0';
-        end if;
     end process;
 
     -- Mapping output signals to 9-bit bus called "Ops"

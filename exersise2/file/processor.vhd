@@ -33,6 +33,15 @@ architecture Behavioral of PROCESSOR is
 			  branch: in std_logic;
 			  zero: in std_logic);
 	end component controlpath;
+	
+	component Hazarddetection is
+    Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
+           IDEXregisterRT : in  STD_LOGIC_VECTOR(31 downto 0);
+           InstructionType : in  STD_LOGIC_VECTOR (5 downto 0);
+           PCWrite : out  STD_LOGIC;
+			  processor_enable: in std_logic;
+           Controlenable : out  STD_LOGIC);
+	end component Hazarddetection;
 
 	component ALUOperation is
     Port ( aluop0 : in  STD_LOGIC;
@@ -111,10 +120,8 @@ end component TriputMux;
 	component control is
     Port ( control_input : in  STD_LOGIC_VECTOR (5 downto 0);
            Ops : out STD_LOGIC_VECTOR (8 downto 0);
-			  write_enable: out std_logic;
 			  reset: in std_logic;
-			  clk: in std_logic;
-			  processor_enable: in std_logic);
+			  clk: in std_logic);
 	end component control;
 	
 	component Forwarding is
@@ -212,11 +219,25 @@ end component Forwarding;
 	
 		--this signal is 1 if branch equal
 	signal branch_ok: std_logic;
+	
+	--enables output from controlunit
+	signal control_enable: std_logic;
+	
+	--chosen operation from the controloutputmux
+	signal chosen_OP: std_logic_vector(8 downto 0);
+	
+	--flushsignals
+	
+	signal IFflush:std_logic;
 
+	signal equalvals:std_logic_vector(31 downto 0);
 	begin
 	
 	--branch ok
-	branch_ok <= (EXMEMs(138) and EXMEMs(69));
+	equalvals<=(read_data1 xor read_data2);
+	
+	branch_ok <= chosen_Op(5) when equalvals="0000000000000000000000000000000000"
+	else '0'; --chosen_Op or op? 
 	
 	--assign control signals
 	--jump <= Ops(0); -- Jump
@@ -296,30 +317,29 @@ end component Forwarding;
            data_out => IFIDs,
            clock => clk,
            reset => reset,
-			  write_enable=>'0'
+			  write_enable=>'1'
 	);
 	IDEX: regi generic map (N=>184) port map(
 	--OMGOMGOMGOMG
-			 Data_in => IFIDs(25 downto 21)&Ops&IFIDs(31 downto 26)&IFIDs(25 downto 0)&IFIDs(63 downto 32)&read_data1&read_data2&Signextended&IFIDs(20 downto 16)&IFIDs(15 downto 11),--138+25, perform signex later?
+			 Data_in => IFIDs(25 downto 21)&chosen_OP&IFIDs(31 downto 26)&IFIDs(25 downto 0)&IFIDs(63 downto 32)&read_data1&read_data2&Signextended&IFIDs(20 downto 16)&IFIDs(15 downto 11),--138+25, perform signex later?
            data_out => IDEXs,
            clock => clk,
            reset => reset,
-			  write_enable=>'0'
+			  write_enable=>'1'
 	);
 	EXMEM: regi generic map (N=>139)  port map(
-	--OOOMG
 			 Data_in => IDEXs(175)&IDEXs(173 downto 170)&concat&branchadder&zero.zero&ALU_Result&ForwardBout&ChosenWriteReg,--134, not 161 bit
            data_out => EXMEMs,
            clock => clk,
            reset => reset,
-			  write_enable=>'0'
+			  write_enable=>'1'
 	);
 	MEMWB: regi generic map (N=>71) port map(
 			 Data_in => EXMEMs(137)&EXMEMs(136)&dmem_data_in&EXMEMs(68 downto 37)&EXMEMs(4 downto 0),--
            data_out => MEMWBs,
            clock => clk,
            reset => reset,
-			  write_enable=>'0'
+			  write_enable=>'1'
 	);
 	
 	Forwardunit: Forwarding
@@ -336,12 +356,18 @@ end component Forwarding;
 			  control_input =>IFIDS(31 downto 26),
            Ops => Ops,
 			  clk => clk,
-			  reset=> reset,
-			  processor_enable=> processor_enable,
-			  write_enable=> enablepcwrite);
+			  reset=> reset);
+			  
+	DETECTION_UNIT: Hazarddetection
+    Port map ( IDEXCONTROL=>IDEXs(178 downto 170),--figures out if operation in idex register is read
+           IDEXregisterRT=>IDEXs(73 downto 42),--RT register
+           InstructionType=>IFIDS(31 downto 26),--instructions from controlunit
+           PCWrite =>enablepcwrite,--enable PC write
+           Controlenable=>control_enable,
+			  processor_enable=> processor_enable);
 			  
 		--!!!!!	  
-	Concat <= IDEXs(169 downto 164) & IDEXs(163 downto 138);--32 bit
+	Concat <= IFIDs(63 downto 58)&IFIDs(25 downto 0);--IDEXs(169 downto 164) & IDEXs(163 downto 138);--32 bit
 	
 	-- Incrementer increases input from PC with 1 bit, since the MIPS processor will be
 	-- addressing by words
@@ -353,8 +379,8 @@ end component Forwarding;
 	
 	-- ADRESSADDER is the second adder, which is used for calculation new PC based on branching
 	ADDRESSADDER: adder port map(
-		X	=> IDEXs(137 downto 106),
-		Y	=> IDEXs(41 downto 10),
+		X	=> IFIDs(63 downto 32),
+		Y	=> Signextended,
 		R	=> BranchAdder
 	);
 	
@@ -397,7 +423,7 @@ end component Forwarding;
 	-- First multiplexor. It is used to choose between regular incremented PC value or PC value based on branching
 	MUX4: simple_multiplexer port map( 
 		a => incremented,
-      b => EXMEMs(101 downto 70),--BranchAdder,
+      b =>BranchAdder,-- EXMEMs(101 downto 70),
 		control_signal => branch_ok,
       output => mux1out
 	);
@@ -405,8 +431,15 @@ end component Forwarding;
 	-- Second multiplexor. It is used to choose between the result from the first multiplexor, or PC value based on jump-instruction
 	MUX5: simple_multiplexer port map( 
 		a =>mux1out,
-      b => EXMEMs(133 downto 102),
-      control_signal =>EXMEMs(134),--jump,
+      b => Concat,
+      control_signal =>chosen_OP(0),--EXMEMs(134)
       output =>FinalPCAddress
+	);
+	
+		CONTROL_OUTPUT: simple_multiplexer generic map ( N=>9) port map( 
+		a =>"000000000",
+      b => OPs,
+      control_signal =>control_enable,--jump,
+      output =>chosen_OP
 	);
 end Behavioral;
