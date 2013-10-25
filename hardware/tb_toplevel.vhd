@@ -100,7 +100,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant ins11 : std_logic_vector(0 to 31) := X"AC030008";--sw $3, 8($0)
   constant ins12 : std_logic_vector(0 to 31) := X"00231820";--add $3, $1, $3
   constant ins13 : std_logic_vector(0 to 31) := X"AC030009";
-  constant ins14 : std_logic_vector(0 to 31) := X"1000FFFD";
+  constant ins14 : std_logic_vector(0 to 31) := X"1000FFFD";--beq $0, $0, -3
   constant ins15 : std_logic_vector(0 to 31) := X"AC03000A";
    
   -- Used to control the COM-module

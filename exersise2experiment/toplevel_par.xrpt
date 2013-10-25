@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Thu Oct 24 22:40:21 2013">
+  <application stringID="par" timeStamp="Fri Oct 25 21:38:53 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -47,7 +47,7 @@
         <item stringID="User_EnvOsname" value="Microsoft "/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="dmlab03"/>
+      <item stringID="User_EnvHost" value="dmlab08"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
@@ -67,12 +67,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="44 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="45 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="46 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="46 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="45 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="46 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="47 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="47 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -2999,7 +2999,7 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Thu Oct 24 22:40:21 2013">
+  <application stringID="Par" timeStamp="Fri Oct 25 21:38:53 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -3041,7 +3041,7 @@
         <item stringID="User_EnvOsname" value="Microsoft "/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="dmlab03"/>
+      <item stringID="User_EnvHost" value="dmlab08"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>

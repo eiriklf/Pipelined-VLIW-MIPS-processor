@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Thu Oct 24 22:38:22 2013">
+  <application stringID="Xst" timeStamp="Fri Oct 25 21:36:55 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -47,7 +47,7 @@
         <item stringID="User_EnvOsname" value="Microsoft "/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="dmlab03"/>
+      <item stringID="User_EnvHost" value="dmlab08"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
@@ -112,8 +112,9 @@
     </section>
     <section stringID="XST_HDL_SYNTHESIS_REPORT">
       <item dataType="int" stringID="XST_RAMS" value="5"></item>
-      <item dataType="int" stringID="XST_REGISTERS" value="17">
+      <item dataType="int" stringID="XST_REGISTERS" value="18">
         <item dataType="int" stringID="XST_1BIT_REGISTER" value="3"/>
+        <item dataType="int" stringID="XST_2BIT_REGISTER" value="1"/>
         <item dataType="int" stringID="XST_32BIT_REGISTER" value="8"/>
         <item dataType="int" stringID="XST_8BIT_REGISTER" value="2"/>
       </item>
@@ -133,8 +134,8 @@
     </section>
     <section stringID="XST_ADVANCED_HDL_SYNTHESIS_REPORT">
       <item dataType="int" stringID="XST_RAMS" value="5"></item>
-      <item dataType="int" stringID="XST_REGISTERS" value="687">
-        <item dataType="int" stringID="XST_FLIPFLOPS" value="687"/>
+      <item dataType="int" stringID="XST_REGISTERS" value="689">
+        <item dataType="int" stringID="XST_FLIPFLOPS" value="689"/>
       </item>
       <item dataType="int" stringID="XST_COMPARATORS" value="4"></item>
       <item dataType="int" stringID="XST_MULTIPLEXERS" value="90">
@@ -214,7 +215,7 @@
     </section>
     <section stringID="XST_ERRORS_STATISTICS">
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_ERRORS" value="0"/>
-      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="370"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="372"/>
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_INFOS" value="58"/>
     </section>
   </application>

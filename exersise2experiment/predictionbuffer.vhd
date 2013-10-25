@@ -48,7 +48,7 @@ end predictorbuffer;
 
 architecture Behavioral of predictorbuffer is
 
-	constant NUM_REG : integer := 16;
+	constant NUM_REG : integer := 32;
 	type REGS_T is array (NUM_REG-1 downto 0) of STD_LOGIC_VECTOR(1 downto 0);
 	
 	signal REGS : REGS_T := (others => (others =>'0'));
@@ -69,10 +69,11 @@ begin
 			if  RW='1' then
 				REGS(to_integer(unsigned(RD_ADDR)))<=WRITE_DATA;
 			end if;
+				RS <= REGS(to_integer(unsigned(RS_ADDR)));
 		end if;
 	end process  REGISTERS;
 
-	RS <= REGS(to_integer(unsigned(RS_ADDR)));
+
 
 end Behavioral;
 

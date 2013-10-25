@@ -356,12 +356,14 @@ Unit <PC> synthesized.
 
 Synthesizing Unit <predictorbuffer>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/predictionbuffer.vhd".
-WARNING:Xst:647 - Input <RS_ADDR<10:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <RD_ADDR<10:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <RS_ADDR<10:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <RD_ADDR<10:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 16x2-bit dual-port RAM <Mram_REGS> for signal <REGS>.
+    Found 32x2-bit dual-port RAM <Mram_REGS> for signal <REGS>.
+    Found 2-bit register for signal <RS>.
     Summary:
 	inferred   1 RAM(s).
+	inferred   2 D-type flip-flop(s).
 Unit <predictorbuffer> synthesized.
 
 Synthesizing Unit <regi_1>.
@@ -469,13 +471,14 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 5
- 16x2-bit dual-port RAM                                : 1
  256x32-bit dual-port RAM                              : 2
+ 32x2-bit dual-port RAM                                : 1
  32x32-bit dual-port RAM                               : 2
-# Registers                                            : 17
+# Registers                                            : 18
  1-bit register                                        : 3
  139-bit register                                      : 1
  184-bit register                                      : 1
+ 2-bit register                                        : 1
  32-bit register                                       : 8
  64-bit register                                       : 1
  71-bit register                                       : 1
@@ -694,19 +697,19 @@ INFO:Xst:3040 - The RAM <Mram_MEM> will be implemented as a BLOCK RAM, absorbing
 Unit <memory> synthesized (advanced).
 
 Synthesizing (advanced) Unit <predictorbuffer>.
-INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_REGS> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3048 - The small RAM <Mram_REGS> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 16-word x 2-bit                     |          |
+    |     aspect ratio   | 32-word x 2-bit                     |          |
     |     clkA           | connected to signal <CLK>           | rise     |
     |     weA            | connected to signal <RW>            | high     |
     |     addrA          | connected to signal <RD_ADDR>       |          |
     |     diA            | connected to signal <WRITE_DATA>    |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 16-word x 2-bit                     |          |
+    |     aspect ratio   | 32-word x 2-bit                     |          |
     |     addrB          | connected to signal <RS_ADDR>       |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -752,11 +755,11 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 5
- 16x2-bit dual-port distributed RAM                    : 1
  256x32-bit dual-port block RAM                        : 2
+ 32x2-bit dual-port distributed RAM                    : 1
  32x32-bit dual-port distributed RAM                   : 2
-# Registers                                            : 687
- Flip-Flops                                            : 687
+# Registers                                            : 689
+ Flip-Flops                                            : 689
 # Comparators                                          : 4
  5-bit comparator equal                                : 4
 # Multiplexers                                         : 90
@@ -794,6 +797,8 @@ INFO:Xst:2261 - The FF/Latch <data_161> in Unit <regi_2> is equivalent to the fo
 INFO:Xst:2261 - The FF/Latch <data_162> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_182> 
 INFO:Xst:2261 - The FF/Latch <data_163> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_183> 
 INFO:Xst:2261 - The FF/Latch <data_159> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_179> 
+WARNING:Xst:2677 - Node <PREDICTOR_BUFF/RS_1> of sequential type is unconnected in block <PROCESSOR>.
+WARNING:Xst:2677 - Node <PREDICTOR_BUFF/RS_0> of sequential type is unconnected in block <PROCESSOR>.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
 -------------------
@@ -1260,13 +1265,13 @@ clk            |   24.612|   16.727|    9.867|         |
 
 
 Total REAL time to Xst completion: 29.00 secs
-Total CPU time to Xst completion: 29.07 secs
+Total CPU time to Xst completion: 28.96 secs
  
 --> 
 
-Total memory usage is 263952 kilobytes
+Total memory usage is 275848 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  370 (   0 filtered)
+Number of warnings :  372 (   0 filtered)
 Number of infos    :   58 (   0 filtered)
 
