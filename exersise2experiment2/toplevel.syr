@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.10 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: toplevel.prj
 
@@ -156,12 +156,12 @@ Parsing architecture <Behavioral> of entity <adder>.
 Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" into library work
 Parsing entity <PROCESSOR>.
 Parsing architecture <Behavioral> of entity <processor>.
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 367: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 375: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 382: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 389: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 366: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 374: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 381: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 388: Actual for formal port data_in is neither a static name nor a globally static expression
 WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 462: Actual for formal port write_data is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 521: Actual for formal port b is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 522: Actual for formal port b is neither a static name nor a globally static expression
 Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/memory.vhd" into library work
 Parsing entity <memory>.
 Parsing architecture <Behavioral> of entity <memory>.
@@ -184,6 +184,7 @@ INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experime
 Elaborating entity <memory> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <PROCESSOR> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:1127 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file/processor.vhd" Line 288: Assignment to equalvals ignored, since the identifier is never used
 
 Elaborating entity <ALUoperation> (architecture <Behavioral>) from library <work>.
 
@@ -210,7 +211,7 @@ Elaborating entity <Forwarding> (architecture <Behavioral>) from library <work>.
 Elaborating entity <control> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <Hazarddetection> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\Hazarddetection.vhd" Line 185. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\Hazarddetection.vhd" Line 178. Case statement is complete. others clause is never selected
 
 Elaborating entity <adder> (architecture <Behavioral>) with generics from library <work>.
 
@@ -290,11 +291,11 @@ Synthesizing Unit <PROCESSOR>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 339: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 339: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 339: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 442: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 449: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 338: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 338: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 338: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 440: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" line 448: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
     Summary:
 Unit <PROCESSOR> synthesized.
 
@@ -407,10 +408,9 @@ Synthesizing Unit <Hazarddetection>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/hazarddetection.vhd".
 WARNING:Xst:647 - Input <IDEXCONTROL<8:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <IDEXregisterRT<31:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <InstructionType<5:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 2-bit 4-to-1 multiplexer for signal <State> created at line 149.
+    Found 2-bit 4-to-1 multiplexer for signal <State> created at line 142.
     Summary:
-	inferred  13 Multiplexer(s).
+	inferred  12 Multiplexer(s).
 Unit <Hazarddetection> synthesized.
 
 Synthesizing Unit <adder>.
@@ -427,12 +427,10 @@ Unit <full_adder> synthesized.
 
 Synthesizing Unit <predictorbuffer>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/predictionbuffer.vhd".
-WARNING:Xst:647 - Input <RS_ADDR<10:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <RD_ADDR<10:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32x18-bit dual-port RAM <Mram_REGS> for signal <REGS>.
     Summary:
-	inferred   1 RAM(s).
+	inferred   2 RAM(s).
 Unit <predictorbuffer> synthesized.
 
 Synthesizing Unit <TriputMux>.
@@ -467,9 +465,9 @@ Unit <simple_multiplexer_3> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
+# RAMs                                                 : 6
  256x32-bit dual-port RAM                              : 2
- 32x18-bit dual-port RAM                               : 1
+ 32x18-bit dual-port RAM                               : 2
  32x32-bit dual-port RAM                               : 2
 # Registers                                            : 16
  1-bit register                                        : 3
@@ -481,8 +479,8 @@ Macro Statistics
  8-bit register                                        : 2
 # Comparators                                          : 4
  5-bit comparator equal                                : 4
-# Multiplexers                                         : 100
- 1-bit 2-to-1 multiplexer                              : 30
+# Multiplexers                                         : 99
+ 1-bit 2-to-1 multiplexer                              : 29
  2-bit 2-to-1 multiplexer                              : 5
  2-bit 4-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 15
@@ -491,9 +489,9 @@ Macro Statistics
  5-bit 2-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
-# Xors                                                 : 195
+# Xors                                                 : 194
  1-bit xor2                                            : 193
- 32-bit xor2                                           : 2
+ 32-bit xor2                                           : 1
 
 =========================================================================
 
@@ -503,17 +501,44 @@ Macro Statistics
 
 INFO:Xst:2261 - The FF/Latch <status_29> in Unit <TDT4255_COM> is equivalent to the following 29 FFs/Latches, which will be removed : <status_28> <status_27> <status_26> <status_25> <status_24> <status_23> <status_22> <status_21> <status_20> <status_19> <status_18> <status_17> <status_16> <status_15> <status_14> <status_13> <status_12> <status_11> <status_10> <status_9> <status_8> <status_7> <status_6> <status_5> <status_4> <status_3> <status_2> <status_1> <status_0> 
 WARNING:Xst:1710 - FF/Latch <status_29> (without init value) has a constant value of 0 in block <TDT4255_COM>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <data_65> of sequential type is unconnected in block <IFID>.
-WARNING:Xst:2677 - Node <data_66> of sequential type is unconnected in block <IFID>.
-WARNING:Xst:2677 - Node <data_67> of sequential type is unconnected in block <IFID>.
-WARNING:Xst:2677 - Node <data_68> of sequential type is unconnected in block <IFID>.
-WARNING:Xst:2677 - Node <data_69> of sequential type is unconnected in block <IFID>.
 WARNING:Xst:2677 - Node <data_70> of sequential type is unconnected in block <IFID>.
 WARNING:Xst:2677 - Node <data_71> of sequential type is unconnected in block <IFID>.
 WARNING:Xst:2677 - Node <data_72> of sequential type is unconnected in block <IFID>.
 WARNING:Xst:2677 - Node <data_73> of sequential type is unconnected in block <IFID>.
 WARNING:Xst:2677 - Node <data_74> of sequential type is unconnected in block <IFID>.
 WARNING:Xst:2677 - Node <data_75> of sequential type is unconnected in block <IFID>.
+WARNING:Xst:2677 - Node <data_106> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_107> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_108> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_109> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_110> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_111> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_112> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_113> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_114> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_115> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_116> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_117> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_118> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_119> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_120> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_121> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_122> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_123> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_124> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_125> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_126> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_127> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_128> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_129> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_130> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_131> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_132> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_133> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_134> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_135> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_136> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_137> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_138> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_139> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_140> of sequential type is unconnected in block <IDEX>.
@@ -540,7 +565,15 @@ WARNING:Xst:2677 - Node <data_160> of sequential type is unconnected in block <I
 WARNING:Xst:2677 - Node <data_161> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_162> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_163> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_164> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_165> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_166> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_167> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_168> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_169> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_170> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_175> of sequential type is unconnected in block <IDEX>.
+WARNING:Xst:2677 - Node <data_184> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_69> of sequential type is unconnected in block <EXMEM>.
 WARNING:Xst:2677 - Node <data_70> of sequential type is unconnected in block <EXMEM>.
 WARNING:Xst:2677 - Node <data_71> of sequential type is unconnected in block <EXMEM>.
@@ -610,34 +643,8 @@ WARNING:Xst:2677 - Node <data_134> of sequential type is unconnected in block <E
 WARNING:Xst:2677 - Node <data_138> of sequential type is unconnected in block <EXMEM>.
 WARNING:Xst:2404 -  FFs/Latches <status<0:1>> (without init value) have a constant value of 0 in block <com>.
 
-Synthesizing (advanced) Unit <memory>.
-INFO:Xst:3040 - The RAM <Mram_MEM> will be implemented as a BLOCK RAM, absorbing the following register(s): <address_reg>
-    -----------------------------------------------------------------------
-    | ram_type           | Block                               |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 256-word x 32-bit                   |          |
-    |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <CLK>           | fall     |
-    |     weA            | connected to signal <MemWrite>      | high     |
-    |     addrA          | connected to signal <W_ADDR>        |          |
-    |     diA            | connected to signal <WRITE_DATA>    |          |
-    -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
-    -----------------------------------------------------------------------
-    | Port B                                                              |
-    |     aspect ratio   | 256-word x 32-bit                   |          |
-    |     mode           | write-first                         |          |
-    |     clkB           | connected to signal <CLK>           | fall     |
-    |     addrB          | connected to signal <ADDR>          |          |
-    |     doB            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
-    -----------------------------------------------------------------------
-Unit <memory> synthesized (advanced).
-
 Synthesizing (advanced) Unit <predictorbuffer>.
-INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_REGS> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3048 - The small RAM <Mram_REGS> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -651,59 +658,185 @@ INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_REGS> will be implemented on LUTs ei
     | Port B                                                              |
     |     aspect ratio   | 32-word x 18-bit                    |          |
     |     addrB          | connected to signal <RS_ADDR>       |          |
-    |     doB            | connected to internal node          |          |
+    |     doB            | connected to signal <RS>            |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3048 - The small RAM <Mram_REGS1> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 18-bit                    |          |
+    |     clkA           | connected to signal <CLK>           | rise     |
+    |     weA            | connected to signal <RW>            | high     |
+    |     addrA          | connected to signal <RD_ADDR>       |          |
+    |     diA            | connected to signal <WRITE_DATA>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 18-bit                    |          |
+    |     addrB          | connected to signal <RT_ADDR>       |          |
+    |     doB            | connected to signal <RT>            |          |
     -----------------------------------------------------------------------
 Unit <predictorbuffer> synthesized (advanced).
 
-Synthesizing (advanced) Unit <register_file>.
-INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_REGS> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+Synthesizing (advanced) Unit <toplevel>.
+INFO:Xst:3040 - The RAM <DATA_MEM/Mram_MEM> will be implemented as a BLOCK RAM, absorbing the following register(s): <DATA_MEM/address_reg>
     -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | fall     |
+    |     weA            | connected to signal <dmem_write_enable> | high     |
+    |     addrA          | connected to signal <dmem_address_wr> |          |
+    |     diA            | connected to signal <dmem_write_data> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | fall     |
+    |     addrB          | connected to signal <dmem_address>  |          |
+    |     doB            | connected to signal <dmem_data_in>  |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IFID/data>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     clkA           | connected to signal <CLK>           | fall     |
-    |     weA            | connected to signal <RW>            | high     |
-    |     addrA          | connected to signal <RD_ADDR>       |          |
-    |     diA            | connected to signal <WRITE_DATA>    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | fall     |
+    |     weA            | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<69>> | high     |
+    |     addrA          | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<4:0>> |          |
+    |     diA            | connected to signal <MIPS_SC_PROCESSOR/ChosenWriteData> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     addrB          | connected to signal <RS_ADDR>       |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     addrB          | connected to signal <instr_data<25:21>> |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_REGS1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
+INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IFID/data>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     clkA           | connected to signal <CLK>           | fall     |
-    |     weA            | connected to signal <RW>            | high     |
-    |     addrA          | connected to signal <RD_ADDR>       |          |
-    |     diA            | connected to signal <WRITE_DATA>    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | fall     |
+    |     weA            | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<69>> | high     |
+    |     addrA          | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<4:0>> |          |
+    |     diA            | connected to signal <MIPS_SC_PROCESSOR/ChosenWriteData> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     addrB          | connected to signal <RT_ADDR>       |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     addrB          | connected to signal <instr_data<20:16>> |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
-Unit <register_file> synthesized (advanced).
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3040 - The RAM <INST_MEM/Mram_MEM> will be implemented as a BLOCK RAM, absorbing the following register(s): <INST_MEM/address_reg>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | fall     |
+    |     weA            | connected to signal <imem_write_enable_com> | high     |
+    |     addrA          | connected to signal <dmem_address_wr_com<7:0>> |          |
+    |     diA            | connected to signal <dmem_write_data_com> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | fall     |
+    |     addrB          | connected to signal <instr_addr<7:0>> |          |
+    |     doB            | connected to signal <instr_data>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <toplevel> synthesized (advanced).
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_32> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_33> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_34> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_35> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_36> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_37> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_38> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_39> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_40> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_41> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_42> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_43> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_44> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_45> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_46> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_47> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_48> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_49> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_50> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_51> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_52> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_53> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_54> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_55> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_56> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_57> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_58> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_59> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_60> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_61> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_62> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_63> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_64> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_65> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_66> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_67> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_68> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_69> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_70> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_71> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_72> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_73> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_74> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_75> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_5> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_4> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_3> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_2> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_1> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_0> of sequential type is unconnected in block <toplevel>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
+# RAMs                                                 : 6
  256x32-bit dual-port block RAM                        : 2
- 32x18-bit dual-port distributed RAM                   : 1
- 32x32-bit dual-port distributed RAM                   : 2
-# Registers                                            : 668
- Flip-Flops                                            : 668
+ 32x18-bit dual-port distributed RAM                   : 2
+ 32x32-bit dual-port block RAM                         : 2
+# Registers                                            : 662
+ Flip-Flops                                            : 662
 # Comparators                                          : 4
  5-bit comparator equal                                : 4
-# Multiplexers                                         : 100
- 1-bit 2-to-1 multiplexer                              : 30
+# Multiplexers                                         : 99
+ 1-bit 2-to-1 multiplexer                              : 29
  2-bit 2-to-1 multiplexer                              : 5
  2-bit 4-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 15
@@ -712,15 +845,18 @@ Macro Statistics
  5-bit 2-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
-# Xors                                                 : 195
+# Xors                                                 : 194
  1-bit xor2                                            : 193
- 32-bit xor2                                           : 2
+ 32-bit xor2                                           : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <data_12> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_140> 
+INFO:Xst:2261 - The FF/Latch <data_13> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_141> 
+INFO:Xst:2261 - The FF/Latch <data_14> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_142> 
 INFO:Xst:2261 - The FF/Latch <data_10> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_138> 
 INFO:Xst:2261 - The FF/Latch <data_15> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_143> 
 INFO:Xst:2261 - The FF/Latch <data_11> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_139> 
@@ -744,9 +880,6 @@ INFO:Xst:2261 - The FF/Latch <data_161> in Unit <regi_2> is equivalent to the fo
 INFO:Xst:2261 - The FF/Latch <data_162> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_182> 
 INFO:Xst:2261 - The FF/Latch <data_163> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_183> 
 INFO:Xst:2261 - The FF/Latch <data_159> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_179> 
-INFO:Xst:2261 - The FF/Latch <data_12> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_140> 
-INFO:Xst:2261 - The FF/Latch <data_13> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_141> 
-INFO:Xst:2261 - The FF/Latch <data_14> in Unit <regi_2> is equivalent to the following FF/Latch, which will be removed : <data_142> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
 -------------------
@@ -761,28 +894,40 @@ Optimizing FSM <TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
  110   | 110
  111   | 111
 -------------------
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/PREDICTOR_BUFF/Mram_REGS11> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/PREDICTOR_BUFF/Mram_REGS12> of sequential type is unconnected in block <toplevel>.
 
 Optimizing unit <toplevel> ...
 
 Optimizing unit <com> ...
 
-Optimizing unit <PROCESSOR> ...
-
 Optimizing unit <PC> ...
-
-Optimizing unit <regi_1> ...
 
 Optimizing unit <regi_2> ...
 
 Optimizing unit <regi_3> ...
-
-Optimizing unit <regi_4> ...
 
 Optimizing unit <adder> ...
 
 Optimizing unit <alu> ...
 
 Optimizing unit <alu_1bit> ...
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_27> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_26> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_25> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_24> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_23> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_22> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_21> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_20> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_19> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_18> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_17> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_16> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_15> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_14> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_13> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_12> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_31> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_30> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_29> of sequential type is unconnected in block <toplevel>.
@@ -847,34 +992,15 @@ WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_19> of sequential type i
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_18> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_17> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_16> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_75> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_74> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_73> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_72> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_71> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_70> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_69> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_68> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_67> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_66> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_65> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_63> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_62> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_61> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_60> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_59> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_58> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_57> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_56> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_55> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_54> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_53> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_52> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_51> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_50> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_49> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_48> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_184> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_175> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_170> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_169> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_168> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_167> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_166> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_165> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_164> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_137> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_136> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_135> of sequential type is unconnected in block <toplevel>.
@@ -891,6 +1017,22 @@ WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_125> of sequential type is 
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_124> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_123> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_122> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_121> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_120> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_119> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_118> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_117> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_116> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_115> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_114> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_113> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_112> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_111> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_110> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_109> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_108> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_107> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_106> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/EXMEM/data_138> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/EXMEM/data_134> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/EXMEM/data_133> of sequential type is unconnected in block <toplevel>.
@@ -965,12 +1107,18 @@ Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 9.
 
 Final Macro Processing ...
 
+Processing Unit <toplevel> :
+	Found 2-bit shift register for signal <MIPS_SC_PROCESSOR/MEMWB/data_70>.
+Unit <toplevel> processed.
+
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 449
- Flip-Flops                                            : 449
+# Registers                                            : 428
+ Flip-Flops                                            : 428
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
 
 =========================================================================
 
@@ -993,26 +1141,28 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 708
+# BELS                             : 717
 #      GND                         : 1
-#      INV                         : 1
-#      LUT2                        : 15
-#      LUT3                        : 164
-#      LUT4                        : 65
-#      LUT5                        : 183
-#      LUT6                        : 242
-#      MUXCY                       : 26
-#      MUXF7                       : 10
+#      INV                         : 3
+#      LUT2                        : 24
+#      LUT3                        : 141
+#      LUT4                        : 79
+#      LUT5                        : 130
+#      LUT6                        : 298
+#      MUXCY                       : 14
+#      MUXF7                       : 26
 #      VCC                         : 1
-# FlipFlops/Latches                : 449
-#      FDC                         : 264
-#      FDCE                        : 65
+# FlipFlops/Latches                : 429
+#      FD                          : 238
+#      FDCE                        : 16
+#      FDE                         : 1
 #      FDR                         : 88
-#      FDRE                        : 32
-# RAMS                             : 19
-#      RAM32M                      : 13
-#      RAM32X1D                    : 4
-#      RAMB8BWER                   : 2
+#      FDRE                        : 86
+# RAMS                             : 8
+#      RAM32M                      : 4
+#      RAMB8BWER                   : 4
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 137
@@ -1026,26 +1176,27 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             449  out of  18224     2%  
- Number of Slice LUTs:                  730  out of   9112     8%  
-    Number used as Logic:               670  out of   9112     7%  
-    Number used as Memory:               60  out of   2176     2%  
-       Number used as RAM:               60
+ Number of Slice Registers:             429  out of  18224     2%  
+ Number of Slice LUTs:                  692  out of   9112     7%  
+    Number used as Logic:               675  out of   9112     7%  
+    Number used as Memory:               17  out of   2176     0%  
+       Number used as RAM:               16
+       Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    901
-   Number with an unused Flip Flop:     452  out of    901    50%  
-   Number with an unused LUT:           171  out of    901    18%  
-   Number of fully used LUT-FF pairs:   278  out of    901    30%  
-   Number of unique control sets:         8
+ Number of LUT Flip Flop pairs used:    852
+   Number with an unused Flip Flop:     423  out of    852    49%  
+   Number with an unused LUT:           160  out of    852    18%  
+   Number of fully used LUT-FF pairs:   269  out of    852    31%  
+   Number of unique control sets:         9
 
 IO Utilization: 
  Number of IOs:                         162
  Number of bonded IOBs:                 138  out of    232    59%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                1  out of     32     3%  
-    Number using Block RAM only:          1
+ Number of Block RAM/FIFO:                2  out of     32     6%  
+    Number using Block RAM only:          2
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
@@ -1069,7 +1220,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 468   |
+clk                                | BUFGP                  | 440   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1080,7 +1231,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 15.266ns (Maximum Frequency: 65.505MHz)
+   Minimum period: 17.492ns (Maximum Frequency: 57.169MHz)
    Minimum input arrival time before clock: 8.006ns
    Maximum output required time after clock: 4.226ns
    Maximum combinational path delay: No path found
@@ -1091,38 +1242,41 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 15.266ns (frequency: 65.505MHz)
-  Total number of paths / destination ports: 237805 / 935
+  Clock period: 17.492ns (frequency: 57.169MHz)
+  Total number of paths / destination ports: 265640 / 862
 -------------------------------------------------------------------------
-Delay:               15.266ns (Levels of Logic = 10)
-  Source:            MIPS_SC_PROCESSOR/MEMWB/data_3 (FF)
-  Destination:       MIPS_SC_PROCESSOR/EXMEM/data_68 (FF)
+Delay:               17.492ns (Levels of Logic = 13)
+  Source:            MIPS_SC_PROCESSOR/IDEX/data_9 (FF)
+  Destination:       MIPS_SC_PROCESSOR/EXMEM/data_64 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: MIPS_SC_PROCESSOR/MEMWB/data_3 to MIPS_SC_PROCESSOR/EXMEM/data_68
+  Data Path: MIPS_SC_PROCESSOR/IDEX/data_9 to MIPS_SC_PROCESSOR/EXMEM/data_64
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             17   0.633   1.810  MIPS_SC_PROCESSOR/MEMWB/data_3 (MIPS_SC_PROCESSOR/MEMWB/data_3)
-     LUT6:I1->O            3   0.373   0.766  MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_73_o2 (MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_73_o2)
-     LUT6:I5->O           32   0.373   1.520  MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_74_o (MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_74_o)
-     LUT5:I4->O            6   0.373   1.493  MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R281 (MIPS_SC_PROCESSOR/ForwardAout<5>)
-     LUT6:I0->O            1   0.373   0.820  MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/G2 (MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/G1)
-     LUT5:I3->O            1   0.373   0.970  MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/G3 (MIPS_SC_PROCESSOR/ALUTD/Generates<1>)
-     LUT5:I2->O            6   0.373   0.876  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>)
-     LUT5:I4->O            9   0.373   0.976  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>)
-     LUT6:I5->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>18 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>)
-     LUT5:I4->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/FULLADDER_ALU/C31 (MIPS_SC_PROCESSOR/ALUTD/FULL_COUT<30>)
-     LUT6:I5->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/Mmux_R112 (MIPS_SC_PROCESSOR/ALU_Result<0>)
-     FDC:D                     0.142          MIPS_SC_PROCESSOR/EXMEM/data_37
+     FD:C->Q               5   0.633   1.458  MIPS_SC_PROCESSOR/IDEX/data_9 (MIPS_SC_PROCESSOR/IDEX/data_9)
+     LUT6:I0->O            2   0.373   0.864  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_76_o5 (MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_76_o4)
+     LUT6:I4->O            2   0.373   0.864  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_76_o6_SW0 (N469)
+     LUT6:I4->O           11   0.373   1.039  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_76_o6_1 (MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_76_o6)
+     LUT5:I4->O            6   0.373   1.164  MIPS_SC_PROCESSOR/MUX2/Mmux_output281 (MIPS_SC_PROCESSOR/ChosenALUInput<5>)
+     LUT6:I3->O            1   0.373   0.820  MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/G2 (MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/G1)
+     LUT5:I3->O            1   0.373   1.060  MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/G3 (MIPS_SC_PROCESSOR/ALUTD/Generates<1>)
+     LUT5:I1->O            6   0.364   0.876  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>)
+     LUT5:I4->O            6   0.373   0.876  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>)
+     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>)
+     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU1B/FULLADDER_ALU/C21 (MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU1B/COUT<1>)
+     LUT6:I5->O            1   0.373   0.682  MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU1B/FULLADDER_ALU/C31 (MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU1B/COUT<2>)
+     LUT6:I5->O            1   0.373   0.682  MIPS_SC_PROCESSOR/ALUTD/Mmux_R201 (MIPS_SC_PROCESSOR/ALUTD/Mmux_R20)
+     LUT6:I5->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/Mmux_R202 (MIPS_SC_PROCESSOR/ALU_Result<27>)
+     FD:D                      0.142          MIPS_SC_PROCESSOR/EXMEM/data_64
     ----------------------------------------
-    Total                     15.266ns (4.505ns logic, 10.761ns route)
-                                       (29.5% logic, 70.5% route)
+    Total                     17.492ns (5.615ns logic, 11.877ns route)
+                                       (32.1% logic, 67.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 543 / 451
+  Total number of paths / destination ports: 279 / 187
 -------------------------------------------------------------------------
 Offset:              8.006ns (Levels of Logic = 6)
   Source:            command<11> (PAD)
@@ -1137,7 +1291,7 @@ Offset:              8.006ns (Levels of Logic = 6)
      LUT5:I0->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In51 (TDT4255_COM/state_FSM_FFd1-In5)
      LUT5:I2->O            1   0.373   0.682  TDT4255_COM/state_FSM_FFd1-In54 (TDT4255_COM/state_FSM_FFd1-In53)
      LUT6:I5->O            3   0.373   0.766  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
-     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In1_SW0 (N2)
+     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In1_SW0 (N291)
      LUT6:I3->O            1   0.373   0.000  TDT4255_COM/state_FSM_FFd1-In1 (TDT4255_COM/state_FSM_FFd1-In)
      FDR:D                     0.142          TDT4255_COM/state_FSM_FFd1
     ----------------------------------------
@@ -1173,20 +1327,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   15.266|    6.771|    7.088|         |
+clk            |   17.492|    8.634|    5.056|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 24.93 secs
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 22.62 secs
  
 --> 
 
-Total memory usage is 265672 kilobytes
+Total memory usage is 275976 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  300 (   0 filtered)
-Number of infos    :   50 (   0 filtered)
+Number of warnings :  398 (   0 filtered)
+Number of infos    :   52 (   0 filtered)
 

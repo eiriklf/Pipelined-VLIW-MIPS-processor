@@ -37,9 +37,7 @@ architecture Behavioral of PROCESSOR is
 	component Hazarddetection is
     Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
            IDEXregisterRT : in  STD_LOGIC_VECTOR(31 downto 0);
-           InstructionType : in  STD_LOGIC_VECTOR (5 downto 0);
 			  IFIDInstructionType: in  STD_LOGIC_VECTOR (5 downto 0);
-			  IDEXInstructiontype: in  STD_LOGIC_VECTOR (5 downto 0);
            PCWrite : out  STD_LOGIC;
 			  IFIDwrite: out STD_LOGIC;
 			  IFIDreset: out STD_LOGIC;--syncronous reset for god's sake
@@ -47,16 +45,14 @@ architecture Behavioral of PROCESSOR is
            Controlenable : out  STD_LOGIC;
 			  State: out std_logic_vector(1 downto 0);
 			  State_in: in std_logic_vector(1 downto 0);
+			  State_in2: in std_logic_vector(1 downto 0);
 			  buffer_write: out std_logic;
 			  branch: in std_logic;
 			  branch_ok:out std_logic;
 			  revert:out std_logic;
 			  IFIDbranch_taken: in std_logic;
-			   IDEXbranch_taken: in std_logic;
 			  branch_taken: out std_logic;
-			  equalvals: in std_logic_vector(31 downto 0);
-			  equalvals2: in std_logic_vector(31 downto 0);
-			  IDEXbranch: in std_logic
+			  equalvals2: in std_logic_vector(31 downto 0)
 			  );
 	end component Hazarddetection;
 	
@@ -65,10 +61,12 @@ architecture Behavioral of PROCESSOR is
 			CLK 			:	in	STD_LOGIC;				
 			RESET			:	in	STD_LOGIC;				
 			RW				:	in	STD_LOGIC;				
-			RS_ADDR 		:	in	STD_LOGIC_VECTOR (10 downto 0); 
-			RD_ADDR 		:	in	STD_LOGIC_VECTOR (10 downto 0);
+			RS_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0); 
+			RT_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0); 
+			RD_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0);
 			WRITE_DATA	:	in	STD_LOGIC_VECTOR (17 downto 0); 
-			RS				:	out	STD_LOGIC_VECTOR (17 downto 0)
+			RS				:	out	STD_LOGIC_VECTOR (17 downto 0);
+			RT				:	out	STD_LOGIC_VECTOR (17 downto 0)
 	);
 
 end component predictorbuffer;
@@ -285,6 +283,7 @@ end component Forwarding;
 	signal equalvals2:std_logic_vector(31 downto 0);
 	
 	signal branch_taken: std_logic;
+	signal stateread2:std_logic_vector(17 downto 0);
 	begin
 	equalvals<=(IDEXs(105 downto 74) xor IDEXs(73 downto 42));
 	equalvals2<=read_data1 xor read_data2;
@@ -315,7 +314,7 @@ end component Forwarding;
 	--if more alufunctions are needed, add more signals when needed
 	
 	--mapping out of processor
-	imem_address<=mux2out;
+	imem_address<=PC_OUTPUT;
 	dmem_address<=EXMEMs(68 downto 37);--aluresult
 	dmem_address_wr<=EXMEMs(68 downto 37);
 	dmem_data_out<=EXMEMs(36 downto 5);--read_data2;
@@ -364,7 +363,7 @@ end component Forwarding;
 	
 	);
 	IFID: regi generic map ( N=>76) port map(
-		 Data_in =>PC_Output(10 downto 0)&branch_taken&incremented&imem_data_in,--input on incremented may notfit with branch pred unit
+		 Data_in =>PC_Output(10 downto 0)&branch_taken&incremented&imem_data_in,--change incremented?
            data_out => IFIDs,
            clock => clk,
            reset => IFIDreset,
@@ -412,26 +411,25 @@ end component Forwarding;
 	DETECTION_UNIT: Hazarddetection
     Port map ( IDEXCONTROL=>IDEXs(178 downto 170),--figures out if operation in idex register is read
            IDEXregisterRT=>IDEXs(73 downto 42),--RT register
-           InstructionType=>PC_Output(31 downto 26),--instructions from controlunit
 			  IFIDInstructionType=>IFIDs(31 downto 26),
-			  IDEXInstructiontype=>IDEXs(169 downto 164),
            PCWrite =>enablepcwrite,--enable PC write
            Controlenable=>control_enable,
 			  processor_enable=> processor_enable,
 			  buffer_write=>buffer_write,
 			  State_in=>stateread(17 downto 16),
+			  state_in2=>stateread2(17 downto 16),
 			  State=>State,
 			  IFIDwrite=>IFIDwrite,
 			  IFIDreset=>IFIDreset,
 			  branch_ok=>branch_ok,
 			  IFIDbranch_taken=>IFIDs(64),
-			  IDEXbranch_taken=>IDEXs(184), 
+			  --IDEXbranch_taken=>IDEXs(184), 
 			  branch_taken=>branch_taken,
 			  branch=>chosen_OP(5),
 			  revert=>revert,
-			  equalvals=>equalvals,
-			  equalvals2=>equalvals2,
-			  IDEXbranch=>IDEXs(175)
+			 -- equalvals=>equalvals,
+			  equalvals2=>equalvals2
+			  --IDEXbranch=>IDEXs(175)
 			  );
 			  
 		--!!!!!	  
@@ -440,15 +438,16 @@ end component Forwarding;
 	-- Incrementer increases input from PC with 1 bit, since the MIPS processor will be
 	-- addressing by words
 	Addressincrementer: adder port map(
-		x => mux2out,
+		x => pc_output,
 		y => "00000000000000000000000000000001",
 		R => incremented
 	);
 	
+	
 	-- ADRESSADDER is the second adder, which is used for calculation new PC based on branching
 	ADDRESSADDER: adder port map(
-		X	=> IDEXs(137 downto 106),--IFIDs(63 downto 32),
-		Y	=> IDEXs(41 downto 10),--Signextended,
+		X	=>IFIDs(63 downto 32),
+		Y	=>Signextended,
 		R	=> BranchAdder
 	);
 	
@@ -457,10 +456,12 @@ end component Forwarding;
 			CLK 	=>clk,			
 			RESET		=>reset,				
 			RW			=>buffer_write,			
-			RS_ADDR 		=>PC_Output(10 downto 0),
-			RD_ADDR 		=>IFIDs(42 downto 32),
+			RS_ADDR 		=>pc_output(4 downto 0),
+			RT_ADDR		=>IFIDs(69 downto 65),
+			RD_ADDR 		=>IFIDs(69 downto 65),
 			WRITE_DATA	=>state&BranchAdder(15 downto 0), --look on this
-			RS				=>stateread
+			RS				=>stateread,
+			RT 			=>stateread2
 	);
 	
 	
@@ -502,7 +503,7 @@ end component Forwarding;
 
 	-- First multiplexor. It is used to choose between regular incremented PC value or PC value based on branching
 	MUX4: simple_multiplexer port map( 
-		a => incremented,
+		a => mux2out,
       b =>BranchAdder,-- EXMEMs(101 downto 70),
 		control_signal => branch_ok,
       output => branchcalc
@@ -510,8 +511,8 @@ end component Forwarding;
 		
 		--outputs pc counter if branch is taken and revert back to the old address if not taken
 			BranchTAKEN:	simple_multiplexer port map( 
-		a =>PC_output,
-      b => IFIDs(63 downto 32),
+		a =>incremented,
+      b => IFIDs(63 downto 32),--FIX
       control_signal =>revert,--must fix
       output =>mux1out
 	);

@@ -32,9 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Hazarddetection is
     Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
            IDEXregisterRT : in  STD_LOGIC_VECTOR(31 downto 0);
-           InstructionType : in  STD_LOGIC_VECTOR (5 downto 0);
 			  IFIDInstructionType: in  STD_LOGIC_VECTOR (5 downto 0);
-			  IDEXInstructiontype: in  STD_LOGIC_VECTOR (5 downto 0);
            PCWrite : out  STD_LOGIC;
 			  IFIDwrite: out STD_LOGIC;
 			  IFIDreset: out STD_LOGIC;--syncronous reset for god's sake
@@ -42,16 +40,14 @@ entity Hazarddetection is
            Controlenable : out  STD_LOGIC;
 			  State: out std_logic_vector(1 downto 0);
 			  State_in: in std_logic_vector(1 downto 0);
+			  State_in2: in std_logic_vector(1 downto 0);
 			  buffer_write: out std_logic;
 			  branch: in std_logic;
 			  branch_ok:out std_logic;
 			  revert:out std_logic;
 			  IFIDbranch_taken: in std_logic;
-			   IDEXbranch_taken: in std_logic;
 			  branch_taken: out std_logic;
-			  equalvals: in std_logic_vector(31 downto 0);
-			  equalvals2: in std_logic_vector(31 downto 0);
-			  IDEXbranch: in std_logic
+			  equalvals2: in std_logic_vector(31 downto 0)
 			  );
 end Hazarddetection;
 
@@ -65,15 +61,12 @@ constant nottaken1: std_logic_vector(1 downto 0):="00";--initialize to this
 constant nottaken0: std_logic_vector(1 downto 0):="10";
 
 signal branched1:std_logic ;--idex
-signal branched2:std_logic;--ifid
 begin
 	
 	branched1 <= branch when equalvals2="00000000000000000000000000000000"
 	else '0'; --chosen_Op or op? 
-	branched2<= IDEXbranch when equalvals="00000000000000000000000000000000"
-	else '0'; --chosen_Op or op? 
-	--branch_ok<=branched;--fix
-process(processor_enable,IDEXbranch_taken,IDEXInstructiontype,state_in,branched2)
+
+process(processor_enable,IFIDbranch_taken,IFIDInstructionType,state_in,branched1)
 begin
         if(processor_enable='1') then 
 				Controlenable<='1';
@@ -85,33 +78,33 @@ begin
 				else
 				branch_taken<='0';
 				end if;
-				if(IDEXbranch_taken='0' and IDEXInstructiontype=BEQ  and branched2='1') then--predicted to not taken when its taken, normal delay branch scenario, increase state towards taken
+				if(IFIDbranch_taken='0' and IFIDInstructionType=BEQ  and branched1='1') then--predicted to not taken when its taken, normal delay branch scenario, increase state towards taken
 				revert<='0';--no need for reverting if branch is not taken
 				--set in delay
 				IFIDwrite<='1';--take somewhere else
 				  PCWrite<='1';--take somewhere else
 				IFIDreset<='0';
 				branch_ok<='1';
-				elsif(IDEXbranch_taken='1' and IDEXInstructiontype=BEQ and branched2='1')then--branch predicted to taken and taken, check if its a right prediction and the predicted address is right, decrease state towards taken
+				elsif(IFIDbranch_taken='1' and IFIDInstructionType=BEQ and branched1='1')then--branch predicted to taken and taken, check if its a right prediction and the predicted address is right, decrease state towards taken
 				--check if the predicted address is actually correct, do this later
 				revert<='0';
 				PCWrite<='1';
 				IFIDwrite<='1';
 				IFIDreset<='0';
 				branch_ok<='0';--the branching is already done
-				elsif(IDEXbranch_taken='1' and not( IDEXInstructiontype=BEQ))then--something has gone terrible wrong
+				elsif(IFIDbranch_taken='1' and not( IFIDInstructionType=BEQ))then--something has gone terrible wrong, a new program can have been loaded. The cache/buffer must be flushed when new instructions are loaded
 				revert<='1';
 				IFIDwrite<='-';
 				PCWrite<='1';
 				IFIDreset<='1';
 				branch_ok<='0';--mishap, no branch
-				elsif(IDEXbranch_taken='1' and IDEXInstructiontype=BEQ and branched2='0')then--mispredicted, predicted to taken when not taken, revert changes and increase state towards not taken
+				elsif(IFIDbranch_taken='1' and IFIDInstructionType=BEQ and branched1='0')then--mispredicted, predicted to taken when not taken, revert changes and increase state towards not taken
 				revert<='1';
 				IFIDwrite<='-';
 				PCWrite<='1';--i think
 				IFIDreset<='1';
 				branch_ok<='0';--mishap, the branch wont happen and everything needs to be reverted				
-				elsif(IDEXbranch_taken='0' and IDEXInstructiontype=BEQ and branched2='0')then--not taken predicted right
+				elsif(IFIDbranch_taken='0' and IFIDInstructionType=BEQ and branched1='0')then--not taken predicted right
 				IFIDwrite<='1';
 				PCWrite<='1';
 				IFIDreset<='0';
@@ -143,10 +136,10 @@ begin
 								buffer_write<='0';
 				end if;
 				end process;
-				STATEMACHINE: process(IFIDInstructionType,State_in,branched1,ifidbranch_taken)
+				STATEMACHINE: process(IFIDInstructionType,State_in2,branched1,ifidbranch_taken)
 begin
 
-				case State_in is
+				case State_in2 is
 					when taken0 =>
 					if(  IFIDInstructionType=BEQ and((IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1')) ) then--predict taken
 					state<=taken0;

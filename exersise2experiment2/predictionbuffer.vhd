@@ -38,10 +38,12 @@ entity predictorbuffer is
 			CLK 			:	in	STD_LOGIC;				
 			RESET			:	in	STD_LOGIC;				
 			RW				:	in	STD_LOGIC;				
-			RS_ADDR 		:	in	STD_LOGIC_VECTOR (10 downto 0); 
-			RD_ADDR 		:	in	STD_LOGIC_VECTOR (10 downto 0);
+			RS_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0); 
+			RT_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0); 
+			RD_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0);
 			WRITE_DATA	:	in	STD_LOGIC_VECTOR (17 downto 0); 
-			RS				:	out	STD_LOGIC_VECTOR (17 downto 0)
+			RS				:	out	STD_LOGIC_VECTOR (17 downto 0);
+			RT				:	out	STD_LOGIC_VECTOR (17 downto 0)
 	);
 
 end predictorbuffer;
@@ -73,6 +75,7 @@ begin
 	end process  REGISTERS;
 
 	RS <= REGS(to_integer(unsigned(RS_ADDR)));
+	RT <= REGS(to_integer(unsigned(RT_ADDR)));
 
 end Behavioral;
 

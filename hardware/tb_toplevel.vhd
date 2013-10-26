@@ -79,19 +79,21 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant addr15: std_logic_vector(0 to 31) := "00000000000000000000000000001111";
   constant addr16: std_logic_vector(0 to 31) := "00000000000000000000000000010000";
   constant addr17: std_logic_vector(0 to 31) := "00000000000000000000000000010001";
+  constant addr18: std_logic_vector(0 to 31) := "00000000000000000000000000010010";
+  constant addr19: std_logic_vector(0 to 31) := "00000000000000000000000000010011";
 
   -- This is written to memory initially
-  constant data1 : std_logic_vector(0 to 31):= "00000000000000000000000000000010";
+  constant data1 : std_logic_vector(0 to 31):= "00000000000000000000000000000001";
 	constant data2 : std_logic_vector(0 to 31):= "00000000000000000000000000001010";
   
   -- These are the instructions executed by the CPU (loaded to instruction-memory)
   -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
-  constant ins0  : std_logic_vector(0 to 31) := X"8C010001";
+  constant ins0  : std_logic_vector(0 to 31) := X"8C010002";
   constant ins1  : std_logic_vector(0 to 31) := X"8C020002";
   constant ins2  : std_logic_vector(0 to 31) := X"8C020002";
   constant ins3  : std_logic_vector(0 to 31) := X"00000000";
-  constant ins4  : std_logic_vector(0 to 31) := X"00000000";
-  constant ins5  : std_logic_vector(0 to 31) := X"00000000";
+  constant ins4  : std_logic_vector(0 to 31) := X"8C0B0001";
+  constant ins5  : std_logic_vector(0 to 31) := X"8C0C0002";
   constant ins6  : std_logic_vector(0 to 31) := X"00221820";--add $3, $1, $2
   constant ins7  : std_logic_vector(0 to 31) := X"AC030004";
   constant ins8  : std_logic_vector(0 to 31) := X"AC030006";
@@ -100,8 +102,12 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant ins11 : std_logic_vector(0 to 31) := X"AC030008";--sw $3, 8($0)
   constant ins12 : std_logic_vector(0 to 31) := X"00231820";--add $3, $1, $3
   constant ins13 : std_logic_vector(0 to 31) := X"AC030009";
-  constant ins14 : std_logic_vector(0 to 31) := X"1000FFFD";--beq $0, $0, -3
-  constant ins15 : std_logic_vector(0 to 31) := X"AC03000A";
+  	     constant ins14 : std_logic_vector(0 to 31) := X"00000000";--lw adresse 1 i 11
+		    	     constant ins15 : std_logic_vector(0 to 31) := X"00000000"; --lw adresse 2 i 12
+					  		    	     constant ins16 : std_logic_vector(0 to 31) := X"016B5820"; --add $11,$11,$11
+    constant ins17 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
+  constant ins18 : std_logic_vector(0 to 31) := X"1020FFFD";--beq $0, $1, -3
+  constant ins19 : std_logic_vector(0 to 31) := X"1000FFFD";
    
   -- Used to control the COM-module
   constant CMD_IDLE	: std_logic_vector(0 to 31) := "00000000000000000000000000000000";
@@ -334,6 +340,51 @@ BEGIN
     command <= CMD_WI;          
     bus_address_in <= addr15;
     bus_data_in <= ins15;
+    wait for clk_period*3;
+
+    command <= CMD_IDLE;          
+    bus_address_in <= zero;
+    bus_data_in <= zero;
+    wait for clk_period*3;
+	 
+	     -- Add instruction 16
+    command <= CMD_WI;          
+    bus_address_in <= addr16;
+    bus_data_in <= ins16;
+    wait for clk_period*3;
+
+    command <= CMD_IDLE;          
+    bus_address_in <= zero;
+    bus_data_in <= zero;
+    wait for clk_period*3;
+	 	 
+	     -- Add instruction 17
+    command <= CMD_WI;          
+    bus_address_in <= addr17;
+    bus_data_in <= ins17;
+    wait for clk_period*3;
+
+    command <= CMD_IDLE;          
+    bus_address_in <= zero;
+    bus_data_in <= zero;
+    wait for clk_period*3;
+	 
+	 	     -- Add instruction 18
+    command <= CMD_WI;          
+    bus_address_in <= addr18;
+    bus_data_in <= ins18;
+    wait for clk_period*3;
+
+    command <= CMD_IDLE;          
+    bus_address_in <= zero;
+    bus_data_in <= zero;
+    wait for clk_period*3;
+	 
+	 	 
+	 	     -- Add instruction 19
+    command <= CMD_WI;          
+    bus_address_in <= addr19;
+    bus_data_in <= ins19;
     wait for clk_period*3;
 
     command <= CMD_IDLE;          

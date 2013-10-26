@@ -22,12 +22,13 @@ architecture Behavioral of regi is
 	-- will be updated with output from Incrementation, Branching or Jump
 	REGIST : process(clock, reset,data)
 	begin
-	
-		if(reset='1') then
-				data<=reset_state;
-		elsif(rising_edge(clock)) then
+
+		if(rising_edge(clock)) then
 			if(write_enable='1')then
 				data<=data_in;
+					
+		elsif(reset='1') then
+				data<=reset_state;
 			end if;
 		end if;
 	 end process;
