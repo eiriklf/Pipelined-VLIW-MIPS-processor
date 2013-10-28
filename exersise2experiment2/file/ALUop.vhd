@@ -7,7 +7,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+--remove branch operation
 entity ALUoperation is
     Port ( ALUOp0 : in  STD_LOGIC;
            ALUOp1 : in  STD_LOGIC;

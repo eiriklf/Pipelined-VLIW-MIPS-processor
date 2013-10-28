@@ -47,7 +47,7 @@ architecture Behavioral of PROCESSOR is
 			  State_in: in std_logic_vector(1 downto 0);
 			  State_in2: in std_logic_vector(1 downto 0);
 			  buffer_write: out std_logic;
-			  branch: in std_logic;
+			  branch: in std_logic_vector(1 downto 0);
 			  branch_ok:out std_logic;
 			  revert:out std_logic;
 			  IFIDbranch_taken: in std_logic;
@@ -59,19 +59,18 @@ architecture Behavioral of PROCESSOR is
 	end component Hazarddetection;
 	
 		component predictorbuffer is
+    generic (N :NATURAL :=16; M:NATURAL:=32; K:NATURAL:=4);
 	port(
 			CLK 			:	in	STD_LOGIC;				
 			RESET			:	in	STD_LOGIC;				
 			RW				:	in	STD_LOGIC;				
-			RS_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0); 
-			RT_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0); 
-			RD_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0);
-			WRITE_DATA	:	in	STD_LOGIC_VECTOR (17 downto 0); 
-			RS				:	out	STD_LOGIC_VECTOR (17 downto 0);
-			RT				:	out	STD_LOGIC_VECTOR (17 downto 0)
+			Read_address:	in	STD_LOGIC_VECTOR (K downto 0); 
+			Write_address:	in	STD_LOGIC_VECTOR (K downto 0);
+			WRITE_DATA	:	in	STD_LOGIC_VECTOR (N-1 downto 0); 
+			Data_out		:	out	STD_LOGIC_VECTOR (N-1 downto 0)
 	);
+	end component predictorbuffer;
 
-end component predictorbuffer;
 
 	component ALUOperation is
     Port ( aluop0 : in  STD_LOGIC;
@@ -149,9 +148,10 @@ end component TriputMux;
 	
 	component control is
     Port ( control_input : in  STD_LOGIC_VECTOR (5 downto 0);
-           Ops : out STD_LOGIC_VECTOR (8 downto 0);
-			  reset: in std_logic;
-			  clk: in std_logic);
+           Ops : out STD_LOGIC_VECTOR (9 downto 0);
+              clk: in std_logic;
+              reset: in std_logic
+              );
 	end component control;
 	
 	component Forwarding is
@@ -222,22 +222,23 @@ end component Forwarding;
 	
 	
 	-- Output signals from the controller.
-	signal Ops : std_logic_vector (8 downto 0);
+	signal Ops : std_logic_vector (9 downto 0);
 	-- They are divided into each signal to make the overview easier
 	--signal jump : std_logic;
 	--signal memwrite : std_logic;
 	--signal regwrite : std_logic;
 	--signal memtoreg : std_logic;
 	--signal alusrc : std_logic;
-	--signal branch : std_logic;
+	--signal branch(1) : std_logic;
 	--signal regdest : std_logic;
 	--signal ALUOp : std_logic_vector(1 downto 0);
+		--signal branch(0) : std_logic;
 	--assigned to the alu operation. We dont use the enumeration in aluOP module because its easier for us to use a vector
 	signal operation: std_logic_vector(3 downto 0);
 	--branchadder
 	signal BranchAdder : STD_LOGIC_VECTOR (31 downto 0);
 	--IF/ID out
-	signal IFIDs: std_logic_vector(85 downto 0);
+	signal IFIDs: std_logic_vector(87 downto 0);
 	
 	--ID/EX out
 	signal IDEXs: std_logic_vector(184 downto 0);
@@ -256,7 +257,7 @@ end component Forwarding;
 	signal control_enable: std_logic;
 	
 	--chosen operation from the controloutputmux
-	signal chosen_OP: std_logic_vector(8 downto 0);
+	signal chosen_OP: std_logic_vector(9 downto 0);
 	
 	--flushsignals
 	
@@ -270,7 +271,7 @@ end component Forwarding;
 	--enables write to pcpointer register and the predictionbuffer
 	--output from state in branchpredictor
 	signal state:std_logic_vector(1 downto 0);
-	signal stateread:std_logic_vector(17 downto 0);
+	signal stateread:std_logic_vector(1 downto 0);
 	--output from the PCpointer
 	signal predictionout: std_logic_vector(31 downto 0);
 	--signal to write to the dynamic branchpred registers
@@ -285,7 +286,9 @@ end component Forwarding;
 	signal equalvals2:std_logic_vector(31 downto 0);
 	
 	signal branch_taken: std_logic;
-	signal stateread2:std_logic_vector(17 downto 0);
+	--signal stateread2:std_logic_vector(17 downto 0);
+	
+	signal prediction_address: std_logic_vector(15 downto 0);
 	begin
 	--equalvals<=(IDEXs(105 downto 74) xor IDEXs(73 downto 42));
 	equalvals2<=read_data1 xor read_data2;
@@ -297,10 +300,11 @@ end component Forwarding;
 	--regwrite <= Ops(2);
 	--memtoreg <= Ops(3);
 	--alusrc <= Ops(4);
-	--branch <= Ops(5);
+	--branch equal <= Ops(5);
 	--regdest <= Ops(6);
 	--ALUOp(0) <= Ops(7);
 --	ALUOp(1) <= Ops(8); -- ALUOp(1)
+	--bne <= Ops(9);
 	--if more non-R instructions are added, add more aluOP signals
 
 	--perform signextension
@@ -364,16 +368,15 @@ end component Forwarding;
            write_enable =>enablepcwrite
 	
 	);
-	IFID: regi generic map ( N=>86) port map(
-		 Data_in =>stateread(15 downto 0)&pc_output(4 downto 0)&branch_taken&incremented&imem_data_in,--change incremented?
+	IFID: regi generic map ( N=>88) port map(
+		 Data_in =>stateread&prediction_address&pc_output(4 downto 0)&branch_taken&incremented&imem_data_in,--change incremented?
            data_out => IFIDs,
            clock => clk,
            reset => IFIDreset,
 			  write_enable=>IFIDwrite
 	);
 	IDEX: regi generic map (N=>185) port map(
-	--OMGOMGOMGOMG
-			 Data_in => IFIDs(64)&IFIDs(25 downto 21)&chosen_OP&IFIDs(31 downto 26)&IFIDs(25 downto 0)&IFIDs(63 downto 32)&read_data1&read_data2&Signextended&IFIDs(20 downto 16)&IFIDs(15 downto 11),--138+25, perform signex later?
+			 Data_in =>IFIDs(64)&IFIDs(25 downto 21)&chosen_OP(8 downto 0)&IFIDs(31 downto 26)&IFIDs(25 downto 0)&IFIDs(63 downto 32)&read_data1&read_data2&Signextended&IFIDs(20 downto 16)&IFIDs(15 downto 11),--138+25, perform signex later?
            data_out => IDEXs,
            clock => clk,
            reset => reset,
@@ -418,8 +421,8 @@ end component Forwarding;
            Controlenable=>control_enable,
 			  processor_enable=> processor_enable,
 			  buffer_write=>buffer_write,
-			  State_in=>stateread(17 downto 16),
-			  state_in2=>stateread2(17 downto 16),
+			  State_in=>stateread,
+			  state_in2=>IFIDs(87 downto 86),
 			  State=>State,
 			  IFIDwrite=>IFIDwrite,
 			  IFIDreset=>IFIDreset,
@@ -427,12 +430,12 @@ end component Forwarding;
 			  IFIDbranch_taken=>IFIDs(64),
 			  --IDEXbranch_taken=>IDEXs(184), 
 			  branch_taken=>branch_taken,
-			  branch=>chosen_OP(5),
+			  branch=>chosen_OP(5)&chosen_OP(9),
 			  revert=>revert,
 			 -- equalvals=>equalvals,
 			  equalvals2=>equalvals2,
 			  --IDEXbranch=>IDEXs(175)
-			  branch_address=>stateread2(15 downto 0),
+			  branch_address=> BranchAdder(15 downto 0),
 			  predicted_address=>IFIDs(85 downto 70)
 			  
 			  
@@ -457,19 +460,44 @@ end component Forwarding;
 		R	=> BranchAdder
 	);
 	
-		PREDICTOR_BUFF: predictorbuffer
+--		PREDICTOR_BUFF: predictorbuffer
+--	port map(
+--			CLK 	=>clk,			
+--			RESET		=>reset,				
+--			RW			=>buffer_write,			
+--			RS_ADDR 		=>pc_output(4 downto 0),
+--			RT_ADDR		=>IFIDs(69 downto 65),
+--			RD_ADDR 		=>IFIDs(69 downto 65),
+--			WRITE_DATA	=>state&BranchAdder(15 downto 0), --look on this
+		--	RS				=>stateread,
+	--		RT 			=>stateread2
+--	);
+	
+	--send stateread gjennom IFID og få stateread2 ut
+	BRANCH_TARGET_BUFFER: predictorbuffer
+	   -- generic (N :NATURAL :=15; M:NATURAL:=32; K:NATURAL:=4);
 	port map(
-			CLK 	=>clk,			
-			RESET		=>reset,				
-			RW			=>buffer_write,			
-			RS_ADDR 		=>pc_output(4 downto 0),
-			RT_ADDR		=>IFIDs(69 downto 65),
-			RD_ADDR 		=>IFIDs(69 downto 65),
-			WRITE_DATA	=>state&BranchAdder(15 downto 0), --look on this
-			RS				=>stateread,
-			RT 			=>stateread2
+			CLK 			=>clk,				
+			RESET			=>reset,				
+			RW				=>buffer_write,		
+			Read_address=>pc_output(4 downto 0), 
+			Write_address=>IFIDs(69 downto 65),
+			WRITE_DATA	=>BranchAdder(15 downto 0),
+			Data_out		=>prediction_address
 	);
 	
+	
+		BRANCH_PREDICTION_BUFFER: predictorbuffer
+	   generic map (N =>2, M=>32, K=>4)
+	port map(
+			CLK 			=>clk,				
+			RESET			=>reset,				
+			RW				=>buffer_write,		
+			Read_address=>pc_output(4 downto 0), 
+			Write_address=>IFIDs(69 downto 65),
+			WRITE_DATA	=>state,
+			Data_out		=>stateread
+	);
 	
 	ForwardmuxA: TriputMux 
     Port map( A =>IDEXs(105 downto 74),--readdataB
@@ -525,7 +553,7 @@ end component Forwarding;
 	--output the result address from branchprediction
 				BranchPRED:	simple_multiplexer port map( 
 		a =>mux1out,
-      b => incremented(31 downto 16)&stateread(15 downto 0),--the calculated branch destination, maybe pc_output instead of incremented signal
+      b => incremented(31 downto 16)&prediction_address,--the calculated branch destination, maybe pc_output instead of incremented signal
       control_signal =>branch_Taken,--must fix
       output =>mux2out
 	);
@@ -537,8 +565,8 @@ end component Forwarding;
       output =>FinalPCAddress
 	);
 	
-		CONTROL_OUTPUT: simple_multiplexer generic map ( N=>9) port map( 
-		a =>"000000000",
+		CONTROL_OUTPUT: simple_multiplexer generic map ( N=>10) port map( 
+		a =>"0000000000",
       b => OPs,
       control_signal =>control_enable,--jump,
       output =>chosen_OP

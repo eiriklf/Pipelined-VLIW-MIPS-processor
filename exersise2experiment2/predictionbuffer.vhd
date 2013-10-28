@@ -34,24 +34,23 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 --use UNISIM.VComponents.all;
 
 entity predictorbuffer is
+    generic (N :NATURAL; M:NATURAL; K:NATURAL);
 	port(
 			CLK 			:	in	STD_LOGIC;				
 			RESET			:	in	STD_LOGIC;				
 			RW				:	in	STD_LOGIC;				
-			RS_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0); 
-			RT_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0); 
-			RD_ADDR 		:	in	STD_LOGIC_VECTOR (4 downto 0);
-			WRITE_DATA	:	in	STD_LOGIC_VECTOR (17 downto 0); 
-			RS				:	out	STD_LOGIC_VECTOR (17 downto 0);
-			RT				:	out	STD_LOGIC_VECTOR (17 downto 0)
+			Read_address:	in	STD_LOGIC_VECTOR (K downto 0); 
+			Write_address:	in	STD_LOGIC_VECTOR (K downto 0);
+			WRITE_DATA	:	in	STD_LOGIC_VECTOR (N-1 downto 0); 
+			Data_out		:	out	STD_LOGIC_VECTOR (N-1 downto 0)
 	);
-
 end predictorbuffer;
 
 architecture Behavioral of predictorbuffer is
 
-	constant NUM_REG : integer := 32;
-	type REGS_T is array (NUM_REG-1 downto 0) of STD_LOGIC_VECTOR(17 downto 0);
+
+	--constant NUM_REG : integer := M;--32
+	type REGS_T is array (M-1 downto 0) of STD_LOGIC_VECTOR(N-1 downto 0);
 	
 	signal REGS : REGS_T := (others => (others =>'0'));
 
@@ -59,23 +58,15 @@ begin
 
 	REGISTERS: process(CLK, RESET)
 	begin
-    -- CF: The reset-functionality commented out to save space (detected as RAM)
-    -- and for additional speed (~44 -> ~50 MHz)
-    -- If reset-functionality turns out to be needed,
-    -- it can be commented back in.
-    --if  RESET='1' then
-		--		for i in 0 to NUM_REG-1 loop
-		--			REGS(i) <= (others => '0');
-		--		end loop;
+
 		if rising_edge(CLK) then
 			if  RW='1' then
-				REGS(to_integer(unsigned(RD_ADDR)))<=WRITE_DATA;
+				REGS(to_integer(unsigned(Write_address)))<=WRITE_DATA;
 			end if;
 		end if;
 	end process  REGISTERS;
 
-	RS <= REGS(to_integer(unsigned(RS_ADDR)));
-	RT <= REGS(to_integer(unsigned(RT_ADDR)));
+	Data_out <= REGS(to_integer(unsigned(Read_address)));
 
 end Behavioral;
 

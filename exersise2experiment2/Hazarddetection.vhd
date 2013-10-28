@@ -42,7 +42,7 @@ entity Hazarddetection is
 			  State_in: in std_logic_vector(1 downto 0);
 			  State_in2: in std_logic_vector(1 downto 0);
 			  buffer_write: out std_logic;
-			  branch: in std_logic;
+			  branch: in std_logic_vector(1 downto 0);
 			  branch_ok:out std_logic;
 			  revert:out std_logic;
 			  IFIDbranch_taken: in std_logic;
@@ -65,10 +65,11 @@ constant nottaken0: std_logic_vector(1 downto 0):="10";
 signal branched1:std_logic ;--idex
 begin
 	
-	branched1 <= branch when equalvals2="00000000000000000000000000000000"
-	else '0'; --chosen_Op or op? 
+	branched1 <= '1' when (equalvals2="00000000000000000000000000000000" and (branch(1)='1'))
+	else '1' when (branch(0)='1') and not (equalvals2="00000000000000000000000000000000")
+	else '0';
 
-process(processor_enable,IFIDbranch_taken,IFIDInstructionType,state_in,branched1,branch_address)
+process(processor_enable,IFIDbranch_taken,state_in,branched1,branch_address)
 begin
         if(processor_enable='1') then 
 				Controlenable<='1';
@@ -83,34 +84,34 @@ begin
 				branch_taken<='0';
 				end if;
 				--demorgans law
-				if(IFIDbranch_taken='1' and ( not(branch_address=predicted_address) or not( IFIDInstructionType=BEQ) ))then--revert if a new program has been loaded, or if the predicted address is a miss
+				if(IFIDbranch_taken='1' and ( not(branch_address=predicted_address) or not(branched1='1') ))then--revert if a new program has been loaded, or if the predicted address is a miss
 				revert<='1';
 				IFIDwrite<='-';
 				PCWrite<='1';
 				IFIDreset<='1';
 				branch_ok<='0';--mishap, no branch
 				
-				elsif(IFIDbranch_taken='0' and IFIDInstructionType=BEQ  and branched1='1') then--predicted to not taken when its taken, normal delay branch scenario, increase state towards taken
+				elsif(IFIDbranch_taken='0' and branched1='1') then--predicted to not taken when its taken, normal delay branch scenario, increase state towards taken
 				revert<='0';--no need for reverting if branch is not taken
 				--set in delay
 				IFIDwrite<='1';--take somewhere else
 				  PCWrite<='1';--take somewhere else
 				IFIDreset<='0';
 				branch_ok<='1';
-				elsif(IFIDbranch_taken='1' and IFIDInstructionType=BEQ and branched1='1')then--branch predicted to taken and taken, check if its a right prediction and the predicted address is right, decrease state towards taken
+				elsif(IFIDbranch_taken='1' and branched1='1')then--branch predicted to taken and taken, check if its a right prediction and the predicted address is right, decrease state towards taken
 				--check if the predicted address is actually correct, do this later
 				revert<='0';
 				PCWrite<='1';
 				IFIDwrite<='1';
 				IFIDreset<='0';
 				branch_ok<='0';--the branching is already done
-				elsif(IFIDbranch_taken='1' and IFIDInstructionType=BEQ and branched1='0')then--mispredicted, predicted to taken when not taken, revert changes and increase state towards not taken
+				elsif(IFIDbranch_taken='1' and branched1='0')then--mispredicted, predicted to taken when not taken, revert changes and increase state towards not taken
 				revert<='1';
 				IFIDwrite<='-';
 				PCWrite<='1';--i think
 				IFIDreset<='1';
 				branch_ok<='0';--mishap, the branch wont happen and everything needs to be reverted				
-				elsif(IFIDbranch_taken='0' and IFIDInstructionType=BEQ and branched1='0')then--not taken predicted right
+				elsif(IFIDbranch_taken='0' and branched1='0')then--not taken predicted right
 				IFIDwrite<='1';
 				PCWrite<='1';
 				IFIDreset<='0';
@@ -142,41 +143,41 @@ begin
 								buffer_write<='0';
 				end if;
 				end process;
-				STATEMACHINE: process(IFIDInstructionType,State_in2,branched1,ifidbranch_taken)
+				STATEMACHINE: process(State_in2,branched1,ifidbranch_taken)
 begin
 
 				case State_in2 is
 					when taken0 =>
-					if(  IFIDInstructionType=BEQ and((IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1')) ) then--predict taken
+					if( (IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1') ) then--predict taken
 					state<=taken0;
-					elsif(IFIDInstructionType=BEQ and ((IFIDbranch_taken='0' and branched1='0') or (IFIDbranch_taken='1' and branched1='0')))then--predict not taken
+					elsif((IFIDbranch_taken='0' and branched1='0') or (IFIDbranch_taken='1' and branched1='0'))then--predict not taken
 					state<=taken1;
 					else
 					state<=nottaken1;
 					end if;
 					
 					when taken1 =>
-					if(  IFIDInstructionType=BEQ and((IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1')) ) then--predict taken
+					if( (IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1') ) then--predict taken
 					state<=taken0;
-					elsif(IFIDInstructionType=BEQ and ((IFIDbranch_taken='0' and branched1='0') or (IFIDbranch_taken='1' and branched1='0')))then--predict not taken
+					elsif((IFIDbranch_taken='0' and branched1='0') or (IFIDbranch_taken='1' and branched1='0'))then--predict not taken
 					state<=nottaken1;
 					else
 					state<=nottaken1;
 					end if;
 					
 					when nottaken0 =>
-					if(  IFIDInstructionType=BEQ and((IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1')) ) then--predict taken
+					if( (IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1') ) then--predict taken
 					state<=nottaken1;
-					elsif(IFIDInstructionType=BEQ and ((IFIDbranch_taken='0' and branched1='0') or (IFIDbranch_taken='1' and branched1='0')))then--predict not taken
+					elsif((IFIDbranch_taken='0' and branched1='0') or (IFIDbranch_taken='1' and branched1='0'))then--predict not taken
 					state<=nottaken0;		
 					else
 					state<=nottaken1;
 					end if;
 					
 					when nottaken1 =>
-					if(  IFIDInstructionType=BEQ and((IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1')) ) then--predict taken
+					if( (IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1') ) then--predict taken
 					state<=taken1;
-					elsif(IFIDInstructionType=BEQ and ((IFIDbranch_taken='0' and branched1='0') or (IFIDbranch_taken='1' and branched1='0')))then--predict not taken
+					elsif((IFIDbranch_taken='0' and branched1='0') or (IFIDbranch_taken='1' and branched1='0'))then--predict not taken
 					state<=nottaken0;
 					else
 					state<=nottaken1;

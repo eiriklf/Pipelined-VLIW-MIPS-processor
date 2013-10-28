@@ -84,7 +84,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
 
   -- This is written to memory initially
   constant data1 : std_logic_vector(0 to 31):= "00000000000000000000000000000001";
-	constant data2 : std_logic_vector(0 to 31):= "00000000000000000000000000001010";
+	constant data2 : std_logic_vector(0 to 31):= "00000000000000000000000000100000";
   
   -- These are the instructions executed by the CPU (loaded to instruction-memory)
   -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
@@ -106,7 +106,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
 		    	     constant ins15 : std_logic_vector(0 to 31) := X"00000000"; --lw adresse 2 i 12
 					  		    	     constant ins16 : std_logic_vector(0 to 31) := X"016B5820"; --add $11,$11,$11
     constant ins17 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
-  constant ins18 : std_logic_vector(0 to 31) := X"1020FFFD";--beq $0, $1, -3
+  constant ins18 : std_logic_vector(0 to 31) := X"156CFFFD";--bne $11, $12, -3
   constant ins19 : std_logic_vector(0 to 31) := X"1000FFFD";
    
   -- Used to control the COM-module
