@@ -78,7 +78,7 @@ static void work_a_1478196689_3212880686_p_0(char *t0)
 LAB0:    xsi_set_current_line(68, ng0);
     t2 = (t0 + 3752U);
     t3 = *((char **)t2);
-    t2 = (t0 + 12250);
+    t2 = (t0 + 12254);
     t5 = 1;
     if (32U == 32U)
         goto LAB8;
@@ -170,7 +170,7 @@ LAB14:    t39 = (t0 + 6920);
 
 LAB16:    t31 = (t0 + 3752U);
     t32 = *((char **)t31);
-    t31 = (t0 + 12282);
+    t31 = (t0 + 12286);
     t34 = 1;
     if (32U == 32U)
         goto LAB19;

@@ -45,7 +45,7 @@ architecture Behavioral of PROCESSOR is
            Controlenable : out  STD_LOGIC;
 			  State: out std_logic_vector(1 downto 0);
 			  State_in: in std_logic_vector(1 downto 0);
-			  State_in2: in std_logic_vector(1 downto 0);
+			  IFID_state_in: in std_logic_vector(1 downto 0);
 			  buffer_write: out std_logic;
 			  branch: in std_logic_vector(1 downto 0);
 			  branch_ok:out std_logic;
@@ -270,7 +270,7 @@ end component Forwarding;
 	
 	--enables write to pcpointer register and the predictionbuffer
 	--output from state in branchpredictor
-	signal state:std_logic_vector(1 downto 0);
+	signal state_writeback:std_logic_vector(1 downto 0);
 	signal stateread:std_logic_vector(1 downto 0);
 	--output from the PCpointer
 	signal predictionout: std_logic_vector(31 downto 0);
@@ -422,8 +422,8 @@ end component Forwarding;
 			  processor_enable=> processor_enable,
 			  buffer_write=>buffer_write,
 			  State_in=>stateread,
-			  state_in2=>IFIDs(87 downto 86),
-			  State=>State,
+			  IFID_state_in=>IFIDs(87 downto 86),
+			  State=>State_writeback,
 			  IFIDwrite=>IFIDwrite,
 			  IFIDreset=>IFIDreset,
 			  branch_ok=>branch_ok,
@@ -495,7 +495,7 @@ end component Forwarding;
 			RW				=>buffer_write,		
 			Read_address=>pc_output(4 downto 0), 
 			Write_address=>IFIDs(69 downto 65),
-			WRITE_DATA	=>state,
+			WRITE_DATA	=>state_writeback,
 			Data_out		=>stateread
 	);
 	
@@ -546,15 +546,16 @@ end component Forwarding;
 		--outputs pc counter if branch is taken and revert back to the old address if not taken
 			BranchTAKEN:	simple_multiplexer port map( 
 		a =>incremented,
-      b => IFIDs(63 downto 32),--FIX
-      control_signal =>revert,--must fix
+		b => incremented(31 downto 16)&prediction_address,--the calculated branch destination, maybe pc_output instead of incremented signal
+      control_signal =>branch_Taken,--must fix
+
       output =>mux1out
 	);
 	--output the result address from branchprediction
-				BranchPRED:	simple_multiplexer port map( 
+				REVERT_PREDICTION:	simple_multiplexer port map( 
 		a =>mux1out,
-      b => incremented(31 downto 16)&prediction_address,--the calculated branch destination, maybe pc_output instead of incremented signal
-      control_signal =>branch_Taken,--must fix
+      b => IFIDs(63 downto 32),
+      control_signal =>revert,
       output =>mux2out
 	);
 	-- Second multiplexor. It is used to choose between the result from the first multiplexor, or PC value based on jump-instruction

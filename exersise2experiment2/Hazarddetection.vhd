@@ -40,7 +40,7 @@ entity Hazarddetection is
            Controlenable : out  STD_LOGIC;
 			  State: out std_logic_vector(1 downto 0);
 			  State_in: in std_logic_vector(1 downto 0);
-			  State_in2: in std_logic_vector(1 downto 0);
+			  IFID_state_in: in std_logic_vector(1 downto 0);
 			  buffer_write: out std_logic;
 			  branch: in std_logic_vector(1 downto 0);
 			  branch_ok:out std_logic;
@@ -143,10 +143,10 @@ begin
 								buffer_write<='0';
 				end if;
 				end process;
-				STATEMACHINE: process(State_in2,branched1,ifidbranch_taken)
+				STATEMACHINE: process(IFID_state_in,branched1,ifidbranch_taken)
 begin
 
-				case State_in2 is
+				case IFID_state_in is
 					when taken0 =>
 					if( (IFIDbranch_taken='1' and branched1='1') or (IFIDbranch_taken='0' and branched1='1') ) then--predict taken
 					state<=taken0;

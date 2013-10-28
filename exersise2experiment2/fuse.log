@@ -25,7 +25,7 @@ WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2exp
 WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 386: Actual for formal port data_in is neither a static name nor a globally static expression
 WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 393: Actual for formal port data_in is neither a static name nor a globally static expression
 WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 433: Actual for formal port branch is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 556: Actual for formal port b is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 549: Actual for formal port b is neither a static name nor a globally static expression
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/memory.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/com.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/toplevel.vhd" into library work
@@ -65,8 +65,8 @@ Compiling architecture behavioral of entity processor [\PROCESSOR(32,32)\]
 Compiling architecture behavioral of entity toplevel [\toplevel(32,32)\]
 Compiling architecture behavior of entity tb_toplevel
 Time Resolution for simulation is 1ps.
-Waiting for 20 sub-compilation(s) to finish...
+Waiting for 19 sub-compilation(s) to finish...
 Compiled 57 VHDL Units
 Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/tb_toplevel_isim_beh.exe
-Fuse Memory Usage: 22132 KB
-Fuse CPU Usage: 482 ms
+Fuse Memory Usage: 22228 KB
+Fuse CPU Usage: 530 ms
