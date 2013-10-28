@@ -20,12 +20,12 @@ Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/alu.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/adder.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" into library work
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 366: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 374: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 381: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 388: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 462: Actual for formal port write_data is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 522: Actual for formal port b is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 368: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 376: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 383: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 390: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 468: Actual for formal port write_data is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 528: Actual for formal port b is neither a static name nor a globally static expression
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/memory.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/com.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/toplevel.vhd" into library work
@@ -46,7 +46,7 @@ Compiling architecture behavioral of entity alu_1bit [alu_1bit_default]
 Compiling architecture behavioral of entity alu [\alu(32)\]
 Compiling architecture behavioral of entity register_file [register_file_default]
 Compiling architecture behavioral of entity pc [pc_default]
-Compiling architecture behavioral of entity regi [\regi(76)\]
+Compiling architecture behavioral of entity regi [\regi(86)\]
 Compiling architecture behavioral of entity regi [\regi(185)\]
 Compiling architecture behavioral of entity regi [\regi(139)\]
 Compiling architecture behavioral of entity regi [\regi(71)\]
@@ -67,5 +67,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 17 sub-compilation(s) to finish...
 Compiled 55 VHDL Units
 Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/tb_toplevel_isim_beh.exe
-Fuse Memory Usage: 22044 KB
-Fuse CPU Usage: 499 ms
+Fuse Memory Usage: 21992 KB
+Fuse CPU Usage: 561 ms

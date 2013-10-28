@@ -52,7 +52,9 @@ architecture Behavioral of PROCESSOR is
 			  revert:out std_logic;
 			  IFIDbranch_taken: in std_logic;
 			  branch_taken: out std_logic;
-			  equalvals2: in std_logic_vector(31 downto 0)
+			  equalvals2: in std_logic_vector(31 downto 0);
+			  predicted_address: in std_logic_vector(15 downto 0);
+			  branch_address: in std_logic_vector(15 downto 0)
 			  );
 	end component Hazarddetection;
 	
@@ -235,7 +237,7 @@ end component Forwarding;
 	--branchadder
 	signal BranchAdder : STD_LOGIC_VECTOR (31 downto 0);
 	--IF/ID out
-	signal IFIDs: std_logic_vector(75 downto 0);
+	signal IFIDs: std_logic_vector(85 downto 0);
 	
 	--ID/EX out
 	signal IDEXs: std_logic_vector(184 downto 0);
@@ -285,7 +287,7 @@ end component Forwarding;
 	signal branch_taken: std_logic;
 	signal stateread2:std_logic_vector(17 downto 0);
 	begin
-	equalvals<=(IDEXs(105 downto 74) xor IDEXs(73 downto 42));
+	--equalvals<=(IDEXs(105 downto 74) xor IDEXs(73 downto 42));
 	equalvals2<=read_data1 xor read_data2;
 
 	
@@ -362,8 +364,8 @@ end component Forwarding;
            write_enable =>enablepcwrite
 	
 	);
-	IFID: regi generic map ( N=>76) port map(
-		 Data_in =>PC_Output(10 downto 0)&branch_taken&incremented&imem_data_in,--change incremented?
+	IFID: regi generic map ( N=>86) port map(
+		 Data_in =>stateread(15 downto 0)&pc_output(4 downto 0)&branch_taken&incremented&imem_data_in,--change incremented?
            data_out => IFIDs,
            clock => clk,
            reset => IFIDreset,
@@ -428,8 +430,12 @@ end component Forwarding;
 			  branch=>chosen_OP(5),
 			  revert=>revert,
 			 -- equalvals=>equalvals,
-			  equalvals2=>equalvals2
+			  equalvals2=>equalvals2,
 			  --IDEXbranch=>IDEXs(175)
+			  branch_address=>stateread2(15 downto 0),
+			  predicted_address=>IFIDs(85 downto 70)
+			  
+			  
 			  );
 			  
 		--!!!!!	  

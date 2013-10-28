@@ -1,0 +1,76 @@
+#-----------------------------------------------------------
+# PlanAhead v12.4
+# Build 108585 by hdbuild on Tue Nov  9 17:32:56 MST 2010
+# Start of session at: Sat Oct 26 21:40:59 2013
+# Process ID: 3156
+# Log file: C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [HD-Licensing 0] Attempting to get a license: PlanAhead
+INFO: [HD-Licensing 1] Got a license: PlanAhead
+INFO: [HD-Licensing 3] Your PlanAhead license expires in -299 day(s)
+INFO: [HD-ArchReader 0] Loading parts and site information from C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\arch.xml
+INFO: [HD-RTPRIM 0] Parsing RTL primitives file 'C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml'
+INFO: [HD-RTPRIM 1] Finished Parsing RTL primitives file 'C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml'
+start_gui -source C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/pa.fromNcd.tcl
+# create_project -name exersise2 -dir "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/planAhead_run_1" -part xc6slx16csg324-2
+# set srcset [get_property srcset [current_run -impl]]
+# set_property design_mode GateLvl $srcset
+# set_property edif_top_file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2} }
+# set_param project.paUcfFile  "toplevel.ucf"
+# add_files "toplevel.ucf" -fileset [get_property constrset [current_run]]
+# open_netlist_design
+INFO: Run is defaulting to constrset part: xc6slx16csg324-2
+INFO: [HD-EDIFIN 0] Parsing Edif File '.\.HDI-PlanAhead-3156-dmlab08\ngc2edif\toplevel.edif'
+INFO: [HD-EDIFIN 1] Finished Parsing Edif File '.\.HDI-PlanAhead-3156-dmlab08\ngc2edif\toplevel.edif'
+INFO: [HD-Unisim Transformer 0] Analyzing 5 legacy Unisim elements for replacement
+INFO: [HD-Unisim Transformer 1] No Unisim elements were transformed.
+WARN: [HD-NETLIST 3] Netlist 'toplevel' is not ideal for floorplanning, since the cellview 'toplevel' defined in file 'toplevel.ngc' contains large number of primitives. Please consider enabling hierarchy in synthesis before floorplan. You can enable hierarchy in XST by setting '-keep_hierarchy=yes' or '-netlist_hierarchy=rebuilt' flags.
+INFO: [HD-ArchReader 7] Loading clock regions from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockRegion.xml
+INFO: [HD-ArchReader 8] Loading clock buffers from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockBuffers.xml
+INFO: [HD-ArchReader 3] Loading package from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/spartan6lx/xc6slx16/csg324/Package.xml
+INFO: [HD-ArchReader 13] Loading package pin functions from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/PinFunctions.xml...
+INFO: [HD-ArchReader 4] Loading io standards from C:/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/IOStandards.xml
+INFO: [HD-ArchReader 12] Loading device configuration modes from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/ConfigModes.xml
+INFO: [HD-GDRC 0] Loading list of drcs for the architecture : C:/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/drc.xml
+INFO: [HD-UCFReader 0] Parsing UCF File : .\toplevel.ucf
+INFO: [HD-UCFReader 1] Finished Parsing UCF File : .\toplevel.ucf
+
+DESIGN RULE CHECK VIOLATION REPORT
+   Build: PlanAhead v12.4 by hdbuild
+          on  Tue Nov  9 17:32:56 MST 2010
+  Report: by eiriklf on host dmlab08, pid 3156
+          on Sat Oct 26 21:41:28 2013
+
+REPORT SUMMARY
+            Netlist: netlist
+          Floorplan: <none>
+      Design limits: <entire design considered>
+             Checks: Unknown block name
+                     Unknown Unisim pin name
+                     Mismatching Attribute
+           Max vios: <unlimited>
+         Vios found: 0
+
+REPORT DETAILS
+INFO: [HD-LIB 0] Reading timing library C:/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/spartan6.lib .
+INFO: [HD-LIB 1] Done reading timing library C:/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/spartan6.lib .
+# read_xdl -file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ncd"
+INFO: [HD-PAR 0] Parsing Placement File : C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ncd
+INFO: [HD-PAR 1] Finished Parsing Placement File : C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ncd
+INFO: [HD-PAR 2] Placed 1292 instances
+# if {[catch {read_twx -name results_1 -file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.twx"} eInfo]} {
+#    puts "WARNING: there was a problem importing \"C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.twx\": $eInfo"
+# }
+report_timing -delay_type max -path_type full_clock_expanded -max_paths 10 -nworst 1 -sort_by slack -significant_digits 3 -input_pins  -nets  -results {results_1}
+INFO: [HD-STA 16] UpdateTimingParams: Estimated, Speed grade: -2, Delay Type: max, Timing mode: TRACE, Constraints type: UCF .
+INFO: [HD-STA 16] Going to infer timing constraints .
+INFO: [HD-STA 16] Done inferring timing constraints .
+INFO: [HD-STA 16] Going to set timing constraints .
+INFO: [HD-STA 16] Done setting timing constraints .
+INFO: [HD-STA 6] Timing analysis in global mode.
+INFO: [HD-STA 16] ReportTimingParams: -max_paths 10 -nworst 1 -transition rf -min_max max -sort_by slack .
+exit
+INFO: [HD-Application 0] Exiting PlanAhead...
+INFO: [HD-Licensing 2] Releasing license: PlanAhead

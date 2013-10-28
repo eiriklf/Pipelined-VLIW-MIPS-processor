@@ -47,7 +47,9 @@ entity Hazarddetection is
 			  revert:out std_logic;
 			  IFIDbranch_taken: in std_logic;
 			  branch_taken: out std_logic;
-			  equalvals2: in std_logic_vector(31 downto 0)
+			  equalvals2: in std_logic_vector(31 downto 0);
+			  predicted_address: in std_logic_vector(15 downto 0);
+			  branch_address: in std_logic_vector(15 downto 0)
 			  );
 end Hazarddetection;
 
@@ -66,11 +68,13 @@ begin
 	branched1 <= branch when equalvals2="00000000000000000000000000000000"
 	else '0'; --chosen_Op or op? 
 
-process(processor_enable,IFIDbranch_taken,IFIDInstructionType,state_in,branched1)
+process(processor_enable,IFIDbranch_taken,IFIDInstructionType,state_in,branched1,branch_address)
 begin
         if(processor_enable='1') then 
 				Controlenable<='1';
 				buffer_write<='1';
+				
+				
 				if(state_in=taken0 or state_in=taken1) then
 				--assume branch taken
 				branch_taken<='1';
@@ -78,7 +82,15 @@ begin
 				else
 				branch_taken<='0';
 				end if;
-				if(IFIDbranch_taken='0' and IFIDInstructionType=BEQ  and branched1='1') then--predicted to not taken when its taken, normal delay branch scenario, increase state towards taken
+				--demorgans law
+				if(IFIDbranch_taken='1' and ( not(branch_address=predicted_address) or not( IFIDInstructionType=BEQ) ))then--revert if a new program has been loaded, or if the predicted address is a miss
+				revert<='1';
+				IFIDwrite<='-';
+				PCWrite<='1';
+				IFIDreset<='1';
+				branch_ok<='0';--mishap, no branch
+				
+				elsif(IFIDbranch_taken='0' and IFIDInstructionType=BEQ  and branched1='1') then--predicted to not taken when its taken, normal delay branch scenario, increase state towards taken
 				revert<='0';--no need for reverting if branch is not taken
 				--set in delay
 				IFIDwrite<='1';--take somewhere else
@@ -92,12 +104,6 @@ begin
 				IFIDwrite<='1';
 				IFIDreset<='0';
 				branch_ok<='0';--the branching is already done
-				elsif(IFIDbranch_taken='1' and not( IFIDInstructionType=BEQ))then--something has gone terrible wrong, a new program can have been loaded. The cache/buffer must be flushed when new instructions are loaded
-				revert<='1';
-				IFIDwrite<='-';
-				PCWrite<='1';
-				IFIDreset<='1';
-				branch_ok<='0';--mishap, no branch
 				elsif(IFIDbranch_taken='1' and IFIDInstructionType=BEQ and branched1='0')then--mispredicted, predicted to taken when not taken, revert changes and increase state towards not taken
 				revert<='1';
 				IFIDwrite<='-';
