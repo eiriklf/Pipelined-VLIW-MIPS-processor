@@ -64,10 +64,6 @@ ARCHITECTURE behavior OF tb_forwarding IS
  	--Outputs
    signal forwardA : std_logic_vector(1 downto 0);
    signal forwardB : std_logic_vector(1 downto 0);
-   -- No clocks detected in port list. Replace <clock> below with 
-   -- appropriate port name 
- 
-   constant <clock>_period : time := 10 ns;
  
 BEGIN
  
@@ -111,7 +107,7 @@ BEGIN
 		-- Setting ExmemregisterRD to same as RS
 		-- Output should be 10
 		EXMEMregwrite <= '1';
-		ExmemregisterRD <= "10101;
+		ExmemregisterRD <= "10101";
 		
 		wait for 40 ns;
 		-- Setting EXMEMregwrite to 0
@@ -123,7 +119,7 @@ BEGIN
 		EXMEMregwrite <= '1';
 		
 		wait for 40 ns;
-		-- Setting EXMEMRegisterRD to be differen from RS:
+		-- Setting EXMEMRegisterRD to be different from RS:
 		ExmemregisterRD <= "11111";
 		
 		wait for 40 ns;
@@ -132,15 +128,213 @@ BEGIN
 		
 		wait for 40 ns;
 		-- Setting both RS and register to be 00000
+		-- Output should be 00
 		RS <= "00000";
-		ExmemregisterRD <= RS;
+		ExmemregisterRD <= "00000";
 		
 		wait for 40 ns;
 		-- Resetting output to 10
 		RS <= "10101";
-		ExmemregisterRD <= RS;
+		ExmemregisterRD <= "10101";
 		
-
+		wait for 40 ns;
+		
+		-- Testing MEM Hazard
+		
+		-- Setting different RS value
+		-- Setting MEMWbregisterRD to same as RS
+		-- Setting EXMEMregwrite to 0
+		-- Setting MEMWBregwrite to 1
+		-- Output should be 01
+		
+		RS <= "11000";
+		MEMWbregisterRD <= "11000";
+		EXMEMregwrite <= '0';
+		MEMWBregwrite <= '1';
+		
+		wait for 40 ns;
+		
+		-- Setting MEMWBregstrie to 0
+		-- Output should be 00
+		MEMWBregwrite <= '0';
+		
+		wait for 40 ns;
+		
+		-- Resetting output to 01
+		MEMWBregwrite <= '1';
+		
+		wait for 40 ns;
+		
+		-- Setting MEMWbregisterRD to be different from RS:
+		-- Output should be 00
+		MEMWbregisterRD <= "01010";
+		
+		wait for 40 ns;
+		
+		-- Resetting output to 01
+		MEMWbregisterRD <= "11000";
+		
+		wait for 40 ns;
+		-- Setting both RS and register to be 00000
+		-- Output should be 00
+		RS <= "00000";
+		MEMWbregisterRD <= "00000";
+		
+		wait for 40 ns;
+		-- Resetting output to 01
+		RS <= "11000";
+		MEMWbregisterRD <= "11000";
+		
+		wait for 40 ns;
+		
+		-- Setting EXMEMregwrite to 1
+		-- ExmemregisterRD still has value
+		-- Output should be set to 00 (not 10, since ExmemregisterRD has a value different from RS)
+		EXMEMregwrite <= '1';
+		
+		wait for 40 ns;
+		
+		-- Setting ExmemregisterRD to 00000
+		-- Output should be reverted back to 01
+		ExmemregisterRD <= "00000";
+		
+		wait for 40 ns;
+		
+		-- Setting ExmemregsiterRD to the same as RS.
+		-- (also setting EXMEMregwrite to 0)
+		-- Output should be 00
+		EXMEMregwrite <= '0';
+		ExmemregisterRD <= "11000";
+		
+		wait for 40 ns;
+		
+		-- Resetting output to 01
+		
+		ExmemregisterRD <= "01000";
+		
+		wait for 100 ns;
+		
+		-- All relevant combinations for output ForwardA has been tested
+		RS <= "00000";
+		-- Now testing ForwardB, by using RT instead of RS 
+		
+		-- Default output is 00 at start.
+		-- Setting default RT input:
+		RT <= "10101";
+		
+		wait for 40 ns;
+		
+		-- Testing EX Hazard
+		
+		-- Setting EXMEMregwrite to 1
+		-- Setting ExmemregisterRD to same as RT
+		-- Output should be 10
+		EXMEMregwrite <= '1';
+		ExmemregisterRD <= "10101";
+		
+		wait for 40 ns;
+		-- Setting EXMEMregwrite to 0
+		-- Output should be 00
+		EXMEMregwrite <= '0';
+		
+		wait for 40 ns;
+		-- Resetting output to 10
+		EXMEMregwrite <= '1';
+		
+		wait for 40 ns;
+		-- Setting EXMEMRegisterRD to be different from RT:
+		ExmemregisterRD <= "11111";
+		
+		wait for 40 ns;
+		-- Resetting output to 10
+		ExmemregisterRD <= "10101";
+		
+		wait for 40 ns;
+		-- Setting both RT and register to be 00000
+		-- Output should be 00
+		RT <= "00000";
+		ExmemregisterRD <= "00000";
+		
+		wait for 40 ns;
+		-- Resetting output to 10
+		RT <= "10101";
+		ExmemregisterRD <= "10101";
+		
+		wait for 40 ns;
+		
+		-- Testing MEM Hazard
+		
+		-- Setting different RT value
+		-- Setting MEMWbregisterRD to same as RT
+		-- Setting EXMEMregwrite to 0
+		-- Setting MEMWBregwrite to 1
+		-- Output should be 01
+		
+		RT <= "11000";
+		MEMWbregisterRD <= "11000";
+		EXMEMregwrite <= '0';
+		MEMWBregwrite <= '1';
+		
+		wait for 40 ns;
+		
+		-- Setting MEMWBregstrie to 0
+		-- Output should be 00
+		MEMWBregwrite <= '0';
+		
+		wait for 40 ns;
+		
+		-- Resetting output to 01
+		MEMWBregwrite <= '1';
+		
+		wait for 40 ns;
+		
+		-- Setting MEMWbregisterRD to be different from RT:
+		-- Output should be 00
+		MEMWbregisterRD <= "01010";
+		
+		wait for 40 ns;
+		
+		-- Resetting output to 01
+		MEMWbregisterRD <= "11000";
+		
+		wait for 40 ns;
+		-- Setting both RT and register to be 00000
+		-- Output should be 00
+		RT <= "00000";
+		MEMWbregisterRD <= "00000";
+		
+		wait for 40 ns;
+		-- Resetting output to 01
+		RT <= "11000";
+		MEMWbregisterRD <= "11000";
+		
+		wait for 40 ns;
+		
+		-- Setting EXMEMregwrite to 1
+		-- ExmemregisterRD still has value
+		-- Output should be set to 00 (not 10, since ExmemregisterRD has a value different from RT)
+		EXMEMregwrite <= '1';
+		
+		wait for 40 ns;
+		
+		-- Setting ExmemregisterRD to 00000
+		-- Output should be reverted back to 01
+		ExmemregisterRD <= "00000";
+		
+		wait for 40 ns;
+		
+		-- Setting ExmemregsiterRD to the same as RT.
+		-- (also setting EXMEMregwrite to 0)
+		-- Output should be 00
+		EXMEMregwrite <= '0';
+		ExmemregisterRD <= "11000";
+		
+		wait for 40 ns;
+		
+		-- Resetting output to 01
+		
+		ExmemregisterRD <= "01000";
+		
       wait;
    end process;
 
