@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/file/alu_1bit.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/alu_1bit.vhd";
 extern char *IEEE_P_2592010699;
 
 char *ieee_p_2592010699_sub_1735675855_503743352(char *, char *, char *, char *, char *, char *);
@@ -54,7 +54,7 @@ LAB0:    xsi_set_current_line(73, ng0);
 LAB4:    xsi_set_current_line(76, ng0);
     t1 = (t0 + 1192U);
     t2 = *((char **)t1);
-    t1 = (t0 + 11132U);
+    t1 = (t0 + 11452U);
     t5 = ieee_p_2592010699_sub_1837678034_503743352(IEEE_P_2592010699, t10, t2, t1);
     t6 = (t0 + 7144);
     t7 = (t6 + 56U);
@@ -101,10 +101,10 @@ LAB0:    xsi_set_current_line(80, ng0);
 
 LAB3:    t2 = (t0 + 1032U);
     t3 = *((char **)t2);
-    t2 = (t0 + 11116U);
+    t2 = (t0 + 11436U);
     t4 = (t0 + 2952U);
     t5 = *((char **)t4);
-    t4 = (t0 + 11180U);
+    t4 = (t0 + 11500U);
     t6 = ieee_p_2592010699_sub_795620321_503743352(IEEE_P_2592010699, t1, t3, t2, t5, t4);
     t7 = (t0 + 7208);
     t8 = (t7 + 56U);
@@ -141,10 +141,10 @@ LAB0:    xsi_set_current_line(81, ng0);
 
 LAB3:    t2 = (t0 + 1032U);
     t3 = *((char **)t2);
-    t2 = (t0 + 11116U);
+    t2 = (t0 + 11436U);
     t4 = (t0 + 2952U);
     t5 = *((char **)t4);
-    t4 = (t0 + 11180U);
+    t4 = (t0 + 11500U);
     t6 = ieee_p_2592010699_sub_1735675855_503743352(IEEE_P_2592010699, t1, t3, t2, t5, t4);
     t7 = (t0 + 7272);
     t8 = (t7 + 56U);
@@ -205,7 +205,7 @@ static void work_a_3276679129_3212880686_p_4(char *t0)
 
 LAB0:    xsi_set_current_line(95, ng0);
 
-LAB3:    t1 = (t0 + 11273);
+LAB3:    t1 = (t0 + 11593);
     t3 = (t0 + 7400);
     t4 = (t3 + 56U);
     t5 = *((char **)t4);
@@ -286,7 +286,7 @@ LAB22:    if (t1 != 0)
         goto LAB18;
 
 LAB19:    xsi_set_current_line(109, ng0);
-    t2 = (t0 + 11276);
+    t2 = (t0 + 11596);
     t6 = (t0 + 7464);
     t9 = (t6 + 56U);
     t10 = *((char **)t9);

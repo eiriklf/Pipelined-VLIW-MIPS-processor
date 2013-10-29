@@ -8,7 +8,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity control is
 
     Port ( control_input : in  STD_LOGIC_VECTOR (5 downto 0);
-           Ops : out STD_LOGIC_VECTOR (8 downto 0);
+           Ops : out STD_LOGIC_VECTOR (9 downto 0);
               clk: in std_logic;
               reset: in std_logic
               );
@@ -25,7 +25,7 @@ architecture Behavioral of control is
     signal regwrite : std_logic;
     signal memtoreg : std_logic;
     signal alusrc : std_logic;
-    signal branch : std_logic;
+    signal branch : std_logic_vector(1 downto 0);
     signal regdest : std_logic;
     
     signal ALUOp0 : std_logic;
@@ -37,6 +37,7 @@ architecture Behavioral of control is
     constant SW  : std_logic_vector(5 downto 0 ) := "101011";
     constant LUI  : std_logic_vector(5 downto 0 ) := "001111";
     constant BEQ  : std_logic_vector(5 downto 0 ) := "000100";
+	 constant BNE  : std_logic_vector(5 downto 0 ) := "000101";
     constant JMP  : std_logic_vector(5 downto 0 ) := "000010";
     
 
@@ -54,7 +55,7 @@ begin
                 regwrite<='1';
                 memtoreg<='0';
                 alusrc<='0';
-                branch<='0';
+                branch<="00";
                 regdest<='1';
                 ALUOp1 <= '1';
                 ALUOp0 <= '0';
@@ -65,7 +66,7 @@ begin
                 memwrite<='0';
                 regwrite<='0';
                 alusrc<='-'; -- Don't care
-                branch<='0';
+                branch<="00";
                 regdest<='-'; -- Don't care
                 memtoreg<='-'; -- Don't care
                 ALUOp0 <= '0';
@@ -78,7 +79,7 @@ begin
                 regwrite<='1';
                 memtoreg<='0';
                 alusrc<='1';
-                branch<='0';
+                branch<="00";
                 regdest<='0';
                 ALUOp0 <= '1';
                 ALUOp1 <= '1';
@@ -89,7 +90,18 @@ begin
                 memwrite<='0';
                 regwrite<='0';
                 alusrc<='0';
-                branch<='1';
+                branch<="10";
+                regdest<='-'; -- Don't care
+                memtoreg<='-'; -- Don't care
+                ALUOp1 <= '0';              
+                ALUOp0 <= '1';
+					 
+				elsif(control_input=BNE)then
+                jump<='0';
+                memwrite<='0';
+                regwrite<='0';
+                alusrc<='0';
+                branch<="01";
                 regdest<='-'; -- Don't care
                 memtoreg<='-'; -- Don't care
                 ALUOp1 <= '0';              
@@ -101,7 +113,7 @@ begin
                 memwrite<='1';
                 regwrite<='0';
                 alusrc<='1';
-                branch<='0';
+                branch<="00";
                 regdest<='-'; -- Don't care
                 memtoreg<='-'; -- Don't care
                 ALUOp0 <= '0';
@@ -114,7 +126,7 @@ begin
                 regwrite<='1';
                 memtoreg<='1';
                 alusrc<='1';
-                branch<='0';
+                branch<="00";
                 regdest<='0';
                 ALUOp0 <= '0';
                 ALUOp1 <= '0';
@@ -125,7 +137,7 @@ begin
                 memwrite<='0';
                 alusrc<='-'; -- Don't care
                 regwrite<='0';
-                branch<='0';
+                branch<="00";
                 regdest<='-'; -- Don't care
                 memtoreg<='-'; -- Don't care
                 ALUOp0 <= '0';
@@ -140,10 +152,11 @@ begin
     Ops(2) <= regwrite;
     Ops(3) <= memtoreg;
     Ops(4) <= alusrc;
-    Ops(5) <= branch;
+    Ops(5) <= branch(1);
     Ops(6) <= regdest;
     Ops(7) <= ALUOp0;
     Ops(8) <= ALUOp1;
+	 Ops(9) <= branch(0);
     --only really need clk and reset in this sensitivity list
 
 end Behavioral;

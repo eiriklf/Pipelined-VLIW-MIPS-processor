@@ -21,7 +21,6 @@ architecture Behavioral of PC is
 	-- will be updated with output from Incrementation, Branching or Jump
 	INCREMENTER : process(clock, reset,data)
 	begin
-	
 		if(reset='1') then
 				data<=resetstate;
 		elsif(rising_edge(clock)) then

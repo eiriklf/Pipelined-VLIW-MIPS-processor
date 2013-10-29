@@ -1,0 +1,217 @@
+Release 12.4 - xst M.81d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: tb_toplevel.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "tb_toplevel.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "tb_toplevel"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : tb_toplevel
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/lookahead.vhd" into library work
+Parsing entity <alu_full_adder>.
+Parsing architecture <Behavioral> of entity <alu_full_adder>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/mips_constant_pkg.vhd" into library work
+Parsing package <MIPS_CONSTANT_PKG>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/full_adder.vhd" into library work
+Parsing entity <full_adder>.
+Parsing architecture <Behavioral> of entity <full_adder>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/alu_1bit.vhd" into library work
+Parsing entity <alu_1bit>.
+Parsing architecture <Behavioral> of entity <alu_1bit>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\Regi.vhd" into library work
+Parsing entity <regi>.
+Parsing architecture <Behavioral> of entity <regi>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/register_file.vhd" into library work
+Parsing entity <register_file>.
+Parsing architecture <Behavioral> of entity <register_file>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/PC.vhd" into library work
+Parsing entity <PC>.
+Parsing architecture <Behavioral> of entity <pc>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/mux.vhd" into library work
+Parsing entity <simple_multiplexer>.
+Parsing architecture <Behavioral> of entity <simple_multiplexer>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/control.vhd" into library work
+Parsing entity <control>.
+Parsing architecture <Behavioral> of entity <control>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/ALUop.vhd" into library work
+Parsing entity <ALUoperation>.
+Parsing architecture <Behavioral> of entity <aluoperation>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/alu.vhd" into library work
+Parsing entity <alu>.
+Parsing architecture <Behavioral> of entity <alu>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/adder.vhd" into library work
+Parsing entity <adder>.
+Parsing architecture <Behavioral> of entity <adder>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/processor.vhd" into library work
+Parsing entity <PROCESSOR>.
+Parsing architecture <Behavioral> of entity <processor>.
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/processor.vhd" Line 267: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/processor.vhd" Line 274: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/processor.vhd" Line 281: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/processor.vhd" Line 288: Actual for formal port data_in is neither a static name nor a globally static expression
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/memory.vhd" into library work
+Parsing entity <memory>.
+Parsing architecture <Behavioral> of entity <memory>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/com.vhd" into library work
+Parsing entity <com>.
+Parsing architecture <Behavioral> of entity <com>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/toplevel.vhd" into library work
+Parsing entity <toplevel>.
+Parsing architecture <Behavioral> of entity <toplevel>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\../hardware/tb_toplevel.vhd" into library work
+Parsing entity <tb_toplevel>.
+Parsing architecture <behavior> of entity <tb_toplevel>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <tb_toplevel> (architecture <behavior>) from library <work>.
+
+Elaborating entity <toplevel> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <com> (architecture <Behavioral>) with generics from library <work>.
+INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file/com.vhd" Line 231. Case statement is complete. others clause is never selected
+
+Elaborating entity <memory> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <PROCESSOR> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <ALUoperation> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <alu> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <alu_1bit> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <alu_full_adder> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <register_file> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <PC> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <control> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <adder> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <full_adder> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
+ERROR:HDLCompiler:890 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\../hardware/tb_toplevel.vhd" Line 130: wait statement without UNTIL clause not supported for synthesis
+Netlist tb_toplevel(behavior) remains a blackbox, due to errors in its contents
+--> 
+
+Total memory usage is 215800 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

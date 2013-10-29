@@ -34,7 +34,7 @@ entity com is
     
   generic (
     MEM_ADDR_BUS    : integer := 32;
-    MEM_DATA_BUS    : integer := 32;
+    MEM_DATA_BUS    : integer := 64;
     INPUT_BUS_WIDTH : integer := 32);
 
     port ( clk : in  STD_LOGIC;
@@ -43,9 +43,9 @@ entity com is
            -- bus signals
            command        : in  STD_LOGIC_VECTOR (0 to INPUT_BUS_WIDTH-1);
            bus_address_in : in  STD_LOGIC_VECTOR (0 to INPUT_BUS_WIDTH-1);
-           bus_data_in    : in  STD_LOGIC_VECTOR (0 to INPUT_BUS_WIDTH-1);
+           bus_data_in    : in  STD_LOGIC_VECTOR (0 to MEM_DATA_BUS-1);
            status         : out  STD_LOGIC_VECTOR (0 to INPUT_BUS_WIDTH-1);
-           bus_data_out   : out  STD_LOGIC_VECTOR (0 to INPUT_BUS_WIDTH-1);
+           bus_data_out   : out  STD_LOGIC_VECTOR (0 to MEM_DATA_BUS-1);
            
            -- memory and control signals
            read_addr : out  STD_LOGIC_VECTOR (MEM_ADDR_BUS - 1 downto 0);

@@ -34,16 +34,16 @@ entity toplevel is
 
 	generic  (
 		MEM_ADDR_BUS	: integer	:= 32;
-		MEM_DATA_BUS	: integer	:= 32 );
+		MEM_DATA_BUS	: integer	:= 64 );
 
 	Port (
 		clk            : in STD_LOGIC;
 		reset          : in STD_LOGIC;
 		command        : in  STD_LOGIC_VECTOR (0 to 31);
 		bus_address_in : in  STD_LOGIC_VECTOR (0 to 31);
-		bus_data_in    : in  STD_LOGIC_VECTOR (0 to 31);
+		bus_data_in    : in  STD_LOGIC_VECTOR (0 to 63);
 		status         : out  STD_LOGIC_VECTOR (0 to 31);
-		bus_data_out   : out  STD_LOGIC_VECTOR (0 to 31)
+		bus_data_out   : out  STD_LOGIC_VECTOR (0 to 63)
 	); 
 end toplevel;
 
@@ -55,9 +55,9 @@ architecture Behavioral of toplevel is
 		reset				: in  STD_LOGIC;
 		command			: in  STD_LOGIC_VECTOR (0 to 31);
 		bus_address_in	: in  STD_LOGIC_VECTOR (0 to 31);
-		bus_data_in		: in  STD_LOGIC_VECTOR (0 to 31);
+		bus_data_in		: in  STD_LOGIC_VECTOR (0 to 63);
 		status			: out  STD_LOGIC_VECTOR (0 to 31);
-		bus_data_out 	: out  STD_LOGIC_VECTOR (0 to 31);
+		bus_data_out 	: out  STD_LOGIC_VECTOR (0 to 63);
 		read_addr		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS - 1 downto 0);
 		read_data		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS - 1 downto 0);
 		write_addr		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS - 1 downto 0);
@@ -88,10 +88,10 @@ architecture Behavioral of toplevel is
 		port(
 			CLK			: in STD_LOGIC;
 			RESET			:	in  STD_LOGIC;	
-			W_ADDR		:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to write data
+			W_ADDR		:	in  STD_LOGIC_VECTOR (31 downto 0);	-- Address to write data
 			WRITE_DATA	:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Data to be written
 			MemWrite		:	in  STD_LOGIC;									-- Write Signal
-			ADDR			:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to access data
+			ADDR			:	in  STD_LOGIC_VECTOR (31 downto 0);	-- Address to access data
 			READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0)		-- Data read from memory
 		);
 	end component MEMORY;

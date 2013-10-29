@@ -1,0 +1,43 @@
+
+****** PlanAhead v12.4
+  **** Build 108585 by hdbuild on Tue Nov  9 17:32:56 MST 2010
+    ** Copyright 1986-1999, 2001-2010 Xilinx, Inc. All Rights Reserved.
+
+Release 12.4 - ngc2edif M.81d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+Reading design toplevel.ngc ...
+WARNING:NetListWriters:298 - No output is written to toplevel.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus MIPS_SC_PROCESSOR/EXMEM/data<136 : 0> on
+   block toplevel is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus MIPS_SC_PROCESSOR/ChosenALUInput<31 : 0>
+   on block toplevel is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus MIPS_SC_PROCESSOR/chosen_OP<8 : 0> on
+   block toplevel is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus MIPS_SC_PROCESSOR/IDEX/data<178 : 0> on
+   block toplevel is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file toplevel.edif ...
+ngc2edif: Total memory usage is 73328 kilobytes
+
+Release 12.4 - xdl M.81d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Loading device for application Rf_Device from file '6slx16.nph' in environment C:\Xilinx\12.4\ISE_DS\ISE\.
+   "toplevel" is an NCD, version 3.2, device xc6slx16, package csg324, speed -2
+Successfully converted design 'C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\toplevel.ncd' to 'C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\toplevel.xdl'.
+INFO: [HD-Licensing 0] Attempting to get a license: PlanAhead
+INFO: [HD-Licensing 1] Got a license: PlanAhead
+INFO: [HD-Licensing 3] Your PlanAhead license expires in -299 day(s)
+INFO: [HD-ArchReader 0] Loading parts and site information from C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\arch.xml
+INFO: [HD-RTPRIM 0] Parsing RTL primitives file 'C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml'
+INFO: [HD-RTPRIM 1] Finished Parsing RTL primitives file 'C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml'
+starting gui ...
+INFO: [HD-Application 0] Exiting PlanAhead...
+INFO: [HD-Licensing 2] Releasing license: PlanAhead

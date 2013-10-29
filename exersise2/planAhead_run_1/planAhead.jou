@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# PlanAhead v12.4
+# Build 108585 by hdbuild on Tue Nov  9 17:32:56 MST 2010
+# Start of session at: Sat Oct 26 21:40:59 2013
+# Process ID: 3156
+# Log file: C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui -source C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/pa.fromNcd.tcl
+# create_project -name exersise2 -dir "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/planAhead_run_1" -part xc6slx16csg324-2
+# set srcset [get_property srcset [current_run -impl]]
+# set_property design_mode GateLvl $srcset
+# set_property edif_top_file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2} }
+# set_param project.paUcfFile  "toplevel.ucf"
+# add_files "toplevel.ucf" -fileset [get_property constrset [current_run]]
+# open_netlist_design
+# read_xdl -file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ncd"
+# if {[catch {read_twx -name results_1 -file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.twx"} eInfo]} {
+#    puts "WARNING: there was a problem importing \"C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.twx\": $eInfo"
+# }
+report_timing -delay_type max -path_type full_clock_expanded -max_paths 10 -nworst 1 -sort_by slack -significant_digits 3 -input_pins  -nets  -results {results_1}
+exit

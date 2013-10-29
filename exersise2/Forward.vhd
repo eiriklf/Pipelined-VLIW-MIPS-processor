@@ -50,10 +50,8 @@ begin
 		-- no elsif--and not (EXMEMregisterRD=RS) 
 		if( (EXMEMregwrite='1' )and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RS) ) then
 			forwardA<="10";
-			
-		-- MEM Hazard
-		elsif(((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
-			and not(EXMEMregisterRD="00000")) and (MEMWBregisterRD=RS)) and not (EXMEMregisterRD=RS)) then
+		elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
+			and not(EXMEMregisterRD="00000")) and (MEMWBregisterRD=RS)) then --and not (EXMEMregisterRD=RS))
 			forwardA<="01";
 		else
 			forwardA<="00";
@@ -65,13 +63,11 @@ begin
 	
 	Process2: process(MEMWBregwrite,  EXMEMregwrite,RT, MEMWbregisterRD, ExmemregisterRD)
 	begin
-		--EX hazard--and not (EXMEMregisterRD=RT)
+	--EX hazard--and not (EXMEMregisterRD=RT)
 		if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RT)) then
 			forwardB<="10";
-			
-		--MEM hazard
-		elsif(((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
-			and not(EXMEMregisterRD="00000"))  and (MEMWBregisterRD=RT) ) and not (EXMEMregisterRD=RT)) then 
+		elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
+			and not(EXMEMregisterRD="00000"))  and (MEMWBregisterRD=RT) ) then --and not (EXMEMregisterRD=RT))
 			forwardB<="01";
 		else
 			forwardB<="00";
