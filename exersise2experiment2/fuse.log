@@ -8,6 +8,7 @@ Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/full_adder.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/alu_1bit.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/TriputMux.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/shift_register.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/Regi.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/predictionbuffer.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/Hazarddetection.vhd" into library work
@@ -20,12 +21,13 @@ Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/alu.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/adder.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" into library work
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 372: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 379: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 386: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 393: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 433: Actual for formal port branch is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 549: Actual for formal port b is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 390: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 397: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 404: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 411: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 516: Actual for formal port read_address is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 517: Actual for formal port write_address is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/processor.vhd" Line 576: Actual for formal port b is neither a static name nor a globally static expression
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/memory.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/com.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/toplevel.vhd" into library work
@@ -57,6 +59,7 @@ Compiling architecture behavioral of entity full_adder [full_adder_default]
 Compiling architecture behavioral of entity adder [\adder(32)\]
 Compiling architecture behavioral of entity predictorbuffer [\predictorbuffer(16,32,4)\]
 Compiling architecture behavioral of entity predictorbuffer [\predictorbuffer(2,32,4)\]
+Compiling architecture behavioral of entity shift_register [shift_register_default]
 Compiling architecture behavioral of entity triputmux [triputmux_default]
 Compiling architecture behavioral of entity simple_multiplexer [\simple_multiplexer(5)\]
 Compiling architecture behavioral of entity simple_multiplexer [\simple_multiplexer(32)\]
@@ -65,8 +68,8 @@ Compiling architecture behavioral of entity processor [\PROCESSOR(32,32)\]
 Compiling architecture behavioral of entity toplevel [\toplevel(32,32)\]
 Compiling architecture behavior of entity tb_toplevel
 Time Resolution for simulation is 1ps.
-Waiting for 19 sub-compilation(s) to finish...
-Compiled 57 VHDL Units
+Waiting for 20 sub-compilation(s) to finish...
+Compiled 59 VHDL Units
 Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/tb_toplevel_isim_beh.exe
-Fuse Memory Usage: 22228 KB
-Fuse CPU Usage: 530 ms
+Fuse Memory Usage: 22008 KB
+Fuse CPU Usage: 529 ms

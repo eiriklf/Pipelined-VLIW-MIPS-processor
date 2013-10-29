@@ -32,12 +32,14 @@ package MIPS_CONSTANT_PKG is
 		Op2	:	STD_LOGIC;
 	end record;
 	
+	--we chosed to add another opperation here rather then change the alu. 
 	type ALU_INPUT is
 	record
 		Op0		:	STD_LOGIC;
 		Op1		:	STD_LOGIC;
 		Op2		:	STD_LOGIC;
 		Op3		:	STD_LOGIC;
+		Op4		: 	std_logic;
 	end record;
 	
 

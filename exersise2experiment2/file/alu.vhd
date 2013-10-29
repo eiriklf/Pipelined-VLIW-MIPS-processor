@@ -20,6 +20,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_SIGNED.ALL;
+
+
 
 library WORK;
 use WORK.MIPS_CONSTANT_PKG.ALL;
@@ -69,6 +73,7 @@ architecture Behavioral of alu is
 	signal Generates: std_logic_vector(7 downto 0);
 	signal Propagates: std_logic_vector(7 downto 0);
 	signal FULL_COUT: STD_LOGIC_VECTOR(N-1 downto 0);
+	signal multiplied: std_logic_vector(63 downto 0);
 	
 	
 begin
@@ -129,14 +134,19 @@ begin
 	FLAGS.Overflow <= COUT_AUX(7) xor FULL_COUT(N-2) ;
 	FLAGS.Negative <= '1' when R_AUX(N-1)='1' else '0';
 	FLAGS.Zero <= '1' when R_AUX= ZERO32b else '0';
-
-	ALU_RES:
-		process(ALU_IN.Op3,R_AUX,Y)
+		
+		
+			ALU_RES: process(ALU_IN.Op3,R_AUX,alu_in.op4,X,multiplied,y)
 		begin
-			if  ALU_IN.Op3='1' then
+			if(alu_in.op4='1') then
+			multiplied<=X*Y;
+			R<=multiplied(31 downto 0);
+			elsif  ALU_IN.Op3='1' then
 				R <= Y( ((N/2)-1) downto 0) & ZERO16b;
+				multiplied<="0000000000000000000000000000000000000000000000000000000000000000";
 			else
 				R <= R_AUX;
+			multiplied<="0000000000000000000000000000000000000000000000000000000000000000";
 			end if;
 		end process;
 

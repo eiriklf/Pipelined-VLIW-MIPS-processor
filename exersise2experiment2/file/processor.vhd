@@ -34,6 +34,15 @@ architecture Behavioral of PROCESSOR is
 			  zero: in std_logic);
 	end component controlpath;
 	
+	
+	component shift_register is
+   Port ( data_in : in  STD_LOGIC;
+           data_out : out  STD_LOGIC_VECTOR (1 downto 0);--2 bits index + branch instruction address forms index for prediction register
+           clock : in  STD_LOGIC;
+           reset : in  STD_LOGIC;
+           write_enable : in  STD_LOGIC);--remove this if not needed
+end component shift_register;
+	
 	component Hazarddetection is
     Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
            IDEXregisterRT : in  STD_LOGIC_VECTOR(31 downto 0);
@@ -47,13 +56,15 @@ architecture Behavioral of PROCESSOR is
 			  State_in: in std_logic_vector(1 downto 0);
 			  IFID_state_in: in std_logic_vector(1 downto 0);
 			  buffer_write: out std_logic;
-			  branch: in std_logic_vector(1 downto 0);
+			 -- branch: in std_logic_vector(1 downto 0);
 			  branch_ok:out std_logic;
 			  revert:out std_logic;
 			  IFIDbranch_taken: in std_logic;
 			  branch_taken: out std_logic;
-			  equalvals2: in std_logic_vector(31 downto 0);
+			  branched1: in std_logic;
+			  --equalvals2: in std_logic_vector(31 downto 0);
 			  predicted_address: in std_logic_vector(15 downto 0);
+			  shift_register_write: out std_logic;
 			  branch_address: in std_logic_vector(15 downto 0)
 			  );
 	end component Hazarddetection;
@@ -75,8 +86,8 @@ architecture Behavioral of PROCESSOR is
 	component ALUOperation is
     Port ( aluop0 : in  STD_LOGIC;
            aluop1 : in  STD_LOGIC;
-           funct : in  STD_LOGIC_VECTOR (3 downto 0);
-           operation : out  STD_LOGIC_VECTOR (3 downto 0));
+           funct : in  STD_LOGIC_VECTOR (5 downto 0);
+           operation : out  STD_LOGIC_VECTOR (4 downto 0));
 	end component ALUOperation;
 	
 		component adder is
@@ -234,7 +245,7 @@ end component Forwarding;
 	--signal ALUOp : std_logic_vector(1 downto 0);
 		--signal branch(0) : std_logic;
 	--assigned to the alu operation. We dont use the enumeration in aluOP module because its easier for us to use a vector
-	signal operation: std_logic_vector(3 downto 0);
+	signal operation: std_logic_vector(4 downto 0);
 	--branchadder
 	signal BranchAdder : STD_LOGIC_VECTOR (31 downto 0);
 	--IF/ID out
@@ -289,11 +300,18 @@ end component Forwarding;
 	--signal stateread2:std_logic_vector(17 downto 0);
 	
 	signal prediction_address: std_logic_vector(15 downto 0);
+	
+	signal global_prediction_out: std_logic_vector(1 downto 0);
+	
+	signal shift_register_write: std_logic;
+	signal branched1: std_logic;
 	begin
 	--equalvals<=(IDEXs(105 downto 74) xor IDEXs(73 downto 42));
-	equalvals2<=read_data1 xor read_data2;
+	--equalvals2<=read_data1 xor read_data2;--fix this
 
-	
+		branched1 <= '1' when ((read_data1=read_data2) and (chosen_OP(5)='1'))
+	else '1' when (chosen_OP(9)='1') and not (read_data1=read_data2)
+	else '0';
 	--assign control signals
 	--jump <= Ops(0); -- Jump
 	--memwrite <= Ops(1);
@@ -317,6 +335,7 @@ end component Forwarding;
 	ALUControl.op1<=operation(1 );
 	ALUControl.op2<=operation(2);
 	ALUControl.op3<=operation(3 );--check all these signals
+	ALUControl.op4<=operation(4 );
 	--if more alufunctions are needed, add more signals when needed
 	
 	--mapping out of processor
@@ -337,7 +356,7 @@ end component Forwarding;
 			  
 	ALUOpModule : ALUOPERATION Port map ( aluop0 =>IDEXs(177),--ALUOp(0)
            aluop1 =>IDEXs(178),--ALUOp(1),
-           funct =>IDEXs(13 downto 10),--we dont need 5 signals in, so we ignore them
+           funct =>IDEXs(15 downto 10),--we dont need 5 signals in, so we ignore them
            operation =>operation);
 
 
@@ -430,13 +449,15 @@ end component Forwarding;
 			  IFIDbranch_taken=>IFIDs(64),
 			  --IDEXbranch_taken=>IDEXs(184), 
 			  branch_taken=>branch_taken,
-			  branch=>chosen_OP(5)&chosen_OP(9),
+			--  branch=>chosen_OP(5)&chosen_OP(9),
 			  revert=>revert,
 			 -- equalvals=>equalvals,
-			  equalvals2=>equalvals2,
+			  --equalvals2=>equalvals2,
 			  --IDEXbranch=>IDEXs(175)
 			  branch_address=> BranchAdder(15 downto 0),
-			  predicted_address=>IFIDs(85 downto 70)
+			  predicted_address=>IFIDs(85 downto 70),
+			  shift_register_write=>shift_register_write,
+			  branched1=>branched1
 			  
 			  
 			  );
@@ -479,7 +500,7 @@ end component Forwarding;
 	port map(
 			CLK 			=>clk,				
 			RESET			=>reset,				
-			RW				=>buffer_write,		
+			RW				=>shift_register_write,		
 			Read_address=>pc_output(4 downto 0), 
 			Write_address=>IFIDs(69 downto 65),
 			WRITE_DATA	=>BranchAdder(15 downto 0),
@@ -492,12 +513,19 @@ end component Forwarding;
 	port map(
 			CLK 			=>clk,				
 			RESET			=>reset,				
-			RW				=>buffer_write,		
-			Read_address=>pc_output(4 downto 0), 
-			Write_address=>IFIDs(69 downto 65),
+			RW				=>shift_register_write,		
+			Read_address=>global_prediction_out&pc_output(2 downto 0), --extend this shit
+			Write_address=>global_prediction_out&IFIDs(67 downto 65),
 			WRITE_DATA	=>state_writeback,
 			Data_out		=>stateread
 	);
+	
+		global_prediction: shift_register 
+   Port map( data_in =>branched1,--fix this, everything branches
+           data_out =>global_prediction_out,--2 bits index + branch instruction address forms index for prediction register
+           clock =>clk,
+           reset=>reset,
+           write_enable=>shift_register_write);
 	
 	ForwardmuxA: TriputMux 
     Port map( A =>IDEXs(105 downto 74),--readdataB
