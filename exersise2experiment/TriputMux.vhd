@@ -41,7 +41,7 @@ architecture Behavioral of TriputMux is
 
 begin
   R <= b when control = "10" else
-  c when control = "01" else
+  c when (control = "01" or control="11") else
                 a;
 
 end Behavioral;

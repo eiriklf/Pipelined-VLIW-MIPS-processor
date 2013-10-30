@@ -43,7 +43,11 @@ entity register_file is
 			RD_ADDR 		:	in	STD_LOGIC_VECTOR (RADDR_BUS-1 downto 0);
 			WRITE_DATA	:	in	STD_LOGIC_VECTOR (31 downto 0); 
 			RS				:	out	STD_LOGIC_VECTOR (31 downto 0);
-			RT				:	out	STD_LOGIC_VECTOR (31 downto 0)
+			RT				:	out	STD_LOGIC_VECTOR (31 downto 0);
+			RS_ADDR2 		:	in	STD_LOGIC_VECTOR (RADDR_BUS-1 downto 0); 
+			RT_ADDR2		:	in	STD_LOGIC_VECTOR (RADDR_BUS-1 downto 0); 
+			RS2			:	out	STD_LOGIC_VECTOR (31 downto 0);
+			RT2				:	out	STD_LOGIC_VECTOR (31 downto 0)
 	);
 
 end register_file;
@@ -82,6 +86,12 @@ begin
 			
 	RT <= (others=>'0') when RT_ADDR="00000"
          else REGS(to_integer(unsigned(RT_ADDR)));
+			
+	RS2 <= (others=>'0') when RS_ADDR2="00000"
+         else REGS(to_integer(unsigned(RS_ADDR2)));
+			
+	RT2 <= (others=>'0') when RT_ADDR2="00000"
+         else REGS(to_integer(unsigned(RT_ADDR2)));
 			
 --	RS2 <= (others=>'0') when RS_ADDR2="00000"
    --      else REGS(to_integer(unsigned(RS_ADDR2)));

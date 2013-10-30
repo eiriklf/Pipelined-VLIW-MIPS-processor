@@ -94,13 +94,13 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant ins0  : std_logic_vector(0 to 63) := X"8C01000200000000";
   constant ins1  : std_logic_vector(0 to 63) := X"8C02000200000000";
   constant ins2  : std_logic_vector(0 to 63) := X"8C02000200000000";
-  constant ins3  : std_logic_vector(0 to 63) := X"0000000000000000";
+  constant ins3  : std_logic_vector(0 to 63) := X"0000000000420018";--wvliwmultiply $2,$2
   constant ins4  : std_logic_vector(0 to 63) := X"8C0B000100000000";
   constant ins5  : std_logic_vector(0 to 63) := X"8C0C000200000000";
-  constant ins6  : std_logic_vector(0 to 63) := X"0022182000000000";--add $3, $1, $2
+  constant ins6  : std_logic_vector(0 to 63) := X"0022182000420018";--add $3, $1, $2
   constant ins7  : std_logic_vector(0 to 63) := X"AC03000400000000";
   constant ins8  : std_logic_vector(0 to 63) := X"AC03000600000000";
-  constant ins9  : std_logic_vector(0 to 63) := X"AC03000700000000";
+  constant ins9  : std_logic_vector(0 to 63) := X"0000781200000000";--MFLO $15
   constant ins10 : std_logic_vector(0 to 63) := X"3C03000600000000";--lui $3, 6 forwarded to the add insturction 
   constant ins11 : std_logic_vector(0 to 63) := X"AC03000800000000";--sw $3, 8($0)
   constant ins12 : std_logic_vector(0 to 63) := X"0023182000000000";--add $3, $1, $3
