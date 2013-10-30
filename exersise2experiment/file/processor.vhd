@@ -13,10 +13,10 @@ Port (
 		processor_enable	: in  STD_LOGIC;
 		imem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		imem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
-		dmem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
+		dmem_data_in 		: in  STD_LOGIC_VECTOR (31 downto 0);
 		dmem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		dmem_address_wr	: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
-		dmem_data_out		: out  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
+		dmem_data_out		: out  STD_LOGIC_VECTOR (31 downto 0);
 		dmem_write_enable	: out  STD_LOGIC
 	);
 end PROCESSOR;
@@ -267,7 +267,7 @@ end component Forwarding;
 	signal EXMEMs: std_logic_vector(175 downto 0);
 	
 	--mem/wb output
-	signal MEMWBs: std_logic_vector(139 downto 0);
+	signal MEMWBs: std_logic_vector(107 downto 0);
 	
 		--this signal is 1 if branch equal
 	signal branch_ok: std_logic;
@@ -363,7 +363,7 @@ end component Forwarding;
 	imem_address<=PC_OUTPUT;
 	dmem_address<=EXMEMs(68 downto 37);--aluresult
 	dmem_address_wr<=EXMEMs(68 downto 37);
-	dmem_data_out<="00000000000000000000000000000000"&EXMEMs(36 downto 5);--read_data2;
+	dmem_data_out<=EXMEMs(36 downto 5);--read_data2;
 	dmem_write_enable<=EXMEMs(135);--memwrite;
 
 	--PCPath: controlpath
@@ -375,8 +375,9 @@ end component Forwarding;
 --			  branch=>branch,
 	--		  zero=>zero.zero);
 			  
-	ALUOpModule : ALUOPERATION Port map ( aluop0 =>IDEXs(152),--ALUOp(0)
-           aluop1 =>IDEXs(153),--ALUOp(1),
+	ALUOpModule : ALUOPERATION Port map ( 
+				aluop0 =>IDEXs(151),--ALUOp(0)
+           aluop1 =>IDEXs(152),--ALUOp(1),
            funct =>IDEXs(15 downto 10),--we dont need 5 signals in, so we ignore them
            operation =>operation);
 
@@ -438,7 +439,7 @@ end component Forwarding;
 			  write_enable=>IFIDwrite
 	);								--265 calculated
 	IDEX: regi generic map (N=>259) port map(
-																						--rd_vliw/164				--IDEX_RS		--controlsignals			--ifid instructiontype	--jumpaddress163 dt138		--incremented														--idex_rt					idex_rd
+																						--rd_vliw/158				--IDEX_RS		--controlsignals(153-145)			--ifid instructiontype	--jumpaddress163 dt138		--incremented														--idex_rt					idex_rd
 			 Data_in =>Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99),--138+25, perform signex later?
            data_out => IDEXs,
            clock => clk,
@@ -447,14 +448,14 @@ end component Forwarding;
 	);								--was 139
 	EXMEM: regi generic map (N=>176)  port map(
 			--con trrrollls
-			 Data_in => IDEXs(163 downto 159)&vliw_alu_out&IDEXs(150)&IDEXs(148 downto 145)&concat&branchadder&zero.zero&ALU_Result&ForwardBout&ChosenWriteReg,--134, not 161 bit
+			 Data_in => IDEXs(163 downto 159)&vliw_alu_out&IDEXs(149)&IDEXs(147 downto 144)&concat&branchadder&zero.zero&ALU_Result&ForwardBout&ChosenWriteReg,--134, not 161 bit
            data_out => EXMEMs,
            clock => clk,
            reset => reset,
 			  write_enable=>'1'
 	);									--was 71
 	--109?
-	MEMWB: regi generic map (N=>140) port map(
+	MEMWB: regi generic map (N=>108) port map(
 	--con trrrolls
 			 Data_in =>EXMEMs(175 downto 171)&EXMEMs(170 downto 139)& EXMEMs(137)&EXMEMs(136)&dmem_data_in&EXMEMs(68 downto 37)&EXMEMs(4 downto 0),--
            data_out => MEMWBs,
@@ -594,14 +595,14 @@ end component Forwarding;
 
 			  a => IDEXs(9 downto 5),
            b => IDEXs(4 downto 0),
-           control_signal => IDEXs(176),--regdest,
+           control_signal => IDEXs(150),--regdest,
            output => ChosenWriteReg);
 			  
 			  --mux for chosing alu input
 	MUX2: simple_multiplexer port map( 
 			  a => ForwardBout,--IDEXs(73 downto 42),
            b => IDEXs(41 downto 10),
-           control_signal => IDEXs(174),--alusrc,
+           control_signal => IDEXs(148),--alusrc,
            output => ChosenALUInput);
 			--mux for chosing input from DMEM
 	MUX3: simple_multiplexer port map(	 

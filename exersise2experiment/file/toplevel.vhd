@@ -42,43 +42,48 @@ entity toplevel is
 		command        : in  STD_LOGIC_VECTOR (0 to 31);
 		bus_address_in : in  STD_LOGIC_VECTOR (0 to 31);
 		bus_data_in    : in  STD_LOGIC_VECTOR (0 to 63);
+		bus_Dmemdata_in    : in  STD_LOGIC_VECTOR (0 to 31);
 		status         : out  STD_LOGIC_VECTOR (0 to 31);
-		bus_data_out   : out  STD_LOGIC_VECTOR (0 to 63)
+		bus_data_out   : out  STD_LOGIC_VECTOR (0 to 31)
 	); 
 end toplevel;
 
 architecture Behavioral of toplevel is
 
 	component com
-	port ( 
-		clk				: in  STD_LOGIC;
-		reset				: in  STD_LOGIC;
-		command			: in  STD_LOGIC_VECTOR (0 to 31);
-		bus_address_in	: in  STD_LOGIC_VECTOR (0 to 31);
-		bus_data_in		: in  STD_LOGIC_VECTOR (0 to 63);
-		status			: out  STD_LOGIC_VECTOR (0 to 31);
-		bus_data_out 	: out  STD_LOGIC_VECTOR (0 to 63);
-		read_addr		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS - 1 downto 0);
-		read_data		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS - 1 downto 0);
-		write_addr		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS - 1 downto 0);
-		write_data		: out  STD_LOGIC_VECTOR (MEM_DATA_BUS - 1 downto 0);       
-		write_enable	: out  STD_LOGIC;    
-		write_imem 		: out STD_LOGIC;
-		processor_enable : out  STD_LOGIC
-	);
+    port ( clk : in  STD_LOGIC;
+           reset : in  STD_LOGIC;
+           
+           -- bus signals
+           command        : in  STD_LOGIC_VECTOR (0 to 31);
+           bus_address_in : in  STD_LOGIC_VECTOR (0 to 31);
+           bus_data_in    : in  STD_LOGIC_VECTOR (0 to MEM_DATA_BUS-1);
+           status         : out  STD_LOGIC_VECTOR (0 to 31);
+           bus_data_out   : out  STD_LOGIC_VECTOR (0 to 31);
+			  bus_DMemdata_in: in std_logic_vector(0 to 31);
+           
+           -- memory and control signals
+           read_addr : out  STD_LOGIC_VECTOR (MEM_ADDR_BUS - 1 downto 0);
+           read_data : in  STD_LOGIC_VECTOR (31 downto 0);
+           write_addr : out  STD_LOGIC_VECTOR (MEM_ADDR_BUS - 1 downto 0);
+           write_data : out  STD_LOGIC_VECTOR (MEM_DATA_BUS - 1 downto 0);
+			  write_data_dMEM: out std_logic_vector(31 downto 0);
+           write_enable : out  STD_LOGIC;
+           processor_enable : out  STD_LOGIC;
+           write_imem : out STD_LOGIC);
 	end component;
 	
 	component processor is  
-	Port ( 
+Port ( 
 		clk : in STD_LOGIC;
 		reset					: in STD_LOGIC;
 		processor_enable	: in  STD_LOGIC;
 		imem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		imem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
-		dmem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
+		dmem_data_in 		: in  STD_LOGIC_VECTOR (31 downto 0);
 		dmem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		dmem_address_wr	: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
-		dmem_data_out		: out  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
+		dmem_data_out		: out  STD_LOGIC_VECTOR (31 downto 0);
 		dmem_write_enable	: out  STD_LOGIC
 	);
 	end component;
@@ -96,6 +101,19 @@ architecture Behavioral of toplevel is
 		);
 	end component MEMORY;
 	
+		component DMEMORY is
+		generic (M :NATURAL :=MEM_ADDR_COUNT; N :NATURAL :=32); 
+		port(
+			CLK			: in STD_LOGIC;
+			RESET			:	in  STD_LOGIC;	
+			W_ADDR		:	in  STD_LOGIC_VECTOR (31 downto 0);	-- Address to write data
+			WRITE_DATA	:	in  STD_LOGIC_VECTOR (31 downto 0);	-- Data to be written
+			MemWrite		:	in  STD_LOGIC;									-- Write Signal
+			ADDR			:	in  STD_LOGIC_VECTOR (31 downto 0);	-- Address to access data
+			READ_DATA	:	out STD_LOGIC_VECTOR (31 downto 0)		-- Data read from memory
+		);
+	end component DMEMORY;
+	
 	signal proc_enable				: std_logic;
 	signal com_write_en				: std_logic;
 	signal dmem_write_enable_com	: std_logic;
@@ -103,16 +121,17 @@ architecture Behavioral of toplevel is
 	signal instr_data					: std_logic_vector(MEM_DATA_BUS-1 downto 0);
 	signal instr_addr					: std_logic_vector(MEM_ADDR_BUS-1 downto 0); 
 	signal dmem_address_wr			: std_logic_vector(MEM_ADDR_BUS-1 downto 0); 
-	signal dmem_write_data			: std_logic_vector(MEM_DATA_BUS-1 downto 0);
+	signal dmem_write_data			: std_logic_vector(31 downto 0);
 	signal dmem_address				: std_logic_vector(MEM_ADDR_BUS-1 downto 0); 
 	signal dmem_address_wr_proc	: std_logic_vector(MEM_ADDR_BUS-1 downto 0); 
-	signal dmem_data_in				: std_logic_vector(MEM_DATA_BUS-1 downto 0);
+	signal dmem_data_in				: std_logic_vector(31 downto 0);
 	signal dmem_write_enable 		: std_logic;
-	signal dmem_write_data_proc	: std_logic_vector(MEM_DATA_BUS-1 downto 0);
+	signal dmem_write_data_proc	: std_logic_vector(31 downto 0);
 	signal dmem_address_proc		: std_logic_vector(MEM_ADDR_BUS-1 downto 0); 
 	signal dmem_write_enable_proc	: std_logic;
 	signal dmem_address_wr_com		: std_logic_vector(MEM_ADDR_BUS-1 downto 0); 
-	signal dmem_write_data_com		: std_logic_vector(MEM_DATA_BUS-1 downto 0);
+	signal dmem_write_data_com		: std_logic_vector(31 downto 0);
+	signal imem_write_data_com		: std_logic_vector(MEM_DATA_BUS-1 downto 0);
 	signal dmem_address_com			: std_logic_vector(MEM_ADDR_BUS-1 downto 0); 
 	signal com_write_imem			: std_logic;
 	
@@ -124,13 +143,15 @@ begin
 		command			=> command,
 		bus_address_in	=> bus_address_in,
 		bus_data_in		=> bus_data_in,
+		bus_dmemdata_in=>bus_Dmemdata_in,
 		status			=> status,
 		bus_data_out	=> bus_data_out,
 		processor_enable	=> proc_enable,
 		read_data		=> dmem_data_in,
 		read_addr		=> dmem_address_com,
 		write_addr		=> dmem_address_wr_com,
-		write_data		=> dmem_write_data_com,
+		write_data		=> imem_write_data_com,
+		write_data_dMEM=> dmem_write_data_com,
 		write_enable	=> com_write_en,
 		write_imem		=> com_write_imem
 	);
@@ -162,7 +183,7 @@ begin
 		end if;
 	end process;
 	
-	DATA_MEM: MEMORY generic map (M=>MEM_ADDR_COUNT, N=>DDATA_BUS) 
+	DATA_MEM: DMEMORY 
 	port map(
 		CLK			=> clk,
 		RESET			=> reset,
@@ -178,7 +199,7 @@ begin
 		CLK			=> clk,
 		RESET		=> reset,
 		W_ADDR		=> dmem_address_wr_com,		-- ADDRESS TO BE WRITTEN
-		WRITE_DATA	=> dmem_write_data_com,		-- DATA TO BE WRITTEN
+		WRITE_DATA	=> imem_write_data_com,		-- DATA TO BE WRITTEN
 		ADDR		=> instr_addr,					-- ADDRESS TO BE READ
 		READ_DATA	=> instr_data,					-- DATA READ OUT
 		MemWrite	=> imem_write_enable_com

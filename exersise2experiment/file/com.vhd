@@ -45,13 +45,15 @@ entity com is
            bus_address_in : in  STD_LOGIC_VECTOR (0 to INPUT_BUS_WIDTH-1);
            bus_data_in    : in  STD_LOGIC_VECTOR (0 to MEM_DATA_BUS-1);
            status         : out  STD_LOGIC_VECTOR (0 to INPUT_BUS_WIDTH-1);
-           bus_data_out   : out  STD_LOGIC_VECTOR (0 to MEM_DATA_BUS-1);
+           bus_data_out   : out  STD_LOGIC_VECTOR (0 to 31);
+			  bus_DMemdata_in: in std_logic_vector(0 to 31);
            
            -- memory and control signals
            read_addr : out  STD_LOGIC_VECTOR (MEM_ADDR_BUS - 1 downto 0);
-           read_data : in  STD_LOGIC_VECTOR (MEM_DATA_BUS - 1 downto 0);
+           read_data : in  STD_LOGIC_VECTOR (31 downto 0);
            write_addr : out  STD_LOGIC_VECTOR (MEM_ADDR_BUS - 1 downto 0);
            write_data : out  STD_LOGIC_VECTOR (MEM_DATA_BUS - 1 downto 0);
+			  write_data_dMEM: out std_logic_vector(31 downto 0);
            write_enable : out  STD_LOGIC;
            processor_enable : out  STD_LOGIC;
            write_imem : out STD_LOGIC);
@@ -61,7 +63,7 @@ architecture Behavioral of com is
 
   signal state : std_logic_vector(2 downto 0);
   
-  signal internal_data_out   : std_logic_vector(MEM_DATA_BUS - 1 downto 0);
+  signal internal_data_out   : std_logic_vector(31 downto 0);
   
   constant CMD_NONE    : std_logic_vector(0 to INPUT_BUS_WIDTH-1) := "00000000000000000000000000000000";
   constant CMD_WI      : std_logic_vector(0 to INPUT_BUS_WIDTH-1) := "00000000000000000000000000000001";
@@ -132,6 +134,7 @@ begin
             read_addr        <= (others => '0');
             write_addr       <= bus_address_in(INPUT_BUS_WIDTH - MEM_ADDR_BUS to INPUT_BUS_WIDTH - 1);
             write_data       <= bus_data_in;
+				write_data_dMEM  <=(others => '0');
             write_enable     <= '1';
             processor_enable <= '0';
             write_imem       <= '1';
@@ -145,7 +148,8 @@ begin
             bus_data_out     <= (others => '0');        
             read_addr        <= (others => '0');
             write_addr       <= bus_address_in(INPUT_BUS_WIDTH - MEM_ADDR_BUS to INPUT_BUS_WIDTH - 1);
-            write_data       <= bus_data_in;
+            write_data       <= (others => '0');
+				 write_data_dMEM<=bus_DMemdata_in;
             write_enable     <= '1';
             processor_enable <= '0';
             write_imem       <= '0';           
@@ -161,6 +165,7 @@ begin
             read_addr         <= bus_address_in(INPUT_BUS_WIDTH - MEM_ADDR_BUS to INPUT_BUS_WIDTH - 1);
             write_addr        <= (others => '0');
             write_data        <= (others => '0');
+				write_data_dMEM  <=(others => '0');
             write_enable      <= '0';
             processor_enable  <= '0';
             write_imem        <= '0';      
@@ -175,6 +180,7 @@ begin
             read_addr         <= (others => '0');
             write_addr        <= (others => '0');
             write_data        <= (others => '0');
+				write_data_dMEM  <=(others => '0');
             write_enable      <= '0';
             processor_enable  <= '0';
             write_imem        <= '0';      
@@ -188,6 +194,7 @@ begin
             read_addr         <= (others => '0');
             write_addr        <= (others => '0');
             write_data        <= (others => '0');
+				write_data_dMEM  <=(others => '0');
             write_enable      <= '0';
             processor_enable  <= '0';
             write_imem        <= '0';      
@@ -201,6 +208,7 @@ begin
             read_addr        <= (others => '0');
             write_addr       <= (others => '0');
             write_data       <= (others => '0');
+				write_data_dMEM  <=(others => '0');
             write_enable     <= '0';
             processor_enable <= '1';
             write_imem       <= '0';
@@ -218,6 +226,7 @@ begin
             read_addr        <= (others => '0');
             write_addr       <= (others => '0');
             write_data       <= (others => '0');
+				write_data_dMEM  <=(others => '0');
             write_enable     <= '0';
             processor_enable <= '0';
             write_imem       <= '0';
@@ -235,6 +244,7 @@ begin
             read_addr        <= (others => '0');
             write_addr       <= (others => '0');
             write_data       <= (others => '0');
+				write_data_dMEM  <=(others => '0');
             write_enable     <= '0';
             processor_enable <= '0';
             write_imem       <= '0';

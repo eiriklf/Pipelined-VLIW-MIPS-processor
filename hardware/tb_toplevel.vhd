@@ -36,15 +36,16 @@ ARCHITECTURE behavior OF tb_toplevel IS
  
   -- Component Declaration for the Unit Under Test (UUT)
   COMPONENT toplevel
-    PORT(
-      clk : IN  std_logic;
-      reset : IN  std_logic;
-      command : IN  std_logic_vector(0 to 31);
-      bus_address_in : IN  std_logic_vector(0 to 31);
-      bus_data_in : IN  std_logic_vector(0 to 63);
-      status : OUT  std_logic_vector(0 to 31);
-      bus_data_out : OUT  std_logic_vector(0 to 63)
-     );
+	Port (
+		clk            : in STD_LOGIC;
+		reset          : in STD_LOGIC;
+		command        : in  STD_LOGIC_VECTOR (0 to 31);
+		bus_address_in : in  STD_LOGIC_VECTOR (0 to 31);
+		bus_data_in    : in  STD_LOGIC_VECTOR (0 to 63);
+		bus_Dmemdata_in    : in  STD_LOGIC_VECTOR (0 to 31);
+		status         : out  STD_LOGIC_VECTOR (0 to 31);
+		bus_data_out   : out  STD_LOGIC_VECTOR (0 to 31)
+	); 
    END COMPONENT;
     
    --Inputs
@@ -53,10 +54,11 @@ ARCHITECTURE behavior OF tb_toplevel IS
    signal command : std_logic_vector(0 to 31) := (others => '0');
    signal bus_address_in : std_logic_vector(0 to 31) := (others => '0');
    signal bus_data_in : std_logic_vector(0 to 63) := (others => '0');
+	signal bus_Dmemdata_in : std_logic_vector(0 to 31) := (others => '0');
 
  	--Outputs
    signal status : std_logic_vector(0 to 31);
-   signal bus_data_out : std_logic_vector(0 to 63);
+   signal bus_data_out : std_logic_vector(0 to 31);
 
    -- Clock period definitions
    constant clk_period : time := 40 ns;
@@ -84,8 +86,8 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant addr19: std_logic_vector(0 to 31) := "00000000000000000000000000010011";
 
   -- This is written to memory initially
-  constant data1 : std_logic_vector(0 to 63):= "0000000000000000000000000000000000000000000000000000000000000001";--fix this datasize problem
-	constant data2 : std_logic_vector(0 to 63):= "0000000000000000000000000000000000000000000000000000000000100000";
+  constant data1 : std_logic_vector(0 to 31):= "00000000000000000000000000000001";--fix this datasize problem
+	constant data2 : std_logic_vector(0 to 31):= "00000000000000000000000000100000";
   
   -- These are the instructions executed by the CPU (loaded to instruction-memory)
   -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
@@ -127,7 +129,8 @@ BEGIN
     bus_address_in => bus_address_in,
     bus_data_in => bus_data_in,
     status => status,
-    bus_data_out => bus_data_out
+    bus_data_out => bus_data_out,
+	 bus_Dmemdata_in=>bus_Dmemdata_in
   );
 		  
   -- Clock process definitions
@@ -154,22 +157,22 @@ BEGIN
 		-- INSTR: WRITE DATA TO DMEM
 		command <= CMD_WD;					
     bus_address_in <= addr1;
-    bus_data_in <= data1;
+    bus_Dmemdata_in <= data1;
     wait for clk_period*3;
       
     command <= CMD_IDLE;					
     bus_address_in <= zero;
-    bus_data_in <= zero64b;
+    bus_Dmemdata_in <= zero;
     wait for clk_period*3;
 		
     command <= CMD_WD;					
     bus_address_in <= addr2;
-    bus_data_in <= data2;
+    bus_Dmemdata_in <= data2;
     wait for clk_period*3;
       
     command <= CMD_IDLE;					
     bus_address_in <= zero;
-    bus_data_in <= zero64b;
+    bus_Dmemdata_in <= zero;
     wait for clk_period*3;
 		
     -- Add instruction 0
