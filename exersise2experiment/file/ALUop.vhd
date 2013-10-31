@@ -13,7 +13,7 @@ entity ALUoperation is
            funct : in  STD_LOGIC_VECTOR (5 downto 0);
            operation : out  STD_LOGIC_VECTOR (4 downto 0);
 			  chosenwritedata2: out std_logic;
-			  regdest: out std_logic
+			  memtoreg: out std_logic
 			  );
 end ALUoperation;
 
@@ -28,55 +28,55 @@ begin
         if((aluop1 = '0' and aluop0 = '0') ) then
             operation <= "00010";
  				 chosenwritedata2<='0';   
- 				 regdest<='0';
+ 				 memtoreg<='1';
         -- LUI
         elsif(aluop1 = '1' and aluop0 = '1') --we need to do it this way. It make sense since we cant use a funct field for this operation
         then
             operation <= "01000";
  				 chosenwritedata2<='0'; 
-				regdest<='1';
+				memtoreg<='0';
         -- BEQ or R-Type: Subract
         -- Notice that aluop0 and aluop1 have switched places
         elsif((aluop0 = '1' and aluop1 = '0') or (aluop1 = '1' and funct = "100010")) then
             operation <= "00110";
 				chosenwritedata2<='0';
-				regdest<='1';
+				memtoreg<='0';
         -- R-Type: AND
         --we dont need to check if aluop0='0' or if aluop1='1' down from here (only funct field). ALUOP= "00", "01" and "11" are checked in previous sentences
         --however, removing the checks might not trigger the "else" operation if the ALUOP signal are expanded and this can make it harder to debug eventual mistakes in the ALU or controlunit.
         elsif(aluop1 = '1' and aluop0 = '0' and funct = "100100") then
             operation <= "00000";
 				 chosenwritedata2<='0';
-				 regdest<='1';
+				memtoreg<='0';
         -- R-Type: OR
         elsif(aluop1 = '1' and aluop0 = '0' and funct = "100101") then
             operation <= "00001";
 				 chosenwritedata2<='0';
-				 regdest<='1';
+				 memtoreg<='0';
 				 --add
 	 elsif(aluop1 = '1' and aluop0 = '0' and funct = "100000") then
             operation <= "00010";
 				 chosenwritedata2<='0';
-				 regdest<='1';
+				 memtoreg<='0';
 				 
         -- R-Type: SLT
         elsif(aluop1 = '1' and aluop0 = '0' and funct = "101010") then
             operation<="00111";
             chosenwritedata2<='0';
-            regdest<='1';
+            memtoreg<='0';
 			elsif(aluop1 = '1' and aluop0 = '0' and funct = "010000") then
            chosenwritedata2<='1';
-           regdest<='1';
+           memtoreg<='0';
             operation<="00000";			  
 			elsif(aluop1 = '1' and aluop0 = '0' and funct = "010010") then
            chosenwritedata2<='1';
-           regdest<='1';
+          memtoreg<='1';
             operation<="00000";				
        -- elsif(aluop1 = '1' and aluop0 = '0' and funct = "011000") then
 			--	operation<="10000";
         -- No output signals in current implementation if none of the previous conditions are met
         else
-        regdest<='-';
+        memtoreg<='-';
         chosenwritedata2<='-';
             operation<="00000";
         end if;
