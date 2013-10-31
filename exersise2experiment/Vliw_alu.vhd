@@ -38,19 +38,26 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 entity Vliw_alu is
 	generic (N: NATURAL);
-	port(
-		X			: in STD_LOGIC_VECTOR(N-1 downto 0);
-		Y			: in STD_LOGIC_VECTOR(N-1 downto 0);
-		R			: out STD_LOGIC_VECTOR(N-1 downto 0)
-	);
+        port(
+                X                        : in STD_LOGIC_VECTOR(N-1 downto 0);
+                Y                        : in STD_LOGIC_VECTOR(N-1 downto 0);
+                R                        : out STD_LOGIC_VECTOR(N-1 downto 0);
+                vliw_aluOP                : in std_logic;
+        );
 end Vliw_alu;
 
 architecture Behavioral of Vliw_alu is
-	signal multiplied: std_logic_vector(63 downto 0);
+	signal result: std_logic_vector(63 downto 0);
 begin
+process(vliw_aluOP)
+begin
+			if(vliw_aluOP='0') then
+			result<=X*Y;
+			else
+			result<=X/Y;
+			end if;
+end process;
 
-			multiplied<=X*Y;
-			R<=multiplied(31 downto 0);
-
+			R<=result(31 downto 0);
 end Behavioral;
 
