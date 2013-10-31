@@ -334,7 +334,8 @@ end component Forwarding;
 	signal chosenwritedata2: std_logic;
 	
 	signal LO_out: std_logic_vector(31 downto 0);
-	signal LO_write: std_logic;
+	signal HI_out: std_logic_vector(31 downto 0);
+	signal LO_write: std_logic;--change name
 		
 	begin
 	--equalvals<=(IDEXs(105 downto 74) xor IDEXs(73 downto 42));
@@ -434,7 +435,15 @@ end component Forwarding;
            clock => clk,
            reset => reset,
 			  write_enable=>memwbs(109)
-	);								--265 calculated
+	);
+	
+			HI: regi generic map ( N=>32) port map(
+		 Data_in =>MEMWBs(102 downto 71),
+           data_out => HI_out,
+           clock => clk,
+           reset => reset,
+	write_enable=>memwbs(109)
+	);	--265 calculated
 	
 	
 		Vliwcore2: Vliw_multipliercontrol 
@@ -572,7 +581,7 @@ end component Forwarding;
 	--		RT 			=>stateread2
 --	);
 	
-	--send stateread gjennom IFID og få stateread2 ut
+	--send stateread gjennom IFID og fï¿½ stateread2 ut
 	BRANCH_TARGET_BUFFER: predictorbuffer
 	   -- generic (N :NATURAL :=15; M:NATURAL:=32; K:NATURAL:=4);
 	port map(
