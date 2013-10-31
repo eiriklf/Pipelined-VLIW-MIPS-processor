@@ -1,4 +1,3 @@
-
 library IEEE;
 use WORK.MIPS_CONSTANT_PKG.ALL;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -23,7 +22,7 @@ architecture Behavioral of control is
     signal jump : std_logic;
     signal memwrite : std_logic;
     signal regwrite : std_logic;
-    signal memtoreg : std_logic;
+   -- signal memtoreg : std_logic;
     signal alusrc : std_logic;
     signal branch : std_logic_vector(1 downto 0);
     signal regdest : std_logic;
@@ -53,7 +52,7 @@ begin
                 jump<='0';
                 memwrite<='0';
                 regwrite<='1';
-                memtoreg<='0';
+              --  memtoreg<='0';
                 alusrc<='0';
                 branch<="00";
                 regdest<='1';
@@ -68,7 +67,7 @@ begin
                 alusrc<='-'; -- Don't care
                 branch<="00";
                 regdest<='-'; -- Don't care
-                memtoreg<='-'; -- Don't care
+              --  memtoreg<='-'; -- Don't care
                 ALUOp0 <= '0';
                 ALUOp1 <= '0';
                 
@@ -77,7 +76,7 @@ begin
                 jump<='0';
                 memwrite<='0';
                 regwrite<='1';
-                memtoreg<='0';
+            --    memtoreg<='0';
                 alusrc<='1';
                 branch<="00";
                 regdest<='0';
@@ -92,7 +91,7 @@ begin
                 alusrc<='0';
                 branch<="10";
                 regdest<='-'; -- Don't care
-                memtoreg<='-'; -- Don't care
+            --    memtoreg<='-'; -- Don't care
                 ALUOp1 <= '0';              
                 ALUOp0 <= '1';
 					 
@@ -103,7 +102,7 @@ begin
                 alusrc<='0';
                 branch<="01";
                 regdest<='-'; -- Don't care
-                memtoreg<='-'; -- Don't care
+            --    memtoreg<='-'; -- Don't care
                 ALUOp1 <= '0';              
                 ALUOp0 <= '1';
                 
@@ -115,7 +114,7 @@ begin
                 alusrc<='1';
                 branch<="00";
                 regdest<='-'; -- Don't care
-                memtoreg<='-'; -- Don't care
+             --   memtoreg<='-'; -- Don't care
                 ALUOp0 <= '0';
                 ALUOp1 <= '0';
                 
@@ -124,7 +123,7 @@ begin
                 jump<='0';
                 memwrite<='0';
                 regwrite<='1';
-                memtoreg<='1';
+               -- memtoreg<='1';
                 alusrc<='1';
                 branch<="00";
                 regdest<='0';
@@ -139,7 +138,7 @@ begin
                 regwrite<='0';
                 branch<="00";
                 regdest<='-'; -- Don't care
-                memtoreg<='-'; -- Don't care
+               -- memtoreg<='-'; -- Don't care
                 ALUOp0 <= '0';
                 ALUOp1 <= '0';
             end if;
@@ -150,7 +149,7 @@ begin
     Ops(0) <= jump;
     Ops(1) <= memwrite;
     Ops(2) <= regwrite;
-    Ops(3) <= memtoreg;
+    --Ops(3) <= memtoreg;
     Ops(4) <= alusrc;
     Ops(5) <= branch(1);
     Ops(6) <= regdest;
