@@ -450,7 +450,7 @@ end component Forwarding;
 	);
 	
 			HI: regi generic map ( N=>32) port map(
-		 Data_in =>MEMWBs(102 downto 71),
+		 Data_in =>MEMWBs(102 downto 71),--change this. this is output for LO and not HI
            data_out => HI_out,
            clock => clk,
            reset => reset,
