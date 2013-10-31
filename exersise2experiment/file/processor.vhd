@@ -45,6 +45,15 @@ end component Vliw_multipliercontrol;
            reset : in  STD_LOGIC;
            write_enable : in  STD_LOGIC);--remove this if not needed
 end component shift_register;
+
+	component QuadputMux is
+    Port ( A : in  STD_LOGIC_VECTOR (31 downto 0);
+           B : in  STD_LOGIC_VECTOR (31 downto 0);
+           C : in  STD_LOGIC_VECTOR (31 downto 0);
+           D : in  STD_LOGIC_VECTOR (31 downto 0);
+           R : out  STD_LOGIC_VECTOR (31 downto 0);
+           control : in  STD_LOGIC_VECTOR (1 downto 0));
+end component QuadputMux;
 	
 	component Hazarddetection is
     Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
@@ -647,10 +656,11 @@ end component Forwarding;
            control_signal => IDEXs(148),--alusrc,
            output => ChosenALUInput);
 			--mux for chosing input from DMEM
-	MUX3: TriputMux port map(	 
+	MUX3: QuadputMux port map(	 
            b =>MEMWBs(68 downto 37),--dmem_data_in, 
 			  a => MEMWBs(36 downto 5),--ALU_Result,
 			  c =>LO_out,--MEMWBs(102 downto 71),--Make the move instruction on the first processor
+			  D=>HI_out,--change to be in right pipeline
            control => MEMWBs(70)&MEMWBs(108),--chosenwritedata2,--memtoreg,
            R => ChosenWriteData);
 
