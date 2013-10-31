@@ -166,7 +166,8 @@ end component TriputMux;
 	port(
 		X			: in STD_LOGIC_VECTOR(N-1 downto 0);
 		Y			: in STD_LOGIC_VECTOR(N-1 downto 0);
-		R			: out STD_LOGIC_VECTOR(N-1 downto 0)
+		R			: out STD_LOGIC_VECTOR(N-1 downto 0);
+		vliw_aluOP		: in std_logic;
 	);
 end component Vliw_alu;
 	component PC is
@@ -281,7 +282,7 @@ end component Forwarding;
 	signal IFIDs: std_logic_vector(119 downto 0);
 	
 	--ID/EX out
-	signal IDEXs: std_logic_vector(259 downto 0);
+	signal IDEXs: std_logic_vector(260 downto 0);
 	
 	--EX/MEM out
 	
@@ -422,7 +423,8 @@ end component Forwarding;
 	port map(
 		X			=>IDEXs(258 downto 227),
 		Y			=>IDEXs(226 downto 195),
-		R			=>vliw_alu_out
+		R			=>vliw_alu_out,
+		vliw_aluOP=>IDEXs(260)--vliw_aluOP
 	);
 
 	
@@ -493,9 +495,9 @@ end component Forwarding;
            reset => IFIDreset,
 			  write_enable=>IFIDwrite
 	);								--265 calculated
-	IDEX: regi generic map (N=>260) port map(
+	IDEX: regi generic map (N=>261) port map(
 																						--rd_vliw/158				--IDEX_RS		--controlsignals(153-145)			--ifid instructiontype	--jumpaddress163 dt138		--incremented														--idex_rt					idex_rd
-			 Data_in =>LO_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99),--138+25, perform signex later?
+			 Data_in =>vliw_aluOP&LO_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99),--138+25, perform signex later?
            data_out => IDEXs,
            clock => clk,
            reset => reset,
