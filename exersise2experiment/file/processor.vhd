@@ -91,7 +91,9 @@ end component shift_register;
            ALUOp1 : in  STD_LOGIC;
            funct : in  STD_LOGIC_VECTOR (5 downto 0);
            operation : out  STD_LOGIC_VECTOR (4 downto 0);
-			  chosenwritedata2: out std_logic);
+                          chosenwritedata2: out std_logic;
+                          memtoreg: out std_logic
+                          );
 	end component ALUOperation;
 	
 		component adder is
@@ -254,7 +256,7 @@ end component Forwarding;
 	--signal jump : std_logic;
 	--signal memwrite : std_logic;
 	--signal regwrite : std_logic;
-	--signal memtoreg : std_logic;
+	signal memtoreg : std_logic;
 	--signal alusrc : std_logic;
 	--signal branch(1) : std_logic;
 	--signal regdest : std_logic;
@@ -356,7 +358,7 @@ end component Forwarding;
 --	ALUOp(1) <= Ops(8); -- ALUOp(1)
 	--bne <= Ops(9);
 	--if more non-R instructions are added, add more aluOP signals
-
+	Ops(3)<=memtoreg;--should be fixed
 	--perform signextension
 	Signextended(15 downto 0) <=IFIDs(103 downto 88);
 	Signextended(31 downto 16) <= (31 downto 16 => IFIDs(103));
@@ -392,7 +394,8 @@ end component Forwarding;
            aluop1 =>IDEXs(152),--ALUOp(1),
            funct =>IDEXs(15 downto 10),--we dont need 5 signals in, so we ignore them
            operation =>operation,
-			  chosenwritedata2=>chosenwritedata2
+			  chosenwritedata2=>chosenwritedata2,
+			  memtoreg=>memtoreg
 			  );
 
 
