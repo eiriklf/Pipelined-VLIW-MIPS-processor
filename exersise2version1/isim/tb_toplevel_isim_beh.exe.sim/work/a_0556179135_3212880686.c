@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/file/alu.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/alu.vhd";
 extern char *IEEE_P_2592010699;
 extern char *WORK_P_2565430773;
 
@@ -1077,7 +1077,7 @@ LAB2:    xsi_set_current_line(137, ng0);
     t21 = (t21 + 1);
     t19 = (t18 + 12U);
     *((unsigned int *)t19) = t21;
-    t19 = ((WORK_P_2565430773) + 6444U);
+    t19 = ((WORK_P_2565430773) + 6540U);
     t13 = xsi_base_array_concat(t13, t15, t16, (char)97, t6, t17, (char)97, t14, t19, (char)101);
     t22 = (t0 + 11672);
     t23 = (t22 + 56U);

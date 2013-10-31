@@ -76,8 +76,8 @@ begin
 			--	operation<="10000";
         -- No output signals in current implementation if none of the previous conditions are met
         else
-        memtoreg<='-';
-        chosenwritedata2<='-';
+        memtoreg<='0';
+        chosenwritedata2<='0';
             operation<="00000";
         end if;
     end process;

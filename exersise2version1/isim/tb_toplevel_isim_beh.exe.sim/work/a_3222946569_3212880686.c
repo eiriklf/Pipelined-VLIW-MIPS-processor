@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/file/control.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/control.vhd";
 extern char *IEEE_P_3620187407;
 
 
@@ -42,60 +42,60 @@ static void work_a_3222946569_3212880686_p_0(char *t0)
 LAB0:    xsi_set_current_line(51, ng0);
     t1 = (t0 + 1032U);
     t2 = *((char **)t1);
-    t1 = (t0 + 12824U);
+    t1 = (t0 + 13080U);
     t3 = (t0 + 3408U);
     t4 = *((char **)t3);
-    t3 = (t0 + 12872U);
+    t3 = (t0 + 13128U);
     t5 = ieee_std_logic_unsigned_equal_stdv_stdv(IEEE_P_3620187407, t2, t1, t4, t3);
     if (t5 != 0)
         goto LAB2;
 
 LAB4:    t1 = (t0 + 1032U);
     t2 = *((char **)t1);
-    t1 = (t0 + 12824U);
+    t1 = (t0 + 13080U);
     t3 = (t0 + 4008U);
     t4 = *((char **)t3);
-    t3 = (t0 + 12952U);
+    t3 = (t0 + 13208U);
     t5 = ieee_std_logic_unsigned_equal_stdv_stdv(IEEE_P_3620187407, t2, t1, t4, t3);
     if (t5 != 0)
         goto LAB5;
 
 LAB6:    t1 = (t0 + 1032U);
     t2 = *((char **)t1);
-    t1 = (t0 + 12824U);
+    t1 = (t0 + 13080U);
     t3 = (t0 + 3768U);
     t4 = *((char **)t3);
-    t3 = (t0 + 12920U);
+    t3 = (t0 + 13176U);
     t5 = ieee_std_logic_unsigned_equal_stdv_stdv(IEEE_P_3620187407, t2, t1, t4, t3);
     if (t5 != 0)
         goto LAB7;
 
 LAB8:    t1 = (t0 + 1032U);
     t2 = *((char **)t1);
-    t1 = (t0 + 12824U);
+    t1 = (t0 + 13080U);
     t3 = (t0 + 3888U);
     t4 = *((char **)t3);
-    t3 = (t0 + 12936U);
+    t3 = (t0 + 13192U);
     t5 = ieee_std_logic_unsigned_equal_stdv_stdv(IEEE_P_3620187407, t2, t1, t4, t3);
     if (t5 != 0)
         goto LAB9;
 
 LAB10:    t1 = (t0 + 1032U);
     t2 = *((char **)t1);
-    t1 = (t0 + 12824U);
+    t1 = (t0 + 13080U);
     t3 = (t0 + 3648U);
     t4 = *((char **)t3);
-    t3 = (t0 + 12904U);
+    t3 = (t0 + 13160U);
     t5 = ieee_std_logic_unsigned_equal_stdv_stdv(IEEE_P_3620187407, t2, t1, t4, t3);
     if (t5 != 0)
         goto LAB11;
 
 LAB12:    t1 = (t0 + 1032U);
     t2 = *((char **)t1);
-    t1 = (t0 + 12824U);
+    t1 = (t0 + 13080U);
     t3 = (t0 + 3528U);
     t4 = *((char **)t3);
-    t3 = (t0 + 12888U);
+    t3 = (t0 + 13144U);
     t5 = ieee_std_logic_unsigned_equal_stdv_stdv(IEEE_P_3620187407, t2, t1, t4, t3);
     if (t5 != 0)
         goto LAB13;

@@ -80,14 +80,14 @@ end component TriputMux;
 		);
 	end component REGISTER_FILE;
 	
-	component Regi is
+	component regis is
 	generic(N : natural :=32);
    port ( Data_in : in  STD_LOGIC_VECTOR (N-1 downto 0);
            data_out : out  STD_LOGIC_VECTOR (N-1 downto 0);
            clock : in  STD_LOGIC;
            reset : in  STD_LOGIC;
            write_enable : in  STD_LOGIC);--remove this if not needed
-	end component regi;
+	end component regis;
 	
 	component alu is
 				generic (N :NATURAL :=DDATA_BUS);
@@ -312,14 +312,14 @@ end component Forwarding;
            write_enable =>enablepcwrite
 	
 	);
-	IFID: regi generic map ( N=>64) port map(
+	IFID: regis generic map ( N=>64) port map(
 		 Data_in => pc_output&imem_data_in,--??
            data_out => IFIDs,
            clock => clk,
            reset => reset,
 			  write_enable=>'1'
 	);
-	IDEX: regi generic map (N=>184) port map(
+	IDEX: regis generic map (N=>184) port map(
 	--OMGOMGOMGOMG
 			 Data_in => IFIDs(25 downto 21)&chosen_OP&IFIDs(31 downto 26)&IFIDs(25 downto 0)&IFIDs(63 downto 32)&read_data1&read_data2&Signextended&IFIDs(20 downto 16)&IFIDs(15 downto 11),--138+25, perform signex later?
            data_out => IDEXs,
@@ -327,14 +327,14 @@ end component Forwarding;
            reset => reset,
 			  write_enable=>'1'
 	);
-	EXMEM: regi generic map (N=>139)  port map(
+	EXMEM: regis generic map (N=>139)  port map(
 			 Data_in => IDEXs(175)&IDEXs(173 downto 170)&concat&branchadder&zero.zero&ALU_Result&ForwardBout&ChosenWriteReg,--134, not 161 bit
            data_out => EXMEMs,
            clock => clk,
            reset => reset,
 			  write_enable=>'1'
 	);
-	MEMWB: regi generic map (N=>71) port map(
+	MEMWB: regis generic map (N=>71) port map(
 			 Data_in => EXMEMs(137)&EXMEMs(136)&dmem_data_in&EXMEMs(68 downto 37)&EXMEMs(4 downto 0),--
            data_out => MEMWBs,
            clock => clk,

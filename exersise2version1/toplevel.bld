@@ -6,7 +6,7 @@ Command Line: C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 toplevel.ngd
 
 Reading NGO file
-"C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/toplevel.ngc" ...
+"C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/toplevel.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -15,6 +15,26 @@ Checking Constraint Associations...
 Done...
 
 Checking expanded design ...
+ERROR:NgdBuild:604 - logical block 'MIPS_SC_PROCESSOR/MEMWB' with type 'regi'
+   could not be resolved. A pin name misspelling can cause this, a missing edif
+   or ngc file, case mismatch between the block name and the edif or ngc file
+   name, or the misspelling of a type name. Symbol 'regi' is not supported in
+   target 'spartan6'.
+ERROR:NgdBuild:604 - logical block 'MIPS_SC_PROCESSOR/EXMEM' with type 'regi'
+   could not be resolved. A pin name misspelling can cause this, a missing edif
+   or ngc file, case mismatch between the block name and the edif or ngc file
+   name, or the misspelling of a type name. Symbol 'regi' is not supported in
+   target 'spartan6'.
+ERROR:NgdBuild:604 - logical block 'MIPS_SC_PROCESSOR/IDEX' with type 'regi'
+   could not be resolved. A pin name misspelling can cause this, a missing edif
+   or ngc file, case mismatch between the block name and the edif or ngc file
+   name, or the misspelling of a type name. Symbol 'regi' is not supported in
+   target 'spartan6'.
+ERROR:NgdBuild:604 - logical block 'MIPS_SC_PROCESSOR/IFID' with type 'regi'
+   could not be resolved. A pin name misspelling can cause this, a missing edif
+   or ngc file, case mismatch between the block name and the edif or ngc file
+   name, or the misspelling of a type name. Symbol 'regi' is not supported in
+   target 'spartan6'.
 
 Partition Implementation Status
 -------------------------------
@@ -24,13 +44,14 @@ Partition Implementation Status
 -------------------------------
 
 NGDBUILD Design Results Summary:
-  Number of errors:     0
+  Number of errors:     4
   Number of warnings:   0
 
-Total memory usage is 148796 kilobytes
+Total memory usage is 148564 kilobytes
 
-Writing NGD file "toplevel.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
 
 Writing NGDBUILD log file "toplevel.bld"...

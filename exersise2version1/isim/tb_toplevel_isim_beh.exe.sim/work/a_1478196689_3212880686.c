@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/Hazarddetection.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/Hazarddetection.vhd";
 
 
 
@@ -36,16 +36,16 @@ static void work_a_1478196689_3212880686_p_0(char *t0)
     char *t7;
     char *t8;
 
-LAB0:    xsi_set_current_line(46, ng0);
-    t1 = (t0 + 1672U);
+LAB0:    xsi_set_current_line(47, ng0);
+    t1 = (t0 + 1832U);
     t2 = *((char **)t1);
     t3 = *((unsigned char *)t2);
     t4 = (t3 == (unsigned char)3);
     if (t4 != 0)
         goto LAB2;
 
-LAB4:    xsi_set_current_line(50, ng0);
-    t1 = (t0 + 3456);
+LAB4:    xsi_set_current_line(51, ng0);
+    t1 = (t0 + 3616);
     t2 = (t1 + 56U);
     t5 = *((char **)t2);
     t6 = (t5 + 56U);
@@ -53,20 +53,20 @@ LAB4:    xsi_set_current_line(50, ng0);
     *((unsigned char *)t7) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
 
-LAB3:    t1 = (t0 + 3312);
+LAB3:    t1 = (t0 + 3472);
     *((int *)t1) = 1;
 
 LAB1:    return;
-LAB2:    xsi_set_current_line(47, ng0);
-    t1 = (t0 + 3392);
+LAB2:    xsi_set_current_line(48, ng0);
+    t1 = (t0 + 3552);
     t5 = (t1 + 56U);
     t6 = *((char **)t5);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);
     *((unsigned char *)t8) = (unsigned char)3;
     xsi_driver_first_trans_fast_port(t1);
-    xsi_set_current_line(48, ng0);
-    t1 = (t0 + 3456);
+    xsi_set_current_line(49, ng0);
+    t1 = (t0 + 3616);
     t2 = (t1 + 56U);
     t5 = *((char **)t2);
     t6 = (t5 + 56U);

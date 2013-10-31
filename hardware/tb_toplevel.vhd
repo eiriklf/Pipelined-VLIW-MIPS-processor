@@ -94,7 +94,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant ins0  : std_logic_vector(0 to 63) := X"8C01000200000000";
   constant ins1  : std_logic_vector(0 to 63) := X"8C02000200000000";
   constant ins2  : std_logic_vector(0 to 63) := X"8C02000200000000";
-  constant ins3  : std_logic_vector(0 to 63) := X"0000000000420018";--wvliwmultiply $2,$2
+  constant ins3  : std_logic_vector(0 to 63) := X"0000000000000000";--X"0000000000420018";--wvliwmultiply $2,$2
   constant ins4  : std_logic_vector(0 to 63) := X"8C0B000100000000";
   constant ins5  : std_logic_vector(0 to 63) := X"8C0C000200000000";
   constant ins6  : std_logic_vector(0 to 63) := X"0022182000420018";--add $3, $1, $2

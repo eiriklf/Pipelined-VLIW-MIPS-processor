@@ -12,13 +12,13 @@
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/Addressincrementer - adder - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>REVERT_PREDICTION - simple_multiplexer - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/mux.vhd)</SelectedItem>
+         <SelectedItem>REGISTER_F - register_file - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/register_file.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >17</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000038d000000020000000000000000000000000000000064ffffffff0000008100000000000000020000038d0000000100000000000000000000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000387000000020000000000000000000000000000000064ffffffff000000810000000000000002000003870000000100000000000000000000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>REVERT_PREDICTION - simple_multiplexer - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/mux.vhd)</CurrentItem>
+      <CurrentItem>REGISTER_F - register_file - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/register_file.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -47,9 +47,9 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000003a3000000040101000100000000000000000000000064ffffffff0000008100000000000000040000019d00000001000000000000004400000001000000000000006600000001000000000000015c0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000392000000040101000100000000000000000000000064ffffffff0000008100000000000000040000019d00000001000000000000004400000001000000000000006600000001000000000000014b0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment2\file\adder.vhd</CurrentItem>
+      <CurrentItem>C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\DMEMORY.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -73,13 +73,13 @@
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/Addressincrementer - adder - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>REGISTER_F - register_file - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/register_file.vhd)</SelectedItem>
+         <SelectedItem>MIPS_SC_PROCESSOR - PROCESSOR - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000038d000000020000000000000000000000000000000064ffffffff0000008100000000000000020000038d0000000100000000000000000000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000387000000020000000000000000000000000000000064ffffffff000000810000000000000002000003870000000100000000000000000000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>REGISTER_F - register_file - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/file/register_file.vhd)</CurrentItem>
+      <CurrentItem>MIPS_SC_PROCESSOR - PROCESSOR - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -109,7 +109,7 @@
       <CurrentItem></CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <CurrentView>Behavioral Simulation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
@@ -145,8 +145,8 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" ></ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" />
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
 </Project>

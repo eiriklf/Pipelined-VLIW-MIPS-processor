@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/file/ALUop.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/ALUop.vhd";
 
 
 
@@ -171,7 +171,7 @@ LAB74:    if (t1 != 0)
         goto LAB70;
 
 LAB71:    xsi_set_current_line(55, ng0);
-    t3 = (t0 + 4954);
+    t3 = (t0 + 5010);
     t7 = (t0 + 3072);
     t11 = (t7 + 56U);
     t14 = *((char **)t11);
@@ -185,7 +185,7 @@ LAB3:    t3 = (t0 + 2992);
 
 LAB1:    return;
 LAB2:    xsi_set_current_line(27, ng0);
-    t20 = (t0 + 4914);
+    t20 = (t0 + 4970);
     t22 = (t0 + 3072);
     t23 = (t22 + 56U);
     t24 = *((char **)t23);
@@ -207,7 +207,7 @@ LAB8:    t3 = (t0 + 1032U);
 
 LAB11:    t3 = (t0 + 1352U);
     t14 = *((char **)t3);
-    t3 = (t0 + 4910);
+    t3 = (t0 + 4966);
     t16 = 1;
     if (4U == 4U)
         goto LAB14;
@@ -233,7 +233,7 @@ LAB19:    t17 = (t17 + 1);
     goto LAB17;
 
 LAB20:    xsi_set_current_line(32, ng0);
-    t3 = (t0 + 4918);
+    t3 = (t0 + 4974);
     t14 = (t0 + 3072);
     t15 = (t14 + 56U);
     t18 = *((char **)t15);
@@ -251,7 +251,7 @@ LAB22:    t3 = (t0 + 1032U);
     goto LAB24;
 
 LAB25:    xsi_set_current_line(37, ng0);
-    t20 = (t0 + 4926);
+    t20 = (t0 + 4982);
     t22 = (t0 + 3072);
     t23 = (t22 + 56U);
     t24 = *((char **)t23);
@@ -273,7 +273,7 @@ LAB30:    t3 = (t0 + 1192U);
 
 LAB33:    t3 = (t0 + 1352U);
     t14 = *((char **)t3);
-    t3 = (t0 + 4922);
+    t3 = (t0 + 4978);
     t16 = 1;
     if (4U == 4U)
         goto LAB36;
@@ -299,7 +299,7 @@ LAB41:    t17 = (t17 + 1);
     goto LAB39;
 
 LAB42:    xsi_set_current_line(43, ng0);
-    t19 = (t0 + 4934);
+    t19 = (t0 + 4990);
     t21 = (t0 + 3072);
     t22 = (t21 + 56U);
     t23 = *((char **)t22);
@@ -311,7 +311,7 @@ LAB42:    xsi_set_current_line(43, ng0);
 
 LAB44:    t3 = (t0 + 1352U);
     t11 = *((char **)t3);
-    t3 = (t0 + 4930);
+    t3 = (t0 + 4986);
     t10 = 1;
     if (4U == 4U)
         goto LAB50;
@@ -344,7 +344,7 @@ LAB55:    t17 = (t17 + 1);
     goto LAB53;
 
 LAB56:    xsi_set_current_line(47, ng0);
-    t19 = (t0 + 4942);
+    t19 = (t0 + 4998);
     t21 = (t0 + 3072);
     t22 = (t21 + 56U);
     t23 = *((char **)t22);
@@ -356,7 +356,7 @@ LAB56:    xsi_set_current_line(47, ng0);
 
 LAB58:    t3 = (t0 + 1352U);
     t11 = *((char **)t3);
-    t3 = (t0 + 4938);
+    t3 = (t0 + 4994);
     t10 = 1;
     if (4U == 4U)
         goto LAB64;
@@ -389,7 +389,7 @@ LAB69:    t17 = (t17 + 1);
     goto LAB67;
 
 LAB70:    xsi_set_current_line(51, ng0);
-    t19 = (t0 + 4950);
+    t19 = (t0 + 5006);
     t21 = (t0 + 3072);
     t22 = (t21 + 56U);
     t23 = *((char **)t22);
@@ -401,7 +401,7 @@ LAB70:    xsi_set_current_line(51, ng0);
 
 LAB72:    t3 = (t0 + 1352U);
     t11 = *((char **)t3);
-    t3 = (t0 + 4946);
+    t3 = (t0 + 5002);
     t10 = 1;
     if (4U == 4U)
         goto LAB78;

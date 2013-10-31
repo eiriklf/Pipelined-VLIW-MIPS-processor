@@ -167,7 +167,7 @@ end component TriputMux;
 		X			: in STD_LOGIC_VECTOR(N-1 downto 0);
 		Y			: in STD_LOGIC_VECTOR(N-1 downto 0);
 		R			: out STD_LOGIC_VECTOR(N-1 downto 0);
-		vliw_aluOP		: in std_logic;
+		vliw_aluOP		: in std_logic
 	);
 end component Vliw_alu;
 	component PC is
@@ -370,7 +370,7 @@ end component Forwarding;
 --	ALUOp(1) <= Ops(8); -- ALUOp(1)
 	--bne <= Ops(9);
 	--if more non-R instructions are added, add more aluOP signals
-	Ops(3)<=memtoreg;--should be fixed
+	--Ops(3)<=memtoreg;--should be fixed
 	--perform signextension
 	Signextended(15 downto 0) <=IFIDs(103 downto 88);
 	Signextended(31 downto 16) <= (31 downto 16 => IFIDs(103));
@@ -487,7 +487,7 @@ end component Forwarding;
            reset => reset,
            write_enable =>enablepcwrite
 	
-	);--WLIW 88 DOWNTO 57
+	);--WLIW 87 DOWNTO 56
 	IFID: regi generic map ( N=>120) port map(
 		 Data_in =>imem_data_in& stateread& prediction_address&pc_output(4 downto 0)&branch_taken&incremented,--change incremented?
            data_out => IFIDs,
@@ -497,7 +497,7 @@ end component Forwarding;
 	);								--265 calculated
 	IDEX: regi generic map (N=>261) port map(
 																						--rd_vliw/158				--IDEX_RS		--controlsignals(153-145)			--ifid instructiontype	--jumpaddress163 dt138		--incremented														--idex_rt					idex_rd
-			 Data_in =>vliw_aluOP&LO_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99),--138+25, perform signex later?
+			 Data_in =>vliw_aluOP&LO_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99),--138+25, perform signex later?
            data_out => IDEXs,
            clock => clk,
            reset => reset,
@@ -667,7 +667,7 @@ end component Forwarding;
 			  a => MEMWBs(36 downto 5),--ALU_Result,
 			  c =>LO_out,--MEMWBs(102 downto 71),--Make the move instruction on the first processor
 			  D=>HI_out,--change to be in right pipeline
-           control => MEMWBs(70)&MEMWBs(108),--chosenwritedata2,--memtoreg,
+           control => MEMWBs(70)&MEMWBs(108),--memtoreg,--chosenwritedata2,
            R => ChosenWriteData);
 
 	-- First multiplexor. It is used to choose between regular incremented PC value or PC value based on branching

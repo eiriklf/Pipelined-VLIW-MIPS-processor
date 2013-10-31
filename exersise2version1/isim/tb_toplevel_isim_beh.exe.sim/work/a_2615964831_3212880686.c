@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/file/register_file.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/register_file.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -77,7 +77,7 @@ LAB5:    xsi_set_current_line(72, ng0);
     t7 = *((char **)t3);
     t3 = (t0 + 1832U);
     t8 = *((char **)t3);
-    t3 = (t0 + 7784U);
+    t3 = (t0 + 7912U);
     t9 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t8, t3);
     t10 = (t9 - 31);
     t11 = (t10 * -1);
@@ -128,7 +128,7 @@ static void work_a_2615964831_3212880686_p_1(char *t0)
 LAB0:    xsi_set_current_line(77, ng0);
     t1 = (t0 + 1512U);
     t2 = *((char **)t1);
-    t1 = (t0 + 8968);
+    t1 = (t0 + 9096);
     t4 = 1;
     if (5U == 5U)
         goto LAB5;
@@ -143,7 +143,7 @@ LAB11:    t15 = (t0 + 2472U);
     t16 = *((char **)t15);
     t15 = (t0 + 1512U);
     t17 = *((char **)t15);
-    t15 = (t0 + 7752U);
+    t15 = (t0 + 7880U);
     t18 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t17, t15);
     t19 = (t18 - 31);
     t20 = (t19 * -1);
@@ -229,7 +229,7 @@ static void work_a_2615964831_3212880686_p_2(char *t0)
 LAB0:    xsi_set_current_line(80, ng0);
     t1 = (t0 + 1672U);
     t2 = *((char **)t1);
-    t1 = (t0 + 8973);
+    t1 = (t0 + 9101);
     t4 = 1;
     if (5U == 5U)
         goto LAB5;
@@ -244,7 +244,7 @@ LAB11:    t15 = (t0 + 2472U);
     t16 = *((char **)t15);
     t15 = (t0 + 1672U);
     t17 = *((char **)t15);
-    t15 = (t0 + 7768U);
+    t15 = (t0 + 7896U);
     t18 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t17, t15);
     t19 = (t18 - 31);
     t20 = (t19 * -1);
