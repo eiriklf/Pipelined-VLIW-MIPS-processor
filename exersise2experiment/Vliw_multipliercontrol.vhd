@@ -31,12 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Vliw_multipliercontrol is
     Port ( IFID_funct : in  STD_LOGIC_VECTOR (5 downto 0);
-           LO_write : out  STD_LOGIC);
+           LO_write : out  STD_LOGIC;
+           Vliw_aluOP: out std_logic
+           );
 end Vliw_multipliercontrol;
 
 architecture Behavioral of Vliw_multipliercontrol is
   constant multiply  : std_logic_vector(5 downto 0 ) := "011000";
-
+  constant divide  : std_logic_vector(5 downto 0 ) := "011010";
 
 begin
 process(IFID_funct)
@@ -44,8 +46,14 @@ begin
 
 if(IFID_funct=multiply) then
 LO_write<='1';
+Vliw_aluOP<='0';
+elsif(IFID_funct=divide) then
+LO_write<='1';
+Vliw_aluOP<='1';
 else
 LO_write<='0';
+Vliw_aluOP<='-';
+
 end if;
 end process;
 end Behavioral;
