@@ -35,7 +35,9 @@ architecture Behavioral of PROCESSOR is
 	end component controlpath;
 	component Vliw_multipliercontrol is
     Port ( IFID_funct : in  STD_LOGIC_VECTOR (5 downto 0);
-           LO_write : out  STD_LOGIC);
+           LO_write : out  STD_LOGIC;
+           Vliw_aluOP: out std_logic
+           );
 end component Vliw_multipliercontrol;
 	
 	component shift_register is
@@ -347,7 +349,7 @@ end component Forwarding;
 	signal LO_out: std_logic_vector(31 downto 0);
 	signal HI_out: std_logic_vector(31 downto 0);
 	signal LO_write: std_logic;--change name
-		
+	signal Vliw_aluOP: std_logic;		
 	begin
 	--equalvals<=(IDEXs(105 downto 74) xor IDEXs(73 downto 42));
 	--equalvals2<=read_data1 xor read_data2;--fix this
@@ -460,7 +462,9 @@ end component Forwarding;
 	
 		Vliwcore2: Vliw_multipliercontrol 
     Port map( IFID_funct =>IFIDs(61 downto 56),
-           LO_write =>LO_write);
+           LO_write =>LO_write,
+           Vliw_aluOP=>Vliw_aluOP
+           );
 --		REGISTER_F2: REGISTER_FILE port map(
 --					  CLK => clk,			
 --			  RESET => reset,	
