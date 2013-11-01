@@ -1,14 +1,60 @@
 <?xml version="1.0"?>
 <DARoots Version="1" Minor="7">
 	<FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
-		<Filter Type="EDIFSrcs"/>
-		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ngc">
-			<FileInfo RelPath="toplevel.ngc"/>
+		<Filter Type="Srcs"/>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/lookahead.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/mips_constant_pkg.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/full_adder.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu_1bit.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/Vliw_multipliercontrol.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/Vliw_alu.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/TriputMux.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/shift_register.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/Regi.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/predictionbuffer.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/Hazarddetection.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/Forward.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/register_file.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/quadputmux.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/PC.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/mux.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/control.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/ALUop.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/adder.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/memory.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/com.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/DMEMORY.vhd">
+		</File>
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/toplevel.vhd">
 		</File>
 		<Config>
-			<Option Name="DesignMode" Val="GateLvl"/>
-			<Option Name="GateLvlMode" Val="EDIF"/>
-			<Option Name="TopFile" Val="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ngc"/>
+			<Option Name="DesignMode" Val="RTL"/>
+			<Option Name="TopModule" Val="toplevel"/>
 		</Config>
 	</FileSet>
 </DARoots>

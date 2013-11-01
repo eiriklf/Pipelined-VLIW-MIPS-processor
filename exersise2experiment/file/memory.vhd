@@ -39,7 +39,9 @@ entity memory is
 		WRITE_DATA	:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Data to be written
 		MemWrite		:	in  STD_LOGIC;									-- Write Signal
 		ADDR			:	in  STD_LOGIC_VECTOR (31 downto 0);	-- Address to access data
-		READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0)		-- Data read from memory
+		ADDR2			:	in  STD_LOGIC_VECTOR (31 downto 0);	-- Address after incremented by pc counter
+		READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0);		-- Data read from memory
+		READ_DATA2	:	out STD_LOGIC_VECTOR (N-1 downto 0)		-- for secound part of vliw instruction
 	);
 end memory;
 
@@ -50,10 +52,10 @@ architecture Behavioral of memory is
 	
 	signal MEM : MEM_T := (others => (others => '0'));
 	signal address_reg :	STD_LOGIC_VECTOR (31 downto 0);	-- Address to access data
-	
+	signal address_reg2 :	STD_LOGIC_VECTOR (31 downto 0);	-- Address to access data for vliw instruction
 begin
 
-	MEM_PROC: process(CLK, RESET, MemWrite, WRITE_DATA, ADDR, W_ADDR, MEM, address_reg)
+	MEM_PROC: process(CLK, RESET, MemWrite, WRITE_DATA, ADDR, W_ADDR, MEM, address_reg,address_reg2)
 	begin	
 		if falling_edge (CLK) then
       -- RAMs don't have resets. Commented out to make it work as RAM and not 256 32bit-flipflops (which takes up too much space for the FPGA).
@@ -66,8 +68,10 @@ begin
 				MEM(to_integer(unsigned( W_ADDR((M-1) downto 0) ))) <= WRITE_DATA;
 			end if;
 			address_reg <= ADDR;
+			address_reg2 <= ADDR2;
 		end if;
 		READ_DATA <= MEM(to_integer(unsigned( address_reg ((M-1) downto 0) )));
+		READ_DATA2<= MEM(to_integer(unsigned( address_reg2 ((M-1) downto 0) )));
 	end process MEM_PROC;
 
 end Behavioral;

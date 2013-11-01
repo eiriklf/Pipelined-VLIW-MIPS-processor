@@ -80,7 +80,7 @@ LAB12:    xsi_set_current_line(54, ng0);
     t3 = *((char **)t2);
     t6 = (t3 + 56U);
     t7 = *((char **)t6);
-    *((unsigned char *)t7) = (unsigned char)8;
+    *((unsigned char *)t7) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
 
 LAB3:    t1 = (t0 + 3072);

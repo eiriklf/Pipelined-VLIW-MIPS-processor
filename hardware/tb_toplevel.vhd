@@ -41,8 +41,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
 		reset          : in STD_LOGIC;
 		command        : in  STD_LOGIC_VECTOR (0 to 31);
 		bus_address_in : in  STD_LOGIC_VECTOR (0 to 31);
-		bus_data_in    : in  STD_LOGIC_VECTOR (0 to 63);
-		bus_Dmemdata_in    : in  STD_LOGIC_VECTOR (0 to 31);
+		bus_data_in    : in  STD_LOGIC_VECTOR (0 to 31);
 		status         : out  STD_LOGIC_VECTOR (0 to 31);
 		bus_data_out   : out  STD_LOGIC_VECTOR (0 to 31)
 	); 
@@ -53,7 +52,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
    signal reset : std_logic := '0';
    signal command : std_logic_vector(0 to 31) := (others => '0');
    signal bus_address_in : std_logic_vector(0 to 31) := (others => '0');
-   signal bus_data_in : std_logic_vector(0 to 63) := (others => '0');
+   signal bus_data_in : std_logic_vector(0 to 31) := (others => '0');
 	signal bus_Dmemdata_in : std_logic_vector(0 to 31) := (others => '0');
 
  	--Outputs
@@ -64,7 +63,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
    constant clk_period : time := 40 ns;
 	
 	constant zero : std_logic_vector(0 to 31)  := "00000000000000000000000000000000";
-	constant zero64b: std_logic_vector(0 to 63):="0000000000000000000000000000000000000000000000000000000000000000";
+	constant zero64b: std_logic_vector(0 to 31):="00000000000000000000000000000000";
 	constant addr1 : std_logic_vector(0 to 31) := "00000000000000000000000000000001";
 	constant addr2 : std_logic_vector(0 to 31) := "00000000000000000000000000000010";
 	constant addr3 : std_logic_vector(0 to 31) := "00000000000000000000000000000011";
@@ -91,26 +90,46 @@ ARCHITECTURE behavior OF tb_toplevel IS
   
   -- These are the instructions executed by the CPU (loaded to instruction-memory)
   -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
-  constant ins0  : std_logic_vector(0 to 63) := X"8C01000200000000";
-  constant ins1  : std_logic_vector(0 to 63) := X"8C02000200000000";
-  constant ins2  : std_logic_vector(0 to 63) := X"8C02000200000000";
-  constant ins3  : std_logic_vector(0 to 63) := X"0000000000000000";--X"0000000000420018";--wvliwmultiply $2,$2
-  constant ins4  : std_logic_vector(0 to 63) := X"8C0B000100000000";
-  constant ins5  : std_logic_vector(0 to 63) := X"8C0C000200000000";
-  constant ins6  : std_logic_vector(0 to 63) := X"0022182000420018";--add $3, $1, $2
-  constant ins7  : std_logic_vector(0 to 63) := X"AC03000400000000";
-  constant ins8  : std_logic_vector(0 to 63) := X"AC03000600000000";
-  constant ins9  : std_logic_vector(0 to 63) := X"0000781200000000";--MFLO $15
-  constant ins10 : std_logic_vector(0 to 63) := X"3C03000600000000";--lui $3, 6 forwarded to the add insturction 
-  constant ins11 : std_logic_vector(0 to 63) := X"AC03000800000000";--sw $3, 8($0)
-  constant ins12 : std_logic_vector(0 to 63) := X"0023182000000000";--add $3, $1, $3
-  constant ins13 : std_logic_vector(0 to 63) := X"AC03000900000000";
-  	     constant ins14 : std_logic_vector(0 to 63) := X"0000000000000000";--lw adresse 1 i 11
-		    	     constant ins15 : std_logic_vector(0 to 63) := X"0000000000000000"; --lw adresse 2 i 12
-					  		    	     constant ins16 : std_logic_vector(0 to 63) := X"016B582000000000"; --add $11,$11,$11
-    constant ins17 : std_logic_vector(0 to 63) := X"018B082A00000000";--slt 1 12 11
-  constant ins18 : std_logic_vector(0 to 63) := X"156CFFFD00000000";--bne $11, $12, -3
-  constant ins19 : std_logic_vector(0 to 63) := X"1000FFFD00000000";
+  constant ins0  : std_logic_vector(0 to 31) := X"8C010002";
+  constant ins00 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins1  : std_logic_vector(0 to 31) := X"8C020002";
+  constant ins01 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins2  : std_logic_vector(0 to 31) := X"8C020002";
+  constant ins02 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins3  : std_logic_vector(0 to 31) := X"00000000";--X"0000000000420018";--wvliwmultiply $2,$2
+  constant ins03 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins4  : std_logic_vector(0 to 31) := X"8C0B0001";
+  constant ins04 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins5  : std_logic_vector(0 to 31) := X"8C0C0002";
+  constant ins05 : std_logic_vector(0 to 31) := X"00420018";
+  constant ins6  : std_logic_vector(0 to 31) := X"00221820";--add $3, $1, $2
+  constant ins06 : std_logic_vector(0 to 31) := X"0042001A";
+  constant ins7  : std_logic_vector(0 to 31) := X"AC030004";--sw $3, 4($0)
+  constant ins07 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins8  : std_logic_vector(0 to 31) := X"AC030006";--sw $3, 6($0)
+  constant ins08 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins9  : std_logic_vector(0 to 31) := X"00007812";--MFLO $15
+  constant ins09: std_logic_vector(0 to 31) := X"00000000";
+  constant ins10 : std_logic_vector(0 to 31) := X"3C030006";--lui $3, 6 forwarded to the add insturction 
+  constant ins010 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins11 : std_logic_vector(0 to 31) := X"AC030008";--sw $3, 8($0)
+  constant ins011 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins12 : std_logic_vector(0 to 31) := X"00231820";--add $3, $1, $3
+  constant ins012 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins13 : std_logic_vector(0 to 31) := X"AC030009";--sw $3, 9($0)
+  constant ins013 : std_logic_vector(0 to 31) := X"00000000";
+  	     constant ins14 : std_logic_vector(0 to 31) := X"00000000";--NOP
+		  constant ins014 : std_logic_vector(0 to 31) := X"00000000";
+		    	     constant ins15 : std_logic_vector(0 to 31) := X"00000000"; --NOP
+					  constant ins015 : std_logic_vector(0 to 31) := X"00000000";
+					  		    	     constant ins16 : std_logic_vector(0 to 31) := X"016B5820"; --add $11,$11,$11
+										  constant ins016 : std_logic_vector(0 to 31) := X"00000000";
+    constant ins17 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
+	 constant ins017 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins18 : std_logic_vector(0 to 31) := X"156CFFFD";--bne $11, $12, -3
+  constant ins018 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins19 : std_logic_vector(0 to 31) := X"1000FFFD";
+  constant ins019 : std_logic_vector(0 to 31) := X"00000000";
    
   -- Used to control the COM-module
   constant CMD_IDLE	: std_logic_vector(0 to 31) := "00000000000000000000000000000000";
@@ -129,8 +148,7 @@ BEGIN
     bus_address_in => bus_address_in,
     bus_data_in => bus_data_in,
     status => status,
-    bus_data_out => bus_data_out,
-	 bus_Dmemdata_in=>bus_Dmemdata_in
+    bus_data_out => bus_data_out
   );
 		  
   -- Clock process definitions
@@ -157,22 +175,22 @@ BEGIN
 		-- INSTR: WRITE DATA TO DMEM
 		command <= CMD_WD;					
     bus_address_in <= addr1;
-    bus_Dmemdata_in <= data1;
+    bus_data_in <= data1;
     wait for clk_period*3;
       
     command <= CMD_IDLE;					
     bus_address_in <= zero;
-    bus_Dmemdata_in <= zero;
+    bus_data_in <= zero;
     wait for clk_period*3;
 		
     command <= CMD_WD;					
     bus_address_in <= addr2;
-    bus_Dmemdata_in <= data2;
+    bus_data_in <= data2;
     wait for clk_period*3;
       
     command <= CMD_IDLE;					
     bus_address_in <= zero;
-    bus_Dmemdata_in <= zero;
+    bus_data_in <= zero;
     wait for clk_period*3;
 		
     -- Add instruction 0
@@ -189,6 +207,16 @@ BEGIN
     -- Add instruction 1
     command <= CMD_WI;          
     bus_address_in <= addr1;
+    bus_data_in <= ins00;
+    wait for clk_period*3;
+
+    command <= CMD_IDLE;					
+    bus_address_in <= zero;
+    bus_data_in <= zero64b;
+    wait for clk_period*3;
+	 
+	 		command <= CMD_WI;					
+    bus_address_in <= zero;
     bus_data_in <= ins1;
     wait for clk_period*3;
 
@@ -196,6 +224,19 @@ BEGIN
     bus_address_in <= zero;
     bus_data_in <= zero64b;
     wait for clk_period*3;
+
+    -- Add instruction 1
+    command <= CMD_WI;          
+    bus_address_in <= addr1;
+    bus_data_in <= ins01;
+    wait for clk_period*3;
+
+    command <= CMD_IDLE;					
+    bus_address_in <= zero;
+    bus_data_in <= zero64b;
+    wait for clk_period*3;
+	 
+	 
     -- Add instruction 2
     command <= CMD_WI;          
     bus_address_in <= addr2;
@@ -210,7 +251,7 @@ BEGIN
     -- Add instruction 3
     command <= CMD_WI;          
     bus_address_in <= addr3;
-    bus_data_in <= ins3;
+    bus_data_in <= ins02;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -221,7 +262,7 @@ BEGIN
     -- Add instruction 4
     command <= CMD_WI;          
     bus_address_in <= addr4;
-    bus_data_in <= ins4;
+    bus_data_in <= ins3;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -232,7 +273,7 @@ BEGIN
     -- Add instruction 5
     command <= CMD_WI;          
     bus_address_in <= addr5;
-    bus_data_in <= ins5;
+    bus_data_in <= ins03;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -243,7 +284,7 @@ BEGIN
     -- Add instruction 6
     command <= CMD_WI;          
     bus_address_in <= addr6;
-    bus_data_in <= ins6;
+    bus_data_in <= ins4;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -254,7 +295,7 @@ BEGIN
     -- Add instruction 7
     command <= CMD_WI;          
     bus_address_in <= addr7;
-    bus_data_in <= ins7;
+    bus_data_in <= ins04;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -265,7 +306,7 @@ BEGIN
     -- Add instruction 8
     command <= CMD_WI;          
     bus_address_in <= addr8;
-    bus_data_in <= ins8;
+    bus_data_in <= ins5;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -276,7 +317,7 @@ BEGIN
     -- Add instruction 9
     command <= CMD_WI;          
     bus_address_in <= addr9;
-    bus_data_in <= ins9;
+    bus_data_in <= ins05;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -287,7 +328,7 @@ BEGIN
     -- Add instruction 10
     command <= CMD_WI;          
     bus_address_in <= addr10;
-    bus_data_in <= ins10;
+    bus_data_in <= ins6;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -298,7 +339,7 @@ BEGIN
     -- Add instruction 11
     command <= CMD_WI;          
     bus_address_in <= addr11;
-    bus_data_in <= ins11;
+    bus_data_in <= ins06;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -309,7 +350,7 @@ BEGIN
     -- Add instruction 12
     command <= CMD_WI;          
     bus_address_in <= addr12;
-    bus_data_in <= ins12;
+    bus_data_in <= ins7;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -320,7 +361,7 @@ BEGIN
     -- Add instruction 13
     command <= CMD_WI;          
     bus_address_in <= addr13;
-    bus_data_in <= ins13;
+    bus_data_in <= ins07;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -331,7 +372,7 @@ BEGIN
     -- Add instruction 14
     command <= CMD_WI;          
     bus_address_in <= addr14;
-    bus_data_in <= ins14;
+    bus_data_in <= ins8;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -342,7 +383,7 @@ BEGIN
     -- Add instruction 15
     command <= CMD_WI;          
     bus_address_in <= addr15;
-    bus_data_in <= ins15;
+    bus_data_in <= ins08;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -353,7 +394,7 @@ BEGIN
 	     -- Add instruction 16
     command <= CMD_WI;          
     bus_address_in <= addr16;
-    bus_data_in <= ins16;
+    bus_data_in <= ins9;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -364,7 +405,7 @@ BEGIN
 	     -- Add instruction 17
     command <= CMD_WI;          
     bus_address_in <= addr17;
-    bus_data_in <= ins17;
+    bus_data_in <= ins09;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -375,7 +416,7 @@ BEGIN
 	 	     -- Add instruction 18
     command <= CMD_WI;          
     bus_address_in <= addr18;
-    bus_data_in <= ins18;
+    bus_data_in <= ins10;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -387,7 +428,7 @@ BEGIN
 	 	     -- Add instruction 19
     command <= CMD_WI;          
     bus_address_in <= addr19;
-    bus_data_in <= ins19;
+    bus_data_in <= ins010;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					

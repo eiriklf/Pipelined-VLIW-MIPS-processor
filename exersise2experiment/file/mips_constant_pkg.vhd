@@ -11,13 +11,13 @@ package MIPS_CONSTANT_PKG is
 
     -- CONSTANTS
     constant IADDR_BUS  : integer   := 32;
-    constant IDATA_BUS  : integer   := 64;
+    constant IDATA_BUS  : integer   := 32;
     constant DADDR_BUS  : integer   := 32;
-    constant DDATA_BUS  : integer   := 64;
+    constant DDATA_BUS  : integer   := 32;
     constant RADDR_BUS  : integer   := 5;
-    
+
     constant MEM_ADDR_COUNT : integer   := 8;
-    
+
     constant ZERO1b : STD_LOGIC                                   :=  '0';
     constant ZERO32b    : STD_LOGIC_VECTOR(31 downto 0) :=  "00000000000000000000000000000000"; 
     constant ZERO16b    : STD_LOGIC_VECTOR(15 downto 0) :=  "0000000000000000";

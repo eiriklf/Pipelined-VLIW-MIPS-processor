@@ -52,7 +52,7 @@ LO_write<='1';
 Vliw_aluOP<='1';
 else
 LO_write<='0';
-Vliw_aluOP<='-';
+Vliw_aluOP<='0';
 
 end if;
 end process;

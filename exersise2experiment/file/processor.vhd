@@ -6,17 +6,19 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 --TODO ADD PIPELINESTAGE FOR THE FORWARDING AND THE ALUOP UNITS
 entity PROCESSOR is
- generic ( MEM_ADDR_BUS: natural := 32; MEM_DATA_BUS : natural := 64);
-Port ( 
+ generic ( MEM_ADDR_BUS: natural := 32; MEM_DATA_BUS : natural := 32);
+	Port ( 
 		clk : in STD_LOGIC;
 		reset					: in STD_LOGIC;
 		processor_enable	: in  STD_LOGIC;
 		imem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
+		imem_address2 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		imem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
-		dmem_data_in 		: in  STD_LOGIC_VECTOR (31 downto 0);
+		imem_data2_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
+		dmem_data_in 		: in  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
 		dmem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		dmem_address_wr	: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
-		dmem_data_out		: out  STD_LOGIC_VECTOR (31 downto 0);
+		dmem_data_out		: out  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
 		dmem_write_enable	: out  STD_LOGIC
 	);
 end PROCESSOR;
@@ -102,7 +104,7 @@ end component QuadputMux;
            ALUOp1 : in  STD_LOGIC;
            funct : in  STD_LOGIC_VECTOR (5 downto 0);
            operation : out  STD_LOGIC_VECTOR (4 downto 0);
-                          chosenwritedata2: out std_logic;
+                          memtoreg2: out std_logic;
                           memtoreg: out std_logic
                           );
 	end component ALUOperation;
@@ -163,12 +165,13 @@ end component TriputMux;
 	
 	component Vliw_alu is
 	generic (N :NATURAL :=32);
-	port(
-		X			: in STD_LOGIC_VECTOR(N-1 downto 0);
-		Y			: in STD_LOGIC_VECTOR(N-1 downto 0);
-		R			: out STD_LOGIC_VECTOR(N-1 downto 0);
-		vliw_aluOP		: in std_logic
-	);
+        port(
+                X                        : in STD_LOGIC_VECTOR(N-1 downto 0);
+                Y                        : in STD_LOGIC_VECTOR(N-1 downto 0);
+                R_LO                        : out STD_LOGIC_VECTOR(N-1 downto 0);
+					 R_HI								: out std_logic_vector(N-1 downto 0);
+                vliw_aluOP                : in std_logic
+        );
 end component Vliw_alu;
 	component PC is
 	    Port ( Data_in : in  STD_LOGIC_VECTOR (31 downto 0);
@@ -286,7 +289,7 @@ end component Forwarding;
 	
 	--EX/MEM out
 	
-	signal EXMEMs: std_logic_vector(177 downto 0);
+	signal EXMEMs: std_logic_vector(209 downto 0);
 	
 	--mem/wb output
 	signal MEMWBs: std_logic_vector(109 downto 0);
@@ -344,8 +347,13 @@ end component Forwarding;
 	signal Read_Data_vliw1 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 1 from Register_File
 	signal Read_Data_vliw2 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 2 from Register_File
 	
-	signal vliw_alu_out : std_logic_vector(31 downto 0);
-	signal chosenwritedata2: std_logic;
+	--input to LO register
+	signal LO_IN : std_logic_vector(31 downto 0);
+	--input to HI register
+	signal HI_IN: std_logic_vector(31 downto 0);
+	
+	--controlsignal for mux3 (
+	signal memtoreg2: std_logic;
 	
 	signal LO_out: std_logic_vector(31 downto 0);
 	signal HI_out: std_logic_vector(31 downto 0);
@@ -387,6 +395,7 @@ end component Forwarding;
 	
 	--mapping out of processor
 	imem_address<=PC_OUTPUT;
+	imem_address2<=(PC_OUTPUT+1);--using adder built into library
 	dmem_address<=EXMEMs(68 downto 37);--aluresult
 	dmem_address_wr<=EXMEMs(68 downto 37);
 	dmem_data_out<=EXMEMs(36 downto 5);--read_data2;
@@ -406,7 +415,7 @@ end component Forwarding;
            aluop1 =>IDEXs(152),--ALUOp(1),
            funct =>IDEXs(15 downto 10),--we dont need 5 signals in, so we ignore them
            operation =>operation,
-			  chosenwritedata2=>chosenwritedata2,
+			  memtoreg2=>memtoreg2,
 			  memtoreg=>memtoreg
 			  );
 
@@ -423,7 +432,8 @@ end component Forwarding;
 	port map(
 		X			=>IDEXs(258 downto 227),
 		Y			=>IDEXs(226 downto 195),
-		R			=>vliw_alu_out,
+		R_LO			=>LO_IN ,
+		R_HI			=>HI_IN,
 		vliw_aluOP=>IDEXs(260)--vliw_aluOP
 	);
 
@@ -446,7 +456,7 @@ end component Forwarding;
 	
 	--TODO move LO 1 stage back in pipeline
 		LO: regi generic map ( N=>32) port map(
-		 Data_in =>MEMWBs(102 downto 71),
+		 Data_in =>EXMEMs(170 downto 139),
            data_out => LO_out,
            clock => clk,
            reset => reset,
@@ -454,7 +464,7 @@ end component Forwarding;
 	);
 	
 			HI: regi generic map ( N=>32) port map(
-		 Data_in =>MEMWBs(102 downto 71),--change this. this is output for LO and not HI
+		 Data_in =>EXMEMs(209 downto 178),--MEMWBs(102 downto 71),--change this. this is output for LO and not HI
            data_out => HI_out,
            clock => clk,
            reset => reset,
@@ -489,23 +499,23 @@ end component Forwarding;
 	
 	);--WLIW 87 DOWNTO 56
 	IFID: regi generic map ( N=>120) port map(
-		 Data_in =>imem_data_in& stateread& prediction_address&pc_output(4 downto 0)&branch_taken&incremented,--change incremented?
+		 Data_in =>imem_data_in&imem_data2_in& stateread& prediction_address&pc_output(4 downto 0)&branch_taken&incremented,--change incremented?
            data_out => IFIDs,
            clock => clk,
            reset => IFIDreset,
 			  write_enable=>IFIDwrite
 	);								--265 calculated
-	IDEX: regi generic map (N=>261) port map(
+	IDEX: regi generic map (N=>261) port map(--remove the 1bit memtoreg signal
 																						--rd_vliw/158				--IDEX_RS		--controlsignals(153-145)			--ifid instructiontype	--jumpaddress163 dt138		--incremented														--idex_rt					idex_rd
 			 Data_in =>vliw_aluOP&LO_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99),--138+25, perform signex later?
            data_out => IDEXs,
            clock => clk,
            reset => reset,
 			  write_enable=>'1'
-	);								--was 139
-	EXMEM: regi generic map (N=>178)  port map(
-			--con trrrollls
-			 Data_in => IDEXs(259)&chosenwritedata2&IDEXs(163 downto 159)&vliw_alu_out&IDEXs(149)&IDEXs(147 downto 144)&concat&branchadder&zero.zero&ALU_Result&ForwardBout&ChosenWriteReg,--134, not 161 bit
+	);								--was 178
+	EXMEM: regi generic map (N=>210)  port map(
+			--con trrrollls																				-branchsignal --controlsignals
+			 Data_in => HI_IN&IDEXs(259)&memtoreg2&IDEXs(163 downto 159)&LO_IN &IDEXs(149)&memtoreg&IDEXs(146 downto 144)&concat&branchadder&zero.zero&ALU_Result&ForwardBout&ChosenWriteReg,--134, not 161 bit
            data_out => EXMEMs,
            clock => clk,
            reset => reset,
@@ -513,7 +523,7 @@ end component Forwarding;
 	);									--was 71
 	--109?
 	MEMWB: regi generic map (N=>110) port map(
-	--con trrrolls	--lowrite		chosen_register for wliw
+	--con trrrolls	--lowrite		chosen_register for wliw			--wlivaluresult
 			 Data_in =>EXMEMs(177)&EXMEMs(176)&EXMEMs(175 downto 171)&EXMEMs(170 downto 139)& EXMEMs(137)&EXMEMs(136)&dmem_data_in&EXMEMs(68 downto 37)&EXMEMs(4 downto 0),--
            data_out => MEMWBs,
            clock => clk,
@@ -574,7 +584,7 @@ end component Forwarding;
 	-- addressing by words
 	Addressincrementer: adder port map(
 		x => pc_output,
-		y => "00000000000000000000000000000001",
+		y => "00000000000000000000000000000010",
 		R => incremented
 	);
 	
@@ -667,7 +677,7 @@ end component Forwarding;
 			  a => MEMWBs(36 downto 5),--ALU_Result,
 			  c =>LO_out,--MEMWBs(102 downto 71),--Make the move instruction on the first processor
 			  D=>HI_out,--change to be in right pipeline
-           control => MEMWBs(70)&MEMWBs(108),--memtoreg,--chosenwritedata2,
+           control => MEMWBs(70)&MEMWBs(108),--memtoreg,--memtoreg2,
            R => ChosenWriteData);
 
 	-- First multiplexor. It is used to choose between regular incremented PC value or PC value based on branching

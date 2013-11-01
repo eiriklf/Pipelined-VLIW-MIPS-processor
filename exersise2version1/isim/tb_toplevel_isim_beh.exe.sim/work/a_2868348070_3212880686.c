@@ -26,7 +26,7 @@ extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
 int ieee_p_1242562249_sub_1657552908_1035706684(char *, char *, char *);
-unsigned char ieee_p_2592010699_sub_1744673427_503743352(char *, char *, unsigned int , unsigned int );
+unsigned char ieee_p_2592010699_sub_1258338084_503743352(char *, char *, unsigned int , unsigned int );
 
 
 static void work_a_2868348070_3212880686_p_0(char *t0)
@@ -59,7 +59,7 @@ static void work_a_2868348070_3212880686_p_0(char *t0)
 
 LAB0:    xsi_set_current_line(58, ng0);
     t1 = (t0 + 992U);
-    t2 = ieee_p_2592010699_sub_1744673427_503743352(IEEE_P_2592010699, t1, 0U, 0U);
+    t2 = ieee_p_2592010699_sub_1258338084_503743352(IEEE_P_2592010699, t1, 0U, 0U);
     if (t2 != 0)
         goto LAB2;
 

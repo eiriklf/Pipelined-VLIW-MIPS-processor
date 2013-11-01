@@ -2,7 +2,7 @@
 <DARoots Version="1" Minor="7">
 	<FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
 		<Filter Type="Constrs"/>
-		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ucf">
+		<File Path="C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/toplevel.ucf">
 		</File>
 		<Config>
 			<Option Name="TargetPart" Val="xc6slx16csg324-2"/>
