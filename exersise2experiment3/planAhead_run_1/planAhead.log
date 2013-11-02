@@ -1,0 +1,477 @@
+#-----------------------------------------------------------
+# PlanAhead v12.4
+# Build 108585 by hdbuild on Tue Nov  9 17:32:56 MST 2010
+# Start of session at: Fri Nov 01 21:03:38 2013
+# Process ID: 3780
+# Log file: C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [HD-Licensing 0] Attempting to get a license: PlanAhead
+INFO: [HD-Licensing 1] Got a license: PlanAhead
+INFO: [HD-Licensing 3] Your PlanAhead license expires in -305 day(s)
+INFO: [HD-ArchReader 0] Loading parts and site information from C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\arch.xml
+INFO: [HD-RTPRIM 0] Parsing RTL primitives file 'C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml'
+INFO: [HD-RTPRIM 1] Finished Parsing RTL primitives file 'C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml'
+start_gui -source C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/pa.fromHdl.tcl
+# create_project -name exersise2 -dir "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/planAhead_run_1" -part xc6slx16csg324-2
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property top toplevel $srcset
+# set_param project.paUcfFile  "toplevel.ucf"
+# set hdlfile [add_files [list {file/lookahead.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/mips_constant_pkg.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/full_adder.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/alu_1bit.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Vliw_multipliercontrol.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Vliw_alu.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {TriputMux.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {shift_register.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Regi.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {predictionbuffer.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Hazarddetection.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Forward.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/register_file.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/quadputmux.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/PC.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/mux.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/control.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/ALUop.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/alu.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/adder.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/processor.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/memory.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/com.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {DMEMORY.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {file/toplevel.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# add_files "toplevel.ucf" -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx16csg324-2
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\xilinx\rtl\lib\synplify\synattr.vhd" into library synplify
+INFO: [HD-RTLIN 2] Parsing package <attributes>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Xilinx\12.4\ISE_DS\PlanAhead\parts\xilinx\rtl\lib\synplify\synattr.vhd" into library synplify
+INFO: [HD-RTLIN 2] Parsing package <attributes>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\lookahead.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <alu_full_adder>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <alu_full_adder>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\mips_constant_pkg.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing package <MIPS_CONSTANT_PKG>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\full_adder.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <full_adder>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <full_adder>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\alu_1bit.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <alu_1bit>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <alu_1bit>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Vliw_multipliercontrol.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <Vliw_multipliercontrol>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <vliw_multipliercontrol>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Vliw_alu.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <Vliw_alu>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <vliw_alu>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\TriputMux.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <TriputMux>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <triputmux>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\shift_register.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <shift_register>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <shift_register>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Regi.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <regi>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <regi>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\predictionbuffer.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <predictorbuffer>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <predictorbuffer>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Hazarddetection.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <Hazarddetection>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <hazarddetection>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Forward.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <Forwarding>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <forwarding>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\register_file.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <register_file>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <register_file>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\quadputmux.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <QuadputMux>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <quadputmux>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\PC.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <PC>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <pc>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\mux.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <simple_multiplexer>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <simple_multiplexer>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\control.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <control>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <control>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\ALUop.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <ALUoperation>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <aluoperation>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\alu.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <alu>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <alu>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\adder.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <adder>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <adder>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\processor.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <PROCESSOR>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <processor>.
+WARN: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\processor.vhd(502) Actual for formal port data_in is neither a static name nor a globally static expression
+WARN: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\processor.vhd(510) Actual for formal port data_in is neither a static name nor a globally static expression
+WARN: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\processor.vhd(518) Actual for formal port data_in is neither a static name nor a globally static expression
+WARN: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\processor.vhd(527) Actual for formal port data_in is neither a static name nor a globally static expression
+WARN: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\processor.vhd(632) Actual for formal port read_address is neither a static name nor a globally static expression
+WARN: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\processor.vhd(633) Actual for formal port write_address is neither a static name nor a globally static expression
+WARN: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\processor.vhd(680) Actual for formal port control is neither a static name nor a globally static expression
+WARN: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\processor.vhd(694) Actual for formal port b is neither a static name nor a globally static expression
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\memory.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <memory>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <memory>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\com.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <com>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <com>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\DMEMORY.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <Dmemory>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <dmemory>.
+INFO: [HD-RTLIN 2] Parsing VHDL file "C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\toplevel.vhd" into library work
+INFO: [HD-RTLIN 2] Parsing entity <toplevel>.
+INFO: [HD-RTLIN 2] Parsing architecture <Behavioral> of entity <toplevel>.
+WARN: [HD-RTLIN 1] N:/M.48/rtf/vhdl/xst/src/numeric_std.vhd(878) Range is empty (null range)
+WARN: [HD-RTLIN 1] N:/M.48/rtf/vhdl/xst/src/numeric_std.vhd(879) Range is empty (null range)
+INFO: [HD-RTLIN 2] Elaborating entity <toplevel> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <com> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file\com.vhd(231) Case statement is complete. Others clause is never selected and therefore discarded.
+INFO: [HD-RTLIN 2] Elaborating entity <Dmemory> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <memory> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <PROCESSOR> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <ALUoperation> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <alu> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <alu_1bit> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <alu_full_adder> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <Vliw_alu> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <register_file> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <Vliw_multipliercontrol> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <PC> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <Forwarding> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <control> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <Hazarddetection> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 1] C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Hazarddetection.vhd(199) Case statement is complete. Others clause is never selected and therefore discarded.
+INFO: [HD-RTLIN 2] Elaborating entity <adder> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <full_adder> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <predictorbuffer> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <predictorbuffer> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <shift_register> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <TriputMux> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <QuadputMux> (architecture <Behavioral>) from library <work>.
+INFO: [HD-RTLIN 2] Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
+INFO: [HD-ArchReader 7] Loading clock regions from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockRegion.xml
+INFO: [HD-ArchReader 8] Loading clock buffers from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockBuffers.xml
+INFO: [HD-ArchReader 3] Loading package from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/spartan6lx/xc6slx16/csg324/Package.xml
+INFO: [HD-ArchReader 13] Loading package pin functions from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/PinFunctions.xml...
+INFO: [HD-ArchReader 4] Loading io standards from C:/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/IOStandards.xml
+INFO: [HD-ArchReader 12] Loading device configuration modes from C:/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/ConfigModes.xml
+INFO: [HD-GDRC 0] Loading list of drcs for the architecture : C:/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/drc.xml
+INFO: [HD-UCFReader 0] Parsing UCF File : .\toplevel.ucf
+INFO: [HD-UCFReader 1] Finished Parsing UCF File : .\toplevel.ucf
+
+DESIGN RULE CHECK VIOLATION REPORT
+   Build: PlanAhead v12.4 by hdbuild
+          on  Tue Nov  9 17:32:56 MST 2010
+  Report: by eiriklf on host dmlab08, pid 3780
+          on Fri Nov 01 21:04:10 2013
+
+REPORT SUMMARY
+            Netlist: toplevel
+          Floorplan: <none>
+      Design limits: <entire design considered>
+             Checks: Unknown block name
+                     Unknown Unisim pin name
+                     Mismatching Attribute
+           Max vios: <unlimited>
+         Vios found: 46
+
+REPORT DETAILS
+ULMN#1
+Unknown block name - <no location>
+Block name RTL_GND is not a valid Unisim for the specified architecture. No block of type RTL_GND exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#2
+Unknown block name - <no location>
+Block name RTL_PWR is not a valid Unisim for the specified architecture. No block of type RTL_PWR exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#3
+Unknown block name - <no location>
+Block name RTL_wide_fdrse_32 is not a valid Unisim for the specified architecture. No block of type RTL_wide_fdrse_32 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#4
+Unknown block name - <no location>
+Block name RTL_equal_32 is not a valid Unisim for the specified architecture. No block of type RTL_equal_32 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#5
+Unknown block name - <no location>
+Block name RTL_mux_3 is not a valid Unisim for the specified architecture. No block of type RTL_mux_3 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#6
+Unknown block name - <no location>
+Block name RTL_Mux_2u_4u is not a valid Unisim for the specified architecture. No block of type RTL_Mux_2u_4u exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#7
+Unknown block name - <no location>
+Block name RTL_Mux_3u_8u is not a valid Unisim for the specified architecture. No block of type RTL_Mux_3u_8u exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#8
+Unknown block name - <no location>
+Block name RTL_wide_mux_3_256 is not a valid Unisim for the specified architecture. No block of type RTL_wide_mux_3_256 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#9
+Unknown block name - <no location>
+Block name RTL_FDRSE is not a valid Unisim for the specified architecture. No block of type RTL_FDRSE exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#10
+Unknown block name - <no location>
+Block name RTL_wide_fdrse_3 is not a valid Unisim for the specified architecture. No block of type RTL_wide_fdrse_3 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#11
+Unknown block name - <no location>
+Block name RTL_mux_32 is not a valid Unisim for the specified architecture. No block of type RTL_mux_32 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#12
+Unknown block name - <no location>
+Block name RTL_MUX is not a valid Unisim for the specified architecture. No block of type RTL_MUX exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#13
+Unknown block name - <no location>
+Block name RTL_INV is not a valid Unisim for the specified architecture. No block of type RTL_INV exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#14
+Unknown block name - <no location>
+Block name RTL_ram_w_8_32_r_8_32 is not a valid Unisim for the specified architecture. No block of type RTL_ram_w_8_32_r_8_32 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#15
+Unknown block name - <no location>
+Block name RTL_ram_w_8_32_r_8_32_r_8_32 is not a valid Unisim for the specified architecture. No block of type RTL_ram_w_8_32_r_8_32_r_8_32 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#16
+Unknown block name - <no location>
+Block name RTL_AND is not a valid Unisim for the specified architecture. No block of type RTL_AND exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#17
+Unknown block name - <no location>
+Block name RTL_add_32u_32u is not a valid Unisim for the specified architecture. No block of type RTL_add_32u_32u exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#18
+Unknown block name - <no location>
+Block name RTL_equal_6 is not a valid Unisim for the specified architecture. No block of type RTL_equal_6 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#19
+Unknown block name - <no location>
+Block name RTL_OR is not a valid Unisim for the specified architecture. No block of type RTL_OR exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#20
+Unknown block name - <no location>
+Block name RTL_mux_5 is not a valid Unisim for the specified architecture. No block of type RTL_mux_5 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#21
+Unknown block name - <no location>
+Block name RTL_inv_4 is not a valid Unisim for the specified architecture. No block of type RTL_inv_4 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#22
+Unknown block name - <no location>
+Block name RTL_mux_4 is not a valid Unisim for the specified architecture. No block of type RTL_mux_4 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#23
+Unknown block name - <no location>
+Block name RTL_and_4 is not a valid Unisim for the specified architecture. No block of type RTL_and_4 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#24
+Unknown block name - <no location>
+Block name RTL_or_4 is not a valid Unisim for the specified architecture. No block of type RTL_or_4 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#25
+Unknown block name - <no location>
+Block name RTL_XOR is not a valid Unisim for the specified architecture. No block of type RTL_XOR exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#26
+Unknown block name - <no location>
+Block name RTL_mult_32s_32s is not a valid Unisim for the specified architecture. No block of type RTL_mult_32s_32s exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#27
+Unknown block name - <no location>
+Block name RTL_mux_64 is not a valid Unisim for the specified architecture. No block of type RTL_mux_64 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#28
+Unknown block name - <no location>
+Block name RTL_ram_w_5_32_r_5_32_r_5_32_r_5_32_r_5_32 is not a valid Unisim for the specified architecture. No block of type RTL_ram_w_5_32_r_5_32_r_5_32_r_5_32_r_5_32 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#29
+Unknown block name - <no location>
+Block name RTL_equal_5 is not a valid Unisim for the specified architecture. No block of type RTL_equal_5 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#30
+Unknown block name - <no location>
+Block name RTL_wide_fdcpe_32 is not a valid Unisim for the specified architecture. No block of type RTL_wide_fdcpe_32 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#31
+Unknown block name - <no location>
+Block name RTL_wide_fdrse_120 is not a valid Unisim for the specified architecture. No block of type RTL_wide_fdrse_120 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#32
+Unknown block name - <no location>
+Block name RTL_mux_120 is not a valid Unisim for the specified architecture. No block of type RTL_mux_120 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#33
+Unknown block name - <no location>
+Block name RTL_wide_fdrse_261 is not a valid Unisim for the specified architecture. No block of type RTL_wide_fdrse_261 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#34
+Unknown block name - <no location>
+Block name RTL_mux_261 is not a valid Unisim for the specified architecture. No block of type RTL_mux_261 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#35
+Unknown block name - <no location>
+Block name RTL_wide_fdrse_210 is not a valid Unisim for the specified architecture. No block of type RTL_wide_fdrse_210 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#36
+Unknown block name - <no location>
+Block name RTL_mux_210 is not a valid Unisim for the specified architecture. No block of type RTL_mux_210 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#37
+Unknown block name - <no location>
+Block name RTL_wide_fdrse_110 is not a valid Unisim for the specified architecture. No block of type RTL_wide_fdrse_110 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#38
+Unknown block name - <no location>
+Block name RTL_mux_110 is not a valid Unisim for the specified architecture. No block of type RTL_mux_110 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#39
+Unknown block name - <no location>
+Block name RTL_mux_2 is not a valid Unisim for the specified architecture. No block of type RTL_mux_2 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#40
+Unknown block name - <no location>
+Block name RTL_equal_2 is not a valid Unisim for the specified architecture. No block of type RTL_equal_2 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#41
+Unknown block name - <no location>
+Block name RTL_equal_16 is not a valid Unisim for the specified architecture. No block of type RTL_equal_16 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#42
+Unknown block name - <no location>
+Block name RTL_wide_mux_2_8 is not a valid Unisim for the specified architecture. No block of type RTL_wide_mux_2_8 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#43
+Unknown block name - <no location>
+Block name RTL_ram_w_5_16_r_5_16 is not a valid Unisim for the specified architecture. No block of type RTL_ram_w_5_16_r_5_16 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#44
+Unknown block name - <no location>
+Block name RTL_ram_w_5_2_r_5_2 is not a valid Unisim for the specified architecture. No block of type RTL_ram_w_5_2_r_5_2 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#45
+Unknown block name - <no location>
+Block name RTL_wide_fdrse_2 is not a valid Unisim for the specified architecture. No block of type RTL_wide_fdrse_2 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+ULMN#46
+Unknown block name - <no location>
+Block name RTL_mux_10 is not a valid Unisim for the specified architecture. No block of type RTL_mux_10 exists in the Unisim library for the spartan6lx architecture.
+Related Vios: <none>
+
+INFO: [HD-LIB 0] Reading timing library C:/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/spartan6.lib .
+INFO: [HD-LIB 1] Done reading timing library C:/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/spartan6.lib .
