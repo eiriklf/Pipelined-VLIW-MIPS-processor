@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.10 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: toplevel.prj
 
@@ -165,17 +165,22 @@ Parsing architecture <Behavioral> of entity <alu>.
 Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/adder.vhd" into library work
 Parsing entity <adder>.
 Parsing architecture <Behavioral> of entity <adder>.
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\branch_prediction_unit.vhd" into library work
+Parsing entity <branchprediction>.
+Parsing architecture <Behavioral> of entity <branchprediction>.
 Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" into library work
 Parsing entity <PROCESSOR>.
 Parsing architecture <Behavioral> of entity <processor>.
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 502: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 510: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 518: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 527: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 632: Actual for formal port read_address is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 633: Actual for formal port write_address is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 680: Actual for formal port control is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 694: Actual for formal port b is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 539: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 547: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 555: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 564: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 588: Actual for formal port idexcontrol is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 635: Actual for formal port y is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 672: Actual for formal port read_address is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 673: Actual for formal port write_address is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 720: Actual for formal port control is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 734: Actual for formal port b is neither a static name nor a globally static expression
 Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/memory.vhd" into library work
 Parsing entity <memory>.
 Parsing architecture <Behavioral> of entity <memory>.
@@ -235,7 +240,10 @@ Elaborating entity <Forwarding> (architecture <Behavioral>) from library <work>.
 Elaborating entity <control> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <Hazarddetection> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Hazarddetection.vhd" Line 199. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:92 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Hazarddetection.vhd" Line 63: ifidinstructiontype should be on the sensitivity list of the process
+
+Elaborating entity <branchprediction> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\branch_prediction_unit.vhd" Line 163. Case statement is complete. others clause is never selected
 
 Elaborating entity <adder> (architecture <Behavioral>) with generics from library <work>.
 
@@ -337,24 +345,23 @@ Synthesizing Unit <PROCESSOR>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 423: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 423: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 423: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 550: Output port <buffer_write> of the instance <DETECTION_UNIT> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 585: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 593: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
-    Found 32-bit adder for signal <imem_address2> created at line 398.
-    Found 32-bit comparator equal for signal <Read_Data1[31]_Read_Data2[31]_equal_2_o> created at line 367
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 460: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 460: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 460: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 587: Output port <IFIDreset> of the instance <DETECTION_UNIT> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 601: Output port <buffer_write> of the instance <Branch_predicition_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 625: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 633: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
+    Found 32-bit adder for signal <imem_address2> created at line 435.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   1 Comparator(s).
 	inferred   1 Multiplexer(s).
 Unit <PROCESSOR> synthesized.
 
 Synthesizing Unit <ALUoperation>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/aluop.vhd".
     Summary:
-	inferred  22 Multiplexer(s).
+	inferred  21 Multiplexer(s).
 Unit <ALUoperation> synthesized.
 
 Synthesizing Unit <alu>.
@@ -420,7 +427,7 @@ Unit <regi_1> synthesized.
 Synthesizing Unit <Vliw_multipliercontrol>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/vliw_multipliercontrol.vhd".
     Summary:
-	inferred   2 Multiplexer(s).
+	no macro.
 Unit <Vliw_multipliercontrol> synthesized.
 
 Synthesizing Unit <PC>.
@@ -484,14 +491,22 @@ Unit <control> synthesized.
 
 Synthesizing Unit <Hazarddetection>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/hazarddetection.vhd".
-WARNING:Xst:647 - Input <IDEXCONTROL<8:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <IDEXregisterRT<31:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 2-bit 4-to-1 multiplexer for signal <State> created at line 163.
-    Found 16-bit comparator not equal for signal <predicted_address[15]_branch_address[15]_equal_3_o> created at line 96
+WARNING:Xst:653 - Signal <IFIDreset> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 5-bit comparator equal for signal <IFIDregisterRS[4]_IDEXregisterRT[4]_equal_2_o> created at line 63
+    Found 5-bit comparator equal for signal <IFIDregisterRT[4]_IDEXregisterRT[4]_equal_3_o> created at line 63
+    Summary:
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <Hazarddetection> synthesized.
+
+Synthesizing Unit <branchprediction>.
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/branch_prediction_unit.vhd".
+    Found 2-bit 4-to-1 multiplexer for signal <State> created at line 127.
+    Found 16-bit comparator not equal for signal <predicted_address[15]_branch_address[15]_equal_3_o> created at line 86
     Summary:
 	inferred   1 Comparator(s).
-	inferred  16 Multiplexer(s).
-Unit <Hazarddetection> synthesized.
+	inferred  12 Multiplexer(s).
+Unit <branchprediction> synthesized.
 
 Synthesizing Unit <adder>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/adder.vhd".
@@ -591,12 +606,11 @@ Macro Statistics
  261-bit register                                      : 1
  32-bit register                                       : 9
  8-bit register                                        : 3
-# Comparators                                          : 6
+# Comparators                                          : 7
  16-bit comparator not equal                           : 1
- 32-bit comparator equal                               : 1
- 5-bit comparator equal                                : 4
-# Multiplexers                                         : 124
- 1-bit 2-to-1 multiplexer                              : 46
+ 5-bit comparator equal                                : 6
+# Multiplexers                                         : 119
+ 1-bit 2-to-1 multiplexer                              : 41
  10-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  2-bit 4-to-1 multiplexer                              : 1
@@ -606,8 +620,9 @@ Macro Statistics
  5-bit 2-to-1 multiplexer                              : 7
  64-bit 2-to-1 multiplexer                             : 1
 # FSMs                                                 : 1
-# Xors                                                 : 193
+# Xors                                                 : 194
  1-bit xor2                                            : 193
+ 32-bit xor2                                           : 1
 
 =========================================================================
 
@@ -672,8 +687,6 @@ WARNING:Xst:2677 - Node <data_142> of sequential type is unconnected in block <I
 WARNING:Xst:2677 - Node <data_143> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_144> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_147> of sequential type is unconnected in block <IDEX>.
-WARNING:Xst:2677 - Node <data_149> of sequential type is unconnected in block <IDEX>.
-WARNING:Xst:2677 - Node <data_153> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_159> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_160> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_161> of sequential type is unconnected in block <IDEX>.
@@ -1691,6 +1704,7 @@ WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_55> of sequen
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_54> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_53> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_52> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_49> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_37> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_36> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_35> of sequential type is unconnected in block <toplevel>.
@@ -1814,32 +1828,31 @@ Macro Statistics
  32x32-bit multiplier                                  : 2
 # Adders/Subtractors                                   : 1
  32-bit adder                                          : 1
-# Registers                                            : 764
- Flip-Flops                                            : 764
-# Comparators                                          : 6
+# Registers                                            : 763
+ Flip-Flops                                            : 763
+# Comparators                                          : 7
  16-bit comparator not equal                           : 1
- 32-bit comparator equal                               : 1
- 5-bit comparator equal                                : 4
-# Multiplexers                                         : 159
- 1-bit 2-to-1 multiplexer                              : 83
+ 5-bit comparator equal                                : 6
+# Multiplexers                                         : 150
+ 1-bit 2-to-1 multiplexer                              : 73
  10-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  2-bit 4-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 20
  32-bit 4-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 40
- 5-bit 2-to-1 multiplexer                              : 6
+ 5-bit 2-to-1 multiplexer                              : 7
  64-bit 2-to-1 multiplexer                             : 1
 # FSMs                                                 : 1
-# Xors                                                 : 193
+# Xors                                                 : 194
  1-bit xor2                                            : 193
+ 32-bit xor2                                           : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_49> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/EXMEM/data_137> 
 INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_195> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_174> 
 INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_194> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_173> 
 INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_193> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_172> 
@@ -1869,9 +1882,9 @@ Optimizing unit <regi_1> ...
 
 Optimizing unit <PC> ...
 
-Optimizing unit <Hazarddetection> ...
-
 Optimizing unit <adder> ...
+
+Optimizing unit <branchprediction> ...
 
 Optimizing unit <alu> ...
 
@@ -1892,8 +1905,6 @@ WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_27> of sequen
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_26> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_25> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_24> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_47> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_43> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_31> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_30> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_29> of sequential type is unconnected in block <toplevel>.
@@ -1964,10 +1975,8 @@ WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/ALUTD/Mmult_X[31]_Y[31]_MuLt_1_OUT> o
 
 Mapping all equations...
 Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_23> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_1> 
 INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_55> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_22> 
-INFO:Xst:2399 - RAMs <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3>, <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3>, <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3>, <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1> are equivalent, second RAM is removed
 Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 11.
 
 Final Macro Processing ...
@@ -1980,8 +1989,8 @@ Unit <toplevel> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 565
- Flip-Flops                                            : 565
+# Registers                                            : 567
+ Flip-Flops                                            : 567
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -2006,29 +2015,29 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 766
+# BELS                             : 886
 #      GND                         : 1
-#      INV                         : 3
+#      INV                         : 2
 #      LUT1                        : 7
-#      LUT2                        : 16
-#      LUT3                        : 106
-#      LUT4                        : 73
-#      LUT5                        : 132
-#      LUT6                        : 370
+#      LUT2                        : 15
+#      LUT3                        : 114
+#      LUT4                        : 71
+#      LUT5                        : 238
+#      LUT6                        : 388
 #      MUXCY                       : 24
-#      MUXF7                       : 25
+#      MUXF7                       : 17
 #      VCC                         : 1
 #      XORCY                       : 8
-# FlipFlops/Latches                : 566
-#      FD                          : 276
+# FlipFlops/Latches                : 568
+#      FD                          : 367
 #      FDCE                        : 16
-#      FDE                         : 3
+#      FDE                         : 1
 #      FDR                         : 88
-#      FDRE                        : 183
-# RAMS                             : 12
+#      FDRE                        : 96
+# RAMS                             : 15
 #      RAM32M                      : 2
 #      RAM32X1D                    : 6
-#      RAMB8BWER                   : 4
+#      RAMB8BWER                   : 7
 # Shift Registers                  : 1
 #      SRLC16E                     : 1
 # Clock Buffers                    : 1
@@ -2046,27 +2055,27 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             566  out of  18224     3%  
- Number of Slice LUTs:                  728  out of   9112     7%  
-    Number used as Logic:               707  out of   9112     7%  
+ Number of Slice Registers:             568  out of  18224     3%  
+ Number of Slice LUTs:                  856  out of   9112     9%  
+    Number used as Logic:               835  out of   9112     9%  
     Number used as Memory:               21  out of   2176     0%  
        Number used as RAM:               20
        Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1001
-   Number with an unused Flip Flop:     435  out of   1001    43%  
-   Number with an unused LUT:           273  out of   1001    27%  
-   Number of fully used LUT-FF pairs:   293  out of   1001    29%  
-   Number of unique control sets:        11
+ Number of LUT Flip Flop pairs used:   1058
+   Number with an unused Flip Flop:     490  out of   1058    46%  
+   Number with an unused LUT:           202  out of   1058    19%  
+   Number of fully used LUT-FF pairs:   366  out of   1058    34%  
+   Number of unique control sets:         9
 
 IO Utilization: 
  Number of IOs:                         162
  Number of bonded IOBs:                 138  out of    232    59%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                2  out of     32     6%  
-    Number using Block RAM only:          2
+ Number of Block RAM/FIFO:                4  out of     32    12%  
+    Number using Block RAM only:          4
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
  Number of DSP48A1s:                      4  out of     32    12%  
 
@@ -2091,7 +2100,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 584   |
+clk                                | BUFGP                  | 592   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -2102,7 +2111,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 19.554ns (Maximum Frequency: 51.140MHz)
+   Minimum period: 20.770ns (Maximum Frequency: 48.148MHz)
    Minimum input arrival time before clock: 8.006ns
    Maximum output required time after clock: 4.226ns
    Maximum combinational path delay: No path found
@@ -2113,26 +2122,38 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 19.554ns (frequency: 51.140MHz)
-  Total number of paths / destination ports: 460997 / 1223
+  Clock period: 20.770ns (frequency: 48.148MHz)
+  Total number of paths / destination ports: 558112 / 1366
 -------------------------------------------------------------------------
-Delay:               19.554ns (Levels of Logic = 2)
-  Source:            MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (DSP)
-  Destination:       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
-  Source Clock:      clk rising
+Delay:               10.385ns (Levels of Logic = 14)
+  Source:            MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
+  Destination:       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Source Clock:      clk falling
   Destination Clock: clk rising
 
-  Data Path: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+  Data Path: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     DSP48A1:CLK->P47     18   8.791   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1)
-     DSP48A1:C30->PCOUT31    1   3.225   0.000  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_31)
-     DSP48A1:PCIN31->P47   18   2.772   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3)
-     DSP48A1:C30               2.298          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+     RAMB8BWER:CLKAWRCLK->DOADO6    1   2.700   0.682  MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (MIPS_SC_PROCESSOR/REGISTER_F/RS_ADDR[4]_read_port_2_OUT<6>)
+     LUT6:I5->O            2   0.373   1.343  MIPS_SC_PROCESSOR/REGISTER_F/Mmux_RS2911 (MIPS_SC_PROCESSOR/Read_Data1<6>)
+     LUT6:I0->O            1   0.373   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_lut<1> (MIPS_SC_PROCESSOR/equals<31>_wg_lut<1>)
+     MUXCY:S->O            1   0.330   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_cy<1> (MIPS_SC_PROCESSOR/equals<31>_wg_cy<1>)
+     MUXCY:CI->O           1   0.032   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_cy<2> (MIPS_SC_PROCESSOR/equals<31>_wg_cy<2>)
+     MUXCY:CI->O           1   0.032   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_cy<3> (MIPS_SC_PROCESSOR/equals<31>_wg_cy<3>)
+     MUXCY:CI->O           1   0.032   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_cy<4> (MIPS_SC_PROCESSOR/equals<31>_wg_cy<4>)
+     MUXCY:CI->O           1   0.032   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_cy<5> (MIPS_SC_PROCESSOR/equals<31>_wg_cy<5>)
+     MUXCY:CI->O           1   0.032   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_cy<6> (MIPS_SC_PROCESSOR/equals<31>_wg_cy<6>)
+     MUXCY:CI->O           1   0.032   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_cy<7> (MIPS_SC_PROCESSOR/equals<31>_wg_cy<7>)
+     MUXCY:CI->O           1   0.032   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_cy<8> (MIPS_SC_PROCESSOR/equals<31>_wg_cy<8>)
+     MUXCY:CI->O           1   0.032   0.000  MIPS_SC_PROCESSOR/equals<31>_wg_cy<9> (MIPS_SC_PROCESSOR/equals<31>_wg_cy<9>)
+     MUXCY:CI->O           7   0.332   0.910  MIPS_SC_PROCESSOR/equals<31>_wg_cy<10> (MIPS_SC_PROCESSOR/equals)
+     LUT6:I5->O           19   0.373   1.261  MIPS_SC_PROCESSOR/Mmux_branched111 (MIPS_SC_PROCESSOR/branched1)
+     LUT6:I5->O            1   0.373   0.681  instr_data2<16>_0_01 (instr_data2<16>_0_0_0)
+     RAMB8BWER:ADDRBRDADDR5        0.400          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
     ----------------------------------------
-    Total                     19.554ns (17.086ns logic, 2.468ns route)
-                                       (87.4% logic, 12.6% route)
+    Total                     10.385ns (5.508ns logic, 4.877ns route)
+                                       (53.0% logic, 47.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -2151,7 +2172,7 @@ Offset:              8.006ns (Levels of Logic = 6)
      LUT5:I0->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In51 (TDT4255_COM/state_FSM_FFd1-In5)
      LUT5:I2->O            1   0.373   0.682  TDT4255_COM/state_FSM_FFd1-In54 (TDT4255_COM/state_FSM_FFd1-In53)
      LUT6:I5->O            3   0.373   0.766  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
-     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In1_SW0 (N461)
+     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In1_SW0 (N522)
      LUT6:I3->O            1   0.373   0.000  TDT4255_COM/state_FSM_FFd1-In1 (TDT4255_COM/state_FSM_FFd1-In)
      FDR:D                     0.142          TDT4255_COM/state_FSM_FFd1
     ----------------------------------------
@@ -2187,20 +2208,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   19.554|    9.461|    4.918|         |
+clk            |   19.675|   10.385|    4.992|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 29.00 secs
-Total CPU time to Xst completion: 29.30 secs
+Total REAL time to Xst completion: 30.00 secs
+Total CPU time to Xst completion: 30.77 secs
  
 --> 
 
-Total memory usage is 278536 kilobytes
+Total memory usage is 316896 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1086 (   0 filtered)
-Number of infos    :   41 (   0 filtered)
+Number of warnings : 1085 (   0 filtered)
+Number of infos    :   39 (   0 filtered)
 

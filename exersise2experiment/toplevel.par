@@ -1,7 +1,7 @@
 Release 12.4 par M.81d (nt64)
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
-DMLAB08::  Fri Nov 01 21:08:15 2013
+DMLAB04::  Sat Nov 02 19:54:40 2013
 
 par -w -intstyle ise -ol high -x toplevel_map.ncd toplevel.ncd toplevel.pcf 
 
@@ -39,38 +39,38 @@ Device speed data version:  "PRODUCTION 1.15 2010-12-02".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   566 out of  18,224    3%
-    Number used as Flip Flops:                 566
+  Number of Slice Registers:                   568 out of  18,224    3%
+    Number used as Flip Flops:                 568
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        664 out of   9,112    7%
-    Number used as logic:                      628 out of   9,112    6%
-      Number using O6 output only:             530
+  Number of Slice LUTs:                        775 out of   9,112    8%
+    Number used as logic:                      749 out of   9,112    8%
+      Number using O6 output only:             646
       Number using O5 output only:               8
-      Number using O5 and O6:                   90
+      Number using O5 and O6:                   95
       Number used as ROM:                        0
-    Number used as Memory:                      19 out of   2,176    1%
-      Number used as Dual Port RAM:             18
-        Number using O6 output only:             6
-        Number using O5 output only:             2
-        Number using O5 and O6:                 10
+    Number used as Memory:                      17 out of   2,176    1%
+      Number used as Dual Port RAM:             16
+        Number using O6 output only:             4
+        Number using O5 output only:             0
+        Number using O5 and O6:                 12
       Number used as Single Port RAM:            0
       Number used as Shift Register:             1
         Number using O6 output only:             1
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:     17
-      Number with same-slice register load:     16
+    Number used exclusively as route-thrus:      9
+      Number with same-slice register load:      8
       Number with same-slice carry load:         1
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   270 out of   2,278   11%
-  Number of LUT Flip Flop pairs used:          896
-    Number with an unused Flip Flop:           368 out of     896   41%
-    Number with an unused LUT:                 232 out of     896   25%
-    Number of fully used LUT-FF pairs:         296 out of     896   33%
+  Number of occupied Slices:                   293 out of   2,278   12%
+  Number of LUT Flip Flop pairs used:          963
+    Number with an unused Flip Flop:           426 out of     963   44%
+    Number with an unused LUT:                 188 out of     963   19%
+    Number of fully used LUT-FF pairs:         349 out of     963   36%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -85,7 +85,7 @@ IO Utilization:
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
-  Number of RAMB8BWERs:                          4 out of      64    6%
+  Number of RAMB8BWERs:                          7 out of      64   10%
   Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
   Number of BUFG/BUFGMUXs:                       1 out of      16    6%
@@ -115,36 +115,36 @@ Router effort level (-rl):    High
 Starting initial Timing Analysis.  REAL time: 6 secs 
 Finished initial Timing Analysis.  REAL time: 6 secs 
 
-WARNING:Par:288 - The signal MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
 WARNING:Par:288 - The signal MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
 Starting Router
 
 
-Phase  1  : 5023 unrouted;      REAL time: 7 secs 
+Phase  1  : 5767 unrouted;      REAL time: 7 secs 
 
-Phase  2  : 4370 unrouted;      REAL time: 7 secs 
+Phase  2  : 5065 unrouted;      REAL time: 7 secs 
 
-Phase  3  : 1909 unrouted;      REAL time: 11 secs 
+Phase  3  : 2440 unrouted;      REAL time: 11 secs 
 
-Phase  4  : 2038 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
+Phase  4  : 2553 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
 
 Updating file: toplevel.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 24 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 27 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 28 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 27 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 28 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 27 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 28 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 27 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 28 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 28 secs 
-Total REAL time to Router completion: 28 secs 
-Total CPU time to Router completion: 28 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 29 secs 
+Total REAL time to Router completion: 29 secs 
+Total CPU time to Router completion: 29 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -164,8 +164,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|    21.951ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.360ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    22.302ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.390ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -183,10 +183,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 29 secs 
-Total CPU time to PAR completion: 29 secs 
+Total REAL time to PAR completion: 30 secs 
+Total CPU time to PAR completion: 30 secs 
 
-Peak Memory Usage:  334 MB
+Peak Memory Usage:  331 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

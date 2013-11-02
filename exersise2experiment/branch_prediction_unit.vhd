@@ -29,37 +29,30 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Hazarddetection is
-    Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
-           IDEXregisterRT : in  STD_LOGIC_VECTOR(31 downto 0);
-			  IFIDInstructionType: in  STD_LOGIC_VECTOR (5 downto 0);
-           PCWrite : out  STD_LOGIC;
-			  IFIDwrite: out STD_LOGIC;
-			  IFIDreset: out STD_LOGIC;--syncronous reset for god's sake
-			  processor_enable: in std_logic;
-           Controlenable : out  STD_LOGIC;
-			  State: out std_logic_vector(1 downto 0);
-			  State_in: in std_logic_vector(1 downto 0);
-			  IFID_state_in: in std_logic_vector(1 downto 0);
-			  buffer_write: out std_logic;
-			 -- branch: in std_logic_vector(1 downto 0);
-			  branch_ok:out std_logic;
-			  revert:out std_logic;
-			  IFIDbranch_taken: in std_logic;
-			  branch_taken: out std_logic;
-			  branched1: in std_logic;
-			  --equalvals2: in std_logic_vector(31 downto 0);
-			  predicted_address: in std_logic_vector(15 downto 0);
-			  shift_register_write: out std_logic;
-			  branch_address: in std_logic_vector(15 downto 0)
+entity branchprediction is
+    Port ( 
+				IFIDInstructionType: in std_logic_vector(5 downto 0);
+			  IFIDreset: out STD_LOGIC;--syncronous reset for ifid register. Must be done when a branch prediction fails in order to prevent the wrong instructions to be executed
+			  State: out std_logic_vector(1 downto 0); --the incremented state to be written back to the local branch prediction buffer (ID stage).
+			  State_in: in std_logic_vector(1 downto 0);-- the information from the local branch prediction buffer. (IF stage)
+			  IFID_state_in: in std_logic_vector(1 downto 0);	--the information from the local branch prediction buffer.(ID stage) 
+			  buffer_write: out std_logic;	--signal that allow writes to all the prediction buffers
+			  branch_ok:out std_logic; --signal to allow the calculated branch address to the PC register
+			  revert:out std_logic;-- signal that allows reverting a faulty branchprediction
+			  IFIDbranch_taken: in std_logic;--branch_taken signal in the ID stage
+			  branch_taken: out std_logic;--signals the a mux wheter a branchprediction should be taken or not. Signal is determined in IF stage
+			  branched1: in std_logic; --tells wheter a branch (not the prediction) is actually taken or not
+			  predicted_address: in std_logic_vector(15 downto 0);--this is the predicted address, it must be tested if its the actual right branchaddress
+			  shift_register_write: out std_logic; --this allow write to the shiftregister where the global branch information is stored. The input is 1 bit indicating wheter a branch (not prediction) actually is taken or not.
+			  branch_address: in std_logic_vector(15 downto 0)--this is the actual branch address 
 			  );
-end Hazarddetection;
+end branchprediction;
 
 
 
-architecture Behavioral of Hazarddetection is
+architecture Behavioral of branchprediction is
 constant BEQ  : std_logic_vector(5 downto 0 ) := "000100";
-constant BNE  : std_logic_vector(5 downto 0 ) := "000100";
+constant BNE  : std_logic_vector(5 downto 0 ) := "000101";
 constant taken0: std_logic_vector(1 downto 0):="11";
 constant taken1: std_logic_vector(1 downto 0):="01";
 constant nottaken1: std_logic_vector(1 downto 0):="00";--initialize to this
@@ -68,11 +61,10 @@ constant nottaken0: std_logic_vector(1 downto 0):="10";
 begin
 	
 
-process(processor_enable,IFIDbranch_taken,state_in,branched1,branch_address,predicted_address,IFIDInstructionType)
+process(IFIDbranch_taken,state_in,branched1,branch_address,predicted_address,IFIDInstructionType)
 begin
-        if(processor_enable='1') then 
-				Controlenable<='1';
-				buffer_write<='1';
+
+				buffer_write<='1';--Currently we let bufferwrite allways be turned on
 				
 				
 				if(state_in=taken0 or state_in=taken1) then
@@ -87,16 +79,12 @@ begin
 				if(IFIDbranch_taken='1' and branched1='0') then
 				
 				revert<='1';
-				IFIDwrite<='-';
-				PCWrite<='1';
 				IFIDreset<='1';
 				branch_ok<='0';--mishap, no branch
 				shift_register_write<='1';--must decrease state
 				
 				elsif(IFIDbranch_taken='1' and not (branch_address=predicted_address) )then--revert if a new program has been loaded, or if the predicted address is a miss
 				revert<='1';
-				IFIDwrite<='-';
-				PCWrite<='1';
 				IFIDreset<='1';
 				branch_ok<='0';--mishap, no branch
 				shift_register_write<='1';
@@ -104,23 +92,17 @@ begin
 				elsif(IFIDbranch_taken='0' and branched1='1') then--predicted to not taken when its taken, normal delay branch scenario, increase state towards taken
 				revert<='0';--no need for reverting if branch is not taken
 				--set in delay
-				IFIDwrite<='1';--take somewhere else
-				  PCWrite<='1';--take somewhere else
 				IFIDreset<='0';
 				branch_ok<='1';
 				shift_register_write<='1';
 				elsif(IFIDbranch_taken='1' and branched1='1')then--branch predicted to taken and taken, check if its a right prediction and the predicted address is right, decrease state towards taken
 				--check if the predicted address is actually correct, do this later
 				revert<='0';
-				PCWrite<='1';
-				IFIDwrite<='1';
 				IFIDreset<='0';
 				branch_ok<='0';--the branching is already done
 				shift_register_write<='1';
 				
 				elsif(IFIDbranch_taken='0' and branched1='0')then--not taken predicted right
-				IFIDwrite<='1';
-				PCWrite<='1';
 				IFIDreset<='0';
 				revert<='0';
 				branch_ok<='0';--the branching is never going to happen
@@ -133,29 +115,11 @@ begin
 				branch_ok<='0';
 				revert<='0';--no need for reverting if branch is not taken
 				--set in delay
-				PCWrite<='1';
-				IFIDwrite<='1';
 				IFIDreset<='0';
 				shift_register_write<='0';
 			   end if;
-				else
-				--IFIDwrite<='0';
+
 				--buffer_write<='0';
-				--branch_ok<='0';
-				--IFIDreset<='0';
-				branch_ok<='0';
-				buffer_write<='0';
-				revert<='0';--no need for reverting if branch is not taken
-				--set in delay
-				PCWrite<='0';
-				IFIDwrite<='1';
-				IFIDreset<='0';
-				PCWrite<='0';
-				Controlenable<='0';
-				branch_taken<='0';
-				buffer_write<='0';
-				shift_register_write<='0';
-				end if;
 				end process;
 				STATEMACHINE: process(IFID_state_in,branched1,ifidbranch_taken)
 begin

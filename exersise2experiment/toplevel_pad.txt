@@ -1,7 +1,7 @@
 Release 12.4 - par M.81d (nt64)
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
-Fri Nov 01 21:08:44 2013
+Sat Nov 02 19:55:11 2013
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -25,8 +25,8 @@ Pinout by Pin Number:
 |A3        |                  |IOBS     |IO_L4N_0                     |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A4        |                  |IOBS     |IO_L5N_0                     |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A5        |                  |IOBS     |IO_L6N_0                     |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|A6        |                  |IOBS     |IO_L8N_VREF_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|A7        |reset             |IOB      |IO_L10N_0                    |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|A6        |reset             |IOB      |IO_L8N_VREF_0                |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|A7        |                  |IOBS     |IO_L10N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A8        |                  |IOBS     |IO_L33N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A9        |                  |IOBS     |IO_L35N_GCLK16_0             |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A10       |                  |IOBS     |IO_L37N_GCLK12_0             |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
@@ -182,8 +182,8 @@ Pinout by Pin Number:
 |J16       |status<14>        |IOB      |IO_L44P_A3_M1DQ6_1           |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |J17       |                  |         |VCCO_1                       |         |           |1             |          |         |           |         |2.50     |          |           |                |
 |J18       |status<15>        |IOB      |IO_L44N_A2_M1DQ7_1           |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
-|K1        |bus_data_in<19>   |IOB      |IO_L38N_M3DQ3_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
-|K2        |bus_data_in<18>   |IOB      |IO_L38P_M3DQ2_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|K1        |bus_data_in<15>   |IOB      |IO_L38N_M3DQ3_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|K2        |bus_data_in<14>   |IOB      |IO_L38P_M3DQ2_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |K3        |clk               |IOB      |IO_L42N_GCLK24_M3LDM_3       |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |K4        |bus_data_in<26>   |IOB      |IO_L42P_GCLK25_TRDY2_M3UDM_3 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |K5        |bus_data_in<28>   |IOB      |IO_L43N_GCLK22_IRDY2_M3CASN_3|INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
@@ -200,8 +200,8 @@ Pinout by Pin Number:
 |K16       |status<9>         |IOB      |IO_L41N_GCLK8_M1CASN_1       |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |K17       |status<16>        |IOB      |IO_L45P_A1_M1LDQS_1          |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |K18       |status<17>        |IOB      |IO_L45N_A0_M1LDQSN_1         |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
-|L1        |bus_data_in<17>   |IOB      |IO_L37N_M3DQ1_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
-|L2        |bus_data_in<16>   |IOB      |IO_L37P_M3DQ0_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|L1        |bus_data_in<13>   |IOB      |IO_L37N_M3DQ1_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|L2        |bus_data_in<12>   |IOB      |IO_L37P_M3DQ0_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |L3        |bus_data_in<21>   |IOB      |IO_L39N_M3LDQSN_3            |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |L4        |bus_data_in<20>   |IOB      |IO_L39P_M3LDQS_3             |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |L5        |bus_data_in<27>   |IOB      |IO_L43P_GCLK23_M3RASN_3      |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
@@ -213,14 +213,14 @@ Pinout by Pin Number:
 |L11       |                  |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
 |L12       |status<6>         |IOB      |IO_L40P_GCLK11_M1A5_1        |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |L13       |status<7>         |IOB      |IO_L40N_GCLK10_M1A6_1        |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
-|L14       |bus_data_out<2>   |IOB      |IO_L61P_1                    |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
+|L14       |status<29>        |IOB      |IO_L61P_1                    |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |L15       |status<10>        |IOB      |IO_L42P_GCLK7_M1UDM_1        |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |L16       |status<11>        |IOB      |IO_L42N_GCLK6_TRDY1_M1LDM_1  |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |L17       |status<18>        |IOB      |IO_L46P_FCS_B_M1DQ2_1        |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |L18       |status<19>        |IOB      |IO_L46N_FOE_B_M1DQ3_1        |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
-|M1        |bus_data_in<15>   |IOB      |IO_L36N_M3DQ9_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|M1        |bus_data_in<19>   |IOB      |IO_L36N_M3DQ9_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |M2        |                  |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|M3        |bus_data_in<14>   |IOB      |IO_L36P_M3DQ8_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|M3        |bus_data_in<18>   |IOB      |IO_L36P_M3DQ8_3              |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |M4        |                  |         |VCCO_3                       |         |           |3             |          |         |           |         |any******|          |           |                |
 |M5        |bus_data_in<5>    |IOB      |IO_L31N_VREF_3               |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |M6        |                  |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
@@ -231,13 +231,13 @@ Pinout by Pin Number:
 |M11       |bus_data_out<20>  |IOB      |IO_L15P_2                    |OUTPUT   |LVCMOS25*  |2             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |M12       |                  |         |VCCINT                       |         |           |              |          |         |           |         |1.2      |          |           |                |
 |M13       |bus_data_out<3>   |IOB      |IO_L61N_1                    |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
-|M14       |bus_data_out<0>   |IOB      |IO_L53P_1                    |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
+|M14       |bus_data_out<4>   |IOB      |IO_L53P_1                    |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |M15       |                  |         |VCCO_1                       |         |           |1             |          |         |           |         |2.50     |          |           |                |
 |M16       |status<20>        |IOB      |IO_L47P_FWE_B_M1DQ0_1        |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |M17       |                  |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
 |M18       |status<21>        |IOB      |IO_L47N_LDC_M1DQ1_1          |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
-|N1        |bus_data_in<13>   |IOB      |IO_L35N_M3DQ11_3             |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
-|N2        |bus_data_in<12>   |IOB      |IO_L35P_M3DQ10_3             |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|N1        |bus_data_in<17>   |IOB      |IO_L35N_M3DQ11_3             |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|N2        |bus_data_in<16>   |IOB      |IO_L35P_M3DQ10_3             |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |N3        |bus_data_in<1>    |IOB      |IO_L1N_VREF_3                |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |N4        |bus_data_in<0>    |IOB      |IO_L1P_3                     |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |N5        |                  |IOBM     |IO_L64P_D8_2                 |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
@@ -249,9 +249,9 @@ Pinout by Pin Number:
 |N11       |bus_data_out<21>  |IOB      |IO_L15N_2                    |OUTPUT   |LVCMOS25*  |2             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |N12       |bus_data_out<16>  |IOB      |IO_L13P_M1_2                 |OUTPUT   |LVCMOS25*  |2             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |N13       |                  |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|N14       |bus_data_out<1>   |IOB      |IO_L53N_VREF_1               |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
+|N14       |bus_data_out<5>   |IOB      |IO_L53N_VREF_1               |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |N15       |status<26>        |IOB      |IO_L50P_M1UDQS_1             |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
-|N16       |status<27>        |IOB      |IO_L50N_M1UDQSN_1            |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
+|N16       |bus_data_out<0>   |IOB      |IO_L50N_M1UDQSN_1            |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |N17       |status<22>        |IOB      |IO_L48P_HDC_M1DQ8_1          |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |N18       |status<23>        |IOB      |IO_L48N_M1DQ9_1              |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |P1        |bus_data_in<11>   |IOB      |IO_L34N_M3UDQSN_3            |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
@@ -268,8 +268,8 @@ Pinout by Pin Number:
 |P12       |bus_data_out<17>  |IOB      |IO_L13N_D10_2                |OUTPUT   |LVCMOS25*  |2             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |P13       |                  |         |CMPCS_B_2                    |         |           |              |          |         |           |         |         |          |           |                |
 |P14       |                  |         |VCCAUX                       |         |           |              |          |         |           |         |2.5      |          |           |                |
-|P15       |bus_data_out<4>   |IOB      |IO_L74P_AWAKE_1              |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
-|P16       |bus_data_out<5>   |IOB      |IO_L74N_DOUT_BUSY_1          |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
+|P15       |status<27>        |IOB      |IO_L74P_AWAKE_1              |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
+|P16       |status<28>        |IOB      |IO_L74N_DOUT_BUSY_1          |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |P17       |status<24>        |IOB      |IO_L49P_M1DQ10_1             |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |P18       |status<25>        |IOB      |IO_L49N_M1DQ11_1             |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |R1        |                  |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
@@ -306,8 +306,8 @@ Pinout by Pin Number:
 |T14       |bus_data_out<14>  |IOB      |IO_L12P_D1_MISO2_2           |OUTPUT   |LVCMOS25*  |2             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |T15       |bus_data_out<7>   |IOB      |IO_L1N_M0_CMPMISO_2          |OUTPUT   |LVCMOS25*  |2             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |T16       |                  |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|T17       |status<28>        |IOB      |IO_L51P_M1DQ12_1             |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
-|T18       |status<29>        |IOB      |IO_L51N_M1DQ13_1             |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
+|T17       |bus_data_out<1>   |IOB      |IO_L51P_M1DQ12_1             |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
+|T18       |bus_data_out<2>   |IOB      |IO_L51N_M1DQ13_1             |OUTPUT   |LVCMOS25*  |1             |12        |         |           |         |         |UNLOCATED |NO         |NONE            |
 |U1        |bus_data_in<7>    |IOB      |IO_L32N_M3DQ15_3             |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |U2        |bus_data_in<6>    |IOB      |IO_L32P_M3DQ14_3             |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |U3        |                  |IOBM     |IO_L65P_INIT_B_2             |UNUSED   |           |2             |          |         |           |         |         |          |           |                |

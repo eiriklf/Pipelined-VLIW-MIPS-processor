@@ -47,9 +47,9 @@ begin
 if(IFID_funct=multiply) then
 LO_write<='1';
 Vliw_aluOP<='0';
-elsif(IFID_funct=divide) then
-LO_write<='1';
-Vliw_aluOP<='1';
+--elsif(IFID_funct=divide) then
+--LO_write<='1';
+--Vliw_aluOP<='1';
 else
 LO_write<='0';
 Vliw_aluOP<='0';

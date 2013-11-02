@@ -59,31 +59,66 @@ end component shift_register;
            control : in  STD_LOGIC_VECTOR (1 downto 0));
 end component QuadputMux;
 	
+	
 	component Hazarddetection is
     Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
-           IDEXregisterRT : in  STD_LOGIC_VECTOR(31 downto 0);
+           IDEXregisterRT : in  STD_LOGIC_VECTOR(4 downto 0);
+			  IFIDregisterRS : in  STD_LOGIC_VECTOR(4 downto 0);
+			  IFIDregisterRT : in  STD_LOGIC_VECTOR(4 downto 0);
 			  IFIDInstructionType: in  STD_LOGIC_VECTOR (5 downto 0);
            PCWrite : out  STD_LOGIC;
 			  IFIDwrite: out STD_LOGIC;
-			  IFIDreset: out STD_LOGIC;--syncronous reset for god's sake
+			  IFIDreset: out STD_LOGIC;--remove this maybe?
 			  processor_enable: in std_logic;
-           Controlenable : out  STD_LOGIC;
-			  State: out std_logic_vector(1 downto 0);
-			  State_in: in std_logic_vector(1 downto 0);
-			  IFID_state_in: in std_logic_vector(1 downto 0);
-			  buffer_write: out std_logic;
-			 -- branch: in std_logic_vector(1 downto 0);
-			  branch_ok:out std_logic;
-			  revert:out std_logic;
-			  IFIDbranch_taken: in std_logic;
-			  branch_taken: out std_logic;
-			  branched1: in std_logic;
-			  --equalvals2: in std_logic_vector(31 downto 0);
-			  predicted_address: in std_logic_vector(15 downto 0);
-			  shift_register_write: out std_logic;
-			  branch_address: in std_logic_vector(15 downto 0)
+           Controlenable : out  STD_LOGIC
+
 			  );
-	end component Hazarddetection;
+end component Hazarddetection;
+--	component Hazarddetection is
+--    Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
+--           IDEXregisterRT : in  STD_LOGIC_VECTOR(31 downto 0);
+--			  IFIDInstructionType: in  STD_LOGIC_VECTOR (5 downto 0);
+--          PCWrite : out  STD_LOGIC;
+--			  IFIDwrite: out STD_LOGIC;
+--			  IFIDreset: out STD_LOGIC;--syncronous reset for god's sake
+--			  processor_enable: in std_logic;
+ --         Controlenable : out  STD_LOGIC;
+--			  State: out std_logic_vector(1 downto 0);
+--			  State_in: in std_logic_vector(1 downto 0);
+--			  IFID_state_in: in std_logic_vector(1 downto 0);
+--			  buffer_write: out std_logic;
+--			 -- branch: in std_logic_vector(1 downto 0);
+--			  branch_ok:out std_logic;
+--			  revert:out std_logic;
+--			  IFIDbranch_taken: in std_logic;
+--			  branch_taken: out std_logic;
+--			  branched1: in std_logic;
+--			  --equalvals2: in std_logic_vector(31 downto 0);
+--			  predicted_address: in std_logic_vector(15 downto 0);
+--			  shift_register_write: out std_logic;
+--			  branch_address: in std_logic_vector(15 downto 0)
+--			  );
+--	end component Hazarddetection;
+	
+	
+	component branchprediction is
+    Port ( 
+				IFIDInstructionType: in std_logic_vector(5 downto 0);
+			  IFIDreset: out STD_LOGIC;--syncronous reset for ifid register. Must be done when a branch prediction fails in order to prevent the wrong instructions to be executed
+			  State: out std_logic_vector(1 downto 0); --the incremented state to be written back to the local branch prediction buffer (ID stage).
+			  State_in: in std_logic_vector(1 downto 0);-- the information from the local branch prediction buffer. (IF stage)
+			  IFID_state_in: in std_logic_vector(1 downto 0);	--the information from the local branch prediction buffer.(ID stage) 
+			  buffer_write: out std_logic;	--signal that allow writes to all the prediction buffers
+			  branch_ok:out std_logic; --signal to allow the calculated branch address to the PC register
+			  revert:out std_logic;-- signal that allows reverting a faulty branchprediction
+			  IFIDbranch_taken: in std_logic;--branch_taken signal in the ID stage
+			  branch_taken: out std_logic;--signals the a mux wheter a branchprediction should be taken or not. Signal is determined in IF stage
+			  branched1: in std_logic; --tells wheter a branch (not the prediction) is actually taken or not
+			  predicted_address: in std_logic_vector(15 downto 0);--this is the predicted address, it must be tested if its the actual right branchaddress
+			  shift_register_write: out std_logic; --this allow write to the shiftregister where the global branch information is stored. The input is 1 bit indicating wheter a branch (not prediction) actually is taken or not.
+			  branch_address: in std_logic_vector(15 downto 0)--this is the actual branch address 
+			  );
+end component branchprediction;
 	
 		component predictorbuffer is
     generic (N :NATURAL :=16; M:NATURAL:=32; K:NATURAL:=4);
@@ -548,34 +583,37 @@ end component Forwarding;
 			  reset=> reset);
 			  
 	DETECTION_UNIT: Hazarddetection
-    Port map ( IDEXCONTROL=>IDEXs(153 downto 145),--figures out if operation in idex register is read
-           IDEXregisterRT=>IDEXs(73 downto 42),--RT register
+    Port map ( IDEXCONTROL=>IDEXs(153 downto 148)&memtoreg&IDEXs(146 downto 145),--figures out if operation in idex register is read
+           IDEXregisterRT=>IDEXs(9 downto 5),--IDEXs(73 downto 42),--RT register
+			  IFIDregisterRS=>IFIDs(113 downto 109),
+			  IFIDregisterRT=>IFIDs(108 downto 104),
 			  IFIDInstructionType=>IFIDs(119 downto 114),
            PCWrite =>enablepcwrite,--enable PC write
+			  IFIDwrite=>IFIDwrite,
            Controlenable=>control_enable,
-			  processor_enable=> processor_enable,
-			  buffer_write=>buffer_write,
+			  processor_enable=> processor_enable
+			  
+			  
+			  );
+			  
+	Branch_predicition_unit: branchprediction
+	port map(
+				IFIDInstructionType=>IFIDs(119 downto 114),
+				buffer_write=>buffer_write,
 			  State_in=>stateread,
 			  IFID_state_in=>IFIDs(55 downto 54),
 			  State=>State_writeback,
-			  IFIDwrite=>IFIDwrite,
 			  IFIDreset=>IFIDreset,
 			  branch_ok=>branch_ok,
-			  IFIDbranch_taken=>IFIDs(32),
-			  --IDEXbranch_taken=>IDEXs(184), 
+			  IFIDbranch_taken=>IFIDs(32), 
 			  branch_taken=>branch_taken,
-			--  branch=>chosen_OP(5)&chosen_OP(9),
 			  revert=>revert,
-			 -- equalvals=>equalvals,
-			  --equalvals2=>equalvals2,
-			  --IDEXbranch=>IDEXs(175)
 			  branch_address=> BranchAdder(15 downto 0),
 			  predicted_address=>IFIDs(53 downto 38),
 			  shift_register_write=>shift_register_write,
 			  branched1=>branched1
-			  
-			  
-			  );
+	
+	);
 			  
 		--!!!!!	  
 	Concat <= IFIDs(31 downto 26)&IFIDs(113 downto 88);--IDEXs(169 downto 164) & IDEXs(163 downto 138);--32 bit
@@ -592,7 +630,7 @@ end component Forwarding;
 	-- ADRESSADDER is the second adder, which is used for calculation new PC based on branching
 	ADDRESSADDER: adder port map(
 		X	=>IFIDs(31 downto 0),
-		Y	=>Signextended,
+		Y	=>Signextended(30 downto 0)&'0',--must do this because of instructionsize with 64 bit and 32-bits dataalignment
 		R	=> BranchAdder
 	);
 	

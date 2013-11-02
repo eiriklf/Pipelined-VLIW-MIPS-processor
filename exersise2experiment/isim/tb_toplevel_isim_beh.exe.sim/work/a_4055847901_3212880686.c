@@ -53,20 +53,7 @@ LAB6:    t4 = 0;
 LAB7:    if (t4 != 0)
         goto LAB2;
 
-LAB4:    t1 = (t0 + 1032U);
-    t2 = *((char **)t1);
-    t1 = (t0 + 1768U);
-    t3 = *((char **)t1);
-    t4 = 1;
-    if (6U == 6U)
-        goto LAB13;
-
-LAB14:    t4 = 0;
-
-LAB15:    if (t4 != 0)
-        goto LAB11;
-
-LAB12:    xsi_set_current_line(54, ng0);
+LAB4:    xsi_set_current_line(54, ng0);
     t1 = (t0 + 3152);
     t2 = (t1 + 56U);
     t3 = *((char **)t2);
@@ -119,39 +106,6 @@ LAB9:    t1 = (t2 + t5);
 
 LAB10:    t5 = (t5 + 1);
     goto LAB8;
-
-LAB11:    xsi_set_current_line(51, ng0);
-    t7 = (t0 + 3152);
-    t8 = (t7 + 56U);
-    t9 = *((char **)t8);
-    t10 = (t9 + 56U);
-    t11 = *((char **)t10);
-    *((unsigned char *)t11) = (unsigned char)3;
-    xsi_driver_first_trans_fast_port(t7);
-    xsi_set_current_line(52, ng0);
-    t1 = (t0 + 3216);
-    t2 = (t1 + 56U);
-    t3 = *((char **)t2);
-    t6 = (t3 + 56U);
-    t7 = *((char **)t6);
-    *((unsigned char *)t7) = (unsigned char)3;
-    xsi_driver_first_trans_fast_port(t1);
-    goto LAB3;
-
-LAB13:    t5 = 0;
-
-LAB16:    if (t5 < 6U)
-        goto LAB17;
-    else
-        goto LAB15;
-
-LAB17:    t1 = (t2 + t5);
-    t6 = (t3 + t5);
-    if (*((unsigned char *)t1) != *((unsigned char *)t6))
-        goto LAB14;
-
-LAB18:    t5 = (t5 + 1);
-    goto LAB16;
 
 }
 

@@ -67,13 +67,13 @@ begin
             operation<="00111";
              memtoreg2<='0';
             memtoreg<='0';
-			elsif(aluop1 = '1' and aluop0 = '0' and funct = "010000") then
+			elsif(aluop1 = '1' and aluop0 = '0' and funct = "010000") then--MFHI
             memtoreg2<='1';
-           memtoreg<='0';
+           memtoreg<='1';
             operation<="00000";			  
-			elsif(aluop1 = '1' and aluop0 = '0' and funct = "010010") then
+			elsif(aluop1 = '1' and aluop0 = '0' and funct = "010010") then--MFLO
            memtoreg2<='1';
-          memtoreg<='1';
+          memtoreg<='0';
             operation<="00000";				
        -- elsif(aluop1 = '1' and aluop0 = '0' and funct = "011000") then
 			--	operation<="10000";
