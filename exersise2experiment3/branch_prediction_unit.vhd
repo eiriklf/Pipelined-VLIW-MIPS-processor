@@ -95,8 +95,8 @@ begin
 				elsif(IFIDbranch_taken='0' and branched1='1') then--predicted to not taken when its taken, normal delay branch scenario, increase state towards taken
 				revert<='0';--no need for reverting if branch is not taken
 				--set in delay
-				IFIDreset<='0';
-				IDEXreset<='0';
+				IFIDreset<='1';
+				IDEXreset<='1';
 				branch_ok<='1';
 				shift_register_write<='1';
 				elsif(IFIDbranch_taken='1' and branched1='1')then--branch predicted to taken and taken, check if its a right prediction and the predicted address is right, decrease state towards taken

@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_0774719531;
 extern char *WORK_P_2565430773;
@@ -949,10 +949,10 @@ static void work_a_0556179135_3212880686_p_11(char *t0)
 LAB0:    xsi_set_current_line(136, ng0);
     t1 = (t0 + 3736U);
     t2 = *((char **)t1);
-    t1 = (t0 + 18712U);
+    t1 = (t0 + 18768U);
     t3 = ((WORK_P_2565430773) + 2008U);
     t4 = *((char **)t3);
-    t3 = ((WORK_P_2565430773) + 6552U);
+    t3 = ((WORK_P_2565430773) + 6564U);
     t5 = ieee_p_0774719531_sub_2698824431_2162500114(IEEE_P_0774719531, t2, t1, t4, t3);
     if (t5 != 0)
         goto LAB3;
@@ -1042,7 +1042,7 @@ LAB6:    xsi_set_current_line(148, ng0);
     memcpy(t10, t2, 32U);
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(149, ng0);
-    t1 = (t0 + 19145);
+    t1 = (t0 + 19201);
     t7 = (t0 + 11832);
     t8 = (t7 + 56U);
     t9 = *((char **)t8);
@@ -1058,10 +1058,10 @@ LAB1:    return;
 LAB2:    xsi_set_current_line(142, ng0);
     t7 = (t0 + 2616U);
     t8 = *((char **)t7);
-    t7 = (t0 + 18648U);
+    t7 = (t0 + 18704U);
     t9 = (t0 + 2776U);
     t10 = *((char **)t9);
-    t9 = (t0 + 18664U);
+    t9 = (t0 + 18720U);
     t11 = ieee_p_0774719531_sub_767632659_2162500114(IEEE_P_0774719531, t6, t8, t7, t10, t9);
     t12 = (t0 + 11832);
     t13 = (t12 + 56U);
@@ -1110,7 +1110,7 @@ LAB5:    xsi_set_current_line(145, ng0);
     t24 = (t24 + 1);
     t13 = (t12 + 12U);
     *((unsigned int *)t13) = t24;
-    t13 = ((WORK_P_2565430773) + 6568U);
+    t13 = ((WORK_P_2565430773) + 6580U);
     t9 = xsi_base_array_concat(t9, t6, t11, (char)97, t7, t22, (char)97, t10, t13, (char)101);
     t14 = (t0 + 11896);
     t15 = (t14 + 56U);
@@ -1120,7 +1120,7 @@ LAB5:    xsi_set_current_line(145, ng0);
     memcpy(t26, t9, 32U);
     xsi_driver_first_trans_fast_port(t14);
     xsi_set_current_line(146, ng0);
-    t1 = (t0 + 19081);
+    t1 = (t0 + 19137);
     t7 = (t0 + 11832);
     t8 = (t7 + 56U);
     t9 = *((char **)t8);

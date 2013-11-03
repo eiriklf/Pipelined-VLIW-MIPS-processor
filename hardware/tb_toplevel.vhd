@@ -103,14 +103,15 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant addr37: std_logic_vector(0 to 31) := "00000000000000000000000000100101";
   constant addr38: std_logic_vector(0 to 31) := "00000000000000000000000000100110";
   constant addr39: std_logic_vector(0 to 31) := "00000000000000000000000000100111";
-
+  constant addr40: std_logic_vector(0 to 31) := "00000000000000000000000000101000";
+  constant addr42: std_logic_vector(0 to 31) := "00000000000000000000000000101010";
   -- This is written to memory initially
   constant data1 : std_logic_vector(0 to 31):= "00000000000000000000000000000001";--fix this datasize problem
 	constant data2 : std_logic_vector(0 to 31):= "00000000000000000000000000100000";
   
   -- These are the instructions executed by the CPU (loaded to instruction-memory)
   -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
-  constant ins0  : std_logic_vector(0 to 31) := X"8C010002";
+  constant ins0  : std_logic_vector(0 to 31) := X"8C030002";
   constant ins00 : std_logic_vector(0 to 31) := X"00000000";
   constant ins1  : std_logic_vector(0 to 31) := X"8C020002";
   constant ins01 : std_logic_vector(0 to 31) := X"00000000";
@@ -146,9 +147,11 @@ ARCHITECTURE behavior OF tb_toplevel IS
 										  constant ins016 : std_logic_vector(0 to 31) := X"00000000";
     constant ins17 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
 	 constant ins017 : std_logic_vector(0 to 31) := X"00000000";
-  constant ins18 : std_logic_vector(0 to 31) := X"156CFFFD";--bne $11, $12, -3
-  constant ins018 : std_logic_vector(0 to 31) := X"00000000";
-  constant ins19 : std_logic_vector(0 to 31) := X"1000FFFD";
+	 	   constant ins18 : std_logic_vector(0 to 31) :=X"1401FFD8";--bne $0, $1, -3
+	   constant ins19 : std_logic_vector(0 to 31) :=X"1401FFFD";--bne $0, $1, -3
+  constant ins20 : std_logic_vector(0 to 31) :=X"1001FFFB";--beq $0, $1, -3
+  constant ins020 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins21 : std_logic_vector(0 to 31) :=X"156CFFFD";--bne $11, $12, -3
   constant ins019 : std_logic_vector(0 to 31) := X"00000000";
    
   -- Used to control the COM-module
@@ -635,6 +638,27 @@ BEGIN
 	 		command <= CMD_WI;          
     bus_address_in <= addr39;
     bus_data_in <= ins00;
+    wait for clk_period*3;
+
+    command <= CMD_IDLE;					
+    bus_address_in <= zero;
+    bus_data_in <= zero64b;
+    wait for clk_period*3;
+	 
+	 
+	 	 		command <= CMD_WI;          
+    bus_address_in <= addr40;
+    bus_data_in <= ins20;
+    wait for clk_period*3;
+
+    command <= CMD_IDLE;					
+    bus_address_in <= zero;
+    bus_data_in <= zero64b;
+    wait for clk_period*3;
+	 
+	 	 		command <= CMD_WI;          
+    bus_address_in <= addr42;
+    bus_data_in <= ins21;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					

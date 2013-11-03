@@ -106,91 +106,91 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/lookahead.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/lookahead.vhd" into library work
 Parsing entity <alu_full_adder>.
 Parsing architecture <Behavioral> of entity <alu_full_adder>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/mips_constant_pkg.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/mips_constant_pkg.vhd" into library work
 Parsing package <MIPS_CONSTANT_PKG>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/full_adder.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/full_adder.vhd" into library work
 Parsing entity <full_adder>.
 Parsing architecture <Behavioral> of entity <full_adder>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/alu_1bit.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/alu_1bit.vhd" into library work
 Parsing entity <alu_1bit>.
 Parsing architecture <Behavioral> of entity <alu_1bit>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Vliw_multipliercontrol.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\Vliw_multipliercontrol.vhd" into library work
 Parsing entity <Vliw_multipliercontrol>.
 Parsing architecture <Behavioral> of entity <vliw_multipliercontrol>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Vliw_alu.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\Vliw_alu.vhd" into library work
 Parsing entity <Vliw_alu>.
 Parsing architecture <Behavioral> of entity <vliw_alu>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\TriputMux.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\TriputMux.vhd" into library work
 Parsing entity <TriputMux>.
 Parsing architecture <Behavioral> of entity <triputmux>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\shift_register.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\shift_register.vhd" into library work
 Parsing entity <shift_register>.
 Parsing architecture <Behavioral> of entity <shift_register>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Regi.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\Regi.vhd" into library work
 Parsing entity <regi>.
 Parsing architecture <Behavioral> of entity <regi>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\predictionbuffer.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\predictionbuffer.vhd" into library work
 Parsing entity <predictorbuffer>.
 Parsing architecture <Behavioral> of entity <predictorbuffer>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Hazarddetection.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\Hazarddetection.vhd" into library work
 Parsing entity <Hazarddetection>.
 Parsing architecture <Behavioral> of entity <hazarddetection>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Forward.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\Forward.vhd" into library work
 Parsing entity <Forwarding>.
 Parsing architecture <Behavioral> of entity <forwarding>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/register_file.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/register_file.vhd" into library work
 Parsing entity <register_file>.
 Parsing architecture <Behavioral> of entity <register_file>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/quadputmux.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/quadputmux.vhd" into library work
 Parsing entity <QuadputMux>.
 Parsing architecture <Behavioral> of entity <quadputmux>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/PC.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/PC.vhd" into library work
 Parsing entity <PC>.
 Parsing architecture <Behavioral> of entity <pc>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/mux.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/mux.vhd" into library work
 Parsing entity <simple_multiplexer>.
 Parsing architecture <Behavioral> of entity <simple_multiplexer>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/control.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/control.vhd" into library work
 Parsing entity <control>.
 Parsing architecture <Behavioral> of entity <control>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/ALUop.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/ALUop.vhd" into library work
 Parsing entity <ALUoperation>.
 Parsing architecture <Behavioral> of entity <aluoperation>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/alu.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/alu.vhd" into library work
 Parsing entity <alu>.
 Parsing architecture <Behavioral> of entity <alu>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/adder.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/adder.vhd" into library work
 Parsing entity <adder>.
 Parsing architecture <Behavioral> of entity <adder>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\branch_prediction_unit.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\branch_prediction_unit.vhd" into library work
 Parsing entity <branchprediction>.
 Parsing architecture <Behavioral> of entity <branchprediction>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" into library work
 Parsing entity <PROCESSOR>.
 Parsing architecture <Behavioral> of entity <processor>.
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 542: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 563: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 571: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 580: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 604: Actual for formal port idexcontrol is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 652: Actual for formal port y is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 689: Actual for formal port read_address is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 690: Actual for formal port write_address is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 737: Actual for formal port control is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/processor.vhd" Line 751: Actual for formal port b is neither a static name nor a globally static expression
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/memory.vhd" into library work
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 542: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 563: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 571: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 580: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 604: Actual for formal port idexcontrol is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 652: Actual for formal port y is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 689: Actual for formal port read_address is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 690: Actual for formal port write_address is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 737: Actual for formal port control is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" Line 751: Actual for formal port b is neither a static name nor a globally static expression
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/memory.vhd" into library work
 Parsing entity <memory>.
 Parsing architecture <Behavioral> of entity <memory>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/com.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/com.vhd" into library work
 Parsing entity <com>.
 Parsing architecture <Behavioral> of entity <com>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\DMEMORY.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\DMEMORY.vhd" into library work
 Parsing entity <Dmemory>.
 Parsing architecture <Behavioral> of entity <dmemory>.
-Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/toplevel.vhd" into library work
+Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/toplevel.vhd" into library work
 Parsing entity <toplevel>.
 Parsing architecture <Behavioral> of entity <toplevel>.
 
@@ -201,7 +201,7 @@ Parsing architecture <Behavioral> of entity <toplevel>.
 Elaborating entity <toplevel> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <com> (architecture <Behavioral>) with generics from library <work>.
-INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\file/com.vhd" Line 231. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/com.vhd" Line 231. Case statement is complete. others clause is never selected
 
 Elaborating entity <Dmemory> (architecture <Behavioral>) with generics from library <work>.
 
@@ -240,10 +240,9 @@ Elaborating entity <Forwarding> (architecture <Behavioral>) from library <work>.
 Elaborating entity <control> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <Hazarddetection> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:321 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\Hazarddetection.vhd" Line 67: Comparison between arrays of unequal length always returns FALSE.
 
 Elaborating entity <branchprediction> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment\branch_prediction_unit.vhd" Line 170. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\branch_prediction_unit.vhd" Line 170. Case statement is complete. others clause is never selected
 
 Elaborating entity <adder> (architecture <Behavioral>) with generics from library <work>.
 
@@ -270,7 +269,7 @@ Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generic
 =========================================================================
 
 Synthesizing Unit <toplevel>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/toplevel.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
     Summary:
@@ -278,7 +277,7 @@ Synthesizing Unit <toplevel>.
 Unit <toplevel> synthesized.
 
 Synthesizing Unit <com>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/com.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/com.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
         INPUT_BUS_WIDTH = 32
@@ -312,7 +311,7 @@ Synthesizing Unit <com>.
 Unit <com> synthesized.
 
 Synthesizing Unit <Dmemory>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/dmemory.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/dmemory.vhd".
         N = 32
         M = 8
 WARNING:Xst:647 - Input <W_ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -326,7 +325,7 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <Dmemory> synthesized.
 
 Synthesizing Unit <memory>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/memory.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/memory.vhd".
         N = 32
         M = 8
 WARNING:Xst:647 - Input <W_ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -342,18 +341,18 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <memory> synthesized.
 
 Synthesizing Unit <PROCESSOR>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 462: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 462: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 462: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 603: Output port <IFIDreset> of the instance <DETECTION_UNIT> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 617: Output port <buffer_write> of the instance <Branch_predicition_unit> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 642: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/processor.vhd" line 650: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 462: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 462: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 462: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 603: Output port <IFIDreset> of the instance <DETECTION_UNIT> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 617: Output port <buffer_write> of the instance <Branch_predicition_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 642: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 650: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
     Found 32-bit adder for signal <imem_address2> created at line 437.
-    Found 32-bit comparator equal for signal <IDEXs[105]_IDEXs[73]_equal_2_o> created at line 406
+    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 406
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
@@ -361,28 +360,28 @@ INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file
 Unit <PROCESSOR> synthesized.
 
 Synthesizing Unit <ALUoperation>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/aluop.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/aluop.vhd".
     Summary:
 	inferred  21 Multiplexer(s).
 Unit <ALUoperation> synthesized.
 
 Synthesizing Unit <alu>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd".
         N = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 82: Output port <COUT> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 82: Output port <SET> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <COUT> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <SET> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
     Found 32x32-bit multiplier for signal <X[31]_Y[31]_MuLt_1_OUT> created at line 142.
     Summary:
 	inferred   1 Multiplier(s).
@@ -390,18 +389,18 @@ INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file
 Unit <alu> synthesized.
 
 Synthesizing Unit <alu_1bit>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/alu_1bit.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu_1bit.vhd".
     Summary:
 	inferred   5 Multiplexer(s).
 Unit <alu_1bit> synthesized.
 
 Synthesizing Unit <alu_full_adder>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/lookahead.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/lookahead.vhd".
     Summary:
 Unit <alu_full_adder> synthesized.
 
 Synthesizing Unit <Vliw_alu>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/vliw_alu.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/vliw_alu.vhd".
         N = 32
 WARNING:Xst:647 - Input <vliw_aluOP> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32x32-bit multiplier for signal <result> created at line 68.
@@ -410,7 +409,7 @@ WARNING:Xst:647 - Input <vliw_aluOP> is never used. This port will be preserved 
 Unit <Vliw_alu> synthesized.
 
 Synthesizing Unit <register_file>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/register_file.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/register_file.vhd".
 WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32x32-bit dual-port RAM <Mram_REGS> for signal <REGS>.
     Summary:
@@ -419,7 +418,7 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <register_file> synthesized.
 
 Synthesizing Unit <regi_1>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/regi.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 32
     Found 32-bit register for signal <data>.
     Summary:
@@ -427,20 +426,20 @@ Synthesizing Unit <regi_1>.
 Unit <regi_1> synthesized.
 
 Synthesizing Unit <Vliw_multipliercontrol>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/vliw_multipliercontrol.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/vliw_multipliercontrol.vhd".
     Summary:
 	no macro.
 Unit <Vliw_multipliercontrol> synthesized.
 
 Synthesizing Unit <PC>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/pc.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/pc.vhd".
     Found 32-bit register for signal <data>.
     Summary:
 	inferred  32 D-type flip-flop(s).
 Unit <PC> synthesized.
 
 Synthesizing Unit <regi_2>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/regi.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 120
     Found 120-bit register for signal <data>.
     Summary:
@@ -448,7 +447,7 @@ Synthesizing Unit <regi_2>.
 Unit <regi_2> synthesized.
 
 Synthesizing Unit <regi_3>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/regi.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 286
     Found 286-bit register for signal <data>.
     Summary:
@@ -456,7 +455,7 @@ Synthesizing Unit <regi_3>.
 Unit <regi_3> synthesized.
 
 Synthesizing Unit <regi_4>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/regi.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 210
     Found 210-bit register for signal <data>.
     Summary:
@@ -464,7 +463,7 @@ Synthesizing Unit <regi_4>.
 Unit <regi_4> synthesized.
 
 Synthesizing Unit <regi_5>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/regi.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 110
     Found 110-bit register for signal <data>.
     Summary:
@@ -472,7 +471,7 @@ Synthesizing Unit <regi_5>.
 Unit <regi_5> synthesized.
 
 Synthesizing Unit <Forwarding>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/forward.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/forward.vhd".
     Found 5-bit comparator equal for signal <RS[4]_ExmemregisterRD[4]_equal_2_o> created at line 51
     Found 5-bit comparator equal for signal <RS[4]_MEMWbregisterRD[4]_equal_5_o> created at line 54
     Found 5-bit comparator equal for signal <RT[4]_ExmemregisterRD[4]_equal_9_o> created at line 67
@@ -483,7 +482,7 @@ Synthesizing Unit <Forwarding>.
 Unit <Forwarding> synthesized.
 
 Synthesizing Unit <control>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/control.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/control.vhd".
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:653 - Signal <Ops<3>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -492,39 +491,38 @@ WARNING:Xst:653 - Signal <Ops<3>> is used but never assigned. This sourceless si
 Unit <control> synthesized.
 
 Synthesizing Unit <Hazarddetection>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/hazarddetection.vhd".
-WARNING:Xst:647 - Input <IDEXCONTROL<9:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <IDEXregisterRT<4:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <IFIDregisterRS<4:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <IFIDregisterRT<4:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/hazarddetection.vhd".
 WARNING:Xst:653 - Signal <IFIDreset> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 5-bit comparator equal for signal <IFIDregisterRS[4]_IDEXregisterRT[4]_equal_2_o> created at line 67
+    Found 5-bit comparator equal for signal <IFIDregisterRT[4]_IDEXregisterRT[4]_equal_3_o> created at line 67
     Summary:
-	inferred   1 Multiplexer(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
 Unit <Hazarddetection> synthesized.
 
 Synthesizing Unit <branchprediction>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/branch_prediction_unit.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/branch_prediction_unit.vhd".
     Found 2-bit 4-to-1 multiplexer for signal <State> created at line 134.
     Found 16-bit comparator not equal for signal <predicted_address[15]_branch_address[15]_equal_3_o> created at line 88
     Summary:
 	inferred   1 Comparator(s).
-	inferred  12 Multiplexer(s).
+	inferred  14 Multiplexer(s).
 Unit <branchprediction> synthesized.
 
 Synthesizing Unit <adder>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/adder.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/adder.vhd".
         N = 32
     Summary:
 	no macro.
 Unit <adder> synthesized.
 
 Synthesizing Unit <full_adder>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/full_adder.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/full_adder.vhd".
     Summary:
 Unit <full_adder> synthesized.
 
 Synthesizing Unit <predictorbuffer_1>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/predictionbuffer.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd".
         N = 16
         M = 32
         K = 4
@@ -535,7 +533,7 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <predictorbuffer_1> synthesized.
 
 Synthesizing Unit <predictorbuffer_2>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/predictionbuffer.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd".
         N = 2
         M = 32
         K = 4
@@ -546,7 +544,7 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <predictorbuffer_2> synthesized.
 
 Synthesizing Unit <shift_register>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/shift_register.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/shift_register.vhd".
 WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 2-bit register for signal <data>.
     Summary:
@@ -554,34 +552,34 @@ WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and l
 Unit <shift_register> synthesized.
 
 Synthesizing Unit <TriputMux>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/triputmux.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/triputmux.vhd".
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <TriputMux> synthesized.
 
 Synthesizing Unit <simple_multiplexer_1>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/mux.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd".
         N = 5
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <simple_multiplexer_1> synthesized.
 
 Synthesizing Unit <simple_multiplexer_2>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/mux.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd".
         N = 32
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <simple_multiplexer_2> synthesized.
 
 Synthesizing Unit <QuadputMux>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/quadputmux.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/quadputmux.vhd".
     Found 32-bit 4-to-1 multiplexer for signal <R> created at line 37.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <QuadputMux> synthesized.
 
 Synthesizing Unit <simple_multiplexer_3>.
-    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/file/mux.vhd".
+    Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd".
         N = 10
     Summary:
 	inferred   1 Multiplexer(s).
@@ -609,12 +607,12 @@ Macro Statistics
  286-bit register                                      : 1
  32-bit register                                       : 9
  8-bit register                                        : 3
-# Comparators                                          : 6
+# Comparators                                          : 8
  16-bit comparator not equal                           : 1
  32-bit comparator equal                               : 1
- 5-bit comparator equal                                : 4
-# Multiplexers                                         : 118
- 1-bit 2-to-1 multiplexer                              : 40
+ 5-bit comparator equal                                : 6
+# Multiplexers                                         : 121
+ 1-bit 2-to-1 multiplexer                              : 43
  10-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  2-bit 4-to-1 multiplexer                              : 1
@@ -650,7 +648,6 @@ WARNING:Xst:2677 - Node <data_84> of sequential type is unconnected in block <IF
 WARNING:Xst:2677 - Node <data_85> of sequential type is unconnected in block <IFID>.
 WARNING:Xst:2677 - Node <data_86> of sequential type is unconnected in block <IFID>.
 WARNING:Xst:2677 - Node <data_87> of sequential type is unconnected in block <IFID>.
-WARNING:Xst:2677 - Node <data_144> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_147> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_153> of sequential type is unconnected in block <IDEX>.
 WARNING:Xst:2677 - Node <data_159> of sequential type is unconnected in block <IDEX>.
@@ -2029,8 +2026,8 @@ WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_3> of sequential typ
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_2> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_1> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_0> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_77> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_74> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_68> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_62> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_61> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_60> of sequential type is unconnected in block <toplevel>.
@@ -2156,12 +2153,12 @@ Macro Statistics
  32-bit adder                                          : 1
 # Registers                                            : 826
  Flip-Flops                                            : 826
-# Comparators                                          : 6
+# Comparators                                          : 8
  16-bit comparator not equal                           : 1
  32-bit comparator equal                               : 1
- 5-bit comparator equal                                : 4
-# Multiplexers                                         : 179
- 1-bit 2-to-1 multiplexer                              : 103
+ 5-bit comparator equal                                : 6
+# Multiplexers                                         : 183
+ 1-bit 2-to-1 multiplexer                              : 107
  10-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  2-bit 4-to-1 multiplexer                              : 1
@@ -2185,7 +2182,6 @@ INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_s
 INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_156> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_135> 
 INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_153> in Unit <toplevel> is equivalent to the following 17 FFs/Latches, which will be removed : <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_132> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_131> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_130> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_129> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_128> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_127> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_126> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_125> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_124> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_123> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_122> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_121> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_120>
    <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_119> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_118> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_117> <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_116> 
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_68> of sequential type is unconnected in block <toplevel>.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
 -------------------
@@ -2321,12 +2317,7 @@ WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/ALUTD/Mmult_X[31]_Y[31]_MuLt_1_OUT> o
 Mapping all equations...
 Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_23> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_1> 
-INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_55> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_22> 
-INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_24> 
 INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_17> 
-INFO:Xst:2399 - RAMs <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3>, <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3>, <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3>, <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1> are equivalent, second RAM is removed
 Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 12.
 
 Final Macro Processing ...
@@ -2335,8 +2326,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 612
- Flip-Flops                                            : 612
+# Registers                                            : 615
+ Flip-Flops                                            : 615
 
 =========================================================================
 
@@ -2359,28 +2350,28 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 725
+# BELS                             : 775
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 7
-#      LUT2                        : 13
-#      LUT3                        : 102
-#      LUT4                        : 68
-#      LUT5                        : 110
-#      LUT6                        : 364
+#      LUT2                        : 12
+#      LUT3                        : 99
+#      LUT4                        : 75
+#      LUT5                        : 120
+#      LUT6                        : 400
 #      MUXCY                       : 24
-#      MUXF7                       : 24
+#      MUXF7                       : 25
 #      VCC                         : 1
 #      XORCY                       : 8
-# FlipFlops/Latches                : 612
+# FlipFlops/Latches                : 615
 #      FDCE                        : 16
 #      FDE                         : 2
-#      FDR                         : 411
-#      FDRE                        : 183
-# RAMS                             : 12
+#      FDR                         : 413
+#      FDRE                        : 184
+# RAMS                             : 15
 #      RAM32M                      : 2
 #      RAM32X1D                    : 6
-#      RAMB8BWER                   : 4
+#      RAMB8BWER                   : 7
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 137
@@ -2396,17 +2387,17 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             612  out of  18224     3%  
- Number of Slice LUTs:                  687  out of   9112     7%  
-    Number used as Logic:               667  out of   9112     7%  
+ Number of Slice Registers:             615  out of  18224     3%  
+ Number of Slice LUTs:                  736  out of   9112     8%  
+    Number used as Logic:               716  out of   9112     7%  
     Number used as Memory:               20  out of   2176     0%  
        Number used as RAM:               20
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    990
-   Number with an unused Flip Flop:     378  out of    990    38%  
-   Number with an unused LUT:           303  out of    990    30%  
-   Number of fully used LUT-FF pairs:   309  out of    990    31%  
+ Number of LUT Flip Flop pairs used:   1038
+   Number with an unused Flip Flop:     423  out of   1038    40%  
+   Number with an unused LUT:           302  out of   1038    29%  
+   Number of fully used LUT-FF pairs:   313  out of   1038    30%  
    Number of unique control sets:        10
 
 IO Utilization: 
@@ -2414,8 +2405,8 @@ IO Utilization:
  Number of bonded IOBs:                 138  out of    232    59%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                2  out of     32     6%  
-    Number using Block RAM only:          2
+ Number of Block RAM/FIFO:                4  out of     32    12%  
+    Number using Block RAM only:          4
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
  Number of DSP48A1s:                      4  out of     32    12%  
 
@@ -2440,7 +2431,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 629   |
+clk                                | BUFGP                  | 638   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -2451,7 +2442,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 19.554ns (Maximum Frequency: 51.140MHz)
+   Minimum period: 19.682ns (Maximum Frequency: 50.808MHz)
    Minimum input arrival time before clock: 8.006ns
    Maximum output required time after clock: 4.226ns
    Maximum combinational path delay: No path found
@@ -2462,26 +2453,40 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 19.554ns (frequency: 51.140MHz)
-  Total number of paths / destination ports: 535575 / 1439
+  Clock period: 19.682ns (frequency: 50.808MHz)
+  Total number of paths / destination ports: 1679919 / 1676
 -------------------------------------------------------------------------
-Delay:               19.554ns (Levels of Logic = 2)
-  Source:            MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (DSP)
-  Destination:       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+Delay:               19.682ns (Levels of Logic = 16)
+  Source:            MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_149 (FF)
+  Destination:       MIPS_SC_PROCESSOR/EXMEM/data_37 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+  Data Path: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_149 to MIPS_SC_PROCESSOR/EXMEM/data_37
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     DSP48A1:CLK->P47     18   8.791   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1)
-     DSP48A1:C30->PCOUT0    1   3.225   0.000  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_0)
-     DSP48A1:PCIN0->P47   18   2.772   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3)
-     DSP48A1:C30               2.298          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+     FDR:C->Q             19   0.633   1.399  MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_149 (MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_149)
+     LUT4:I2->O            1   0.373   0.682  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o11 (N175)
+     LUT5:I4->O            1   0.373   0.682  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o2 (MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o1)
+     LUT6:I5->O           32   0.373   1.520  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o6 (MIPS_SC_PROCESSOR/ctForwardB<1>)
+     LUT5:I4->O           10   0.373   1.609  MIPS_SC_PROCESSOR/ForwardmuxB/Mmux_R121 (MIPS_SC_PROCESSOR/ForwardBout<1>)
+     LUT6:I1->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU1B/FULLADDER_ALU/COUT<3>44_SW1_F (N547)
+     MUXF7:I0->O           1   0.227   0.820  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU1B/FULLADDER_ALU/COUT<3>44_SW1 (N519)
+     LUT5:I3->O            2   0.373   1.104  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU1B/FULLADDER_ALU/COUT<3>44 (MIPS_SC_PROCESSOR/ALUTD/Propagates<0>)
+     LUT6:I2->O            1   0.364   0.000  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>111 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>11)
+     MUXF7:I1->O           6   0.230   0.876  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>11_f7 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>)
+     LUT5:I4->O            5   0.373   0.841  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>)
+     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>)
+     LUT6:I5->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>18 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>)
+     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/FULLADDER_ALU/C21 (MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/COUT<1>)
+     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/FULLADDER_ALU/C31 (MIPS_SC_PROCESSOR/ALUTD/FULL_COUT<30>)
+     LUT6:I5->O            1   0.373   0.682  MIPS_SC_PROCESSOR/ALUTD/Mmux_R251 (MIPS_SC_PROCESSOR/ALUTD/Mmux_R25)
+     LUT6:I5->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/Mmux_R252 (MIPS_SC_PROCESSOR/ALU_Result<31>)
+     FDR:D                     0.142          MIPS_SC_PROCESSOR/EXMEM/data_68
     ----------------------------------------
-    Total                     19.554ns (17.086ns logic, 2.468ns route)
-                                       (87.4% logic, 12.6% route)
+    Total                     19.682ns (6.445ns logic, 13.237ns route)
+                                       (32.7% logic, 67.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -2500,7 +2505,7 @@ Offset:              8.006ns (Levels of Logic = 6)
      LUT5:I0->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In51 (TDT4255_COM/state_FSM_FFd1-In5)
      LUT5:I2->O            1   0.373   0.682  TDT4255_COM/state_FSM_FFd1-In54 (TDT4255_COM/state_FSM_FFd1-In53)
      LUT6:I5->O            3   0.373   0.766  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
-     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In1_SW0 (N432)
+     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In1_SW0 (N477)
      LUT6:I3->O            1   0.373   0.000  TDT4255_COM/state_FSM_FFd1-In1 (TDT4255_COM/state_FSM_FFd1-In)
      FDR:D                     0.142          TDT4255_COM/state_FSM_FFd1
     ----------------------------------------
@@ -2536,20 +2541,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   19.554|    5.441|    4.513|         |
+clk            |   19.682|    5.731|    4.521|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 32.00 secs
-Total CPU time to Xst completion: 31.99 secs
+Total REAL time to Xst completion: 30.00 secs
+Total CPU time to Xst completion: 30.50 secs
  
 --> 
 
-Total memory usage is 315936 kilobytes
+Total memory usage is 310416 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1430 (   0 filtered)
-Number of infos    :   44 (   0 filtered)
+Number of warnings : 1423 (   0 filtered)
+Number of infos    :   39 (   0 filtered)
 

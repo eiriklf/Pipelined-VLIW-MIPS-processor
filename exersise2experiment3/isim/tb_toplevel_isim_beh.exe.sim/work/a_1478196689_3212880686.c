@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/Hazarddetection.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Hazarddetection.vhd";
 
 
 
@@ -107,7 +107,7 @@ LAB2:    xsi_set_current_line(67, ng0);
     t1 = (t0 + 2768U);
     t8 = *((char **)t1);
     t9 = 1;
-    if (9U == 9U)
+    if (10U == 10U)
         goto LAB14;
 
 LAB15:    t9 = 0;
@@ -125,35 +125,7 @@ LAB9:    t5 = (unsigned char)0;
 LAB10:    if (t5 != 0)
         goto LAB5;
 
-LAB7:    t1 = (t0 + 1672U);
-    t2 = *((char **)t1);
-    t1 = (t0 + 3008U);
-    t7 = *((char **)t1);
-    t4 = 1;
-    if (6U == 6U)
-        goto LAB46;
-
-LAB47:    t4 = 0;
-
-LAB48:    if (t4 == 1)
-        goto LAB43;
-
-LAB44:    t11 = (t0 + 1672U);
-    t13 = *((char **)t11);
-    t11 = (t0 + 3128U);
-    t14 = *((char **)t11);
-    t5 = 1;
-    if (6U == 6U)
-        goto LAB52;
-
-LAB53:    t5 = 0;
-
-LAB54:    t3 = t5;
-
-LAB45:    if (t3 != 0)
-        goto LAB41;
-
-LAB42:    xsi_set_current_line(76, ng0);
+LAB7:    xsi_set_current_line(76, ng0);
     t1 = (t0 + 4752);
     t2 = (t1 + 56U);
     t7 = *((char **)t2);
@@ -250,7 +222,7 @@ LAB22:    t6 = t12;
 
 LAB14:    t10 = 0;
 
-LAB17:    if (t10 < 9U)
+LAB17:    if (t10 < 10U)
         goto LAB18;
     else
         goto LAB16;
@@ -310,65 +282,6 @@ LAB39:    t25 = (t26 + t29);
 
 LAB40:    t29 = (t29 + 1);
     goto LAB38;
-
-LAB41:    xsi_set_current_line(72, ng0);
-    t18 = (t0 + 4752);
-    t19 = (t18 + 56U);
-    t20 = *((char **)t19);
-    t21 = (t20 + 56U);
-    t24 = *((char **)t21);
-    *((unsigned char *)t24) = (unsigned char)2;
-    xsi_driver_first_trans_fast_port(t18);
-    xsi_set_current_line(73, ng0);
-    t1 = (t0 + 4816);
-    t2 = (t1 + 56U);
-    t7 = *((char **)t2);
-    t8 = (t7 + 56U);
-    t11 = *((char **)t8);
-    *((unsigned char *)t11) = (unsigned char)3;
-    xsi_driver_first_trans_fast_port(t1);
-    xsi_set_current_line(74, ng0);
-    t1 = (t0 + 4880);
-    t2 = (t1 + 56U);
-    t7 = *((char **)t2);
-    t8 = (t7 + 56U);
-    t11 = *((char **)t8);
-    *((unsigned char *)t11) = (unsigned char)3;
-    xsi_driver_first_trans_fast_port(t1);
-    goto LAB6;
-
-LAB43:    t3 = (unsigned char)1;
-    goto LAB45;
-
-LAB46:    t10 = 0;
-
-LAB49:    if (t10 < 6U)
-        goto LAB50;
-    else
-        goto LAB48;
-
-LAB50:    t1 = (t2 + t10);
-    t8 = (t7 + t10);
-    if (*((unsigned char *)t1) != *((unsigned char *)t8))
-        goto LAB47;
-
-LAB51:    t10 = (t10 + 1);
-    goto LAB49;
-
-LAB52:    t17 = 0;
-
-LAB55:    if (t17 < 6U)
-        goto LAB56;
-    else
-        goto LAB54;
-
-LAB56:    t11 = (t13 + t17);
-    t15 = (t14 + t17);
-    if (*((unsigned char *)t11) != *((unsigned char *)t15))
-        goto LAB53;
-
-LAB57:    t17 = (t17 + 1);
-    goto LAB55;
 
 }
 

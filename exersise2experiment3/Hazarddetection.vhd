@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Hazarddetection is
-    Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
+    Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(9 downto 0);
            IDEXregisterRT : in  STD_LOGIC_VECTOR(4 downto 0);
 			  IFIDregisterRS : in  STD_LOGIC_VECTOR(4 downto 0);
 			  IFIDregisterRT : in  STD_LOGIC_VECTOR(4 downto 0);
@@ -53,7 +53,7 @@ begin
 	
 
 process(processor_enable,IDEXCONTROL,IDEXregisterRT,IFIDregisterRS,IFIDregisterRT,IFIDInstructionType)
-constant LW  : std_logic_vector(8 downto 0 ) := "000001110";
+constant LW  : std_logic_vector(9 downto 0 ) := "0000011100";
 constant load  : std_logic_vector(5 downto 0 ) := "100011";
     constant BEQ  : std_logic_vector(5 downto 0 ) := "000100";
 	 constant BNE  : std_logic_vector(5 downto 0 ) := "000101";
@@ -68,10 +68,10 @@ begin
 				pcWrite<='0';
 				ifidwrite<='0';
 				Controlenable<='0';
-				elsif (((IFIDInstructionType=BEQ) or (IFIDInstructionType=BNE)))then --and not( IDEXCONTROL=Branche or IDEXCONTROL=branchne)) then
-				pcWrite<='0';
-				ifidwrite<='1';
-				Controlenable<='1';
+				--elsif (((IFIDInstructionType=BEQ) or (IFIDInstructionType=BNE)))then --and not( IDEXCONTROL=Branche or IDEXCONTROL=branchne)) then
+			--	pcWrite<='0';
+			--	ifidwrite<='1';
+				--Controlenable<='1';
 				else
 				pcWrite<='1';
 				ifidwrite<='1';

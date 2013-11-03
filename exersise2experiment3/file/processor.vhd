@@ -61,7 +61,7 @@ end component QuadputMux;
 	
 	
 	component Hazarddetection is
-    Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(8 downto 0);
+    Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(9 downto 0);
            IDEXregisterRT : in  STD_LOGIC_VECTOR(4 downto 0);
 			  IFIDregisterRS : in  STD_LOGIC_VECTOR(4 downto 0);
 			  IFIDregisterRT : in  STD_LOGIC_VECTOR(4 downto 0);
@@ -318,10 +318,10 @@ end component Forwarding;
 	--branchadder
 	signal BranchAdder : STD_LOGIC_VECTOR (31 downto 0);
 	--IF/ID out
-	signal IFIDs: std_logic_vector(119 downto 0);
+	signal IFIDs: std_logic_vector(121 downto 0);
 	
 	--ID/EX out
-	signal IDEXs: std_logic_vector(285 downto 0);
+	signal IDEXs: std_logic_vector(287 downto 0);
 	
 	--EX/MEM out
 	
@@ -402,8 +402,8 @@ signal IDEXreset: std_logic;
 	--equalvals<=(IDEXs(105 downto 74) xor IDEXs(73 downto 42));
 	--equalvals2<=read_data1 xor read_data2;--fix this
 		--IDEXs(105 downto 74) and IDEXs(73 downto 42) is the output from RS og RT from the registerfile.
-		branched1 <= '1' when ((IDEXs(105 downto 74)=IDEXs(73 downto 42)) and idexs(149)='1')--(chosen_OP(5)='1'))--test for BEQ
-	else '1' when (idexs(285)='1') and not (IDEXs(105 downto 74)=IDEXs(73 downto 42))--Test for BNE, idexs(285)=chosen_OP(9)
+		branched1 <= '1' when ((ForwardAout=ForwardBout) and idexs(149)='1')--(chosen_OP(5)='1'))--test for BEQ
+	else '1' when (idexs(285)='1') and not (ForwardAout=ForwardBout)--Test for BNE, idexs(285)=chosen_OP(9)
 	else '0';
 	--assign control signals
 	--jump <= Ops(0); -- Jump
@@ -538,8 +538,10 @@ signal IDEXreset: std_logic;
 	
 	);--WLIW 87 DOWNTO 56
 	--pc_output(4 downto 0)->IFIDs(37 downto 33)
-	IFID: regi generic map ( N=>120) port map(
-		 Data_in =>imem_data_in&imem_data2_in& stateread& prediction_address&pc_output(4 downto 0)&branch_taken&incremented,--change incremented?
+	--global_prediction_out->IFIDS(121 downto 120)
+	
+	IFID: regi generic map ( N=>122) port map(
+		 Data_in =>global_prediction_out&imem_data_in&imem_data2_in& stateread& prediction_address&pc_output(5 downto 1)&branch_taken&incremented,--change incremented?
            data_out => IFIDs,
            clock => clk,
            reset => IFIDreset,
@@ -558,9 +560,10 @@ signal IDEXreset: std_logic;
 	--IFID_branchtaken->idexs(268)
 	--IFID_predicted address->idexs(284 downto 269)
 	--ifid_branch(BNE)->idexs(285)
-	IDEX: regi generic map (N=>286) port map(--remove the 1bit memtoreg signal
+	--global_prediction_out->idexs(287 downto 286)
+	IDEX: regi generic map (N=>288) port map(--remove the 1bit memtoreg signal
 																						--rd_vliw/158				--IDEX_RS		--controlsignals(153-145)			--ifid instructiontype	--jumpaddress163 dt138							--incremented																					--idex_rt					idex_rd
-			 Data_in =>chosen_OP(9)&IFIDs(53 downto 38)&IFIDs(32)&IFIDs(55 downto 54)&IFIDs(37 downto 33)&vliw_aluOP&LO_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99),--138+25, perform signex later?
+			 Data_in =>IFIDS(121 downto 120)&chosen_OP(9)&IFIDs(53 downto 38)&IFIDs(32)&IFIDs(55 downto 54)&IFIDs(37 downto 33)&vliw_aluOP&LO_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99),--138+25, perform signex later?
            data_out => IDEXs,
            clock => clk,
            reset => IDEXreset,
@@ -589,8 +592,8 @@ signal IDEXreset: std_logic;
            MEMWbregisterRD =>MEMWBs(4 downto 0),
 			  MEMWBregwrite=>MEMWBs(69),
 			  EXMEMregwrite=>EXMEMs(136),--ops
-           RS =>IDEXs(158 downto 154),--check this is not crisscorssed
-           RT =>IDEXs(9 downto 5),--verify this, updated in commit
+           RS =>IDEXs(158 downto 154),
+           RT =>IDEXs(9 downto 5),
            forwardA =>ctForwardA,
            forwardB =>ctForwardB);
 			  
@@ -601,7 +604,7 @@ signal IDEXreset: std_logic;
 			  reset=> reset);
 			  
 	DETECTION_UNIT: Hazarddetection
-    Port map ( IDEXCONTROL=>IDEXs(152 downto 148)&memtoreg&IDEXs(146 downto 144),--figures out if operation in idex register is read
+    Port map ( IDEXCONTROL=>idexs(285)&IDEXs(152 downto 148)&memtoreg&IDEXs(146 downto 144),--figures out if operation in idex register is read
            IDEXregisterRT=>IDEXs(9 downto 5),--IDEXs(73 downto 42),--RT register
 			  IFIDregisterRS=>IFIDs(113 downto 109),
 			  IFIDregisterRT=>IFIDs(108 downto 104),
@@ -672,26 +675,27 @@ signal IDEXreset: std_logic;
 	port map(
 			CLK 			=>clk,				
 			RESET			=>reset,				
-			RW				=>shift_register_write,		
-			Read_address=>pc_output(4 downto 0), 
+			RW				=>shift_register_write,		-- set this with the prediction output
+			Read_address=>pc_output(5 downto 1), --we shift pc_output one to the left in order to use all the bits
 			Write_address=>idexs(265 downto 261),
 			WRITE_DATA	=>BranchAdder(15 downto 0),
 			Data_out		=>prediction_address
 	);
 	
-	
+
 		BRANCH_PREDICTION_BUFFER: predictorbuffer
 	   generic map (N =>2, M=>32, K=>4)
 	port map(
 			CLK 			=>clk,				
 			RESET			=>reset,				
 			RW				=>shift_register_write,		
-			Read_address=>global_prediction_out&pc_output(2 downto 0), --extend this shit
-			Write_address=>global_prediction_out&idexs(263 downto 261),
+			Read_address=>global_prediction_out&pc_output(3 downto 1), --we shift pc_output one to the left in order to use all the bits
+			Write_address=>idexs(287 downto 286)&idexs(263 downto 261),--the address written to should be based on the behaviour of the current branch as well
 			WRITE_DATA	=>state_writeback,
 			Data_out		=>stateread
 	);
-	
+		--it takes 2 cycles from the point a branch actually have been performed, to the point where the information enters this register. 
+		--to not mess up the branchprediction, i recommand that heavy branching like loops should be placed at least 2 instruction slots away from eachother
 		global_prediction: shift_register 
    Port map( data_in =>branched1,--fix this, everything branches
            data_out =>global_prediction_out,--2 bits index + branch instruction address forms index for prediction register

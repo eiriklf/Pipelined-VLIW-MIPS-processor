@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment/branch_prediction_unit.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/branch_prediction_unit.vhd";
 
 
 
@@ -377,7 +377,7 @@ LAB37:    xsi_set_current_line(96, ng0);
     t3 = *((char **)t2);
     t4 = (t3 + 56U);
     t5 = *((char **)t4);
-    *((unsigned char *)t5) = (unsigned char)2;
+    *((unsigned char *)t5) = (unsigned char)3;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(99, ng0);
     t1 = (t0 + 6008);
@@ -385,7 +385,7 @@ LAB37:    xsi_set_current_line(96, ng0);
     t3 = *((char **)t2);
     t4 = (t3 + 56U);
     t5 = *((char **)t4);
-    *((unsigned char *)t5) = (unsigned char)2;
+    *((unsigned char *)t5) = (unsigned char)3;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(100, ng0);
     t1 = (t0 + 6136);
