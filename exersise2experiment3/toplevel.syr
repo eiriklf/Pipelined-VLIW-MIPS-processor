@@ -483,8 +483,8 @@ Unit <control> synthesized.
 Synthesizing Unit <Hazarddetection>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/hazarddetection.vhd".
 WARNING:Xst:653 - Signal <IFIDreset> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 5-bit comparator equal for signal <IFIDregisterRS[4]_IDEXregisterRT[4]_equal_2_o> created at line 67
-    Found 5-bit comparator equal for signal <IFIDregisterRT[4]_IDEXregisterRT[4]_equal_3_o> created at line 67
+    Found 5-bit comparator equal for signal <IFIDregisterRS[4]_IDEXregisterRT[4]_equal_2_o> created at line 63
+    Found 5-bit comparator equal for signal <IFIDregisterRT[4]_IDEXregisterRT[4]_equal_3_o> created at line 63
     Summary:
 	inferred   2 Comparator(s).
 	inferred   2 Multiplexer(s).
@@ -2549,12 +2549,12 @@ clk            |   19.682|    5.731|    4.521|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 32.00 secs
-Total CPU time to Xst completion: 31.67 secs
+Total REAL time to Xst completion: 30.00 secs
+Total CPU time to Xst completion: 30.62 secs
  
 --> 
 
-Total memory usage is 321416 kilobytes
+Total memory usage is 313288 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 1425 (   0 filtered)
