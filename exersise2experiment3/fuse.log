@@ -73,8 +73,8 @@ Compiling architecture behavioral of entity processor [\PROCESSOR(32,32)\]
 Compiling architecture behavioral of entity toplevel [\toplevel(32,32)\]
 Compiling architecture behavior of entity tb_toplevel
 Time Resolution for simulation is 1ps.
-Waiting for 26 sub-compilation(s) to finish...
+Waiting for 24 sub-compilation(s) to finish...
 Compiled 72 VHDL Units
 Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_toplevel_isim_beh.exe
-Fuse Memory Usage: 23068 KB
-Fuse CPU Usage: 654 ms
+Fuse Memory Usage: 23112 KB
+Fuse CPU Usage: 623 ms

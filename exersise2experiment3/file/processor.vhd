@@ -47,8 +47,7 @@ architecture Behavioral of PROCESSOR is
 	--the controlmodule for the secound path with multiplier
 	component Vliw_multipliercontrol is
     Port ( IFID_funct : in  STD_LOGIC_VECTOR (5 downto 0);
-           LO_write : out  STD_LOGIC;
-           Vliw_aluOP: out std_logic
+           LOHI_write : out  STD_LOGIC
            );
 	end component Vliw_multipliercontrol;
 	
@@ -404,8 +403,7 @@ end component Forwarding;
 	
 	signal LO_out: std_logic_vector(31 downto 0);
 	signal HI_out: std_logic_vector(31 downto 0);
-	signal LO_write: std_logic;--change name
-	signal Vliw_aluOP: std_logic;		
+	signal LOHI_write: std_logic;	
 	
 	signal branch_taken_address: std_logic_vector(31 downto 0);
 	
@@ -524,8 +522,7 @@ end component Forwarding;
 	
 		Vliwcore2: Vliw_multipliercontrol 
     Port map( IFID_funct =>IFIDs(61 downto 56),
-           LO_write =>LO_write,
-           Vliw_aluOP=>Vliw_aluOP
+           LOHI_write =>LOHI_write
            );
 		
 		
@@ -536,9 +533,16 @@ end component Forwarding;
            reset => reset,
            write_enable =>enablepcwrite
 	
-	);--WLIW 87 DOWNTO 56
+	);
 	--pc_output(4 downto 0)->IFIDs(37 downto 33)
 	--global_prediction_out->IFIDS(121 downto 120)
+	--imemdata_in->IFIDs(119 downto 88)
+	--imemdata_in2->IFIDs(87 downto 56)
+	--stateread->IFIDs(55 downto 54)
+	--prediction_address->IFIDs(53 downto 38)
+	--pc_output(5 downto 1)->IFIDs(37 downto 33)
+	--branch_taken->IFIDs(32)
+	--incremented->IFIDs(31 downto 0)
 	IFID_in<=global_prediction_out&imem_data_in&imem_data2_in& stateread& prediction_address&pc_output(5 downto 1)&branch_taken&incremented;
 	IFID: regi generic map ( N=>122) port map(
 		 data_in =>IFID_in,
@@ -546,7 +550,7 @@ end component Forwarding;
        clock => clk,
        reset => IFIDreset,
 		 write_enable=>IFIDwrite
-	);								--265 calculated
+	);								
 	
 	
 	--signextended->IDEXs(41 downto 10)
@@ -555,28 +559,49 @@ end component Forwarding;
 	--incremented-> idexs(137 downto 106)?
 	--IFID_instructiontype-> idexs(143 downto 138)
 	--chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)->IDEXs(152 downto 144)
+	--IFID_RS_address->IDEXs(157 downto 153)
+	--IFIDs(71 downto 67)/Imemdata2(16 downto 11)->IDEXs(162 downto 158)
+	--signextended2->IDEXs(194 downto 163)
+	--Read_Data_vliw2->IDEXs(226 downto 195) --Rt data from secound issue instruction
+	--Read_Data_vliw1->IDEX(258 downto 227) --RS data from secound issue isntruction
+	--LOHI_write->IDEXs(259)
+	--'0'->IDEXs(260) --currently only padding because of removed signal. In an eventual expansion of the implementation, this bit can be reused for that purpose
 	--IFIDs(37 downto 33)/pc_output-> idexs(265 downto 261)
 	--IFID_state in(1 downto 0)->idexs(267 downto 266)
 	--IFID_branchtaken->idexs(268)
 	--IFID_predicted address->idexs(284 downto 269)
 	--ifid_branch(BNE)->idexs(285)
 	--global_prediction_out->idexs(287 downto 286)
-	IDEX_in<=IFIDs(121 downto 120)&chosen_OP(9)&IFIDs(53 downto 38)&IFIDs(32)&IFIDs(55 downto 54)&IFIDs(37 downto 33)&vliw_aluOP&LO_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99);
+	IDEX_in<=IFIDs(121 downto 120)&chosen_OP(9)&IFIDs(53 downto 38)&IFIDs(32)&IFIDs(55 downto 54)&IFIDs(37 downto 33)&'0'&LOHI_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99);
 	IDEX: regi generic map (N=>288) port map(
 			 data_in =>IDEX_in,
            data_out => IDEXs,
            clock => clk,
            reset => IDEXreset,
 			  write_enable=>'1'
-	);								--was 178
-	EXMEM_in<=HI_IN&IDEXs(259)&memtoreg2&IDEXs(163 downto 159)&LO_IN &IDEXs(149)&memtoreg&IDEXs(146 downto 144)&concat&branchadder&zero.zero&ALU_Result&ForwardBout&ChosenWriteReg;
+	);
+	--ChosenWriteReg->EXMEMs(4 downto 0)
+	--ForwardBout->EXMEMs(36 downto 5)
+	--ALU_Result->EXMEMs(68 downto 37)
+	--'0'->EXMEMs(69) /was the zero flag from the ALU which was in earlier implementation used for branch. This can now be considered a "reserved" bit
+	--branchadder->EXMEMs(101 downto 70)
+	--Concat->EXMems(133 downto 102) --no longer in use
+	--Chosen_OP(2 downto 0)/IDEXs(146 downto 144)-> EXMEMs(136 downto 134)
+	--memtoreg->EXMEMs(137)
+	--regdest/IDEX(149)->EXMEMs(138)
+	--LO_IN-->EXMEMs(170 downto 139)
+	--Imemdata2(16 downto 11)/IDEXs(175 downto 171)->EXMEMs(175 downto 171)-- no longer in use?
+	--memtoreg2->EXMEMs(176)
+	--LOHI_write/IDEXs(259)->EXMEMs
+	
+	EXMEM_in<=HI_IN&IDEXs(259)&memtoreg2&IDEXs(162 downto 158)&LO_IN &IDEXs(149)&memtoreg&IDEXs(146 downto 144)&concat&branchadder&'0'&ALU_Result&ForwardBout&ChosenWriteReg;
 	EXMEM: regi generic map (N=>210)  port map(																			
 			 data_in => EXMEM_in,
            data_out => EXMEMs,
            clock => clk,
            reset => reset,
 			  write_enable=>'1'
-	);									--was 71
+	);									
 	MEMWB_in<=EXMEMs(177)&EXMEMs(176)&EXMEMs(175 downto 171)&EXMEMs(170 downto 139)& EXMEMs(137)&EXMEMs(136)&dmem_data_in&EXMEMs(68 downto 37)&EXMEMs(4 downto 0);
 	MEMWB: regi generic map (N=>110) port map(
 	--con trrrolls	--lowrite		chosen_register for wliw			--wlivaluresult
@@ -592,7 +617,7 @@ end component Forwarding;
            MEMWbregisterRD =>MEMWBs(4 downto 0),
 			  MEMWBregwrite=>MEMWBs(69),
 			  EXMEMregwrite=>EXMEMs(136),--ops
-           RS =>IDEXs(158 downto 154),
+           RS =>IDEXs(157 downto 153),
            RT =>IDEXs(9 downto 5),
            forwardA =>ctForwardA,
            forwardB =>ctForwardB);
