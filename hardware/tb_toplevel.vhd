@@ -111,10 +111,12 @@ ARCHITECTURE behavior OF tb_toplevel IS
   
   -- These are the instructions executed by the CPU (loaded to instruction-memory)
   -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
+  
+  --
   constant ins0  : std_logic_vector(0 to 31) := X"8C030002";
   constant ins00 : std_logic_vector(0 to 31) := X"00000000";
   constant ins1  : std_logic_vector(0 to 31) := X"8C020002";
-  constant ins01 : std_logic_vector(0 to 31) := X"00000000";
+  constant ins01 : std_logic_vector(0 to 31) := ins00;
   constant ins2  : std_logic_vector(0 to 31) := X"00221820";--"8C020002";
   constant ins02 : std_logic_vector(0 to 31) := X"00000000";
   constant ins3  : std_logic_vector(0 to 31) := X"00000000";--X"0000000000420018";--wvliwmultiply $2,$2
@@ -139,7 +141,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant ins012 : std_logic_vector(0 to 31) := X"00000000";
   constant ins13 : std_logic_vector(0 to 31) := X"AC030009";--sw $3, 9($0)
   constant ins013 : std_logic_vector(0 to 31) := X"00000000";
-  	     constant ins14 : std_logic_vector(0 to 31) := X"00000000";--NOP
+  	     constant ins14 : std_logic_vector(0 to 31) := X"08000011";--NOP
 		  constant ins014 : std_logic_vector(0 to 31) := X"00000000";
 		    	     constant ins15 : std_logic_vector(0 to 31) := X"00000000"; --NOP
 					  constant ins015 : std_logic_vector(0 to 31) := X"00000000";

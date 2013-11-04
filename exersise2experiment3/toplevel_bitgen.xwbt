@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\toplevel.ncd
+OUTFILE=C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\toplevel.bit
+FAMILY=Spartan6
+PART=xc6slx16-2csg324
+WORKINGDIR=C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3
+LICENSE=ISE
+USER_INFO=174154421_208900020_000

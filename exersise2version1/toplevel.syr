@@ -3,14 +3,14 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: toplevel.prj
 
@@ -153,10 +153,10 @@ Parsing architecture <Behavioral> of entity <adder>.
 Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/processor.vhd" into library work
 Parsing entity <PROCESSOR>.
 Parsing architecture <Behavioral> of entity <processor>.
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/processor.vhd" Line 316: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/processor.vhd" Line 324: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/processor.vhd" Line 331: Actual for formal port data_in is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/processor.vhd" Line 338: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/processor.vhd" Line 317: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/processor.vhd" Line 325: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/processor.vhd" Line 332: Actual for formal port data_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/processor.vhd" Line 339: Actual for formal port data_in is neither a static name nor a globally static expression
 Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2version1\file/memory.vhd" into library work
 Parsing entity <memory>.
 Parsing architecture <Behavioral> of entity <memory>.
@@ -282,12 +282,12 @@ Synthesizing Unit <PROCESSOR>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 288: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 288: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 288: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 361: Output port <IFIDwrite> of the instance <DETECTION_UNIT> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 374: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 381: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 289: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 289: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 289: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 362: Output port <IFIDwrite> of the instance <DETECTION_UNIT> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 375: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/processor.vhd" line 382: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <PROCESSOR> synthesized.
@@ -1197,12 +1197,12 @@ clk            |   14.702|    6.568|    4.521|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 30.00 secs
-Total CPU time to Xst completion: 29.53 secs
+Total REAL time to Xst completion: 29.00 secs
+Total CPU time to Xst completion: 28.70 secs
  
 --> 
 
-Total memory usage is 274888 kilobytes
+Total memory usage is 262280 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  352 (   0 filtered)

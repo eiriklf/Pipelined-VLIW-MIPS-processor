@@ -7,20 +7,22 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
-         <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|exersise2version1|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ALUTD - alu - Behavioral</ClosedNode>
+         <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|exersise2version1|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ALUTD - alu - Behavioral/BEGIN_ALU1B - alu_1bit - Behavioral</ClosedNode>
+         <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|exersise2version1|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ALUTD - alu - Behavioral/LAST_ALU1B - alu_1bit - Behavioral</ClosedNode>
+         <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|exersise2version1|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ALUTD - alu - Behavioral/NEXT_ALU1B - alu_1bit - Behavioral</ClosedNode>
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd</ClosedNode>
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ADDRESSADDER - adder - Behavioral</ClosedNode>
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ALUTD - alu - Behavioral</ClosedNode>
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/Addressincrementer - adder - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>tb_toplevel - behavior (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/tb_toplevel.vhd)</SelectedItem>
+         <SelectedItem>ALUTD - alu - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/alu.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >26</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000033b000000020000000000000000000000000000000064ffffffff0000008100000000000000020000033b0000000100000000000000000000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>tb_toplevel - behavior (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/tb_toplevel.vhd)</CurrentItem>
+      <CurrentItem>ALUTD - alu - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/alu.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -70,13 +72,13 @@
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/Addressincrementer - adder - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>uut - toplevel - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/toplevel.vhd)</SelectedItem>
+         <SelectedItem>BEGIN_ALU1B - alu_1bit - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/alu_1bit.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >24</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >13</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000345000000020000000000000000000000000000000064ffffffff000000810000000000000002000003450000000100000000000000000000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>uut - toplevel - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/toplevel.vhd)</CurrentItem>
+      <CurrentItem>BEGIN_ALU1B - alu_1bit - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/alu_1bit.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -106,7 +108,7 @@
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>

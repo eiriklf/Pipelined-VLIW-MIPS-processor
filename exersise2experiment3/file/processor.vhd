@@ -81,7 +81,6 @@ architecture Behavioral of PROCESSOR is
 			  IFIDInstructionType: in  STD_LOGIC_VECTOR (5 downto 0);
            PCWrite : out  STD_LOGIC;
 			  IFIDwrite: out STD_LOGIC;
-			  IFIDreset: out STD_LOGIC;--remove this maybe?
 			  processor_enable: in std_logic;
            Controlenable : out  STD_LOGIC
 
@@ -283,9 +282,6 @@ end component Forwarding;
 	
 	--input to PC register
 	signal FinalPCAddress : STD_LOGIC_VECTOR (31 downto 0);
-
-	--writenable signal from the controlunit
-	signal enablepcwrite: std_logic;
 	
 		-- From Concat
 	signal Concat : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Concat
@@ -297,22 +293,13 @@ end component Forwarding;
 	signal branchcalc: STD_LOGIC_VECTOR (31 downto 0);
 	
 	signal address_shift: STD_LOGIC_VECTOR(31 downto 0);
-	-- Output signals from the controller.
-	signal Ops : std_logic_vector (9 downto 0);
-	-- They are divided into each signal to make the overview easier
-	--signal jump : std_logic;
-	--signal memwrite : std_logic;
-	--signal regwrite : std_logic;
-	signal memtoreg : std_logic;
-	--signal alusrc : std_logic;
-	--signal branch(1) : std_logic;
-	--signal regdest : std_logic;
-	--signal ALUOp : std_logic_vector(1 downto 0);
-		--signal branch(0) : std_logic;
-	--assigned to the alu operation. We dont use the enumeration in aluOP module because its easier for us to use a vector
+	
 	signal operation: std_logic_vector(4 downto 0);
 	--branchadder
 	signal BranchAdder : STD_LOGIC_VECTOR (31 downto 0);
+	
+	
+	--signals for the pipeline register
 	
 	--IF/ID in
 	signal IFID_in: std_logic_vector(121 downto 0);	
@@ -333,34 +320,50 @@ end component Forwarding;
 	--mem/wb output
 	signal MEMWBs: std_logic_vector(109 downto 0);
 	
-		--this signal is 1 if branch equal
+	--mux controlinputs
+	
+	--this signal is 1 if branch equal
 	signal branch_ok: std_logic;
+	--revert signal
+	signal revert: std_logic;
+	--indicates if prediction is taken
+	signal branch_taken: std_logic;
+	-- Output signals from the controller.
+	signal Ops : std_logic_vector (9 downto 0);
+	-- They are divided into each signal to make the overview easier
+	--signal jump : std_logic;
+	--signal memwrite : std_logic;
+	--signal regwrite : std_logic;
+	signal memtoreg : std_logic;--was originally a part of ops vector, but took it out for simplicity reasons
+	signal QuadputMux_control: std_logic_vector(1 downto 0);
+	--signal alusrc : std_logic;
+	--signal branch(1) : std_logic;
+	--signal regdest : std_logic;
+	--signal ALUOp : std_logic_vector(1 downto 0);
+		--signal branch(0) : std_logic;
+	--assigned to the alu operation. We dont use the enumeration in aluOP module because its easier for us to use a vector
 	
-	--enables output from controlunit
-	signal control_enable: std_logic;
-	
-	--chosen operation from the controloutputmux
+		--chosen operation from the controloutputmux
 	signal chosen_OP: std_logic_vector(9 downto 0);
+	--enables output from controlunit through a mux
 	
-	--Chosen_OP in IDEX pipelinestage
+		--Chosen_OP in IDEX pipelinestage
 	signal IDEX_chosen_OP: std_logic_vector(9 downto 0);
 	
-	--flushsignals
 	
-	signal IFflush:std_logic;
+	signal control_enable: std_logic;
 	
-	--controls write to IFID
-	signal IFIDwrite:std_logic;
+	
+
+	
+	--flushsignals/resets
 	signal IFIDreset: std_logic;
-
-
---controlwrite to IDEX
-signal IDEXreset: std_logic;
+	signal IDEXreset: std_logic;
+	--write controls
+	signal IFIDwrite:std_logic;
+	signal enablepcwrite: std_logic;
 	
-	--enables write to pcpointer register and the predictionbuffer
-	--output from state in branchpredictor
-	signal state_writeback:std_logic_vector(1 downto 0);
-	signal stateread:std_logic_vector(1 downto 0);
+
 	--output from the PCpointer
 	--signal to write to the dynamic branchpred registers
 	signal buffer_write: std_logic;
@@ -368,27 +371,25 @@ signal IDEXreset: std_logic;
 	--output for the muxt for the branchadress
 	signal branch_out:std_logic_vector(31 downto 0);
 	
-	signal revert: std_logic;
-	
-	signal equalvals:std_logic_vector(31 downto 0);
-	signal equalvals2:std_logic_vector(31 downto 0);
-	
-	signal branch_taken: std_logic;
 	--signal stateread2:std_logic_vector(17 downto 0);
 	
+	--signals for the branch predictor buffers
 	signal prediction_address: std_logic_vector(15 downto 0);
 	signal prediction_readaddress:std_logic_vector(4 downto 0);
 	signal prediction_writeaddress:std_logic_vector(4 downto 0);
 	signal global_prediction_out: std_logic_vector(1 downto 0);
+		--output/input for state in branchpredictor
+	signal state_writeback:std_logic_vector(1 downto 0);
+	signal stateread:std_logic_vector(1 downto 0);
 	
 	signal shift_register_write: std_logic;
 	signal branched1: std_logic;
 	
 	
 	
-	--for wliv datapath
+	--for wliv/multiplier datapath
 	
-		signal Signextended2 : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Signextend2
+	signal Signextended2 : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Signextend2
 		
 	signal Read_Data_vliw1 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 1 from Register_File
 	signal Read_Data_vliw2 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 2 from Register_File
@@ -405,8 +406,6 @@ signal IDEXreset: std_logic;
 	signal HI_out: std_logic_vector(31 downto 0);
 	signal LO_write: std_logic;--change name
 	signal Vliw_aluOP: std_logic;		
-	
-	signal QuadputMux_control: std_logic_vector(1 downto 0);
 	
 	signal branch_taken_address: std_logic_vector(31 downto 0);
 	
@@ -528,17 +527,6 @@ signal IDEXreset: std_logic;
            LO_write =>LO_write,
            Vliw_aluOP=>Vliw_aluOP
            );
---		REGISTER_F2: REGISTER_FILE port map(
---					  CLK => clk,			
---			  RESET => reset,	
---			RS => Read_Data_vliw1,--				
---			  RT => Read_Data_vliw2,
---			  RW =>  MEMWBs(69),--fix this later
---		  	  RS_ADDR => IFIDs(81 downto 77), 
---			  RT_ADDR => IFIDs(76 downto 72), 
---			  RD_ADDR => MEMWBs(107 downto 103),--dont have rd_adress
---			  WRITE_DATA => MEMWBs(102 downto 71)--fix this later... no mux
---	);
 		
 		
 	COUNTER: PC port map(
@@ -554,10 +542,10 @@ signal IDEXreset: std_logic;
 	IFID_in<=global_prediction_out&imem_data_in&imem_data2_in& stateread& prediction_address&pc_output(5 downto 1)&branch_taken&incremented;
 	IFID: regi generic map ( N=>122) port map(
 		 data_in =>IFID_in,
-           data_out => IFIDs,
-           clock => clk,
-           reset => IFIDreset,
-			  write_enable=>IFIDwrite
+       data_out => IFIDs,
+       clock => clk,
+       reset => IFIDreset,
+		 write_enable=>IFIDwrite
 	);								--265 calculated
 	
 	
@@ -651,7 +639,7 @@ signal IDEXreset: std_logic;
 	);
 			  
 		--!!!!!	  
-	Concat <= IFIDs(31 downto 26)&IFIDs(113 downto 88);--IDEXs(169 downto 164) & IDEXs(163 downto 138);--32 bit
+	Concat <= IFIDs(31 downto 27)&IFIDs(113 downto 88)&'0';--IDEXs(169 downto 164) & IDEXs(163 downto 138);--32 bit
 	
 	-- Incrementer increases input from PC with 1 bit, since the MIPS processor will be
 	-- addressing by words
@@ -670,18 +658,6 @@ signal IDEXreset: std_logic;
 		R	=> BranchAdder
 	);
 	
---		PREDICTOR_BUFF: predictorbuffer
---	port map(
---			CLK 	=>clk,			
---			RESET		=>reset,				
---			RW			=>buffer_write,			
---			RS_ADDR 		=>pc_output(4 downto 0),
---			RT_ADDR		=>IFIDs(69 downto 65),
---			RD_ADDR 		=>IFIDs(69 downto 65),
---			WRITE_DATA	=>state&BranchAdder(15 downto 0), --look on this
-		--	RS				=>stateread,
-	--		RT 			=>stateread2
---	);
 	
 	--send stateread gjennom IFID og f� stateread2 ut
 	BRANCH_TARGET_BUFFER: predictorbuffer

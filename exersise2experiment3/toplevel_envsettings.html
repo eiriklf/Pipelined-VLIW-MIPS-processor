@@ -126,7 +126,7 @@
 <tr>
 <td>-opt_level</td>
 <td>Optimization Effort</td>
-<td>1</td>
+<td>2</td>
 <td>1</td>
 </tr>
 <tr>
@@ -300,7 +300,7 @@
 <tr>
 <td>-max_fanout</td>
 <td>&nbsp;</td>
-<td>100000</td>
+<td>50</td>
 <td>100000</td>
 </tr>
 <tr>
@@ -318,8 +318,20 @@
 <tr>
 <td>-register_balancing</td>
 <td>&nbsp;</td>
+<td>Yes</td>
 <td>No</td>
-<td>No</td>
+</tr>
+<tr>
+<td>-move_first_stage</td>
+<td>&nbsp;</td>
+<td>YES</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>-move_last_stage</td>
+<td>&nbsp;</td>
+<td>YES</td>
+<td>Yes</td>
 </tr>
 <tr>
 <td>-optimize_primitives</td>
@@ -410,6 +422,12 @@
 <td><b>Property Name</b></td>
 <td><b>Value</b></td>
 <td><b>Default Value</b></td>
+</tr>
+<tr>
+<td>-detail</td>
+<td>Generate Detailed MAP Report</td>
+<td>TRUE</td>
+<td>TRUE</td>
 </tr>
 <tr>
 <td>-ol</td>

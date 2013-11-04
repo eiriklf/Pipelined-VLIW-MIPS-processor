@@ -42,7 +42,7 @@ entity predictorbuffer is
 			Read_address:	in	STD_LOGIC_VECTOR (K downto 0); 
 			Write_address:	in	STD_LOGIC_VECTOR (K downto 0);
 			WRITE_DATA	:	in	STD_LOGIC_VECTOR (N-1 downto 0); 
-			Data_out		:	out	STD_LOGIC_VECTOR (N-1 downto 0)
+			Data_out		:	out STD_LOGIC_VECTOR (N-1 downto 0)
 	);
 end predictorbuffer;
 
@@ -63,10 +63,10 @@ begin
 			if  RW='1' then
 				REGS(to_integer(unsigned(Write_address)))<=WRITE_DATA;
 			end if;
+
 		end if;
 	end process  REGISTERS;
-
-	Data_out <= REGS(to_integer(unsigned(Read_address)));
+				Data_out <= REGS(to_integer(unsigned(Read_address)));
 
 end Behavioral;
 

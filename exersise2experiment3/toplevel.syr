@@ -64,15 +64,17 @@ Resource Sharing                   : YES
 Asynchronous To Synchronous        : NO
 Shift Register Minimum Size        : 2
 Use DSP Block                      : Auto
-Automatic Register Balancing       : No
+Automatic Register Balancing       : Yes
 
 ---- Target Options
 LUT Combining                      : Auto
 Reduce Control Sets                : Auto
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 100000
+Global Maximum Fanout              : 50
 Add Generic Clock Buffer(BUFG)     : 16
 Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
 Optimize Instantiated Primitives   : NO
 Use Clock Enable                   : Auto
 Use Synchronous Set                : Auto
@@ -82,7 +84,7 @@ Equivalent register Removal        : YES
 
 ---- General Options
 Optimization Goal                  : Speed
-Optimization Effort                : 1
+Optimization Effort                : 2
 Power Reduction                    : NO
 Keep Hierarchy                     : No
 Netlist Hierarchy                  : As_Optimized
@@ -334,15 +336,14 @@ Synthesizing Unit <PROCESSOR>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 474: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 474: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 474: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 619: Output port <IFIDreset> of the instance <DETECTION_UNIT> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 633: Output port <buffer_write> of the instance <Branch_predicition_unit> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 658: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 667: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
-    Found 32-bit adder for signal <imem_address2> created at line 449.
-    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 418
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 473: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 473: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 473: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 621: Output port <buffer_write> of the instance <Branch_predicition_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 646: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 655: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
+    Found 32-bit adder for signal <imem_address2> created at line 448.
+    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 417
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
@@ -358,6 +359,7 @@ Unit <ALUoperation> synthesized.
 Synthesizing Unit <alu>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd".
         N = 32
+WARNING:Xst:647 - Input <ALU_IN_Op4> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <COUT> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
 INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <SET> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
 INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
@@ -372,10 +374,8 @@ INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/fil
 INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
 INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
 INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
-    Found 32x32-bit multiplier for signal <X[31]_Y[31]_MuLt_1_OUT> created at line 142.
     Summary:
-	inferred   1 Multiplier(s).
-	inferred   3 Multiplexer(s).
+	inferred   1 Multiplexer(s).
 Unit <alu> synthesized.
 
 Synthesizing Unit <alu_1bit>.
@@ -482,9 +482,8 @@ Unit <control> synthesized.
 
 Synthesizing Unit <Hazarddetection>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/hazarddetection.vhd".
-WARNING:Xst:653 - Signal <IFIDreset> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 5-bit comparator equal for signal <IFIDregisterRS[4]_IDEXregisterRT[4]_equal_2_o> created at line 63
-    Found 5-bit comparator equal for signal <IFIDregisterRT[4]_IDEXregisterRT[4]_equal_3_o> created at line 63
+    Found 5-bit comparator equal for signal <IFIDregisterRS[4]_IDEXregisterRT[4]_equal_2_o> created at line 62
+    Found 5-bit comparator equal for signal <IFIDregisterRT[4]_IDEXregisterRT[4]_equal_3_o> created at line 62
     Summary:
 	inferred   2 Comparator(s).
 	inferred   2 Multiplexer(s).
@@ -584,8 +583,8 @@ Macro Statistics
  32x16-bit dual-port RAM                               : 1
  32x2-bit dual-port RAM                                : 1
  32x32-bit dual-port RAM                               : 4
-# Multipliers                                          : 2
- 32x32-bit multiplier                                  : 2
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 1
  32-bit adder                                          : 1
 # Registers                                            : 20
@@ -601,16 +600,15 @@ Macro Statistics
  16-bit comparator not equal                           : 1
  32-bit comparator equal                               : 1
  5-bit comparator equal                                : 6
-# Multiplexers                                         : 121
+# Multiplexers                                         : 119
  1-bit 2-to-1 multiplexer                              : 43
  10-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  2-bit 4-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 21
+ 32-bit 2-to-1 multiplexer                             : 20
  32-bit 4-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 40
  5-bit 2-to-1 multiplexer                              : 7
- 64-bit 2-to-1 multiplexer                             : 1
 # FSMs                                                 : 1
 # Xors                                                 : 193
  1-bit xor2                                            : 193
@@ -2149,8 +2147,8 @@ Macro Statistics
  32x16-bit dual-port distributed RAM                   : 1
  32x2-bit dual-port distributed RAM                    : 1
  32x32-bit dual-port block RAM                         : 4
-# Multipliers                                          : 2
- 32x32-bit multiplier                                  : 2
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 1
  32-bit adder                                          : 1
 # Registers                                            : 830
@@ -2159,16 +2157,15 @@ Macro Statistics
  16-bit comparator not equal                           : 1
  32-bit comparator equal                               : 1
  5-bit comparator equal                                : 6
-# Multiplexers                                         : 183
+# Multiplexers                                         : 181
  1-bit 2-to-1 multiplexer                              : 107
  10-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  2-bit 4-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 19
+ 32-bit 2-to-1 multiplexer                             : 18
  32-bit 4-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 40
  5-bit 2-to-1 multiplexer                              : 7
- 64-bit 2-to-1 multiplexer                             : 1
 # FSMs                                                 : 1
 # Xors                                                 : 193
  1-bit xor2                                            : 193
@@ -2198,7 +2195,6 @@ Optimizing FSM <TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
  110   | 110
  111   | 111
 -------------------
-WARNING:Xst:2677 - Node <Mmult_X[31]_Y[31]_MuLt_1_OUT3> of sequential type is unconnected in block <alu>.
 
 Optimizing unit <toplevel> ...
 
@@ -2312,9 +2308,6 @@ WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_19> of sequential type i
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_18> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_17> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_16> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/ALUTD/Mmult_X[31]_Y[31]_MuLt_1_OUT2> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/ALUTD/Mmult_X[31]_Y[31]_MuLt_1_OUT1> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/ALUTD/Mmult_X[31]_Y[31]_MuLt_1_OUT> of sequential type is unconnected in block <toplevel>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -2322,14 +2315,77 @@ INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_25> in U
 INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_21> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19> 
 Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 12.
 
+Pipelining and Register Balancing Report ...
+
+Processing Unit <toplevel> :
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_136 MIPS_SC_PROCESSOR/EXMEM/data_4 MIPS_SC_PROCESSOR/EXMEM/data_2 MIPS_SC_PROCESSOR/EXMEM/data_1 MIPS_SC_PROCESSOR/EXMEM/data_0 MIPS_SC_PROCESSOR/EXMEM/data_3 has(ve) been forward balanced into : MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1_FRB.
+	Register(s) MIPS_SC_PROCESSOR/MEMWB/data_69 MIPS_SC_PROCESSOR/MEMWB/data_3 MIPS_SC_PROCESSOR/MEMWB/data_4 MIPS_SC_PROCESSOR/MEMWB/data_0 MIPS_SC_PROCESSOR/MEMWB/data_1 MIPS_SC_PROCESSOR/MEMWB/data_2 has(ve) been forward balanced into : MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2_FRB.
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_137 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/EXMEM/data_137_BRB0 MIPS_SC_PROCESSOR/EXMEM/data_137_BRB1 MIPS_SC_PROCESSOR/EXMEM/data_137_BRB3.
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_176 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/EXMEM/data_176_BRB0 MIPS_SC_PROCESSOR/EXMEM/data_176_BRB1 MIPS_SC_PROCESSOR/EXMEM/data_176_BRB2.
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_177 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/EXMEM/data_177_BRB0 MIPS_SC_PROCESSOR/EXMEM/data_177_BRB1 MIPS_SC_PROCESSOR/EXMEM/data_177_BRB2 MIPS_SC_PROCESSOR/EXMEM/data_177_BRB3 MIPS_SC_PROCESSOR/EXMEM/data_177_BRB4 MIPS_SC_PROCESSOR/EXMEM/data_177_BRB5.
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_37 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/EXMEM/data_37_BRB0 MIPS_SC_PROCESSOR/EXMEM/data_37_BRB1 MIPS_SC_PROCESSOR/EXMEM/data_37_BRB2 MIPS_SC_PROCESSOR/EXMEM/data_37_BRB4 MIPS_SC_PROCESSOR/EXMEM/data_37_BRB5 MIPS_SC_PROCESSOR/EXMEM/data_37_BRB6 MIPS_SC_PROCESSOR/EXMEM/data_37_BRB7 MIPS_SC_PROCESSOR/EXMEM/data_37_BRB8 MIPS_SC_PROCESSOR/EXMEM/data_37_BRB9.
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_60 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/EXMEM/data_60_BRB0 MIPS_SC_PROCESSOR/EXMEM/data_60_BRB1 MIPS_SC_PROCESSOR/EXMEM/data_60_BRB2.
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_64 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/EXMEM/data_64_BRB1 MIPS_SC_PROCESSOR/EXMEM/data_64_BRB2.
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_66 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/EXMEM/data_66_BRB1 MIPS_SC_PROCESSOR/EXMEM/data_66_BRB2.
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_67 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/EXMEM/data_67_BRB1 MIPS_SC_PROCESSOR/EXMEM/data_67_BRB2.
+	Register(s) MIPS_SC_PROCESSOR/EXMEM/data_68 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/EXMEM/data_68_BRB2 MIPS_SC_PROCESSOR/EXMEM/data_68_BRB3 MIPS_SC_PROCESSOR/EXMEM/data_68_BRB4 MIPS_SC_PROCESSOR/EXMEM/data_68_BRB8 MIPS_SC_PROCESSOR/EXMEM/data_68_BRB9.
+	Register(s) MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_28 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_28_BRB0 MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_28_BRB1 MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_28_BRB2 MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_28_BRB3 MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_28_BRB4 MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_28_BRB5.
+	Register(s) MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_56 has(ve) been backward balanced into : MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_56_BRB0.
+	Register(s) TDT4255_COM/internal_data_out_0 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_0_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_1 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_1_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_10 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_10_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_11 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_11_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_12 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_12_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_13 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_13_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_14 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_14_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_15 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_15_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_16 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_16_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_17 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_17_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_18 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_18_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_19 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_19_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_2 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_2_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_20 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_20_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_21 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_21_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_22 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_22_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_23 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_23_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_24 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_24_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_25 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_25_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_26 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_26_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_27 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_27_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_28 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_28_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_29 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_29_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_3 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_3_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_30 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_30_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_31 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_31_BRB0 TDT4255_COM/internal_data_out_31_BRB1.
+	Register(s) TDT4255_COM/internal_data_out_4 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_4_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_5 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_5_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_6 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_6_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_7 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_7_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_8 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_8_BRB0 .
+	Register(s) TDT4255_COM/internal_data_out_9 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_9_BRB0 .
+Unit <toplevel> processed.
+FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_75 has been replicated 1 time(s)
+FlipFlop MIPS_SC_PROCESSOR/MEMWB/data_109 has been replicated 1 time(s)
+FlipFlop TDT4255_COM/processor_enable has been replicated 1 time(s)
+
 Final Macro Processing ...
+
+Processing Unit <toplevel> :
+	Found 2-bit shift register for signal <MIPS_SC_PROCESSOR/EXMEM/data_177_BRB1>.
+	Found 2-bit shift register for signal <MIPS_SC_PROCESSOR/EXMEM/data_177_BRB2>.
+	Found 2-bit shift register for signal <MIPS_SC_PROCESSOR/EXMEM/data_177_BRB3>.
+	Found 2-bit shift register for signal <MIPS_SC_PROCESSOR/EXMEM/data_177_BRB4>.
+	Found 2-bit shift register for signal <MIPS_SC_PROCESSOR/EXMEM/data_177_BRB5>.
+Unit <toplevel> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 619
- Flip-Flops                                            : 619
+# Registers                                            : 646
+ Flip-Flops                                            : 646
+# Shift Registers                                      : 5
+ 2-bit shift register                                  : 5
 
 =========================================================================
 
@@ -2352,28 +2408,34 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 775
+# BELS                             : 760
+#      BUF                         : 6
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 7
-#      LUT2                        : 12
-#      LUT3                        : 99
-#      LUT4                        : 75
-#      LUT5                        : 120
-#      LUT6                        : 400
+#      LUT2                        : 41
+#      LUT3                        : 107
+#      LUT4                        : 44
+#      LUT5                        : 129
+#      LUT6                        : 384
 #      MUXCY                       : 24
-#      MUXF7                       : 25
+#      MUXF7                       : 5
 #      VCC                         : 1
 #      XORCY                       : 8
-# FlipFlops/Latches                : 619
+# FlipFlops/Latches                : 651
+#      FD                          : 20
 #      FDCE                        : 16
-#      FDE                         : 2
+#      FDE                         : 7
 #      FDR                         : 415
-#      FDRE                        : 186
+#      FDRE                        : 185
+#      FDS                         : 7
+#      FDSE                        : 1
 # RAMS                             : 15
 #      RAM32M                      : 2
 #      RAM32X1D                    : 6
 #      RAMB8BWER                   : 7
+# Shift Registers                  : 5
+#      SRLC16E                     : 5
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 137
@@ -2389,18 +2451,19 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             619  out of  18224     3%  
- Number of Slice LUTs:                  736  out of   9112     8%  
-    Number used as Logic:               716  out of   9112     7%  
-    Number used as Memory:               20  out of   2176     0%  
+ Number of Slice Registers:             651  out of  18224     3%  
+ Number of Slice LUTs:                  740  out of   9112     8%  
+    Number used as Logic:               715  out of   9112     7%  
+    Number used as Memory:               25  out of   2176     1%  
        Number used as RAM:               20
+       Number used as SRL:                5
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1042
-   Number with an unused Flip Flop:     423  out of   1042    40%  
-   Number with an unused LUT:           306  out of   1042    29%  
-   Number of fully used LUT-FF pairs:   313  out of   1042    30%  
-   Number of unique control sets:        10
+ Number of LUT Flip Flop pairs used:   1073
+   Number with an unused Flip Flop:     422  out of   1073    39%  
+   Number with an unused LUT:           333  out of   1073    31%  
+   Number of fully used LUT-FF pairs:   318  out of   1073    29%  
+   Number of unique control sets:        25
 
 IO Utilization: 
  Number of IOs:                         162
@@ -2433,7 +2496,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 642   |
+clk                                | BUFGP                  | 679   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -2444,8 +2507,8 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 19.682ns (Maximum Frequency: 50.808MHz)
-   Minimum input arrival time before clock: 8.006ns
+   Minimum period: 19.554ns (Maximum Frequency: 51.140MHz)
+   Minimum input arrival time before clock: 7.756ns
    Maximum output required time after clock: 4.226ns
    Maximum combinational path delay: No path found
 
@@ -2455,64 +2518,50 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 19.682ns (frequency: 50.808MHz)
-  Total number of paths / destination ports: 1688313 / 1686
+  Clock period: 19.554ns (frequency: 51.140MHz)
+  Total number of paths / destination ports: 1390967 / 1724
 -------------------------------------------------------------------------
-Delay:               19.682ns (Levels of Logic = 16)
-  Source:            MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 (FF)
-  Destination:       MIPS_SC_PROCESSOR/EXMEM/data_37 (FF)
+Delay:               19.554ns (Levels of Logic = 2)
+  Source:            MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (DSP)
+  Destination:       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 to MIPS_SC_PROCESSOR/EXMEM/data_37
+  Data Path: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             19   0.633   1.399  MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 (MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151)
-     LUT4:I2->O            1   0.373   0.682  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o11 (N175)
-     LUT5:I4->O            1   0.373   0.682  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o2 (MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o1)
-     LUT6:I5->O           32   0.373   1.520  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o6 (MIPS_SC_PROCESSOR/ctForwardB<1>)
-     LUT5:I4->O           10   0.373   1.609  MIPS_SC_PROCESSOR/ForwardmuxB/Mmux_R121 (MIPS_SC_PROCESSOR/ForwardBout<1>)
-     LUT6:I1->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU1B/FULLADDER_ALU/COUT<3>44_SW1_F (N547)
-     MUXF7:I0->O           1   0.227   0.820  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU1B/FULLADDER_ALU/COUT<3>44_SW1 (N519)
-     LUT5:I3->O            2   0.373   1.104  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU1B/FULLADDER_ALU/COUT<3>44 (MIPS_SC_PROCESSOR/ALUTD/Propagates<0>)
-     LUT6:I2->O            1   0.364   0.000  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>111 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>11)
-     MUXF7:I1->O           6   0.230   0.876  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>11_f7 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>)
-     LUT5:I4->O            5   0.373   0.841  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>)
-     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>)
-     LUT6:I5->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>18 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>)
-     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/FULLADDER_ALU/C21 (MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/COUT<1>)
-     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/FULLADDER_ALU/C31 (MIPS_SC_PROCESSOR/ALUTD/FULL_COUT<30>)
-     LUT6:I5->O            1   0.373   0.682  MIPS_SC_PROCESSOR/ALUTD/Mmux_R251 (MIPS_SC_PROCESSOR/ALUTD/Mmux_R25)
-     LUT6:I5->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/Mmux_R252 (MIPS_SC_PROCESSOR/ALU_Result<31>)
-     FDR:D                     0.142          MIPS_SC_PROCESSOR/EXMEM/data_68
+     DSP48A1:CLK->P47     18   8.791   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1)
+     DSP48A1:C30->PCOUT47    1   3.225   0.000  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_47)
+     DSP48A1:PCIN47->P47   18   2.772   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3)
+     DSP48A1:C30               2.298          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
     ----------------------------------------
-    Total                     19.682ns (6.445ns logic, 13.237ns route)
-                                       (32.7% logic, 67.3% route)
+    Total                     19.554ns (17.086ns logic, 2.468ns route)
+                                       (87.4% logic, 12.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 525 / 433
+  Total number of paths / destination ports: 563 / 439
 -------------------------------------------------------------------------
-Offset:              8.006ns (Levels of Logic = 6)
+Offset:              7.756ns (Levels of Logic = 6)
   Source:            command<11> (PAD)
-  Destination:       TDT4255_COM/state_FSM_FFd1 (FF)
+  Destination:       TDT4255_COM/state_FSM_FFd3 (FF)
   Destination Clock: clk rising
 
-  Data Path: command<11> to TDT4255_COM/state_FSM_FFd1
+  Data Path: command<11> to TDT4255_COM/state_FSM_FFd3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             1   1.328   1.283  command_11_IBUF (command_11_IBUF)
      LUT5:I0->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In51 (TDT4255_COM/state_FSM_FFd1-In5)
      LUT5:I2->O            1   0.373   0.682  TDT4255_COM/state_FSM_FFd1-In54 (TDT4255_COM/state_FSM_FFd1-In53)
-     LUT6:I5->O            3   0.373   0.766  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
-     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In1_SW0 (N477)
-     LUT6:I3->O            1   0.373   0.000  TDT4255_COM/state_FSM_FFd1-In1 (TDT4255_COM/state_FSM_FFd1-In)
-     FDR:D                     0.142          TDT4255_COM/state_FSM_FFd1
+     LUT6:I5->O            4   0.373   0.804  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
+     LUT6:I5->O            1   0.373   0.682  TDT4255_COM/state_FSM_FFd3-In11 (TDT4255_COM/state_FSM_FFd3-In1)
+     LUT4:I3->O            1   0.373   0.000  TDT4255_COM/state_FSM_FFd3-In12 (TDT4255_COM/state_FSM_FFd3-In)
+     FDR:D                     0.142          TDT4255_COM/state_FSM_FFd3
     ----------------------------------------
-    Total                      8.006ns (3.335ns logic, 4.671ns route)
-                                       (41.7% logic, 58.3% route)
+    Total                      7.756ns (3.335ns logic, 4.421ns route)
+                                       (43.0% logic, 57.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -2543,20 +2592,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   19.682|    5.731|    4.521|         |
+clk            |   19.554|    5.731|    5.655|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 30.00 secs
-Total CPU time to Xst completion: 30.62 secs
+Total REAL time to Xst completion: 38.00 secs
+Total CPU time to Xst completion: 38.27 secs
  
 --> 
 
-Total memory usage is 313288 kilobytes
+Total memory usage is 320264 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1425 (   0 filtered)
-Number of infos    :   39 (   0 filtered)
+Number of warnings : 1421 (   0 filtered)
+Number of infos    :   38 (   0 filtered)
 

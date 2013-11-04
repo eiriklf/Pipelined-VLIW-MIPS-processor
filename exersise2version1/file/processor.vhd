@@ -21,6 +21,7 @@ Port (
 	);
 end PROCESSOR;
 
+
 architecture Behavioral of PROCESSOR is
 
 	--component declarations

@@ -37,7 +37,6 @@ entity Hazarddetection is
 			  IFIDInstructionType: in  STD_LOGIC_VECTOR (5 downto 0);
            PCWrite : out  STD_LOGIC;
 			  IFIDwrite: out STD_LOGIC;
-			  IFIDreset: out STD_LOGIC;--remove this maybe?
 			  processor_enable: in std_logic;
            Controlenable : out  STD_LOGIC
 

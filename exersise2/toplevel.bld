@@ -6,7 +6,7 @@ Command Line: C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 toplevel.ngc toplevel.ngd
 
 Reading NGO file
-"C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment2/toplevel.ngc" ...
+"C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/toplevel.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -28,7 +28,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 148788 kilobytes
+Total memory usage is 148212 kilobytes
 
 Writing NGD file "toplevel.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec

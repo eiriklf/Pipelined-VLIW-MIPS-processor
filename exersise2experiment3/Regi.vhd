@@ -20,7 +20,7 @@ architecture Behavioral of regi is
 
 	-- For each clock_cycle when write_enable is 1, the contents of the PC, represented by the signal data,
 	-- will be updated with output from Incrementation, Branching or Jump
-	REGIST : process(clock, reset,data)
+	REGIST : process(clock, reset,write_enable)
 	begin
 
 		if(rising_edge(clock)) then
