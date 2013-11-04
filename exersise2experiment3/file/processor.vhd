@@ -542,7 +542,7 @@ signal IDEXreset: std_logic;
 		
 		
 	COUNTER: PC port map(
-	 Data_in => FinalPCAddress,
+	 data_in => FinalPCAddress,
            data_out => PC_Output,
            clock => clk,
            reset => reset,
@@ -553,7 +553,7 @@ signal IDEXreset: std_logic;
 	--global_prediction_out->IFIDS(121 downto 120)
 	IFID_in<=global_prediction_out&imem_data_in&imem_data2_in& stateread& prediction_address&pc_output(5 downto 1)&branch_taken&incremented;
 	IFID: regi generic map ( N=>122) port map(
-		 Data_in =>IFID_in,
+		 data_in =>IFID_in,
            data_out => IFIDs,
            clock => clk,
            reset => IFIDreset,
@@ -575,7 +575,7 @@ signal IDEXreset: std_logic;
 	--global_prediction_out->idexs(287 downto 286)
 	IDEX_in<=IFIDs(121 downto 120)&chosen_OP(9)&IFIDs(53 downto 38)&IFIDs(32)&IFIDs(55 downto 54)&IFIDs(37 downto 33)&vliw_aluOP&LO_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99);
 	IDEX: regi generic map (N=>288) port map(
-			 Data_in =>IDEX_in,
+			 data_in =>IDEX_in,
            data_out => IDEXs,
            clock => clk,
            reset => IDEXreset,
@@ -583,7 +583,7 @@ signal IDEXreset: std_logic;
 	);								--was 178
 	EXMEM_in<=HI_IN&IDEXs(259)&memtoreg2&IDEXs(163 downto 159)&LO_IN &IDEXs(149)&memtoreg&IDEXs(146 downto 144)&concat&branchadder&zero.zero&ALU_Result&ForwardBout&ChosenWriteReg;
 	EXMEM: regi generic map (N=>210)  port map(																			
-			 Data_in => EXMEM_in,
+			 data_in => EXMEM_in,
            data_out => EXMEMs,
            clock => clk,
            reset => reset,
@@ -592,7 +592,7 @@ signal IDEXreset: std_logic;
 	MEMWB_in<=EXMEMs(177)&EXMEMs(176)&EXMEMs(175 downto 171)&EXMEMs(170 downto 139)& EXMEMs(137)&EXMEMs(136)&dmem_data_in&EXMEMs(68 downto 37)&EXMEMs(4 downto 0);
 	MEMWB: regi generic map (N=>110) port map(
 	--con trrrolls	--lowrite		chosen_register for wliw			--wlivaluresult
-			 Data_in =>MEMWB_in,
+			 data_in =>MEMWB_in,
            data_out => MEMWBs,
            clock => clk,
            reset => reset,
@@ -665,7 +665,7 @@ signal IDEXreset: std_logic;
 	-- ADRESSADDER is the second adder, which is used for calculation new PC based on branching
 	address_shift<=IDEXs(40 downto 10)&'0';
 	ADDRESSADDER: adder port map(
-		X	=>idexs(137 downto 106),
+		X	=>IDEXs(137 downto 106),
 		Y	=>address_shift,--shift signextended 1 left because of instructionsize with 64 bit and 32-bits dataalignment
 		R	=> BranchAdder
 	);
@@ -691,7 +691,7 @@ signal IDEXreset: std_logic;
 			RESET			=>reset,				
 			RW				=>shift_register_write,		-- set this with the prediction output
 			Read_address=>pc_output(5 downto 1), --we shift pc_output one to the left in order to use all the bits
-			Write_address=>idexs(265 downto 261),
+			Write_address=>IDEXs(265 downto 261),
 			WRITE_DATA	=>BranchAdder(15 downto 0),
 			Data_out		=>prediction_address
 	);

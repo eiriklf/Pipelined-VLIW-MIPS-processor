@@ -2201,3 +2201,362 @@ Optimizing FSM <TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
 WARNING:Xst:2677 - Node <Mmult_X[31]_Y[31]_MuLt_1_OUT3> of sequential type is unconnected in block <alu>.
 
 Optimizing unit <toplevel> ...
+
+Optimizing unit <com> ...
+
+Optimizing unit <regi_1> ...
+
+Optimizing unit <PC> ...
+
+Optimizing unit <adder> ...
+
+Optimizing unit <branchprediction> ...
+
+Optimizing unit <alu> ...
+
+Optimizing unit <alu_1bit> ...
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_41> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_40> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_39> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_38> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_37> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_36> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_35> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_34> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_33> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_32> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_31> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_30> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_29> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_28> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_27> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_26> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_101> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_100> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_99> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_98> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_97> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_96> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_95> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_94> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_93> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_92> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_91> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_90> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_89> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_88> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_87> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_86> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_85> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_31> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_30> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_29> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_28> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_27> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_26> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_25> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_24> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_23> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_22> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_21> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_20> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_19> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_18> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_17> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_16> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_15> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_14> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_13> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_12> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_11> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_10> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_9> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_8> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_31> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_30> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_29> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_28> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_27> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_26> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_25> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_24> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_23> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_22> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_21> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_20> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_19> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_18> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_17> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_16> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_15> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_14> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_13> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_12> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_11> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_10> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_9> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_8> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_31> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_30> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_29> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_28> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_27> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_26> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_25> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_24> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_23> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_22> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_21> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_20> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_19> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_18> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_17> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_16> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/ALUTD/Mmult_X[31]_Y[31]_MuLt_1_OUT2> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/ALUTD/Mmult_X[31]_Y[31]_MuLt_1_OUT1> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/ALUTD/Mmult_X[31]_Y[31]_MuLt_1_OUT> of sequential type is unconnected in block <toplevel>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_25> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_3> 
+INFO:Xst:2261 - The FF/Latch <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_21> in Unit <toplevel> is equivalent to the following FF/Latch, which will be removed : <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19> 
+Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 12.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 619
+ Flip-Flops                                            : 619
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : toplevel.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 775
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 7
+#      LUT2                        : 12
+#      LUT3                        : 99
+#      LUT4                        : 75
+#      LUT5                        : 120
+#      LUT6                        : 400
+#      MUXCY                       : 24
+#      MUXF7                       : 25
+#      VCC                         : 1
+#      XORCY                       : 8
+# FlipFlops/Latches                : 619
+#      FDCE                        : 16
+#      FDE                         : 2
+#      FDR                         : 415
+#      FDRE                        : 186
+# RAMS                             : 15
+#      RAM32M                      : 2
+#      RAM32X1D                    : 6
+#      RAMB8BWER                   : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 137
+#      IBUF                        : 73
+#      OBUF                        : 64
+# DSPs                             : 4
+#      DSP48A1                     : 4
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             619  out of  18224     3%  
+ Number of Slice LUTs:                  736  out of   9112     8%  
+    Number used as Logic:               716  out of   9112     7%  
+    Number used as Memory:               20  out of   2176     0%  
+       Number used as RAM:               20
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1042
+   Number with an unused Flip Flop:     423  out of   1042    40%  
+   Number with an unused LUT:           306  out of   1042    29%  
+   Number of fully used LUT-FF pairs:   313  out of   1042    30%  
+   Number of unique control sets:        10
+
+IO Utilization: 
+ Number of IOs:                         162
+ Number of bonded IOBs:                 138  out of    232    59%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                4  out of     32    12%  
+    Number using Block RAM only:          4
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                      4  out of     32    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 642   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 19.682ns (Maximum Frequency: 50.808MHz)
+   Minimum input arrival time before clock: 8.006ns
+   Maximum output required time after clock: 4.226ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 19.682ns (frequency: 50.808MHz)
+  Total number of paths / destination ports: 1688313 / 1686
+-------------------------------------------------------------------------
+Delay:               19.682ns (Levels of Logic = 16)
+  Source:            MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 (FF)
+  Destination:       MIPS_SC_PROCESSOR/EXMEM/data_37 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 to MIPS_SC_PROCESSOR/EXMEM/data_37
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             19   0.633   1.399  MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 (MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151)
+     LUT4:I2->O            1   0.373   0.682  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o11 (N175)
+     LUT5:I4->O            1   0.373   0.682  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o2 (MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o1)
+     LUT6:I5->O           32   0.373   1.520  MIPS_SC_PROCESSOR/Forwardunit/EXMEMregwrite_RT[4]_AND_1108_o6 (MIPS_SC_PROCESSOR/ctForwardB<1>)
+     LUT5:I4->O           10   0.373   1.609  MIPS_SC_PROCESSOR/ForwardmuxB/Mmux_R121 (MIPS_SC_PROCESSOR/ForwardBout<1>)
+     LUT6:I1->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU1B/FULLADDER_ALU/COUT<3>44_SW1_F (N547)
+     MUXF7:I0->O           1   0.227   0.820  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU1B/FULLADDER_ALU/COUT<3>44_SW1 (N519)
+     LUT5:I3->O            2   0.373   1.104  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU1B/FULLADDER_ALU/COUT<3>44 (MIPS_SC_PROCESSOR/ALUTD/Propagates<0>)
+     LUT6:I2->O            1   0.364   0.000  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>111 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>11)
+     MUXF7:I1->O           6   0.230   0.876  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>11_f7 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>)
+     LUT5:I4->O            5   0.373   0.841  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>)
+     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>)
+     LUT6:I5->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>18 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>)
+     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/FULLADDER_ALU/C21 (MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/COUT<1>)
+     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU1B/FULLADDER_ALU/C31 (MIPS_SC_PROCESSOR/ALUTD/FULL_COUT<30>)
+     LUT6:I5->O            1   0.373   0.682  MIPS_SC_PROCESSOR/ALUTD/Mmux_R251 (MIPS_SC_PROCESSOR/ALUTD/Mmux_R25)
+     LUT6:I5->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/Mmux_R252 (MIPS_SC_PROCESSOR/ALU_Result<31>)
+     FDR:D                     0.142          MIPS_SC_PROCESSOR/EXMEM/data_68
+    ----------------------------------------
+    Total                     19.682ns (6.445ns logic, 13.237ns route)
+                                       (32.7% logic, 67.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 525 / 433
+-------------------------------------------------------------------------
+Offset:              8.006ns (Levels of Logic = 6)
+  Source:            command<11> (PAD)
+  Destination:       TDT4255_COM/state_FSM_FFd1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: command<11> to TDT4255_COM/state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   1.283  command_11_IBUF (command_11_IBUF)
+     LUT5:I0->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In51 (TDT4255_COM/state_FSM_FFd1-In5)
+     LUT5:I2->O            1   0.373   0.682  TDT4255_COM/state_FSM_FFd1-In54 (TDT4255_COM/state_FSM_FFd1-In53)
+     LUT6:I5->O            3   0.373   0.766  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
+     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In1_SW0 (N477)
+     LUT6:I3->O            1   0.373   0.000  TDT4255_COM/state_FSM_FFd1-In1 (TDT4255_COM/state_FSM_FFd1-In)
+     FDR:D                     0.142          TDT4255_COM/state_FSM_FFd1
+    ----------------------------------------
+    Total                      8.006ns (3.335ns logic, 4.671ns route)
+                                       (41.7% logic, 58.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 34 / 34
+-------------------------------------------------------------------------
+Offset:              4.226ns (Levels of Logic = 1)
+  Source:            TDT4255_COM/status_0 (FF)
+  Destination:       status<30> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: TDT4255_COM/status_0 to status<30>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.633   0.681  TDT4255_COM/status_0 (TDT4255_COM/status_0)
+     OBUF:I->O                 2.912          status_30_OBUF (status<30>)
+    ----------------------------------------
+    Total                      4.226ns (3.545ns logic, 0.681ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   19.682|    5.731|    4.521|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 32.00 secs
+Total CPU time to Xst completion: 31.67 secs
+ 
+--> 
+
+Total memory usage is 321416 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings : 1425 (   0 filtered)
+Number of infos    :   39 (   0 filtered)
+
