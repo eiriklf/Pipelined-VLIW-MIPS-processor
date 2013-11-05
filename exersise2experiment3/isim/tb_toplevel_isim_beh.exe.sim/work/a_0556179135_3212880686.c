@@ -951,7 +951,7 @@ LAB0:    xsi_set_current_line(136, ng0);
     t1 = (t0 + 18688U);
     t3 = ((WORK_P_2565430773) + 2008U);
     t4 = *((char **)t3);
-    t3 = ((WORK_P_2565430773) + 6564U);
+    t3 = ((WORK_P_2565430773) + 6560U);
     t5 = ieee_p_0774719531_sub_2698824431_2162500114(IEEE_P_0774719531, t2, t1, t4, t3);
     if (t5 != 0)
         goto LAB3;
@@ -1060,7 +1060,7 @@ LAB2:    xsi_set_current_line(143, ng0);
     t21 = (t21 + 1);
     t19 = (t18 + 12U);
     *((unsigned int *)t19) = t21;
-    t19 = ((WORK_P_2565430773) + 6580U);
+    t19 = ((WORK_P_2565430773) + 6576U);
     t13 = xsi_base_array_concat(t13, t15, t16, (char)97, t6, t17, (char)97, t14, t19, (char)101);
     t22 = (t0 + 11832);
     t23 = (t22 + 56U);

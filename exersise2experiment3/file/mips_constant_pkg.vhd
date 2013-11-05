@@ -39,7 +39,6 @@ package MIPS_CONSTANT_PKG is
         Op1     :   STD_LOGIC;
         Op2     :   STD_LOGIC;
         Op3     :   STD_LOGIC;
-        Op4     :   std_logic;
     end record;
     
 

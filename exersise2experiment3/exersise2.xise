@@ -75,8 +75,6 @@
       <association xil_pn:name="BehavioralSimulation"/>
       <association xil_pn:name="Implementation"/>
     </file>
-    <file xil_pn:name="file/register.vhd" xil_pn:type="FILE_VHDL"/>
-    <file xil_pn:name="register.vhd" xil_pn:type="FILE_VHDL"/>
     <file xil_pn:name="Regi.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation"/>
       <association xil_pn:name="Implementation"/>

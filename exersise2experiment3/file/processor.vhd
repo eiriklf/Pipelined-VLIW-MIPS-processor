@@ -103,9 +103,8 @@ architecture Behavioral of PROCESSOR is
               IFIDbranch_taken                : in std_logic;--branch_taken signal in the ID stage
               branch_taken                    : out std_logic;--signals the a mux wheter a branchprediction should be taken or not. Signal is determined in IF stage
               branched1                       : in std_logic; --tells wheter a branch (not the prediction) is actually taken or not
-              predicted_address               : in std_logic_vector(15 downto 0);--this is the predicted address, it must be tested if its the actual right branchaddress
-              shift_register_write            : out std_logic; --this allow write to the shiftregister where the global branch information is stored. The input is 1 bit indicating wheter a branch (not prediction) actually is taken or not.
-              branch_address                  : in std_logic_vector(15 downto 0)--this is the actual branch address
+              predicted_address               : in std_logic_vector(31 downto 0);--this is the predicted address, it must be tested if its the actual right branchaddress
+              branch_address                  : in std_logic_vector(31 downto 0)--this is the actual branch address
               );
 end component branchprediction;
     
@@ -203,8 +202,7 @@ end component branchprediction;
                 X                        : in STD_LOGIC_VECTOR(N-1 downto 0);
                 Y                        : in STD_LOGIC_VECTOR(N-1 downto 0);
                 R_LO                     : out STD_LOGIC_VECTOR(N-1 downto 0);
-                R_HI                     : out std_logic_vector(N-1 downto 0);
-                vliw_aluOP               : in std_logic
+                R_HI                     : out std_logic_vector(N-1 downto 0)
         );
     end component Vliw_alu;
 
@@ -345,14 +343,13 @@ end component Forwarding;
     --signal memwrite : std_logic;
     --signal regwrite : std_logic;
     signal memtoreg : std_logic;--was originally a part of ops vector, but took it out for simplicity reasons
-    signal QuadputMux_control: std_logic_vector(1 downto 0);
     --signal alusrc : std_logic;
-    --signal branch(1) : std_logic;
+    --signal branch(1)/BEQ : std_logic;
     --signal regdest : std_logic;
     --signal ALUOp : std_logic_vector(1 downto 0);
-        --signal branch(0) : std_logic;
+    --signal branch(0)/BNE : std_logic;
     --assigned to the alu operation. We dont use the enumeration in aluOP module because its easier for us to use a vector
-    
+    signal QuadputMux_control: std_logic_vector(1 downto 0);  
         --chosen operation from the controloutputmux
     signal chosen_OP: std_logic_vector(9 downto 0);
     --enables output from controlunit through a mux
@@ -373,18 +370,14 @@ end component Forwarding;
     signal IFIDwrite:std_logic;
     signal enablepcwrite: std_logic;
     
-
-    --output from the PCpointer
     --signal to write to the dynamic branchpred registers
     signal buffer_write: std_logic;
-    
-    --output for the muxt for the branchadress
-    signal branch_out:std_logic_vector(31 downto 0);
-    
-    --signal stateread2:std_logic_vector(17 downto 0);
-    
+     
     --signals for the branch predictor buffers
     signal prediction_address: std_logic_vector(15 downto 0);
+	 
+	 --prediction_address input for use in the branchpredictionunit(EX stage)
+	 signal predicted_address_in: std_logic_vector(31 downto 0);
     signal prediction_readaddress:std_logic_vector(4 downto 0);
     signal prediction_writeaddress:std_logic_vector(4 downto 0);
     signal global_prediction_out: std_logic_vector(1 downto 0);
@@ -392,7 +385,6 @@ end component Forwarding;
     signal state_writeback:std_logic_vector(1 downto 0);
     signal stateread:std_logic_vector(1 downto 0);
     
-    signal shift_register_write: std_logic;
     signal branched1: std_logic;
     
     
@@ -451,7 +443,6 @@ end component Forwarding;
     ALUControl.op1<=operation(1 );
     ALUControl.op2<=operation(2 );
     ALUControl.op3<=operation(3 );
-    ALUControl.op4<=operation(4 );--was originally dedicated to multiply operation. Is now unused/reserved
     --if more alufunctions are needed, add more signals when needed
 
     --mapping out of processor
@@ -487,8 +478,7 @@ end component Forwarding;
              X           =>IDEXs(258 downto 227),
              Y           =>IDEXs(226 downto 195),
              R_LO        =>LO_IN ,--output signal to LO register
-             R_HI        =>HI_IN,--output signal to HI register
-             vliw_aluOP  =>IDEXs(260)--vliw_aluOP
+             R_HI        =>HI_IN--output signal to HI register
         );
 
     --dual port register/memory
@@ -673,6 +663,7 @@ end component Forwarding;
     --Branchprediction unit, responsible for controlling branching and branch prediction.
     --See the component declaration and the corresponding vhdl file for more information
     --about the branchprediction unit, and what it is for.
+	 predicted_address_in<=idexs(137 downto 122)&idexs(284 downto 269);
     Branch_predicition_unit: branchprediction
     port map(
                 IFIDInstructionType          =>idexs(143 downto 138),--IFIDs(119 downto 114),
@@ -683,12 +674,11 @@ end component Forwarding;
                 IFIDreset                    =>IFIDreset,
                 IDEXreset                    =>IDEXreset,
                 branch_ok                    =>branch_ok,
-                IFIDbranch_taken             =>idexs(268), --IFIDs(32)
+                IFIDbranch_taken             =>idexs(268), 
                 branch_taken                 =>branch_taken,
                 revert                       =>revert,
-                branch_address               => BranchAdder,--output from branch address adder
-                predicted_address            =>idexs(137 downto 122)&idexs(284 downto 269),
-                shift_register_write         =>shift_register_write,
+                branch_address               => BranchAdder,--output from branch address adder. Need to check that the predicted address and the actual branch target are the same
+                predicted_address            =>predicted_address_in,-- the predicted address concated with the incremented PC_counter (IDEX stage)
                 branched1                    =>branched1
 
                 );
@@ -698,8 +688,7 @@ end component Forwarding;
         --the jump (the accessed address must allways be even).
     Concat <= IFIDs(31 downto 27)&IFIDs(113 downto 88)&'0';
 
-    -- Incrementer increases input from PC with 1 bit, since the MIPS processor will be
-    -- addressing by words
+    -- Incrementer increases input from PC with 2 bits.
     Addressincrementer: adder
     port map(
                         x => pc_output,
@@ -723,13 +712,13 @@ end component Forwarding;
     port map(
             CLK             =>clk,              
             RESET           =>reset,                
-            RW              =>shift_register_write,     -- set this with the prediction output
+            RW              =>buffer_write,     -- set this with the prediction output
             Read_address    =>pc_output(5 downto 1), --we shift pc_output one to the left in order to use all the bits
             Write_address   =>IDEXs(265 downto 261), --PC_output in IDEX stage
             WRITE_DATA      =>BranchAdder(15 downto 0),--this address might fail in some occations
             Data_out        =>prediction_address
     );
-        --this is the register file where the branch prediction-counters are stored
+        --this is the register file where the branch prediction-counters are stored. The input signals are assigned here above the port map of the register
         prediction_readaddress<=global_prediction_out&pc_output(3 downto 1);
         prediction_writeaddress<=idexs(287 downto 286)&idexs(263 downto 261); --the write address is "global_prediction_out&pc_output(3 downto 1)" in IDEX stage.-
         --doing that is done because you want to ensure that the entry to be updated is on the same address as where the branching is done.
@@ -739,20 +728,20 @@ end component Forwarding;
     port map(
             CLK             =>clk,              
             RESET           =>reset,
-            RW              =>shift_register_write,
+            RW              =>buffer_write,
             Read_address=>prediction_readaddress, --we shift pc_output one to the left(earlier when inputed to pipeline registers) in order to use all the addresses
             Write_address=>prediction_writeaddress,
             WRITE_DATA  =>state_writeback,
             Data_out        =>stateread
     );
-        --it takes 2 cycles from the point a branch actually have been performed, to the point where the information enters this register. 
-        --to not mess up the branchprediction, i recommand that heavy branching like loops should be placed at least 2 instruction slots away from eachother
+
+			--shift register used for the global branch information for the corrolating branch predictor
         global_prediction: shift_register 
    Port map( data_in =>branched1,--fix this, everything branches
            data_out =>global_prediction_out,--2 bits index + branch instruction address forms index for prediction register
            clock =>clk,
            reset=>reset,
-           write_enable=>shift_register_write);
+           write_enable=>buffer_write);
     
     ForwardmuxA: TriputMux 
     Port map( A =>IDEXs(105 downto 74),--readdataB

@@ -26,25 +26,22 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">RESET</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">473</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Carry</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">474</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Carry</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">473</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">474</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">473</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Negative</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">474</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Zero</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">621</arg>: Output port &lt;<arg fmt="%s" index="3">buffer_write</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Branch_predicition_unit</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">474</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Negative</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">646</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Addressincrementer</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">699</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Addressincrementer</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">655</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ADDRESSADDER</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">ALU_IN_Op4</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">710</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ADDRESSADDER</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">82</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">BEGIN_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
@@ -89,9 +86,6 @@
 <msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">100</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[7].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">vliw_aluOP</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">RESET</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
@@ -134,6 +128,9 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">data_66</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">IFID</arg>&gt;.
 </msg>
 
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">data_67</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">IFID</arg>&gt;.
+</msg>
+
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">data_68</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">IFID</arg>&gt;.
 </msg>
 
@@ -167,7 +164,7 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">data_147</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">IDEX</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">data_153</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">IDEX</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">data_158</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">IDEX</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">data_159</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">IDEX</arg>&gt;.
@@ -3694,6 +3691,9 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
 </msg>
 
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
 </msg>
 
@@ -3733,7 +3733,7 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_76</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_70</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_65</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_64</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
@@ -4078,102 +4078,6 @@
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_155</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">toplevel</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">17 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_134&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_133&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_132&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_131&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_130&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_129&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_128&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_127&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_126&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_125&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_124&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_123&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_122&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_121&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_120&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_119&gt; &lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_118&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_41</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_40</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_39</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_38</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_37</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_36</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_35</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_34</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_33</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_32</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_101</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_100</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_99</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_98</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_97</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_96</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_95</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_94</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_93</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_92</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_91</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_90</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_89</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_88</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_87</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_86</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_85</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
 </msg>
 
@@ -4321,58 +4225,28 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">TDT4255_COM/read_addr_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
-</msg>
-
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_25</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">toplevel</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_3&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_21</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">toplevel</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_87</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_86</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/COUNTER/data_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;.
 </msg>
 
 </messages>

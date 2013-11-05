@@ -30,22 +30,21 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 --TODO FIX THE BRANCH_address-compare predicted_address issue
 entity branchprediction is
-    Port ( 
-                IFIDInstructionType: in std_logic_vector(5 downto 0);
-              IFIDreset: out STD_LOGIC;--syncronous reset for ifid register. Must be done when a branch prediction fails in order to prevent the wrong instructions to be executed
-              IDEXreset: out std_logic; --resets idex register
-              State: out std_logic_vector(1 downto 0); --the incremented state to be written back to the local branch prediction buffer (ID stage).
-              State_in: in std_logic_vector(1 downto 0);-- the information from the local branch prediction buffer. (IF stage)
-              IFID_state_in: in std_logic_vector(1 downto 0);   --the information from the local branch prediction buffer.(ID stage) 
-              buffer_write: out std_logic;  --signal that allow writes to all the prediction buffers
-              branch_ok:out std_logic; --signal to allow the calculated branch address to the PC register
-              revert:out std_logic;-- signal that allows reverting a faulty branchprediction
-              IFIDbranch_taken: in std_logic;--branch_taken signal in the ID stage
-              branch_taken: out std_logic;--signals the a mux wheter a branchprediction should be taken or not. Signal is determined in IF stage
-              branched1: in std_logic; --tells wheter a branch (not the prediction) is actually taken or not
-              predicted_address: in std_logic_vector(15 downto 0);--this is the predicted address, it must be tested if its the actual right branchaddress
-              shift_register_write: out std_logic; --this allow write to the shiftregister where the global branch information is stored. The input is 1 bit indicating wheter a branch (not prediction) actually is taken or not.
-              branch_address: in std_logic_vector(15 downto 0)--this is the actual branch address 
+    Port (
+                IFIDInstructionType           : in std_logic_vector(5 downto 0);
+              IFIDreset                       : out STD_LOGIC;--syncronous reset for ifid register. Must be done when a branch prediction fails in order to prevent the wrong instructions to be executed
+              IDEXreset                       : out std_logic; --resets idex register syncronously
+              State                           : out std_logic_vector(1 downto 0); --the incremented state to be written back to the local branch prediction buffer (ID stage).
+              State_in                        : in std_logic_vector(1 downto 0);-- the information from the local branch prediction buffer. (IF stage)
+              IFID_state_in                   : in std_logic_vector(1 downto 0);   --the information from the local branch prediction buffer.(ID stage)
+              buffer_write                    : out std_logic;  --signal that allow writes to all the prediction buffers
+              branch_ok                       : out std_logic; --signal to allow the calculated branch address to the PC register
+              revert                          : out std_logic;-- signal that allows reverting a faulty branchprediction
+              IFIDbranch_taken                : in std_logic;--branch_taken signal in the ID stage
+              branch_taken                    : out std_logic;--signals the a mux wheter a branchprediction should be taken or not. Signal is determined in IF stage
+              branched1                       : in std_logic; --tells wheter a branch (not the prediction) is actually taken or not
+              predicted_address               : in std_logic_vector(31 downto 0);--this is the predicted address, it must be tested if its the actual right branchaddress
+              branch_address                  : in std_logic_vector(31 downto 0)--this is the actual branch address
               );
 end branchprediction;
 
@@ -65,7 +64,7 @@ begin
 process(IFIDbranch_taken,state_in,branched1,branch_address,predicted_address,IFIDInstructionType)
 begin
 
-                buffer_write<='1';--Currently we let bufferwrite allways be turned on
+
                 
                 
                 if(state_in=taken0 or state_in=taken1) then
@@ -83,14 +82,14 @@ begin
                 IDEXreset<='1';
                 IFIDreset<='1';
                 branch_ok<='0';--mishap, no branch
-                shift_register_write<='1';--must decrease state
+                buffer_write<='1';--must decrease state
                 
                 elsif(IFIDbranch_taken='1' and not (branch_address=predicted_address) )then--revert if a new program has been loaded, or if the predicted address is a miss
                 revert<='1';
                 IFIDreset<='1';
                 IDEXreset<='1';
                 branch_ok<='0';--mishap, no branch
-                shift_register_write<='1';
+                buffer_write<='1';
                 
                 elsif(IFIDbranch_taken='0' and branched1='1') then--predicted to not taken when its taken, normal delay branch scenario, increase state towards taken
                 revert<='0';--no need for reverting if branch is not taken
@@ -98,14 +97,14 @@ begin
                 IFIDreset<='1';
                 IDEXreset<='1';
                 branch_ok<='1';
-                shift_register_write<='1';
+                buffer_write<='1';
                 elsif(IFIDbranch_taken='1' and branched1='1')then--branch predicted to taken and taken, check if its a right prediction and the predicted address is right, decrease state towards taken
                 --check if the predicted address is actually correct, do this later
                 revert<='0';
                 IFIDreset<='0';
                 IDEXreset<='0';
                 branch_ok<='0';--the branching is already done
-                shift_register_write<='1';
+                buffer_write<='1';
                 
                 elsif(IFIDbranch_taken='0' and branched1='0')then--not taken predicted right
                 IFIDreset<='0';
@@ -113,9 +112,9 @@ begin
                 revert<='0';
                 branch_ok<='0';--the branching is never going to happen
                 if(IFIDInstructionType=BEQ  or IFIDInstructionType=BNE) then--see if this can be fixex
-                shift_register_write<='1';
+                buffer_write<='1';
                 else
-                shift_register_write<='0';
+                buffer_write<='0';
                 end if;
                 else
                 branch_ok<='0';
@@ -123,7 +122,7 @@ begin
                 --set in delay
                 IFIDreset<='0';
                 IDEXreset<='0';
-                shift_register_write<='0';
+					 buffer_write<='0';
                end if;
 
                 --buffer_write<='0';
