@@ -83,7 +83,6 @@ begin
     constant STATE_RD1   : std_logic_vector(2 downto 0) := "011";
     constant STATE_RUN   : std_logic_vector(2 downto 0) := "100";
     constant STATE_DONE  : std_logic_vector(2 downto 0) := "101";
-    constant STATE_RD2   : std_logic_vector(2 downto 0) := "110";
     constant STATE_RD3   : std_logic_vector(2 downto 0) := "111";
   begin
     if rising_edge(clk) then
@@ -165,21 +164,8 @@ begin
             processor_enable  <= '0';
             write_imem        <= '0';      
             
-            state    <= STATE_RD2;
-            
-          -- read data
-          when STATE_RD2 =>
-            status            <= STATUS_BUSY;
-            bus_data_out      <= (others => '0');
-            internal_data_out <= (others => '0');
-            read_addr         <= (others => '0');
-            write_addr        <= (others => '0');
-            write_data        <= (others => '0');
-            write_enable      <= '0';
-            processor_enable  <= '0';
-            write_imem        <= '0';      
-            
             state    <= STATE_RD3;
+            
             
           when STATE_RD3 =>
             status            <= STATUS_BUSY;

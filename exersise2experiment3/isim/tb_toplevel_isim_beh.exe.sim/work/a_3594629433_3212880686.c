@@ -811,7 +811,7 @@ LAB12:    xsi_set_current_line(158, ng0);
     *((unsigned char *)t8) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(168, ng0);
-    t1 = (t0 + 5888U);
+    t1 = (t0 + 6008U);
     t3 = *((char **)t1);
     t1 = (t0 + 7392);
     t4 = (t1 + 56U);

@@ -104,8 +104,8 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant addr40: std_logic_vector(0 to 31) := "00000000000000000000000000101000";
   constant addr42: std_logic_vector(0 to 31) := "00000000000000000000000000101010";
   -- This is written to memory initially
-  constant data1 : std_logic_vector(0 to 31):= "00000000000000000000000000000001";--fix this datasize problem
-	constant data2 : std_logic_vector(0 to 31):= "00000000000000000000000000100000";
+  constant data1 : std_logic_vector(0 to 31):= "00000000000000000000000000000010";--fix this datasize problem
+	constant data2 : std_logic_vector(0 to 31):= "00000000000000000000000000001010";
   
   -- These are the instructions executed by the CPU (loaded to instruction-memory)
   -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
@@ -660,6 +660,37 @@ BEGIN
     bus_address_in <= zero;
     bus_data_in <= zero;
 		wait for clk_period*100;
+		
+		    command <= CMD_IDLE;					
+    bus_address_in <= zero;
+    bus_data_in <= zero;
+    wait for clk_period*3;
+	
+		
+		    command <= CMD_RD;					
+    bus_address_in <= addr4;
+    wait for clk_period*3;	
+	 
+	 command <= CMD_IDLE;					
+    bus_address_in <= zero;
+    bus_data_in <= zero;
+    wait for clk_period*3;
+	 
+	 
+	 command <= CMD_RD;					
+    bus_address_in <= addr6;
+    wait for clk_period*3;	
+		 command <= CMD_IDLE;					
+    bus_address_in <= zero;
+    bus_data_in <= zero;
+    wait for clk_period*3;
+	 
+	 
+	 command <= CMD_RD;					
+    bus_address_in <= addr15;
+    wait for clk_period*3;	
+	
+	 
 
     wait;
     

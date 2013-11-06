@@ -536,15 +536,15 @@ end component Forwarding;
               );
 
               --IFID register mapping relations
-    --pc_output(4 downto 0)->IFIDs(37 downto 33)
-    --global_prediction_out->IFIDS(121 downto 120)
-    --imemdata_in->IFIDs(119 downto 88)
-    --imemdata_in2->IFIDs(87 downto 56)
-    --stateread->IFIDs(55 downto 54)
-    --prediction_address->IFIDs(53 downto 38)
-    --pc_output(5 downto 1)->IFIDs(37 downto 33)
-    --branch_taken->IFIDs(32)
-    --incremented->IFIDs(31 downto 0)
+    --pc_output(4 downto 0)										->IFIDs(37 downto 33)
+    --global_prediction_out										->IFIDS(121 downto 120)
+    --imemdata_in														->IFIDs(119 downto 88)
+    --imemdata_in2													->IFIDs(87 downto 56)
+    --stateread														->IFIDs(55 downto 54)
+    --prediction_address											->IFIDs(53 downto 38)
+    --pc_output(5 downto 1)										->IFIDs(37 downto 33)
+    --branch_taken													->IFIDs(32)
+    --incremented														->IFIDs(31 downto 0)
     IFID_in<=global_prediction_out&imem_data_in&imem_data2_in& stateread& prediction_address&pc_output(5 downto 1)&branch_taken&incremented;
         --pipeline register IFID
         IFID: regi generic map ( N=>122)
@@ -557,25 +557,25 @@ end component Forwarding;
              );
 
           --IDEX register mapping relations
-    --signextended->IDEXs(41 downto 10)
-    --read_data2->IDEXs(73 downto 42)
-    --read_data1->IDEXs(105 downto 74)
-    --incremented-> idexs(137 downto 106)used?
-    --IFID_instructiontype-> idexs(143 downto 138)
+    --signextended													->IDEXs(41 downto 10)
+    --read_data2														->IDEXs(73 downto 42)
+    --read_data1														->IDEXs(105 downto 74)
+    --incremented														->idexs(137 downto 106)used?
+    --IFID_instructiontype											->idexs(143 downto 138)
     --chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)->IDEXs(152 downto 144)
-    --IFID_RS_address->IDEXs(157 downto 153)
-    --IFIDs(71 downto 67)/Imemdata2(16 downto 11)->IDEXs(162 downto 158)
-    --signextended2->IDEXs(194 downto 163)
-    --Read_Data_vliw2->IDEXs(226 downto 195) --Rt data from secound issue instruction
-    --Read_Data_vliw1->IDEX(258 downto 227) --RS data from secound issue isntruction
-    --LOHI_write->IDEXs(259)
-    --'0'->IDEXs(260) --currently only padding because of removed signal. In an eventual expansion of the implementation, this bit can be reused for that purpose
-    --IFIDs(37 downto 33)/pc_output-> idexs(265 downto 261)
-    --IFID_state in(1 downto 0)->idexs(267 downto 266)
-    --IFID_branchtaken->idexs(268)
-    --IFID_predicted address(15 downto 0)->idexs(284 downto 269)
-    --ifid_branch(BNE)->idexs(285)
-    --global_prediction_out->idexs(287 downto 286)
+    --IFID_RS_address												->IDEXs(157 downto 153)
+    --IFIDs(71 downto 67)/Imemdata2(16 downto 11)			->IDEXs(162 downto 158)
+    --signextended2													->IDEXs(194 downto 163)
+    --Read_Data_vliw2												->IDEXs(226 downto 195) --Rt data from secound issue instruction
+    --Read_Data_vliw1												->IDEX(258 downto 227) --RS data from secound issue isntruction
+    --LOHI_write														->IDEXs(259)
+    --'0'																->IDEXs(260) --currently only padding because of removed signal. In an eventual expansion of the implementation, this bit can be reused for that purpose
+    --IFIDs(37 downto 33)/pc_output								->idexs(265 downto 261)
+    --IFID_state in(1 downto 0)									->idexs(267 downto 266)
+    --IFID_branchtaken												->idexs(268)
+    --IFID_predicted address(15 downto 0)						->idexs(284 downto 269)
+    --ifid_branch(BNE)												->idexs(285)
+    --global_prediction_out										->idexs(287 downto 286)
     IDEX_in<=IFIDs(121 downto 120)&chosen_OP(9)&IFIDs(53 downto 38)&IFIDs(32)&IFIDs(55 downto 54)&IFIDs(37 downto 33)&'0'&LOHI_write&Read_Data_vliw1&Read_Data_vliw2&signextended2&IFIDs(71 downto 67)&IFIDs(113 downto 109)&chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)&IFIDs(119 downto 114)&IFIDs(31 downto 0)&read_data1&read_data2&Signextended&IFIDs(108 downto 104)&IFIDs(103 downto 99);
             --pipeline register IDEX
         IDEX: regi generic map (N=>288)
@@ -587,20 +587,20 @@ end component Forwarding;
                    write_enable=>'1'
              );
               --EXMEM register mapping relations
-    --ChosenWriteReg->EXMEMs(4 downto 0)
-    --ForwardBout->EXMEMs(36 downto 5)
-    --ALU_Result->EXMEMs(68 downto 37)
-    --'0'->EXMEMs(69) /was the zero flag from the ALU which was in earlier implementation used for branch. This can now be considered a "reserved" bit
-    --branchadder->EXMEMs(101 downto 70)
-    --Concat->EXMems(133 downto 102) --no longer in use
-    --Chosen_OP(2 downto 0)/IDEXs(146 downto 144)-> EXMEMs(136 downto 134)
-    --memtoreg->EXMEMs(137)
-    --regdest/IDEX(149)->EXMEMs(138)
-    --LO_IN-->EXMEMs(170 downto 139)
+    --ChosenWriteReg											->EXMEMs(4 downto 0)
+    --ForwardBout												->EXMEMs(36 downto 5)
+    --ALU_Result												->EXMEMs(68 downto 37)
+    --'0'														->EXMEMs(69) /was the zero flag from the ALU which was in earlier implementation used for branch. This can now be considered a "reserved" bit
+    --branchadder												->EXMEMs(101 downto 70)
+    --Concat													->EXMems(133 downto 102) --no longer in use
+    --Chosen_OP(2 downto 0)/IDEXs(146 downto 144)	->EXMEMs(136 downto 134)
+    --memtoreg													->EXMEMs(137)
+    --regdest/IDEX(149)										->EXMEMs(138)
+    --LO_IN														->EXMEMs(170 downto 139)
     --Imemdata2(16 downto 11)/IDEXs(175 downto 171)->EXMEMs(175 downto 171)-- no longer in use?
-    --memtoreg2->EXMEMs(176)
-    --LOHI_write/IDEXs(259)->EXMEMs(177)
-    --HI_IN->EXMEMs(209 downto 178)
+    --memtoreg2												->EXMEMs(176)
+    --LOHI_write/IDEXs(259)								->EXMEMs(177)
+    --HI_IN														->EXMEMs(209 downto 178)
 
     EXMEM_in<=HI_IN&IDEXs(259)&memtoreg2&IDEXs(162 downto 158)&LO_IN &IDEXs(149)&memtoreg&IDEXs(146 downto 144)&concat&branchadder&'0'&ALU_Result&ForwardBout&ChosenWriteReg;
            --pipeline register EXMEM

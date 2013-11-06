@@ -4,13 +4,13 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: toplevel.prj
 
@@ -193,7 +193,6 @@ Parsing architecture <Behavioral> of entity <toplevel>.
 Elaborating entity <toplevel> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <com> (architecture <Behavioral>) with generics from library <work>.
-INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/com.vhd" Line 231. Case statement is complete. others clause is never selected
 
 Elaborating entity <Dmemory> (architecture <Behavioral>) with generics from library <work>.
 
@@ -285,8 +284,8 @@ Synthesizing Unit <com>.
     Found 3-bit register for signal <state>.
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
-    | States             | 8                                              |
-    | Transitions        | 16                                             |
+    | States             | 7                                              |
+    | Transitions        | 15                                             |
     | Inputs             | 5                                              |
     | Outputs            | 8                                              |
     | Clock              | clk (rising_edge)                              |
@@ -336,14 +335,14 @@ Synthesizing Unit <PROCESSOR>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 474: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 474: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 474: Output port <FLAGS_Zero> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 474: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 699: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 710: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
-    Found 32-bit adder for signal <imem_address2> created at line 457.
-    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 425
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Zero> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 692: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 703: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
+    Found 32-bit adder for signal <imem_address2> created at line 450.
+    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 418
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
@@ -2192,7 +2191,6 @@ Optimizing FSM <TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
  011   | 011
  010   | 010
  101   | 101
- 110   | 110
  111   | 111
 -------------------
 
@@ -2377,14 +2375,14 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 835
+# BELS                             : 836
 #      BUF                         : 6
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 7
-#      LUT2                        : 45
+#      LUT2                        : 47
 #      LUT3                        : 119
-#      LUT4                        : 50
+#      LUT4                        : 49
 #      LUT5                        : 153
 #      LUT6                        : 408
 #      MUXCY                       : 29
@@ -2392,10 +2390,10 @@ Primitive and Black Box Usage:
 #      VCC                         : 1
 #      XORCY                       : 8
 # FlipFlops/Latches                : 704
-#      FD                          : 20
+#      FD                          : 21
 #      FDCE                        : 32
 #      FDE                         : 7
-#      FDR                         : 439
+#      FDR                         : 438
 #      FDRE                        : 199
 #      FDS                         : 7
 # RAMS                             : 15
@@ -2420,8 +2418,8 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             704  out of  18224     3%  
- Number of Slice LUTs:                  810  out of   9112     8%  
-    Number used as Logic:               785  out of   9112     8%  
+ Number of Slice LUTs:                  811  out of   9112     8%  
+    Number used as Logic:               786  out of   9112     8%  
     Number used as Memory:               25  out of   2176     1%  
        Number used as RAM:               20
        Number used as SRL:                5
@@ -2429,8 +2427,8 @@ Slice Logic Utilization:
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:   1171
    Number with an unused Flip Flop:     467  out of   1171    39%  
-   Number with an unused LUT:           361  out of   1171    30%  
-   Number of fully used LUT-FF pairs:   343  out of   1171    29%  
+   Number with an unused LUT:           360  out of   1171    30%  
+   Number of fully used LUT-FF pairs:   344  out of   1171    29%  
    Number of unique control sets:        27
 
 IO Utilization: 
@@ -2476,7 +2474,7 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 19.554ns (Maximum Frequency: 51.140MHz)
-   Minimum input arrival time before clock: 7.809ns
+   Minimum input arrival time before clock: 8.044ns
    Maximum output required time after clock: 4.226ns
    Maximum combinational path delay: No path found
 
@@ -2487,7 +2485,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 19.554ns (frequency: 51.140MHz)
-  Total number of paths / destination ports: 1659565 / 1843
+  Total number of paths / destination ports: 1659562 / 1843
 -------------------------------------------------------------------------
 Delay:               19.554ns (Levels of Logic = 2)
   Source:            MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (DSP)
@@ -2500,8 +2498,8 @@ Delay:               19.554ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      DSP48A1:CLK->P47     18   8.791   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1)
-     DSP48A1:C30->PCOUT0    1   3.225   0.000  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_0)
-     DSP48A1:PCIN0->P47   18   2.772   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3)
+     DSP48A1:C30->PCOUT6    1   3.225   0.000  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_6)
+     DSP48A1:PCIN6->P47   18   2.772   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3)
      DSP48A1:C30               2.298          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
     ----------------------------------------
     Total                     19.554ns (17.086ns logic, 2.468ns route)
@@ -2509,24 +2507,27 @@ Delay:               19.554ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 579 / 455
+  Total number of paths / destination ports: 579 / 454
 -------------------------------------------------------------------------
-Offset:              7.809ns (Levels of Logic = 3)
-  Source:            reset (PAD)
-  Destination:       TDT4255_COM/write_data_31 (FF)
+Offset:              8.044ns (Levels of Logic = 6)
+  Source:            command<11> (PAD)
+  Destination:       TDT4255_COM/state_FSM_FFd3 (FF)
   Destination Clock: clk rising
 
-  Data Path: reset to TDT4255_COM/write_data_31
+  Data Path: command<11> to TDT4255_COM/state_FSM_FFd3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            47   1.328   1.770  reset_IBUF (reset_IBUF)
-     BUF:I->O             47   0.374   1.771  reset_IBUF_1 (reset_IBUF_1)
-     LUT4:I3->O           40   0.373   1.653  TDT4255_COM/_n0076_inv_01 (TDT4255_COM/_n0076_inv_0)
-     FDR:R                     0.541          TDT4255_COM/write_addr_0
+     IBUF:I->O             1   1.328   1.283  command_11_IBUF (command_11_IBUF)
+     LUT5:I0->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In51 (TDT4255_COM/state_FSM_FFd1-In5)
+     LUT5:I2->O            1   0.373   0.682  TDT4255_COM/state_FSM_FFd1-In54 (TDT4255_COM/state_FSM_FFd1-In53)
+     LUT6:I5->O            4   0.373   0.804  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
+     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd3-In1_SW0 (N18)
+     LUT6:I3->O            1   0.373   0.000  TDT4255_COM/state_FSM_FFd3-In1 (TDT4255_COM/state_FSM_FFd3-In)
+     FDR:D                     0.142          TDT4255_COM/state_FSM_FFd3
     ----------------------------------------
-    Total                      7.809ns (2.616ns logic, 5.193ns route)
-                                       (33.5% logic, 66.5% route)
+    Total                      8.044ns (3.335ns logic, 4.709ns route)
+                                       (41.5% logic, 58.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -2563,12 +2564,12 @@ clk            |   19.554|    5.731|    5.655|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 40.00 secs
-Total CPU time to Xst completion: 40.01 secs
+Total REAL time to Xst completion: 41.00 secs
+Total CPU time to Xst completion: 41.23 secs
  
 --> 
 
-Total memory usage is 316704 kilobytes
+Total memory usage is 317664 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 1379 (   0 filtered)
