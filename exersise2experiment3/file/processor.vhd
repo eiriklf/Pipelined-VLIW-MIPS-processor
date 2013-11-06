@@ -96,11 +96,11 @@ architecture Behavioral of PROCESSOR is
               IDEXreset                       : out std_logic; --resets idex register syncronously
               State                           : out std_logic_vector(1 downto 0); --the incremented state to be written back to the local branch prediction buffer (ID stage).
               State_in                        : in std_logic_vector(1 downto 0);-- the information from the local branch prediction buffer. (IF stage)
-              IFID_state_in                   : in std_logic_vector(1 downto 0);   --the information from the local branch prediction buffer.(ID stage)
+              IDEX_state_in                   : in std_logic_vector(1 downto 0);   --the information from the local branch prediction buffer.(ID stage)
               buffer_write                    : out std_logic;  --signal that allow writes to all the prediction buffers
               branch_ok                       : out std_logic; --signal to allow the calculated branch address to the PC register
               revert                          : out std_logic;-- signal that allows reverting a faulty branchprediction
-              IFIDbranch_taken                : in std_logic;--branch_taken signal in the ID stage
+				  IDEXbranch_taken					 : in std_logic;
               branch_taken                    : out std_logic;--signals the a mux wheter a branchprediction should be taken or not. Signal is determined in IF stage
               branched1                       : in std_logic; --tells wheter a branch (not the prediction) is actually taken or not
               predicted_address               : in std_logic_vector(31 downto 0);--this is the predicted address, it must be tested if its the actual right branchaddress
@@ -378,8 +378,8 @@ end component Forwarding;
 	 
 	 --prediction_address input for use in the branchpredictionunit(EX stage)
 	 signal predicted_address_in: std_logic_vector(31 downto 0);
-    signal prediction_readaddress:std_logic_vector(4 downto 0);
-    signal prediction_writeaddress:std_logic_vector(4 downto 0);
+    signal prediction_readaddress:std_logic_vector(6 downto 0);
+    signal prediction_writeaddress:std_logic_vector(6 downto 0);
     signal global_prediction_out: std_logic_vector(1 downto 0);
         --output/input for state in branchpredictor
     signal state_writeback:std_logic_vector(1 downto 0);
@@ -669,12 +669,12 @@ end component Forwarding;
                 IFIDInstructionType          =>idexs(143 downto 138),--IFIDs(119 downto 114),
                 buffer_write                 =>buffer_write,
                 State_in                     =>stateread,
-                IFID_state_in                =>idexs(267 downto 266),--branch information data read from the prediction buffer(IF stage, sent through pipeline to IDEX)
+                IDEX_state_in                =>idexs(267 downto 266),--branch information data read from the prediction buffer(IF stage, sent through pipeline to IDEX)
                 State                        =>State_writeback,--branch information data to be written back to the prediction buffer(EX stage)
                 IFIDreset                    =>IFIDreset,
                 IDEXreset                    =>IDEXreset,
                 branch_ok                    =>branch_ok,
-                IFIDbranch_taken             =>idexs(268), 
+                IDEXbranch_taken             =>idexs(268), 
                 branch_taken                 =>branch_taken,
                 revert                       =>revert,
                 branch_address               => BranchAdder,--output from branch address adder. Need to check that the predicted address and the actual branch target are the same
@@ -685,7 +685,7 @@ end component Forwarding;
               
         --concatination used for jump instruction. The address field is shifted by
         -- 1 bit to the left to make sure that the data allways is "aligned" after
-        --the jump (the accessed address must allways be even).
+        --the jump (the accessed address must allways be even if the first instructionaddress is 0).
     Concat <= IFIDs(31 downto 27)&IFIDs(113 downto 88)&'0';
 
     -- Incrementer increases input from PC with 2 bits.
@@ -708,6 +708,7 @@ end component Forwarding;
                        );
     --The branch target buffer stores the branch target addresses of previous branches. It is indexed by
     --the outputs from the PC only.
+	 --4 branch predictions/predictors shares each branch address.
     BRANCH_TARGET_BUFFER: predictorbuffer
     port map(
             CLK             =>clk,              
@@ -719,12 +720,12 @@ end component Forwarding;
             Data_out        =>prediction_address
     );
         --this is the register file where the branch prediction-counters are stored. The input signals are assigned here above the port map of the register
-        prediction_readaddress<=global_prediction_out&pc_output(3 downto 1);
-        prediction_writeaddress<=idexs(287 downto 286)&idexs(263 downto 261); --the write address is "global_prediction_out&pc_output(3 downto 1)" in IDEX stage.-
+        prediction_readaddress<=global_prediction_out&pc_output(5 downto 1);
+        prediction_writeaddress<=idexs(287 downto 286)&idexs(265 downto 261); --the write address is "global_prediction_out&pc_output(3 downto 1)" in IDEX stage.-
         --doing that is done because you want to ensure that the entry to be updated is on the same address as where the branching is done.
         --We found out this by some extensive testing.
         BRANCH_PREDICTION_BUFFER: predictorbuffer
-       generic map (N =>2, M=>32, K=>4)
+       generic map (N =>2, M=>128, K=>6)
     port map(
             CLK             =>clk,              
             RESET           =>reset,

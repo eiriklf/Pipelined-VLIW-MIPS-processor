@@ -4,8 +4,8 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="164">
-<DesignStatistics TimeStamp="Wed Nov 06 15:46:02 2013"><group name="NetStatistics">
+<DeviceUsageSummary rev="171">
+<DesignStatistics TimeStamp="Wed Nov 06 23:18:19 2013"><group name="NetStatistics">
 <item name="NumNets_Active" rev="157">
 <attrib name="value" value="1843"/></item>
 <item name="NumNets_Gnd" rev="157">
@@ -122,76 +122,72 @@
 <attrib name="value" value="71"/></item>
 </group>
 <group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="164">
+<item name="AGG_BONDED_IO" rev="171">
 <attrib name="value" value="138"/></item>
-<item name="AGG_IO" rev="164">
+<item name="AGG_IO" rev="171">
 <attrib name="value" value="138"/></item>
-<item name="AGG_SLICE" rev="164">
-<attrib name="value" value="355"/></item>
-<item name="NUM_BONDED_IOB" rev="164">
+<item name="AGG_SLICE" rev="171">
+<attrib name="value" value="366"/></item>
+<item name="NUM_BONDED_IOB" rev="171">
 <attrib name="value" value="138"/></item>
-<item name="NUM_BSFULL" rev="164">
-<attrib name="value" value="389"/></item>
-<item name="NUM_BSLUTONLY" rev="164">
-<attrib name="value" value="342"/></item>
-<item name="NUM_BSREGONLY" rev="164">
-<attrib name="value" value="280"/></item>
-<item name="NUM_BSUSED" rev="164">
-<attrib name="value" value="1011"/></item>
-<item name="NUM_BUFG" rev="164">
+<item name="NUM_BSFULL" rev="171">
+<attrib name="value" value="498"/></item>
+<item name="NUM_BSLUTONLY" rev="171">
+<attrib name="value" value="460"/></item>
+<item name="NUM_BSREGONLY" rev="171">
+<attrib name="value" value="162"/></item>
+<item name="NUM_BSUSED" rev="171">
+<attrib name="value" value="1120"/></item>
+<item name="NUM_BUFG" rev="171">
 <attrib name="value" value="1"/></item>
-<item name="NUM_DPRAM_O5ANDO6" rev="164">
-<attrib name="value" value="10"/></item>
-<item name="NUM_DPRAM_O5ONLY" rev="164">
-<attrib name="value" value="2"/></item>
-<item name="NUM_DPRAM_O6ONLY" rev="164">
-<attrib name="value" value="6"/></item>
-<item name="NUM_DSP48A1" rev="164">
-<attrib name="value" value="4"/></item>
-<item name="NUM_LOGIC_O5ANDO6" rev="164">
-<attrib name="value" value="99"/></item>
-<item name="NUM_LOGIC_O5ONLY" rev="164">
-<attrib name="value" value="6"/></item>
-<item name="NUM_LOGIC_O6ONLY" rev="164">
-<attrib name="value" value="590"/></item>
-<item name="NUM_LUT_RT_DRIVES_CARRY4" rev="164">
-<attrib name="value" value="1"/></item>
-<item name="NUM_LUT_RT_DRIVES_FLOP" rev="164">
-<attrib name="value" value="13"/></item>
-<item name="NUM_LUT_RT_EXO5" rev="164">
-<attrib name="value" value="13"/></item>
-<item name="NUM_LUT_RT_EXO6" rev="164">
-<attrib name="value" value="1"/></item>
-<item name="NUM_LUT_RT_O5" rev="164">
-<attrib name="value" value="1"/></item>
-<item name="NUM_LUT_RT_O6" rev="164">
-<attrib name="value" value="6"/></item>
-<item name="NUM_RAMB8BWER" rev="164">
-<attrib name="value" value="7"/></item>
-<item name="NUM_SLICEL" rev="164">
-<attrib name="value" value="13"/></item>
-<item name="NUM_SLICEM" rev="164">
-<attrib name="value" value="7"/></item>
-<item name="NUM_SLICEX" rev="164">
-<attrib name="value" value="335"/></item>
-<item name="NUM_SLICE_CARRY4" rev="164">
+<item name="NUM_DPRAM_O5ANDO6" rev="171">
+<attrib name="value" value="12"/></item>
+<item name="NUM_DPRAM_O6ONLY" rev="171">
 <attrib name="value" value="8"/></item>
-<item name="NUM_SLICE_CONTROLSET" rev="164">
-<attrib name="value" value="27"/></item>
-<item name="NUM_SLICE_CYINIT" rev="164">
-<attrib name="value" value="851"/></item>
-<item name="NUM_SLICE_F7MUX" rev="164">
-<attrib name="value" value="5"/></item>
-<item name="NUM_SLICE_FF" rev="164">
-<attrib name="value" value="704"/></item>
-<item name="NUM_SLICE_UNUSEDCTRL" rev="164">
-<attrib name="value" value="77"/></item>
-<item name="NUM_SRL_O5ANDO6" rev="164">
+<item name="NUM_DSP48A1" rev="171">
+<attrib name="value" value="4"/></item>
+<item name="NUM_LOGIC_O5ANDO6" rev="171">
+<attrib name="value" value="97"/></item>
+<item name="NUM_LOGIC_O5ONLY" rev="171">
+<attrib name="value" value="7"/></item>
+<item name="NUM_LOGIC_O6ONLY" rev="171">
+<attrib name="value" value="807"/></item>
+<item name="NUM_LUT_RT_DRIVES_CARRY4" rev="171">
 <attrib name="value" value="1"/></item>
-<item name="NUM_SRL_O6ONLY" rev="164">
+<item name="NUM_LUT_RT_DRIVES_FLOP" rev="171">
+<attrib name="value" value="22"/></item>
+<item name="NUM_LUT_RT_EXO5" rev="171">
+<attrib name="value" value="22"/></item>
+<item name="NUM_LUT_RT_EXO6" rev="171">
+<attrib name="value" value="1"/></item>
+<item name="NUM_LUT_RT_O6" rev="171">
+<attrib name="value" value="7"/></item>
+<item name="NUM_RAMB8BWER" rev="171">
+<attrib name="value" value="7"/></item>
+<item name="NUM_SLICEL" rev="171">
+<attrib name="value" value="16"/></item>
+<item name="NUM_SLICEM" rev="171">
+<attrib name="value" value="6"/></item>
+<item name="NUM_SLICEX" rev="171">
+<attrib name="value" value="344"/></item>
+<item name="NUM_SLICE_CARRY4" rev="171">
+<attrib name="value" value="8"/></item>
+<item name="NUM_SLICE_CONTROLSET" rev="171">
+<attrib name="value" value="18"/></item>
+<item name="NUM_SLICE_CYINIT" rev="171">
+<attrib name="value" value="1078"/></item>
+<item name="NUM_SLICE_F7MUX" rev="171">
+<attrib name="value" value="10"/></item>
+<item name="NUM_SLICE_FF" rev="171">
+<attrib name="value" value="701"/></item>
+<item name="NUM_SLICE_UNUSEDCTRL" rev="171">
+<attrib name="value" value="99"/></item>
+<item name="NUM_SRL_O5ANDO6" rev="171">
+<attrib name="value" value="1"/></item>
+<item name="NUM_SRL_O6ONLY" rev="171">
 <attrib name="value" value="3"/></item>
-<item name="NUM_UNUSABLE_FF_BELS" rev="164">
-<attrib name="value" value="71"/></item>
+<item name="NUM_UNUSABLE_FF_BELS" rev="171">
+<attrib name="value" value="46"/></item>
 </group>
 </DesignStatistics>
 <ReportConfigData TimeStamp="Mon Nov 04 20:45:15 2013"><group name="DSP48A1">

@@ -123,16 +123,16 @@ ARCHITECTURE behavior OF tb_toplevel IS
 	constant ins6  : std_logic_vector(0 to 31) := X"00221820";--add $3, $1, $2
 	constant ins7  : std_logic_vector(0 to 31) := X"AC030004";--sw $3, 4($0)
 	constant ins8  : std_logic_vector(0 to 31) := X"AC030006";--sw $3, 6($0)
-	constant ins9  : std_logic_vector(0 to 31) := X"00007812";--MFLO $15
+	constant ins9  : std_logic_vector(0 to 31) := X"00007812";--MFLO $15 --note that hazards on MFLO and MFHI must be resolved by the compiler
 	constant ins10 : std_logic_vector(0 to 31) := X"3C030006";--lui $3, 6 forwarded to the add insturction 
 	constant ins11 : std_logic_vector(0 to 31) := X"AC030008";--sw $3, 8($0)
 	constant ins12 : std_logic_vector(0 to 31) := X"00231820";--add $3, $1, $3
 	constant ins13 : std_logic_vector(0 to 31) := X"AC030009";--sw $3, 9($0)
-  	constant ins14 : std_logic_vector(0 to 31) := X"08000011";--NOP
-	constant ins15 : std_logic_vector(0 to 31) := X"00000000"; --NOP
-	constant ins16 : std_logic_vector(0 to 31) := X"016B5820"; --add $11,$11,$11
-   constant ins17 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
-	constant ins18 : std_logic_vector(0 to 31) :=X"1401FFD8";--bne $0, $1, -3
+  	constant ins14 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
+	constant ins15 : std_logic_vector(0 to 31) := X"14010002";--bne $0, $1, 2
+	constant ins16 : std_logic_vector(0 to 31) := X"016B5820";--add $11,$11,$11
+	constant ins17 : std_logic_vector(0 to 31) :=X"1401FFEE";--bne $0, $1, -18
+   constant ins18 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
 	constant ins19 : std_logic_vector(0 to 31) :=X"1401FFFD";--bne $0, $1, -3
 	constant ins20 : std_logic_vector(0 to 31) :=X"1001FFFB";--beq $0, $1, -3
 	constant ins21 : std_logic_vector(0 to 31) :=X"156CFFFD";--bne $11, $12, -3;
@@ -659,7 +659,7 @@ BEGIN
 		command <= CMD_RUN;					
     bus_address_in <= zero;
     bus_data_in <= zero;
-		wait for clk_period*100;
+		wait for clk_period*500;
 		
 		    command <= CMD_IDLE;					
     bus_address_in <= zero;
