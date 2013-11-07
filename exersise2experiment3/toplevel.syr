@@ -4,7 +4,7 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -233,7 +233,7 @@ Elaborating entity <control> (architecture <Behavioral>) from library <work>.
 Elaborating entity <Hazarddetection> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <branchprediction> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\branch_prediction_unit.vhd" Line 171. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\branch_prediction_unit.vhd" Line 172. Case statement is complete. others clause is never selected
 
 Elaborating entity <adder> (architecture <Behavioral>) with generics from library <work>.
 
@@ -335,14 +335,14 @@ Synthesizing Unit <PROCESSOR>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Zero> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 692: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 703: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
-    Found 32-bit adder for signal <imem_address2> created at line 450.
-    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 418
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 458: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 458: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 458: Output port <FLAGS_Zero> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 458: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 693: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 704: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
+    Found 32-bit adder for signal <imem_address2> created at line 441.
+    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 409
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
@@ -488,11 +488,11 @@ Unit <Hazarddetection> synthesized.
 
 Synthesizing Unit <branchprediction>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/branch_prediction_unit.vhd".
-    Found 2-bit 4-to-1 multiplexer for signal <State> created at line 135.
-    Found 32-bit comparator not equal for signal <predicted_address[31]_branch_address[31]_equal_4_o> created at line 90
+    Found 2-bit 4-to-1 multiplexer for signal <State> created at line 136.
+    Found 32-bit comparator not equal for signal <predicted_address[31]_branch_address[31]_equal_4_o> created at line 91
     Summary:
 	inferred   1 Comparator(s).
-	inferred  18 Multiplexer(s).
+	inferred  16 Multiplexer(s).
 Unit <branchprediction> synthesized.
 
 Synthesizing Unit <adder>.
@@ -597,8 +597,8 @@ Macro Statistics
  32-bit comparator equal                               : 1
  32-bit comparator not equal                           : 1
  5-bit comparator equal                                : 6
-# Multiplexers                                         : 123
- 1-bit 2-to-1 multiplexer                              : 47
+# Multiplexers                                         : 121
+ 1-bit 2-to-1 multiplexer                              : 45
  10-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  2-bit 4-to-1 multiplexer                              : 1
@@ -2156,8 +2156,8 @@ Macro Statistics
  32-bit comparator equal                               : 1
  32-bit comparator not equal                           : 1
  5-bit comparator equal                                : 6
-# Multiplexers                                         : 185
- 1-bit 2-to-1 multiplexer                              : 111
+# Multiplexers                                         : 183
+ 1-bit 2-to-1 multiplexer                              : 109
  10-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  2-bit 4-to-1 multiplexer                              : 1
@@ -2495,8 +2495,8 @@ Delay:               19.554ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      DSP48A1:CLK->P47     18   8.791   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1)
-     DSP48A1:C30->PCOUT9    1   3.225   0.000  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_9)
-     DSP48A1:PCIN9->P47   18   2.772   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3)
+     DSP48A1:C30->PCOUT5    1   3.225   0.000  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_5)
+     DSP48A1:PCIN5->P47   18   2.772   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3)
      DSP48A1:C30               2.298          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
     ----------------------------------------
     Total                     19.554ns (17.086ns logic, 2.468ns route)
@@ -2561,12 +2561,12 @@ clk            |   19.554|    5.499|    5.655|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 41.00 secs
-Total CPU time to Xst completion: 40.77 secs
+Total REAL time to Xst completion: 42.00 secs
+Total CPU time to Xst completion: 41.50 secs
  
 --> 
 
-Total memory usage is 317600 kilobytes
+Total memory usage is 320592 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 1383 (   0 filtered)

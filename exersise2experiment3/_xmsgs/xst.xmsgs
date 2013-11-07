@@ -26,22 +26,22 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">RESET</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">467</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Carry</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">458</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Carry</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">467</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">458</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">467</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Zero</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">458</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Zero</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">467</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Negative</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">458</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Negative</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUTD</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">692</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Addressincrementer</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">693</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Addressincrementer</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">703</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ADDRESSADDER</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">704</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ADDRESSADDER</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="info" file="Xst" num="3010" delta="old" >&quot;<arg fmt="%s" index="1">/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">82</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">BEGIN_ALU1B</arg>&gt; is unconnected or connected to loadless signal.

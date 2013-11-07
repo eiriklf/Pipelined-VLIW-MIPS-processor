@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Wed Nov 06 23:15:57 2013">
+  <application stringID="Xst" timeStamp="Thu Nov 07 14:42:57 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -47,7 +47,7 @@
         <item stringID="User_EnvOsname" value="Microsoft "/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="dmlab09"/>
+      <item stringID="User_EnvHost" value="dmlab03"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
@@ -126,8 +126,8 @@
       <item dataType="int" stringID="XST_COMPARATORS" value="8">
         <item dataType="int" stringID="XST_32BIT_COMPARATOR_EQUAL" value="1"/>
       </item>
-      <item dataType="int" stringID="XST_MULTIPLEXERS" value="123">
-        <item dataType="int" stringID="XST_1BIT_2TO1_MULTIPLEXER" value="47"/>
+      <item dataType="int" stringID="XST_MULTIPLEXERS" value="121">
+        <item dataType="int" stringID="XST_1BIT_2TO1_MULTIPLEXER" value="45"/>
         <item dataType="int" stringID="XST_10BIT_2TO1_MULTIPLEXER" value="1"/>
         <item dataType="int" stringID="XST_2BIT_2TO1_MULTIPLEXER" value="6"/>
         <item dataType="int" stringID="XST_32BIT_2TO1_MULTIPLEXER" value="20"/>
@@ -151,8 +151,8 @@
       <item dataType="int" stringID="XST_COMPARATORS" value="8">
         <item dataType="int" stringID="XST_32BIT_COMPARATOR_EQUAL" value="1"/>
       </item>
-      <item dataType="int" stringID="XST_MULTIPLEXERS" value="185">
-        <item dataType="int" stringID="XST_1BIT_2TO1_MULTIPLEXER" value="111"/>
+      <item dataType="int" stringID="XST_MULTIPLEXERS" value="183">
+        <item dataType="int" stringID="XST_1BIT_2TO1_MULTIPLEXER" value="109"/>
         <item dataType="int" stringID="XST_10BIT_2TO1_MULTIPLEXER" value="1"/>
         <item dataType="int" stringID="XST_2BIT_2TO1_MULTIPLEXER" value="6"/>
         <item dataType="int" stringID="XST_32BIT_2TO1_MULTIPLEXER" value="18"/>

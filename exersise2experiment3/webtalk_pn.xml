@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Wed Nov 06 23:15:57 2013">
+<application name="pn" timeStamp="Thu Nov 07 14:42:57 2013">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="B351DA198A024436838355BDD3F31319" type="project"/>
 <property name="ProjectIteration" value="2" type="project"/>
@@ -17,7 +17,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_LastAppliedStrategy" value="Xilinx Default (unlocked)" type="design"/>
 <property name="PROP_ManualCompileOrderImp" value="false" type="design"/>
 <property name="PROP_PropSpecInProjFile" value="Store non-default values only" type="design"/>
-<property name="PROP_SelectedInstanceHierarchicalPath" value="/tb_toplevel/uut/INST_MEM" type="process"/>
+<property name="PROP_SelectedInstanceHierarchicalPath" value="/tb_toplevel" type="process"/>
 <property name="PROP_Simulator" value="ISim (VHDL/Verilog)" type="design"/>
 <property name="PROP_SynthOptEffort_spartan6" value="High" type="process"/>
 <property name="PROP_SynthTopFile" value="changed" type="process"/>
@@ -31,7 +31,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
 <property name="PROP_lockPinsUcfFile" value="changed" type="process"/>
 <property name="PROP_parIgnoreTimingConstraints" value="true" type="process"/>
-<property name="PROP_selectedSimRootSourceNode_behav" value="work.memory" type="process"/>
+<property name="PROP_selectedSimRootSourceNode_behav" value="work.tb_toplevel" type="process"/>
 <property name="PROP_xilxMapReportDetail" value="true" type="process"/>
 <property name="PROP_xilxSynthMaxFanout_spartan6" value="50" type="process"/>
 <property name="PROP_xilxSynthRegBalancing" value="Yes" type="process"/>

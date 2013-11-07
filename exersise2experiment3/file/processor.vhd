@@ -34,17 +34,8 @@ end PROCESSOR;
 architecture Behavioral of PROCESSOR is
 
     --component declarations
-    --component controlpath is
-    --Port (    PC_OUTPUT              : in  STD_LOGIC_VECTOR (31 downto 0);
-      --        Signextended           : in  STD_LOGIC_VECTOR (31 downto 0);
-        --      Instr_Mem_Concat : in  STD_LOGIC_VECTOR (25 downto 0);
-         --     FinalPCAddress : out  STD_LOGIC_VECTOR (31 downto 0);
-          --    jump : in  STD_LOGIC;
-           --   branch: in std_logic;
-            --  zero: in std_logic);
-    --end component controlpath;
     
-    --the controlmodule for the secound path with multiplier
+    --the controlmodule for the secound path with multiplier. 
     component Vliw_multipliercontrol is
     Port ( IFID_funct : in  STD_LOGIC_VECTOR (5 downto 0);
            LOHI_write : out  STD_LOGIC
@@ -557,14 +548,16 @@ end component Forwarding;
              );
 
           --IDEX register mapping relations
+	 --RD_address/IFIDs(103 downto 99)		 					->IDEXs(4 downto 0)
+	 --RT_address/IFIDs(108 downto 104)							->IDEXs(9 downto 5)
     --signextended													->IDEXs(41 downto 10)
     --read_data2														->IDEXs(73 downto 42)
     --read_data1														->IDEXs(105 downto 74)
-    --incremented														->idexs(137 downto 106)used?
+    --incremented														->idexs(137 downto 106)
     --IFID_instructiontype											->idexs(143 downto 138)
     --chosen_OP(8 downto 4)&memtoreg&chosen_OP(2 downto 0)->IDEXs(152 downto 144)
     --IFID_RS_address												->IDEXs(157 downto 153)
-    --IFIDs(71 downto 67)/Imemdata2(16 downto 11)			->IDEXs(162 downto 158)
+    --IFIDs(71 downto 67)/Imemaddress2(16 downto 11)		->IDEXs(162 downto 158)--unused
     --signextended2													->IDEXs(194 downto 163)
     --Read_Data_vliw2												->IDEXs(226 downto 195) --Rt data from secound issue instruction
     --Read_Data_vliw1												->IDEX(258 downto 227) --RS data from secound issue isntruction
@@ -592,12 +585,12 @@ end component Forwarding;
     --ALU_Result												->EXMEMs(68 downto 37)
     --'0'														->EXMEMs(69) /was the zero flag from the ALU which was in earlier implementation used for branch. This can now be considered a "reserved" bit
     --branchadder												->EXMEMs(101 downto 70)
-    --Concat													->EXMems(133 downto 102) --no longer in use
+    --Concat													->EXMems(133 downto 102) --no longer in use (was used for jump early in development)
     --Chosen_OP(2 downto 0)/IDEXs(146 downto 144)	->EXMEMs(136 downto 134)
     --memtoreg													->EXMEMs(137)
     --regdest/IDEX(149)										->EXMEMs(138)
     --LO_IN														->EXMEMs(170 downto 139)
-    --Imemdata2(16 downto 11)/IDEXs(175 downto 171)->EXMEMs(175 downto 171)-- no longer in use?
+    --Imemdata2(16 downto 11)/IDEXs(175 downto 171)->EXMEMs(175 downto 171)-- no longer in use
     --memtoreg2												->EXMEMs(176)
     --LOHI_write/IDEXs(259)								->EXMEMs(177)
     --HI_IN														->EXMEMs(209 downto 178)
@@ -613,7 +606,15 @@ end component Forwarding;
                 write_enable=>'1'
                 );
               --MEMWB register mapping relations
-              --.....
+    --chosenWriteReg/EXMEMs(4 downto 0)->MEMWBs(4 downto 0)
+	 --Alu_result/EXMEMs(68 downto 37)->MEMWBs(36 downto 5)
+	 --Dmem_data_in->MEMWBs(68 downto 37)
+	 --regwrite/EXMEMs(136)->MEMWBs(69)
+	 --Memtoreg/EXMEMs(137)->MEMWBs(70)
+	 --LO_IN/EXMEMs(170 downto 139)->MEMWBs(102 downto 71)--unused
+	 --imemdata2/EXMEMs(175 downto 171)->MEMWBs(107 downto 103)--unused
+	 --memtoreg2/EXMEMs(176)->MEMWBs(108)
+	 --LOHI_write/EXMEMs(177)->MEMWBs(109)
     MEMWB_in<=EXMEMs(177)&EXMEMs(176)&EXMEMs(175 downto 171)&EXMEMs(170 downto 139)& EXMEMs(137)&EXMEMs(136)&dmem_data_in&EXMEMs(68 downto 37)&EXMEMs(4 downto 0);
            --pipeline register MEMWB
     MEMWB: regi generic map (N=>110)
@@ -678,7 +679,7 @@ end component Forwarding;
                 branch_taken                 =>branch_taken,
                 revert                       =>revert,
                 branch_address               => BranchAdder,--output from branch address adder. Need to check that the predicted address and the actual branch target are the same
-                predicted_address            =>predicted_address_in,-- the predicted address concated with the incremented PC_counter (IDEX stage)
+                predicted_address            =>predicted_address_in,-- the predicted address concated with the incremented PC_counter (EX stage)
                 branched1                    =>branched1
 
                 );
@@ -712,7 +713,7 @@ end component Forwarding;
     BRANCH_TARGET_BUFFER: predictorbuffer
     port map(
             CLK             =>clk,              
-            RESET           =>reset,                
+            RESET           =>reset, --not currently used               
             RW              =>buffer_write,     -- set this with the prediction output
             Read_address    =>pc_output(5 downto 1), --we shift pc_output one to the left in order to use all the bits
             Write_address   =>IDEXs(265 downto 261), --PC_output in IDEX stage
@@ -727,97 +728,117 @@ end component Forwarding;
         BRANCH_PREDICTION_BUFFER: predictorbuffer
        generic map (N =>2, M=>128, K=>6)
     port map(
-            CLK             =>clk,              
-            RESET           =>reset,
-            RW              =>buffer_write,
-            Read_address=>prediction_readaddress, --we shift pc_output one to the left(earlier when inputed to pipeline registers) in order to use all the addresses
-            Write_address=>prediction_writeaddress,
-            WRITE_DATA  =>state_writeback,
-            Data_out        =>stateread
+            CLK            	=>clk,              
+            RESET          	=>reset,--not currently used
+            RW              	=>buffer_write,
+            Read_address		=>prediction_readaddress, --we shift pc_output one to the left(earlier when inputed to pipeline registers) in order to use all the addresses
+            Write_address		=>prediction_writeaddress,
+            WRITE_DATA  		=>state_writeback,
+            Data_out        	=>stateread--outputs 1 branchpredictor/prediction
     );
 
 			--shift register used for the global branch information for the corrolating branch predictor
         global_prediction: shift_register 
-   Port map( data_in =>branched1,--fix this, everything branches
-           data_out =>global_prediction_out,--2 bits index + branch instruction address forms index for prediction register
-           clock =>clk,
-           reset=>reset,
-           write_enable=>buffer_write);
+   Port map( 
+			  data_in 		=>branched1,--inputs the resolved branch condition (taken or not taken)
+           data_out 		=>global_prediction_out,--2 bits index showing the result from last 2 branches
+           clock 			=>clk,
+           reset			=>reset,--not currently used
+           write_enable	=>buffer_write
+			  );
     
+	 --Forwarding mux1. Forwards values on "RS data"-path
     ForwardmuxA: TriputMux 
-    Port map( A =>IDEXs(105 downto 74),--readdataB
-           B =>EXMEMs(68 downto 37),--aluresult
-           C =>ChosenWriteData,
-           R =>ForwardAout,
-           control =>ctForwardA);
-              
-                ForwardmuxB: TriputMux 
-    Port map( A =>IDEXs(73 downto 42),--ReaddataA
-           B =>EXMEMs(68 downto 37),--aluresult
-           C =>ChosenWriteData,
-           R =>ForwardBout,
-           control =>ctForwardB);
+    Port map( 
+			  A 			=>IDEXs(105 downto 74),--read_data1
+           B 			=>EXMEMs(68 downto 37),--aluresult
+           C 			=>ChosenWriteData,
+           R 			=>ForwardAout,
+           control 	=>ctForwardA --signal from forwarding unit
+			  );
+    --Forwarding mux2. Forwards values on "RT data"-path          
+    ForwardmuxB: TriputMux 
+    Port map( 
+			  A 			=>IDEXs(73 downto 42),--Read_data2
+           B 			=>EXMEMs(68 downto 37),--aluresult
+           C 			=>ChosenWriteData,
+           R 			=>ForwardBout,
+           control 	=>ctForwardB
+			  );
 
-              --mux for chosing write register
-              --need to redefine the generic by mapping it to a new value.
-    MUX1: simple_multiplexer generic map ( N=>5) port map(
-
-              a => IDEXs(9 downto 5),
-           b => IDEXs(4 downto 0),
-           control_signal => IDEXs(150),--regdest,
-           output => ChosenWriteReg);
+     --mux for chosing write register
+    WRITEREG_MUX1: simple_multiplexer generic map ( N=>5) 
+	 port map(
+           a 					=> IDEXs(9 downto 5),
+           b		 			=> IDEXs(4 downto 0),
+           control_signal 	=> IDEXs(150),--regdest,
+           output 			=> ChosenWriteReg
+			  );
               
-              --mux for chosing alu input
-    MUX2: simple_multiplexer port map( 
-              a => ForwardBout,--IDEXs(73 downto 42),
-           b => IDEXs(41 downto 10),
-           control_signal => IDEXs(148),--alusrc,
-           output => ChosenALUInput);
+     --mux for chosing alu input
+    ALU_INPUT_MUX: simple_multiplexer 
+	 port map( 
+           a 					=> ForwardBout,
+           b 					=> IDEXs(41 downto 10),
+           control_signal 	=> IDEXs(148),--alusrc,
+           output 			=> ChosenALUInput
+			  );
+			  
             --mux for chosing input from DMEM
             QuadputMux_control<=MEMWBs(70)&MEMWBs(108);
-    MUX3: QuadputMux port map(   
-           b =>MEMWBs(68 downto 37),--dmem_data_in, 
-              a => MEMWBs(36 downto 5),--ALU_Result,
-              c =>LO_out,--MEMWBs(102 downto 71),--Make the move instruction on the first processor
-              D=>HI_out,--change to be in right pipeline
-           control =>QuadputMux_control,--memtoreg,--memtoreg2,
-           R => ChosenWriteData);
+    Regdest_MUX: QuadputMux 
+	 port map(   
+              a 				=>MEMWBs(36 downto 5),--ALU_Result,
+				  b 				=>MEMWBs(68 downto 37),--dmem_data_in, 
+              c 				=>LO_out,--output from LO register
+              d				=>HI_out,--output from HI register
+				  control 		=>QuadputMux_control,--memtoreg and memtoreg2,
+				  R 				=>ChosenWriteData
+				  );
 
     -- First multiplexor. It is used to choose between regular incremented PC value or PC value based on branching
-    MUX4: simple_multiplexer port map( 
-        a => mux2out,
-      b =>BranchAdder,-- EXMEMs(101 downto 70),
-        control_signal => branch_ok,
-      output => branchcalc
-    );
+    Branch_MUX: simple_multiplexer 
+	 port map( 
+				a 					=> mux2out,
+				b 					=> BranchAdder,
+				control_signal => branch_ok,
+				output 			=> branchcalc
+				);
+			
+			--concating prediction_address and incremented. This might give wrong target address in some situations(for instance because of signed bits), 
+			--but this is handled in the branchprediction unit.
         branch_taken_address<=incremented(31 downto 16)&prediction_address;
         --outputs pc counter if branch is taken and revert back to the old address if not taken
-            BranchTAKEN:    simple_multiplexer port map( 
-        a =>incremented,
-        b => branch_taken_address,--the calculated branch destination, maybe pc_output instead of incremented signal
-      control_signal =>branch_Taken,--must fix
-
-      output =>mux1out
+    BranchTAKEN_MUX: simple_multiplexer 
+	 port map( 
+        a 					=>incremented,--incremented pcaddress
+        b 					=> branch_taken_address,--the predicted branch destination
+		  control_signal 	=>branch_Taken,--from predictionunit
+        output 			=>mux1out
     );
     --output the result address from branchprediction
-                REVERT_PREDICTION:  simple_multiplexer port map( 
-        a =>mux1out,
-      b => idexs(137 downto 106),--incremented address
+    REVERT_PREDICTION_MUX:  
+	 simple_multiplexer 
+	 port map( 
+      a 					=>mux1out,
+      b 					=> idexs(137 downto 106),--incremented address
       control_signal =>revert,
-      output =>mux2out
+      output 			=>mux2out
     );
-    -- Second multiplexor. It is used to choose between the result from the first multiplexor, or PC value based on jump-instruction
-    MUX5: simple_multiplexer port map( 
-        a =>branchcalc,
-      b => Concat,
-      control_signal =>chosen_OP(0),--EXMEMs(134)
-      output =>FinalPCAddress
+    --jumpmux
+    JUMP_MUX: simple_multiplexer 
+	 port map( 
+        a 					=>branchcalc,
+		  b 					=> Concat,
+		  control_signal 	=>chosen_OP(0),
+        output 			=>FinalPCAddress
     );
-    
-        CONTROL_OUTPUT: simple_multiplexer generic map ( N=>10) port map( 
-        a =>"0000000000",
-      b => OPs,
-      control_signal =>control_enable,--jump,
-      output =>chosen_OP
+    --mux that enables or disables output from controlunit
+    CONTROL_OUTPUT: simple_multiplexer generic map ( N=>10) 
+	 port map( 
+		  a 					=>"0000000000",
+		  b 					=> OPs,
+		  control_signal 	=>control_enable,
+		  output 			=>chosen_OP
     );
 end Behavioral;

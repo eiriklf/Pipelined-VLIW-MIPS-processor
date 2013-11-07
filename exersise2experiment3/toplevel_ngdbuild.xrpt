@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Wed Nov 06 23:16:43 2013">
+  <application stringID="NgdBuild" timeStamp="Thu Nov 07 14:43:45 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -47,7 +47,7 @@
         <item stringID="User_EnvOsname" value="Microsoft "/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="dmlab09"/>
+      <item stringID="User_EnvHost" value="dmlab03"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>

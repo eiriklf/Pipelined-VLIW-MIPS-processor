@@ -20,16 +20,13 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
---the idea for the code in this file(shift_register) is based on the following page "http://esd.cs.ucr.edu/labs/tutorial/". However it's adapted for this use so i dont consider it "copy-paste"
+--this is the global register who keeps track of the most recent branches. There is currently one weakness with this implementation, as mentioned in the report.
+--The weakness is that there is a pipeline latency of 3 cycles from the point where the instruction is issued, to the point where the register actually is updated.
+--If any branches occurs in the meanwhile, this predictionscheme may not corrolate earlier branches correctly. 
+
+--This module gets updated with 1 bits input, when write_enable/bufferwrite=1. The register then shifts 1 left, while the input is inserted in the least significant bit.
 
 entity shift_register is
    Port ( data_in : in  STD_LOGIC;
