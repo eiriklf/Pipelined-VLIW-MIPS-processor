@@ -25,10 +25,8 @@ use IEEE.NUMERIC_STD.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+--This is the instruction memory, we changed the memory type from single port access to dual port in order to make it work properly with the VLIW architecture
+--The datamemory is not changed 
 
 entity memory is
 	generic (N :NATURAL; M :NATURAL);

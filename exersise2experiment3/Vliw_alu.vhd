@@ -27,15 +27,9 @@ use IEEE.STD_LOGIC_SIGNED.ALL;
 library WORK;
 use WORK.MIPS_CONSTANT_PKG.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
+--This is the multiplier unit. We believe that as it is now, it may be the most critical delay path in our implementation.
+--The delay may be reduced by adding latency to the multiply operation. However we have not done that because we did not have time for it,
+--and because we also believe that the forwarding unit also might be a bottleneck that limits the clock frequency to a value close to this.
 entity Vliw_alu is
 	generic (N: NATURAL);
         port(

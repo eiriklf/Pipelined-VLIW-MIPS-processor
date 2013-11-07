@@ -1,0 +1,2 @@
+vhdl work "netgen/map/toplevel_map.vhd"
+vhdl work "tb_toplevel_multiply.vhd"

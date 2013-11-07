@@ -25,10 +25,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+--This is the COM unit. We changed it slightly due to change to memory to make it update on falling edge instead of rising.
+--We removed 1 of the Read stages in statemachine, because it was causing latency problems and is not longer needed.
 
 entity com is
     
@@ -164,7 +162,7 @@ begin
             processor_enable  <= '0';
             write_imem        <= '0';      
             
-            state    <= STATE_RD3;
+            state    <= STATE_RD3;--goes straight to RD3
             
             
           when STATE_RD3 =>

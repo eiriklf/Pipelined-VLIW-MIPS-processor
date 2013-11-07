@@ -20,14 +20,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+--this module is responcible to avoid hazards where a register is read before the loadinstruction is completed(when the 2 instructions also use the same registers).
+--for simplicity we also "turn on" the processor in this module, when the processor_enable signal in the control module is set.
 
 entity Hazarddetection is
     Port ( IDEXCONTROL : in  STD_LOGIC_VECTOR(9 downto 0);

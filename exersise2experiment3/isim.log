@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\tb_toplevel_isim_beh.exe -gui -tclbatch isim.cmd -wdb C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_toplevel_isim_beh.wdb 
+Running: C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\tb_FPGA_isim_beh.exe -gui -tclbatch isim.cmd -wdb C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.wdb 
 ISim M.81d (signature 0x12940baa)
 ----------------------------------------------------------------------
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@xilinx.license.idi.ntnu.no'.
@@ -19,62 +19,82 @@ Time resolution is 1 ps
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
-at 0 ps, Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
-at 0 ps, Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(1), Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(1), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(1), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(2), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(2), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(3), Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(4), Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 40 ns(1), Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 40 ns(1), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 40 ns(1), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(1), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(1), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(1), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(2), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(2), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(3), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(4), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 40 ns(1), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 40 ns(1), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 40 ns(1), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 # restart
 # run 1.00us
 Simulator is doing circuit initialization process.
-at 0 ps, Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
-at 0 ps, Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(1), Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(1), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(1), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(2), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(2), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(3), Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 20 ns(4), Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 40 ns(1), Instance /tb_toplevel/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 40 ns(1), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 40 ns(1), Instance /tb_toplevel/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(1), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(1), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(1), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(2), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(2), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(3), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(4), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 40 ns(1), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 40 ns(1), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 40 ns(1), Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
 # run 1.00us
 # run 1.00us
 # run 1.00us

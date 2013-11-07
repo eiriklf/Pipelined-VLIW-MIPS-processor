@@ -270,13 +270,13 @@ end component Forwarding;
     
     --output from forwardB mux
     signal ForwardBout: std_logic_vector(31 downto 0);
-    -- From MUX1, Between Instruction Memory and Register File (input for Write Register)
+    -- From MUX, Between Instruction Memory and Register File (input for Write Register)
     signal ChosenWriteReg : STD_LOGIC_VECTOR (4 downto 0);
 
-    -- From MUX2 Between Register File/Sign Extend and ALU (ALU Input 2)
+    -- From MUX Between Register File/Sign Extend and ALU (ALU Input 2)
     signal ChosenALUInput : STD_LOGIC_VECTOR (31 downto 0);
 
-    -- From MUX3 Between ALU/Data Memory and Instruction Memory (input for Write Data)
+    -- From MUX Between ALU/Data Memory and Instruction Memory (input for Write Data)
     signal ChosenWriteData : STD_LOGIC_VECTOR (31 downto 0);
     
     --input to PC register
@@ -286,9 +286,11 @@ end component Forwarding;
     signal Concat : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Concat
     --incremented PC signal to MUX
     signal incremented : STD_LOGIC_VECTOR (31 downto 0);
-    --output from mux1
+    --output from branchtakenmux
     signal mux1out: STD_LOGIC_VECTOR (31 downto 0);
+	 --output from revert mux
     signal mux2out: STD_LOGIC_VECTOR (31 downto 0);
+	 --output from branchmux
     signal branchcalc: STD_LOGIC_VECTOR (31 downto 0);
     
     signal address_shift: STD_LOGIC_VECTOR(31 downto 0);
@@ -328,27 +330,28 @@ end component Forwarding;
     --indicates if prediction is taken
     signal branch_taken: std_logic;
     -- Output signals from the controller.
-    signal Ops : std_logic_vector (9 downto 0);
-    -- They are divided into each signal to make the overview easier
+	 -- They are divided into each signal to make the overview easier
     --signal jump : std_logic;
     --signal memwrite : std_logic;
     --signal regwrite : std_logic;
-    signal memtoreg : std_logic;--was originally a part of ops vector, but took it out for simplicity reasons
     --signal alusrc : std_logic;
     --signal branch(1)/BEQ : std_logic;
     --signal regdest : std_logic;
     --signal ALUOp : std_logic_vector(1 downto 0);
     --signal branch(0)/BNE : std_logic;
-    --assigned to the alu operation. We dont use the enumeration in aluOP module because its easier for us to use a vector
+    signal Ops : std_logic_vector (9 downto 0);
+	 --signals for memtoreg_mux
+    signal memtoreg : std_logic;--was originally a part of ops vector, but took it out for simplicity reasons
+	 signal memtoreg2: std_logic;
+	 
     signal QuadputMux_control: std_logic_vector(1 downto 0);  
         --chosen operation from the controloutputmux
     signal chosen_OP: std_logic_vector(9 downto 0);
-    --enables output from controlunit through a mux
-    
+    --enables output from controlunit through a mux.
         --Chosen_OP in IDEX pipelinestage
     signal IDEX_chosen_OP: std_logic_vector(9 downto 0);
     
-    
+    --enables controlsignals from the controlunit
     signal control_enable: std_logic;
     
     
@@ -360,13 +363,12 @@ end component Forwarding;
     --write controls
     signal IFIDwrite:std_logic;
     signal enablepcwrite: std_logic;
-    
     --signal to write to the dynamic branchpred registers
     signal buffer_write: std_logic;
      
     --signals for the branch predictor buffers
     signal prediction_address: std_logic_vector(15 downto 0);
-	 
+	 signal branch_taken_address: std_logic_vector(31 downto 0);
 	 --prediction_address input for use in the branchpredictionunit(EX stage)
 	 signal predicted_address_in: std_logic_vector(31 downto 0);
     signal prediction_readaddress:std_logic_vector(6 downto 0);
@@ -375,14 +377,14 @@ end component Forwarding;
         --output/input for state in branchpredictor
     signal state_writeback:std_logic_vector(1 downto 0);
     signal stateread:std_logic_vector(1 downto 0);
-    
+    --signal generated from branch conditions(taken or not taken)
     signal branched1: std_logic;
     
     
     
     --for wliv/multiplier datapath
     
-    signal Signextended2 : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Signextend2
+    signal Signextended2 : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Signextend2. Not used,was planned for use in immidiate opperations
         
     signal Read_Data_vliw1 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 1 from Register_File
     signal Read_Data_vliw2 : STD_LOGIC_VECTOR (31 downto 0); -- Read data 2 from Register_File
@@ -391,15 +393,11 @@ end component Forwarding;
     signal LO_IN : std_logic_vector(31 downto 0);
     --input to HI register
     signal HI_IN: std_logic_vector(31 downto 0);
-    
-    --controlsignal for mux3 (
-    signal memtoreg2: std_logic;
-    
+   
     signal LO_out: std_logic_vector(31 downto 0);
     signal HI_out: std_logic_vector(31 downto 0);
     signal LOHI_write: std_logic;   
 
-    signal branch_taken_address: std_logic_vector(31 downto 0);
 
     begin
 

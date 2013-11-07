@@ -50,7 +50,7 @@ end alu;
 
 architecture Behavioral of alu is
 
-	component ALU_1BIT is 
+	component ALU_4BIT is 
 	port(
 			X	: in STD_LOGIC_vector(3 downto 0);
 			Y	: in STD_LOGIC_vector(3 downto 0);
@@ -65,7 +65,7 @@ architecture Behavioral of alu is
 			G		: out std_logic;
 			P		: out std_logic
 	);
-	end component ALU_1BIT;
+	end component ALU_4BIT;
 
 	signal LESS_AUX : STD_LOGIC; 
 	signal COUT_AUX : STD_LOGIC_VECTOR(7 downto 0);
@@ -78,8 +78,8 @@ architecture Behavioral of alu is
 	
 begin
 
-	BEGIN_ALU1B:
-		ALU_1BIT port map (
+	BEGIN_ALU4B:
+		ALU_4BIT port map (
 				X	=> X(3 downto 0),
 				Y	=> Y(3 downto 0),
 				LESS	=> LESS_AUX,
@@ -96,8 +96,8 @@ begin
 								
 	GEN_ALU:
 		for i in 2 to (N/4)-1 generate
-			NEXT_ALU1B:
-				ALU_1BIT port map (
+			NEXT_ALU4B:
+				ALU_4BIT port map (
 					X	=> X(((i*4)-1) downto ((i*4)-4)),
 					Y	=> Y((i*4)-1 downto (i*4)-4),
 					LESS	=> '0',
@@ -113,8 +113,8 @@ begin
 				cout_aux(i-1)<=generates(i-1) or (propagates(i-1) and cout_aux(i-2));
 		end generate;
 
-	LAST_ALU1B:
-		ALU_1BIT port map (
+	LAST_ALU4B:
+		ALU_4BIT port map (
 			X	=> X(N-1 downto n-4),
 			Y	=> Y(N-1 downto n-4),
 			LESS	=> '0',
@@ -129,7 +129,7 @@ begin
 			P=>propagates(7)
 		);
 		cout_aux(7)<=generates(7) or (propagates(7) and cout_aux(6));
-			
+	--none of the flags are currently used		
 	FLAGS.Carry <= COUT_AUX(7);
 	FLAGS.Overflow <= COUT_AUX(7) xor FULL_COUT(N-2) ;
 	FLAGS.Negative <= '1' when R_AUX(N-1)='1' else '0';

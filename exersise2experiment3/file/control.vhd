@@ -3,7 +3,8 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-
+--this is our controlmodule from the first exersise. We removed the statemachine and some other functionalities, but it is still responcible for 
+--most of the signals tied to the control-path(s) of the processor.
 entity control is
 
     Port ( control_input : in  STD_LOGIC_VECTOR (5 downto 0);
@@ -15,7 +16,6 @@ end control;
 
 architecture Behavioral of control is
 
-    signal state : std_logic_vector(1 downto 0);
     
     -- Output signals from the control unit:
 
@@ -41,7 +41,7 @@ architecture Behavioral of control is
     
 
 begin
-    --dont really need control_input on sensitivity list in order to make this function
+
     asserting_output_signals : process(control_input)
     begin
 

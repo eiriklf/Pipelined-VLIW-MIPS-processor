@@ -3,14 +3,14 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.97 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.97 secs
  
 --> Reading design: toplevel.prj
 
@@ -70,12 +70,12 @@ Automatic Register Balancing       : Yes
 LUT Combining                      : Auto
 Reduce Control Sets                : Auto
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 50
+Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 16
 Register Duplication               : YES
 Move First FlipFlop Stage          : YES
 Move Last FlipFlop Stage           : YES
-Optimize Instantiated Primitives   : NO
+Optimize Instantiated Primitives   : YES
 Use Clock Enable                   : Auto
 Use Synchronous Set                : Auto
 Use Synchronous Reset              : Auto
@@ -117,8 +117,8 @@ Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\f
 Parsing entity <full_adder>.
 Parsing architecture <Behavioral> of entity <full_adder>.
 Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\file/alu_1bit.vhd" into library work
-Parsing entity <alu_1bit>.
-Parsing architecture <Behavioral> of entity <alu_1bit>.
+Parsing entity <alu_4bit>.
+Parsing architecture <Behavioral> of entity <alu_4bit>.
 Parsing VHDL file "\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\Vliw_multipliercontrol.vhd" into library work
 Parsing entity <Vliw_multipliercontrol>.
 Parsing architecture <Behavioral> of entity <vliw_multipliercontrol>.
@@ -204,7 +204,7 @@ Elaborating entity <ALUoperation> (architecture <Behavioral>) from library <work
 
 Elaborating entity <alu> (architecture <Behavioral>) with generics from library <work>.
 
-Elaborating entity <alu_1bit> (architecture <Behavioral>) from library <work>.
+Elaborating entity <alu_4bit> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <alu_full_adder> (architecture <Behavioral>) from library <work>.
 
@@ -335,14 +335,14 @@ Synthesizing Unit <PROCESSOR>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 458: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 458: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 458: Output port <FLAGS_Zero> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 458: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 693: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 704: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
-    Found 32-bit adder for signal <imem_address2> created at line 441.
-    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 409
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Zero> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 691: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 702: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
+    Found 32-bit adder for signal <imem_address2> created at line 439.
+    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 407
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
@@ -358,29 +358,29 @@ Unit <ALUoperation> synthesized.
 Synthesizing Unit <alu>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd".
         N = 32
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <COUT> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <SET> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <COUT> of the instance <BEGIN_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <SET> of the instance <BEGIN_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[2].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[3].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[4].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[5].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[6].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[7].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU4B> is unconnected or connected to loadless signal.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <alu> synthesized.
 
-Synthesizing Unit <alu_1bit>.
+Synthesizing Unit <alu_4bit>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu_1bit.vhd".
     Summary:
 	inferred   5 Multiplexer(s).
-Unit <alu_1bit> synthesized.
+Unit <alu_4bit> synthesized.
 
 Synthesizing Unit <alu_full_adder>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/lookahead.vhd".
@@ -390,7 +390,7 @@ Unit <alu_full_adder> synthesized.
 Synthesizing Unit <Vliw_alu>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/vliw_alu.vhd".
         N = 32
-    Found 32x32-bit multiplier for signal <result> created at line 55.
+    Found 32x32-bit multiplier for signal <result> created at line 49.
     Summary:
 	inferred   1 Multiplier(s).
 Unit <Vliw_alu> synthesized.
@@ -479,8 +479,8 @@ Unit <control> synthesized.
 
 Synthesizing Unit <Hazarddetection>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/hazarddetection.vhd".
-    Found 5-bit comparator equal for signal <IFIDregisterRS[4]_IDEXregisterRT[4]_equal_2_o> created at line 62
-    Found 5-bit comparator equal for signal <IFIDregisterRT[4]_IDEXregisterRT[4]_equal_3_o> created at line 62
+    Found 5-bit comparator equal for signal <IFIDregisterRS[4]_IDEXregisterRT[4]_equal_2_o> created at line 56
+    Found 5-bit comparator equal for signal <IFIDregisterRT[4]_IDEXregisterRT[4]_equal_3_o> created at line 56
     Summary:
 	inferred   2 Comparator(s).
 	inferred   2 Multiplexer(s).
@@ -2208,7 +2208,7 @@ Optimizing unit <branchprediction> ...
 
 Optimizing unit <alu> ...
 
-Optimizing unit <alu_1bit> ...
+Optimizing unit <alu_4bit> ...
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_85> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_31> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <TDT4255_COM/write_addr_30> of sequential type is unconnected in block <toplevel>.
@@ -2323,13 +2323,6 @@ Processing Unit <toplevel> :
 	Register(s) TDT4255_COM/internal_data_out_8 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_8_BRB0 .
 	Register(s) TDT4255_COM/internal_data_out_9 has(ve) been backward balanced into : TDT4255_COM/internal_data_out_9_BRB0 .
 Unit <toplevel> processed.
-FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_155 has been replicated 1 time(s)
-FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_2 has been replicated 2 time(s)
-FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_21 has been replicated 4 time(s)
-FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_74 has been replicated 2 time(s)
-FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_75 has been replicated 1 time(s)
-FlipFlop MIPS_SC_PROCESSOR/MEMWB/data_109 has been replicated 1 time(s)
-FlipFlop TDT4255_COM/processor_enable has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -2345,8 +2338,8 @@ Unit <toplevel> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 696
- Flip-Flops                                            : 696
+# Registers                                            : 684
+ Flip-Flops                                            : 684
 # Shift Registers                                      : 5
  2-bit shift register                                  : 5
 
@@ -2371,25 +2364,24 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1049
-#      BUF                         : 12
+# BELS                             : 1022
 #      GND                         : 1
 #      INV                         : 2
 #      LUT1                        : 7
 #      LUT2                        : 43
-#      LUT3                        : 114
+#      LUT3                        : 112
 #      LUT4                        : 153
-#      LUT5                        : 237
-#      LUT6                        : 434
+#      LUT5                        : 235
+#      LUT6                        : 423
 #      MUXCY                       : 29
 #      MUXF7                       : 8
 #      VCC                         : 1
 #      XORCY                       : 8
-# FlipFlops/Latches                : 701
-#      FD                          : 294
+# FlipFlops/Latches                : 689
+#      FD                          : 284
 #      FDCE                        : 30
 #      FDE                         : 7
-#      FDR                         : 268
+#      FDR                         : 266
 #      FDRE                        : 96
 #      FDS                         : 6
 # RAMS                             : 15
@@ -2414,19 +2406,19 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             701  out of  18224     3%  
- Number of Slice LUTs:                 1019  out of   9112    11%  
-    Number used as Logic:               990  out of   9112    10%  
+ Number of Slice Registers:             689  out of  18224     3%  
+ Number of Slice LUTs:                 1004  out of   9112    11%  
+    Number used as Logic:               975  out of   9112    10%  
     Number used as Memory:               29  out of   2176     1%  
        Number used as RAM:               24
        Number used as SRL:                5
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1236
-   Number with an unused Flip Flop:     535  out of   1236    43%  
-   Number with an unused LUT:           217  out of   1236    17%  
-   Number of fully used LUT-FF pairs:   484  out of   1236    39%  
-   Number of unique control sets:        18
+ Number of LUT Flip Flop pairs used:   1221
+   Number with an unused Flip Flop:     532  out of   1221    43%  
+   Number with an unused LUT:           217  out of   1221    17%  
+   Number of fully used LUT-FF pairs:   472  out of   1221    38%  
+   Number of unique control sets:        10
 
 IO Utilization: 
  Number of IOs:                         162
@@ -2459,7 +2451,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 729   |
+clk                                | BUFGP                  | 717   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -2470,7 +2462,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 19.554ns (Maximum Frequency: 51.140MHz)
+   Minimum period: 19.824ns (Maximum Frequency: 50.443MHz)
    Minimum input arrival time before clock: 8.044ns
    Maximum output required time after clock: 4.226ns
    Maximum combinational path delay: No path found
@@ -2481,30 +2473,43 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 19.554ns (frequency: 51.140MHz)
-  Total number of paths / destination ports: 1639722 / 1455
+  Clock period: 19.824ns (frequency: 50.443MHz)
+  Total number of paths / destination ports: 1604629 / 1443
 -------------------------------------------------------------------------
-Delay:               19.554ns (Levels of Logic = 2)
-  Source:            MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (DSP)
-  Destination:       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+Delay:               19.824ns (Levels of Logic = 15)
+  Source:            MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115 (FF)
+  Destination:       MIPS_SC_PROCESSOR/COUNTER/data_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+  Data Path: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115 to MIPS_SC_PROCESSOR/COUNTER/data_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     DSP48A1:CLK->P47     18   8.791   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1)
-     DSP48A1:C30->PCOUT5    1   3.225   0.000  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_5)
-     DSP48A1:PCIN5->P47   18   2.772   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3)
-     DSP48A1:C30               2.298          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+     FD:C->Q               4   0.633   1.405  MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115 (MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115)
+     LUT6:I1->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[4].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N11)
+     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[6].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N2)
+     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[8].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N3)
+     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[10].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N4)
+     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[12].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N5)
+     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[14].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N6)
+     LUT5:I4->O            7   0.373   0.910  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[16].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N7)
+     LUT6:I5->O            7   0.373   0.910  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[20].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N9)
+     LUT6:I5->O            7   0.373   0.910  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[24].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N111)
+     LUT6:I5->O            1   0.373   0.682  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[28].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N13)
+     LUT4:I3->O            1   0.373   0.000  MIPS_SC_PROCESSOR/Branch_predicition_unit/Mcompar_predicted_address[31]_INV_124_o_lut<10> (MIPS_SC_PROCESSOR/Branch_predicition_unit/Mcompar_predicted_address[31]_INV_124_o_lut<10>)
+     MUXCY:S->O          188   0.630   2.403  MIPS_SC_PROCESSOR/Branch_predicition_unit/Mcompar_predicted_address[31]_INV_124_o_cy<10> (MIPS_SC_PROCESSOR/Branch_predicition_unit/predicted_address[31]_INV_124_o)
+     LUT5:I4->O           15   0.373   1.533  MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset111_1 (MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset1111)
+     LUT6:I2->O            1   0.364   0.000  MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output210 (MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output2)
+     MUXF7:I1->O           1   0.230   0.000  MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output2_f7 (MIPS_SC_PROCESSOR/FinalPCAddress<0>)
+     FDCE:D                    0.142          MIPS_SC_PROCESSOR/COUNTER/data_0
     ----------------------------------------
-    Total                     19.554ns (17.086ns logic, 2.468ns route)
-                                       (87.4% logic, 12.6% route)
+    Total                     19.824ns (6.475ns logic, 13.349ns route)
+                                       (32.7% logic, 67.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 577 / 452
+  Total number of paths / destination ports: 575 / 450
 -------------------------------------------------------------------------
 Offset:              8.044ns (Levels of Logic = 6)
   Source:            command<11> (PAD)
@@ -2555,18 +2560,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   19.554|    5.499|    5.655|         |
+clk            |   19.824|    5.499|    5.655|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 42.00 secs
-Total CPU time to Xst completion: 41.50 secs
+Total REAL time to Xst completion: 44.00 secs
+Total CPU time to Xst completion: 44.39 secs
  
 --> 
 
-Total memory usage is 320592 kilobytes
+Total memory usage is 310736 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 1383 (   0 filtered)

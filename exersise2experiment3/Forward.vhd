@@ -24,10 +24,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+--this unit is responcible for forwarding data to avoid hazards. It works currently on all instructions exept multiply, MFLO and MFHI.
+--The reason for this is that we look on the multiplier function as an optional addition to our instructionset. In order to avoid increasing the circut complexity,
+--we leave the full hazard responcibillity for these 3 instructions to the compiler. We also did not have the time to implement forwarding or stalling for the multiply circuts.
+
 
 entity Forwarding is
     Port ( ExmemregisterRD : in  STD_LOGIC_VECTOR (4 downto 0);

@@ -29,6 +29,9 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
+--The purpose of this testbench is to test and make sure that the corrolating branchpredictor works like it is supposed to.
+--In addition it also tests other functionality like the forwarding unit and stalling
+
 ENTITY tb_toplevel IS
 END tb_toplevel;
  
@@ -114,12 +117,12 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant ins00 : std_logic_vector(0 to 31) := X"00000000";--NOP
   constant ins06 : std_logic_vector(0 to 31) := X"0042001A";--mult 
   --instructions:
-	constant ins0  : std_logic_vector(0 to 31) := X"8C030002";
-	constant ins1  : std_logic_vector(0 to 31) := X"8C020002";
+	constant ins0  : std_logic_vector(0 to 31) := X"8C030002";--lw $3, 2($0)
+	constant ins1  : std_logic_vector(0 to 31) := X"8C020002";--lw $2, 2($0)
 	constant ins2  : std_logic_vector(0 to 31) := X"00221820";--add $3, $1, $2
 	constant ins3  : std_logic_vector(0 to 31) := X"00622022";--sub $4, $3, $2
-	constant ins4  : std_logic_vector(0 to 31) := X"8C0B0001";
-	constant ins5  : std_logic_vector(0 to 31) := X"8C0C0002";
+	constant ins4  : std_logic_vector(0 to 31) := X"8C0B0001";--lw $11, 1($0)
+	constant ins5  : std_logic_vector(0 to 31) := X"8C0C0002";--lw $12, 2($0)
 	constant ins6  : std_logic_vector(0 to 31) := X"00221820";--add $3, $1, $2
 	constant ins7  : std_logic_vector(0 to 31) := X"AC030004";--sw $3, 4($0)
 	constant ins8  : std_logic_vector(0 to 31) := X"AC030006";--sw $3, 6($0)

@@ -25,10 +25,9 @@ use IEEE.NUMERIC_STD.ALL;
 library WORK;
 use WORK.MIPS_CONSTANT_PKG.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+--This is our toplevel. It is modified slightly by adding a secound access to the instructionmemory from the processor. The processor now have the abillity
+--to access 2 instructions/addresses per cycle. The commodule can still only access 1 address per cycle, which will keep the interface to the microblace the same as before.
+--We did this to ensure that our design will work on the FPGA with minimal changes.
 
 entity toplevel is
 
@@ -208,10 +207,10 @@ begin
 		clk 				=> clk,
 		reset				=> reset,
 		processor_enable	=> proc_enable,
-		imem_data_in		=> instr_data,
-		imem_data2_in		=>instr_data2,
-		imem_address		=> instr_addr,
-		imem_address2		=> instr_addr2,
+		imem_data_in		=> instr_data,--normal instruction data
+		imem_data2_in		=>instr_data2,--instruction data to the processor only
+		imem_address		=> instr_addr,--normal instruction address
+		imem_address2		=> instr_addr2,--instruction address from processor
 		dmem_data_in		=> dmem_data_in,				-- DATA READ FROM THE MEMORY
 		dmem_address		=> dmem_address_proc,			-- ADDRESS TO BE READ
 		dmem_address_wr		=> dmem_address_wr_proc,		-- ADDRESS OF DATA TO BE WRITTEN

@@ -29,7 +29,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity alu_1bit is
+entity alu_4bit is
 
 	port(
 			X	: in STD_LOGIC_vector(3 downto 0);
@@ -46,9 +46,9 @@ entity alu_1bit is
 			P		: out std_logic	--propagate signal
 	);
 	
-end alu_1bit;
+end alu_4bit;
 
-architecture Behavioral of alu_1bit is
+architecture Behavioral of alu_4bit is
 
 	component ALU_FULL_ADDER is   
 		port(

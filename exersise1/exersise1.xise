@@ -15,46 +15,16 @@
   <version xil_pn:ise_version="12.4" xil_pn:schema_version="2"/>
 
   <files>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/adder.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/alu.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/alu_1bit.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/com.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/full_adder.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/memory.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/mips_constant_pkg.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/register_file.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/tb_toplevel.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
-    <file xil_pn:name="../Documents/supportFiles_13/hardware/toplevel.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation"/>
-      <association xil_pn:name="Implementation"/>
-    </file>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/adder.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/alu.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/alu_1bit.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/com.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/full_adder.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/memory.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/mips_constant_pkg.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/register_file.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/tb_toplevel.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="../Documents/supportFiles_13/hardware/toplevel.vhd" xil_pn:type="FILE_VHDL"/>
     <file xil_pn:name="processor.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation"/>
       <association xil_pn:name="Implementation"/>
@@ -88,12 +58,11 @@
   </files>
 
   <properties>
-    <property xil_pn:name="Auto Implementation Top" xil_pn:value="false" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Device" xil_pn:value="xc6slx16" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Device Family" xil_pn:value="Spartan6" xil_pn:valueState="non-default"/>
-    <property xil_pn:name="Implementation Top" xil_pn:value="Architecture|toplevel|Behavioral" xil_pn:valueState="non-default"/>
-    <property xil_pn:name="Implementation Top File" xil_pn:value="../Documents/supportFiles_13/hardware/toplevel.vhd" xil_pn:valueState="non-default"/>
-    <property xil_pn:name="Implementation Top Instance Path" xil_pn:value="/tb_toplevel/uut" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Implementation Top" xil_pn:value="Architecture|processor|Behavioral" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Implementation Top File" xil_pn:value="processor.vhd" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Implementation Top Instance Path" xil_pn:value="/processor" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Package" xil_pn:value="csg324" xil_pn:valueState="default"/>
     <property xil_pn:name="Preferred Language" xil_pn:value="VHDL" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Property Specification in Project File" xil_pn:value="Store non-default values only" xil_pn:valueState="non-default"/>
