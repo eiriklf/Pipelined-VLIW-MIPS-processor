@@ -1,0 +1,12 @@
+Command line:
+   toplevel_isim_par.exe
+     -simmode  gui
+     -sdfmax  /toplevel/=netgen/par/toplevel_timesim.sdf
+     -sdfroot  /
+     -simrunnum  0
+     -socket  49498
+
+Fri Nov 08 14:22:26 2013
+
+
+ Elaboration Time: 4.41483 sec

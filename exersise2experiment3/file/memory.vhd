@@ -53,7 +53,7 @@ architecture Behavioral of memory is
 	signal address_reg2 :	STD_LOGIC_VECTOR (31 downto 0);	-- Address to access data for vliw instruction
 begin
 
-	MEM_PROC: process(CLK, RESET, MemWrite, WRITE_DATA, ADDR, W_ADDR, MEM, address_reg,address_reg2)
+	MEM_PROC: process(CLK, RESET, MemWrite, WRITE_DATA, ADDR, W_ADDR, MEM, address_reg,address_reg2,ADDR2)
 	begin	
 		if falling_edge (CLK) then
       -- RAMs don't have resets. Commented out to make it work as RAM and not 256 32bit-flipflops (which takes up too much space for the FPGA).
@@ -65,9 +65,10 @@ begin
       if MemWrite='1' then
 				MEM(to_integer(unsigned( W_ADDR((M-1) downto 0) ))) <= WRITE_DATA;
 			end if;
+
+		end if;
 			address_reg <= ADDR;
 			address_reg2 <= ADDR2;
-		end if;
 		READ_DATA <= MEM(to_integer(unsigned( address_reg ((M-1) downto 0) )));
 		READ_DATA2<= MEM(to_integer(unsigned( address_reg2 ((M-1) downto 0) )));
 	end process MEM_PROC;
