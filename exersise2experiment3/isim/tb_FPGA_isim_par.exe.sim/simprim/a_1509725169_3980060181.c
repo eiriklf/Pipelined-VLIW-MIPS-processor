@@ -48,10 +48,10 @@ LAB4:    goto LAB2;
 }
 
 
-extern void simprim_a_1509725169_3980060181_4194119513_init()
+extern void simprim_a_1509725169_3980060181_3954551027_init()
 {
 	static char *pe[] = {(void *)simprim_a_1509725169_3980060181_p_0};
-	xsi_register_didat("simprim_a_1509725169_3980060181_4194119513", "isim/tb_FPGA_isim_par.exe.sim/simprim/a_1509725169_3980060181_4194119513.didat");
+	xsi_register_didat("simprim_a_1509725169_3980060181_3954551027", "isim/tb_FPGA_isim_par.exe.sim/simprim/a_1509725169_3980060181_3954551027.didat");
 	xsi_register_executes(pe);
 }
 

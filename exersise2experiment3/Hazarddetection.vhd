@@ -62,12 +62,14 @@ begin
 				ifidwrite<='1';
 				Controlenable<='1';
 				end if;
-				else
+		  else
 				PCWrite<='0';
 				Controlenable<='0';
 				ifidwrite<='1';
 				
-				end if;
+		  end if;
+
+				
 end process;
 
 

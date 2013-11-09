@@ -48,17 +48,17 @@ LAB4:    goto LAB2;
 }
 
 
-extern void simprim_a_3395610110_2220797900_0623897407_init()
+extern void simprim_a_3395610110_2220797900_4288311552_init()
 {
 	static char *pe[] = {(void *)simprim_a_3395610110_2220797900_p_0};
-	xsi_register_didat("simprim_a_3395610110_2220797900_0623897407", "isim/tb_FPGA_isim_par.exe.sim/simprim/a_3395610110_2220797900_0623897407.didat");
+	xsi_register_didat("simprim_a_3395610110_2220797900_4288311552", "isim/tb_FPGA_isim_par.exe.sim/simprim/a_3395610110_2220797900_4288311552.didat");
 	xsi_register_executes(pe);
 }
 
-extern void simprim_a_3395610110_2220797900_3485503914_init()
+extern void simprim_a_3395610110_2220797900_2883127482_init()
 {
 	static char *pe[] = {(void *)simprim_a_3395610110_2220797900_p_0};
-	xsi_register_didat("simprim_a_3395610110_2220797900_3485503914", "isim/tb_FPGA_isim_par.exe.sim/simprim/a_3395610110_2220797900_3485503914.didat");
+	xsi_register_didat("simprim_a_3395610110_2220797900_2883127482", "isim/tb_FPGA_isim_par.exe.sim/simprim/a_3395610110_2220797900_2883127482.didat");
 	xsi_register_executes(pe);
 }
 

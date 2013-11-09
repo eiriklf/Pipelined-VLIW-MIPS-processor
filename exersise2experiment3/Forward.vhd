@@ -26,7 +26,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 --this unit is responcible for forwarding data to avoid hazards. It works currently on all instructions exept multiply, MFLO and MFHI.
 --The reason for this is that we look on the multiplier function as an optional addition to our instructionset. In order to avoid increasing the circut complexity,
---we leave the full hazard responcibillity for these 3 instructions to the compiler. We also did not have the time to implement forwarding or stalling for the multiply circuts.
+--we leave the full hazard responcibillity for these 3 instructions to the compiler. According to the book, it varies on how vliw implementations takes 
+--responcibillites for hazards. We also did not have the time to implement forwarding or stalling for the multiply circuts.
 
 
 entity Forwarding is
@@ -46,8 +47,6 @@ begin
 
 	Process1: process(MEMWBregwrite,  EXMEMregwrite, RS, MEMWbregisterRD, ExmemregisterRD)
 	begin
-		--EX hazard
-		-- no elsif--and not (EXMEMregisterRD=RS) 
 		if( (EXMEMregwrite='1' )and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RS) ) then
 			forwardA<="10";
 		elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
@@ -63,7 +62,6 @@ begin
 	
 	Process2: process(MEMWBregwrite,  EXMEMregwrite,RT, MEMWbregisterRD, ExmemregisterRD)
 	begin
-	--EX hazard--and not (EXMEMregisterRD=RT)
 		if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RT)) then
 			forwardB<="10";
 		elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
