@@ -700,12 +700,7 @@ end component Forwarding;
     --The branch address is shifted 1 to the left for the same reason as above (concat signal)
     address_shift<=IDEXs(40 downto 10)&'0';
 	 branchadder<=address_shift+IDEXs(137 downto 106);
-   -- ADDRESSADDER: adder
-   -- port map(
-   --                    X   =>IDEXs(137 downto 106),
-   --                    Y   =>address_shift,--shift signextended 1 left because of instructionsize with 64 bit and 32-bits dataalignment
-  --                     R   => BranchAdder
- --                      );
+ 
     --The branch target buffer stores the branch target addresses of previous branches. It is indexed by
     --the outputs from the PC only.
 	 --4 branch predictions/predictors shares each branch address.
