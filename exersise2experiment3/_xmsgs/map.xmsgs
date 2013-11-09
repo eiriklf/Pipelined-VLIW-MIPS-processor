@@ -77,37 +77,16 @@
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">bus_address_in&lt;23&gt;</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SPO</arg> has no load.
-</msg>
-
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/SPO</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">DATA_MEM/Mram_MEM411/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">DATA_MEM/Mram_MEM412/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">DATA_MEM/Mram_MEM421/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">DATA_MEM/Mram_MEM422/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">DATA_MEM/Mram_MEM441/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">DATA_MEM/Mram_MEM431/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">DATA_MEM/Mram_MEM432/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">DATA_MEM/Mram_MEM442/SPO</arg> has no load.
+<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SPO</arg> has no load.
 </msg>
 
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS31/SPO</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS34/SPO</arg> has no load.
 </msg>
 
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS32/SPO</arg> has no load.
@@ -116,37 +95,29 @@
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS33/SPO</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">INST_MEM/Mram_MEM432/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS34/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">INST_MEM/Mram_MEM431/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">INST_MEM/Mram_MEM421/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">INST_MEM/Mram_MEM422/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">INST_MEM/Mram_MEM441/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">INST_MEM/Mram_MEM442/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">INST_MEM/Mram_MEM451/SPO</arg> has no load.
-</msg>
-
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">INST_MEM/Mram_MEM452/SPO</arg> has no load.
-</msg>
-
 <msg type="info" file="MapLib" num="562" delta="old" >No environment variables are currently set.
 </msg>
 
 <msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
 </msg>
 
+<msg type="info" file="Pack" num="1716" delta="old" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+</msg>
+
+<msg type="info" file="Pack" num="1720" delta="old" >Initializing voltage to <arg fmt="%0.3f" index="1">1.140</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">1.140</arg> to <arg fmt="%0.3f" index="3">1.260</arg> Volts)
+</msg>
+
+<msg type="info" file="Map" num="215" delta="old" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+</msg>
+
+<msg type="info" file="Pack" num="1650" delta="old" >Map created a placed design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
 </messages>
+

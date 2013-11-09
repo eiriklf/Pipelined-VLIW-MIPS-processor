@@ -53,8 +53,8 @@ Compiling architecture behavioral of entity vliw_multipliercontrol [vliw_multipl
 Compiling architecture behavioral of entity pc [pc_default]
 Compiling architecture behavioral of entity regi [\regi(122)\]
 Compiling architecture behavioral of entity regi [\regi(288)\]
-Compiling architecture behavioral of entity regi [\regi(210)\]
-Compiling architecture behavioral of entity regi [\regi(110)\]
+Compiling architecture behavioral of entity regi [\regi(205)\]
+Compiling architecture behavioral of entity regi [\regi(72)\]
 Compiling architecture behavioral of entity forwarding [forwarding_default]
 Compiling architecture behavioral of entity control [control_default]
 Compiling architecture behavioral of entity hazarddetection [hazarddetection_default]
@@ -73,8 +73,8 @@ Compiling architecture behavioral of entity processor [\PROCESSOR(32,32)\]
 Compiling architecture behavioral of entity toplevel [\toplevel(32,32)\]
 Compiling architecture behavior of entity tb_fpga
 Time Resolution for simulation is 1ps.
-Waiting for 23 sub-compilation(s) to finish...
+Waiting for 26 sub-compilation(s) to finish...
 Compiled 72 VHDL Units
 Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.exe
-Fuse Memory Usage: 23132 KB
-Fuse CPU Usage: 592 ms
+Fuse Memory Usage: 23076 KB
+Fuse CPU Usage: 639 ms

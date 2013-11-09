@@ -12,13 +12,13 @@
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/Addressincrementer - adder - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>MIPS_SC_PROCESSOR - PROCESSOR - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/file/processor.vhd)</SelectedItem>
+         <SelectedItem>DETECTION_UNIT - Hazarddetection - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/Hazarddetection.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >6</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >17</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000034c000000020000000000000000000000000000000064ffffffff0000008100000000000000020000034c0000000100000000000000000000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>MIPS_SC_PROCESSOR - PROCESSOR - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/file/processor.vhd)</CurrentItem>
+      <CurrentItem>DETECTION_UNIT - Hazarddetection - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2/Hazarddetection.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -49,7 +49,7 @@
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000003a3000000040101000100000000000000000000000064ffffffff0000008100000000000000040000019d00000001000000000000004400000001000000000000006600000001000000000000015c0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2\file\adder.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>

@@ -16,7 +16,6 @@ Environment Variable      Effect
 NONE                      No environment variables were set
 --------------------------------------------------------------------------------
 
-INFO:Timing:2698 - No timing constraints found, doing default enumeration.
 INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
    option. All paths that are not constrained will be reported in the 
    unconstrained paths section(s) of the report.
@@ -25,150 +24,602 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    and for more information on accounting for different loading conditions, 
    please see the device datasheet.
 
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+
+ 2558974 paths analyzed, 2930 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  17.524ns.
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAMB8_X1Y4.ADDRBRDADDR5), 5171 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.484ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               INST_MEM/Mram_MEM (RAM)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      8.456ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.025ns (0.454 - 0.479)
+  Source Clock:         clk_BUFGP falling at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: INST_MEM/Mram_MEM to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    RAMB8_X1Y11.DOBDO5      Trcko_DOB             2.950   INST_MEM/Mram_MEM
+                                                          INST_MEM/Mram_MEM
+    SLICE_X17Y20.D5         net (fanout=2)        2.252   instr_data<21>
+    SLICE_X17Y20.D          Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19_1
+                                                          instr_data<21>_0_01
+    RAMB8_X1Y4.ADDRBRDADDR5 net (fanout=1)        2.513   instr_data<21>_0_0_0
+    RAMB8_X1Y4.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    ----------------------------------------------------  ---------------------------
+    Total                                         8.456ns (3.691ns logic, 4.765ns route)
+                                                          (43.6% logic, 56.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.924ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/EXMEM/data_4 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      16.055ns (Levels of Logic = 8)
+  Clock Path Skew:      0.014ns (0.334 - 0.320)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/EXMEM/data_4 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X24Y6.BQ          Tcko                  0.553   MIPS_SC_PROCESSOR/EXMEM/data<4>
+                                                          MIPS_SC_PROCESSOR/EXMEM/data_4
+    SLICE_X18Y6.D2          net (fanout=6)        1.428   MIPS_SC_PROCESSOR/EXMEM/data<4>
+    SLICE_X18Y6.D           Tilo                  0.373   MIPS_SC_PROCESSOR/EXMEM/data<1>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1
+    SLICE_X18Y6.A3          net (fanout=1)        0.464   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1
+    SLICE_X18Y6.A           Tilo                  0.373   MIPS_SC_PROCESSOR/EXMEM/data<1>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
+    SLICE_X18Y7.A4          net (fanout=3)        0.602   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
+    SLICE_X18Y7.A           Tilo                  0.373   MIPS_SC_PROCESSOR/MEMWB/data<3>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X15Y11.A2         net (fanout=26)       1.913   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X15Y11.A          Tilo                  0.341   MIPS_SC_PROCESSOR/LO/data<25>
+                                                          MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R151
+    SLICE_X16Y16.D2         net (fanout=8)        2.793   MIPS_SC_PROCESSOR/ForwardAout<22>
+    SLICE_X16Y16.COUT       Topcyd                0.417   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CMUX       Tcinc                 0.442   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X15Y20.B1         net (fanout=24)       1.329   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X15Y20.B          Tilo                  0.341   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                          MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X17Y20.D1         net (fanout=37)       1.056   MIPS_SC_PROCESSOR/branched1
+    SLICE_X17Y20.D          Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19_1
+                                                          instr_data<21>_0_01
+    RAMB8_X1Y4.ADDRBRDADDR5 net (fanout=1)        2.513   instr_data<21>_0_0_0
+    RAMB8_X1Y4.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    ----------------------------------------------------  ---------------------------
+    Total                                        16.055ns (3.954ns logic, 12.101ns route)
+                                                          (24.6% logic, 75.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.014ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      15.967ns (Levels of Logic = 8)
+  Clock Path Skew:      0.016ns (0.334 - 0.318)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X24Y7.BQ          Tcko                  0.553   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152
+                                                          MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151
+    SLICE_X25Y7.A1          net (fanout=16)       1.403   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151
+    SLICE_X25Y7.A           Tilo                  0.341   MIPS_SC_PROCESSOR/ctForwardB<1>1
+                                                          MIPS_SC_PROCESSOR/ctForwardB<1>1
+    SLICE_X24Y7.D4          net (fanout=1)        1.115   MIPS_SC_PROCESSOR/ctForwardB<1>1
+    SLICE_X24Y7.D           Tilo                  0.333   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152
+                                                          MIPS_SC_PROCESSOR/ctForwardB<1>2
+    SLICE_X24Y7.C6          net (fanout=2)        0.147   MIPS_SC_PROCESSOR/ctForwardB<1>2
+    SLICE_X24Y7.C           Tilo                  0.333   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152
+                                                          MIPS_SC_PROCESSOR/ctForwardB<1>4
+    SLICE_X16Y14.C4         net (fanout=26)       2.445   MIPS_SC_PROCESSOR/ctForwardB<1>
+    SLICE_X16Y14.C          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<25>
+                                                          MIPS_SC_PROCESSOR/ForwardmuxB/Mmux_R131
+    SLICE_X16Y16.C2         net (fanout=3)        2.068   MIPS_SC_PROCESSOR/ForwardBout<20>
+    SLICE_X16Y16.COUT       Topcyc                0.471   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<6>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CMUX       Tcinc                 0.442   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X15Y20.B1         net (fanout=24)       1.329   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X15Y20.B          Tilo                  0.341   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                          MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X17Y20.D1         net (fanout=37)       1.056   MIPS_SC_PROCESSOR/branched1
+    SLICE_X17Y20.D          Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19_1
+                                                          instr_data<21>_0_01
+    RAMB8_X1Y4.ADDRBRDADDR5 net (fanout=1)        2.513   instr_data<21>_0_0_0
+    RAMB8_X1Y4.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    ----------------------------------------------------  ---------------------------
+    Total                                        15.967ns (3.888ns logic, 12.079ns route)
+                                                          (24.4% logic, 75.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAMB8_X0Y5.ADDRBRDADDR6), 5171 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.729ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               INST_MEM/Mram_MEM1 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      8.209ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.027ns (0.454 - 0.481)
+  Source Clock:         clk_BUFGP falling at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: INST_MEM/Mram_MEM1 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    RAMB8_X1Y10.DOBDO1      Trcko_DOB             2.950   INST_MEM/Mram_MEM1
+                                                          INST_MEM/Mram_MEM1
+    SLICE_X17Y18.B2         net (fanout=2)        2.746   instr_data2<17>
+    SLICE_X17Y18.B          Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19
+                                                          instr_data2<17>_0_01
+    RAMB8_X0Y5.ADDRBRDADDR6 net (fanout=1)        1.772   instr_data2<17>_0_0_0
+    RAMB8_X0Y5.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    ----------------------------------------------------  ---------------------------
+    Total                                         8.209ns (3.691ns logic, 4.518ns route)
+                                                          (45.0% logic, 55.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.753ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/EXMEM/data_4 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      15.219ns (Levels of Logic = 8)
+  Clock Path Skew:      0.007ns (0.454 - 0.447)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/EXMEM/data_4 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X24Y6.BQ          Tcko                  0.553   MIPS_SC_PROCESSOR/EXMEM/data<4>
+                                                          MIPS_SC_PROCESSOR/EXMEM/data_4
+    SLICE_X18Y6.D2          net (fanout=6)        1.428   MIPS_SC_PROCESSOR/EXMEM/data<4>
+    SLICE_X18Y6.D           Tilo                  0.373   MIPS_SC_PROCESSOR/EXMEM/data<1>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1
+    SLICE_X18Y6.A3          net (fanout=1)        0.464   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1
+    SLICE_X18Y6.A           Tilo                  0.373   MIPS_SC_PROCESSOR/EXMEM/data<1>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
+    SLICE_X18Y7.A4          net (fanout=3)        0.602   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
+    SLICE_X18Y7.A           Tilo                  0.373   MIPS_SC_PROCESSOR/MEMWB/data<3>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X15Y11.A2         net (fanout=26)       1.913   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X15Y11.A          Tilo                  0.341   MIPS_SC_PROCESSOR/LO/data<25>
+                                                          MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R151
+    SLICE_X16Y16.D2         net (fanout=8)        2.793   MIPS_SC_PROCESSOR/ForwardAout<22>
+    SLICE_X16Y16.COUT       Topcyd                0.417   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CMUX       Tcinc                 0.442   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X15Y20.B1         net (fanout=24)       1.329   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X15Y20.B          Tilo                  0.341   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                          MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X17Y18.B4         net (fanout=37)       0.961   MIPS_SC_PROCESSOR/branched1
+    SLICE_X17Y18.B          Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19
+                                                          instr_data2<17>_0_01
+    RAMB8_X0Y5.ADDRBRDADDR6 net (fanout=1)        1.772   instr_data2<17>_0_0_0
+    RAMB8_X0Y5.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    ----------------------------------------------------  ---------------------------
+    Total                                        15.219ns (3.954ns logic, 11.265ns route)
+                                                          (26.0% logic, 74.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.843ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      15.131ns (Levels of Logic = 8)
+  Clock Path Skew:      0.009ns (0.454 - 0.445)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X24Y7.BQ          Tcko                  0.553   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152
+                                                          MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151
+    SLICE_X25Y7.A1          net (fanout=16)       1.403   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151
+    SLICE_X25Y7.A           Tilo                  0.341   MIPS_SC_PROCESSOR/ctForwardB<1>1
+                                                          MIPS_SC_PROCESSOR/ctForwardB<1>1
+    SLICE_X24Y7.D4          net (fanout=1)        1.115   MIPS_SC_PROCESSOR/ctForwardB<1>1
+    SLICE_X24Y7.D           Tilo                  0.333   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152
+                                                          MIPS_SC_PROCESSOR/ctForwardB<1>2
+    SLICE_X24Y7.C6          net (fanout=2)        0.147   MIPS_SC_PROCESSOR/ctForwardB<1>2
+    SLICE_X24Y7.C           Tilo                  0.333   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152
+                                                          MIPS_SC_PROCESSOR/ctForwardB<1>4
+    SLICE_X16Y14.C4         net (fanout=26)       2.445   MIPS_SC_PROCESSOR/ctForwardB<1>
+    SLICE_X16Y14.C          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<25>
+                                                          MIPS_SC_PROCESSOR/ForwardmuxB/Mmux_R131
+    SLICE_X16Y16.C2         net (fanout=3)        2.068   MIPS_SC_PROCESSOR/ForwardBout<20>
+    SLICE_X16Y16.COUT       Topcyc                0.471   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<6>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CMUX       Tcinc                 0.442   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X15Y20.B1         net (fanout=24)       1.329   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X15Y20.B          Tilo                  0.341   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                          MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X17Y18.B4         net (fanout=37)       0.961   MIPS_SC_PROCESSOR/branched1
+    SLICE_X17Y18.B          Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19
+                                                          instr_data2<17>_0_01
+    RAMB8_X0Y5.ADDRBRDADDR6 net (fanout=1)        1.772   instr_data2<17>_0_0_0
+    RAMB8_X0Y5.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    ----------------------------------------------------  ---------------------------
+    Total                                        15.131ns (3.888ns logic, 11.243ns route)
+                                                          (25.7% logic, 74.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2 (RAMB8_X0Y6.ADDRBRDADDR5), 5171 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.874ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               INST_MEM/Mram_MEM1 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2 (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      8.071ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.020ns (0.461 - 0.481)
+  Source Clock:         clk_BUFGP falling at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: INST_MEM/Mram_MEM1 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    RAMB8_X1Y10.DOBDO5      Trcko_DOB             2.950   INST_MEM/Mram_MEM1
+                                                          INST_MEM/Mram_MEM1
+    SLICE_X11Y14.B1         net (fanout=2)        3.071   instr_data2<21>
+    SLICE_X11Y14.B          Tilo                  0.341   MIPS_SC_PROCESSOR/IFID/data_sliced_15
+                                                          instr_data2<21>_0_01
+    RAMB8_X0Y6.ADDRBRDADDR5 net (fanout=1)        1.309   instr_data2<21>_0_0_0
+    RAMB8_X0Y6.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2
+    ----------------------------------------------------  ---------------------------
+    Total                                         8.071ns (3.691ns logic, 4.380ns route)
+                                                          (45.7% logic, 54.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.999ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/EXMEM/data_4 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2 (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      14.980ns (Levels of Logic = 8)
+  Clock Path Skew:      0.014ns (0.461 - 0.447)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/EXMEM/data_4 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X24Y6.BQ          Tcko                  0.553   MIPS_SC_PROCESSOR/EXMEM/data<4>
+                                                          MIPS_SC_PROCESSOR/EXMEM/data_4
+    SLICE_X18Y6.D2          net (fanout=6)        1.428   MIPS_SC_PROCESSOR/EXMEM/data<4>
+    SLICE_X18Y6.D           Tilo                  0.373   MIPS_SC_PROCESSOR/EXMEM/data<1>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1
+    SLICE_X18Y6.A3          net (fanout=1)        0.464   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1
+    SLICE_X18Y6.A           Tilo                  0.373   MIPS_SC_PROCESSOR/EXMEM/data<1>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
+    SLICE_X18Y7.A4          net (fanout=3)        0.602   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
+    SLICE_X18Y7.A           Tilo                  0.373   MIPS_SC_PROCESSOR/MEMWB/data<3>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X15Y11.A2         net (fanout=26)       1.913   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X15Y11.A          Tilo                  0.341   MIPS_SC_PROCESSOR/LO/data<25>
+                                                          MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R151
+    SLICE_X16Y16.D2         net (fanout=8)        2.793   MIPS_SC_PROCESSOR/ForwardAout<22>
+    SLICE_X16Y16.COUT       Topcyd                0.417   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CMUX       Tcinc                 0.442   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X15Y20.B1         net (fanout=24)       1.329   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X15Y20.B          Tilo                  0.341   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                          MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X11Y14.B5         net (fanout=37)       1.185   MIPS_SC_PROCESSOR/branched1
+    SLICE_X11Y14.B          Tilo                  0.341   MIPS_SC_PROCESSOR/IFID/data_sliced_15
+                                                          instr_data2<21>_0_01
+    RAMB8_X0Y6.ADDRBRDADDR5 net (fanout=1)        1.309   instr_data2<21>_0_0_0
+    RAMB8_X0Y6.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2
+    ----------------------------------------------------  ---------------------------
+    Total                                        14.980ns (3.954ns logic, 11.026ns route)
+                                                          (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.089ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2 (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      14.892ns (Levels of Logic = 8)
+  Clock Path Skew:      0.016ns (0.461 - 0.445)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X24Y7.BQ          Tcko                  0.553   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152
+                                                          MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151
+    SLICE_X25Y7.A1          net (fanout=16)       1.403   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151
+    SLICE_X25Y7.A           Tilo                  0.341   MIPS_SC_PROCESSOR/ctForwardB<1>1
+                                                          MIPS_SC_PROCESSOR/ctForwardB<1>1
+    SLICE_X24Y7.D4          net (fanout=1)        1.115   MIPS_SC_PROCESSOR/ctForwardB<1>1
+    SLICE_X24Y7.D           Tilo                  0.333   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152
+                                                          MIPS_SC_PROCESSOR/ctForwardB<1>2
+    SLICE_X24Y7.C6          net (fanout=2)        0.147   MIPS_SC_PROCESSOR/ctForwardB<1>2
+    SLICE_X24Y7.C           Tilo                  0.333   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152
+                                                          MIPS_SC_PROCESSOR/ctForwardB<1>4
+    SLICE_X16Y14.C4         net (fanout=26)       2.445   MIPS_SC_PROCESSOR/ctForwardB<1>
+    SLICE_X16Y14.C          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<25>
+                                                          MIPS_SC_PROCESSOR/ForwardmuxB/Mmux_R131
+    SLICE_X16Y16.C2         net (fanout=3)        2.068   MIPS_SC_PROCESSOR/ForwardBout<20>
+    SLICE_X16Y16.COUT       Topcyc                0.471   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<6>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X16Y17.CMUX       Tcinc                 0.442   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X15Y20.B1         net (fanout=24)       1.329   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X15Y20.B          Tilo                  0.341   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                          MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X11Y14.B5         net (fanout=37)       1.185   MIPS_SC_PROCESSOR/branched1
+    SLICE_X11Y14.B          Tilo                  0.341   MIPS_SC_PROCESSOR/IFID/data_sliced_15
+                                                          instr_data2<21>_0_01
+    RAMB8_X0Y6.ADDRBRDADDR5 net (fanout=1)        1.309   instr_data2<21>_0_0_0
+    RAMB8_X0Y6.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2
+    ----------------------------------------------------  ---------------------------
+    Total                                        14.892ns (3.888ns logic, 11.004ns route)
+                                                          (26.1% logic, 73.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.HIGH (SLICE_X14Y21.D4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.344ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23 (FF)
+  Destination:          MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.HIGH (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.348ns (Levels of Logic = 0)
+  Clock Path Skew:      0.004ns (0.036 - 0.032)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.HIGH
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y22.DQ      Tcko                  0.234   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+                                                       MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+    SLICE_X14Y21.D4      net (fanout=9)        0.242   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+    SLICE_X14Y21.CLK     Tah         (-Th)     0.128   MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_2
+                                                       MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.HIGH
+    -------------------------------------------------  ---------------------------
+    Total                                      0.348ns (0.106ns logic, 0.242ns route)
+                                                       (30.5% logic, 69.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.LOW (SLICE_X14Y21.D4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.344ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23 (FF)
+  Destination:          MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.LOW (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.348ns (Levels of Logic = 0)
+  Clock Path Skew:      0.004ns (0.036 - 0.032)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.LOW
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y22.DQ      Tcko                  0.234   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+                                                       MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+    SLICE_X14Y21.D4      net (fanout=9)        0.242   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+    SLICE_X14Y21.CLK     Tah         (-Th)     0.128   MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_2
+                                                       MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.LOW
+    -------------------------------------------------  ---------------------------
+    Total                                      0.348ns (0.106ns logic, 0.242ns route)
+                                                       (30.5% logic, 69.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/SP.HIGH (SLICE_X14Y21.D4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.344ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23 (FF)
+  Destination:          MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/SP.HIGH (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.348ns (Levels of Logic = 0)
+  Clock Path Skew:      0.004ns (0.036 - 0.032)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/SP.HIGH
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y22.DQ      Tcko                  0.234   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+                                                       MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+    SLICE_X14Y21.D4      net (fanout=9)        0.242   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+    SLICE_X14Y21.CLK     Tah         (-Th)     0.128   MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_2
+                                                       MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/SP.HIGH
+    -------------------------------------------------  ---------------------------
+    Total                                      0.348ns (0.106ns logic, 0.242ns route)
+                                                       (30.5% logic, 69.5% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 14.197ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 5.803ns (172.325MHz) (Tdspper_AREG_PREG)
+  Physical resource: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3/CLK
+  Logical resource: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3/CLK
+  Location pin: DSP48_X0Y3.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 16.155ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.845ns (260.078MHz) (Trper_CLKA(Fmax))
+  Physical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKAWRCLK
+  Logical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKAWRCLK
+  Location pin: RAMB8_X0Y9.CLKAWRCLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 16.155ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.845ns (260.078MHz) (Trper_CLKB(Fmax))
+  Physical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKBRDCLK
+  Logical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKBRDCLK
+  Location pin: RAMB8_X0Y9.CLKBRDCLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
 
 
 Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock clk
-------------------+------------+------------+------------+------------+------------------+--------+
-                  |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
-Source            | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
-------------------+------------+------------+------------+------------+------------------+--------+
-bus_address_in<24>|    3.983(R)|      SLOW  |   -1.497(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_address_in<25>|    2.659(R)|      SLOW  |   -0.887(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_address_in<26>|    2.623(R)|      SLOW  |   -0.797(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_address_in<27>|    2.618(R)|      SLOW  |   -0.596(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_address_in<28>|    3.047(R)|      SLOW  |   -0.570(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_address_in<29>|    3.354(R)|      SLOW  |   -0.562(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_address_in<30>|    3.662(R)|      SLOW  |   -0.602(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_address_in<31>|    3.281(R)|      SLOW  |   -0.428(R)|      SLOW  |clk_BUFGP         |   0.000|
-bus_data_in<0>    |    1.677(R)|      SLOW  |   -0.364(R)|      SLOW  |clk_BUFGP         |   0.000|
-bus_data_in<1>    |    1.898(R)|      SLOW  |   -0.540(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<2>    |    1.714(R)|      SLOW  |   -0.401(R)|      SLOW  |clk_BUFGP         |   0.000|
-bus_data_in<3>    |    1.568(R)|      SLOW  |   -0.341(R)|      SLOW  |clk_BUFGP         |   0.000|
-bus_data_in<4>    |    1.075(R)|      SLOW  |    0.205(R)|      SLOW  |clk_BUFGP         |   0.000|
-bus_data_in<5>    |    0.901(R)|      SLOW  |    0.296(R)|      SLOW  |clk_BUFGP         |   0.000|
-bus_data_in<6>    |    1.006(R)|      SLOW  |    0.271(R)|      SLOW  |clk_BUFGP         |   0.000|
-bus_data_in<7>    |    1.153(R)|      SLOW  |    0.054(R)|      SLOW  |clk_BUFGP         |   0.000|
-bus_data_in<8>    |    2.693(R)|      SLOW  |   -0.888(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<9>    |    2.624(R)|      SLOW  |   -0.845(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<10>   |    2.742(R)|      SLOW  |   -0.866(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<11>   |    2.855(R)|      SLOW  |   -0.996(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<12>   |    2.423(R)|      SLOW  |   -0.757(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<13>   |    3.129(R)|      SLOW  |   -1.099(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<14>   |    3.459(R)|      SLOW  |   -1.433(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<15>   |    2.756(R)|      SLOW  |   -0.960(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<16>   |    2.401(R)|      SLOW  |   -0.761(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<17>   |    2.518(R)|      SLOW  |   -0.828(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<18>   |    2.734(R)|      SLOW  |   -0.882(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<19>   |    2.974(R)|      SLOW  |   -1.111(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<20>   |    2.375(R)|      SLOW  |   -0.770(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<21>   |    2.614(R)|      SLOW  |   -0.904(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<22>   |    2.506(R)|      SLOW  |   -0.804(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<23>   |    2.386(R)|      SLOW  |   -0.799(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<24>   |    3.601(R)|      SLOW  |   -1.341(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<25>   |    3.566(R)|      SLOW  |   -1.328(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<26>   |    3.373(R)|      SLOW  |   -1.212(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<27>   |    3.695(R)|      SLOW  |   -1.368(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<28>   |    4.095(R)|      SLOW  |   -1.698(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<29>   |    4.378(R)|      SLOW  |   -1.811(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<30>   |    4.231(R)|      SLOW  |   -1.708(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_in<31>   |    4.190(R)|      SLOW  |   -1.731(R)|      FAST  |clk_BUFGP         |   0.000|
-command<0>        |    6.935(R)|      SLOW  |   -2.096(R)|      FAST  |clk_BUFGP         |   0.000|
-command<1>        |    5.512(R)|      SLOW  |   -1.518(R)|      FAST  |clk_BUFGP         |   0.000|
-command<2>        |    6.936(R)|      SLOW  |   -2.024(R)|      FAST  |clk_BUFGP         |   0.000|
-command<3>        |    6.813(R)|      SLOW  |   -2.081(R)|      FAST  |clk_BUFGP         |   0.000|
-command<4>        |    6.481(R)|      SLOW  |   -1.875(R)|      FAST  |clk_BUFGP         |   0.000|
-command<5>        |    6.831(R)|      SLOW  |   -2.043(R)|      FAST  |clk_BUFGP         |   0.000|
-command<6>        |    5.564(R)|      SLOW  |   -1.510(R)|      FAST  |clk_BUFGP         |   0.000|
-command<7>        |    5.479(R)|      SLOW  |   -1.487(R)|      FAST  |clk_BUFGP         |   0.000|
-command<8>        |    4.147(R)|      SLOW  |   -0.886(R)|      FAST  |clk_BUFGP         |   0.000|
-command<9>        |    3.893(R)|      SLOW  |   -0.825(R)|      FAST  |clk_BUFGP         |   0.000|
-command<10>       |    6.182(R)|      SLOW  |   -1.717(R)|      FAST  |clk_BUFGP         |   0.000|
-command<11>       |    6.008(R)|      SLOW  |   -1.661(R)|      FAST  |clk_BUFGP         |   0.000|
-command<12>       |    4.991(R)|      SLOW  |   -1.242(R)|      FAST  |clk_BUFGP         |   0.000|
-command<13>       |    5.885(R)|      SLOW  |   -1.554(R)|      FAST  |clk_BUFGP         |   0.000|
-command<14>       |    6.559(R)|      SLOW  |   -1.792(R)|      FAST  |clk_BUFGP         |   0.000|
-command<15>       |    5.325(R)|      SLOW  |   -1.333(R)|      FAST  |clk_BUFGP         |   0.000|
-command<16>       |    5.353(R)|      SLOW  |   -1.309(R)|      FAST  |clk_BUFGP         |   0.000|
-command<17>       |    4.450(R)|      SLOW  |   -0.983(R)|      FAST  |clk_BUFGP         |   0.000|
-command<18>       |    4.671(R)|      SLOW  |   -1.042(R)|      FAST  |clk_BUFGP         |   0.000|
-command<19>       |    3.710(R)|      SLOW  |   -0.741(R)|      FAST  |clk_BUFGP         |   0.000|
-command<20>       |    6.137(R)|      SLOW  |   -1.671(R)|      FAST  |clk_BUFGP         |   0.000|
-command<21>       |    5.878(R)|      SLOW  |   -1.596(R)|      FAST  |clk_BUFGP         |   0.000|
-command<22>       |    5.641(R)|      SLOW  |   -1.439(R)|      FAST  |clk_BUFGP         |   0.000|
-command<23>       |    5.442(R)|      SLOW  |   -1.351(R)|      FAST  |clk_BUFGP         |   0.000|
-command<24>       |    5.699(R)|      SLOW  |   -1.432(R)|      FAST  |clk_BUFGP         |   0.000|
-command<25>       |    5.491(R)|      SLOW  |   -1.416(R)|      FAST  |clk_BUFGP         |   0.000|
-command<26>       |    5.005(R)|      SLOW  |   -1.223(R)|      FAST  |clk_BUFGP         |   0.000|
-command<27>       |    5.727(R)|      SLOW  |   -1.536(R)|      FAST  |clk_BUFGP         |   0.000|
-command<28>       |    3.455(R)|      SLOW  |   -0.562(R)|      FAST  |clk_BUFGP         |   0.000|
-command<29>       |    3.149(R)|      SLOW  |   -0.763(R)|      FAST  |clk_BUFGP         |   0.000|
-command<30>       |    2.443(R)|      SLOW  |   -0.357(R)|      SLOW  |clk_BUFGP         |   0.000|
-command<31>       |    2.132(R)|      SLOW  |   -0.494(R)|      SLOW  |clk_BUFGP         |   0.000|
-reset             |   14.611(R)|      SLOW  |   -0.563(R)|      FAST  |clk_BUFGP         |   0.000|
-------------------+------------+------------+------------+------------+------------------+--------+
-
-Clock clk to Pad
-----------------+-----------------+------------+-----------------+------------+------------------+--------+
-                |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
-Destination     |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
-----------------+-----------------+------------+-----------------+------------+------------------+--------+
-bus_data_out<0> |         8.987(R)|      SLOW  |         3.544(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<1> |         9.433(R)|      SLOW  |         3.741(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<2> |         9.402(R)|      SLOW  |         3.728(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<3> |         9.018(R)|      SLOW  |         3.575(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<4> |         9.077(R)|      SLOW  |         3.593(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<5> |         9.361(R)|      SLOW  |         3.716(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<6> |         9.467(R)|      SLOW  |         3.756(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<7> |         9.441(R)|      SLOW  |         3.750(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<8> |         9.220(R)|      SLOW  |         3.697(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<9> |         9.670(R)|      SLOW  |         3.851(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<10>|         9.777(R)|      SLOW  |         3.892(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<11>|         9.750(R)|      SLOW  |         3.885(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<12>|        10.065(R)|      SLOW  |         4.070(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<13>|        10.021(R)|      SLOW  |         4.040(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<14>|        10.023(R)|      SLOW  |         4.027(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<15>|         9.986(R)|      SLOW  |         3.999(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<16>|        10.129(R)|      SLOW  |         4.060(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<17>|        10.084(R)|      SLOW  |         4.029(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<18>|        10.084(R)|      SLOW  |         4.029(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<19>|        11.448(R)|      SLOW  |         4.809(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<20>|        10.057(R)|      SLOW  |         4.050(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<21>|        10.367(R)|      SLOW  |         4.179(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<22>|        10.367(R)|      SLOW  |         4.179(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<23>|         9.769(R)|      SLOW  |         3.920(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<24>|        10.291(R)|      SLOW  |         4.182(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<25>|        10.040(R)|      SLOW  |         4.031(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<26>|        10.040(R)|      SLOW  |         4.031(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<27>|         9.460(R)|      SLOW  |         3.769(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<28>|         9.667(R)|      SLOW  |         3.867(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<29>|         9.271(R)|      SLOW  |         3.681(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<30>|         9.526(R)|      SLOW  |         3.812(R)|      FAST  |clk_BUFGP         |   0.000|
-bus_data_out<31>|         9.482(R)|      SLOW  |         3.788(R)|      FAST  |clk_BUFGP         |   0.000|
-status<30>      |        10.554(R)|      SLOW  |         4.405(R)|      FAST  |clk_BUFGP         |   0.000|
-status<31>      |        10.289(R)|      SLOW  |         4.096(R)|      FAST  |clk_BUFGP         |   0.000|
-----------------+-----------------+------------+-----------------+------------+------------------+--------+
-
 Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   18.651|    7.781|    6.205|         |
+clk            |   17.524|    8.516|    6.651|         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sat Nov 09 14:01:50 2013 
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 2558974 paths, 0 nets, and 5203 connections
+
+Design statistics:
+   Minimum period:  17.524ns{1}   (Maximum frequency:  57.065MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sat Nov 09 20:22:28 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 247 MB
+Peak Memory Usage: 236 MB
 
 
 

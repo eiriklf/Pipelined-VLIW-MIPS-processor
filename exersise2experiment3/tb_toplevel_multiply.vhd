@@ -111,36 +111,37 @@ ARCHITECTURE behavior OF tb_Multiplytoplevel IS
 	constant data2 : std_logic_vector(0 to 31):= "00001000000000000000000000001010";
 	constant data3 : std_logic_vector(0 to 31):= "10000000000000000000000000001010";
   
-  -- These are the instructions executed by the CPU (loaded to instruction-memory)
-  -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
+  -- As we can see, we can issue the MFLO and MFHI instruction at the same time as the mult instruction
   
   --Vliw/multi issued instructions:
   constant ins00 : std_logic_vector(0 to 31) := X"00000000";--NOP
+  constant ins06 : std_logic_vector(0 to 31) := X"00410018";--mult $2,$1
+  constant ins07 : std_logic_vector(0 to 31) := X"00430018";--mult $2,$3
+  constant ins08 : std_logic_vector(0 to 31) := X"00420018";--mult $2,$2
   constant ins09 : std_logic_vector(0 to 31) :=X"00630018";--mult $3,$3
-  constant ins06 : std_logic_vector(0 to 31) := X"0042001A";--div $2, $2
   --instructions:
 	constant ins0  : std_logic_vector(0 to 31) := X"8C010001";--lw $1, 1($0)
 	constant ins1  : std_logic_vector(0 to 31) := X"8C020002";--lw $2, 2($0)
 	constant ins2  : std_logic_vector(0 to 31) := X"8C030003";--lw $3, 3($0)
-	constant ins3  : std_logic_vector(0 to 31) := X"00622022";--sub $4, $3, $2
+	constant ins3  : std_logic_vector(0 to 31) := X"00000000";--NOP
 	constant ins4  : std_logic_vector(0 to 31) := X"8C0B0001";--lw $11, 1($0)
 	constant ins5  : std_logic_vector(0 to 31) := X"8C0C0002";--lw $12, 2($0)
-	constant ins6  : std_logic_vector(0 to 31) := X"00221820";--add $3, $1, $2
-	constant ins7  : std_logic_vector(0 to 31) := X"AC030004";--sw $3, 4($0)
-	constant ins8  : std_logic_vector(0 to 31) := X"AC030006";--sw $3, 6($0)
+	constant ins6  : std_logic_vector(0 to 31) := X"00008012";--MFLO $16
+	constant ins7  : std_logic_vector(0 to 31) := X"00007012";--MFLO $14
+	constant ins8  : std_logic_vector(0 to 31) := X"00006812";--MFLO $13
 	constant ins9  : std_logic_vector(0 to 31) := X"00007812";--MFLO $15 --note that hazards on MFLO and MFHI must be resolved by the compiler
-	constant ins10 : std_logic_vector(0 to 31) := X"3C030006";--lui $3, 6 forwarded to the add insturction 
-	constant ins11 : std_logic_vector(0 to 31) := X"AC030008";--sw $3, 8($0)
-	constant ins12 : std_logic_vector(0 to 31) := X"00231820";--add $3, $1, $3
-	constant ins13 : std_logic_vector(0 to 31) := X"AC030009";--sw $3, 9($0)
-  	constant ins14 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
-	constant ins15 : std_logic_vector(0 to 31) := X"14010002";--bne $0, $1, 2
-	constant ins16 : std_logic_vector(0 to 31) := X"016B5820";--add $11,$11,$11
-	constant ins17 : std_logic_vector(0 to 31) :=X"1401FFEE";--bne $0, $1, -18
-   constant ins18 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
-	constant ins19 : std_logic_vector(0 to 31) :=X"1401FFFD";--bne $0, $1, -3
-	constant ins20 : std_logic_vector(0 to 31) :=X"1001FFFB";--beq $0, $1, -3
-	constant ins21 : std_logic_vector(0 to 31) :=X"156CFFFD";--bne $11, $12, -3;
+	constant ins10 : std_logic_vector(0 to 31) := X"00006010";--MFHI $12
+	constant ins11 : std_logic_vector(0 to 31) := X"AC0E0008";--sw $14, 8($0)
+	constant ins12 : std_logic_vector(0 to 31) := X"AC0D0009";--sw $13, 9($0)
+	constant ins13 : std_logic_vector(0 to 31) := X"AC0F000A";--sw $15, 10($0)
+  	constant ins14 : std_logic_vector(0 to 31) := X"AC0C000B";--sw $12, 11($0)
+	constant ins15 : std_logic_vector(0 to 31) := X"AC10000C";--sw $16, 12($0)
+	constant ins16 : std_logic_vector(0 to 31) := X"1000FFFF";--beq $0,$0, -1 --everything stops here
+	constant ins17 : std_logic_vector(0 to 31) :=X"1401FFEE";--bne $0, $1, -18 --aditional test of branch. this branch should never happen because we dont have delay slot
+   constant ins18 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11 --test of branch, this instruction should not be executed
+	constant ins19 : std_logic_vector(0 to 31) :=X"00000000";--NOP, expansion Windows
+	constant ins20 : std_logic_vector(0 to 31) :=X"00000000";--NOP
+	constant ins21 : std_logic_vector(0 to 31) :=X"00000000";--NOP
    
   -- Used to control the COM-module
 	constant CMD_IDLE	: std_logic_vector(0 to 31) := "00000000000000000000000000000000";
@@ -384,7 +385,7 @@ BEGIN
 
     command <= CMD_WI;          
     bus_address_in <= addr15;
-    bus_data_in <= ins00;
+    bus_data_in <= ins07;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -406,7 +407,7 @@ BEGIN
 
     command <= CMD_WI;          
     bus_address_in <= addr17;
-    bus_data_in <= ins00;
+    bus_data_in <= ins08;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					

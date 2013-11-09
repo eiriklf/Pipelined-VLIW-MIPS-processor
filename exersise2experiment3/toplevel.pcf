@@ -1,4 +1,630 @@
 //! **************************************************************************
-// Written by: Map M.81d on Sat Nov 09 14:08:27 2013
+// Written by: Map M.81d on Sat Nov 09 20:21:53 2013
 //! **************************************************************************
+
+SCHEMATIC START;
+PIN MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_pins<110> = BEL
+        "MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result" PINNAME CLK;
+PIN MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_pins<110> = BEL
+        "MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2" PINNAME CLK;
+PIN MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1_pins<16> = BEL
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1" PINNAME CLKAWRCLK;
+PIN MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1_pins<17> = BEL
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1" PINNAME CLKBRDCLK;
+PIN MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2_pins<16> = BEL
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2" PINNAME CLKAWRCLK;
+PIN MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2_pins<17> = BEL
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2" PINNAME CLKBRDCLK;
+PIN MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS_pins<16> = BEL
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS" PINNAME CLKAWRCLK;
+PIN MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS_pins<17> = BEL
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS" PINNAME CLKBRDCLK;
+PIN MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3_pins<16> = BEL
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3" PINNAME CLKAWRCLK;
+PIN MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3_pins<17> = BEL
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3" PINNAME CLKBRDCLK;
+PIN DATA_MEM/Mram_MEM_pins<16> = BEL "DATA_MEM/Mram_MEM" PINNAME CLKAWRCLK;
+PIN DATA_MEM/Mram_MEM_pins<17> = BEL "DATA_MEM/Mram_MEM" PINNAME CLKBRDCLK;
+PIN INST_MEM/Mram_MEM_pins<16> = BEL "INST_MEM/Mram_MEM" PINNAME CLKAWRCLK;
+PIN INST_MEM/Mram_MEM_pins<17> = BEL "INST_MEM/Mram_MEM" PINNAME CLKBRDCLK;
+PIN INST_MEM/Mram_MEM1_pins<16> = BEL "INST_MEM/Mram_MEM1" PINNAME CLKAWRCLK;
+PIN INST_MEM/Mram_MEM1_pins<17> = BEL "INST_MEM/Mram_MEM1" PINNAME CLKBRDCLK;
+PIN MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_pins<110> = BEL
+        "MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1" PINNAME CLK;
+PIN MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3_pins<110> = BEL
+        "MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3" PINNAME CLK;
+TIMEGRP clk = BEL "MIPS_SC_PROCESSOR/MEMWB/data_0" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_1" BEL "MIPS_SC_PROCESSOR/MEMWB/data_2"
+        BEL "MIPS_SC_PROCESSOR/MEMWB/data_3" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_4" BEL "MIPS_SC_PROCESSOR/MEMWB/data_5"
+        BEL "MIPS_SC_PROCESSOR/MEMWB/data_6" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_7" BEL "MIPS_SC_PROCESSOR/MEMWB/data_8"
+        BEL "MIPS_SC_PROCESSOR/MEMWB/data_9" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_10" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_11" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_12" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_13" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_14" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_15" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_16" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_17" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_18" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_19" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_20" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_21" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_22" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_23" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_24" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_25" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_26" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_27" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_28" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_29" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_30" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_31" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_32" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_33" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_34" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_35" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_36" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_37" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_38" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_39" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_40" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_41" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_42" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_43" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_44" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_45" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_46" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_47" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_48" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_49" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_50" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_51" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_52" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_53" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_54" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_55" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_56" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_57" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_58" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_59" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_60" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_61" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_62" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_63" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_64" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_65" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_66" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_67" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_68" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_69" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_70" BEL
+        "MIPS_SC_PROCESSOR/MEMWB/data_71" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_57" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_56" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_55" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_54" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_53" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_52" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_51" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_50" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_49" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_48" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_47" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_46" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_45" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_44" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_43" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_42" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_41" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_40" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_39" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_38" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_37" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_36" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_35" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_34" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_33" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_32" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_31" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_30" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_29" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_28" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_27" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_26" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_25" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_24" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_23" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_22" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_21" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_20" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_19" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_18" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_17" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_16" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_15" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_14" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_13" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_12" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_11" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_10" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_9" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_8" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_7" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_6" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_5" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_4" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_3" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_2" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_1" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_0" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_88" BEL "MIPS_SC_PROCESSOR/IFID/data_89"
+        BEL "MIPS_SC_PROCESSOR/IFID/data_90" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_91" BEL "MIPS_SC_PROCESSOR/IFID/data_92"
+        BEL "MIPS_SC_PROCESSOR/IFID/data_93" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_94" BEL "MIPS_SC_PROCESSOR/IFID/data_95"
+        BEL "MIPS_SC_PROCESSOR/IFID/data_96" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_97" BEL "MIPS_SC_PROCESSOR/IFID/data_98"
+        BEL "MIPS_SC_PROCESSOR/IFID/data_99" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_100" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_101" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_102" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_103" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_104" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_105" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_106" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_107" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_108" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_109" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_110" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_111" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_112" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_113" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_114" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_115" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_116" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_117" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_118" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_119" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_33" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_32" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_31" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_30" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_29" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_28" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_17" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_16" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_15" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_14" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_13" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_12" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_11" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_10" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_9" BEL
+        "MIPS_SC_PROCESSOR/IFID/data_sliced_8" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_159" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_158" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_157" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_156" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_155" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_154" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_153" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_152" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_151" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_150" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_149" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_148" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_147" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_146" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_145" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_144" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_143" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_142" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_141" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_140" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_139" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_138" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_137" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_136" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_135" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_134" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_133" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_132" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_131" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_130" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_129" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_128" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_127" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_126" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_125" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_124" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_123" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_122" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_121" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_120" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_119" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_118" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_117" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_116" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_114" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_113" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_112" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_111" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_110" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_109" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_108" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_107" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_106" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_105" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_104" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_103" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_102" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_101" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_100" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_99" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_98" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_97" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_96" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_95" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_94" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_93" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_92" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_91" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_90" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_89" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_88" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_87" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_86" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_84" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_83" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_82" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_81" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_80" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_79" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_78" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_77" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_75" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_74" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_73" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_72" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_71" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_70" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_69" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_68" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_67" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_66" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_28" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_26" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_25" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_24" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_21" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_20" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_18" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_17" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_16" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_15" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_14" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_13" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_12" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_11" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_10" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_9" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_8" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_7" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_6" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_5" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_4" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_3" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_2" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_1" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_0" BEL
+        "MIPS_SC_PROCESSOR/LO/data_0" BEL "MIPS_SC_PROCESSOR/LO/data_1" BEL
+        "MIPS_SC_PROCESSOR/LO/data_2" BEL "MIPS_SC_PROCESSOR/LO/data_3" BEL
+        "MIPS_SC_PROCESSOR/LO/data_4" BEL "MIPS_SC_PROCESSOR/LO/data_5" BEL
+        "MIPS_SC_PROCESSOR/LO/data_6" BEL "MIPS_SC_PROCESSOR/LO/data_7" BEL
+        "MIPS_SC_PROCESSOR/LO/data_8" BEL "MIPS_SC_PROCESSOR/LO/data_9" BEL
+        "MIPS_SC_PROCESSOR/LO/data_10" BEL "MIPS_SC_PROCESSOR/LO/data_11" BEL
+        "MIPS_SC_PROCESSOR/LO/data_12" BEL "MIPS_SC_PROCESSOR/LO/data_13" BEL
+        "MIPS_SC_PROCESSOR/LO/data_14" BEL "MIPS_SC_PROCESSOR/LO/data_15" BEL
+        "MIPS_SC_PROCESSOR/LO/data_16" BEL "MIPS_SC_PROCESSOR/LO/data_17" BEL
+        "MIPS_SC_PROCESSOR/LO/data_18" BEL "MIPS_SC_PROCESSOR/LO/data_19" BEL
+        "MIPS_SC_PROCESSOR/LO/data_20" BEL "MIPS_SC_PROCESSOR/LO/data_21" BEL
+        "MIPS_SC_PROCESSOR/LO/data_22" BEL "MIPS_SC_PROCESSOR/LO/data_23" BEL
+        "MIPS_SC_PROCESSOR/LO/data_24" BEL "MIPS_SC_PROCESSOR/LO/data_25" BEL
+        "MIPS_SC_PROCESSOR/LO/data_26" BEL "MIPS_SC_PROCESSOR/LO/data_27" BEL
+        "MIPS_SC_PROCESSOR/LO/data_28" BEL "MIPS_SC_PROCESSOR/LO/data_29" BEL
+        "MIPS_SC_PROCESSOR/LO/data_30" BEL "MIPS_SC_PROCESSOR/LO/data_31" BEL
+        "MIPS_SC_PROCESSOR/HI/data_0" BEL "MIPS_SC_PROCESSOR/HI/data_1" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_74" BEL "MIPS_SC_PROCESSOR/IDEX/data_75"
+        BEL "MIPS_SC_PROCESSOR/IDEX/data_76" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_77" BEL "MIPS_SC_PROCESSOR/IDEX/data_78"
+        BEL "MIPS_SC_PROCESSOR/IDEX/data_79" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_80" BEL "MIPS_SC_PROCESSOR/IDEX/data_81"
+        BEL "MIPS_SC_PROCESSOR/IDEX/data_82" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_83" BEL "MIPS_SC_PROCESSOR/IDEX/data_84"
+        BEL "MIPS_SC_PROCESSOR/IDEX/data_85" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_86" BEL "MIPS_SC_PROCESSOR/IDEX/data_87"
+        BEL "MIPS_SC_PROCESSOR/IDEX/data_88" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_89" BEL "MIPS_SC_PROCESSOR/IDEX/data_90"
+        BEL "MIPS_SC_PROCESSOR/IDEX/data_91" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_92" BEL "MIPS_SC_PROCESSOR/IDEX/data_93"
+        BEL "MIPS_SC_PROCESSOR/IDEX/data_94" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_95" BEL "MIPS_SC_PROCESSOR/IDEX/data_96"
+        BEL "MIPS_SC_PROCESSOR/IDEX/data_97" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_98" BEL "MIPS_SC_PROCESSOR/IDEX/data_99"
+        BEL "MIPS_SC_PROCESSOR/IDEX/data_100" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_101" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_102" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_103" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_104" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_105" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_213" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_212" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_211" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_210" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_209" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_208" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_207" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_206" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_205" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_204" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_203" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_202" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_201" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_200" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_199" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_198" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_197" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_196" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_195" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_194" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_193" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_192" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_191" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_190" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_189" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_188" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_187" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_186" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_185" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_184" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_183" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_182" BEL
+        "MIPS_SC_PROCESSOR/global_prediction/data_1" BEL
+        "MIPS_SC_PROCESSOR/global_prediction/data_0" PIN
+        "MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_pins<110>" PIN
+        "MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_pins<110>" BEL
+        "TDT4255_COM/state_FSM_FFd2" BEL "TDT4255_COM/state_FSM_FFd3" BEL
+        "TDT4255_COM/state_FSM_FFd1" BEL "TDT4255_COM/bus_data_out_0" BEL
+        "TDT4255_COM/bus_data_out_1" BEL "TDT4255_COM/bus_data_out_2" BEL
+        "TDT4255_COM/bus_data_out_3" BEL "TDT4255_COM/bus_data_out_4" BEL
+        "TDT4255_COM/bus_data_out_5" BEL "TDT4255_COM/bus_data_out_6" BEL
+        "TDT4255_COM/bus_data_out_7" BEL "TDT4255_COM/bus_data_out_8" BEL
+        "TDT4255_COM/bus_data_out_9" BEL "TDT4255_COM/bus_data_out_10" BEL
+        "TDT4255_COM/bus_data_out_11" BEL "TDT4255_COM/bus_data_out_12" BEL
+        "TDT4255_COM/bus_data_out_13" BEL "TDT4255_COM/bus_data_out_14" BEL
+        "TDT4255_COM/bus_data_out_15" BEL "TDT4255_COM/bus_data_out_16" BEL
+        "TDT4255_COM/bus_data_out_17" BEL "TDT4255_COM/bus_data_out_18" BEL
+        "TDT4255_COM/bus_data_out_19" BEL "TDT4255_COM/bus_data_out_20" BEL
+        "TDT4255_COM/bus_data_out_21" BEL "TDT4255_COM/bus_data_out_22" BEL
+        "TDT4255_COM/bus_data_out_23" BEL "TDT4255_COM/bus_data_out_24" BEL
+        "TDT4255_COM/bus_data_out_25" BEL "TDT4255_COM/bus_data_out_26" BEL
+        "TDT4255_COM/bus_data_out_27" BEL "TDT4255_COM/bus_data_out_28" BEL
+        "TDT4255_COM/bus_data_out_29" BEL "TDT4255_COM/bus_data_out_30" BEL
+        "TDT4255_COM/bus_data_out_31" BEL "TDT4255_COM/internal_data_out_31"
+        BEL "TDT4255_COM/internal_data_out_30" BEL
+        "TDT4255_COM/internal_data_out_29" BEL
+        "TDT4255_COM/internal_data_out_28" BEL
+        "TDT4255_COM/internal_data_out_27" BEL
+        "TDT4255_COM/internal_data_out_26" BEL
+        "TDT4255_COM/internal_data_out_25" BEL
+        "TDT4255_COM/internal_data_out_24" BEL
+        "TDT4255_COM/internal_data_out_23" BEL
+        "TDT4255_COM/internal_data_out_22" BEL
+        "TDT4255_COM/internal_data_out_21" BEL
+        "TDT4255_COM/internal_data_out_20" BEL
+        "TDT4255_COM/internal_data_out_19" BEL
+        "TDT4255_COM/internal_data_out_18" BEL
+        "TDT4255_COM/internal_data_out_17" BEL
+        "TDT4255_COM/internal_data_out_16" BEL
+        "TDT4255_COM/internal_data_out_15" BEL
+        "TDT4255_COM/internal_data_out_14" BEL
+        "TDT4255_COM/internal_data_out_13" BEL
+        "TDT4255_COM/internal_data_out_12" BEL
+        "TDT4255_COM/internal_data_out_11" BEL
+        "TDT4255_COM/internal_data_out_10" BEL
+        "TDT4255_COM/internal_data_out_9" BEL
+        "TDT4255_COM/internal_data_out_8" BEL
+        "TDT4255_COM/internal_data_out_7" BEL
+        "TDT4255_COM/internal_data_out_6" BEL
+        "TDT4255_COM/internal_data_out_5" BEL
+        "TDT4255_COM/internal_data_out_4" BEL
+        "TDT4255_COM/internal_data_out_3" BEL
+        "TDT4255_COM/internal_data_out_2" BEL
+        "TDT4255_COM/internal_data_out_1" BEL
+        "TDT4255_COM/internal_data_out_0" BEL "TDT4255_COM/status_0" BEL
+        "TDT4255_COM/status_1" BEL "TDT4255_COM/processor_enable" BEL
+        "TDT4255_COM/write_enable" BEL "TDT4255_COM/write_imem" BEL
+        "TDT4255_COM/write_data_31" BEL "TDT4255_COM/write_data_30" BEL
+        "TDT4255_COM/write_data_29" BEL "TDT4255_COM/write_data_28" BEL
+        "TDT4255_COM/write_data_27" BEL "TDT4255_COM/write_data_26" BEL
+        "TDT4255_COM/write_data_25" BEL "TDT4255_COM/write_data_24" BEL
+        "TDT4255_COM/write_data_23" BEL "TDT4255_COM/write_data_22" BEL
+        "TDT4255_COM/write_data_21" BEL "TDT4255_COM/write_data_20" BEL
+        "TDT4255_COM/write_data_19" BEL "TDT4255_COM/write_data_18" BEL
+        "TDT4255_COM/write_data_17" BEL "TDT4255_COM/write_data_16" BEL
+        "TDT4255_COM/write_data_15" BEL "TDT4255_COM/write_data_14" BEL
+        "TDT4255_COM/write_data_13" BEL "TDT4255_COM/write_data_12" BEL
+        "TDT4255_COM/write_data_11" BEL "TDT4255_COM/write_data_10" BEL
+        "TDT4255_COM/write_data_9" BEL "TDT4255_COM/write_data_8" BEL
+        "TDT4255_COM/write_data_7" BEL "TDT4255_COM/write_data_6" BEL
+        "TDT4255_COM/write_data_5" BEL "TDT4255_COM/write_data_4" BEL
+        "TDT4255_COM/write_data_3" BEL "TDT4255_COM/write_data_2" BEL
+        "TDT4255_COM/write_data_1" BEL "TDT4255_COM/write_data_0" BEL
+        "TDT4255_COM/write_addr_7" BEL "TDT4255_COM/write_addr_6" BEL
+        "TDT4255_COM/write_addr_5" BEL "TDT4255_COM/write_addr_4" BEL
+        "TDT4255_COM/write_addr_3" BEL "TDT4255_COM/write_addr_2" BEL
+        "TDT4255_COM/write_addr_1" BEL "TDT4255_COM/write_addr_0" BEL
+        "TDT4255_COM/read_addr_7" BEL "TDT4255_COM/read_addr_6" BEL
+        "TDT4255_COM/read_addr_5" BEL "TDT4255_COM/read_addr_4" BEL
+        "TDT4255_COM/read_addr_3" BEL "TDT4255_COM/read_addr_2" BEL
+        "TDT4255_COM/read_addr_1" BEL "TDT4255_COM/read_addr_0" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_31" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_30" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_29" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_28" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_27" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_26" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_25" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_24" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_23" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_22" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_21" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_20" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_19" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_18" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_17" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_16" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_15" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_14" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_13" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_12" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_11" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_10" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_9" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_8" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_7" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_6" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_5" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_4" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_3" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_2" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_1" BEL
+        "MIPS_SC_PROCESSOR/COUNTER/data_0" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_139" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_137" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_136" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_135" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_68" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_67" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_66" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_65" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_64" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_63" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_62" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_61" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_60" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_59" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_58" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_57" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_56" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_55" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_54" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_53" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_52" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_51" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_50" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_49" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_48" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_47" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_46" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_45" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_44" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_43" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_42" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_41" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_40" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_39" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_38" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_37" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_36" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_35" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_34" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_33" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_32" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_31" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_30" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_29" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_28" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_27" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_26" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_25" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_24" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_23" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_22" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_21" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_20" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_19" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_18" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_17" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_16" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_15" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_14" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_13" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_12" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_11" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_10" BEL "MIPS_SC_PROCESSOR/EXMEM/data_9"
+        BEL "MIPS_SC_PROCESSOR/EXMEM/data_8" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_7" BEL "MIPS_SC_PROCESSOR/EXMEM/data_6"
+        BEL "MIPS_SC_PROCESSOR/EXMEM/data_5" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_4" BEL "MIPS_SC_PROCESSOR/EXMEM/data_3"
+        BEL "MIPS_SC_PROCESSOR/EXMEM/data_2" BEL
+        "MIPS_SC_PROCESSOR/EXMEM/data_1" BEL "MIPS_SC_PROCESSOR/EXMEM/data_0"
+        BEL "clk_BUFGP/BUFG" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19_1" BEL
+        "MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_75_1" BEL
+        "TDT4255_COM/processor_enable_1" PIN
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1_pins<16>" PIN
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1_pins<17>" PIN
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2_pins<16>" PIN
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2_pins<17>" PIN
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS_pins<16>" PIN
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS_pins<17>" PIN
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3_pins<16>" PIN
+        "MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3_pins<17>" PIN
+        "DATA_MEM/Mram_MEM_pins<16>" PIN "DATA_MEM/Mram_MEM_pins<17>" PIN
+        "INST_MEM/Mram_MEM_pins<16>" PIN "INST_MEM/Mram_MEM_pins<17>" PIN
+        "INST_MEM/Mram_MEM1_pins<16>" PIN "INST_MEM/Mram_MEM1_pins<17>" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/SP.HIGH" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/SP.LOW" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.HIGH" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/DP.LOW" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.LOW" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS31/SP" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS31/DP" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS34/SP" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS34/DP" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS32/SP" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS32/DP" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS33/SP" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS33/DP" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMA_D1" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMA" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMB_D1" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMB" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMC_D1" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMC" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMD_D1" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMD" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMA_D1" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMA" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMB_D1" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMB" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMC_D1" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMC" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMD_D1" BEL
+        "MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMD" PIN
+        "MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_pins<110>" PIN
+        "MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3_pins<110>";
+TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+SCHEMATIC END;
 

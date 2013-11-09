@@ -312,14 +312,14 @@ end component Forwarding;
     signal IDEXs: std_logic_vector(287 downto 0);
     
     --EX/MEM in
-    signal EXMEM_in: std_logic_vector(209 downto 0);    
+    signal EXMEM_in: std_logic_vector(204 downto 0);    
     --EX/MEM out
-    signal EXMEMs: std_logic_vector(209 downto 0);
+    signal EXMEMs: std_logic_vector(204 downto 0);
     
     --mem/wb in
-    signal MEMWB_in: std_logic_vector(109 downto 0);
+    signal MEMWB_in: std_logic_vector(71 downto 0);
     --mem/wb output
-    signal MEMWBs: std_logic_vector(109 downto 0);
+    signal MEMWBs: std_logic_vector(71 downto 0);
     
     --mux controlinputs
     
@@ -495,16 +495,16 @@ end component Forwarding;
                  data_out    => LO_out,
                  clock       => clk,
                  reset       => reset,
-                 write_enable=>memwbs(109) --LOHI_write signal
+                 write_enable=>EXMEMs(172) --LOHI_write signal
               );
         --HI register tied to the multiplier
         HI: regi generic map ( N=>32)
         port map(
-                 Data_in     =>EXMEMs(209 downto 178),--most significant 32 bits(exept the COUT) from the multiply-result
+                 Data_in     =>EXMEMs(204 downto 173),--most significant 32 bits(exept the COUT) from the multiply-result
                  data_out    => HI_out,
                  clock       => clk,
                  reset       => reset,
-                 write_enable=>memwbs(109)  --LOHI_write signal
+                 write_enable=>EXMEMs(172)  --LOHI_write signal
              );
 
         --simple control unit for the multiplier path
@@ -588,14 +588,13 @@ end component Forwarding;
     --memtoreg													->EXMEMs(137)
     --regdest/IDEX(149)										->EXMEMs(138)
     --LO_IN														->EXMEMs(170 downto 139)
-    --Imemdata2(16 downto 11)/IDEXs(175 downto 171)->EXMEMs(175 downto 171)-- no longer in use
-    --memtoreg2												->EXMEMs(176)
-    --LOHI_write/IDEXs(259)								->EXMEMs(177)
-    --HI_IN														->EXMEMs(209 downto 178)
+    --memtoreg2												->EXMEMs(171)
+    --LOHI_write/IDEXs(259)								->EXMEMs(172)
+    --HI_IN														->EXMEMs(204 downto 173)
 
-    EXMEM_in<=HI_IN&IDEXs(259)&memtoreg2&IDEXs(162 downto 158)&LO_IN &IDEXs(149)&memtoreg&IDEXs(146 downto 144)&concat&branchadder&'0'&ALU_Result&ForwardBout&ChosenWriteReg;
+    EXMEM_in<=HI_IN&IDEXs(259)&memtoreg2&LO_IN &IDEXs(149)&memtoreg&IDEXs(146 downto 144)&concat&branchadder&'0'&ALU_Result&ForwardBout&ChosenWriteReg;
            --pipeline register EXMEM
-    EXMEM: regi generic map (N=>210)
+    EXMEM: regi generic map (N=>205)
     port map(
                 data_in     => EXMEM_in,
                 data_out    => EXMEMs,
@@ -603,19 +602,17 @@ end component Forwarding;
                 reset       => reset,
                 write_enable=>'1'
                 );
+					 
               --MEMWB register mapping relations
-    --chosenWriteReg/EXMEMs(4 downto 0)->MEMWBs(4 downto 0)
-	 --Alu_result/EXMEMs(68 downto 37)->MEMWBs(36 downto 5)
-	 --Dmem_data_in->MEMWBs(68 downto 37)
-	 --regwrite/EXMEMs(136)->MEMWBs(69)
-	 --Memtoreg/EXMEMs(137)->MEMWBs(70)
-	 --LO_IN/EXMEMs(170 downto 139)->MEMWBs(102 downto 71)--unused
-	 --imemdata2/EXMEMs(175 downto 171)->MEMWBs(107 downto 103)--unused
-	 --memtoreg2/EXMEMs(176)->MEMWBs(108)
-	 --LOHI_write/EXMEMs(177)->MEMWBs(109)
-    MEMWB_in<=EXMEMs(177)&EXMEMs(176)&EXMEMs(175 downto 171)&EXMEMs(170 downto 139)& EXMEMs(137)&EXMEMs(136)&dmem_data_in&EXMEMs(68 downto 37)&EXMEMs(4 downto 0);
+    --chosenWriteReg/EXMEMs(4 downto 0)	->MEMWBs(4 downto 0)
+	 --Alu_result/EXMEMs(68 downto 37)		->MEMWBs(36 downto 5)
+	 --Dmem_data_in								->MEMWBs(68 downto 37)
+	 --regwrite/EXMEMs(136)						->MEMWBs(69)
+	 --Memtoreg/EXMEMs(137)						->MEMWBs(70)
+	 --memtoreg2/EXMEMs(171)					->MEMWBs(71)
+    MEMWB_in<=EXMEMs(171)& EXMEMs(137)&EXMEMs(136)&dmem_data_in&EXMEMs(68 downto 37)&EXMEMs(4 downto 0);
            --pipeline register MEMWB
-    MEMWB: regi generic map (N=>110)
+    MEMWB: regi generic map (N=>72)
     port map(
                 data_in     =>MEMWB_in,
                 data_out    => MEMWBs,
@@ -696,9 +693,9 @@ end component Forwarding;
                         );
     
     
-    -- ADRESSADDER is the second adder, which is used for calculation new PC based on branching.
     --The branch address is shifted 1 to the left for the same reason as above (concat signal)
     address_shift<=IDEXs(40 downto 10)&'0';
+	 --the branchaddress is calculated and placed into the branchadder signal
 	 branchadder<=address_shift+IDEXs(137 downto 106);
  
     --The branch target buffer stores the branch target addresses of previous branches. It is indexed by
@@ -779,7 +776,7 @@ end component Forwarding;
 			  );
 			  
             --mux for chosing input from DMEM
-            QuadputMux_control<=MEMWBs(70)&MEMWBs(108);
+            QuadputMux_control<=MEMWBs(70)&MEMWBs(71);
     Regdest_MUX: QuadputMux 
 	 port map(   
               a 				=>MEMWBs(36 downto 5),--ALU_Result,

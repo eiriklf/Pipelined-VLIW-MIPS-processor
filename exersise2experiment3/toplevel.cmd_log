@@ -1219,3 +1219,28 @@ map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off toplevel_map.ncd toplevel.ncd toplevel.pcf 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc toplevel.ucf -p xc6slx16-csg324-2 toplevel.ngc toplevel.ngd  
 map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o toplevel_map.ncd toplevel.ngd toplevel.pcf 
+par -w -intstyle ise -ol high -mt off toplevel_map.ncd toplevel.ncd toplevel.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml toplevel.twx toplevel.ncd -o toplevel.twr toplevel.pcf -ucf toplevel.ucf 
+xst -intstyle ise -ifn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.xst" -ofn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.syr" 
+xst -intstyle ise -ifn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.xst" -ofn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.syr" 
+xst -intstyle ise -ifn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.xst" -ofn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc toplevel.ucf -p xc6slx16-csg324-2 toplevel.ngc toplevel.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o toplevel_map.ncd toplevel.ngd toplevel.pcf 
+par -w -intstyle ise -ol high -mt off toplevel_map.ncd toplevel.ncd toplevel.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml toplevel.twx toplevel.ncd -o toplevel.twr toplevel.pcf -ucf toplevel.ucf 
+xst -intstyle ise -ifn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.xst" -ofn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc toplevel.ucf -p xc6slx16-csg324-2 toplevel.ngc toplevel.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o toplevel_map.ncd toplevel.ngd toplevel.pcf 
+par -w -intstyle ise -ol high -mt off toplevel_map.ncd toplevel.ncd toplevel.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml toplevel.twx toplevel.ncd -o toplevel.twr toplevel.pcf -ucf toplevel.ucf 
+xst -intstyle ise -ifn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.xst" -ofn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc toplevel.ucf -p xc6slx16-csg324-2 toplevel.ngc toplevel.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o toplevel_map.ncd toplevel.ngd toplevel.pcf 
+par -w -intstyle ise -ol high -mt off toplevel_map.ncd toplevel.ncd toplevel.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml toplevel.twx toplevel.ncd -o toplevel.twr toplevel.pcf -ucf toplevel.ucf 
+xst -intstyle ise -ifn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.xst" -ofn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc toplevel.ucf -p xc6slx16-csg324-2 toplevel.ngc toplevel.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o toplevel_map.ncd toplevel.ngd toplevel.pcf 
+par -w -intstyle ise -ol high -mt off toplevel_map.ncd toplevel.ncd toplevel.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml toplevel.twx toplevel.ncd -o toplevel.twr toplevel.pcf -ucf toplevel.ucf 
+xst -intstyle ise -ifn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.xst" -ofn "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel.syr" 
