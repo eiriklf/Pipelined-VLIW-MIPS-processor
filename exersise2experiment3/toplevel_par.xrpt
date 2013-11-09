@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Sat Nov 09 14:01:05 2013">
+  <application stringID="par" timeStamp="Sat Nov 09 14:08:36 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -59,17 +59,16 @@
     </section>
     <task stringID="PAR_OPTION_SUMMARY">
       <section stringID="PAR_OPTION_SUMMARY">
-        <item DEFAULT="false" label="-x" stringID="PAR_IGNORE_TIMING" value="true"/>
         <item DEFAULT="" label="-intstyle" stringID="PAR_INTSTYLE" value="ise"/>
+        <item DEFAULT="off" label="-mt" stringID="PAR_MULTI_THREADING" value="off"/>
         <item DEFAULT="std" label="-ol" stringID="PAR_OVERALL_EFFORTLEVEL" value="high"/>
         <item DEFAULT="false" label="-w" stringID="PAR_OVERWRITE_OUTPUT" value="true"/>
-        <item DEFAULT="false" label="-k" stringID="PAR_REENTRANT_ROUTE" value="true"/>
       </section>
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
         <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="37 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="37 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="38 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
         <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="39 secs "/>
@@ -3000,7 +2999,7 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Sat Nov 09 14:01:05 2013">
+  <application stringID="Par" timeStamp="Sat Nov 09 14:08:37 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
