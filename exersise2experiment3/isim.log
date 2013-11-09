@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\toplevel_isim_par.exe -gui -sdfmax /toplevel/=netgen/par/toplevel_timesim.sdf -sdfroot / -tclbatch isim.cmd -wdb C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel_isim_par.wdb 
+Running: C:\Users\eiriklf\git\dmkonsttdt4255_work\exersise2experiment3\tb_FPGA_isim_beh.exe -gui -tclbatch isim.cmd -wdb C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.wdb 
 ISim M.81d (signature 0x12940baa)
 ----------------------------------------------------------------------
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@xilinx.license.idi.ntnu.no'.
@@ -14,154 +14,96 @@ WARNING:Security:42 - Your software subscription period has lapsed. Your current
 
 ----------------------------------------------------------------------
 This is a Full version of ISim.
-INFO: SDF backannotation was successful with SDF file netgen/par/toplevel_timesim.sdf, for root module /toplevel/.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(1), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(3), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 # run 1.00us
 # run 1.00us
+# run all
+Stopped at time : 8072360 ns : File "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Regi.vhd" Line 26
+# restart
 # run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(1), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(3), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 # run 1.00us
 # run 1.00us
 # run 1.00us
 # restart
-# isim force add /toplevel/clk 1 -radix bin -value 0 -radix bin -time 100 ns -repeat 200 ns
-# isim force add /toplevel/clk 1 -radix bin -value 0 -radix bin -time 100 ns -repeat 200 ns
-# isim force add /toplevel/clk 1 -radix bin -value 0 -radix bin -time 10 ns -repeat 20 ns
-# isim force add /toplevel/clk 1 -radix bin -value 0 -radix bin -time 10 ns -repeat 20 ns
-# isim force add /toplevel/reset 1 -radix bin
-# isim force add /toplevel/reset 1 -radix bin
 # run 1.00us
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/REGISTER_F/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
-at 3331 ps(2), Instance /toplevel/MIPS_SC_PROCESSOR_REGISTER_F_Mram_REGS1/ : Warning: /X_RAMB8BWER SETUP  Low VIOLATION ON ADDRBRDADDR(7) WITH RESPECT TO CLKBRDCLK;
-  Expected := 0.4 ns; Observed := 0.157 ns; At : 3.331 ns
-at 3331 ps(2), Instance /toplevel/MIPS_SC_PROCESSOR_REGISTER_F_Mram_REGS1/ : Warning:  Setup/Hold Violation on ADDRBRDADDR(7) with respect to CLKBRDCLK when memory has been enabled. The memory contents at ADDRBRDADDR(7) of the RAM can be corrupted. This corruption is not modeled in this simulation model. Please take the necessary steps to recover from this data corruption in hardware.
-at 3444 ps, Instance /toplevel/MIPS_SC_PROCESSOR_COUNTER_data_2_1/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.201 ns; Observed := 0.109 ns; At : 3.435 ns
-at 3446 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_EXMEM_data_5/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.25 ns; Observed := 0.189 ns; At : 3.446 ns
-at 3450 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_88/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.25 ns; Observed := 0.163 ns; At : 3.45 ns
-at 3451 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_sliced_10/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.25 ns; Observed := 0.172 ns; At : 3.451 ns
-at 3452 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_EXMEM_data_22/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.201 ns; Observed := 0.174 ns; At : 3.452 ns
-at 3453 ps, Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_118/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.201 ns; Observed := 0.178 ns; At : 3.444 ns
-at 3453 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_sliced_sliced_33/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.25 ns; Observed := 0.151 ns; At : 3.453 ns
-at 3454 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IDEX_data_sliced_sliced_sliced_sliced_121/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.25 ns; Observed := 0.229 ns; At : 3.454 ns
-at 3454 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_sliced_sliced_54/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.25 ns; Observed := 0.203 ns; At : 3.454 ns
-at 3455 ps, Instance /toplevel/MIPS_SC_PROCESSOR_IDEX_data_sliced_sliced_sliced_sliced_124/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.201 ns; Observed := 0.118 ns; At : 3.446 ns
-at 3457 ps, Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_sliced_sliced_25/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.201 ns; Observed := 0.163 ns; At : 3.448 ns
-at 3459 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_sliced_14/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.25 ns; Observed := 0.078 ns; At : 3.459 ns
-at 3459 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_sliced_13/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.25 ns; Observed := 0.019 ns; At : 3.459 ns
-at 3461 ps(1), Instance /toplevel/TDT4255_COM_write_data_27/ : Warning: /X_SFF SETUP High VIOLATION ON SRST WITH RESPECT TO CLK;
-  Expected := 0.3 ns; Observed := 0.029 ns; At : 3.461 ns
-at 3462 ps(1), Instance /toplevel/TDT4255_COM_internal_data_out_7/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.201 ns; Observed := 0.164 ns; At : 3.462 ns
-at 3464 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_111/ : Warning: /X_FF HOLD High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.11 ns; Observed := 0.011 ns; At : 3.464 ns
-at 3464 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_COUNTER_data_24/ : Warning: /X_FF HOLD High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.11 ns; Observed := 0.013 ns; At : 3.464 ns
-at 3465 ps(1), Instance /toplevel/TDT4255_COM_write_data_26/ : Warning: /X_SFF HOLD  Low VIOLATION ON SRST WITH RESPECT TO CLK;
-  Expected := 0.245 ns; Observed := 0.004 ns; At : 3.465 ns
-at 3466 ps(1), Instance /toplevel/TDT4255_COM_internal_data_out_28/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.201 ns; Observed := 0.104 ns; At : 3.466 ns
-at 3468 ps(3), Instance /toplevel/MIPS_SC_PROCESSOR_REGISTER_F_Mram_REGS2/ : Warning: /X_RAMB8BWER HOLD High VIOLATION ON ADDRBRDADDR(9) WITH RESPECT TO CLKBRDCLK;
-  Expected := 0.15 ns; Observed := 0.139 ns; At : 3.468 ns
-at 3468 ps(3), Instance /toplevel/MIPS_SC_PROCESSOR_REGISTER_F_Mram_REGS2/ : Warning:  Setup/Hold Violation on ADDRBRDADDR(9) with respect to CLKBRDCLK when memory has been enabled. The memory contents at ADDRBRDADDR(9) of the RAM can be corrupted. This corruption is not modeled in this simulation model. Please take the necessary steps to recover from this data corruption in hardware.
-at 3488 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS1_RAMC_D1/ : Warning: /X_RAMD32 SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.182 ns; Observed := 0.096 ns; At : 3.288 ns
-at 3488 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS1_RAMB_D1/ : Warning: /X_RAMD32 SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.152 ns; Observed := 0.115 ns; At : 3.288 ns
-at 3488 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_112/ : Warning: /X_FF HOLD High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.11 ns; Observed := 0.035 ns; At : 3.488 ns
-at 3489 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IDEX_data_sliced_sliced_sliced_sliced_127/ : Warning: /X_FF HOLD High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.11 ns; Observed := 0.036 ns; At : 3.489 ns
-at 3492 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS2_RAMB_D1/ : Warning: /X_RAMD32 SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.152 ns; Observed := 0.044 ns; At : 3.292 ns
-at 3492 ps(1), Instance /toplevel/TDT4255_COM_write_data_24/ : Warning: /X_SFF HOLD  Low VIOLATION ON SRST WITH RESPECT TO CLK;
-  Expected := 0.245 ns; Observed := 0.031 ns; At : 3.492 ns
-at 3500 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_PREDICTION_BUFFER_Mram_REGS1_SP_LOW/ : Warning: /X_RAMD64_ADV HOLD High VIOLATION ON WE WITH RESPECT TO CLK;
-  Expected := 0.02 ns; Observed := 0.01 ns; At : 3.3 ns
-at 3500 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_PREDICTION_BUFFER_Mram_REGS1_SP_HIGH/ : Warning: /X_RAMD64_ADV HOLD High VIOLATION ON WE WITH RESPECT TO CLK;
-  Expected := 0.02 ns; Observed := 0.01 ns; At : 3.3 ns
-at 3500 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_PREDICTION_BUFFER_Mram_REGS1_DP_LOW/ : Warning: /X_RAMD64_ADV HOLD High VIOLATION ON WE WITH RESPECT TO CLK;
-  Expected := 0.02 ns; Observed := 0.01 ns; At : 3.3 ns
-at 3500 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_PREDICTION_BUFFER_Mram_REGS1_DP_HIGH/ : Warning: /X_RAMD64_ADV HOLD High VIOLATION ON WE WITH RESPECT TO CLK;
-  Expected := 0.02 ns; Observed := 0.01 ns; At : 3.3 ns
-at 3513 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IFID_data_113/ : Warning: /X_FF HOLD High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.11 ns; Observed := 0.062 ns; At : 3.513 ns
-at 3518 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_COUNTER_data_20/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.244 ns; Observed := 0.186 ns; At : 3.518 ns
-at 3529 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS1_RAMC/ : Warning: /X_RAMD32 HOLD High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.297 ns; Observed := 0.041 ns; At : 3.329 ns
-at 3530 ps(1), Instance /toplevel/TDT4255_COM_internal_data_out_16/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.244 ns; Observed := 0.214 ns; At : 3.53 ns
-at 3536 ps(1), Instance /toplevel/MIPS_SC_PROCESSOR_IDEX_data_sliced_sliced_sliced_sliced_72/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.244 ns; Observed := 0.207 ns; At : 3.536 ns
-at 3542 ps(1), Instance /toplevel/TDT4255_COM_write_data_25/ : Warning: /X_SFF HOLD  Low VIOLATION ON SRST WITH RESPECT TO CLK;
-  Expected := 0.245 ns; Observed := 0.081 ns; At : 3.542 ns
-at 3685 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS31_SP/ : Warning: /X_RAMD32 HOLD High VIOLATION ON WADR0 WITH RESPECT TO CLK;
-  Expected := 0.665 ns; Observed := 0.165 ns; At : 3.485 ns
-at 3685 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS32_SP/ : Warning: /X_RAMD32 HOLD High VIOLATION ON WADR0 WITH RESPECT TO CLK;
-  Expected := 0.665 ns; Observed := 0.165 ns; At : 3.485 ns
-at 3685 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS33_SP/ : Warning: /X_RAMD32 HOLD High VIOLATION ON WADR0 WITH RESPECT TO CLK;
-  Expected := 0.665 ns; Observed := 0.165 ns; At : 3.485 ns
-at 3685 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS34_SP/ : Warning: /X_RAMD32 HOLD High VIOLATION ON WADR0 WITH RESPECT TO CLK;
-  Expected := 0.665 ns; Observed := 0.165 ns; At : 3.485 ns
-at 3685 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS31_DP/ : Warning: /X_RAMD32 HOLD High VIOLATION ON WADR0 WITH RESPECT TO CLK;
-  Expected := 0.665 ns; Observed := 0.165 ns; At : 3.485 ns
-at 3685 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS32_DP/ : Warning: /X_RAMD32 HOLD High VIOLATION ON WADR0 WITH RESPECT TO CLK;
-  Expected := 0.665 ns; Observed := 0.165 ns; At : 3.485 ns
-at 3685 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS33_DP/ : Warning: /X_RAMD32 HOLD High VIOLATION ON WADR0 WITH RESPECT TO CLK;
-  Expected := 0.665 ns; Observed := 0.165 ns; At : 3.485 ns
-at 3685 ps, Instance /toplevel/MIPS_SC_PROCESSOR_BRANCH_TARGET_BUFFER_Mram_REGS34_DP/ : Warning: /X_RAMD32 HOLD High VIOLATION ON WADR0 WITH RESPECT TO CLK;
-  Expected := 0.665 ns; Observed := 0.165 ns; At : 3.485 ns
-# isim force add /toplevel/reset 0 -radix bin
-# isim force add /toplevel/reset 0 -radix bin
+at 0 ps, Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_fpga/uut/INST_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(1), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 20 ns(3), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 # run 1.00us
-at 1053490 ps, Instance /toplevel/DATA_MEM_Mram_MEM35_RAMD/ : Warning: /X_RAMD64_ADV HOLD   X  VIOLATION ON WADR4 WITH RESPECT TO CLK;
-  Expected := 0.259 ns; Observed := 0 ns; At : 1053.29 ns
-at 1053497 ps, Instance /toplevel/DATA_MEM_Mram_MEM16_RAMD/ : Warning: /X_RAMD64_ADV HOLD   X  VIOLATION ON WADR4 WITH RESPECT TO CLK;
-  Expected := 0.259 ns; Observed := 0 ns; At : 1053.297 ns
-at 1053497 ps, Instance /toplevel/DATA_MEM_Mram_MEM16_RAMC/ : Warning: /X_RAMD64_ADV HOLD   X  VIOLATION ON WADR4 WITH RESPECT TO CLK;
-  Expected := 0.259 ns; Observed := 0 ns; At : 1053.297 ns
-at 1053497 ps, Instance /toplevel/DATA_MEM_Mram_MEM16_RAMB/ : Warning: /X_RAMD64_ADV HOLD   X  VIOLATION ON WADR4 WITH RESPECT TO CLK;
-  Expected := 0.259 ns; Observed := 0 ns; At : 1053.297 ns
-at 1053497 ps, Instance /toplevel/DATA_MEM_Mram_MEM16_RAMA/ : Warning: /X_RAMD64_ADV HOLD   X  VIOLATION ON WADR4 WITH RESPECT TO CLK;
-  Expected := 0.259 ns; Observed := 0 ns; At : 1053.297 ns
-at 1053499 ps, Instance /toplevel/DATA_MEM_Mram_MEM37_RAMD/ : Warning: /X_RAMD64_ADV HOLD   X  VIOLATION ON WADR4 WITH RESPECT TO CLK;
-  Expected := 0.259 ns; Observed := 0 ns; At : 1053.299 ns
-at 1113329 ps(2), Instance /toplevel/MIPS_SC_PROCESSOR_REGISTER_F_Mram_REGS2/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
 # run 1.00us

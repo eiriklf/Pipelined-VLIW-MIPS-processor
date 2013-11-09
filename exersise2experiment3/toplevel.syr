@@ -3,14 +3,14 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.74 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.74 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: toplevel.prj
 
@@ -330,11 +330,11 @@ INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/fil
 INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Zero> of the instance <ALUTD> is unconnected or connected to loadless signal.
 INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
 INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 691: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 702: Output port <COUT> of the instance <ADDRESSADDER> is unconnected or connected to loadless signal.
     Found 32-bit adder for signal <imem_address2> created at line 439.
+    Found 32-bit adder for signal <BranchAdder> created at line 702.
     Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 407
     Summary:
-	inferred   1 Adder/Subtractor(s).
+	inferred   2 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 	inferred   1 Multiplexer(s).
 Unit <PROCESSOR> synthesized.
@@ -449,10 +449,10 @@ Unit <regi_5> synthesized.
 
 Synthesizing Unit <Forwarding>.
     Related source file is "/users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/forward.vhd".
-    Found 5-bit comparator equal for signal <RS[4]_ExmemregisterRD[4]_equal_2_o> created at line 51
-    Found 5-bit comparator equal for signal <RS[4]_MEMWbregisterRD[4]_equal_5_o> created at line 54
-    Found 5-bit comparator equal for signal <RT[4]_ExmemregisterRD[4]_equal_9_o> created at line 67
-    Found 5-bit comparator equal for signal <RT[4]_MEMWbregisterRD[4]_equal_12_o> created at line 70
+    Found 5-bit comparator equal for signal <RS[4]_ExmemregisterRD[4]_equal_2_o> created at line 50
+    Found 5-bit comparator equal for signal <RS[4]_MEMWbregisterRD[4]_equal_5_o> created at line 53
+    Found 5-bit comparator equal for signal <RT[4]_ExmemregisterRD[4]_equal_9_o> created at line 65
+    Found 5-bit comparator equal for signal <RT[4]_MEMWbregisterRD[4]_equal_12_o> created at line 68
     Summary:
 	inferred   4 Comparator(s).
 	inferred   2 Multiplexer(s).
@@ -572,8 +572,8 @@ Macro Statistics
  32x32-bit dual-port RAM                               : 4
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 1
- 32-bit adder                                          : 1
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 2
 # Registers                                            : 17
  1-bit register                                        : 3
  110-bit register                                      : 1
@@ -596,8 +596,8 @@ Macro Statistics
  4-bit 2-to-1 multiplexer                              : 40
  5-bit 2-to-1 multiplexer                              : 7
 # FSMs                                                 : 1
-# Xors                                                 : 193
- 1-bit xor2                                            : 193
+# Xors                                                 : 129
+ 1-bit xor2                                            : 129
 
 =========================================================================
 
@@ -2112,8 +2112,8 @@ Macro Statistics
  32x32-bit dual-port block RAM                         : 4
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 1
- 32-bit adder                                          : 1
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 2
 # Registers                                            : 829
  Flip-Flops                                            : 829
 # Comparators                                          : 8
@@ -2130,8 +2130,8 @@ Macro Statistics
  4-bit 2-to-1 multiplexer                              : 40
  5-bit 2-to-1 multiplexer                              : 7
 # FSMs                                                 : 1
-# Xors                                                 : 193
- 1-bit xor2                                            : 193
+# Xors                                                 : 129
+ 1-bit xor2                                            : 129
 
 =========================================================================
 
@@ -2244,12 +2244,6 @@ WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_8> of sequential type is unconnec
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 14.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_27> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_26> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_87> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_86> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_31> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/COUNTER/data_30> of sequential type is unconnected in block <toplevel>.
 INFO:Xst:1843 - HDL ADVISOR - FlipFlop TDT4255_COM/write_addr_0 connected to a primary input has been replicated
 INFO:Xst:1843 - HDL ADVISOR - FlipFlop TDT4255_COM/write_addr_1 connected to a primary input has been replicated
 INFO:Xst:1843 - HDL ADVISOR - FlipFlop TDT4255_COM/write_addr_2 connected to a primary input has been replicated
@@ -2262,9 +2256,7 @@ FlipFlop MIPS_SC_PROCESSOR/COUNTER/data_2 has been replicated 2 time(s)
 FlipFlop MIPS_SC_PROCESSOR/COUNTER/data_3 has been replicated 2 time(s)
 FlipFlop MIPS_SC_PROCESSOR/COUNTER/data_4 has been replicated 2 time(s)
 FlipFlop MIPS_SC_PROCESSOR/COUNTER/data_5 has been replicated 2 time(s)
-FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19 has been replicated 5 time(s)
-FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_2 has been replicated 2 time(s)
-FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_74 has been replicated 2 time(s)
+FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19 has been replicated 1 time(s)
 FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_75 has been replicated 1 time(s)
 FlipFlop MIPS_SC_PROCESSOR/MEMWB/data_109 has been replicated 1 time(s)
 FlipFlop TDT4255_COM/processor_enable has been replicated 1 time(s)
@@ -2287,8 +2279,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 713
- Flip-Flops                                            : 713
+# Registers                                            : 711
+ Flip-Flops                                            : 711
 
 =========================================================================
 
@@ -2311,26 +2303,25 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1160
-#      BUF                         : 19
+# BELS                             : 1015
+#      BUF                         : 12
 #      GND                         : 1
-#      INV                         : 2
+#      INV                         : 3
 #      LUT1                        : 7
-#      LUT2                        : 10
-#      LUT3                        : 121
-#      LUT4                        : 184
-#      LUT5                        : 276
-#      LUT6                        : 490
-#      MUXCY                       : 29
-#      MUXF7                       : 12
+#      LUT2                        : 43
+#      LUT3                        : 111
+#      LUT4                        : 82
+#      LUT5                        : 154
+#      LUT6                        : 483
+#      MUXCY                       : 59
+#      MUXF7                       : 20
 #      VCC                         : 1
-#      XORCY                       : 8
-# FlipFlops/Latches                : 713
-#      FD                          : 296
-#      FDCE                        : 42
+#      XORCY                       : 39
+# FlipFlops/Latches                : 711
+#      FDCE                        : 44
 #      FDE                         : 2
-#      FDR                         : 277
-#      FDRE                        : 96
+#      FDR                         : 463
+#      FDRE                        : 202
 # RAMS                             : 132
 #      RAM128X1D                   : 2
 #      RAM32M                      : 2
@@ -2353,18 +2344,18 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             713  out of  18224     3%  
- Number of Slice LUTs:                 1562  out of   9112    17%  
-    Number used as Logic:              1090  out of   9112    11%  
+ Number of Slice Registers:             711  out of  18224     3%  
+ Number of Slice LUTs:                 1355  out of   9112    14%  
+    Number used as Logic:               883  out of   9112     9%  
     Number used as Memory:              472  out of   2176    21%  
        Number used as RAM:              472
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1782
-   Number with an unused Flip Flop:    1069  out of   1782    59%  
-   Number with an unused LUT:           220  out of   1782    12%  
-   Number of fully used LUT-FF pairs:   493  out of   1782    27%  
-   Number of unique control sets:        17
+ Number of LUT Flip Flop pairs used:   1650
+   Number with an unused Flip Flop:     939  out of   1650    56%  
+   Number with an unused LUT:           295  out of   1650    17%  
+   Number of fully used LUT-FF pairs:   416  out of   1650    25%  
+   Number of unique control sets:        26
 
 IO Utilization: 
  Number of IOs:                         162
@@ -2397,7 +2388,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 853   |
+clk                                | BUFGP                  | 851   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -2408,7 +2399,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 23.606ns (Maximum Frequency: 42.362MHz)
+   Minimum period: 19.874ns (Maximum Frequency: 50.317MHz)
    Minimum input arrival time before clock: 8.044ns
    Maximum output required time after clock: 4.226ns
    Maximum combinational path delay: No path found
@@ -2419,46 +2410,44 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 23.606ns (frequency: 42.362MHz)
-  Total number of paths / destination ports: 2093110 / 2583
+  Clock period: 19.874ns (frequency: 50.317MHz)
+  Total number of paths / destination ports: 2446599 / 2978
 -------------------------------------------------------------------------
-Delay:               23.606ns (Levels of Logic = 18)
-  Source:            MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115 (FF)
-  Destination:       MIPS_SC_PROCESSOR/IDEX/data_sliced_213 (FF)
+Delay:               19.874ns (Levels of Logic = 16)
+  Source:            MIPS_SC_PROCESSOR/EXMEM/data_4 (FF)
+  Destination:       MIPS_SC_PROCESSOR/EXMEM/data_37 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115 to MIPS_SC_PROCESSOR/IDEX/data_sliced_213
+  Data Path: MIPS_SC_PROCESSOR/EXMEM/data_4 to MIPS_SC_PROCESSOR/EXMEM/data_37
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               4   0.633   1.405  MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115 (MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_115)
-     LUT6:I1->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[4].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N11)
-     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[6].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N2)
-     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[8].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N3)
-     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[10].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N4)
-     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[12].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N5)
-     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[14].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N6)
-     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[16].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N7)
-     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[18].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N8)
-     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[20].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N9)
-     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[22].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N10)
-     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[24].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N111)
-     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[26].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N12)
-     LUT5:I4->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[28].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N13)
-     LUT5:I4->O            1   0.373   0.682  MIPS_SC_PROCESSOR/ADDRESSADDER/GEN_ADDER[30].NEXT_FA/Mxor_R_xo<0>11 (MIPS_SC_PROCESSOR/ADDRESSADDER/N14)
-     LUT3:I2->O            1   0.373   0.000  MIPS_SC_PROCESSOR/Branch_predicition_unit/Mcompar_predicted_address[31]_INV_124_o_lut<10> (MIPS_SC_PROCESSOR/Branch_predicition_unit/Mcompar_predicted_address[31]_INV_124_o_lut<10>)
-     MUXCY:S->O           50   0.630   1.820  MIPS_SC_PROCESSOR/Branch_predicition_unit/Mcompar_predicted_address[31]_INV_124_o_cy<10> (MIPS_SC_PROCESSOR/Branch_predicition_unit/predicted_address[31]_INV_124_o)
-     BUF:I->O             49   0.374   1.804  MIPS_SC_PROCESSOR/Branch_predicition_unit/Mcompar_predicted_address[31]_INV_124_o_cy<10>_3 (MIPS_SC_PROCESSOR/Branch_predicition_unit/Mcompar_predicted_address[31]_INV_124_o_cy<10>_3)
-     LUT5:I4->O            1   0.373   0.000  MIPS_SC_PROCESSOR/IDEX/data_sliced_213_rstpot (MIPS_SC_PROCESSOR/IDEX/data_sliced_213_rstpot)
-     FD:D                      0.142          MIPS_SC_PROCESSOR/IDEX/data_sliced_213
+     FDR:C->Q              6   0.633   1.477  MIPS_SC_PROCESSOR/EXMEM/data_4 (MIPS_SC_PROCESSOR/EXMEM/data_4)
+     LUT6:I1->O            1   0.373   0.820  MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1 (MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1)
+     LUT2:I0->O            4   0.373   0.804  MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3 (MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o)
+     LUT6:I5->O            6   0.373   0.876  MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RT[4]_AND_1112_o_1 (MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RT[4]_AND_1112_o1)
+     LUT5:I4->O            8   0.373   0.944  MIPS_SC_PROCESSOR/ForwardmuxB/Mmux_R231 (MIPS_SC_PROCESSOR/ForwardBout<2>)
+     LUT3:I2->O            2   0.373   1.014  mux321221 (MIPS_SC_PROCESSOR/ChosenALUInput<2>)
+     LUT6:I3->O            2   0.373   0.864  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/FULLADDER_ALU/G2 (MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/FULLADDER_ALU/G1)
+     LUT5:I3->O            3   0.373   1.054  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/FULLADDER_ALU/G3 (MIPS_SC_PROCESSOR/ALUTD/Generates<0>)
+     LUT6:I3->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<2>211 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<2>21)
+     MUXF7:I1->O           6   0.230   0.876  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<2>21_f7 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>)
+     LUT5:I4->O            5   0.373   0.841  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<4>21 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>)
+     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>)
+     LUT6:I5->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>18 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>)
+     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/FULLADDER_ALU/C21 (MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/COUT<1>)
+     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/FULLADDER_ALU/C31 (MIPS_SC_PROCESSOR/ALUTD/FULL_COUT<30>)
+     LUT6:I5->O            1   0.373   0.682  MIPS_SC_PROCESSOR/ALUTD/Mmux_R111 (MIPS_SC_PROCESSOR/ALUTD/Mmux_R11)
+     LUT5:I4->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/Mmux_R112 (MIPS_SC_PROCESSOR/ALU_Result<0>)
+     FDR:D                     0.142          MIPS_SC_PROCESSOR/EXMEM/data_37
     ----------------------------------------
-    Total                     23.606ns (7.747ns logic, 15.859ns route)
-                                       (32.8% logic, 67.2% route)
+    Total                     19.874ns (6.600ns logic, 13.274ns route)
+                                       (33.2% logic, 66.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 597 / 473
+  Total number of paths / destination ports: 599 / 475
 -------------------------------------------------------------------------
 Offset:              8.044ns (Levels of Logic = 6)
   Source:            command<11> (PAD)
@@ -2473,7 +2462,7 @@ Offset:              8.044ns (Levels of Logic = 6)
      LUT5:I0->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In51 (TDT4255_COM/state_FSM_FFd1-In5)
      LUT5:I2->O            1   0.373   0.682  TDT4255_COM/state_FSM_FFd1-In54 (TDT4255_COM/state_FSM_FFd1-In53)
      LUT6:I5->O            4   0.373   0.804  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
-     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd3-In1_SW0 (N80)
+     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd3-In1_SW0 (N1646)
      LUT6:I3->O            1   0.373   0.000  TDT4255_COM/state_FSM_FFd3-In1 (TDT4255_COM/state_FSM_FFd3-In)
      FDR:D                     0.142          TDT4255_COM/state_FSM_FFd3
     ----------------------------------------
@@ -2509,20 +2498,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   23.606|    5.437|    6.414|         |
+clk            |   19.874|    5.669|    6.431|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 47.00 secs
-Total CPU time to Xst completion: 47.51 secs
+Total REAL time to Xst completion: 41.00 secs
+Total CPU time to Xst completion: 41.18 secs
  
 --> 
 
-Total memory usage is 325448 kilobytes
+Total memory usage is 327240 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1429 (   0 filtered)
-Number of infos    :   40 (   0 filtered)
+Number of warnings : 1423 (   0 filtered)
+Number of infos    :   39 (   0 filtered)
 

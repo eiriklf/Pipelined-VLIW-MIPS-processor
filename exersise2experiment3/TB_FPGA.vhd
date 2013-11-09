@@ -117,9 +117,9 @@ ARCHITECTURE behavior OF tb_FPGA IS
   constant ins00 : std_logic_vector(0 to 31) := X"00000000";--NOP
   constant ins06 : std_logic_vector(0 to 31) := X"0042001A";--mult 
   --instructions:
-	constant ins0  : std_logic_vector(0 to 31) := X"8C030002";--lw $3, 2($0)
-	constant ins1  : std_logic_vector(0 to 31) := X"8C020002";--lw $2, 2($0)
-	constant ins2  : std_logic_vector(0 to 31) := X"00000000";--NOP
+	constant ins0  : std_logic_vector(0 to 31) := X"00000000";--NOP
+	constant ins1  : std_logic_vector(0 to 31) := X"8C030002";--lw $2, 2($0)
+	constant ins2  : std_logic_vector(0 to 31) := X"8C020002";--lw $3, 2($0)
 	constant ins3  : std_logic_vector(0 to 31) := X"08000005";--j 5
 	constant ins4  : std_logic_vector(0 to 31) := X"8C0B0001";--lw $11, 1($0)
 	constant ins5  : std_logic_vector(0 to 31) := X"8C0C0002";--lw $12, 2($0)

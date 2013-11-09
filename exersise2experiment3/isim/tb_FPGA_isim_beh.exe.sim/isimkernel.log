@@ -1,10 +1,10 @@
 Command line:
    tb_FPGA_isim_beh.exe
      -simmode  gui
-     -simrunnum  1
-     -socket  49592
+     -simrunnum  0
+     -socket  64335
 
-Fri Nov 08 15:19:31 2013
+Sat Nov 09 13:36:34 2013
 
 
  Elaboration Time: 0.1248 sec

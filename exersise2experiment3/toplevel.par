@@ -1,7 +1,7 @@
 Release 12.4 par M.81d (nt64)
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
-DMLAB08::  Fri Nov 08 15:58:44 2013
+DMLAB08::  Sat Nov 09 14:00:59 2013
 
 par -w -intstyle ise -ol high -x -k toplevel_map.ncd toplevel.ncd toplevel.pcf 
 
@@ -39,35 +39,35 @@ Device speed data version:  "PRODUCTION 1.15 2010-12-02".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   713 out of  18,224    3%
-    Number used as Flip Flops:                 713
+  Number of Slice Registers:                   711 out of  18,224    3%
+    Number used as Flip Flops:                 711
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,505 out of   9,112   16%
-    Number used as logic:                    1,025 out of   9,112   11%
-      Number using O6 output only:             933
-      Number using O5 output only:               7
-      Number using O5 and O6:                   85
+  Number of Slice LUTs:                      1,303 out of   9,112   14%
+    Number used as logic:                      823 out of   9,112    9%
+      Number using O6 output only:             744
+      Number using O5 output only:               6
+      Number using O5 and O6:                   73
       Number used as ROM:                        0
-    Number used as Memory:                     468 out of   2,176   21%
-      Number used as Dual Port RAM:            468
-        Number using O6 output only:           456
-        Number using O5 output only:             0
-        Number using O5 and O6:                 12
+    Number used as Memory:                     470 out of   2,176   21%
+      Number used as Dual Port RAM:            470
+        Number using O6 output only:           458
+        Number using O5 output only:             2
+        Number using O5 and O6:                 10
       Number used as Single Port RAM:            0
       Number used as Shift Register:             0
-    Number used exclusively as route-thrus:     12
-      Number with same-slice register load:     11
+    Number used exclusively as route-thrus:     10
+      Number with same-slice register load:      9
       Number with same-slice carry load:         1
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   546 out of   2,278   23%
-  Number of LUT Flip Flop pairs used:        1,653
-    Number with an unused Flip Flop:           976 out of   1,653   59%
-    Number with an unused LUT:                 148 out of   1,653    8%
-    Number of fully used LUT-FF pairs:         529 out of   1,653   32%
+  Number of occupied Slices:                   482 out of   2,278   21%
+  Number of LUT Flip Flop pairs used:        1,554
+    Number with an unused Flip Flop:           876 out of   1,554   56%
+    Number with an unused LUT:                 251 out of   1,554   16%
+    Number of fully used LUT-FF pairs:         427 out of   1,554   27%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -109,151 +109,151 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 8 secs 
-Finished initial Timing Analysis.  REAL time: 8 secs 
+Starting initial Timing Analysis.  REAL time: 7 secs 
+Finished initial Timing Analysis.  REAL time: 7 secs 
 
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM5_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM6_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM1_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM11_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM14_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM15_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM17_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM13_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM10_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM11_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM39_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM38_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM7_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM4_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM12_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM10_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM16_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM12_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM7_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM5_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM40_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM41_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM37_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM40_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM8_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM3_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM2_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM9_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM110_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM8_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM6_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM9_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM4_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM2_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM38_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM39_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM33_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM35_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM14_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM16_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM13_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM15_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM112_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM116_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM117_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM115_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM114_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM113_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM111_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM110_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS1_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
 WARNING:Par:288 - The signal MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM20_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM17_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM18_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM36_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM34_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM113_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM34_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM37_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM36_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM21_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM24_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM23_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM19_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM28_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM26_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM25_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM29_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM32_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM114_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM116_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM138_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM139_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM141_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM32_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM25_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM24_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM35_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM22_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM27_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM30_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal DATA_MEM/Mram_MEM31_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM115_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM117_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM136_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM137_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM140_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM23_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM3_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM22_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM31_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM18_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM21_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM19_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM132_RAMA_DPO has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM132_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM133_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM133_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM131_RAMA_DPO has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM131_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM130_RAMA_DPO has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM130_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM133_RAMA_DPO has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM133_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM112_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM136_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM134_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM135_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM33_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM30_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM26_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM139_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM5_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM9_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM7_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM19_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM25_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM29_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM20_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM28_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM27_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM26_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM39_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM137_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM141_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM140_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM138_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM145_RAMC_DPO has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM145_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM4_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM2_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM3_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM6_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM8_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM21_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM18_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM27_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM40_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM41_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM38_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM144_RAMC_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM144_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM4_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM7_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM2_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM3_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM143_RAMC_DPO has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM143_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM142_RAMC_DPO has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal INST_MEM/Mram_MEM142_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM144_RAMC_DPO has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal INST_MEM/Mram_MEM144_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM30_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM20_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM36_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM33_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM32_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM40_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM1_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM6_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM5_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM24_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM11_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM29_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM32_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM15_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM17_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM34_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM37_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM35_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM30_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM31_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM38_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM39_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM37_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM36_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM8_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM20_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM19_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM9_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM12_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM31_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM28_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM25_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM10_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM14_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM16_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM33_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM34_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM35_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM22_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM23_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM21_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM26_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM27_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM14_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM16_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM15_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM12_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM13_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM17_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM18_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM10_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal DATA_MEM/Mram_MEM13_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal INST_MEM/Mram_MEM11_RAMD_O has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 10480 unrouted;      REAL time: 8 secs 
+Phase  1  : 9742 unrouted;      REAL time: 8 secs 
 
-Phase  2  : 9491 unrouted;      REAL time: 8 secs 
+Phase  2  : 8791 unrouted;      REAL time: 8 secs 
 
-Phase  3  : 3651 unrouted;      REAL time: 16 secs 
+Phase  3  : 3146 unrouted;      REAL time: 16 secs 
 
-Phase  4  : 4248 unrouted; (Par is working to improve performance)     REAL time: 28 secs 
+Phase  4  : 3461 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
 
 Updating file: toplevel.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 41 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 34 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 41 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 34 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 41 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 34 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 41 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 34 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 41 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 35 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 43 secs 
-Total REAL time to Router completion: 43 secs 
-Total CPU time to Router completion: 43 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 37 secs 
+Total REAL time to Router completion: 37 secs 
+Total CPU time to Router completion: 37 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -273,8 +273,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|    20.168ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.421ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    18.651ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.335ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -292,10 +292,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 114 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 45 secs 
-Total CPU time to PAR completion: 46 secs 
+Total REAL time to PAR completion: 39 secs 
+Total CPU time to PAR completion: 40 secs 
 
-Peak Memory Usage:  376 MB
+Peak Memory Usage:  374 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

@@ -1,45 +1,80 @@
-Running: C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel_isim_par.exe -prj C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel_par.prj work.toplevel 
+Running: C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.exe -prj C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_beh.prj work.tb_FPGA 
 ISim M.81d (signature 0x12940baa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/netgen/par/toplevel_timesim.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/lookahead.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/mips_constant_pkg.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/full_adder.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu_1bit.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Vliw_multipliercontrol.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Vliw_alu.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/TriputMux.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/shift_register.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Regi.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Hazarddetection.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Forward.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/register_file.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/quadputmux.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/PC.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/control.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/ALUop.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/adder.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/branch_prediction_unit.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/memory.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/com.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/DMEMORY.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/TB_FPGA.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Using precompiled package standard from library std
 Using precompiled package std_logic_1164 from library ieee
-Using precompiled package textio from library std
-Using precompiled package vital_timing from library ieee
-Using precompiled package vital_primitives from library ieee
+Using precompiled package numeric_std from library ieee
 Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
 Using precompiled package std_logic_signed from library ieee
-Using precompiled package std_logic_textio from library ieee
-Compiling package vcomponents
-Compiling package vpackage
-Compiling architecture x_buf_v of entity x_buf [\X_BUF(true,true,"UNPLACED",(0,0...]
-Compiling architecture x_inv_v of entity x_inv [\X_INV(true,true,"RAMB8_X1Y26",(...]
-Compiling architecture x_ramb8bwer_v of entity x_ramb8bwer [\X_RAMB8BWER(true,"*",true,true,...]
-Compiling architecture x_lut6_v of entity x_lut6 [\X_LUT6(true,true,"UNPLACED",(0,...]
-Compiling architecture x_zero_v of entity x_zero [\X_ZERO("UNPLACED")(1,8)\]
-Compiling architecture x_carry4_v of entity x_carry4 [\X_CARRY4(true,"*",true,true,"UN...]
-Compiling architecture x_lut5_v of entity x_lut5 [\X_LUT5(true,true,"UNPLACED",(0,...]
-Compiling architecture x_one_v of entity x_one [\X_ONE("UNPLACED")(1,8)\]
-Compiling architecture x_obuf_v of entity x_obuf [\X_OBUF(true,true,"DONT_CARE",12...]
-Compiling architecture x_dsp48a1_v of entity x_dsp48a1 [\X_DSP48A1(true,"*",true,true,"C...]
-Compiling architecture x_dsp48a1_v of entity x_dsp48a1 [\X_DSP48A1(true,"*",true,true,"D...]
-Compiling architecture x_dsp48a1_v of entity x_dsp48a1 [\X_DSP48A1(true,"*",true,true,"C...]
-Compiling architecture x_ckbuf_v of entity x_ckbuf [\X_CKBUF(true,true,"UNPLACED",(0...]
-Compiling architecture x_mux2_v of entity x_mux2 [\X_MUX2(true,true,"UNPLACED",(0,...]
-Compiling architecture x_ramd64_adv_v of entity x_ramd64_adv [\X_RAMD64_ADV(true,true,true,"UN...]
-Compiling architecture x_sff_v of entity x_sff [\X_SFF(true,true,true,"UNPLACED"...]
-Compiling architecture x_ff_v of entity x_ff [\X_FF(true,true,true,"UNPLACED",...]
-Compiling architecture x_ramd32_v of entity x_ramd32 [\X_RAMD32(true,true,true,"UNPLAC...]
-Compiling architecture x_roc_v of entity x_roc [\X_ROC("UNPLACED",100000,"*")(1,...]
-Compiling architecture x_toc_v of entity x_toc [\X_TOC("UNPLACED",0,"*")(1,8,1,1...]
-Compiling architecture structure of entity toplevel
+Compiling package mips_constant_pkg
+Compiling architecture behavioral of entity com [\com(32,32,32)\]
+Compiling architecture behavioral of entity dmemory [\Dmemory(32,8)\]
+Compiling architecture behavioral of entity memory [\memory(32,8)\]
+Compiling architecture behavioral of entity aluoperation [aluoperation_default]
+Compiling architecture behavioral of entity alu_full_adder [alu_full_adder_default]
+Compiling architecture behavioral of entity alu_4bit [alu_4bit_default]
+Compiling architecture behavioral of entity alu [\alu(32)\]
+Compiling architecture behavioral of entity vliw_alu [\Vliw_alu(32)\]
+Compiling architecture behavioral of entity register_file [register_file_default]
+Compiling architecture behavioral of entity regi [\regi(32)\]
+Compiling architecture behavioral of entity vliw_multipliercontrol [vliw_multipliercontrol_default]
+Compiling architecture behavioral of entity pc [pc_default]
+Compiling architecture behavioral of entity regi [\regi(122)\]
+Compiling architecture behavioral of entity regi [\regi(288)\]
+Compiling architecture behavioral of entity regi [\regi(210)\]
+Compiling architecture behavioral of entity regi [\regi(110)\]
+Compiling architecture behavioral of entity forwarding [forwarding_default]
+Compiling architecture behavioral of entity control [control_default]
+Compiling architecture behavioral of entity hazarddetection [hazarddetection_default]
+Compiling architecture behavioral of entity branchprediction [branchprediction_default]
+Compiling architecture behavioral of entity full_adder [full_adder_default]
+Compiling architecture behavioral of entity adder [\adder(32)\]
+Compiling architecture behavioral of entity predictorbuffer [\predictorbuffer(16,32,4)\]
+Compiling architecture behavioral of entity predictorbuffer [\predictorbuffer(2,128,6)\]
+Compiling architecture behavioral of entity shift_register [shift_register_default]
+Compiling architecture behavioral of entity triputmux [triputmux_default]
+Compiling architecture behavioral of entity simple_multiplexer [\simple_multiplexer(5)\]
+Compiling architecture behavioral of entity simple_multiplexer [\simple_multiplexer(32)\]
+Compiling architecture behavioral of entity quadputmux [quadputmux_default]
+Compiling architecture behavioral of entity simple_multiplexer [\simple_multiplexer(10)\]
+Compiling architecture behavioral of entity processor [\PROCESSOR(32,32)\]
+Compiling architecture behavioral of entity toplevel [\toplevel(32,32)\]
+Compiling architecture behavior of entity tb_fpga
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 3393 VHDL Units
-Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/toplevel_isim_par.exe
-Fuse Memory Usage: 369496 KB
-Fuse CPU Usage: 36613 ms
+Waiting for 23 sub-compilation(s) to finish...
+Compiled 72 VHDL Units
+Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.exe
+Fuse Memory Usage: 23132 KB
+Fuse CPU Usage: 592 ms
