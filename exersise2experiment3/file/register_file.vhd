@@ -63,21 +63,11 @@ begin
 
 	REGISTERS: process(CLK, RESET)
 	begin
-    -- CF: The reset-functionality commented out to save space (detected as RAM)
-    -- and for additional speed (~44 -> ~50 MHz)
-    -- If reset-functionality turns out to be needed,
-    -- it can be commented back in.
-    --if  RESET='1' then
-		--		for i in 0 to NUM_REG-1 loop
-		--			REGS(i) <= (others => '0');
-		--		end loop;
-		if FALLING_edge(CLK) then
+--the register updates itself on falling edge to avoid RAW hazards while data is being written. see the report
+		if falling_edge(CLK) then
 			if  RW='1' then
 				REGS(to_integer(unsigned(RD_ADDR)))<=WRITE_DATA;
 				end if;
-			--	if RW2='1' then
-		--		REGS(to_integer(unsigned(RD_ADDR2)))<=WRITE_DATA2;
-		--	end if;
 		end if;
 	end process  REGISTERS;
 

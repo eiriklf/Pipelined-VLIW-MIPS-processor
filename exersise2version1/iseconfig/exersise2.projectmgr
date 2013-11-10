@@ -16,13 +16,13 @@
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/Addressincrementer - adder - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>ALUTD - alu - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/alu.vhd)</SelectedItem>
+         <SelectedItem>DETECTION_UNIT - Hazarddetection - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/Hazarddetection.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >26</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000033b000000020000000000000000000000000000000064ffffffff0000008100000000000000020000033b0000000100000000000000000000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>ALUTD - alu - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/file/alu.vhd)</CurrentItem>
+      <CurrentItem>DETECTION_UNIT - Hazarddetection - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2version1/Hazarddetection.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>

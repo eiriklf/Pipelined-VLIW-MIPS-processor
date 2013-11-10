@@ -32,10 +32,10 @@ USE ieee.std_logic_1164.ALL;
 --The purpose of this testbench is to test and make sure that the corrolating branchpredictor works like it is supposed to.
 --In addition it also tests other functionality like the forwarding unit and stalling
 
-ENTITY tb_toplevel IS
-END tb_toplevel;
+ENTITY tb_branchpredictor IS
+END tb_branchpredictor;
  
-ARCHITECTURE behavior OF tb_toplevel IS 
+ARCHITECTURE behavior OF tb_branchpredictor IS 
  
   -- Component Declaration for the Unit Under Test (UUT)
   COMPONENT toplevel
@@ -110,8 +110,9 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant data1 : std_logic_vector(0 to 31):= "00000000000000000000000000000010";--fix this datasize problem
 	constant data2 : std_logic_vector(0 to 31):= "00000000000000000000000000001010";
   
-  -- These are the instructions executed by the CPU (loaded to instruction-memory)
-  -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
+  -- This test is mainly supposed to verify that the branchpredictor works, while we also execute some other instructions as well
+  --The goal of this test is to verify that the predictor can perform corrolated predictions without high missrates. We also performed a lot of other
+  --tests by making small changes to this testbench to fix all the bugs, and we ended up with this resulting testbench.
   
   --Vliw/multi issued instructions:
   constant ins00 : std_logic_vector(0 to 31) := X"00000000";--NOP

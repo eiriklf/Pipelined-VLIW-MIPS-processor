@@ -1,4 +1,4 @@
-Running: C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.exe -prj C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_beh.prj work.tb_FPGA 
+Running: C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_Multiplytoplevel_isim_beh.exe -prj C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_Multiplytoplevel_beh.prj work.tb_Multiplytoplevel 
 ISim M.81d (signature 0x12940baa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -29,7 +29,7 @@ Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/com.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/DMEMORY.vhd" into library work
 Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd" into library work
-Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/TB_FPGA.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_toplevel_multiply.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Using precompiled package standard from library std
@@ -71,10 +71,10 @@ Compiling architecture behavioral of entity quadputmux [quadputmux_default]
 Compiling architecture behavioral of entity simple_multiplexer [\simple_multiplexer(10)\]
 Compiling architecture behavioral of entity processor [\PROCESSOR(32,32)\]
 Compiling architecture behavioral of entity toplevel [\toplevel(32,32)\]
-Compiling architecture behavior of entity tb_fpga
+Compiling architecture behavior of entity tb_multiplytoplevel
 Time Resolution for simulation is 1ps.
-Waiting for 26 sub-compilation(s) to finish...
+Waiting for 19 sub-compilation(s) to finish...
 Compiled 72 VHDL Units
-Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.exe
-Fuse Memory Usage: 23076 KB
-Fuse CPU Usage: 639 ms
+Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_Multiplytoplevel_isim_beh.exe
+Fuse Memory Usage: 23208 KB
+Fuse CPU Usage: 592 ms

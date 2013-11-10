@@ -115,12 +115,12 @@ ARCHITECTURE behavior OF tb_FPGA IS
   
   --Vliw/multi issued instructions:
   constant ins00 : std_logic_vector(0 to 31) := X"00000000";--NOP
-  constant ins06 : std_logic_vector(0 to 31) := X"0042001A";--mult 
+  constant ins06 : std_logic_vector(0 to 31) := X"00420018";--mult $2,$2 assigned with instruction 6
   --instructions:
 	constant ins0  : std_logic_vector(0 to 31) := X"00000000";--NOP
-	constant ins1  : std_logic_vector(0 to 31) := X"8C030002";--lw $2, 2($0)
-	constant ins2  : std_logic_vector(0 to 31) := X"8C020002";--lw $3, 2($0)
-	constant ins3  : std_logic_vector(0 to 31) := X"08000005";--j 5
+	constant ins1  : std_logic_vector(0 to 31) := X"8C020002";--lw $2, 2($0)
+	constant ins2  : std_logic_vector(0 to 31) := X"8C010001";--lw $1, 1($0)
+	constant ins3  : std_logic_vector(0 to 31) := X"08000006";--j 6
 	constant ins4  : std_logic_vector(0 to 31) := X"8C0B0001";--lw $11, 1($0)
 	constant ins5  : std_logic_vector(0 to 31) := X"8C0C0002";--lw $12, 2($0)
 	constant ins6  : std_logic_vector(0 to 31) := X"00221820";--add $3, $1, $2
@@ -129,14 +129,14 @@ ARCHITECTURE behavior OF tb_FPGA IS
 	constant ins9  : std_logic_vector(0 to 31) := X"00007812";--MFLO $15 --note that hazards on MFLO and MFHI must be resolved by the compiler
 	constant ins10 : std_logic_vector(0 to 31) := X"3C030006";--lui $3, 6 forwarded to the add insturction 
 	constant ins11 : std_logic_vector(0 to 31) := X"AC030008";--sw $3, 8($0)
-	constant ins12 : std_logic_vector(0 to 31) := X"00231820";--add $3, $1, $3
+	constant ins12 : std_logic_vector(0 to 31) := X"00231822";--sub $3, $1, $3
 	constant ins13 : std_logic_vector(0 to 31) := X"AC030009";--sw $3, 9($0)
-  	constant ins14 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
-	constant ins15 : std_logic_vector(0 to 31) := X"00000000";--bne $0, $1, 2
+  	constant ins14 : std_logic_vector(0 to 31) := X"AC0C000C";--sw $12, 12($0)
+	constant ins15 : std_logic_vector(0 to 31) := X"016B5825";--or $11, $11, $11
 	constant ins16 : std_logic_vector(0 to 31) := X"016B5820";--add $11,$11,$11
-	constant ins17 : std_logic_vector(0 to 31) :=X"00000000";--bne $0, $1, -18
-   constant ins18 : std_logic_vector(0 to 31) := X"018B082A";--slt 1 12 11
-	constant ins19 : std_logic_vector(0 to 31) :=X"00000000";--NOP
+	constant ins17 : std_logic_vector(0 to 31) :=X"016B5824";--and $11, $11, $11
+   constant ins18 : std_logic_vector(0 to 31) := X"AC0B000A";--sw $11, 10($0)
+	constant ins19 : std_logic_vector(0 to 31) :=X"AC0F000B";--sw $15, 11($0)
 	constant ins20 : std_logic_vector(0 to 31) :=X"1000FFFF";--beq $0, $1, -1
 	constant ins21 : std_logic_vector(0 to 31) :=X"00000000";--NOP
    
