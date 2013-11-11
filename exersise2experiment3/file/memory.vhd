@@ -60,10 +60,10 @@ begin
 				MEM(to_integer(unsigned( W_ADDR((M-1) downto 0) ))) <= WRITE_DATA;
 			end if;
 		end if;
-			address_reg <= ADDR;
 			address_reg2 <= ADDR2;
-		READ_DATA <= MEM(to_integer(unsigned( address_reg ((M-1) downto 0) )));
+			address_reg <= ADDR;
 		READ_DATA2<= MEM(to_integer(unsigned( address_reg2 ((M-1) downto 0) )));
+		READ_DATA <= MEM(to_integer(unsigned( address_reg ((M-1) downto 0) )));
 	end process MEM_PROC;
 
 end Behavioral;

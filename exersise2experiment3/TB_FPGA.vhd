@@ -115,7 +115,7 @@ ARCHITECTURE behavior OF tb_FPGA IS
   
   --Vliw/multi issued instructions:
   constant ins00 : std_logic_vector(0 to 31) := X"00000000";--NOP
-  constant ins06 : std_logic_vector(0 to 31) := X"00420018";--mult $2,$2 assigned with instruction 6
+  constant ins07 : std_logic_vector(0 to 31) := X"00420018";--mult $2,$2 assigned with instruction 6
   --instructions:
 	constant ins0  : std_logic_vector(0 to 31) := X"00000000";--NOP
 	constant ins1  : std_logic_vector(0 to 31) := X"8C020002";--lw $2, 2($0)
@@ -350,7 +350,7 @@ BEGIN
  
     command <= CMD_WI;          
     bus_address_in <= addr13;
-    bus_data_in <= ins06;
+    bus_data_in <= ins00;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					
@@ -372,7 +372,7 @@ BEGIN
 
     command <= CMD_WI;          
     bus_address_in <= addr15;
-    bus_data_in <= ins00;
+    bus_data_in <= ins07;
     wait for clk_period*3;
 
     command <= CMD_IDLE;					

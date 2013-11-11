@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system.ncd
+OUTFILE=C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system.bit
+FAMILY=Spartan6
+PART=xc6slx16-2csg324
+WORKINGDIR=C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor
+LICENSE=ISE
+USER_INFO=174154421_208900020_000

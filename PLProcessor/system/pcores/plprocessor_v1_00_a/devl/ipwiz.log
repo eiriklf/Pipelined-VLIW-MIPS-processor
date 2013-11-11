@@ -1,0 +1,354 @@
+Parsing PAO project file successfully ...
+Analyzing HDL source files ...
+Analyzing HDL source files successfully ...
+Parsing PAO project file successfully ...
+Analyzing HDL source files ...
+Analyzing HDL source files successfully ...
+HDL language for the peripheral (top level) design unit toplevel is vhdl ...
+INFO:EDK:3391 - Create temporary xst project file:
+   C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor.p
+   rj
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/lookahead.vhd"
+in Library plprocessor_v1_00_a.
+Entity <alu_full_adder> compiled.
+Entity <alu_full_adder> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/mips_constant_p
+kg.vhd" in Library plprocessor_v1_00_a.
+Package <MIPS_CONSTANT_PKG> compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/full_adder.vhd"
+in Library plprocessor_v1_00_a.
+Entity <full_adder> compiled.
+Entity <full_adder> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu_1bit.vhd"
+in Library plprocessor_v1_00_a.
+Entity <alu_4bit> compiled.
+Entity <alu_4bit> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/proc_common_pkg.vhd" in Library proc_common_v3_00_a.
+Package <proc_common_pkg> compiled.
+Package body <proc_common_pkg> compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/or_muxcy.vhd" in Library proc_common_v3_00_a.
+Entity <or_muxcy> compiled.
+Entity <or_muxcy> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/family_support.vhd" in Library proc_common_v3_00_a.
+Package <family_support> compiled.
+Package body <family_support> compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/ALUop.vhd" in
+Library plprocessor_v1_00_a.
+Entity <ALUoperation> compiled.
+Entity <ALUoperation> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" in
+Library plprocessor_v1_00_a.
+Entity <alu> compiled.
+Entity <alu> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Vliw_alu.vhd" in
+Library plprocessor_v1_00_a.
+Entity <Vliw_alu> compiled.
+Entity <Vliw_alu> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/register_file.v
+hd" in Library plprocessor_v1_00_a.
+Entity <register_file> compiled.
+Entity <register_file> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Regi.vhd" in Library
+plprocessor_v1_00_a.
+Entity <regi> compiled.
+Entity <regi> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Vliw_multipliercontr
+ol.vhd" in Library plprocessor_v1_00_a.
+Entity <Vliw_multipliercontrol> compiled.
+Entity <Vliw_multipliercontrol> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/PC.vhd" in
+Library plprocessor_v1_00_a.
+Entity <PC> compiled.
+Entity <PC> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Forward.vhd" in
+Library plprocessor_v1_00_a.
+Entity <Forwarding> compiled.
+Entity <Forwarding> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/control.vhd" in
+Library plprocessor_v1_00_a.
+Entity <control> compiled.
+Entity <control> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Hazarddetection.vhd"
+in Library plprocessor_v1_00_a.
+Entity <Hazarddetection> compiled.
+Entity <Hazarddetection> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/branch_prediction_un
+it.vhd" in Library plprocessor_v1_00_a.
+Entity <branchprediction> compiled.
+Entity <branchprediction> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/adder.vhd" in
+Library plprocessor_v1_00_a.
+Entity <adder> compiled.
+Entity <adder> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd
+" in Library plprocessor_v1_00_a.
+Entity <predictorbuffer> compiled.
+Entity <predictorbuffer> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/shift_register.vhd"
+in Library plprocessor_v1_00_a.
+Entity <shift_register> compiled.
+Entity <shift_register> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/quadputmux.vhd"
+in Library plprocessor_v1_00_a.
+Entity <QuadputMux> compiled.
+Entity <QuadputMux> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd" in
+Library plprocessor_v1_00_a.
+Entity <simple_multiplexer> compiled.
+Entity <simple_multiplexer> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/counter_f.vhd" in Library proc_common_v3_00_a.
+Entity <counter_f> compiled.
+Entity <counter_f> (Architecture <imp>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/pselect_f.vhd" in Library proc_common_v3_00_a.
+Entity <pselect_f> compiled.
+Entity <pselect_f> (Architecture <imp>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/or_gate128.vhd" in Library proc_common_v3_00_a.
+Entity <or_gate128> compiled.
+Entity <or_gate128> (Architecture <imp>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/ipif_pkg.vhd" in Library proc_common_v3_00_a.
+Package <ipif_pkg> compiled.
+Package body <ipif_pkg> compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/com.vhd" in
+Library plprocessor_v1_00_a.
+Entity <com> compiled.
+Entity <com> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/DMEMORY.vhd" in
+Library plprocessor_v1_00_a.
+Entity <Dmemory> compiled.
+Entity <Dmemory> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/memory.vhd" in
+Library plprocessor_v1_00_a.
+Entity <memory> compiled.
+Entity <memory> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd"
+in Library plprocessor_v1_00_a.
+Entity <PROCESSOR> compiled.
+Entity <PROCESSOR> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plb_address_decoder.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plb_address_decoder> compiled.
+Entity <plb_address_decoder> (Architecture <IMP>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd"
+in Library plprocessor_v1_00_a.
+Entity <toplevel> compiled.
+Entity <toplevel> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plb_slave_attachment.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plb_slave_attachment> compiled.
+Entity <plb_slave_attachment> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plbv46_slave_single.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plbv46_slave_single> compiled.
+Entity <plbv46_slave_single> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/PLProcessor/system/pcores/plprocessor_v1_
+00_a/hdl/vhdl/user_logic.vhd" in Library plprocessor_v1_00_a.
+Entity <user_logic> compiled.
+Entity <user_logic> (Architecture <IMP>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/controlpath.vhd
+" in Library plprocessor_v1_00_a.
+Entity <controlpath> compiled.
+Entity <controlpath> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Users/torbjlan/dmkonsttdt4255_work/PLProcessor/system/pcores/plprocessor_v1_
+00_a/hdl/vhdl/plprocessor.vhd" in Library plprocessor_v1_00_a.
+Entity <plprocessor> compiled.
+Entity <plprocessor> (Architecture <IMP>) compiled.
+
+
+Analyzing HDL attributes ...
+Entity name = plprocessor
+INFO:EDK:1607 - IPTYPE set to value : PERIPHERAL
+INFO:EDK:1511 - IMP_NETLIST set to value : TRUE
+INFO:EDK:1486 - HDL set to value : VHDL
+WARNING:EDK:3590 - Unable to delete temporary project file
+   C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores\plprocessor.p
+   rj : 13
+WARNING:EDK:2065 - PARAMETER:_NUM_SLAVES - SLAVE PLBV46 parameter is not defined
+   in the HDL source
+INFO:EDK:1631 - Infer bus clock [SPLB_Clk] for bus interface SPLB ...
+Copying file user_logic.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file plprocessor.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file branch_prediction_unit.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file DMEMORY.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file Forward.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file Hazarddetection.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file predictionbuffer.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file Regi.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file shift_register.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file Vliw_alu.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file Vliw_multipliercontrol.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file adder.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file alu.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file alu_1bit.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file ALUop.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file com.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file control.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file controlpath.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file full_adder.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file lookahead.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file memory.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file mips_constant_pkg.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file mux.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file PC.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file processor.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file quadputmux.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file register_file.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+Copying file toplevel.vhd to
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_0
+0_a/hdl/vhdl/ ...
+
+Thank you for using Create and Import Peripheral Wizard! Please find your
+imported peripheral under
+C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores\plprocessor_v1_0
+0_a.
+
+Summary:
+
+  Logical library     : plprocessor_v1_00_a
+  Version             : 1.00.a
+  Bus interface(s)    : SPLB 
+
+The following sub-directories will be created:
+
+  - plprocessor_v1_00_a\data
+  - plprocessor_v1_00_a\hdl
+  - plprocessor_v1_00_a\hdl\vhdl
+
+
+The following HDL source files will be copied into the
+plprocessor_v1_00_a\hdl\vhdl directory:
+
+  - user_logic.vhd
+  - plprocessor.vhd
+  - branch_prediction_unit.vhd
+  - DMEMORY.vhd
+  - Forward.vhd
+  - Hazarddetection.vhd
+  - predictionbuffer.vhd
+  - Regi.vhd
+  - shift_register.vhd
+  - Vliw_alu.vhd
+  - Vliw_multipliercontrol.vhd
+  - adder.vhd
+  - alu.vhd
+  - alu_1bit.vhd
+  - ALUop.vhd
+  - com.vhd
+  - control.vhd
+  - controlpath.vhd
+  - full_adder.vhd
+  - lookahead.vhd
+  - memory.vhd
+  - mips_constant_pkg.vhd
+  - mux.vhd
+  - PC.vhd
+  - processor.vhd
+  - quadputmux.vhd
+  - register_file.vhd
+  - toplevel.vhd
+
+The following files will be created under the plprocessor_v1_00_a\data
+directory:
+
+  - plprocessor_v2_1_0.mpd
+  - plprocessor_v2_1_0.pao
+
+

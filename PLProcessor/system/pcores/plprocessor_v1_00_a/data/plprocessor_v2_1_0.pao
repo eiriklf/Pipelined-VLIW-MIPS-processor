@@ -1,0 +1,44 @@
+##############################################################################
+## Filename:          C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores/plprocessor_v1_00_a/data/plprocessor_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Mon Nov 11 22:28:06 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a proc_common_pkg vhdl
+lib proc_common_v3_00_a ipif_pkg vhdl
+lib proc_common_v3_00_a or_muxcy vhdl
+lib proc_common_v3_00_a or_gate128 vhdl
+lib proc_common_v3_00_a family_support vhdl
+lib proc_common_v3_00_a pselect_f vhdl
+lib proc_common_v3_00_a counter_f vhdl
+lib plbv46_slave_single_v1_01_a plb_address_decoder vhdl
+lib plbv46_slave_single_v1_01_a plb_slave_attachment vhdl
+lib plbv46_slave_single_v1_01_a plbv46_slave_single vhdl
+lib plprocessor_v1_00_a user_logic vhdl
+lib plprocessor_v1_00_a plprocessor vhdl
+lib plprocessor_v1_00_a branch_prediction_unit vhdl
+lib plprocessor_v1_00_a DMEMORY vhdl
+lib plprocessor_v1_00_a Forward vhdl
+lib plprocessor_v1_00_a Hazarddetection vhdl
+lib plprocessor_v1_00_a predictionbuffer vhdl
+lib plprocessor_v1_00_a Regi vhdl
+lib plprocessor_v1_00_a shift_register vhdl
+lib plprocessor_v1_00_a Vliw_alu vhdl
+lib plprocessor_v1_00_a Vliw_multipliercontrol vhdl
+lib plprocessor_v1_00_a adder vhdl
+lib plprocessor_v1_00_a alu vhdl
+lib plprocessor_v1_00_a alu_1bit vhdl
+lib plprocessor_v1_00_a ALUop vhdl
+lib plprocessor_v1_00_a com vhdl
+lib plprocessor_v1_00_a control vhdl
+lib plprocessor_v1_00_a controlpath vhdl
+lib plprocessor_v1_00_a full_adder vhdl
+lib plprocessor_v1_00_a lookahead vhdl
+lib plprocessor_v1_00_a memory vhdl
+lib plprocessor_v1_00_a mips_constant_pkg vhdl
+lib plprocessor_v1_00_a mux vhdl
+lib plprocessor_v1_00_a PC vhdl
+lib plprocessor_v1_00_a processor vhdl
+lib plprocessor_v1_00_a quadputmux vhdl
+lib plprocessor_v1_00_a register_file vhdl
+lib plprocessor_v1_00_a toplevel vhdl

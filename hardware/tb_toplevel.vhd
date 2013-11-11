@@ -116,10 +116,10 @@ ARCHITECTURE behavior OF tb_branchpredictor IS
   
   --Vliw/multi issued instructions:
   constant ins00 : std_logic_vector(0 to 31) := X"00000000";--NOP
-  constant ins06 : std_logic_vector(0 to 31) := X"0042001A";--mult 
+  constant ins06 : std_logic_vector(0 to 31) := X"00420018";--mult 
   --instructions:
 	constant ins0  : std_logic_vector(0 to 31) := X"8C030002";--lw $3, 2($0)
-	constant ins1  : std_logic_vector(0 to 31) := X"AC030008";--lw $2, 2($0)
+	constant ins1  : std_logic_vector(0 to 31) := X"8C020002";--lw $2, 2($0)
 	constant ins2  : std_logic_vector(0 to 31) := X"00221820";--add $3, $1, $2
 	constant ins3  : std_logic_vector(0 to 31) := X"00622022";--sub $4, $3, $2
 	constant ins4  : std_logic_vector(0 to 31) := X"8C0B0001";--lw $11, 1($0)

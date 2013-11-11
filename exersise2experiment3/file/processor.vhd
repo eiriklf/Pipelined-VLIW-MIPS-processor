@@ -231,12 +231,15 @@ end component branchprediction;
     component Forwarding is
     Port ( ExmemregisterRD : in  STD_LOGIC_VECTOR (4 downto 0);
            MEMWbregisterRD : in  STD_LOGIC_VECTOR (4 downto 0);
-           MEMWBregwrite   : in std_logic;
-           EXMEMregwrite   : in std_logic;
-           RS              : in  STD_LOGIC_VECTOR (4 downto 0);
-           RT              : in  STD_LOGIC_VECTOR (4 downto 0);
-           forwardA        : out  STD_LOGIC_VECTOR (1 downto 0);
-           forwardB        : out  STD_LOGIC_VECTOR (1 downto 0));
+			  MEMWBregwrite: in std_logic;
+			  EXMEMregwrite: in std_logic;
+			  WB2regwrite: in std_logic;
+           IDEX_RS : in  STD_LOGIC_VECTOR (4 downto 0);
+           IDEX_RT : in  STD_LOGIC_VECTOR (4 downto 0);
+           forwardA : out  STD_LOGIC_VECTOR (1 downto 0);
+           forwardB  : out  STD_LOGIC_VECTOR (1 downto 0);
+			  Wb2registerRD: in std_logic_vector(4 downto 0)
+			  );
 end component Forwarding;
 
     --Signal, categorized as signals FROM different components:
@@ -267,9 +270,11 @@ end component Forwarding;
     
     --output from forwardA mux
     signal ForwardAout: std_logic_vector(31 downto 0);
+	 signal forwardrs: std_logic;
     
     --output from forwardB mux
     signal ForwardBout: std_logic_vector(31 downto 0);
+	 signal forwardrt: std_logic;
     -- From MUX, Between Instruction Memory and Register File (input for Write Register)
     signal ChosenWriteReg : STD_LOGIC_VECTOR (4 downto 0);
 
@@ -320,6 +325,10 @@ end component Forwarding;
     signal MEMWB_in: std_logic_vector(71 downto 0);
     --mem/wb output
     signal MEMWBs: std_logic_vector(71 downto 0);
+	 
+	 --wb2 output
+	 signal WB2s: std_logic_vector(37 downto 0);
+	 signal wb2_in:std_logic_vector(37 downto 0);
     
     --mux controlinputs
     
@@ -380,7 +389,9 @@ end component Forwarding;
     --signal generated from branch conditions(taken or not taken)
     signal branched1: std_logic;
     
-    
+	 --output from the forwarding muxes after the register file
+	 signal ForwardRs_out: std_logic_vector(31 downto 0);
+    signal ForwardRt_out: std_logic_vector(31 downto 0);
     
     --for wliv/multiplier datapath
     
@@ -620,17 +631,29 @@ end component Forwarding;
                 reset       => reset,
                 write_enable=>'1'
                 );
+	WB2_in<=MEMWBs(69)&MEMWBs(4 downto 0)&chosenwritedata;
+	 WB2: regi generic map (N=>38)
+    port map(
+                data_in     =>WB2_in,
+                data_out    => WB2s,
+                clock       => clk,
+                reset       => reset,
+                write_enable=>'1'
+                );
     --forwarding unit mapping. Following the naming conventions given in our book
     Forwardunit: Forwarding
     Port map (
                  ExmemregisterRD =>EXMEMs(4 downto 0),
                  MEMWbregisterRD =>MEMWBs(4 downto 0),
+					  WB2regwrite=>WB2s(37),
                  MEMWBregwrite   =>MEMWBs(69),
                  EXMEMregwrite   =>EXMEMs(136),
-                 RS              =>IDEXs(157 downto 153),--IDEX_RS signal
-                 RT              =>IDEXs(9 downto 5),    --IDEX_RT signal
+                 IDEX_RS              =>IDEXs(157 downto 153),--IDEX_RS signal
+                 IDEX_RT              =>IDEXs(9 downto 5),    --IDEX_RT signal
+					  Wb2registerRD					=>wb2s(36 downto 32),
                  forwardA        =>ctForwardA,--output signal to control the forwardA mux
                  forwardB        =>ctForwardB --output signal to control the forwardB mux
+					  
                  );
     --mappings for the control unit. the controlunit controls most of muxes
     --related to the instructions/opcodes
@@ -728,6 +751,7 @@ end component Forwarding;
             Data_out        	=>stateread--outputs 1 branchpredictor/prediction
     );
 
+
 			--shift register used for the global branch information for the corrolating branch predictor
         global_prediction: shift_register 
    Port map( 
@@ -739,26 +763,31 @@ end component Forwarding;
 			  );
     
 	 --Forwarding mux1. Forwards values on "RS data"-path
-    ForwardmuxA: TriputMux 
+    ForwardmuxA: quadputmux
     Port map( 
 			  A 			=>IDEXs(105 downto 74),--read_data1
            B 			=>EXMEMs(68 downto 37),--aluresult
            C 			=>ChosenWriteData,
+			  D			=>wb2s(31 downto 0),
            R 			=>ForwardAout,
            control 	=>ctForwardA --signal from forwarding unit
 			  );
+			  
+
+
     --Forwarding mux2. Forwards values on "RT data"-path          
-    ForwardmuxB: TriputMux 
+    ForwardmuxB: quadputmux 
     Port map( 
 			  A 			=>IDEXs(73 downto 42),--Read_data2
            B 			=>EXMEMs(68 downto 37),--aluresult
            C 			=>ChosenWriteData,
+			  D			=>wb2s(31 downto 0),
            R 			=>ForwardBout,
            control 	=>ctForwardB
 			  );
-
+			  
      --mux for chosing write register
-    WRITEREG_MUX1: simple_multiplexer generic map ( N=>5) 
+    WRITEREG_MUX: simple_multiplexer generic map ( N=>5) 
 	 port map(
            a 					=> IDEXs(9 downto 5),
            b		 			=> IDEXs(4 downto 0),

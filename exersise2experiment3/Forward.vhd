@@ -35,40 +35,53 @@ entity Forwarding is
            MEMWbregisterRD : in  STD_LOGIC_VECTOR (4 downto 0);
 			  MEMWBregwrite: in std_logic;
 			  EXMEMregwrite: in std_logic;
-           RS : in  STD_LOGIC_VECTOR (4 downto 0);
-           RT : in  STD_LOGIC_VECTOR (4 downto 0);
+			  WB2regwrite: in std_logic;
+           IDEX_RS : in  STD_LOGIC_VECTOR (4 downto 0);
+           IDEX_RT : in  STD_LOGIC_VECTOR (4 downto 0);
            forwardA : out  STD_LOGIC_VECTOR (1 downto 0);
-           forwardB  : out  STD_LOGIC_VECTOR (1 downto 0));
+           forwardB  : out  STD_LOGIC_VECTOR (1 downto 0);
+			  Wb2registerRD: in std_logic_vector(4 downto 0)
+			  );
 end Forwarding;
 
 architecture Behavioral of Forwarding is
 
 begin
 
-	Process1: process(MEMWBregwrite,  EXMEMregwrite, RS, MEMWbregisterRD, ExmemregisterRD)
+	Process1: process(MEMWBregwrite,wb2regwrite,Wb2registerRD,  EXMEMregwrite, MEMWbregisterRD, ExmemregisterRD, IDEX_Rs)
 	begin
-		if( (EXMEMregwrite='1' )and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RS) ) then
+		if( (EXMEMregwrite='1' )and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= IDEX_RS) ) then
 			forwardA<="10";
-		elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
-			and not(EXMEMregisterRD="00000")) and (MEMWBregisterRD=RS) ) then --and not (EXMEMregisterRD=RS))
+
+		elsif((MEMWBregwrite='1') and (not(MEMWBregisterRD="00000")) and (MEMWBregisterRD=IDEX_RS) ) then --and not (EXMEMregisterRD=RS))
 			forwardA<="01";
+
+		elsif((WB2regwrite='1') and (not(WB2registerRD="00000")) and (WB2registerRD=IDEX_RS) ) then --and not (EXMEMregisterRD=RS))
+			forwardA<="11";
+
 		else
 			forwardA<="00";
+
 	end if;
 	 
 	
 	
 	end process;
 	
-	Process2: process(MEMWBregwrite,  EXMEMregwrite,RT, MEMWbregisterRD, ExmemregisterRD)
+	Process2: process(MEMWBregwrite,wb2regwrite,Wb2registerRD,  EXMEMregwrite, MEMWbregisterRD, ExmemregisterRD,IDEX_RT)
 	begin
-		if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= RT)) then
+		if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= IDEX_RT)) then
 			forwardB<="10";
-		elsif((MEMWBregwrite='1') and not(MEMWBregisterRD="00000") and not((EXMEMregwrite='1') 
-			and not(EXMEMregisterRD="00000"))  and (MEMWBregisterRD=RT) ) then --and not (EXMEMregisterRD=RT))
+
+		elsif((MEMWBregwrite='1') and (not(MEMWBregisterRD="00000"))  and (MEMWBregisterRD=IDEX_RT) ) then --and not (EXMEMregisterRD=RT))
 			forwardB<="01";
+
+		elsif((WB2regwrite='1') and (not(WB2registerRD="00000")) and (Wb2registerRD=IDEX_RT) ) then --and not (EXMEMregisterRD=RT))
+			forwardB<="11";
+
 		else
 			forwardB<="00";
+
 	end if;
 	
 	

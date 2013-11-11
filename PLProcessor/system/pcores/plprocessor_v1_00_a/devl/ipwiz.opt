@@ -1,0 +1,10 @@
+-batch 
+-create plprocessor 
+-ver 1.00.a 
+-dir "C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system" 
+-lang vhdl 
+-bus plbv46 s 
+-reg 5 
+-xps 
+-ise 
+-driver 

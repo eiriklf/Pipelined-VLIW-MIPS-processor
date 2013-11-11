@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<Update_bits_deps>
+
+  <Version XPSPNVER="1.0" EDKVER="12.4" />
+  <FPGA family="spartan6" device="xc6slx16" package="csg324" speedgrade="-2" />
+  <File Type="MHS" URL="../../system.mhs" />
+  <File Type="UCF" URL="../../data\system.ucf" />
+  <File Type="LibgenOpt" URL="../libgen.opt" />
+  <File Type="BitinitOpt" URL="../bitinit.opt" />
+  <File Type="ELF" URL="../../rwPLProcessor/executable.elf" />
+
+
+</Update_bits_deps>

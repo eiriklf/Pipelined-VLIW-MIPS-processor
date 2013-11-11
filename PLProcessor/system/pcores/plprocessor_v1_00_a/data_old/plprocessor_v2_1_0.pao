@@ -1,0 +1,18 @@
+##############################################################################
+## Filename:          C:/Users/torbjlan/dmkonsttdt4255_work/PLProcessor/system/pcores/plprocessor_v1_00_a/data/plprocessor_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Mon Nov 11 22:23:26 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a proc_common_pkg vhdl
+lib proc_common_v3_00_a ipif_pkg vhdl
+lib proc_common_v3_00_a or_muxcy vhdl
+lib proc_common_v3_00_a or_gate128 vhdl
+lib proc_common_v3_00_a family_support vhdl
+lib proc_common_v3_00_a pselect_f vhdl
+lib proc_common_v3_00_a counter_f vhdl
+lib plbv46_slave_single_v1_01_a plb_address_decoder vhdl
+lib plbv46_slave_single_v1_01_a plb_slave_attachment vhdl
+lib plbv46_slave_single_v1_01_a plbv46_slave_single vhdl
+lib plprocessor_v1_00_a user_logic vhdl
+lib plprocessor_v1_00_a plprocessor vhdl

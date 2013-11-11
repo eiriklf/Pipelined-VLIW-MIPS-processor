@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/TB_FPGA.vhd";
+static const char *ng0 = "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/TB_FPGA.vhd";
 
 
 
@@ -1507,7 +1507,7 @@ LAB124:    xsi_set_current_line(351, ng0);
     memcpy(t8, t3, 32U);
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(353, ng0);
-    t2 = (t0 + 7808U);
+    t2 = (t0 + 7688U);
     t3 = *((char **)t2);
     t2 = (t0 + 12920);
     t4 = (t2 + 56U);
@@ -1687,7 +1687,7 @@ LAB140:    xsi_set_current_line(373, ng0);
     memcpy(t8, t3, 32U);
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(375, ng0);
-    t2 = (t0 + 7688U);
+    t2 = (t0 + 7808U);
     t3 = *((char **)t2);
     t2 = (t0 + 12920);
     t4 = (t2 + 56U);

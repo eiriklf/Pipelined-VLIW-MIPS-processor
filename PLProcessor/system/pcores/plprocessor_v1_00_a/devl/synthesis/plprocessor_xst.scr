@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores\plprocessor_v1_00_a\devl\synthesis\plprocessor_xst.prj"
+-top plprocessor
+-p virtex5
+-ofn "C:\Users\torbjlan\dmkonsttdt4255_work\PLProcessor\system\pcores\plprocessor_v1_00_a\devl\synthesis\plprocessor_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib plprocessor_v1_00_a

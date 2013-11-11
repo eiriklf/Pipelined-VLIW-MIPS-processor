@@ -27,52 +27,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 ================================================================================
 Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 30 ns HIGH 50%;
 
- 2559069 paths analyzed, 3025 endpoints analyzed, 0 failing endpoints
+ 14821217 paths analyzed, 4056 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  19.851ns.
+ Minimum period is  21.413ns.
 --------------------------------------------------------------------------------
 
-Paths for end point MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAMB8_X1Y8.ADDRBRDADDR5), 5171 paths
+Paths for end point MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP48_X0Y6.C23), 181491 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     6.289ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               INST_MEM/Mram_MEM (RAM)
-  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
-  Requirement:          15.000ns
-  Data Path Delay:      8.666ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.010ns (0.345 - 0.355)
-  Source Clock:         clk_BUFGP falling at 15.000ns
-  Destination Clock:    clk_BUFGP rising at 30.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: INST_MEM/Mram_MEM to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
-    Location                Delay type         Delay(ns)  Physical Resource
-                                                          Logical Resource(s)
-    ----------------------------------------------------  -------------------
-    RAMB8_X1Y13.DOBDO5      Trcko_DOB             2.950   INST_MEM/Mram_MEM
-                                                          INST_MEM/Mram_MEM
-    SLICE_X15Y14.A6         net (fanout=2)        3.120   instr_data<21>
-    SLICE_X15Y14.A          Tilo                  0.341   instr_data<21>_0_0_0
-                                                          instr_data<21>_0_01
-    RAMB8_X1Y8.ADDRBRDADDR5 net (fanout=1)        1.855   instr_data<21>_0_0_0
-    RAMB8_X1Y8.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
-                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
-    ----------------------------------------------------  ---------------------------
-    Total                                         8.666ns (3.691ns logic, 4.975ns route)
-                                                          (42.6% logic, 57.4% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     11.629ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
-  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
+Slack (setup path):     8.587ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
   Requirement:          30.000ns
-  Data Path Delay:      18.346ns (Levels of Logic = 9)
-  Clock Path Skew:      0.010ns (0.345 - 0.335)
+  Data Path Delay:      21.339ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.039ns (0.320 - 0.359)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -83,54 +50,35 @@ Slack (setup path):     11.629ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
-    Location                Delay type         Delay(ns)  Physical Resource
-                                                          Logical Resource(s)
-    ----------------------------------------------------  -------------------
-    SLICE_X27Y19.DQ         Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
-                                                          MIPS_SC_PROCESSOR/MEMWB/data_69
-    SLICE_X12Y25.C1         net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
-    SLICE_X12Y25.C          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B4         net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
-    SLICE_X19Y19.D5         net (fanout=3)        1.917   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
-    SLICE_X19Y19.D          Tilo                  0.341   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
-                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o_1
-    SLICE_X16Y16.B1         net (fanout=6)        1.543   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
-    SLICE_X16Y16.B          Tilo                  0.333   MIPS_SC_PROCESSOR/ForwardAout<2>
-                                                          MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R231
-    SLICE_X18Y26.A3         net (fanout=11)       2.294   MIPS_SC_PROCESSOR/ForwardAout<2>
-    SLICE_X18Y26.COUT       Topcya                0.712   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<0>
-                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.COUT       Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CMUX       Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
-    SLICE_X18Y18.D6         net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-    SLICE_X18Y18.D          Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
-                                                          MIPS_SC_PROCESSOR/Mmux_branched111
-    SLICE_X15Y14.A3         net (fanout=37)       1.249   MIPS_SC_PROCESSOR/branched1
-    SLICE_X15Y14.A          Tilo                  0.341   instr_data<21>_0_0_0
-                                                          instr_data<21>_0_01
-    RAMB8_X1Y8.ADDRBRDADDR5 net (fanout=1)        1.855   instr_data<21>_0_0_0
-    RAMB8_X1Y8.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
-                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
-    ----------------------------------------------------  ---------------------------
-    Total                                        18.346ns (4.243ns logic, 14.103ns route)
-                                                          (23.1% logic, 76.9% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y8.DOADO1    Trcko_DOA             2.950   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y3.B1        net (fanout=1)        1.632   MIPS_SC_PROCESSOR/IDEXs<196>
+    DSP48_X0Y3.P30       Tdspdo_B_P            5.167   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y4.C13       net (fanout=1)        1.604   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P30_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y4.PCOUT0    Tdspdo_C_PCOUT        3.225   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y5.PCIN0     net (fanout=1)        0.002   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_0
+    DSP48_X0Y5.P40       Tdspdo_PCIN_P         2.772   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y6.C23       net (fanout=1)        1.689   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P40_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y6.CLK       Tdspdck_C_PREG        2.298   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     21.339ns (16.412ns logic, 4.927ns route)
+                                                       (76.9% logic, 23.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     11.641ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
-  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
+Slack (setup path):     8.587ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
   Requirement:          30.000ns
-  Data Path Delay:      18.334ns (Levels of Logic = 9)
-  Clock Path Skew:      0.010ns (0.345 - 0.335)
+  Data Path Delay:      21.339ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.039ns (0.320 - 0.359)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -141,90 +89,35 @@ Slack (setup path):     11.641ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
-    Location                Delay type         Delay(ns)  Physical Resource
-                                                          Logical Resource(s)
-    ----------------------------------------------------  -------------------
-    SLICE_X27Y19.DQ         Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
-                                                          MIPS_SC_PROCESSOR/MEMWB/data_69
-    SLICE_X12Y25.C1         net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
-    SLICE_X12Y25.C          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B4         net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
-    SLICE_X18Y19.A4         net (fanout=3)        2.038   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
-    SLICE_X18Y19.A          Tilo                  0.373   MIPS_SC_PROCESSOR/MEMWB/data<2>
-                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
-    SLICE_X26Y18.B2         net (fanout=26)       1.642   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
-    SLICE_X26Y18.B          Tilo                  0.373   MIPS_SC_PROCESSOR/ForwardAout<8>
-                                                          MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R311
-    SLICE_X18Y26.C3         net (fanout=12)       2.215   MIPS_SC_PROCESSOR/ForwardAout<8>
-    SLICE_X18Y26.COUT       Topcyc                0.487   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<2>
-                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.COUT       Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CMUX       Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
-    SLICE_X18Y18.D6         net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-    SLICE_X18Y18.D          Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
-                                                          MIPS_SC_PROCESSOR/Mmux_branched111
-    SLICE_X15Y14.A3         net (fanout=37)       1.249   MIPS_SC_PROCESSOR/branched1
-    SLICE_X15Y14.A          Tilo                  0.341   instr_data<21>_0_0_0
-                                                          instr_data<21>_0_01
-    RAMB8_X1Y8.ADDRBRDADDR5 net (fanout=1)        1.855   instr_data<21>_0_0_0
-    RAMB8_X1Y8.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
-                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
-    ----------------------------------------------------  ---------------------------
-    Total                                        18.334ns (4.090ns logic, 14.244ns route)
-                                                          (22.3% logic, 77.7% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y8.DOADO1    Trcko_DOA             2.950   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y3.B1        net (fanout=1)        1.632   MIPS_SC_PROCESSOR/IDEXs<196>
+    DSP48_X0Y3.P30       Tdspdo_B_P            5.167   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y4.C13       net (fanout=1)        1.604   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P30_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y4.PCOUT9    Tdspdo_C_PCOUT        3.225   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y5.PCIN9     net (fanout=1)        0.002   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_9
+    DSP48_X0Y5.P40       Tdspdo_PCIN_P         2.772   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y6.C23       net (fanout=1)        1.689   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P40_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y6.CLK       Tdspdck_C_PREG        2.298   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     21.339ns (16.412ns logic, 4.927ns route)
+                                                       (76.9% logic, 23.1% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAMB8_X0Y14.ADDRBRDADDR5), 5171 paths
---------------------------------------------------------------------------------
-Slack (setup path):     6.697ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               INST_MEM/Mram_MEM (RAM)
-  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
-  Requirement:          15.000ns
-  Data Path Delay:      8.247ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.021ns (0.461 - 0.482)
-  Source Clock:         clk_BUFGP falling at 15.000ns
-  Destination Clock:    clk_BUFGP rising at 30.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: INST_MEM/Mram_MEM to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    Location                 Delay type         Delay(ns)  Physical Resource
-                                                           Logical Resource(s)
-    -----------------------------------------------------  -------------------
-    RAMB8_X1Y13.DOBDO0       Trcko_DOB             2.950   INST_MEM/Mram_MEM
-                                                           INST_MEM/Mram_MEM
-    SLICE_X5Y30.B1           net (fanout=2)        3.982   instr_data<16>
-    SLICE_X5Y30.B            Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_95
-                                                           instr_data<16>_0_01
-    RAMB8_X0Y14.ADDRBRDADDR5 net (fanout=1)        0.574   instr_data<16>_0_0_0
-    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    -----------------------------------------------------  ---------------------------
-    Total                                          8.247ns (3.691ns logic, 4.556ns route)
-                                                           (44.8% logic, 55.2% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     10.903ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
-  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
+Slack (setup path):     8.587ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
   Requirement:          30.000ns
-  Data Path Delay:      19.061ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.001ns (0.461 - 0.462)
+  Data Path Delay:      21.339ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.039ns (0.320 - 0.359)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -235,54 +128,38 @@ Slack (setup path):     10.903ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    Location                 Delay type         Delay(ns)  Physical Resource
-                                                           Logical Resource(s)
-    -----------------------------------------------------  -------------------
-    SLICE_X27Y19.DQ          Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
-                                                           MIPS_SC_PROCESSOR/MEMWB/data_69
-    SLICE_X12Y25.C1          net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
-    SLICE_X12Y25.C           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B4          net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
-    SLICE_X19Y19.D5          net (fanout=3)        1.917   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
-    SLICE_X19Y19.D           Tilo                  0.341   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o_1
-    SLICE_X16Y16.B1          net (fanout=6)        1.543   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
-    SLICE_X16Y16.B           Tilo                  0.333   MIPS_SC_PROCESSOR/ForwardAout<2>
-                                                           MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R231
-    SLICE_X18Y26.A3          net (fanout=11)       2.294   MIPS_SC_PROCESSOR/ForwardAout<2>
-    SLICE_X18Y26.COUT        Topcya                0.712   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<0>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.COUT        Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CMUX        Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
-    SLICE_X18Y18.D6          net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-    SLICE_X18Y18.D           Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
-                                                           MIPS_SC_PROCESSOR/Mmux_branched111
-    SLICE_X5Y30.B3           net (fanout=37)       3.245   MIPS_SC_PROCESSOR/branched1
-    SLICE_X5Y30.B            Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_95
-                                                           instr_data<16>_0_01
-    RAMB8_X0Y14.ADDRBRDADDR5 net (fanout=1)        0.574   instr_data<16>_0_0_0
-    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    -----------------------------------------------------  ---------------------------
-    Total                                         19.061ns (4.243ns logic, 14.818ns route)
-                                                           (22.3% logic, 77.7% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y8.DOADO1    Trcko_DOA             2.950   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y3.B1        net (fanout=1)        1.632   MIPS_SC_PROCESSOR/IDEXs<196>
+    DSP48_X0Y3.P30       Tdspdo_B_P            5.167   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y4.C13       net (fanout=1)        1.604   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P30_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y4.PCOUT1    Tdspdo_C_PCOUT        3.225   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y5.PCIN1     net (fanout=1)        0.002   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_1
+    DSP48_X0Y5.P40       Tdspdo_PCIN_P         2.772   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y6.C23       net (fanout=1)        1.689   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P40_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y6.CLK       Tdspdck_C_PREG        2.298   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     21.339ns (16.412ns logic, 4.927ns route)
+                                                       (76.9% logic, 23.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     10.915ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
-  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
+
+Paths for end point MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP48_X0Y6.C14), 181491 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.769ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
   Requirement:          30.000ns
-  Data Path Delay:      19.049ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.001ns (0.461 - 0.462)
+  Data Path Delay:      21.157ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.039ns (0.320 - 0.359)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -293,90 +170,35 @@ Slack (setup path):     10.915ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    Location                 Delay type         Delay(ns)  Physical Resource
-                                                           Logical Resource(s)
-    -----------------------------------------------------  -------------------
-    SLICE_X27Y19.DQ          Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
-                                                           MIPS_SC_PROCESSOR/MEMWB/data_69
-    SLICE_X12Y25.C1          net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
-    SLICE_X12Y25.C           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B4          net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
-    SLICE_X18Y19.A4          net (fanout=3)        2.038   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
-    SLICE_X18Y19.A           Tilo                  0.373   MIPS_SC_PROCESSOR/MEMWB/data<2>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
-    SLICE_X26Y18.B2          net (fanout=26)       1.642   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
-    SLICE_X26Y18.B           Tilo                  0.373   MIPS_SC_PROCESSOR/ForwardAout<8>
-                                                           MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R311
-    SLICE_X18Y26.C3          net (fanout=12)       2.215   MIPS_SC_PROCESSOR/ForwardAout<8>
-    SLICE_X18Y26.COUT        Topcyc                0.487   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<2>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.COUT        Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CMUX        Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
-    SLICE_X18Y18.D6          net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-    SLICE_X18Y18.D           Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
-                                                           MIPS_SC_PROCESSOR/Mmux_branched111
-    SLICE_X5Y30.B3           net (fanout=37)       3.245   MIPS_SC_PROCESSOR/branched1
-    SLICE_X5Y30.B            Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_95
-                                                           instr_data<16>_0_01
-    RAMB8_X0Y14.ADDRBRDADDR5 net (fanout=1)        0.574   instr_data<16>_0_0_0
-    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    -----------------------------------------------------  ---------------------------
-    Total                                         19.049ns (4.090ns logic, 14.959ns route)
-                                                           (21.5% logic, 78.5% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y8.DOADO1    Trcko_DOA             2.950   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y3.B1        net (fanout=1)        1.632   MIPS_SC_PROCESSOR/IDEXs<196>
+    DSP48_X0Y3.P30       Tdspdo_B_P            5.167   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y4.C13       net (fanout=1)        1.604   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P30_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y4.PCOUT0    Tdspdo_C_PCOUT        3.225   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y5.PCIN0     net (fanout=1)        0.002   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_0
+    DSP48_X0Y5.P31       Tdspdo_PCIN_P         2.772   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y6.C14       net (fanout=1)        1.507   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P31_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y6.CLK       Tdspdck_C_PREG        2.298   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     21.157ns (16.412ns logic, 4.745ns route)
+                                                       (77.6% logic, 22.4% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAMB8_X0Y14.ADDRBRDADDR7), 5171 paths
---------------------------------------------------------------------------------
-Slack (setup path):     6.983ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               INST_MEM/Mram_MEM (RAM)
-  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
-  Requirement:          15.000ns
-  Data Path Delay:      7.961ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.021ns (0.461 - 0.482)
-  Source Clock:         clk_BUFGP falling at 15.000ns
-  Destination Clock:    clk_BUFGP rising at 30.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: INST_MEM/Mram_MEM to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    Location                 Delay type         Delay(ns)  Physical Resource
-                                                           Logical Resource(s)
-    -----------------------------------------------------  -------------------
-    RAMB8_X1Y13.DOBDO2       Trcko_DOB             2.950   INST_MEM/Mram_MEM
-                                                           INST_MEM/Mram_MEM
-    SLICE_X0Y29.D5           net (fanout=2)        3.382   instr_data<18>
-    SLICE_X0Y29.D            Tilo                  0.333   MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_38
-                                                           instr_data<18>_0_01
-    RAMB8_X0Y14.ADDRBRDADDR7 net (fanout=1)        0.896   instr_data<18>_0_0_0
-    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    -----------------------------------------------------  ---------------------------
-    Total                                          7.961ns (3.683ns logic, 4.278ns route)
-                                                           (46.3% logic, 53.7% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     11.142ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
-  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
+Slack (setup path):     8.769ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
   Requirement:          30.000ns
-  Data Path Delay:      18.822ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.001ns (0.461 - 0.462)
+  Data Path Delay:      21.157ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.039ns (0.320 - 0.359)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -387,54 +209,35 @@ Slack (setup path):     11.142ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    Location                 Delay type         Delay(ns)  Physical Resource
-                                                           Logical Resource(s)
-    -----------------------------------------------------  -------------------
-    SLICE_X27Y19.DQ          Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
-                                                           MIPS_SC_PROCESSOR/MEMWB/data_69
-    SLICE_X12Y25.C1          net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
-    SLICE_X12Y25.C           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B4          net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
-    SLICE_X19Y19.D5          net (fanout=3)        1.917   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
-    SLICE_X19Y19.D           Tilo                  0.341   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o_1
-    SLICE_X16Y16.B1          net (fanout=6)        1.543   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
-    SLICE_X16Y16.B           Tilo                  0.333   MIPS_SC_PROCESSOR/ForwardAout<2>
-                                                           MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R231
-    SLICE_X18Y26.A3          net (fanout=11)       2.294   MIPS_SC_PROCESSOR/ForwardAout<2>
-    SLICE_X18Y26.COUT        Topcya                0.712   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<0>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.COUT        Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CMUX        Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
-    SLICE_X18Y18.D6          net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-    SLICE_X18Y18.D           Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
-                                                           MIPS_SC_PROCESSOR/Mmux_branched111
-    SLICE_X0Y29.D6           net (fanout=37)       2.692   MIPS_SC_PROCESSOR/branched1
-    SLICE_X0Y29.D            Tilo                  0.333   MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_38
-                                                           instr_data<18>_0_01
-    RAMB8_X0Y14.ADDRBRDADDR7 net (fanout=1)        0.896   instr_data<18>_0_0_0
-    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    -----------------------------------------------------  ---------------------------
-    Total                                         18.822ns (4.235ns logic, 14.587ns route)
-                                                           (22.5% logic, 77.5% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y8.DOADO1    Trcko_DOA             2.950   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y3.B1        net (fanout=1)        1.632   MIPS_SC_PROCESSOR/IDEXs<196>
+    DSP48_X0Y3.P30       Tdspdo_B_P            5.167   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y4.C13       net (fanout=1)        1.604   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P30_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y4.PCOUT9    Tdspdo_C_PCOUT        3.225   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y5.PCIN9     net (fanout=1)        0.002   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_9
+    DSP48_X0Y5.P31       Tdspdo_PCIN_P         2.772   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y6.C14       net (fanout=1)        1.507   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P31_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y6.CLK       Tdspdck_C_PREG        2.298   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     21.157ns (16.412ns logic, 4.745ns route)
+                                                       (77.6% logic, 22.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     11.154ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
-  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
+Slack (setup path):     8.769ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
   Requirement:          30.000ns
-  Data Path Delay:      18.810ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.001ns (0.461 - 0.462)
+  Data Path Delay:      21.157ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.039ns (0.320 - 0.359)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -445,149 +248,242 @@ Slack (setup path):     11.154ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    Location                 Delay type         Delay(ns)  Physical Resource
-                                                           Logical Resource(s)
-    -----------------------------------------------------  -------------------
-    SLICE_X27Y19.DQ          Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
-                                                           MIPS_SC_PROCESSOR/MEMWB/data_69
-    SLICE_X12Y25.C1          net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
-    SLICE_X12Y25.C           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B4          net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
-    SLICE_X12Y25.B           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
-    SLICE_X18Y19.A4          net (fanout=3)        2.038   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
-    SLICE_X18Y19.A           Tilo                  0.373   MIPS_SC_PROCESSOR/MEMWB/data<2>
-                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
-    SLICE_X26Y18.B2          net (fanout=26)       1.642   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
-    SLICE_X26Y18.B           Tilo                  0.373   MIPS_SC_PROCESSOR/ForwardAout<8>
-                                                           MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R311
-    SLICE_X18Y26.C3          net (fanout=12)       2.215   MIPS_SC_PROCESSOR/ForwardAout<8>
-    SLICE_X18Y26.COUT        Topcyc                0.487   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<2>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
-    SLICE_X18Y27.COUT        Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
-    SLICE_X18Y28.CMUX        Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
-    SLICE_X18Y18.D6          net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
-    SLICE_X18Y18.D           Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
-                                                           MIPS_SC_PROCESSOR/Mmux_branched111
-    SLICE_X0Y29.D6           net (fanout=37)       2.692   MIPS_SC_PROCESSOR/branched1
-    SLICE_X0Y29.D            Tilo                  0.333   MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_38
-                                                           instr_data<18>_0_01
-    RAMB8_X0Y14.ADDRBRDADDR7 net (fanout=1)        0.896   instr_data<18>_0_0_0
-    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
-    -----------------------------------------------------  ---------------------------
-    Total                                         18.810ns (4.082ns logic, 14.728ns route)
-                                                           (21.7% logic, 78.3% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y8.DOADO1    Trcko_DOA             2.950   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y3.B1        net (fanout=1)        1.632   MIPS_SC_PROCESSOR/IDEXs<196>
+    DSP48_X0Y3.P30       Tdspdo_B_P            5.167   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y4.C13       net (fanout=1)        1.604   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P30_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y4.PCOUT1    Tdspdo_C_PCOUT        3.225   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y5.PCIN1     net (fanout=1)        0.002   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_1
+    DSP48_X0Y5.P31       Tdspdo_PCIN_P         2.772   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y6.C14       net (fanout=1)        1.507   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P31_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y6.CLK       Tdspdck_C_PREG        2.298   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     21.157ns (16.412ns logic, 4.745ns route)
+                                                       (77.6% logic, 22.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP48_X0Y6.C36), 181491 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.779ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          30.000ns
+  Data Path Delay:      21.147ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.039ns (0.320 - 0.359)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 30.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y8.DOADO1    Trcko_DOA             2.950   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y3.B1        net (fanout=1)        1.632   MIPS_SC_PROCESSOR/IDEXs<196>
+    DSP48_X0Y3.P30       Tdspdo_B_P            5.167   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y4.C13       net (fanout=1)        1.604   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P30_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y4.PCOUT0    Tdspdo_C_PCOUT        3.225   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y5.PCIN0     net (fanout=1)        0.002   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_0
+    DSP48_X0Y5.P47       Tdspdo_PCIN_P         2.772   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y6.C36       net (fanout=18)       1.497   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y6.CLK       Tdspdck_C_PREG        2.298   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     21.147ns (16.412ns logic, 4.735ns route)
+                                                       (77.6% logic, 22.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.779ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          30.000ns
+  Data Path Delay:      21.147ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.039ns (0.320 - 0.359)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 30.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y8.DOADO1    Trcko_DOA             2.950   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y3.B1        net (fanout=1)        1.632   MIPS_SC_PROCESSOR/IDEXs<196>
+    DSP48_X0Y3.P30       Tdspdo_B_P            5.167   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y4.C13       net (fanout=1)        1.604   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P30_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y4.PCOUT9    Tdspdo_C_PCOUT        3.225   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y5.PCIN9     net (fanout=1)        0.002   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_9
+    DSP48_X0Y5.P47       Tdspdo_PCIN_P         2.772   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y6.C36       net (fanout=18)       1.497   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y6.CLK       Tdspdck_C_PREG        2.298   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     21.147ns (16.412ns logic, 4.735ns route)
+                                                       (77.6% logic, 22.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.779ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          30.000ns
+  Data Path Delay:      21.147ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.039ns (0.320 - 0.359)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 30.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y8.DOADO1    Trcko_DOA             2.950   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y3.B1        net (fanout=1)        1.632   MIPS_SC_PROCESSOR/IDEXs<196>
+    DSP48_X0Y3.P30       Tdspdo_B_P            5.167   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y4.C13       net (fanout=1)        1.604   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P30_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y4.PCOUT1    Tdspdo_C_PCOUT        3.225   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y5.PCIN1     net (fanout=1)        0.002   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_1
+    DSP48_X0Y5.P47       Tdspdo_PCIN_P         2.772   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y6.C36       net (fanout=18)       1.497   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y6.CLK       Tdspdck_C_PREG        2.298   MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     21.147ns (16.412ns logic, 4.735ns route)
+                                                       (77.6% logic, 22.4% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 30 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH (SLICE_X14Y17.D5), 1 path
+Paths for end point MIPS_SC_PROCESSOR/HI/data_15 (SLICE_X14Y21.CE), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.349ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 (FF)
-  Destination:          MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH (RAM)
+Slack (hold path):      0.239ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS_SC_PROCESSOR/EXMEM/data_172 (FF)
+  Destination:          MIPS_SC_PROCESSOR/HI/data_15 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.358ns (Levels of Logic = 0)
-  Clock Path Skew:      0.009ns (0.086 - 0.077)
+  Data Path Delay:      0.238ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.001ns (0.037 - 0.038)
   Source Clock:         clk_BUFGP rising at 30.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH
+  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/EXMEM/data_172 to MIPS_SC_PROCESSOR/HI/data_15
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X16Y17.CQ      Tcko                  0.200   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
-                                                       MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
-    SLICE_X14Y17.D5      net (fanout=9)        0.215   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
-    SLICE_X14Y17.CLK     Tah         (-Th)     0.057   MIPS_SC_PROCESSOR/stateread<0>
-                                                       MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH
+    SLICE_X15Y20.DQ      Tcko                  0.198   MIPS_SC_PROCESSOR/EXMEM/data<172>
+                                                       MIPS_SC_PROCESSOR/EXMEM/data_172
+    SLICE_X14Y21.CE      net (fanout=5)        0.148   MIPS_SC_PROCESSOR/EXMEM/data<172>
+    SLICE_X14Y21.CLK     Tckce       (-Th)     0.108   MIPS_SC_PROCESSOR/HI/data<15>
+                                                       MIPS_SC_PROCESSOR/HI/data_15
     -------------------------------------------------  ---------------------------
-    Total                                      0.358ns (0.143ns logic, 0.215ns route)
-                                                       (39.9% logic, 60.1% route)
+    Total                                      0.238ns (0.090ns logic, 0.148ns route)
+                                                       (37.8% logic, 62.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW (SLICE_X14Y17.D5), 1 path
+Paths for end point MIPS_SC_PROCESSOR/HI/data_14 (SLICE_X14Y21.CE), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.349ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 (FF)
-  Destination:          MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW (RAM)
+Slack (hold path):      0.243ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS_SC_PROCESSOR/EXMEM/data_172 (FF)
+  Destination:          MIPS_SC_PROCESSOR/HI/data_14 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.358ns (Levels of Logic = 0)
-  Clock Path Skew:      0.009ns (0.086 - 0.077)
+  Data Path Delay:      0.242ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.001ns (0.037 - 0.038)
   Source Clock:         clk_BUFGP rising at 30.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW
+  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/EXMEM/data_172 to MIPS_SC_PROCESSOR/HI/data_14
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X16Y17.CQ      Tcko                  0.200   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
-                                                       MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
-    SLICE_X14Y17.D5      net (fanout=9)        0.215   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
-    SLICE_X14Y17.CLK     Tah         (-Th)     0.057   MIPS_SC_PROCESSOR/stateread<0>
-                                                       MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW
+    SLICE_X15Y20.DQ      Tcko                  0.198   MIPS_SC_PROCESSOR/EXMEM/data<172>
+                                                       MIPS_SC_PROCESSOR/EXMEM/data_172
+    SLICE_X14Y21.CE      net (fanout=5)        0.148   MIPS_SC_PROCESSOR/EXMEM/data<172>
+    SLICE_X14Y21.CLK     Tckce       (-Th)     0.104   MIPS_SC_PROCESSOR/HI/data<15>
+                                                       MIPS_SC_PROCESSOR/HI/data_14
     -------------------------------------------------  ---------------------------
-    Total                                      0.358ns (0.143ns logic, 0.215ns route)
-                                                       (39.9% logic, 60.1% route)
+    Total                                      0.242ns (0.094ns logic, 0.148ns route)
+                                                       (38.8% logic, 61.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH (SLICE_X14Y17.D5), 1 path
+Paths for end point MIPS_SC_PROCESSOR/HI/data_13 (SLICE_X14Y21.CE), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.349ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 (FF)
-  Destination:          MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH (RAM)
+Slack (hold path):      0.245ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS_SC_PROCESSOR/EXMEM/data_172 (FF)
+  Destination:          MIPS_SC_PROCESSOR/HI/data_13 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.358ns (Levels of Logic = 0)
-  Clock Path Skew:      0.009ns (0.086 - 0.077)
+  Data Path Delay:      0.244ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.001ns (0.037 - 0.038)
   Source Clock:         clk_BUFGP rising at 30.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH
+  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/EXMEM/data_172 to MIPS_SC_PROCESSOR/HI/data_13
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X16Y17.CQ      Tcko                  0.200   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
-                                                       MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
-    SLICE_X14Y17.D5      net (fanout=9)        0.215   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
-    SLICE_X14Y17.CLK     Tah         (-Th)     0.057   MIPS_SC_PROCESSOR/stateread<0>
-                                                       MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH
+    SLICE_X15Y20.DQ      Tcko                  0.198   MIPS_SC_PROCESSOR/EXMEM/data<172>
+                                                       MIPS_SC_PROCESSOR/EXMEM/data_172
+    SLICE_X14Y21.CE      net (fanout=5)        0.148   MIPS_SC_PROCESSOR/EXMEM/data<172>
+    SLICE_X14Y21.CLK     Tckce       (-Th)     0.102   MIPS_SC_PROCESSOR/HI/data<15>
+                                                       MIPS_SC_PROCESSOR/HI/data_13
     -------------------------------------------------  ---------------------------
-    Total                                      0.358ns (0.143ns logic, 0.215ns route)
-                                                       (39.9% logic, 60.1% route)
+    Total                                      0.244ns (0.096ns logic, 0.148ns route)
+                                                       (39.3% logic, 60.7% route)
 
 --------------------------------------------------------------------------------
 
 Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 30 ns HIGH 50%;
---------------------------------------------------------------------------------
-Slack: 24.197ns (period - min period limit)
-  Period: 30.000ns
-  Min period limit: 5.803ns (172.325MHz) (Tdspper_AREG_PREG)
-  Physical resource: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3/CLK
-  Logical resource: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3/CLK
-  Location pin: DSP48_X1Y4.CLK
-  Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 26.155ns (period - min period limit)
   Period: 30.000ns
   Min period limit: 3.845ns (260.078MHz) (Trper_CLKA(Fmax))
   Physical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKAWRCLK
   Logical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKAWRCLK
-  Location pin: RAMB8_X0Y14.CLKAWRCLK
+  Location pin: RAMB8_X1Y9.CLKAWRCLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 26.155ns (period - min period limit)
@@ -595,7 +491,15 @@ Slack: 26.155ns (period - min period limit)
   Min period limit: 3.845ns (260.078MHz) (Trper_CLKB(Fmax))
   Physical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKBRDCLK
   Logical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKBRDCLK
-  Location pin: RAMB8_X0Y14.CLKBRDCLK
+  Location pin: RAMB8_X1Y9.CLKBRDCLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 26.155ns (period - min period limit)
+  Period: 30.000ns
+  Min period limit: 3.845ns (260.078MHz) (Trper_CLKA(Fmax))
+  Physical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2/CLKAWRCLK
+  Logical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2/CLKAWRCLK
+  Location pin: RAMB8_X0Y9.CLKAWRCLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -612,7 +516,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   19.851|    8.711|    6.480|         |
+clk            |   21.413|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -621,23 +525,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 2559069 paths, 0 nets, and 5281 connections
+Constraints cover 14821217 paths, 0 nets, and 5736 connections
 
 Design statistics:
-   Minimum period:  19.851ns{1}   (Maximum frequency:  50.375MHz)
+   Minimum period:  21.413ns{1}   (Maximum frequency:  46.701MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Mon Nov 11 11:45:13 2013 
+Analysis completed Mon Nov 11 22:16:58 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 232 MB
+Peak Memory Usage: 241 MB
 
 
 

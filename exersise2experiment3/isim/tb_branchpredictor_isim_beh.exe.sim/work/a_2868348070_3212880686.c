@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/memory.vhd";
+static const char *ng0 = "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/memory.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -65,7 +65,7 @@ LAB0:    xsi_set_current_line(58, ng0);
 
 LAB4:
 LAB3:    xsi_set_current_line(63, ng0);
-    t1 = (t0 + 1832U);
+    t1 = (t0 + 1992U);
     t3 = *((char **)t1);
     t1 = (t0 + 4776);
     t4 = (t1 + 56U);
@@ -75,7 +75,7 @@ LAB3:    xsi_set_current_line(63, ng0);
     memcpy(t14, t3, 32U);
     xsi_driver_first_trans_fast(t1);
     xsi_set_current_line(64, ng0);
-    t1 = (t0 + 1992U);
+    t1 = (t0 + 1832U);
     t3 = *((char **)t1);
     t1 = (t0 + 4840);
     t4 = (t1 + 56U);
@@ -87,7 +87,7 @@ LAB3:    xsi_set_current_line(63, ng0);
     xsi_set_current_line(65, ng0);
     t1 = (t0 + 2472U);
     t3 = *((char **)t1);
-    t1 = (t0 + 2632U);
+    t1 = (t0 + 2792U);
     t4 = *((char **)t1);
     t9 = (8 - 1);
     t10 = (31 - t9);
@@ -123,7 +123,7 @@ LAB3:    xsi_set_current_line(63, ng0);
     xsi_set_current_line(66, ng0);
     t1 = (t0 + 2472U);
     t3 = *((char **)t1);
-    t1 = (t0 + 2792U);
+    t1 = (t0 + 2632U);
     t4 = *((char **)t1);
     t9 = (8 - 1);
     t10 = (31 - t9);

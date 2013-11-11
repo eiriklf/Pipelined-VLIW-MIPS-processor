@@ -8,7 +8,13 @@
 <!-- Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/register_file.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/TB_FPGA.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/netgen/map/toplevel_map.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/tb_toplevel_multiply.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

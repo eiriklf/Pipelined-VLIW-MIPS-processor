@@ -89,7 +89,7 @@ Netlist Hierarchy                  : As_Optimized
 RTL Output                         : Yes
 Global Optimization                : AllClockNets
 Read Cores                         : YES
-Write Timing Constraints           : YES
+Write Timing Constraints           : NO
 Cross Clock Analysis               : NO
 Hierarchy Separator                : /
 Bus Delimiter                      : <>
@@ -106,81 +106,78 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/lookahead.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/lookahead.vhd" into library work
 Parsing entity <alu_full_adder>.
 Parsing architecture <Behavioral> of entity <alu_full_adder>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/mips_constant_pkg.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/mips_constant_pkg.vhd" into library work
 Parsing package <MIPS_CONSTANT_PKG>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/full_adder.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/full_adder.vhd" into library work
 Parsing entity <full_adder>.
 Parsing architecture <Behavioral> of entity <full_adder>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/alu_1bit.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/alu_1bit.vhd" into library work
 Parsing entity <alu_4bit>.
 Parsing architecture <Behavioral> of entity <alu_4bit>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\Vliw_multipliercontrol.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\Vliw_multipliercontrol.vhd" into library work
 Parsing entity <Vliw_multipliercontrol>.
 Parsing architecture <Behavioral> of entity <vliw_multipliercontrol>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\Vliw_alu.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\Vliw_alu.vhd" into library work
 Parsing entity <Vliw_alu>.
 Parsing architecture <Behavioral> of entity <vliw_alu>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\TriputMux.vhd" into library work
-Parsing entity <TriputMux>.
-Parsing architecture <Behavioral> of entity <triputmux>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\shift_register.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\shift_register.vhd" into library work
 Parsing entity <shift_register>.
 Parsing architecture <Behavioral> of entity <shift_register>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\Regi.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\Regi.vhd" into library work
 Parsing entity <regi>.
 Parsing architecture <Behavioral> of entity <regi>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\predictionbuffer.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\predictionbuffer.vhd" into library work
 Parsing entity <predictorbuffer>.
 Parsing architecture <Behavioral> of entity <predictorbuffer>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\Hazarddetection.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\Hazarddetection.vhd" into library work
 Parsing entity <Hazarddetection>.
 Parsing architecture <Behavioral> of entity <hazarddetection>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\Forward.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\Forward.vhd" into library work
 Parsing entity <Forwarding>.
 Parsing architecture <Behavioral> of entity <forwarding>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/register_file.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/register_file.vhd" into library work
 Parsing entity <register_file>.
 Parsing architecture <Behavioral> of entity <register_file>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/quadputmux.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/quadputmux.vhd" into library work
 Parsing entity <QuadputMux>.
 Parsing architecture <Behavioral> of entity <quadputmux>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/PC.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/PC.vhd" into library work
 Parsing entity <PC>.
 Parsing architecture <Behavioral> of entity <pc>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/mux.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/mux.vhd" into library work
 Parsing entity <simple_multiplexer>.
 Parsing architecture <Behavioral> of entity <simple_multiplexer>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/control.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/control.vhd" into library work
 Parsing entity <control>.
 Parsing architecture <Behavioral> of entity <control>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/ALUop.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/ALUop.vhd" into library work
 Parsing entity <ALUoperation>.
 Parsing architecture <Behavioral> of entity <aluoperation>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/alu.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/alu.vhd" into library work
 Parsing entity <alu>.
 Parsing architecture <Behavioral> of entity <alu>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/adder.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/adder.vhd" into library work
 Parsing entity <adder>.
 Parsing architecture <Behavioral> of entity <adder>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\branch_prediction_unit.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\branch_prediction_unit.vhd" into library work
 Parsing entity <branchprediction>.
 Parsing architecture <Behavioral> of entity <branchprediction>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/processor.vhd" into library work
 Parsing entity <PROCESSOR>.
 Parsing architecture <Behavioral> of entity <processor>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/memory.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/memory.vhd" into library work
 Parsing entity <memory>.
 Parsing architecture <Behavioral> of entity <memory>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/com.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/com.vhd" into library work
 Parsing entity <com>.
 Parsing architecture <Behavioral> of entity <com>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\DMEMORY.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\DMEMORY.vhd" into library work
 Parsing entity <Dmemory>.
 Parsing architecture <Behavioral> of entity <dmemory>.
-Parsing VHDL file "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\file/toplevel.vhd" into library work
+Parsing VHDL file "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/toplevel.vhd" into library work
 Parsing entity <toplevel>.
 Parsing architecture <Behavioral> of entity <toplevel>.
 
@@ -191,6 +188,7 @@ Parsing architecture <Behavioral> of entity <toplevel>.
 Elaborating entity <toplevel> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <com> (architecture <Behavioral>) with generics from library <work>.
+INFO:HDLCompiler:679 - "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\file/com.vhd" Line 226. Case statement is complete. others clause is never selected
 
 Elaborating entity <Dmemory> (architecture <Behavioral>) with generics from library <work>.
 
@@ -224,6 +222,8 @@ Elaborating entity <regi> (architecture <Behavioral>) with generics from library
 
 Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
 
+Elaborating entity <regi> (architecture <Behavioral>) with generics from library <work>.
+
 Elaborating entity <Forwarding> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <control> (architecture <Behavioral>) from library <work>.
@@ -231,7 +231,7 @@ Elaborating entity <control> (architecture <Behavioral>) from library <work>.
 Elaborating entity <Hazarddetection> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <branchprediction> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "\Users\eiriklf\dmkonsttdt4255_work\exersise2experiment3\branch_prediction_unit.vhd" Line 172. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\branch_prediction_unit.vhd" Line 172. Case statement is complete. others clause is never selected
 
 Elaborating entity <adder> (architecture <Behavioral>) with generics from library <work>.
 
@@ -243,13 +243,11 @@ Elaborating entity <predictorbuffer> (architecture <Behavioral>) with generics f
 
 Elaborating entity <shift_register> (architecture <Behavioral>) from library <work>.
 
-Elaborating entity <TriputMux> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
-
-Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
-
 Elaborating entity <QuadputMux> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generics from library <work>.
 
@@ -258,7 +256,7 @@ Elaborating entity <simple_multiplexer> (architecture <Behavioral>) with generic
 =========================================================================
 
 Synthesizing Unit <toplevel>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
     Summary:
@@ -266,7 +264,7 @@ Synthesizing Unit <toplevel>.
 Unit <toplevel> synthesized.
 
 Synthesizing Unit <com>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/com.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/com.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
         INPUT_BUS_WIDTH = 32
@@ -300,47 +298,39 @@ Synthesizing Unit <com>.
 Unit <com> synthesized.
 
 Synthesizing Unit <Dmemory>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/dmemory.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/dmemory.vhd".
         N = 32
         M = 8
 WARNING:Xst:647 - Input <W_ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 256x32-bit dual-port RAM <Mram_MEM> for signal <MEM>.
-    Found 8-bit register for signal <address_reg<7:0>>.
     Summary:
 	inferred   1 RAM(s).
-	inferred   8 D-type flip-flop(s).
 Unit <Dmemory> synthesized.
 
 Synthesizing Unit <memory>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/memory.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/memory.vhd".
         N = 32
         M = 8
 WARNING:Xst:647 - Input <W_ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <ADDR2<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 8-bit register for signal <address_reg2<7:0>>.
-    Found 8-bit register for signal <address_reg<7:0>>.
     Found 256x32-bit dual-port RAM <Mram_MEM> for signal <MEM>.
     Summary:
 	inferred   2 RAM(s).
-	inferred  16 D-type flip-flop(s).
 Unit <memory> synthesized.
 
 Synthesizing Unit <PROCESSOR>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Zero> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 456: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 688: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
-    Found 32-bit adder for signal <imem_address2> created at line 439.
-    Found 32-bit adder for signal <BranchAdder> created at line 699.
-    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 407
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Carry> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Overflow> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Zero> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 467: Output port <FLAGS_Negative> of the instance <ALUTD> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" line 711: Output port <COUT> of the instance <Addressincrementer> is unconnected or connected to loadless signal.
+    Found 32-bit adder for signal <imem_address2> created at line 450.
+    Found 32-bit adder for signal <BranchAdder> created at line 722.
+    Found 32-bit comparator equal for signal <ForwardAout[31]_ForwardBout[31]_equal_2_o> created at line 418
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
@@ -348,45 +338,45 @@ INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/pr
 Unit <PROCESSOR> synthesized.
 
 Synthesizing Unit <ALUoperation>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/aluop.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/aluop.vhd".
     Summary:
 	inferred  21 Multiplexer(s).
 Unit <ALUoperation> synthesized.
 
 Synthesizing Unit <alu>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd".
         N = 32
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <COUT> of the instance <BEGIN_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <SET> of the instance <BEGIN_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[2].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[3].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[4].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[5].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[6].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[7].NEXT_ALU4B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <COUT> of the instance <BEGIN_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 82: Output port <SET> of the instance <BEGIN_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[2].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[3].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[4].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[5].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[6].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <COUT> of the instance <GEN_ALU[7].NEXT_ALU4B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" line 100: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU4B> is unconnected or connected to loadless signal.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <alu> synthesized.
 
 Synthesizing Unit <alu_4bit>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/alu_1bit.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu_1bit.vhd".
     Summary:
 	inferred   5 Multiplexer(s).
 Unit <alu_4bit> synthesized.
 
 Synthesizing Unit <alu_full_adder>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/lookahead.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/lookahead.vhd".
     Summary:
 Unit <alu_full_adder> synthesized.
 
 Synthesizing Unit <Vliw_alu>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/vliw_alu.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/vliw_alu.vhd".
         N = 32
     Found 32x32-bit multiplier for signal <result> created at line 49.
     Summary:
@@ -394,7 +384,7 @@ Synthesizing Unit <Vliw_alu>.
 Unit <Vliw_alu> synthesized.
 
 Synthesizing Unit <register_file>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/register_file.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/register_file.vhd".
 WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32x32-bit dual-port RAM <Mram_REGS> for signal <REGS>.
     Summary:
@@ -403,7 +393,7 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <register_file> synthesized.
 
 Synthesizing Unit <regi_1>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 32
     Found 32-bit register for signal <data>.
     Summary:
@@ -411,20 +401,20 @@ Synthesizing Unit <regi_1>.
 Unit <regi_1> synthesized.
 
 Synthesizing Unit <Vliw_multipliercontrol>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/vliw_multipliercontrol.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/vliw_multipliercontrol.vhd".
     Summary:
 	no macro.
 Unit <Vliw_multipliercontrol> synthesized.
 
 Synthesizing Unit <PC>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/pc.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/pc.vhd".
     Found 32-bit register for signal <data>.
     Summary:
 	inferred  32 D-type flip-flop(s).
 Unit <PC> synthesized.
 
 Synthesizing Unit <regi_2>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 122
     Found 122-bit register for signal <data>.
     Summary:
@@ -432,7 +422,7 @@ Synthesizing Unit <regi_2>.
 Unit <regi_2> synthesized.
 
 Synthesizing Unit <regi_3>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 288
     Found 288-bit register for signal <data>.
     Summary:
@@ -440,7 +430,7 @@ Synthesizing Unit <regi_3>.
 Unit <regi_3> synthesized.
 
 Synthesizing Unit <regi_4>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 205
     Found 205-bit register for signal <data>.
     Summary:
@@ -448,26 +438,36 @@ Synthesizing Unit <regi_4>.
 Unit <regi_4> synthesized.
 
 Synthesizing Unit <regi_5>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
         N = 72
     Found 72-bit register for signal <data>.
     Summary:
 	inferred  72 D-type flip-flop(s).
 Unit <regi_5> synthesized.
 
-Synthesizing Unit <Forwarding>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/forward.vhd".
-    Found 5-bit comparator equal for signal <RS[4]_ExmemregisterRD[4]_equal_2_o> created at line 50
-    Found 5-bit comparator equal for signal <RS[4]_MEMWbregisterRD[4]_equal_5_o> created at line 53
-    Found 5-bit comparator equal for signal <RT[4]_ExmemregisterRD[4]_equal_9_o> created at line 65
-    Found 5-bit comparator equal for signal <RT[4]_MEMWbregisterRD[4]_equal_12_o> created at line 68
+Synthesizing Unit <regi_6>.
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/regi.vhd".
+        N = 38
+    Found 38-bit register for signal <data>.
     Summary:
-	inferred   4 Comparator(s).
-	inferred   2 Multiplexer(s).
+	inferred  38 D-type flip-flop(s).
+Unit <regi_6> synthesized.
+
+Synthesizing Unit <Forwarding>.
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/forward.vhd".
+    Found 5-bit comparator equal for signal <IDEX_RS[4]_ExmemregisterRD[4]_equal_2_o> created at line 53
+    Found 5-bit comparator equal for signal <IDEX_RS[4]_MEMWbregisterRD[4]_equal_4_o> created at line 56
+    Found 5-bit comparator equal for signal <IDEX_RS[4]_Wb2registerRD[4]_equal_6_o> created at line 59
+    Found 5-bit comparator equal for signal <IDEX_RT[4]_ExmemregisterRD[4]_equal_11_o> created at line 73
+    Found 5-bit comparator equal for signal <IDEX_RT[4]_MEMWbregisterRD[4]_equal_13_o> created at line 76
+    Found 5-bit comparator equal for signal <IDEX_RT[4]_Wb2registerRD[4]_equal_15_o> created at line 79
+    Summary:
+	inferred   6 Comparator(s).
+	inferred   4 Multiplexer(s).
 Unit <Forwarding> synthesized.
 
 Synthesizing Unit <control>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/control.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/control.vhd".
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:653 - Signal <Ops<3>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -476,7 +476,7 @@ WARNING:Xst:653 - Signal <Ops<3>> is used but never assigned. This sourceless si
 Unit <control> synthesized.
 
 Synthesizing Unit <Hazarddetection>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/hazarddetection.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/hazarddetection.vhd".
     Found 5-bit comparator equal for signal <IFIDregisterRS[4]_IDEXregisterRT[4]_equal_2_o> created at line 56
     Found 5-bit comparator equal for signal <IFIDregisterRT[4]_IDEXregisterRT[4]_equal_3_o> created at line 56
     Summary:
@@ -485,7 +485,7 @@ Synthesizing Unit <Hazarddetection>.
 Unit <Hazarddetection> synthesized.
 
 Synthesizing Unit <branchprediction>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/branch_prediction_unit.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/branch_prediction_unit.vhd".
     Found 2-bit 4-to-1 multiplexer for signal <State> created at line 136.
     Found 32-bit comparator not equal for signal <predicted_address[31]_branch_address[31]_equal_4_o> created at line 91
     Summary:
@@ -494,19 +494,19 @@ Synthesizing Unit <branchprediction>.
 Unit <branchprediction> synthesized.
 
 Synthesizing Unit <adder>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/adder.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/adder.vhd".
         N = 32
     Summary:
 	no macro.
 Unit <adder> synthesized.
 
 Synthesizing Unit <full_adder>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/full_adder.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/full_adder.vhd".
     Summary:
 Unit <full_adder> synthesized.
 
 Synthesizing Unit <predictorbuffer_1>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd".
         N = 16
         M = 32
         K = 4
@@ -517,7 +517,7 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <predictorbuffer_1> synthesized.
 
 Synthesizing Unit <predictorbuffer_2>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd".
         N = 2
         M = 128
         K = 6
@@ -528,42 +528,36 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <predictorbuffer_2> synthesized.
 
 Synthesizing Unit <shift_register>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/shift_register.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/shift_register.vhd".
 WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 2-bit register for signal <data>.
     Summary:
 	inferred   2 D-type flip-flop(s).
 Unit <shift_register> synthesized.
 
-Synthesizing Unit <TriputMux>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/triputmux.vhd".
+Synthesizing Unit <QuadputMux>.
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/quadputmux.vhd".
+    Found 32-bit 4-to-1 multiplexer for signal <R> created at line 37.
     Summary:
-	inferred   2 Multiplexer(s).
-Unit <TriputMux> synthesized.
+	inferred   1 Multiplexer(s).
+Unit <QuadputMux> synthesized.
 
 Synthesizing Unit <simple_multiplexer_1>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd".
         N = 5
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <simple_multiplexer_1> synthesized.
 
 Synthesizing Unit <simple_multiplexer_2>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd".
         N = 32
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <simple_multiplexer_2> synthesized.
 
-Synthesizing Unit <QuadputMux>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/quadputmux.vhd".
-    Found 32-bit 4-to-1 multiplexer for signal <R> created at line 37.
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <QuadputMux> synthesized.
-
 Synthesizing Unit <simple_multiplexer_3>.
-    Related source file is "/users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd".
+    Related source file is "/users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd".
         N = 10
     Summary:
 	inferred   1 Multiplexer(s).
@@ -582,26 +576,26 @@ Macro Statistics
  32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 2
  32-bit adder                                          : 2
-# Registers                                            : 20
+# Registers                                            : 18
  1-bit register                                        : 3
  122-bit register                                      : 1
  2-bit register                                        : 1
  205-bit register                                      : 1
  288-bit register                                      : 1
  32-bit register                                       : 9
+ 38-bit register                                       : 1
  72-bit register                                       : 1
- 8-bit register                                        : 3
-# Comparators                                          : 8
+# Comparators                                          : 10
  32-bit comparator equal                               : 1
  32-bit comparator not equal                           : 1
- 5-bit comparator equal                                : 6
+ 5-bit comparator equal                                : 8
 # Multiplexers                                         : 121
  1-bit 2-to-1 multiplexer                              : 45
  10-bit 2-to-1 multiplexer                             : 1
- 2-bit 2-to-1 multiplexer                              : 6
+ 2-bit 2-to-1 multiplexer                              : 8
  2-bit 4-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 20
- 32-bit 4-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 16
+ 32-bit 4-to-1 multiplexer                             : 3
  4-bit 2-to-1 multiplexer                              : 40
  5-bit 2-to-1 multiplexer                              : 7
 # FSMs                                                 : 1
@@ -769,28 +763,21 @@ WARNING:Xst:2677 - Node <data_138> of sequential type is unconnected in block <E
 WARNING:Xst:2404 -  FFs/Latches <status<0:1>> (without init value) have a constant value of 0 in block <com>.
 
 Synthesizing (advanced) Unit <Dmemory>.
-INFO:Xst:3040 - The RAM <Mram_MEM> will be implemented as a BLOCK RAM, absorbing the following register(s): <address_reg>
+INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_MEM> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
-    | ram_type           | Block                               |          |
+    | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 256-word x 32-bit                   |          |
-    |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <CLK>           | fall     |
+    |     clkA           | connected to signal <CLK>           | rise     |
     |     weA            | connected to signal <MemWrite>      | high     |
     |     addrA          | connected to signal <W_ADDR>        |          |
     |     diA            | connected to signal <WRITE_DATA>    |          |
     -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
-    -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 256-word x 32-bit                   |          |
-    |     mode           | write-first                         |          |
-    |     clkB           | connected to signal <CLK>           | fall     |
     |     addrB          | connected to signal <ADDR>          |          |
     |     doB            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
     -----------------------------------------------------------------------
 Unit <Dmemory> synthesized (advanced).
 
@@ -837,14 +824,14 @@ INFO:Xst:3048 - The small RAM <Mram_REGS> will be implemented on LUTs in order t
 Unit <predictorbuffer_2> synthesized (advanced).
 
 Synthesizing (advanced) Unit <toplevel>.
-INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IFID/data_sliced>
+INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <clk>           | fall     |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<69>> | high     |
     |     addrA          | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<4:0>> |          |
     |     diA            | connected to signal <MIPS_SC_PROCESSOR/ChosenWriteData> |          |
@@ -855,19 +842,21 @@ INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3> will be implem
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     mode           | write-first                         |          |
     |     clkB           | connected to signal <clk>           | rise     |
-    |     addrB          | connected to signal <instr_data2<20:16>> |          |
-    |     doB            | connected to internal node          |          |
+    |     addrB          | connected to signal <MIPS_SC_PROCESSOR/IFIDs<76:72>> |          |
+    |     doB            | connected to signal <MIPS_SC_PROCESSOR/IDEXs> |          |
+    |     dorstB         | connected to signal <MIPS_SC_PROCESSOR/IDEXreset> | high     |
+    | reset value        | 00000000000000000000000000000000               |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IFID/data_sliced>
+INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <clk>           | fall     |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<69>> | high     |
     |     addrA          | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<4:0>> |          |
     |     diA            | connected to signal <MIPS_SC_PROCESSOR/ChosenWriteData> |          |
@@ -878,19 +867,21 @@ INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS2> will be implem
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     mode           | write-first                         |          |
     |     clkB           | connected to signal <clk>           | rise     |
-    |     addrB          | connected to signal <instr_data2<25:21>> |          |
-    |     doB            | connected to internal node          |          |
+    |     addrB          | connected to signal <MIPS_SC_PROCESSOR/IFIDs<81:77>> |          |
+    |     doB            | connected to signal <MIPS_SC_PROCESSOR/IDEXs> |          |
+    |     dorstB         | connected to signal <MIPS_SC_PROCESSOR/IDEXreset> | high     |
+    | reset value        | 00000000000000000000000000000000               |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IFID/data>
+INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IDEX/data_sliced>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <clk>           | fall     |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<69>> | high     |
     |     addrA          | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<4:0>> |          |
     |     diA            | connected to signal <MIPS_SC_PROCESSOR/ChosenWriteData> |          |
@@ -901,19 +892,21 @@ INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1> will be implem
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     mode           | write-first                         |          |
     |     clkB           | connected to signal <clk>           | rise     |
-    |     addrB          | connected to signal <instr_data<20:16>> |          |
-    |     doB            | connected to internal node          |          |
+    |     addrB          | connected to signal <MIPS_SC_PROCESSOR/IFIDs<108:104>> |          |
+    |     doB            | connected to signal <MIPS_SC_PROCESSOR/IDEXs> |          |
+    |     dorstB         | connected to signal <MIPS_SC_PROCESSOR/IDEXreset> | high     |
+    | reset value        | 00000000000000000000000000000000               |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IFID/data>
+INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IDEX/data>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <clk>           | fall     |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<69>> | high     |
     |     addrA          | connected to signal <MIPS_SC_PROCESSOR/MEMWBs<4:0>> |          |
     |     diA            | connected to signal <MIPS_SC_PROCESSOR/ChosenWriteData> |          |
@@ -924,19 +917,21 @@ INFO:Xst:3040 - The RAM <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS> will be impleme
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     mode           | write-first                         |          |
     |     clkB           | connected to signal <clk>           | rise     |
-    |     addrB          | connected to signal <instr_data<25:21>> |          |
-    |     doB            | connected to internal node          |          |
+    |     addrB          | connected to signal <MIPS_SC_PROCESSOR/IFIDs<113:109>> |          |
+    |     doB            | connected to signal <MIPS_SC_PROCESSOR/IDEXs> |          |
+    |     dorstB         | connected to signal <MIPS_SC_PROCESSOR/IDEXreset> | high     |
+    | reset value        | 00000000000000000000000000000000               |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3040 - The RAM <INST_MEM/Mram_MEM1> will be implemented as a BLOCK RAM, absorbing the following register(s): <INST_MEM/address_reg2>
+INFO:Xst:3040 - The RAM <INST_MEM/Mram_MEM> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IFID/data>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 256-word x 32-bit                   |          |
-    |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <clk>           | fall     |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <imem_write_enable_com> | high     |
     |     addrA          | connected to signal <dmem_address_wr_com<7:0>> |          |
     |     diA            | connected to signal <dmem_write_data_com> |          |
@@ -946,20 +941,23 @@ INFO:Xst:3040 - The RAM <INST_MEM/Mram_MEM1> will be implemented as a BLOCK RAM,
     | Port B                                                              |
     |     aspect ratio   | 256-word x 32-bit                   |          |
     |     mode           | write-first                         |          |
-    |     clkB           | connected to signal <clk>           | fall     |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <MIPS_SC_PROCESSOR/IFIDwrite_0> | high     |
     |     addrB          | connected to signal <instr_addr2>   |          |
-    |     doB            | connected to signal <instr_data2>   |          |
+    |     doB            | connected to signal <MIPS_SC_PROCESSOR/IFIDs> |          |
+    |     dorstB         | connected to signal <MIPS_SC_PROCESSOR/IFIDreset> | high     |
+    | reset value        | 00000000000000000000000000000000               |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3040 - The RAM <INST_MEM/Mram_MEM> will be implemented as a BLOCK RAM, absorbing the following register(s): <INST_MEM/address_reg>
+INFO:Xst:3040 - The RAM <INST_MEM/Mram_MEM1> will be implemented as a BLOCK RAM, absorbing the following register(s): <MIPS_SC_PROCESSOR/IFID/data_sliced>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 256-word x 32-bit                   |          |
-    |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <clk>           | fall     |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <imem_write_enable_com> | high     |
     |     addrA          | connected to signal <dmem_address_wr_com<7:0>> |          |
     |     diA            | connected to signal <dmem_write_data_com> |          |
@@ -969,1009 +967,16 @@ INFO:Xst:3040 - The RAM <INST_MEM/Mram_MEM> will be implemented as a BLOCK RAM, 
     | Port B                                                              |
     |     aspect ratio   | 256-word x 32-bit                   |          |
     |     mode           | write-first                         |          |
-    |     clkB           | connected to signal <clk>           | fall     |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <MIPS_SC_PROCESSOR/IFIDwrite_1> | high     |
     |     addrB          | connected to signal <instr_addr<7:0>> |          |
-    |     doB            | connected to signal <instr_data>    |          |
+    |     doB            | connected to signal <MIPS_SC_PROCESSOR/IFIDs> |          |
+    |     dorstB         | connected to signal <MIPS_SC_PROCESSOR/IFIDreset> | high     |
+    | reset value        | 00000000000000000000000000000000               |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
 Unit <toplevel> synthesized (advanced).
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_191> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_190> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_189> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_188> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_187> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_186> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_185> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_184> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_183> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_182> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_181> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_180> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_179> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_178> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_177> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_176> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_175> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_174> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_173> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_172> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_171> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_170> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_169> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_168> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_167> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_166> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_165> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_164> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_163> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_162> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_161> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_160> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_159> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_158> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_157> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_156> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_155> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_154> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_153> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_152> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_151> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_150> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_149> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_148> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_147> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_146> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_145> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_144> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_143> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_142> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_141> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_140> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_139> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_138> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_137> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_136> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_135> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_134> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_133> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_132> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_131> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_130> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_129> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_128> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_127> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_126> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_125> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_124> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_123> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_122> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_121> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_120> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_119> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_118> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_117> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_116> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_115> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_114> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_113> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_112> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_111> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_110> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_109> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_108> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_107> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_106> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_105> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_104> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_103> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_102> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_101> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_100> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_99> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_98> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_97> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_96> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_95> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_94> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_93> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_92> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_91> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_90> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_89> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_88> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_87> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_86> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_85> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_84> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_83> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_82> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_81> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_80> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_79> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_78> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_77> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_76> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_75> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_74> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_73> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_72> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_71> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_70> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_69> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_68> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_67> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_66> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_65> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_64> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_63> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_62> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_61> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_28> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_27> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_26> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_25> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_24> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_23> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_22> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_21> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_20> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_19> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_18> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_17> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_16> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_15> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_14> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_13> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_12> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_11> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_10> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_9> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_8> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_7> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_6> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_5> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_4> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_3> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_2> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_1> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_0> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_0> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_1> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_2> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_3> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_4> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_5> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_6> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_7> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_8> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_9> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_10> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_11> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_12> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_13> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_14> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_15> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_16> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_17> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_18> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_19> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_20> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_21> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_22> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_23> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_24> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_25> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_26> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_27> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_28> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_29> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_30> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_31> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_32> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_33> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_34> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_35> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_36> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_37> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_38> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_39> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_40> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_41> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_42> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_43> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_44> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_45> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_46> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_47> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_48> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_49> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_50> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_51> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_52> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_53> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_54> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_55> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_56> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_57> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_58> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_59> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_60> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_61> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_62> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_63> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_64> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_65> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_66> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_67> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_68> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_69> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_70> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_71> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_72> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_73> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_106> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_107> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_108> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_109> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_110> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_111> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_112> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_113> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_114> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_115> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_116> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_117> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_118> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_119> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_120> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_121> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_122> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_123> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_124> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_125> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_126> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_127> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_128> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_129> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_130> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_131> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_132> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_133> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_134> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_135> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_136> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_137> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_138> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_139> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_140> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_141> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_142> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_143> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_144> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_145> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_146> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_147> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_148> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_149> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_150> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_151> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_152> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_153> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_154> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_155> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_156> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_157> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_158> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_159> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_160> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_161> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_162> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_163> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_164> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_165> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_166> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_167> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_168> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_169> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_170> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_171> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_172> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_173> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_174> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_175> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_176> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_177> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_178> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_179> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_180> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_181> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_182> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_183> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_184> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_185> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_186> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_187> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_188> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_189> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_190> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_191> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_192> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_193> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_194> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_195> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_196> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_197> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_198> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_199> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_200> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_201> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_202> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_203> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_204> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_205> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_206> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_207> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_208> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_209> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_210> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_211> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_212> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_213> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_214> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_215> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_216> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_217> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_218> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_219> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_220> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_221> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_222> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_223> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_224> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_225> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_226> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_227> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_228> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_229> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_230> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_231> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_232> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_233> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_234> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_235> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_236> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_237> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_238> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_239> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_240> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_241> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_242> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_243> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_244> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_245> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_246> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_247> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_248> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_249> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_250> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_251> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_252> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_253> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_254> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_255> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_256> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_257> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_258> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_259> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_260> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_261> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_262> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_263> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_264> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_265> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_266> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_267> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_268> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_269> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_270> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_271> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_272> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_273> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_274> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_275> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_276> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_277> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_278> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_279> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_280> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_281> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_282> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_283> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_284> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_285> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_286> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_287> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_223> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_222> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_221> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_220> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_219> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_218> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_217> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_216> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_215> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_214> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_213> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_212> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_211> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_210> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_209> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_208> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_207> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_206> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_205> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_204> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_203> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_202> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_201> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_200> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_199> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_198> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_197> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_196> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_195> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_194> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_193> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_192> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_191> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_190> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_189> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_188> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_187> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_186> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_185> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_184> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_183> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_182> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_181> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_180> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_179> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_178> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_177> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_176> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_175> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_174> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_173> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_172> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_171> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_170> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_169> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_168> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_167> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_166> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_165> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_164> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_163> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_162> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_161> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_160> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_159> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_158> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_157> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_156> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_155> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_154> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_153> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_152> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_151> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_150> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_149> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_148> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_147> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_146> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_145> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_144> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_143> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_142> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_141> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_140> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_139> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_138> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_137> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_136> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_135> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_134> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_133> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_132> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_131> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_130> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_129> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_128> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_127> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_126> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_125> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_124> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_123> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_122> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_121> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_120> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_119> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_118> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_117> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_116> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_115> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_114> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_113> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_112> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_111> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_110> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_109> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_108> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_107> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_106> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_105> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_104> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_103> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_102> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_101> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_100> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_99> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_98> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_97> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_96> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_95> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_94> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_93> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_92> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_91> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_90> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_89> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_88> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_87> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_86> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_85> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_84> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_83> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_82> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_81> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_80> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_79> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_78> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_77> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_76> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_75> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_74> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_73> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_72> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_71> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_70> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_69> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_68> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_67> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_66> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_65> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_64> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_63> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_62> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_61> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_28> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_27> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_26> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_25> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_24> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_23> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_22> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_21> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_20> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_19> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_18> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_17> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_16> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_15> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_14> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_13> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_12> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_11> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_10> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_9> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_8> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_7> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_6> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_5> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_4> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_3> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_2> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_1> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_0> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_255> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_254> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_253> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_252> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_251> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_250> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_249> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_248> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_247> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_246> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_245> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_244> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_243> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_242> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_241> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_240> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_239> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_238> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_237> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_236> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_235> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_234> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_233> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_232> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_231> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_230> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_229> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_228> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_227> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_226> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_225> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_224> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_223> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_222> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_221> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_220> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_219> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_218> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_217> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_216> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_215> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_214> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_181> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_180> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_179> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_178> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_177> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_176> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_175> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_174> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_173> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_172> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_171> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_170> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_169> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_168> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_167> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_166> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_165> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_164> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_163> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_162> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_161> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_160> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_159> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_158> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_157> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_156> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_155> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_154> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_153> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_152> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_151> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_150> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_149> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_148> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_147> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_146> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_145> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_144> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_143> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_142> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_141> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_140> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_139> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_138> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_137> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_136> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_135> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_134> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_133> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_132> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_131> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_130> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_129> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_128> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_127> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_126> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_125> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_124> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_123> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_122> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_121> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_120> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_119> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_118> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_117> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_116> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_115> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_114> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_113> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_112> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_111> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_110> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_109> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_108> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_107> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_106> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_105> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_104> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_103> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_102> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_101> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_100> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_99> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_98> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_97> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_96> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_95> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_94> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_93> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_92> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_91> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_90> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_89> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_88> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_87> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_86> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_85> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_84> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_83> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_82> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_81> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_80> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_79> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_78> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_77> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_76> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_75> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_74> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_73> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_72> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_71> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_70> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_69> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_68> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_67> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_66> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_65> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_64> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_63> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_62> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_61> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_60> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_59> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_58> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_57> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_56> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_55> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_54> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_53> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_52> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_51> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_50> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_49> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_48> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_47> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_46> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_45> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_44> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_43> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_42> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_41> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_40> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_39> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_38> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_37> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_36> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_35> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_34> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_33> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_32> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_31> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_30> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_29> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_28> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_27> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_26> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_25> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_24> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_23> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_22> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_21> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_20> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_19> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_18> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_17> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_16> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_15> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_14> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_13> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_12> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_11> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_10> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_9> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_8> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_7> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_6> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_5> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_4> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_3> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_2> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_1> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_0> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_0> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_1> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_2> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_3> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_4> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_5> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_6> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_7> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_8> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_9> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_10> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_11> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_12> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_13> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_14> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_15> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_16> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_17> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_18> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_19> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_20> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_21> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_22> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_23> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_24> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_25> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_26> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_27> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_28> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_29> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_30> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_31> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_32> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_33> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_34> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_35> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_36> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_37> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_38> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_39> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_40> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_41> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_42> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_43> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_44> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_45> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_46> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_47> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_48> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_49> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_50> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_51> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_52> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_53> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_54> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_55> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_56> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_57> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_58> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_59> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_60> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_61> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_62> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_63> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_64> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_65> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_66> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_67> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_68> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_69> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_70> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_71> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_72> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_73> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_74> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_75> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_76> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_77> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_78> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_79> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_80> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_81> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_82> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_83> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_84> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_85> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_86> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_87> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_120> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_121> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_89> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_88> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_87> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_86> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_85> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_84> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_83> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_82> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_81> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_80> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_79> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_78> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_77> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_76> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_75> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_74> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_73> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_72> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_71> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_70> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_69> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_68> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_67> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_66> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_65> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_64> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_63> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_62> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_61> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_60> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_59> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_58> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_57> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_56> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_55> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_54> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_53> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_52> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_51> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_50> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_49> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_48> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_47> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_46> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_45> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_44> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_43> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_42> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_41> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_40> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_39> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_38> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_37> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_36> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_35> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_34> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_27> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_26> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_25> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_24> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_23> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_22> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_21> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_20> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_19> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_18> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_7> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_6> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_5> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_4> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_3> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_2> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_1> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IFID/data_sliced_0> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_76> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_65> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_64> of sequential type is unconnected in block <toplevel>.
@@ -2085,26 +1090,27 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 9
  128x2-bit dual-port distributed RAM                   : 1
- 256x32-bit dual-port block RAM                        : 3
+ 256x32-bit dual-port block RAM                        : 2
+ 256x32-bit dual-port distributed RAM                  : 1
  32x16-bit dual-port distributed RAM                   : 1
  32x32-bit dual-port block RAM                         : 4
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 2
  32-bit adder                                          : 2
-# Registers                                            : 828
- Flip-Flops                                            : 828
-# Comparators                                          : 8
+# Registers                                            : 690
+ Flip-Flops                                            : 690
+# Comparators                                          : 10
  32-bit comparator equal                               : 1
  32-bit comparator not equal                           : 1
- 5-bit comparator equal                                : 6
-# Multiplexers                                         : 183
+ 5-bit comparator equal                                : 8
+# Multiplexers                                         : 179
  1-bit 2-to-1 multiplexer                              : 109
  10-bit 2-to-1 multiplexer                             : 1
- 2-bit 2-to-1 multiplexer                              : 6
+ 2-bit 2-to-1 multiplexer                              : 8
  2-bit 4-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 18
- 32-bit 4-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 10
+ 32-bit 4-to-1 multiplexer                             : 3
  4-bit 2-to-1 multiplexer                              : 40
  5-bit 2-to-1 multiplexer                              : 7
 # FSMs                                                 : 1
@@ -2138,9 +1144,13 @@ Optimizing unit <regi_1> ...
 
 Optimizing unit <PC> ...
 
+Optimizing unit <regi_6> ...
+
 Optimizing unit <adder> ...
 
 Optimizing unit <branchprediction> ...
+
+Optimizing unit <Forwarding> ...
 
 Optimizing unit <alu> ...
 
@@ -2197,9 +1207,8 @@ WARNING:Xst:2677 - Node <TDT4255_COM/read_addr_8> of sequential type is unconnec
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 14.
+Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 13.
 FlipFlop MIPS_SC_PROCESSOR/EXMEM/data_172 has been replicated 1 time(s)
-FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_19 has been replicated 1 time(s)
 FlipFlop MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_75 has been replicated 1 time(s)
 FlipFlop TDT4255_COM/processor_enable has been replicated 1 time(s)
 
@@ -2209,8 +1218,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 692
- Flip-Flops                                            : 692
+# Registers                                            : 617
+ Flip-Flops                                            : 617
 
 =========================================================================
 
@@ -2233,30 +1242,32 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 916
-#      BUF                         : 6
+# BELS                             : 801
+#      BUF                         : 7
 #      GND                         : 1
-#      INV                         : 3
+#      INV                         : 2
 #      LUT1                        : 7
-#      LUT2                        : 43
-#      LUT3                        : 100
+#      LUT2                        : 41
+#      LUT3                        : 111
 #      LUT4                        : 74
-#      LUT5                        : 159
-#      LUT6                        : 401
+#      LUT5                        : 87
+#      LUT6                        : 355
 #      MUXCY                       : 59
-#      MUXF7                       : 23
+#      MUXF7                       : 17
 #      VCC                         : 1
 #      XORCY                       : 39
-# FlipFlops/Latches                : 692
+# FlipFlops/Latches                : 617
 #      FDCE                        : 32
 #      FDE                         : 2
-#      FDR                         : 456
-#      FDRE                        : 202
-# RAMS                             : 15
+#      FDR                         : 429
+#      FDRE                        : 154
+# RAMS                             : 62
 #      RAM128X1D                   : 2
 #      RAM32M                      : 2
 #      RAM32X1D                    : 4
-#      RAMB8BWER                   : 7
+#      RAM64M                      : 40
+#      RAM64X1D                    : 8
+#      RAMB8BWER                   : 6
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 137
@@ -2272,26 +1283,26 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             692  out of  18224     3%  
- Number of Slice LUTs:                  811  out of   9112     8%  
-    Number used as Logic:               787  out of   9112     8%  
-    Number used as Memory:               24  out of   2176     1%  
-       Number used as RAM:               24
+ Number of Slice Registers:             617  out of  18224     3%  
+ Number of Slice LUTs:                  877  out of   9112     9%  
+    Number used as Logic:               677  out of   9112     7%  
+    Number used as Memory:              200  out of   2176     9%  
+       Number used as RAM:              200
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1156
-   Number with an unused Flip Flop:     464  out of   1156    40%  
-   Number with an unused LUT:           345  out of   1156    29%  
-   Number of fully used LUT-FF pairs:   347  out of   1156    30%  
-   Number of unique control sets:        27
+ Number of LUT Flip Flop pairs used:   1215
+   Number with an unused Flip Flop:     598  out of   1215    49%  
+   Number with an unused LUT:           338  out of   1215    27%  
+   Number of fully used LUT-FF pairs:   279  out of   1215    22%  
+   Number of unique control sets:        24
 
 IO Utilization: 
  Number of IOs:                         162
  Number of bonded IOBs:                 138  out of    232    59%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                4  out of     32    12%  
-    Number using Block RAM only:          4
+ Number of Block RAM/FIFO:                3  out of     32     9%  
+    Number using Block RAM only:          3
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
  Number of DSP48A1s:                      4  out of     32    12%  
 
@@ -2316,7 +1327,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 715   |
+clk                                | BUFGP                  | 680   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -2327,7 +1338,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 19.947ns (Maximum Frequency: 50.133MHz)
+   Minimum period: 21.109ns (Maximum Frequency: 47.373MHz)
    Minimum input arrival time before clock: 8.044ns
    Maximum output required time after clock: 4.226ns
    Maximum combinational path delay: No path found
@@ -2338,44 +1349,31 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 19.947ns (frequency: 50.133MHz)
-  Total number of paths / destination ports: 2395791 / 1839
+  Clock period: 21.109ns (frequency: 47.373MHz)
+  Total number of paths / destination ports: 7938287 / 1978
 -------------------------------------------------------------------------
-Delay:               19.947ns (Levels of Logic = 16)
-  Source:            MIPS_SC_PROCESSOR/EXMEM/data_0 (FF)
-  Destination:       MIPS_SC_PROCESSOR/EXMEM/data_37 (FF)
+Delay:               21.109ns (Levels of Logic = 3)
+  Source:            MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:       MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: MIPS_SC_PROCESSOR/EXMEM/data_0 to MIPS_SC_PROCESSOR/EXMEM/data_37
+  Data Path: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              5   0.633   1.458  MIPS_SC_PROCESSOR/EXMEM/data_0 (MIPS_SC_PROCESSOR/EXMEM/data_0)
-     LUT6:I0->O            1   0.373   0.820  MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1 (MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o1)
-     LUT2:I0->O            3   0.373   0.766  MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3 (MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o)
-     LUT6:I5->O           32   0.373   1.520  MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RT[4]_AND_1112_o (MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RT[4]_AND_1112_o)
-     LUT5:I4->O            9   0.373   1.593  MIPS_SC_PROCESSOR/ForwardmuxB/Mmux_R231 (MIPS_SC_PROCESSOR/ForwardBout<2>)
-     LUT6:I0->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/FULLADDER_ALU/COUT<3>44_SW1_F (N156)
-     MUXF7:I0->O           1   0.227   0.820  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/FULLADDER_ALU/COUT<3>44_SW1 (N120)
-     LUT5:I3->O            2   0.373   1.104  MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/FULLADDER_ALU/COUT<3>44 (MIPS_SC_PROCESSOR/ALUTD/Propagates<0>)
-     LUT6:I2->O            1   0.364   0.000  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<2>211 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<2>21)
-     MUXF7:I1->O           6   0.230   0.876  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<2>21_f7 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<1>)
-     LUT5:I4->O            5   0.373   0.841  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<4>21 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<3>)
-     LUT5:I4->O            4   0.373   0.804  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>11 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<5>)
-     LUT6:I5->O            3   0.373   0.766  MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>18 (MIPS_SC_PROCESSOR/ALUTD/COUT_AUX<6>)
-     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/FULLADDER_ALU/C21 (MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/COUT<1>)
-     LUT6:I5->O            2   0.373   0.726  MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/FULLADDER_ALU/C31 (MIPS_SC_PROCESSOR/ALUTD/FULL_COUT<30>)
-     LUT6:I5->O            1   0.373   0.682  MIPS_SC_PROCESSOR/ALUTD/Mmux_R111 (MIPS_SC_PROCESSOR/ALUTD/Mmux_R11)
-     LUT5:I4->O            1   0.373   0.000  MIPS_SC_PROCESSOR/ALUTD/Mmux_R112 (MIPS_SC_PROCESSOR/ALU_Result<0>)
-     FDR:D                     0.142          MIPS_SC_PROCESSOR/EXMEM/data_37
+     RAMB8BWER:CLKBRDCLK->DOBDO0    1   2.950   0.681  MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (MIPS_SC_PROCESSOR/IDEXs<211>)
+     DSP48A1:B16->P47     18   6.715   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1)
+     DSP48A1:C30->PCOUT1    1   3.225   0.000  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_1)
+     DSP48A1:PCIN1->P47   18   2.772   1.234  MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2 (MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P47_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3)
+     DSP48A1:C30               2.298          MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
     ----------------------------------------
-    Total                     19.947ns (6.445ns logic, 13.502ns route)
-                                       (32.3% logic, 67.7% route)
+    Total                     21.109ns (17.960ns logic, 3.149ns route)
+                                       (85.1% logic, 14.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 574 / 450
+  Total number of paths / destination ports: 612 / 488
 -------------------------------------------------------------------------
 Offset:              8.044ns (Levels of Logic = 6)
   Source:            command<11> (PAD)
@@ -2390,7 +1388,7 @@ Offset:              8.044ns (Levels of Logic = 6)
      LUT5:I0->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd1-In51 (TDT4255_COM/state_FSM_FFd1-In5)
      LUT5:I2->O            1   0.373   0.682  TDT4255_COM/state_FSM_FFd1-In54 (TDT4255_COM/state_FSM_FFd1-In53)
      LUT6:I5->O            4   0.373   0.804  TDT4255_COM/state_FSM_FFd1-In56 (TDT4255_COM/state_FSM_FFd1-In_bdd6)
-     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd3-In1_SW0 (N80)
+     LUT2:I1->O            1   0.373   0.970  TDT4255_COM/state_FSM_FFd3-In1_SW0 (N982)
      LUT6:I3->O            1   0.373   0.000  TDT4255_COM/state_FSM_FFd3-In1 (TDT4255_COM/state_FSM_FFd3-In)
      FDR:D                     0.142          TDT4255_COM/state_FSM_FFd3
     ----------------------------------------
@@ -2426,20 +1424,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   19.947|    5.731|    4.318|         |
+clk            |   21.109|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 38.00 secs
-Total CPU time to Xst completion: 37.58 secs
+Total REAL time to Xst completion: 33.00 secs
+Total CPU time to Xst completion: 32.93 secs
  
 --> 
 
-Total memory usage is 316128 kilobytes
+Total memory usage is 322128 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1318 (   0 filtered)
+Number of warnings :  319 (   0 filtered)
 Number of infos    :   29 (   0 filtered)
 

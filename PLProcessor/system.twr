@@ -1,0 +1,593 @@
+--------------------------------------------------------------------------------
+Release 12.4 Trace  (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml system.twx system.ncd -o system.twr system.pcf
+
+Design file:              system.ncd
+Physical constraint file: system.pcf
+Device,package,speed:     xc6slx16,csg324,C,-2 (PRODUCTION 1.15 2010-12-02)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 66.6667 MHz 
+HIGH 50%;
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   4.999ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 66.6667 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 9.999ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 14.999ns
+  Low pulse: 7.500ns
+  Low pulse limit: 2.500ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst/CLKIN1
+  Logical resource: clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst/CLKIN1
+  Location pin: PLL_ADV_X0Y0.CLKIN1
+  Clock network: clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 9.999ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 14.999ns
+  High pulse: 7.500ns
+  High pulse limit: 2.500ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst/CLKIN1
+  Logical resource: clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst/CLKIN1
+  Location pin: PLL_ADV_X0Y0.CLKIN1
+  Clock network: clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 12.779ns (period - min period limit)
+  Period: 14.999ns
+  Min period limit: 2.220ns (450.450MHz) (Tpllper_CLKIN(Finmax))
+  Physical resource: clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst/CLKIN1
+  Logical resource: clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst/CLKIN1
+  Location pin: PLL_ADV_X0Y0.CLKIN1
+  Clock network: clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = 
+PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0" 
+TS_sys_clk_pin         HIGH 50%;
+
+ 14867000 paths analyzed, 13599 endpoints analyzed, 68 failing endpoints
+ 68 timing errors detected. (68 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  20.892ns.
+--------------------------------------------------------------------------------
+
+Paths for end point plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP48_X0Y9.C14), 181491 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -5.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          14.999ns
+  Data Path Delay:      20.740ns (Levels of Logic = 3)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.043ns (0.526 - 0.569)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.109ns
+
+  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.205ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y12.DOADO6   Trcko_DOA             2.950   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y6.B6        net (fanout=1)        1.434   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/IDEXs<201>
+    DSP48_X0Y6.P25       Tdspdo_B_P            5.167   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y7.C8        net (fanout=1)        1.446   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P25_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y7.PCOUT0    Tdspdo_C_PCOUT        3.225   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y8.PCIN0     net (fanout=1)        0.078   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_0
+    DSP48_X0Y8.P31       Tdspdo_PCIN_P         2.772   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y9.C14       net (fanout=1)        1.370   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P31_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y9.CLK       Tdspdck_C_PREG        2.298   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     20.740ns (16.412ns logic, 4.328ns route)
+                                                       (79.1% logic, 20.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -5.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          14.999ns
+  Data Path Delay:      20.740ns (Levels of Logic = 3)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.043ns (0.526 - 0.569)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.109ns
+
+  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.205ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y12.DOADO6   Trcko_DOA             2.950   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y6.B6        net (fanout=1)        1.434   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/IDEXs<201>
+    DSP48_X0Y6.P25       Tdspdo_B_P            5.167   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y7.C8        net (fanout=1)        1.446   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P25_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y7.PCOUT9    Tdspdo_C_PCOUT        3.225   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y8.PCIN9     net (fanout=1)        0.078   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_9
+    DSP48_X0Y8.P31       Tdspdo_PCIN_P         2.772   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y9.C14       net (fanout=1)        1.370   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P31_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y9.CLK       Tdspdck_C_PREG        2.298   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     20.740ns (16.412ns logic, 4.328ns route)
+                                                       (79.1% logic, 20.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -5.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          14.999ns
+  Data Path Delay:      20.740ns (Levels of Logic = 3)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.043ns (0.526 - 0.569)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.109ns
+
+  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.205ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y12.DOADO6   Trcko_DOA             2.950   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y6.B6        net (fanout=1)        1.434   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/IDEXs<201>
+    DSP48_X0Y6.P25       Tdspdo_B_P            5.167   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y7.C8        net (fanout=1)        1.446   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P25_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y7.PCOUT1    Tdspdo_C_PCOUT        3.225   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y8.PCIN1     net (fanout=1)        0.078   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_1
+    DSP48_X0Y8.P31       Tdspdo_PCIN_P         2.772   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y9.C14       net (fanout=1)        1.370   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P31_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y9.CLK       Tdspdck_C_PREG        2.298   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     20.740ns (16.412ns logic, 4.328ns route)
+                                                       (79.1% logic, 20.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP48_X0Y9.C28), 181491 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -5.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          14.999ns
+  Data Path Delay:      20.740ns (Levels of Logic = 3)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.043ns (0.526 - 0.569)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.109ns
+
+  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.205ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y12.DOADO6   Trcko_DOA             2.950   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y6.B6        net (fanout=1)        1.434   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/IDEXs<201>
+    DSP48_X0Y6.P25       Tdspdo_B_P            5.167   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y7.C8        net (fanout=1)        1.446   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P25_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y7.PCOUT0    Tdspdo_C_PCOUT        3.225   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y8.PCIN0     net (fanout=1)        0.078   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_0
+    DSP48_X0Y8.P45       Tdspdo_PCIN_P         2.772   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y9.C28       net (fanout=1)        1.370   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P45_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y9.CLK       Tdspdck_C_PREG        2.298   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     20.740ns (16.412ns logic, 4.328ns route)
+                                                       (79.1% logic, 20.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -5.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          14.999ns
+  Data Path Delay:      20.740ns (Levels of Logic = 3)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.043ns (0.526 - 0.569)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.109ns
+
+  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.205ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y12.DOADO6   Trcko_DOA             2.950   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y6.B6        net (fanout=1)        1.434   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/IDEXs<201>
+    DSP48_X0Y6.P25       Tdspdo_B_P            5.167   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y7.C8        net (fanout=1)        1.446   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P25_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y7.PCOUT9    Tdspdo_C_PCOUT        3.225   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y8.PCIN9     net (fanout=1)        0.078   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_9
+    DSP48_X0Y8.P45       Tdspdo_PCIN_P         2.772   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y9.C28       net (fanout=1)        1.370   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P45_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y9.CLK       Tdspdck_C_PREG        2.298   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     20.740ns (16.412ns logic, 4.328ns route)
+                                                       (79.1% logic, 20.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -5.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          14.999ns
+  Data Path Delay:      20.740ns (Levels of Logic = 3)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.043ns (0.526 - 0.569)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.109ns
+
+  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.205ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y12.DOADO6   Trcko_DOA             2.950   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y6.B6        net (fanout=1)        1.434   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/IDEXs<201>
+    DSP48_X0Y6.P25       Tdspdo_B_P            5.167   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y7.C8        net (fanout=1)        1.446   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P25_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y7.PCOUT1    Tdspdo_C_PCOUT        3.225   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y8.PCIN1     net (fanout=1)        0.078   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_1
+    DSP48_X0Y8.P45       Tdspdo_PCIN_P         2.772   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y9.C28       net (fanout=1)        1.370   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P45_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y9.CLK       Tdspdck_C_PREG        2.298   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     20.740ns (16.412ns logic, 4.328ns route)
+                                                       (79.1% logic, 20.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP48_X0Y9.C5), 181491 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -5.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          14.999ns
+  Data Path Delay:      20.740ns (Levels of Logic = 3)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.043ns (0.526 - 0.569)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.109ns
+
+  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.205ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y12.DOADO6   Trcko_DOA             2.950   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y6.B6        net (fanout=1)        1.434   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/IDEXs<201>
+    DSP48_X0Y6.P25       Tdspdo_B_P            5.167   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y7.C8        net (fanout=1)        1.446   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P25_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y7.PCOUT0    Tdspdo_C_PCOUT        3.225   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y8.PCIN0     net (fanout=1)        0.078   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_0
+    DSP48_X0Y8.P22       Tdspdo_PCIN_P         2.772   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y9.C5        net (fanout=1)        1.370   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P22_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y9.CLK       Tdspdck_C_PREG        2.298   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     20.740ns (16.412ns logic, 4.328ns route)
+                                                       (79.1% logic, 20.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -5.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          14.999ns
+  Data Path Delay:      20.740ns (Levels of Logic = 3)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.043ns (0.526 - 0.569)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.109ns
+
+  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.205ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y12.DOADO6   Trcko_DOA             2.950   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y6.B6        net (fanout=1)        1.434   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/IDEXs<201>
+    DSP48_X0Y6.P25       Tdspdo_B_P            5.167   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y7.C8        net (fanout=1)        1.446   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P25_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y7.PCOUT9    Tdspdo_C_PCOUT        3.225   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y8.PCIN9     net (fanout=1)        0.078   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_9
+    DSP48_X0Y8.P22       Tdspdo_PCIN_P         2.772   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y9.C5        net (fanout=1)        1.370   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P22_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y9.CLK       Tdspdck_C_PREG        2.298   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     20.740ns (16.412ns logic, 4.328ns route)
+                                                       (79.1% logic, 20.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -5.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 (RAM)
+  Destination:          plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3 (DSP)
+  Requirement:          14.999ns
+  Data Path Delay:      20.740ns (Levels of Logic = 3)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.043ns (0.526 - 0.569)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.109ns
+
+  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.205ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3 to plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X0Y12.DOADO6   Trcko_DOA             2.950   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS3
+    DSP48_X0Y6.B6        net (fanout=1)        1.434   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/IDEXs<201>
+    DSP48_X0Y6.P25       Tdspdo_B_P            5.167   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result
+    DSP48_X0Y7.C8        net (fanout=1)        1.446   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result_P25_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y7.PCOUT1    Tdspdo_C_PCOUT        3.225   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1
+    DSP48_X0Y8.PCIN1     net (fanout=1)        0.078   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result1_PCOUT_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_PCIN_1
+    DSP48_X0Y8.P22       Tdspdo_PCIN_P         2.772   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2
+    DSP48_X0Y9.C5        net (fanout=1)        1.370   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result2_P22_to_MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    DSP48_X0Y9.CLK       Tdspdck_C_PREG        2.298   plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+                                                       plprocessor_0/plprocessor_0/USER_LOGIC_I/TDT4255_TOPLEVEL/MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3
+    -------------------------------------------------  ---------------------------
+    Total                                     20.740ns (16.412ns logic, 4.328ns route)
+                                                       (79.1% logic, 20.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PERIOD TIMEGRP
+        "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0" TS_sys_clk_pin
+        HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[3].FDRE_I (SLICE_X14Y54.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.232ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I (FF)
+  Destination:          mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[3].FDRE_I (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.236ns (Levels of Logic = 0)
+  Clock Path Skew:      0.004ns (0.034 - 0.030)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I to mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[3].FDRE_I
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y55.CQ      Tcko                  0.198   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I
+                                                       mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I
+    SLICE_X14Y54.CE      net (fanout=4)        0.146   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I
+    SLICE_X14Y54.CLK     Tckce       (-Th)     0.108   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr<3>
+                                                       mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[3].FDRE_I
+    -------------------------------------------------  ---------------------------
+    Total                                      0.236ns (0.090ns logic, 0.146ns route)
+                                                       (38.1% logic, 61.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[2].FDRE_I (SLICE_X14Y54.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.236ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I (FF)
+  Destination:          mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[2].FDRE_I (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.240ns (Levels of Logic = 0)
+  Clock Path Skew:      0.004ns (0.034 - 0.030)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I to mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[2].FDRE_I
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y55.CQ      Tcko                  0.198   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I
+                                                       mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I
+    SLICE_X14Y54.CE      net (fanout=4)        0.146   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I
+    SLICE_X14Y54.CLK     Tckce       (-Th)     0.104   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr<3>
+                                                       mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[2].FDRE_I
+    -------------------------------------------------  ---------------------------
+    Total                                      0.240ns (0.094ns logic, 0.146ns route)
+                                                       (39.2% logic, 60.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[1].FDRE_I (SLICE_X14Y54.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.238ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I (FF)
+  Destination:          mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[1].FDRE_I (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.242ns (Levels of Logic = 0)
+  Clock Path Skew:      0.004ns (0.034 - 0.030)
+  Source Clock:         clk_66_6667MHz rising at 0.000ns
+  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I to mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[1].FDRE_I
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y55.CQ      Tcko                  0.198   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I
+                                                       mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I
+    SLICE_X14Y54.CE      net (fanout=4)        0.146   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/data_Exists_I
+    SLICE_X14Y54.CLK     Tckce       (-Th)     0.102   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr<3>
+                                                       mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.RX_FIFO_I/Addr_Counters[1].FDRE_I
+    -------------------------------------------------  ---------------------------
+    Total                                      0.242ns (0.096ns logic, 0.146ns route)
+                                                       (39.7% logic, 60.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PERIOD TIMEGRP
+        "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0" TS_sys_clk_pin
+        HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 11.154ns (period - min period limit)
+  Period: 14.999ns
+  Min period limit: 3.845ns (260.078MHz) (Trper_CLKA(Fmax))
+  Physical resource: lmb_bram/lmb_bram/ramb16bwer_0/CLKA
+  Logical resource: lmb_bram/lmb_bram/ramb16bwer_0/CLKA
+  Location pin: RAMB16_X0Y18.CLKA
+  Clock network: clk_66_6667MHz
+--------------------------------------------------------------------------------
+Slack: 11.154ns (period - min period limit)
+  Period: 14.999ns
+  Min period limit: 3.845ns (260.078MHz) (Trper_CLKB(Fmax))
+  Physical resource: lmb_bram/lmb_bram/ramb16bwer_0/CLKB
+  Logical resource: lmb_bram/lmb_bram/ramb16bwer_0/CLKB
+  Location pin: RAMB16_X0Y18.CLKB
+  Clock network: clk_66_6667MHz
+--------------------------------------------------------------------------------
+Slack: 11.154ns (period - min period limit)
+  Period: 14.999ns
+  Min period limit: 3.845ns (260.078MHz) (Trper_CLKA(Fmax))
+  Physical resource: lmb_bram/lmb_bram/ramb16bwer_1/CLKA
+  Logical resource: lmb_bram/lmb_bram/ramb16bwer_1/CLKA
+  Location pin: RAMB16_X0Y20.CLKA
+  Clock network: clk_66_6667MHz
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_sys_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk_pin                 |     15.000ns|      4.999ns|     20.892ns|            0|           68|            0|     14867000|
+| TS_clock_generator_0_clock_gen|     15.000ns|     20.892ns|          N/A|           68|            0|     14867000|            0|
+| erator_0_SIG_PLL0_CLKOUT0     |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock fpga_0_clk_1_sys_clk_pin
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+fpga_0_clk_1_sys_clk_pin|   20.892|         |         |         |
+------------------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 68  Score: 327530  (Setup/Max: 327530, Hold: 0)
+
+Constraints cover 14867000 paths, 0 nets, and 16558 connections
+
+Design statistics:
+   Minimum period:  20.892ns{1}   (Maximum frequency:  47.865MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Mon Nov 11 22:40:58 2013 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 290 MB
+
+
+

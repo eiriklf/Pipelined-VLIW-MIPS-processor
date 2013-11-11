@@ -1,0 +1,22 @@
+microblaze_0
+RWPLPROCESSOR_SOURCES = drivers/plprocessor_v1_00_a/src/rwMain.c 
+RWPLPROCESSOR_HEADERS = drivers/plprocessor_v1_00_a/src/plprocessor.h 
+RWPLPROCESSOR_CC = mb-gcc
+RWPLPROCESSOR_CC_SIZE = mb-size
+RWPLPROCESSOR_CC_OPT = -O2
+RWPLPROCESSOR_CFLAGS = 
+RWPLPROCESSOR_CC_SEARCH = # -B
+RWPLPROCESSOR_LIBPATH = -L./microblaze_0/lib/ # -L
+RWPLPROCESSOR_INCLUDES = -I./microblaze_0/include/  -Idrivers/plprocessor_v1_00_a/src/ # -I
+RWPLPROCESSOR_LFLAGS = # -l
+RWPLPROCESSOR_LINKER_SCRIPT = rwPLProcessor/rwPLProcessor_linker_script.ld
+RWPLPROCESSOR_CC_DEBUG_FLAG =  -g 
+RWPLPROCESSOR_CC_PROFILE_FLAG = # -pg
+RWPLPROCESSOR_CC_GLOBPTR_FLAG= # -mxl-gp-opt
+RWPLPROCESSOR_MODE = executable
+RWPLPROCESSOR_LIBG_OPT = -$(RWPLPROCESSOR_MODE) microblaze_0
+RWPLPROCESSOR_CC_INFERRED_FLAGS= -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.00.b 
+RWPLPROCESSOR_CC_START_ADDR_FLAG=  #  # -Wl,-defsym -Wl,_TEXT_START_ADDR=
+RWPLPROCESSOR_CC_STACK_SIZE_FLAG=  #  # -Wl,-defsym -Wl,_STACK_SIZE=
+RWPLPROCESSOR_CC_HEAP_SIZE_FLAG=  #  # -Wl,-defsym -Wl,_HEAP_SIZE=
+                  $(RWPLPROCESSOR_CC_INFERRED_FLAGS)  \
