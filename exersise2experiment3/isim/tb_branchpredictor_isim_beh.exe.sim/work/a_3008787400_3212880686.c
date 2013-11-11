@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/TriputMux.vhd";
+static const char *ng0 = "C:/Users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/TriputMux.vhd";
 
 
 
@@ -69,7 +69,7 @@ static void work_a_3008787400_3212880686_p_0(char *t0)
 LAB0:    xsi_set_current_line(37, ng0);
     t1 = (t0 + 1672U);
     t2 = *((char **)t1);
-    t1 = (t0 + 5298);
+    t1 = (t0 + 5266);
     t4 = 1;
     if (2U == 2U)
         goto LAB5;
@@ -81,7 +81,7 @@ LAB7:    if (t4 != 0)
 
 LAB4:    t15 = (t0 + 1672U);
     t16 = *((char **)t15);
-    t15 = (t0 + 5300);
+    t15 = (t0 + 5268);
     t18 = 1;
     if (2U == 2U)
         goto LAB16;
@@ -93,7 +93,7 @@ LAB18:    if (t18 == 1)
 
 LAB14:    t22 = (t0 + 1672U);
     t23 = *((char **)t22);
-    t22 = (t0 + 5302);
+    t22 = (t0 + 5270);
     t25 = 1;
     if (2U == 2U)
         goto LAB22;

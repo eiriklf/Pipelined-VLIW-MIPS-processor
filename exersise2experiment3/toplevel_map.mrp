@@ -11,45 +11,45 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.52.76.2 $
-Mapped Date    : Sun Nov 10 17:25:55 2013
+Mapped Date    : Mon Nov 11 11:43:24 2013
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:   22
+Number of warnings:    2
 Slice Logic Utilization:
-  Number of Slice Registers:                   782 out of  18,224    4%
-    Number used as Flip Flops:                 782
+  Number of Slice Registers:                   692 out of  18,224    3%
+    Number used as Flip Flops:                 692
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        863 out of   9,112    9%
-    Number used as logic:                      719 out of   9,112    7%
-      Number using O6 output only:             573
+  Number of Slice LUTs:                        764 out of   9,112    8%
+    Number used as logic:                      711 out of   9,112    7%
+      Number using O6 output only:             622
       Number using O5 output only:               6
-      Number using O5 and O6:                  140
+      Number using O5 and O6:                   83
       Number used as ROM:                        0
-    Number used as Memory:                     116 out of   2,176    5%
-      Number used as Dual Port RAM:            116
-        Number using O6 output only:            20
-        Number using O5 output only:             4
-        Number using O5 and O6:                 92
+    Number used as Memory:                      22 out of   2,176    1%
+      Number used as Dual Port RAM:             22
+        Number using O6 output only:            10
+        Number using O5 output only:             2
+        Number using O5 and O6:                 10
       Number used as Single Port RAM:            0
       Number used as Shift Register:             0
-    Number used exclusively as route-thrus:     28
-      Number with same-slice register load:     27
+    Number used exclusively as route-thrus:     31
+      Number with same-slice register load:     30
       Number with same-slice carry load:         1
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   334 out of   2,278   14%
-  Number of LUT Flip Flop pairs used:        1,134
-    Number with an unused Flip Flop:           425 out of   1,134   37%
-    Number with an unused LUT:                 271 out of   1,134   23%
-    Number of fully used LUT-FF pairs:         438 out of   1,134   38%
-    Number of unique control sets:              25
+  Number of occupied Slices:                   309 out of   2,278   13%
+  Number of LUT Flip Flop pairs used:        1,014
+    Number with an unused Flip Flop:           374 out of   1,014   36%
+    Number with an unused LUT:                 250 out of   1,014   24%
+    Number of fully used LUT-FF pairs:         390 out of   1,014   38%
+    Number of unique control sets:              27
     Number of slice register sites lost
-      to control set restrictions:              66 out of  18,224    1%
+      to control set restrictions:              76 out of  18,224    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -62,7 +62,7 @@ IO Utilization:
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
-  Number of RAMB8BWERs:                          3 out of      64    4%
+  Number of RAMB8BWERs:                          7 out of      64   10%
   Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
   Number of BUFG/BUFGMUXs:                       1 out of      16    6%
@@ -85,11 +85,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                3.14
+Average Fanout of Non-Clock Nets:                3.34
 
-Peak Memory Usage:  408 MB
-Total REAL time to MAP completion:  1 mins 18 secs 
-Total CPU time to MAP completion:   1 mins 17 secs 
+Peak Memory Usage:  394 MB
+Total REAL time to MAP completion:  1 mins 12 secs 
+Total CPU time to MAP completion:   1 mins 6 secs 
 
 Table of Contents
 -----------------
@@ -119,66 +119,6 @@ WARNING:Security:42 - Your software subscription period has lapsed. Your current
 version of Xilinx tools will continue to function, but you no longer qualify for
 Xilinx software updates or new releases.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS23_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS24_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS34_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS6_RAMD_D1_O> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS7_RAMD_D1_O> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS32_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS22_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS33_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS25_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS13_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS35_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS8_RAMD_D1_O> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS14_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS31_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS21_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS5_RAMD_D1_O> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS12_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS4_RAMD_D1_O> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS15_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS11_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
    <MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS2_RAMD_D1_O> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
@@ -191,70 +131,6 @@ INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to
 '2100@xilinx.license.idi.ntnu.no'.
 INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
 INFO:Security:54 - 'xc6slx16' is a WebPack part.
-INFO:LIT:243 - Logical network dmem_address_wr_com<31> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<30> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<29> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<28> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<27> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<26> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<25> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<24> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<23> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<22> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<21> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<20> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<19> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<18> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<17> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<16> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<15> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<14> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<13> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<12> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<11> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<10> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<9> has no load.
-INFO:LIT:243 - Logical network dmem_address_wr_com<8> has no load.
-INFO:LIT:243 - Logical network instr_data2<31> has no load.
-INFO:LIT:243 - Logical network instr_data2<30> has no load.
-INFO:LIT:243 - Logical network instr_data2<29> has no load.
-INFO:LIT:243 - Logical network instr_data2<28> has no load.
-INFO:LIT:243 - Logical network instr_data2<27> has no load.
-INFO:LIT:243 - Logical network instr_data2<26> has no load.
-INFO:LIT:243 - Logical network instr_data2<15> has no load.
-INFO:LIT:243 - Logical network instr_data2<14> has no load.
-INFO:LIT:243 - Logical network instr_data2<13> has no load.
-INFO:LIT:243 - Logical network instr_data2<12> has no load.
-INFO:LIT:243 - Logical network instr_data2<11> has no load.
-INFO:LIT:243 - Logical network instr_data2<10> has no load.
-INFO:LIT:243 - Logical network instr_data2<9> has no load.
-INFO:LIT:243 - Logical network instr_data2<8> has no load.
-INFO:LIT:243 - Logical network instr_data2<7> has no load.
-INFO:LIT:243 - Logical network instr_data2<6> has no load.
-INFO:LIT:243 - Logical network instr_addr2<31> has no load.
-INFO:LIT:243 - Logical network instr_addr2<30> has no load.
-INFO:LIT:243 - Logical network instr_addr2<29> has no load.
-INFO:LIT:243 - Logical network instr_addr2<28> has no load.
-INFO:LIT:243 - Logical network instr_addr2<27> has no load.
-INFO:LIT:243 - Logical network instr_addr2<26> has no load.
-INFO:LIT:243 - Logical network instr_addr2<25> has no load.
-INFO:LIT:243 - Logical network instr_addr2<24> has no load.
-INFO:LIT:243 - Logical network instr_addr2<23> has no load.
-INFO:LIT:243 - Logical network instr_addr2<22> has no load.
-INFO:LIT:243 - Logical network instr_addr2<21> has no load.
-INFO:LIT:243 - Logical network instr_addr2<20> has no load.
-INFO:LIT:243 - Logical network instr_addr2<19> has no load.
-INFO:LIT:243 - Logical network instr_addr2<18> has no load.
-INFO:LIT:243 - Logical network instr_addr2<17> has no load.
-INFO:LIT:243 - Logical network instr_addr2<16> has no load.
-INFO:LIT:243 - Logical network instr_addr2<15> has no load.
-INFO:LIT:243 - Logical network instr_addr2<14> has no load.
-INFO:LIT:243 - Logical network instr_addr2<13> has no load.
-INFO:LIT:243 - Logical network instr_addr2<12> has no load.
-INFO:LIT:243 - Logical network instr_addr2<11> has no load.
-INFO:LIT:243 - Logical network instr_addr2<10> has no load.
-INFO:LIT:243 - Logical network instr_addr2<9> has no load.
-INFO:LIT:243 - Logical network instr_addr2<8> has no load.
 INFO:LIT:243 - Logical network bus_address_in<0> has no load.
 INFO:LIT:243 - Logical network bus_address_in<1> has no load.
 INFO:LIT:243 - Logical network bus_address_in<2> has no load.
@@ -279,100 +155,18 @@ INFO:LIT:243 - Logical network bus_address_in<20> has no load.
 INFO:LIT:243 - Logical network bus_address_in<21> has no load.
 INFO:LIT:243 - Logical network bus_address_in<22> has no load.
 INFO:LIT:243 - Logical network bus_address_in<23> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<71> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<70> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<69> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<68> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<67> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<66> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<65> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<64> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<63> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IFIDs<62> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/IDEXs<138> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/Ops<3> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS92/SPO has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS91/SPO has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS261/SPO has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS161/SPO has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS162/SPO has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS362/SPO has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS262/SPO has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS361/SPO has
-   no load.
+INFO:LIT:243 - Logical network
+   MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/SPO has no load.
+INFO:LIT:243 - Logical network
+   MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SPO has no load.
 INFO:LIT:243 - Logical network
    MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS31/SPO has no load.
+INFO:LIT:243 - Logical network
+   MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS34/SPO has no load.
 INFO:LIT:243 - Logical network
    MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS32/SPO has no load.
 INFO:LIT:243 - Logical network
    MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS33/SPO has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/Mram_REGS34/SPO has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SPO has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS2/SPO has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/Addressincrementer/CAUX<0> has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/Addressincrementer/COUT has no
-   load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/COUT<3> has no
-   load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/COUT<1> has no
-   load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/COUT<0> has no
-   load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/G has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/P has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU4B/COUT<3> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU4B/COUT<1> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU4B/COUT<0> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[6].NEXT_ALU4B/COUT<3> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[6].NEXT_ALU4B/COUT<1> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[6].NEXT_ALU4B/COUT<0> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[5].NEXT_ALU4B/COUT<3> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[5].NEXT_ALU4B/COUT<1> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[5].NEXT_ALU4B/COUT<0> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[4].NEXT_ALU4B/COUT<3> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[4].NEXT_ALU4B/COUT<1> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[4].NEXT_ALU4B/COUT<0> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[3].NEXT_ALU4B/COUT<3> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[3].NEXT_ALU4B/COUT<1> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[3].NEXT_ALU4B/COUT<0> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU4B/COUT<3> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU4B/COUT<1> has no load.
-INFO:LIT:243 - Logical network
-   MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU4B/COUT<0> has no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/COUT<3> has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/COUT<1> has
-   no load.
-INFO:LIT:243 - Logical network MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/COUT<0> has
-   no load.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -387,105 +181,27 @@ INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-  13 block(s) optimized away
-  16 signal(s) removed
-  52 Block(s) redundant
+   2 block(s) optimized away
+   8 Block(s) redundant
 
 Section 5 - Removed Logic
 -------------------------
 
-The trimmed logic reported below is either:
-   1. part of a cycle
-   2. part of disabled logic
-   3. a side-effect of other trimmed logic
-
-The signal "instr_data2<31>" is unused and has been removed.
-The signal "instr_data2<30>" is unused and has been removed.
-The signal "instr_data2<29>" is unused and has been removed.
-The signal "instr_data2<28>" is unused and has been removed.
-The signal "instr_data2<27>" is unused and has been removed.
-The signal "instr_data2<26>" is unused and has been removed.
-The signal "instr_data2<15>" is unused and has been removed.
-The signal "instr_data2<14>" is unused and has been removed.
-The signal "instr_data2<13>" is unused and has been removed.
-The signal "instr_data2<12>" is unused and has been removed.
-The signal "instr_data2<11>" is unused and has been removed.
-The signal "instr_data2<10>" is unused and has been removed.
-The signal "instr_data2<9>" is unused and has been removed.
-The signal "instr_data2<8>" is unused and has been removed.
-The signal "instr_data2<7>" is unused and has been removed.
-The signal "instr_data2<6>" is unused and has been removed.
-
 Optimized Block(s):
 TYPE 		BLOCK
-GND 		DATA_MEM/XST_GND
-VCC 		DATA_MEM/XST_VCC
-GND 		INST_MEM/XST_GND
-VCC 		INST_MEM/XST_VCC
-GND 		MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER/XST_GND
-GND 		MIPS_SC_PROCESSOR/Branch_predicition_unit/XST_GND
-VCC 		MIPS_SC_PROCESSOR/Branch_predicition_unit/XST_VCC
-GND 		MIPS_SC_PROCESSOR/PATH2_ALU/XST_GND
-VCC 		MIPS_SC_PROCESSOR/PATH2_ALU/XST_VCC
-GND 		MIPS_SC_PROCESSOR/REGISTER_F/XST_GND
-GND 		MIPS_SC_PROCESSOR/XST_GND
-VCC 		MIPS_SC_PROCESSOR/XST_VCC
-GND 		TDT4255_COM/XST_GND
+GND 		XST_GND
+VCC 		XST_VCC
 
 Redundant Block(s):
 TYPE 		BLOCK
-INV 		DATA_MEM/CLK_inv_INV_0
-INV 		INST_MEM/CLK_inv_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv1_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv2_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv3_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv4_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv5_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv6_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv7_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv8_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv9_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv10_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv11_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv12_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv13_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv14_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv15_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv16_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv17_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv18_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv19_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv20_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv21_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv22_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv23_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv24_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv25_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv26_INV_0
-INV 		MIPS_SC_PROCESSOR/REGISTER_F/CLK_inv27_INV_0
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output251
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output241
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output221
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output211
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output201
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output191
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output181
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output171
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output161
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output151
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output141
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output131
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output111
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output101
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output91
-LUT3 		MIPS_SC_PROCESSOR/BranchTAKEN_MUX/Mmux_output81
 LUT1 		MIPS_SC_PROCESSOR/Madd_imem_address2_cy<1>_rt
 LUT1 		MIPS_SC_PROCESSOR/Madd_imem_address2_cy<2>_rt
 LUT1 		MIPS_SC_PROCESSOR/Madd_imem_address2_cy<3>_rt
 LUT1 		MIPS_SC_PROCESSOR/Madd_imem_address2_cy<4>_rt
 LUT1 		MIPS_SC_PROCESSOR/Madd_imem_address2_cy<5>_rt
 LUT1 		MIPS_SC_PROCESSOR/Madd_imem_address2_cy<6>_rt
+LUT1 		MIPS_SC_PROCESSOR/Madd_imem_address2_xor<7>_rt
+INV 		clk_inv_INV_0
 
 Section 6 - IOB Properties
 --------------------------
@@ -675,123 +391,121 @@ Section 11 - Configuration String Details
 
 Section 12 - Control Set Information
 ------------------------------------
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| Clock Signal | Reset Signal                    | Set Signal | Enable Signal                           | Slice Load Count | Bel Load Count |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| clk_BUFGP    |                                 |            | MIPS_SC_PROCESSOR/buffer_write          | 7                | 34             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/EXMEM/reset_1 |            |                                         | 21               | 47             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/EXMEM/reset_2 |            |                                         | 15               | 47             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/IDEX/reset_1  |            |                                         | 13               | 50             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/IDEX/reset_2  |            |                                         | 12               | 50             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/IDEX/reset_3  |            |                                         | 9                | 38             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/IDEX/reset_4  |            |                                         | 11               | 38             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/IDEX/reset_5  |            |                                         | 11               | 39             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/IDEXreset     |            |                                         | 9                | 33             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/IFID/reset_1  |            | MIPS_SC_PROCESSOR/IFID/write_enable_1   | 11               | 36             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/IFID/reset_2  |            | MIPS_SC_PROCESSOR/IFID/write_enable_2   | 15               | 36             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/IFIDreset     |            | MIPS_SC_PROCESSOR/IFIDwrite             | 11               | 34             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/MEMWB/reset_1 |            |                                         | 10               | 37             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/reset_1       |            |                                         | 14               | 44             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/reset_2       |            |                                         | 10               | 35             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/reset_3       |            | MIPS_SC_PROCESSOR/EXMEM_data_out<172>_1 | 8                | 32             |
-| clk_BUFGP    | MIPS_SC_PROCESSOR/reset_4       |            | MIPS_SC_PROCESSOR/EXMEMs<172>           | 8                | 32             |
-| clk_BUFGP    | TDT4255_COM/_n0076_inv_0        |            |                                         | 9                | 40             |
-| clk_BUFGP    | TDT4255_COM/_n0087_inv_0        |            |                                         | 2                | 8              |
-| clk_BUFGP    | TDT4255_COM/_n0090_inv_0        |            |                                         | 14               | 32             |
-| clk_BUFGP    | TDT4255_COM/state<2>_0          |            |                                         | 1                | 1              |
-| clk_BUFGP    | reset_IBUF                      |            | MIPS_SC_PROCESSOR/control_enable        | 19               | 32             |
-| clk_BUFGP    | reset_IBUF_1                    |            |                                         | 4                | 7              |
-| clk_BUFGP    | reset_IBUF_1                    |            | TDT4255_COM/_n0108_inv                  | 5                | 32             |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| ~clk_BUFGP   |                                 |            | MIPS_SC_PROCESSOR/MEMWBs<69>            | 23               | 176            |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Clock Signal | Reset Signal                                                 | Set Signal | Enable Signal                                       | Slice Load Count | Bel Load Count |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk_BUFGP    |                                                              |            | MIPS_SC_PROCESSOR/buffer_write                      | 7                | 34             |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset11_1 |            | MIPS_SC_PROCESSOR/DETECTION_UNIT/Mmux_IFIDwrite11_1 | 19               | 42             |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset11_1 |            | MIPS_SC_PROCESSOR/DETECTION_UNIT/Mmux_IFIDwrite11_2 | 1                | 1              |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset11_2 |            | MIPS_SC_PROCESSOR/DETECTION_UNIT/Mmux_IFIDwrite11_2 | 14               | 41             |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset11_2 |            | MIPS_SC_PROCESSOR/IFIDwrite                         | 2                | 8              |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset11_3 |            |                                                     | 9                | 36             |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset11_3 |            | MIPS_SC_PROCESSOR/IFIDwrite                         | 4                | 14             |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset11_4 |            |                                                     | 7                | 26             |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset11_5 |            |                                                     | 13               | 50             |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/Branch_predicition_unit/Mmux_IFIDreset11_6 |            |                                                     | 8                | 25             |
+| clk_BUFGP    | MIPS_SC_PROCESSOR/IDEXreset                                  |            |                                                     | 13               | 49             |
+| clk_BUFGP    | TDT4255_COM/_n0076_inv_0                                     |            |                                                     | 8                | 40             |
+| clk_BUFGP    | TDT4255_COM/_n0087_inv_0                                     |            |                                                     | 2                | 8              |
+| clk_BUFGP    | TDT4255_COM/_n0090_inv_0                                     |            |                                                     | 8                | 32             |
+| clk_BUFGP    | TDT4255_COM/state<2>_0                                       |            |                                                     | 1                | 1              |
+| clk_BUFGP    | reset_IBUF                                                   |            |                                                     | 4                | 8              |
+| clk_BUFGP    | reset_IBUF                                                   |            | MIPS_SC_PROCESSOR/control_enable                    | 11               | 32             |
+| clk_BUFGP    | reset_IBUF_1                                                 |            |                                                     | 4                | 10             |
+| clk_BUFGP    | reset_IBUF_1                                                 |            | TDT4255_COM/_n0108_inv                              | 5                | 32             |
+| clk_BUFGP    | reset_IBUF_2                                                 |            |                                                     | 11               | 47             |
+| clk_BUFGP    | reset_IBUF_3                                                 |            |                                                     | 6                | 23             |
+| clk_BUFGP    | reset_IBUF_3                                                 |            | MIPS_SC_PROCESSOR/EXMEM/data_172_1                  | 6                | 24             |
+| clk_BUFGP    | reset_IBUF_4                                                 |            |                                                     | 5                | 7              |
+| clk_BUFGP    | reset_IBUF_4                                                 |            | MIPS_SC_PROCESSOR/EXMEM/data<172>                   | 8                | 32             |
+| clk_BUFGP    | reset_IBUF_4                                                 |            | MIPS_SC_PROCESSOR/EXMEM/data_172_1                  | 3                | 8              |
+| clk_BUFGP    | reset_IBUF_5                                                 |            |                                                     | 26               | 47             |
+| clk_BUFGP    | reset_IBUF_6                                                 |            |                                                     | 13               | 47             |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 13 - Utilization by Hierarchy
 -------------------------------------
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Module                     | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48A1 | BUFG  | BUFIO | BUFR  | DCM   | PLL_ADV   | Full Hierarchical Name                                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| toplevel/                  |           | 23/679        | 0/782         | 28/829        | 0/116         | 0/3       | 0/4     | 1/1   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel                                                              |
+| toplevel/                  |           | 64/613        | 0/692         | 79/727        | 0/22          | 0/7       | 0/4     | 1/1   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel                                                              |
 | +DATA_MEM                  |           | 0/0           | 0/0           | 0/0           | 0/0           | 1/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/DATA_MEM                                                     |
 | +INST_MEM                  |           | 0/0           | 0/0           | 0/0           | 0/0           | 2/2       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/INST_MEM                                                     |
-| +MIPS_SC_PROCESSOR         |           | 26/618        | 0/662         | 59/771        | 0/116         | 0/0       | 0/4     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR                                            |
-| ++ALUOpModule              |           | 3/3           | 0/0           | 6/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUOpModule                                |
-| ++ALUTD                    |           | 20/100        | 0/0           | 23/141        | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD                                      |
-| +++BEGIN_ALU4B             |           | 7/11          | 0/0           | 7/16          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B                          |
-| ++++FULLADDER_ALU          |           | 4/4           | 0/0           | 9/9           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/FULLADDER_ALU            |
-| +++GEN_ALU[2].NEXT_ALU4B   |           | 4/10          | 0/0           | 6/15          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU4B                |
-| ++++FULLADDER_ALU          |           | 6/6           | 0/0           | 9/9           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU4B/FULLADDER_ALU  |
-| +++GEN_ALU[3].NEXT_ALU4B   |           | 5/9           | 0/0           | 6/15          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[3].NEXT_ALU4B                |
-| ++++FULLADDER_ALU          |           | 4/4           | 0/0           | 9/9           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[3].NEXT_ALU4B/FULLADDER_ALU  |
-| +++GEN_ALU[4].NEXT_ALU4B   |           | 5/9           | 0/0           | 6/15          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[4].NEXT_ALU4B                |
-| ++++FULLADDER_ALU          |           | 4/4           | 0/0           | 9/9           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[4].NEXT_ALU4B/FULLADDER_ALU  |
-| +++GEN_ALU[5].NEXT_ALU4B   |           | 5/10          | 0/0           | 6/15          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[5].NEXT_ALU4B                |
-| ++++FULLADDER_ALU          |           | 5/5           | 0/0           | 9/9           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[5].NEXT_ALU4B/FULLADDER_ALU  |
-| +++GEN_ALU[6].NEXT_ALU4B   |           | 5/10          | 0/0           | 6/15          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[6].NEXT_ALU4B                |
-| ++++FULLADDER_ALU          |           | 5/5           | 0/0           | 9/9           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[6].NEXT_ALU4B/FULLADDER_ALU  |
-| +++GEN_ALU[7].NEXT_ALU4B   |           | 5/11          | 0/0           | 6/15          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU4B                |
-| ++++FULLADDER_ALU          |           | 6/6           | 0/0           | 9/9           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU4B/FULLADDER_ALU  |
-| +++LAST_ALU4B              |           | 6/10          | 0/0           | 6/12          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B                           |
-| ++++FULLADDER_ALU          |           | 4/4           | 0/0           | 6/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/FULLADDER_ALU             |
-| ++ALU_INPUT_MUX            |           | 16/16         | 0/0           | 16/16         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALU_INPUT_MUX                              |
-| ++Addressincrementer       |           | 0/59          | 0/0           | 0/59          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer                         |
-| +++GEN_ADDER[10].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA   |
-| +++GEN_ADDER[11].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA   |
-| +++GEN_ADDER[12].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA   |
+| +MIPS_SC_PROCESSOR         |           | 23/518        | 0/571         | 62/617        | 0/22          | 0/4       | 0/4     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR                                            |
+| ++ALUOpModule              |           | 1/1           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUOpModule                                |
+| ++ALUTD                    |           | 40/88         | 0/0           | 70/147        | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD                                      |
+| +++BEGIN_ALU4B             |           | 0/7           | 0/0           | 0/12          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B                          |
+| ++++FULLADDER_ALU          |           | 7/7           | 0/0           | 12/12         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/BEGIN_ALU4B/FULLADDER_ALU            |
+| +++GEN_ALU[2].NEXT_ALU4B   |           | 0/7           | 0/0           | 0/11          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU4B                |
+| ++++FULLADDER_ALU          |           | 7/7           | 0/0           | 11/11         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[2].NEXT_ALU4B/FULLADDER_ALU  |
+| +++GEN_ALU[3].NEXT_ALU4B   |           | 0/8           | 0/0           | 0/13          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[3].NEXT_ALU4B                |
+| ++++FULLADDER_ALU          |           | 8/8           | 0/0           | 13/13         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[3].NEXT_ALU4B/FULLADDER_ALU  |
+| +++GEN_ALU[4].NEXT_ALU4B   |           | 0/8           | 0/0           | 0/13          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[4].NEXT_ALU4B                |
+| ++++FULLADDER_ALU          |           | 8/8           | 0/0           | 13/13         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[4].NEXT_ALU4B/FULLADDER_ALU  |
+| +++GEN_ALU[5].NEXT_ALU4B   |           | 0/6           | 0/0           | 0/11          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[5].NEXT_ALU4B                |
+| ++++FULLADDER_ALU          |           | 6/6           | 0/0           | 11/11         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[5].NEXT_ALU4B/FULLADDER_ALU  |
+| +++GEN_ALU[6].NEXT_ALU4B   |           | 0/6           | 0/0           | 0/11          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[6].NEXT_ALU4B                |
+| ++++FULLADDER_ALU          |           | 6/6           | 0/0           | 11/11         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[6].NEXT_ALU4B/FULLADDER_ALU  |
+| +++GEN_ALU[7].NEXT_ALU4B   |           | 0/4           | 0/0           | 0/3           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU4B                |
+| ++++FULLADDER_ALU          |           | 4/4           | 0/0           | 3/3           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/GEN_ALU[7].NEXT_ALU4B/FULLADDER_ALU  |
+| +++LAST_ALU4B              |           | 0/2           | 0/0           | 0/3           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B                           |
+| ++++FULLADDER_ALU          |           | 2/2           | 0/0           | 3/3           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ALUTD/LAST_ALU4B/FULLADDER_ALU             |
+| ++Addressincrementer       |           | 0/37          | 0/0           | 0/27          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer                         |
+| +++GEN_ADDER[10].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA   |
+| +++GEN_ADDER[11].NEXT_FA   |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA   |
+| +++GEN_ADDER[12].NEXT_FA   |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA   |
 | +++GEN_ADDER[13].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA   |
-| +++GEN_ADDER[14].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA   |
-| +++GEN_ADDER[15].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA   |
-| +++GEN_ADDER[16].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA   |
-| +++GEN_ADDER[17].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA   |
-| +++GEN_ADDER[18].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA   |
+| +++GEN_ADDER[14].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA   |
+| +++GEN_ADDER[15].NEXT_FA   |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA   |
+| +++GEN_ADDER[16].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA   |
+| +++GEN_ADDER[17].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA   |
+| +++GEN_ADDER[18].NEXT_FA   |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA   |
 | +++GEN_ADDER[19].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA   |
 | +++GEN_ADDER[1].NEXT_FA    |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[1].NEXT_FA    |
-| +++GEN_ADDER[20].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA   |
-| +++GEN_ADDER[21].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA   |
-| +++GEN_ADDER[22].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA   |
-| +++GEN_ADDER[23].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA   |
+| +++GEN_ADDER[20].NEXT_FA   |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA   |
+| +++GEN_ADDER[21].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA   |
+| +++GEN_ADDER[22].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA   |
+| +++GEN_ADDER[23].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA   |
 | +++GEN_ADDER[24].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA   |
-| +++GEN_ADDER[25].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA   |
-| +++GEN_ADDER[26].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA   |
-| +++GEN_ADDER[27].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA   |
+| +++GEN_ADDER[25].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA   |
+| +++GEN_ADDER[26].NEXT_FA   |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA   |
+| +++GEN_ADDER[27].NEXT_FA   |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA   |
 | +++GEN_ADDER[28].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA   |
-| +++GEN_ADDER[29].NEXT_FA   |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA   |
-| +++GEN_ADDER[2].NEXT_FA    |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[2].NEXT_FA    |
+| +++GEN_ADDER[29].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA   |
+| +++GEN_ADDER[2].NEXT_FA    |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[2].NEXT_FA    |
 | +++GEN_ADDER[30].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[30].NEXT_FA   |
-| +++GEN_ADDER[31].NEXT_FA   |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[31].NEXT_FA   |
-| +++GEN_ADDER[3].NEXT_FA    |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA    |
+| +++GEN_ADDER[31].NEXT_FA   |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[31].NEXT_FA   |
+| +++GEN_ADDER[3].NEXT_FA    |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA    |
 | +++GEN_ADDER[4].NEXT_FA    |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA    |
-| +++GEN_ADDER[5].NEXT_FA    |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA    |
-| +++GEN_ADDER[6].NEXT_FA    |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA    |
-| +++GEN_ADDER[7].NEXT_FA    |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA    |
-| +++GEN_ADDER[8].NEXT_FA    |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA    |
+| +++GEN_ADDER[5].NEXT_FA    |           | 1/1           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA    |
+| +++GEN_ADDER[6].NEXT_FA    |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA    |
+| +++GEN_ADDER[7].NEXT_FA    |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA    |
+| +++GEN_ADDER[8].NEXT_FA    |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA    |
 | +++GEN_ADDER[9].NEXT_FA    |           | 2/2           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA    |
 | ++BRANCH_PREDICTION_BUFFER |           | 2/2           | 0/0           | 8/8           | 8/8           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER                   |
-| ++BRANCH_TARGET_BUFFER     |           | 4/4           | 0/0           | 16/16         | 16/16         | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER                       |
-| ++Branch_MUX               |           | 10/10         | 0/0           | 17/17         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Branch_MUX                                 |
-| ++Branch_predicition_unit  |           | 9/9           | 0/0           | 17/17         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Branch_predicition_unit                    |
-| ++CONTROL_OUTPUT           |           | 5/5           | 0/0           | 5/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/CONTROL_OUTPUT                             |
-| ++CONTROL_UNIT             |           | 5/5           | 0/0           | 9/9           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/CONTROL_UNIT                               |
-| ++COUNTER                  |           | 19/19         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/COUNTER                                    |
-| ++DETECTION_UNIT           |           | 7/7           | 0/0           | 22/22         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/DETECTION_UNIT                             |
-| ++EXMEM                    |           | 52/52         | 138/138       | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/EXMEM                                      |
-| ++ForwardmuxA              |           | 28/28         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ForwardmuxA                                |
-| ++ForwardmuxB              |           | 15/15         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ForwardmuxB                                |
-| ++Forwardunit              |           | 9/9           | 0/0           | 20/20         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Forwardunit                                |
+| ++BRANCH_TARGET_BUFFER     |           | 4/4           | 0/0           | 14/14         | 14/14         | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/BRANCH_TARGET_BUFFER                       |
+| ++Branch_predicition_unit  |           | 12/12         | 0/0           | 21/21         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Branch_predicition_unit                    |
+| ++CONTROL_OUTPUT           |           | 4/4           | 0/0           | 8/8           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/CONTROL_OUTPUT                             |
+| ++CONTROL_UNIT             |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/CONTROL_UNIT                               |
+| ++COUNTER                  |           | 11/11         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/COUNTER                                    |
+| ++DETECTION_UNIT           |           | 13/13         | 0/0           | 29/29         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/DETECTION_UNIT                             |
+| ++EXMEM                    |           | 48/48         | 109/109       | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/EXMEM                                      |
+| ++ForwardmuxA              |           | 27/27         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ForwardmuxA                                |
+| ++ForwardmuxB              |           | 19/19         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/ForwardmuxB                                |
+| ++Forwardunit              |           | 5/5           | 0/0           | 8/8           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Forwardunit                                |
 | ++HI                       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/HI                                         |
-| ++IDEX                     |           | 67/67         | 248/248       | 5/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/IDEX                                       |
-| ++IFID                     |           | 40/40         | 106/106       | 4/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/IFID                                       |
-| ++JUMP_MUX                 |           | 19/19         | 0/0           | 29/29         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/JUMP_MUX                                   |
-| ++LO                       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/LO                                         |
-| ++MEMWB                    |           | 21/21         | 72/72         | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/MEMWB                                      |
+| ++IDEX                     |           | 50/50         | 186/186       | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/IDEX                                       |
+| ++IFID                     |           | 40/40         | 106/106       | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/IFID                                       |
+| ++JUMP_MUX                 |           | 27/27         | 0/0           | 62/62         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/JUMP_MUX                                   |
+| ++LO                       |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/LO                                         |
+| ++MEMWB                    |           | 18/18         | 72/72         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/MEMWB                                      |
 | ++PATH2_ALU                |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 4/4     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/PATH2_ALU                                  |
-| ++REGISTER_F               |           | 59/59         | 0/0           | 220/220       | 92/92         | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/REGISTER_F                                 |
-| ++REVERT_PREDICTION_MUX    |           | 9/9           | 0/0           | 15/15         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/REVERT_PREDICTION_MUX                      |
-| ++Regdest_MUX              |           | 13/13         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Regdest_MUX                                |
+| ++REGISTER_F               |           | 49/49         | 0/0           | 128/128       | 0/0           | 4/4       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/REGISTER_F                                 |
+| ++Regdest_MUX              |           | 17/17         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Regdest_MUX                                |
 | ++Vliwcore2                |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/Vliwcore2                                  |
 | ++WRITEREG_MUX1            |           | 3/3           | 0/0           | 3/3           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/WRITEREG_MUX1                              |
 | ++global_prediction        |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/MIPS_SC_PROCESSOR/global_prediction                          |
-| +TDT4255_COM               |           | 38/38         | 120/120       | 30/30         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/TDT4255_COM                                                  |
+| +TDT4255_COM               |           | 31/31         | 121/121       | 31/31         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | toplevel/TDT4255_COM                                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * Slices can be packed with basic elements from multiple hierarchies.

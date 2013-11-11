@@ -27,19 +27,52 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 ================================================================================
 Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 30 ns HIGH 50%;
 
- 140166994 paths analyzed, 4113 endpoints analyzed, 0 failing endpoints
+ 2559069 paths analyzed, 3025 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  24.783ns.
+ Minimum period is  19.851ns.
 --------------------------------------------------------------------------------
 
-Paths for end point MIPS_SC_PROCESSOR/COUNTER/data_30 (SLICE_X36Y10.B6), 12368 paths
+Paths for end point MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAMB8_X1Y8.ADDRBRDADDR5), 5171 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     5.217ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/COUNTER/data_2 (FF)
-  Destination:          MIPS_SC_PROCESSOR/COUNTER/data_30 (FF)
+Slack (setup path):     6.289ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               INST_MEM/Mram_MEM (RAM)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
+  Requirement:          15.000ns
+  Data Path Delay:      8.666ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.010ns (0.345 - 0.355)
+  Source Clock:         clk_BUFGP falling at 15.000ns
+  Destination Clock:    clk_BUFGP rising at 30.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: INST_MEM/Mram_MEM to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    RAMB8_X1Y13.DOBDO5      Trcko_DOB             2.950   INST_MEM/Mram_MEM
+                                                          INST_MEM/Mram_MEM
+    SLICE_X15Y14.A6         net (fanout=2)        3.120   instr_data<21>
+    SLICE_X15Y14.A          Tilo                  0.341   instr_data<21>_0_0_0
+                                                          instr_data<21>_0_01
+    RAMB8_X1Y8.ADDRBRDADDR5 net (fanout=1)        1.855   instr_data<21>_0_0_0
+    RAMB8_X1Y8.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    ----------------------------------------------------  ---------------------------
+    Total                                         8.666ns (3.691ns logic, 4.975ns route)
+                                                          (42.6% logic, 57.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.629ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
   Requirement:          30.000ns
-  Data Path Delay:      24.739ns (Levels of Logic = 31)
-  Clock Path Skew:      -0.009ns (0.343 - 0.352)
+  Data Path Delay:      18.346ns (Levels of Logic = 9)
+  Clock Path Skew:      0.010ns (0.345 - 0.335)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -50,117 +83,54 @@ Slack (setup path):     5.217ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/COUNTER/data_2 to MIPS_SC_PROCESSOR/COUNTER/data_30
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X31Y4.CQ       Tcko                  0.548   instr_addr<3>
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_2
-    SLICE_X33Y4.A3       net (fanout=19)       0.806   instr_addr<2>
-    SLICE_X33Y4.A        Tilo                  0.341   MIPS_SC_PROCESSOR/IDEXs<119>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[2].NEXT_FA/COUT1
-    SLICE_X33Y3.A4       net (fanout=2)        0.592   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<2>
-    SLICE_X33Y3.A        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA/COUT1
-    SLICE_X33Y3.B6       net (fanout=2)        0.156   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<3>
-    SLICE_X33Y3.B        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA/COUT1
-    SLICE_X30Y4.A6       net (fanout=2)        0.439   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-    SLICE_X30Y4.A        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA/COUT1
-    SLICE_X30Y4.B6       net (fanout=2)        0.152   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<5>
-    SLICE_X30Y4.B        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA/COUT1
-    SLICE_X30Y4.C4       net (fanout=2)        0.440   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<6>
-    SLICE_X30Y4.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA/COUT1
-    SLICE_X30Y4.D5       net (fanout=2)        0.290   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<7>
-    SLICE_X30Y4.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA/COUT1
-    SLICE_X32Y3.A3       net (fanout=2)        0.746   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<8>
-    SLICE_X32Y3.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA/COUT1
-    SLICE_X32Y3.B6       net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<9>
-    SLICE_X32Y3.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA/COUT1
-    SLICE_X32Y3.C4       net (fanout=2)        0.382   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<10>
-    SLICE_X32Y3.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA/COUT1
-    SLICE_X32Y3.D5       net (fanout=2)        0.262   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<11>
-    SLICE_X32Y3.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA/COUT1
-    SLICE_X32Y5.A4       net (fanout=2)        0.609   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-    SLICE_X32Y5.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA/COUT1
-    SLICE_X32Y5.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<13>
-    SLICE_X32Y5.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA/COUT1
-    SLICE_X32Y5.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<14>
-    SLICE_X32Y5.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA/COUT1
-    SLICE_X32Y5.D5       net (fanout=2)        0.264   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<15>
-    SLICE_X32Y5.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA/COUT1
-    SLICE_X34Y7.C6       net (fanout=2)        0.882   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-    SLICE_X34Y7.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA/COUT1
-    SLICE_X34Y7.D5       net (fanout=2)        0.292   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<17>
-    SLICE_X34Y7.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA/COUT1
-    SLICE_X36Y8.A4       net (fanout=2)        0.666   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<18>
-    SLICE_X36Y8.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA/COUT1
-    SLICE_X36Y8.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<19>
-    SLICE_X36Y8.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA/COUT1
-    SLICE_X36Y8.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<20>
-    SLICE_X36Y8.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA/COUT1
-    SLICE_X36Y8.D5       net (fanout=2)        0.263   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<21>
-    SLICE_X36Y8.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA/COUT1
-    SLICE_X34Y11.A4      net (fanout=2)        0.923   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-    SLICE_X34Y11.A       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA/COUT1
-    SLICE_X34Y11.B6      net (fanout=2)        0.157   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<23>
-    SLICE_X34Y11.B       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA/COUT1
-    SLICE_X34Y11.C4      net (fanout=2)        0.445   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<24>
-    SLICE_X34Y11.C       Tilo                  0.374   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA/COUT1
-    SLICE_X34Y11.D5      net (fanout=2)        0.295   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<25>
-    SLICE_X34Y11.D       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA/COUT1
-    SLICE_X36Y13.A5      net (fanout=2)        0.741   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-    SLICE_X36Y13.A       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA/COUT1
-    SLICE_X36Y13.B6      net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<27>
-    SLICE_X36Y13.B       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA/COUT1
-    SLICE_X36Y12.A4      net (fanout=2)        0.575   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<28>
-    SLICE_X36Y12.A       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA/COUT1
-    SLICE_X36Y11.C4      net (fanout=2)        0.611   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<29>
-    SLICE_X36Y11.C       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<30>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[30].NEXT_FA/R1
-    SLICE_X36Y10.A3      net (fanout=1)        0.683   MIPS_SC_PROCESSOR/incremented<30>
-    SLICE_X36Y10.A       Tilo                  0.333   instr_addr<30>
-                                                       MIPS_SC_PROCESSOR/Branch_MUX/Mmux_output241
-    SLICE_X36Y10.B6      net (fanout=1)        0.147   MIPS_SC_PROCESSOR/branchcalc<30>
-    SLICE_X36Y10.CLK     Tas                   0.571   instr_addr<30>
-                                                       MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output241
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_30
-    -------------------------------------------------  ---------------------------
-    Total                                     24.739ns (11.536ns logic, 13.203ns route)
-                                                       (46.6% logic, 53.4% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X27Y19.DQ         Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
+                                                          MIPS_SC_PROCESSOR/MEMWB/data_69
+    SLICE_X12Y25.C1         net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
+    SLICE_X12Y25.C          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B4         net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
+    SLICE_X19Y19.D5         net (fanout=3)        1.917   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
+    SLICE_X19Y19.D          Tilo                  0.341   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o_1
+    SLICE_X16Y16.B1         net (fanout=6)        1.543   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
+    SLICE_X16Y16.B          Tilo                  0.333   MIPS_SC_PROCESSOR/ForwardAout<2>
+                                                          MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R231
+    SLICE_X18Y26.A3         net (fanout=11)       2.294   MIPS_SC_PROCESSOR/ForwardAout<2>
+    SLICE_X18Y26.COUT       Topcya                0.712   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<0>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.COUT       Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CMUX       Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X18Y18.D6         net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X18Y18.D          Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                          MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X15Y14.A3         net (fanout=37)       1.249   MIPS_SC_PROCESSOR/branched1
+    SLICE_X15Y14.A          Tilo                  0.341   instr_data<21>_0_0_0
+                                                          instr_data<21>_0_01
+    RAMB8_X1Y8.ADDRBRDADDR5 net (fanout=1)        1.855   instr_data<21>_0_0_0
+    RAMB8_X1Y8.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    ----------------------------------------------------  ---------------------------
+    Total                                        18.346ns (4.243ns logic, 14.103ns route)
+                                                          (23.1% logic, 76.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.343ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/COUNTER/data_1 (FF)
-  Destination:          MIPS_SC_PROCESSOR/COUNTER/data_30 (FF)
+Slack (setup path):     11.641ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS (RAM)
   Requirement:          30.000ns
-  Data Path Delay:      24.613ns (Levels of Logic = 31)
-  Clock Path Skew:      -0.009ns (0.343 - 0.352)
+  Data Path Delay:      18.334ns (Levels of Logic = 9)
+  Clock Path Skew:      0.010ns (0.345 - 0.335)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -171,117 +141,90 @@ Slack (setup path):     5.343ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/COUNTER/data_1 to MIPS_SC_PROCESSOR/COUNTER/data_30
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X31Y4.BQ       Tcko                  0.548   instr_addr<3>
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_1
-    SLICE_X33Y4.A4       net (fanout=20)       0.680   instr_addr<1>
-    SLICE_X33Y4.A        Tilo                  0.341   MIPS_SC_PROCESSOR/IDEXs<119>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[2].NEXT_FA/COUT1
-    SLICE_X33Y3.A4       net (fanout=2)        0.592   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<2>
-    SLICE_X33Y3.A        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA/COUT1
-    SLICE_X33Y3.B6       net (fanout=2)        0.156   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<3>
-    SLICE_X33Y3.B        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA/COUT1
-    SLICE_X30Y4.A6       net (fanout=2)        0.439   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-    SLICE_X30Y4.A        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA/COUT1
-    SLICE_X30Y4.B6       net (fanout=2)        0.152   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<5>
-    SLICE_X30Y4.B        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA/COUT1
-    SLICE_X30Y4.C4       net (fanout=2)        0.440   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<6>
-    SLICE_X30Y4.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA/COUT1
-    SLICE_X30Y4.D5       net (fanout=2)        0.290   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<7>
-    SLICE_X30Y4.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA/COUT1
-    SLICE_X32Y3.A3       net (fanout=2)        0.746   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<8>
-    SLICE_X32Y3.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA/COUT1
-    SLICE_X32Y3.B6       net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<9>
-    SLICE_X32Y3.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA/COUT1
-    SLICE_X32Y3.C4       net (fanout=2)        0.382   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<10>
-    SLICE_X32Y3.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA/COUT1
-    SLICE_X32Y3.D5       net (fanout=2)        0.262   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<11>
-    SLICE_X32Y3.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA/COUT1
-    SLICE_X32Y5.A4       net (fanout=2)        0.609   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-    SLICE_X32Y5.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA/COUT1
-    SLICE_X32Y5.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<13>
-    SLICE_X32Y5.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA/COUT1
-    SLICE_X32Y5.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<14>
-    SLICE_X32Y5.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA/COUT1
-    SLICE_X32Y5.D5       net (fanout=2)        0.264   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<15>
-    SLICE_X32Y5.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA/COUT1
-    SLICE_X34Y7.C6       net (fanout=2)        0.882   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-    SLICE_X34Y7.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA/COUT1
-    SLICE_X34Y7.D5       net (fanout=2)        0.292   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<17>
-    SLICE_X34Y7.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA/COUT1
-    SLICE_X36Y8.A4       net (fanout=2)        0.666   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<18>
-    SLICE_X36Y8.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA/COUT1
-    SLICE_X36Y8.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<19>
-    SLICE_X36Y8.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA/COUT1
-    SLICE_X36Y8.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<20>
-    SLICE_X36Y8.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA/COUT1
-    SLICE_X36Y8.D5       net (fanout=2)        0.263   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<21>
-    SLICE_X36Y8.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA/COUT1
-    SLICE_X34Y11.A4      net (fanout=2)        0.923   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-    SLICE_X34Y11.A       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA/COUT1
-    SLICE_X34Y11.B6      net (fanout=2)        0.157   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<23>
-    SLICE_X34Y11.B       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA/COUT1
-    SLICE_X34Y11.C4      net (fanout=2)        0.445   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<24>
-    SLICE_X34Y11.C       Tilo                  0.374   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA/COUT1
-    SLICE_X34Y11.D5      net (fanout=2)        0.295   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<25>
-    SLICE_X34Y11.D       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA/COUT1
-    SLICE_X36Y13.A5      net (fanout=2)        0.741   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-    SLICE_X36Y13.A       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA/COUT1
-    SLICE_X36Y13.B6      net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<27>
-    SLICE_X36Y13.B       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA/COUT1
-    SLICE_X36Y12.A4      net (fanout=2)        0.575   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<28>
-    SLICE_X36Y12.A       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA/COUT1
-    SLICE_X36Y11.C4      net (fanout=2)        0.611   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<29>
-    SLICE_X36Y11.C       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<30>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[30].NEXT_FA/R1
-    SLICE_X36Y10.A3      net (fanout=1)        0.683   MIPS_SC_PROCESSOR/incremented<30>
-    SLICE_X36Y10.A       Tilo                  0.333   instr_addr<30>
-                                                       MIPS_SC_PROCESSOR/Branch_MUX/Mmux_output241
-    SLICE_X36Y10.B6      net (fanout=1)        0.147   MIPS_SC_PROCESSOR/branchcalc<30>
-    SLICE_X36Y10.CLK     Tas                   0.571   instr_addr<30>
-                                                       MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output241
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_30
-    -------------------------------------------------  ---------------------------
-    Total                                     24.613ns (11.536ns logic, 13.077ns route)
-                                                       (46.9% logic, 53.1% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X27Y19.DQ         Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
+                                                          MIPS_SC_PROCESSOR/MEMWB/data_69
+    SLICE_X12Y25.C1         net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
+    SLICE_X12Y25.C          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B4         net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B          Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
+    SLICE_X18Y19.A4         net (fanout=3)        2.038   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
+    SLICE_X18Y19.A          Tilo                  0.373   MIPS_SC_PROCESSOR/MEMWB/data<2>
+                                                          MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X26Y18.B2         net (fanout=26)       1.642   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X26Y18.B          Tilo                  0.373   MIPS_SC_PROCESSOR/ForwardAout<8>
+                                                          MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R311
+    SLICE_X18Y26.C3         net (fanout=12)       2.215   MIPS_SC_PROCESSOR/ForwardAout<8>
+    SLICE_X18Y26.COUT       Topcyc                0.487   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<2>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.COUT       Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CIN        net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CMUX       Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                          MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X18Y18.D6         net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X18Y18.D          Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                          MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X15Y14.A3         net (fanout=37)       1.249   MIPS_SC_PROCESSOR/branched1
+    SLICE_X15Y14.A          Tilo                  0.341   instr_data<21>_0_0_0
+                                                          instr_data<21>_0_01
+    RAMB8_X1Y8.ADDRBRDADDR5 net (fanout=1)        1.855   instr_data<21>_0_0_0
+    RAMB8_X1Y8.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+                                                          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS
+    ----------------------------------------------------  ---------------------------
+    Total                                        18.334ns (4.090ns logic, 14.244ns route)
+                                                          (22.3% logic, 77.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     6.261ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/COUNTER/data_3 (FF)
-  Destination:          MIPS_SC_PROCESSOR/COUNTER/data_30 (FF)
+
+Paths for end point MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAMB8_X0Y14.ADDRBRDADDR5), 5171 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.697ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               INST_MEM/Mram_MEM (RAM)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
+  Requirement:          15.000ns
+  Data Path Delay:      8.247ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.021ns (0.461 - 0.482)
+  Source Clock:         clk_BUFGP falling at 15.000ns
+  Destination Clock:    clk_BUFGP rising at 30.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: INST_MEM/Mram_MEM to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    RAMB8_X1Y13.DOBDO0       Trcko_DOB             2.950   INST_MEM/Mram_MEM
+                                                           INST_MEM/Mram_MEM
+    SLICE_X5Y30.B1           net (fanout=2)        3.982   instr_data<16>
+    SLICE_X5Y30.B            Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_95
+                                                           instr_data<16>_0_01
+    RAMB8_X0Y14.ADDRBRDADDR5 net (fanout=1)        0.574   instr_data<16>_0_0_0
+    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    -----------------------------------------------------  ---------------------------
+    Total                                          8.247ns (3.691ns logic, 4.556ns route)
+                                                           (44.8% logic, 55.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.903ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
   Requirement:          30.000ns
-  Data Path Delay:      23.695ns (Levels of Logic = 30)
-  Clock Path Skew:      -0.009ns (0.343 - 0.352)
+  Data Path Delay:      19.061ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.001ns (0.461 - 0.462)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -292,117 +235,54 @@ Slack (setup path):     6.261ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/COUNTER/data_3 to MIPS_SC_PROCESSOR/COUNTER/data_30
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X31Y4.DQ       Tcko                  0.548   instr_addr<3>
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_3
-    SLICE_X33Y3.A6       net (fanout=19)       0.695   instr_addr<3>
-    SLICE_X33Y3.A        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA/COUT1
-    SLICE_X33Y3.B6       net (fanout=2)        0.156   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<3>
-    SLICE_X33Y3.B        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA/COUT1
-    SLICE_X30Y4.A6       net (fanout=2)        0.439   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-    SLICE_X30Y4.A        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA/COUT1
-    SLICE_X30Y4.B6       net (fanout=2)        0.152   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<5>
-    SLICE_X30Y4.B        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA/COUT1
-    SLICE_X30Y4.C4       net (fanout=2)        0.440   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<6>
-    SLICE_X30Y4.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA/COUT1
-    SLICE_X30Y4.D5       net (fanout=2)        0.290   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<7>
-    SLICE_X30Y4.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA/COUT1
-    SLICE_X32Y3.A3       net (fanout=2)        0.746   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<8>
-    SLICE_X32Y3.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA/COUT1
-    SLICE_X32Y3.B6       net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<9>
-    SLICE_X32Y3.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA/COUT1
-    SLICE_X32Y3.C4       net (fanout=2)        0.382   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<10>
-    SLICE_X32Y3.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA/COUT1
-    SLICE_X32Y3.D5       net (fanout=2)        0.262   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<11>
-    SLICE_X32Y3.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA/COUT1
-    SLICE_X32Y5.A4       net (fanout=2)        0.609   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-    SLICE_X32Y5.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA/COUT1
-    SLICE_X32Y5.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<13>
-    SLICE_X32Y5.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA/COUT1
-    SLICE_X32Y5.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<14>
-    SLICE_X32Y5.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA/COUT1
-    SLICE_X32Y5.D5       net (fanout=2)        0.264   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<15>
-    SLICE_X32Y5.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA/COUT1
-    SLICE_X34Y7.C6       net (fanout=2)        0.882   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-    SLICE_X34Y7.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA/COUT1
-    SLICE_X34Y7.D5       net (fanout=2)        0.292   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<17>
-    SLICE_X34Y7.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA/COUT1
-    SLICE_X36Y8.A4       net (fanout=2)        0.666   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<18>
-    SLICE_X36Y8.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA/COUT1
-    SLICE_X36Y8.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<19>
-    SLICE_X36Y8.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA/COUT1
-    SLICE_X36Y8.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<20>
-    SLICE_X36Y8.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA/COUT1
-    SLICE_X36Y8.D5       net (fanout=2)        0.263   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<21>
-    SLICE_X36Y8.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA/COUT1
-    SLICE_X34Y11.A4      net (fanout=2)        0.923   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-    SLICE_X34Y11.A       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA/COUT1
-    SLICE_X34Y11.B6      net (fanout=2)        0.157   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<23>
-    SLICE_X34Y11.B       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA/COUT1
-    SLICE_X34Y11.C4      net (fanout=2)        0.445   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<24>
-    SLICE_X34Y11.C       Tilo                  0.374   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA/COUT1
-    SLICE_X34Y11.D5      net (fanout=2)        0.295   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<25>
-    SLICE_X34Y11.D       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA/COUT1
-    SLICE_X36Y13.A5      net (fanout=2)        0.741   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-    SLICE_X36Y13.A       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA/COUT1
-    SLICE_X36Y13.B6      net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<27>
-    SLICE_X36Y13.B       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA/COUT1
-    SLICE_X36Y12.A4      net (fanout=2)        0.575   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<28>
-    SLICE_X36Y12.A       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA/COUT1
-    SLICE_X36Y11.C4      net (fanout=2)        0.611   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<29>
-    SLICE_X36Y11.C       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<30>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[30].NEXT_FA/R1
-    SLICE_X36Y10.A3      net (fanout=1)        0.683   MIPS_SC_PROCESSOR/incremented<30>
-    SLICE_X36Y10.A       Tilo                  0.333   instr_addr<30>
-                                                       MIPS_SC_PROCESSOR/Branch_MUX/Mmux_output241
-    SLICE_X36Y10.B6      net (fanout=1)        0.147   MIPS_SC_PROCESSOR/branchcalc<30>
-    SLICE_X36Y10.CLK     Tas                   0.571   instr_addr<30>
-                                                       MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output241
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_30
-    -------------------------------------------------  ---------------------------
-    Total                                     23.695ns (11.195ns logic, 12.500ns route)
-                                                       (47.2% logic, 52.8% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X27Y19.DQ          Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
+                                                           MIPS_SC_PROCESSOR/MEMWB/data_69
+    SLICE_X12Y25.C1          net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
+    SLICE_X12Y25.C           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B4          net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
+    SLICE_X19Y19.D5          net (fanout=3)        1.917   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
+    SLICE_X19Y19.D           Tilo                  0.341   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o_1
+    SLICE_X16Y16.B1          net (fanout=6)        1.543   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
+    SLICE_X16Y16.B           Tilo                  0.333   MIPS_SC_PROCESSOR/ForwardAout<2>
+                                                           MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R231
+    SLICE_X18Y26.A3          net (fanout=11)       2.294   MIPS_SC_PROCESSOR/ForwardAout<2>
+    SLICE_X18Y26.COUT        Topcya                0.712   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<0>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.COUT        Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CMUX        Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X18Y18.D6          net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X18Y18.D           Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                           MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X5Y30.B3           net (fanout=37)       3.245   MIPS_SC_PROCESSOR/branched1
+    SLICE_X5Y30.B            Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_95
+                                                           instr_data<16>_0_01
+    RAMB8_X0Y14.ADDRBRDADDR5 net (fanout=1)        0.574   instr_data<16>_0_0_0
+    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    -----------------------------------------------------  ---------------------------
+    Total                                         19.061ns (4.243ns logic, 14.818ns route)
+                                                           (22.3% logic, 77.7% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point MIPS_SC_PROCESSOR/COUNTER/data_31 (SLICE_X36Y13.D5), 12372 paths
---------------------------------------------------------------------------------
-Slack (setup path):     5.655ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/COUNTER/data_2 (FF)
-  Destination:          MIPS_SC_PROCESSOR/COUNTER/data_31 (FF)
+Slack (setup path):     10.915ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
   Requirement:          30.000ns
-  Data Path Delay:      24.308ns (Levels of Logic = 31)
-  Clock Path Skew:      -0.002ns (0.350 - 0.352)
+  Data Path Delay:      19.049ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.001ns (0.461 - 0.462)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -413,117 +293,90 @@ Slack (setup path):     5.655ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/COUNTER/data_2 to MIPS_SC_PROCESSOR/COUNTER/data_31
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X31Y4.CQ       Tcko                  0.548   instr_addr<3>
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_2
-    SLICE_X33Y4.A3       net (fanout=19)       0.806   instr_addr<2>
-    SLICE_X33Y4.A        Tilo                  0.341   MIPS_SC_PROCESSOR/IDEXs<119>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[2].NEXT_FA/COUT1
-    SLICE_X33Y3.A4       net (fanout=2)        0.592   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<2>
-    SLICE_X33Y3.A        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA/COUT1
-    SLICE_X33Y3.B6       net (fanout=2)        0.156   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<3>
-    SLICE_X33Y3.B        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA/COUT1
-    SLICE_X30Y4.A6       net (fanout=2)        0.439   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-    SLICE_X30Y4.A        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA/COUT1
-    SLICE_X30Y4.B6       net (fanout=2)        0.152   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<5>
-    SLICE_X30Y4.B        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA/COUT1
-    SLICE_X30Y4.C4       net (fanout=2)        0.440   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<6>
-    SLICE_X30Y4.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA/COUT1
-    SLICE_X30Y4.D5       net (fanout=2)        0.290   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<7>
-    SLICE_X30Y4.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA/COUT1
-    SLICE_X32Y3.A3       net (fanout=2)        0.746   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<8>
-    SLICE_X32Y3.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA/COUT1
-    SLICE_X32Y3.B6       net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<9>
-    SLICE_X32Y3.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA/COUT1
-    SLICE_X32Y3.C4       net (fanout=2)        0.382   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<10>
-    SLICE_X32Y3.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA/COUT1
-    SLICE_X32Y3.D5       net (fanout=2)        0.262   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<11>
-    SLICE_X32Y3.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA/COUT1
-    SLICE_X32Y5.A4       net (fanout=2)        0.609   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-    SLICE_X32Y5.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA/COUT1
-    SLICE_X32Y5.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<13>
-    SLICE_X32Y5.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA/COUT1
-    SLICE_X32Y5.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<14>
-    SLICE_X32Y5.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA/COUT1
-    SLICE_X32Y5.D5       net (fanout=2)        0.264   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<15>
-    SLICE_X32Y5.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA/COUT1
-    SLICE_X34Y7.C6       net (fanout=2)        0.882   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-    SLICE_X34Y7.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA/COUT1
-    SLICE_X34Y7.D5       net (fanout=2)        0.292   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<17>
-    SLICE_X34Y7.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA/COUT1
-    SLICE_X36Y8.A4       net (fanout=2)        0.666   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<18>
-    SLICE_X36Y8.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA/COUT1
-    SLICE_X36Y8.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<19>
-    SLICE_X36Y8.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA/COUT1
-    SLICE_X36Y8.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<20>
-    SLICE_X36Y8.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA/COUT1
-    SLICE_X36Y8.D5       net (fanout=2)        0.263   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<21>
-    SLICE_X36Y8.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA/COUT1
-    SLICE_X34Y11.A4      net (fanout=2)        0.923   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-    SLICE_X34Y11.A       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA/COUT1
-    SLICE_X34Y11.B6      net (fanout=2)        0.157   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<23>
-    SLICE_X34Y11.B       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA/COUT1
-    SLICE_X34Y11.C4      net (fanout=2)        0.445   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<24>
-    SLICE_X34Y11.C       Tilo                  0.374   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA/COUT1
-    SLICE_X34Y11.D5      net (fanout=2)        0.295   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<25>
-    SLICE_X34Y11.D       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA/COUT1
-    SLICE_X36Y13.A5      net (fanout=2)        0.741   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-    SLICE_X36Y13.A       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA/COUT1
-    SLICE_X36Y13.B6      net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<27>
-    SLICE_X36Y13.B       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA/COUT1
-    SLICE_X36Y12.A4      net (fanout=2)        0.575   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<28>
-    SLICE_X36Y12.A       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA/COUT1
-    SLICE_X36Y12.B6      net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<29>
-    SLICE_X36Y12.B       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[31].NEXT_FA/R1
-    SLICE_X36Y13.C4      net (fanout=1)        0.601   MIPS_SC_PROCESSOR/incremented<31>
-    SLICE_X36Y13.C       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Branch_MUX/Mmux_output251
-    SLICE_X36Y13.D5      net (fanout=1)        0.255   MIPS_SC_PROCESSOR/branchcalc<31>
-    SLICE_X36Y13.CLK     Tas                   0.571   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output251
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_31
-    -------------------------------------------------  ---------------------------
-    Total                                     24.308ns (11.536ns logic, 12.772ns route)
-                                                       (47.5% logic, 52.5% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X27Y19.DQ          Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
+                                                           MIPS_SC_PROCESSOR/MEMWB/data_69
+    SLICE_X12Y25.C1          net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
+    SLICE_X12Y25.C           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B4          net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
+    SLICE_X18Y19.A4          net (fanout=3)        2.038   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
+    SLICE_X18Y19.A           Tilo                  0.373   MIPS_SC_PROCESSOR/MEMWB/data<2>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X26Y18.B2          net (fanout=26)       1.642   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X26Y18.B           Tilo                  0.373   MIPS_SC_PROCESSOR/ForwardAout<8>
+                                                           MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R311
+    SLICE_X18Y26.C3          net (fanout=12)       2.215   MIPS_SC_PROCESSOR/ForwardAout<8>
+    SLICE_X18Y26.COUT        Topcyc                0.487   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<2>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.COUT        Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CMUX        Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X18Y18.D6          net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X18Y18.D           Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                           MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X5Y30.B3           net (fanout=37)       3.245   MIPS_SC_PROCESSOR/branched1
+    SLICE_X5Y30.B            Tilo                  0.341   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_95
+                                                           instr_data<16>_0_01
+    RAMB8_X0Y14.ADDRBRDADDR5 net (fanout=1)        0.574   instr_data<16>_0_0_0
+    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    -----------------------------------------------------  ---------------------------
+    Total                                         19.049ns (4.090ns logic, 14.959ns route)
+                                                           (21.5% logic, 78.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.781ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/COUNTER/data_1 (FF)
-  Destination:          MIPS_SC_PROCESSOR/COUNTER/data_31 (FF)
+
+Paths for end point MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAMB8_X0Y14.ADDRBRDADDR7), 5171 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.983ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               INST_MEM/Mram_MEM (RAM)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
+  Requirement:          15.000ns
+  Data Path Delay:      7.961ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.021ns (0.461 - 0.482)
+  Source Clock:         clk_BUFGP falling at 15.000ns
+  Destination Clock:    clk_BUFGP rising at 30.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: INST_MEM/Mram_MEM to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    RAMB8_X1Y13.DOBDO2       Trcko_DOB             2.950   INST_MEM/Mram_MEM
+                                                           INST_MEM/Mram_MEM
+    SLICE_X0Y29.D5           net (fanout=2)        3.382   instr_data<18>
+    SLICE_X0Y29.D            Tilo                  0.333   MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_38
+                                                           instr_data<18>_0_01
+    RAMB8_X0Y14.ADDRBRDADDR7 net (fanout=1)        0.896   instr_data<18>_0_0_0
+    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    -----------------------------------------------------  ---------------------------
+    Total                                          7.961ns (3.683ns logic, 4.278ns route)
+                                                           (46.3% logic, 53.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.142ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
   Requirement:          30.000ns
-  Data Path Delay:      24.182ns (Levels of Logic = 31)
-  Clock Path Skew:      -0.002ns (0.350 - 0.352)
+  Data Path Delay:      18.822ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.001ns (0.461 - 0.462)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -534,117 +387,54 @@ Slack (setup path):     5.781ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/COUNTER/data_1 to MIPS_SC_PROCESSOR/COUNTER/data_31
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X31Y4.BQ       Tcko                  0.548   instr_addr<3>
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_1
-    SLICE_X33Y4.A4       net (fanout=20)       0.680   instr_addr<1>
-    SLICE_X33Y4.A        Tilo                  0.341   MIPS_SC_PROCESSOR/IDEXs<119>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[2].NEXT_FA/COUT1
-    SLICE_X33Y3.A4       net (fanout=2)        0.592   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<2>
-    SLICE_X33Y3.A        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA/COUT1
-    SLICE_X33Y3.B6       net (fanout=2)        0.156   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<3>
-    SLICE_X33Y3.B        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA/COUT1
-    SLICE_X30Y4.A6       net (fanout=2)        0.439   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-    SLICE_X30Y4.A        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA/COUT1
-    SLICE_X30Y4.B6       net (fanout=2)        0.152   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<5>
-    SLICE_X30Y4.B        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA/COUT1
-    SLICE_X30Y4.C4       net (fanout=2)        0.440   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<6>
-    SLICE_X30Y4.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA/COUT1
-    SLICE_X30Y4.D5       net (fanout=2)        0.290   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<7>
-    SLICE_X30Y4.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA/COUT1
-    SLICE_X32Y3.A3       net (fanout=2)        0.746   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<8>
-    SLICE_X32Y3.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA/COUT1
-    SLICE_X32Y3.B6       net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<9>
-    SLICE_X32Y3.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA/COUT1
-    SLICE_X32Y3.C4       net (fanout=2)        0.382   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<10>
-    SLICE_X32Y3.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA/COUT1
-    SLICE_X32Y3.D5       net (fanout=2)        0.262   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<11>
-    SLICE_X32Y3.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA/COUT1
-    SLICE_X32Y5.A4       net (fanout=2)        0.609   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-    SLICE_X32Y5.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA/COUT1
-    SLICE_X32Y5.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<13>
-    SLICE_X32Y5.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA/COUT1
-    SLICE_X32Y5.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<14>
-    SLICE_X32Y5.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA/COUT1
-    SLICE_X32Y5.D5       net (fanout=2)        0.264   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<15>
-    SLICE_X32Y5.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA/COUT1
-    SLICE_X34Y7.C6       net (fanout=2)        0.882   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-    SLICE_X34Y7.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA/COUT1
-    SLICE_X34Y7.D5       net (fanout=2)        0.292   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<17>
-    SLICE_X34Y7.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA/COUT1
-    SLICE_X36Y8.A4       net (fanout=2)        0.666   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<18>
-    SLICE_X36Y8.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA/COUT1
-    SLICE_X36Y8.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<19>
-    SLICE_X36Y8.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA/COUT1
-    SLICE_X36Y8.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<20>
-    SLICE_X36Y8.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA/COUT1
-    SLICE_X36Y8.D5       net (fanout=2)        0.263   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<21>
-    SLICE_X36Y8.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA/COUT1
-    SLICE_X34Y11.A4      net (fanout=2)        0.923   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-    SLICE_X34Y11.A       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA/COUT1
-    SLICE_X34Y11.B6      net (fanout=2)        0.157   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<23>
-    SLICE_X34Y11.B       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA/COUT1
-    SLICE_X34Y11.C4      net (fanout=2)        0.445   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<24>
-    SLICE_X34Y11.C       Tilo                  0.374   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA/COUT1
-    SLICE_X34Y11.D5      net (fanout=2)        0.295   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<25>
-    SLICE_X34Y11.D       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA/COUT1
-    SLICE_X36Y13.A5      net (fanout=2)        0.741   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-    SLICE_X36Y13.A       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA/COUT1
-    SLICE_X36Y13.B6      net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<27>
-    SLICE_X36Y13.B       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA/COUT1
-    SLICE_X36Y12.A4      net (fanout=2)        0.575   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<28>
-    SLICE_X36Y12.A       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA/COUT1
-    SLICE_X36Y12.B6      net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<29>
-    SLICE_X36Y12.B       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[31].NEXT_FA/R1
-    SLICE_X36Y13.C4      net (fanout=1)        0.601   MIPS_SC_PROCESSOR/incremented<31>
-    SLICE_X36Y13.C       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Branch_MUX/Mmux_output251
-    SLICE_X36Y13.D5      net (fanout=1)        0.255   MIPS_SC_PROCESSOR/branchcalc<31>
-    SLICE_X36Y13.CLK     Tas                   0.571   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output251
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_31
-    -------------------------------------------------  ---------------------------
-    Total                                     24.182ns (11.536ns logic, 12.646ns route)
-                                                       (47.7% logic, 52.3% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X27Y19.DQ          Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
+                                                           MIPS_SC_PROCESSOR/MEMWB/data_69
+    SLICE_X12Y25.C1          net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
+    SLICE_X12Y25.C           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B4          net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
+    SLICE_X19Y19.D5          net (fanout=3)        1.917   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
+    SLICE_X19Y19.D           Tilo                  0.341   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o_1
+    SLICE_X16Y16.B1          net (fanout=6)        1.543   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o1
+    SLICE_X16Y16.B           Tilo                  0.333   MIPS_SC_PROCESSOR/ForwardAout<2>
+                                                           MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R231
+    SLICE_X18Y26.A3          net (fanout=11)       2.294   MIPS_SC_PROCESSOR/ForwardAout<2>
+    SLICE_X18Y26.COUT        Topcya                0.712   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<0>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.COUT        Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CMUX        Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X18Y18.D6          net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X18Y18.D           Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                           MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X0Y29.D6           net (fanout=37)       2.692   MIPS_SC_PROCESSOR/branched1
+    SLICE_X0Y29.D            Tilo                  0.333   MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_38
+                                                           instr_data<18>_0_01
+    RAMB8_X0Y14.ADDRBRDADDR7 net (fanout=1)        0.896   instr_data<18>_0_0_0
+    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    -----------------------------------------------------  ---------------------------
+    Total                                         18.822ns (4.235ns logic, 14.587ns route)
+                                                           (22.5% logic, 77.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     6.699ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/COUNTER/data_3 (FF)
-  Destination:          MIPS_SC_PROCESSOR/COUNTER/data_31 (FF)
+Slack (setup path):     11.154ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS_SC_PROCESSOR/MEMWB/data_69 (FF)
+  Destination:          MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1 (RAM)
   Requirement:          30.000ns
-  Data Path Delay:      23.264ns (Levels of Logic = 30)
-  Clock Path Skew:      -0.002ns (0.350 - 0.352)
+  Data Path Delay:      18.810ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.001ns (0.461 - 0.462)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.035ns
@@ -655,571 +445,157 @@ Slack (setup path):     6.699ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/COUNTER/data_3 to MIPS_SC_PROCESSOR/COUNTER/data_31
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X31Y4.DQ       Tcko                  0.548   instr_addr<3>
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_3
-    SLICE_X33Y3.A6       net (fanout=19)       0.695   instr_addr<3>
-    SLICE_X33Y3.A        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA/COUT1
-    SLICE_X33Y3.B6       net (fanout=2)        0.156   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<3>
-    SLICE_X33Y3.B        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA/COUT1
-    SLICE_X30Y4.A6       net (fanout=2)        0.439   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-    SLICE_X30Y4.A        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA/COUT1
-    SLICE_X30Y4.B6       net (fanout=2)        0.152   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<5>
-    SLICE_X30Y4.B        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA/COUT1
-    SLICE_X30Y4.C4       net (fanout=2)        0.440   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<6>
-    SLICE_X30Y4.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA/COUT1
-    SLICE_X30Y4.D5       net (fanout=2)        0.290   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<7>
-    SLICE_X30Y4.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA/COUT1
-    SLICE_X32Y3.A3       net (fanout=2)        0.746   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<8>
-    SLICE_X32Y3.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA/COUT1
-    SLICE_X32Y3.B6       net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<9>
-    SLICE_X32Y3.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA/COUT1
-    SLICE_X32Y3.C4       net (fanout=2)        0.382   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<10>
-    SLICE_X32Y3.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA/COUT1
-    SLICE_X32Y3.D5       net (fanout=2)        0.262   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<11>
-    SLICE_X32Y3.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA/COUT1
-    SLICE_X32Y5.A4       net (fanout=2)        0.609   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-    SLICE_X32Y5.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA/COUT1
-    SLICE_X32Y5.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<13>
-    SLICE_X32Y5.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA/COUT1
-    SLICE_X32Y5.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<14>
-    SLICE_X32Y5.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA/COUT1
-    SLICE_X32Y5.D5       net (fanout=2)        0.264   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<15>
-    SLICE_X32Y5.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA/COUT1
-    SLICE_X34Y7.C6       net (fanout=2)        0.882   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-    SLICE_X34Y7.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA/COUT1
-    SLICE_X34Y7.D5       net (fanout=2)        0.292   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<17>
-    SLICE_X34Y7.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA/COUT1
-    SLICE_X36Y8.A4       net (fanout=2)        0.666   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<18>
-    SLICE_X36Y8.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA/COUT1
-    SLICE_X36Y8.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<19>
-    SLICE_X36Y8.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA/COUT1
-    SLICE_X36Y8.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<20>
-    SLICE_X36Y8.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA/COUT1
-    SLICE_X36Y8.D5       net (fanout=2)        0.263   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<21>
-    SLICE_X36Y8.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA/COUT1
-    SLICE_X34Y11.A4      net (fanout=2)        0.923   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-    SLICE_X34Y11.A       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA/COUT1
-    SLICE_X34Y11.B6      net (fanout=2)        0.157   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<23>
-    SLICE_X34Y11.B       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA/COUT1
-    SLICE_X34Y11.C4      net (fanout=2)        0.445   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<24>
-    SLICE_X34Y11.C       Tilo                  0.374   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA/COUT1
-    SLICE_X34Y11.D5      net (fanout=2)        0.295   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<25>
-    SLICE_X34Y11.D       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA/COUT1
-    SLICE_X36Y13.A5      net (fanout=2)        0.741   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-    SLICE_X36Y13.A       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA/COUT1
-    SLICE_X36Y13.B6      net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<27>
-    SLICE_X36Y13.B       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA/COUT1
-    SLICE_X36Y12.A4      net (fanout=2)        0.575   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<28>
-    SLICE_X36Y12.A       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA/COUT1
-    SLICE_X36Y12.B6      net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<29>
-    SLICE_X36Y12.B       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[31].NEXT_FA/R1
-    SLICE_X36Y13.C4      net (fanout=1)        0.601   MIPS_SC_PROCESSOR/incremented<31>
-    SLICE_X36Y13.C       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Branch_MUX/Mmux_output251
-    SLICE_X36Y13.D5      net (fanout=1)        0.255   MIPS_SC_PROCESSOR/branchcalc<31>
-    SLICE_X36Y13.CLK     Tas                   0.571   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output251
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_31
-    -------------------------------------------------  ---------------------------
-    Total                                     23.264ns (11.195ns logic, 12.069ns route)
-                                                       (48.1% logic, 51.9% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point MIPS_SC_PROCESSOR/COUNTER/data_29 (SLICE_X36Y9.D5), 12364 paths
---------------------------------------------------------------------------------
-Slack (setup path):     6.130ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/COUNTER/data_2 (FF)
-  Destination:          MIPS_SC_PROCESSOR/COUNTER/data_29 (FF)
-  Requirement:          30.000ns
-  Data Path Delay:      23.824ns (Levels of Logic = 30)
-  Clock Path Skew:      -0.011ns (0.341 - 0.352)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 30.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/COUNTER/data_2 to MIPS_SC_PROCESSOR/COUNTER/data_29
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X31Y4.CQ       Tcko                  0.548   instr_addr<3>
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_2
-    SLICE_X33Y4.A3       net (fanout=19)       0.806   instr_addr<2>
-    SLICE_X33Y4.A        Tilo                  0.341   MIPS_SC_PROCESSOR/IDEXs<119>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[2].NEXT_FA/COUT1
-    SLICE_X33Y3.A4       net (fanout=2)        0.592   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<2>
-    SLICE_X33Y3.A        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA/COUT1
-    SLICE_X33Y3.B6       net (fanout=2)        0.156   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<3>
-    SLICE_X33Y3.B        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA/COUT1
-    SLICE_X30Y4.A6       net (fanout=2)        0.439   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-    SLICE_X30Y4.A        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA/COUT1
-    SLICE_X30Y4.B6       net (fanout=2)        0.152   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<5>
-    SLICE_X30Y4.B        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA/COUT1
-    SLICE_X30Y4.C4       net (fanout=2)        0.440   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<6>
-    SLICE_X30Y4.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA/COUT1
-    SLICE_X30Y4.D5       net (fanout=2)        0.290   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<7>
-    SLICE_X30Y4.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA/COUT1
-    SLICE_X32Y3.A3       net (fanout=2)        0.746   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<8>
-    SLICE_X32Y3.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA/COUT1
-    SLICE_X32Y3.B6       net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<9>
-    SLICE_X32Y3.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA/COUT1
-    SLICE_X32Y3.C4       net (fanout=2)        0.382   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<10>
-    SLICE_X32Y3.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA/COUT1
-    SLICE_X32Y3.D5       net (fanout=2)        0.262   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<11>
-    SLICE_X32Y3.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA/COUT1
-    SLICE_X32Y5.A4       net (fanout=2)        0.609   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-    SLICE_X32Y5.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA/COUT1
-    SLICE_X32Y5.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<13>
-    SLICE_X32Y5.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA/COUT1
-    SLICE_X32Y5.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<14>
-    SLICE_X32Y5.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA/COUT1
-    SLICE_X32Y5.D5       net (fanout=2)        0.264   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<15>
-    SLICE_X32Y5.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA/COUT1
-    SLICE_X34Y7.C6       net (fanout=2)        0.882   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-    SLICE_X34Y7.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA/COUT1
-    SLICE_X34Y7.D5       net (fanout=2)        0.292   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<17>
-    SLICE_X34Y7.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA/COUT1
-    SLICE_X36Y8.A4       net (fanout=2)        0.666   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<18>
-    SLICE_X36Y8.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA/COUT1
-    SLICE_X36Y8.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<19>
-    SLICE_X36Y8.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA/COUT1
-    SLICE_X36Y8.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<20>
-    SLICE_X36Y8.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA/COUT1
-    SLICE_X36Y8.D5       net (fanout=2)        0.263   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<21>
-    SLICE_X36Y8.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA/COUT1
-    SLICE_X34Y11.A4      net (fanout=2)        0.923   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-    SLICE_X34Y11.A       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA/COUT1
-    SLICE_X34Y11.B6      net (fanout=2)        0.157   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<23>
-    SLICE_X34Y11.B       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA/COUT1
-    SLICE_X34Y11.C4      net (fanout=2)        0.445   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<24>
-    SLICE_X34Y11.C       Tilo                  0.374   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA/COUT1
-    SLICE_X34Y11.D5      net (fanout=2)        0.295   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<25>
-    SLICE_X34Y11.D       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA/COUT1
-    SLICE_X36Y13.A5      net (fanout=2)        0.741   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-    SLICE_X36Y13.A       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA/COUT1
-    SLICE_X36Y13.B6      net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<27>
-    SLICE_X36Y13.B       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA/COUT1
-    SLICE_X36Y11.B5      net (fanout=2)        0.542   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<28>
-    SLICE_X36Y11.B       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<30>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA/R1
-    SLICE_X36Y9.C4       net (fanout=1)        0.637   MIPS_SC_PROCESSOR/incremented<29>
-    SLICE_X36Y9.C        Tilo                  0.333   instr_addr<29>
-                                                       MIPS_SC_PROCESSOR/Branch_MUX/Mmux_output221
-    SLICE_X36Y9.D5       net (fanout=1)        0.255   MIPS_SC_PROCESSOR/branchcalc<29>
-    SLICE_X36Y9.CLK      Tas                   0.571   instr_addr<29>
-                                                       MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output221
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_29
-    -------------------------------------------------  ---------------------------
-    Total                                     23.824ns (11.203ns logic, 12.621ns route)
-                                                       (47.0% logic, 53.0% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     6.256ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/COUNTER/data_1 (FF)
-  Destination:          MIPS_SC_PROCESSOR/COUNTER/data_29 (FF)
-  Requirement:          30.000ns
-  Data Path Delay:      23.698ns (Levels of Logic = 30)
-  Clock Path Skew:      -0.011ns (0.341 - 0.352)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 30.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/COUNTER/data_1 to MIPS_SC_PROCESSOR/COUNTER/data_29
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X31Y4.BQ       Tcko                  0.548   instr_addr<3>
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_1
-    SLICE_X33Y4.A4       net (fanout=20)       0.680   instr_addr<1>
-    SLICE_X33Y4.A        Tilo                  0.341   MIPS_SC_PROCESSOR/IDEXs<119>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[2].NEXT_FA/COUT1
-    SLICE_X33Y3.A4       net (fanout=2)        0.592   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<2>
-    SLICE_X33Y3.A        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA/COUT1
-    SLICE_X33Y3.B6       net (fanout=2)        0.156   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<3>
-    SLICE_X33Y3.B        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA/COUT1
-    SLICE_X30Y4.A6       net (fanout=2)        0.439   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-    SLICE_X30Y4.A        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA/COUT1
-    SLICE_X30Y4.B6       net (fanout=2)        0.152   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<5>
-    SLICE_X30Y4.B        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA/COUT1
-    SLICE_X30Y4.C4       net (fanout=2)        0.440   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<6>
-    SLICE_X30Y4.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA/COUT1
-    SLICE_X30Y4.D5       net (fanout=2)        0.290   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<7>
-    SLICE_X30Y4.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA/COUT1
-    SLICE_X32Y3.A3       net (fanout=2)        0.746   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<8>
-    SLICE_X32Y3.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA/COUT1
-    SLICE_X32Y3.B6       net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<9>
-    SLICE_X32Y3.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA/COUT1
-    SLICE_X32Y3.C4       net (fanout=2)        0.382   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<10>
-    SLICE_X32Y3.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA/COUT1
-    SLICE_X32Y3.D5       net (fanout=2)        0.262   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<11>
-    SLICE_X32Y3.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA/COUT1
-    SLICE_X32Y5.A4       net (fanout=2)        0.609   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-    SLICE_X32Y5.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA/COUT1
-    SLICE_X32Y5.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<13>
-    SLICE_X32Y5.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA/COUT1
-    SLICE_X32Y5.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<14>
-    SLICE_X32Y5.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA/COUT1
-    SLICE_X32Y5.D5       net (fanout=2)        0.264   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<15>
-    SLICE_X32Y5.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA/COUT1
-    SLICE_X34Y7.C6       net (fanout=2)        0.882   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-    SLICE_X34Y7.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA/COUT1
-    SLICE_X34Y7.D5       net (fanout=2)        0.292   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<17>
-    SLICE_X34Y7.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA/COUT1
-    SLICE_X36Y8.A4       net (fanout=2)        0.666   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<18>
-    SLICE_X36Y8.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA/COUT1
-    SLICE_X36Y8.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<19>
-    SLICE_X36Y8.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA/COUT1
-    SLICE_X36Y8.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<20>
-    SLICE_X36Y8.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA/COUT1
-    SLICE_X36Y8.D5       net (fanout=2)        0.263   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<21>
-    SLICE_X36Y8.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA/COUT1
-    SLICE_X34Y11.A4      net (fanout=2)        0.923   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-    SLICE_X34Y11.A       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA/COUT1
-    SLICE_X34Y11.B6      net (fanout=2)        0.157   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<23>
-    SLICE_X34Y11.B       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA/COUT1
-    SLICE_X34Y11.C4      net (fanout=2)        0.445   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<24>
-    SLICE_X34Y11.C       Tilo                  0.374   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA/COUT1
-    SLICE_X34Y11.D5      net (fanout=2)        0.295   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<25>
-    SLICE_X34Y11.D       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA/COUT1
-    SLICE_X36Y13.A5      net (fanout=2)        0.741   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-    SLICE_X36Y13.A       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA/COUT1
-    SLICE_X36Y13.B6      net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<27>
-    SLICE_X36Y13.B       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA/COUT1
-    SLICE_X36Y11.B5      net (fanout=2)        0.542   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<28>
-    SLICE_X36Y11.B       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<30>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA/R1
-    SLICE_X36Y9.C4       net (fanout=1)        0.637   MIPS_SC_PROCESSOR/incremented<29>
-    SLICE_X36Y9.C        Tilo                  0.333   instr_addr<29>
-                                                       MIPS_SC_PROCESSOR/Branch_MUX/Mmux_output221
-    SLICE_X36Y9.D5       net (fanout=1)        0.255   MIPS_SC_PROCESSOR/branchcalc<29>
-    SLICE_X36Y9.CLK      Tas                   0.571   instr_addr<29>
-                                                       MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output221
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_29
-    -------------------------------------------------  ---------------------------
-    Total                                     23.698ns (11.203ns logic, 12.495ns route)
-                                                       (47.3% logic, 52.7% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     7.174ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               MIPS_SC_PROCESSOR/COUNTER/data_3 (FF)
-  Destination:          MIPS_SC_PROCESSOR/COUNTER/data_29 (FF)
-  Requirement:          30.000ns
-  Data Path Delay:      22.780ns (Levels of Logic = 29)
-  Clock Path Skew:      -0.011ns (0.341 - 0.352)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 30.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/COUNTER/data_3 to MIPS_SC_PROCESSOR/COUNTER/data_29
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X31Y4.DQ       Tcko                  0.548   instr_addr<3>
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_3
-    SLICE_X33Y3.A6       net (fanout=19)       0.695   instr_addr<3>
-    SLICE_X33Y3.A        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[3].NEXT_FA/COUT1
-    SLICE_X33Y3.B6       net (fanout=2)        0.156   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<3>
-    SLICE_X33Y3.B        Tilo                  0.341   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[4].NEXT_FA/COUT1
-    SLICE_X30Y4.A6       net (fanout=2)        0.439   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<4>
-    SLICE_X30Y4.A        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[5].NEXT_FA/COUT1
-    SLICE_X30Y4.B6       net (fanout=2)        0.152   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<5>
-    SLICE_X30Y4.B        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[6].NEXT_FA/COUT1
-    SLICE_X30Y4.C4       net (fanout=2)        0.440   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<6>
-    SLICE_X30Y4.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[7].NEXT_FA/COUT1
-    SLICE_X30Y4.D5       net (fanout=2)        0.290   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<7>
-    SLICE_X30Y4.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IDEXs<111>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[8].NEXT_FA/COUT1
-    SLICE_X32Y3.A3       net (fanout=2)        0.746   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<8>
-    SLICE_X32Y3.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[9].NEXT_FA/COUT1
-    SLICE_X32Y3.B6       net (fanout=2)        0.154   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<9>
-    SLICE_X32Y3.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[10].NEXT_FA/COUT1
-    SLICE_X32Y3.C4       net (fanout=2)        0.382   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<10>
-    SLICE_X32Y3.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[11].NEXT_FA/COUT1
-    SLICE_X32Y3.D5       net (fanout=2)        0.262   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<11>
-    SLICE_X32Y3.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[12].NEXT_FA/COUT1
-    SLICE_X32Y5.A4       net (fanout=2)        0.609   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<12>
-    SLICE_X32Y5.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[13].NEXT_FA/COUT1
-    SLICE_X32Y5.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<13>
-    SLICE_X32Y5.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[14].NEXT_FA/COUT1
-    SLICE_X32Y5.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<14>
-    SLICE_X32Y5.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[15].NEXT_FA/COUT1
-    SLICE_X32Y5.D5       net (fanout=2)        0.264   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<15>
-    SLICE_X32Y5.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[16].NEXT_FA/COUT1
-    SLICE_X34Y7.C6       net (fanout=2)        0.882   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<16>
-    SLICE_X34Y7.C        Tilo                  0.374   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[17].NEXT_FA/COUT1
-    SLICE_X34Y7.D5       net (fanout=2)        0.292   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<17>
-    SLICE_X34Y7.D        Tilo                  0.373   MIPS_SC_PROCESSOR/IFIDs<19>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[18].NEXT_FA/COUT1
-    SLICE_X36Y8.A4       net (fanout=2)        0.666   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<18>
-    SLICE_X36Y8.A        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[19].NEXT_FA/COUT1
-    SLICE_X36Y8.B6       net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<19>
-    SLICE_X36Y8.B        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[20].NEXT_FA/COUT1
-    SLICE_X36Y8.C4       net (fanout=2)        0.383   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<20>
-    SLICE_X36Y8.C        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[21].NEXT_FA/COUT1
-    SLICE_X36Y8.D5       net (fanout=2)        0.263   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<21>
-    SLICE_X36Y8.D        Tilo                  0.333   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[22].NEXT_FA/COUT1
-    SLICE_X34Y11.A4      net (fanout=2)        0.923   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<22>
-    SLICE_X34Y11.A       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[23].NEXT_FA/COUT1
-    SLICE_X34Y11.B6      net (fanout=2)        0.157   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<23>
-    SLICE_X34Y11.B       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[24].NEXT_FA/COUT1
-    SLICE_X34Y11.C4      net (fanout=2)        0.445   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<24>
-    SLICE_X34Y11.C       Tilo                  0.374   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[25].NEXT_FA/COUT1
-    SLICE_X34Y11.D5      net (fanout=2)        0.295   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<25>
-    SLICE_X34Y11.D       Tilo                  0.373   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[26].NEXT_FA/COUT1
-    SLICE_X36Y13.A5      net (fanout=2)        0.741   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<26>
-    SLICE_X36Y13.A       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[27].NEXT_FA/COUT1
-    SLICE_X36Y13.B6      net (fanout=2)        0.155   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<27>
-    SLICE_X36Y13.B       Tilo                  0.333   instr_addr<31>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[28].NEXT_FA/COUT1
-    SLICE_X36Y11.B5      net (fanout=2)        0.542   MIPS_SC_PROCESSOR/Addressincrementer/CAUX<28>
-    SLICE_X36Y11.B       Tilo                  0.333   MIPS_SC_PROCESSOR/IFIDs<30>
-                                                       MIPS_SC_PROCESSOR/Addressincrementer/GEN_ADDER[29].NEXT_FA/R1
-    SLICE_X36Y9.C4       net (fanout=1)        0.637   MIPS_SC_PROCESSOR/incremented<29>
-    SLICE_X36Y9.C        Tilo                  0.333   instr_addr<29>
-                                                       MIPS_SC_PROCESSOR/Branch_MUX/Mmux_output221
-    SLICE_X36Y9.D5       net (fanout=1)        0.255   MIPS_SC_PROCESSOR/branchcalc<29>
-    SLICE_X36Y9.CLK      Tas                   0.571   instr_addr<29>
-                                                       MIPS_SC_PROCESSOR/JUMP_MUX/Mmux_output221
-                                                       MIPS_SC_PROCESSOR/COUNTER/data_29
-    -------------------------------------------------  ---------------------------
-    Total                                     22.780ns (10.862ns logic, 11.918ns route)
-                                                       (47.7% logic, 52.3% route)
+  Maximum Data Path at Slow Process Corner: MIPS_SC_PROCESSOR/MEMWB/data_69 to MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X27Y19.DQ          Tcko                  0.548   MIPS_SC_PROCESSOR/MEMWB/data<69>
+                                                           MIPS_SC_PROCESSOR/MEMWB/data_69
+    SLICE_X12Y25.C1          net (fanout=17)       2.140   MIPS_SC_PROCESSOR/MEMWB/data<69>
+    SLICE_X12Y25.C           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B4          net (fanout=1)        0.394   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o2
+    SLICE_X12Y25.B           Tilo                  0.333   MIPS_SC_PROCESSOR/EXMEM/data<136>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o3
+    SLICE_X18Y19.A4          net (fanout=3)        2.038   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_EXMEMregwrite_AND_1105_o
+    SLICE_X18Y19.A           Tilo                  0.373   MIPS_SC_PROCESSOR/MEMWB/data<2>
+                                                           MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X26Y18.B2          net (fanout=26)       1.642   MIPS_SC_PROCESSOR/Forwardunit/MEMWBregwrite_RS[4]_AND_1106_o
+    SLICE_X26Y18.B           Tilo                  0.373   MIPS_SC_PROCESSOR/ForwardAout<8>
+                                                           MIPS_SC_PROCESSOR/ForwardmuxA/Mmux_R311
+    SLICE_X18Y26.C3          net (fanout=12)       2.215   MIPS_SC_PROCESSOR/ForwardAout<8>
+    SLICE_X18Y26.COUT        Topcyc                0.487   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_lut<2>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<3>
+    SLICE_X18Y27.COUT        Tbyp                  0.127   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CIN         net (fanout=1)        0.003   MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<7>
+    SLICE_X18Y28.CMUX        Tcinc                 0.402   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+                                                           MIPS_SC_PROCESSOR/Mcompar_ForwardAout[31]_ForwardBout[31]_equal_2_o_cy<10>
+    SLICE_X18Y18.D6          net (fanout=24)       2.705   MIPS_SC_PROCESSOR/ForwardAout[31]_ForwardBout[31]_equal_2_o
+    SLICE_X18Y18.D           Tilo                  0.373   MIPS_SC_PROCESSOR/global_prediction/data<0>
+                                                           MIPS_SC_PROCESSOR/Mmux_branched111
+    SLICE_X0Y29.D6           net (fanout=37)       2.692   MIPS_SC_PROCESSOR/branched1
+    SLICE_X0Y29.D            Tilo                  0.333   MIPS_SC_PROCESSOR/IFID/data_sliced_sliced_38
+                                                           instr_data<18>_0_01
+    RAMB8_X0Y14.ADDRBRDADDR7 net (fanout=1)        0.896   instr_data<18>_0_0_0
+    RAMB8_X0Y14.CLKBRDCLK    Trcck_ADDRB           0.400   MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+                                                           MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1
+    -----------------------------------------------------  ---------------------------
+    Total                                         18.810ns (4.082ns logic, 14.728ns route)
+                                                           (21.7% logic, 78.3% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 30 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH (SLICE_X26Y5.D6), 1 path
+Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH (SLICE_X14Y17.D5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.351ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               MIPS_SC_PROCESSOR/IDEX/data_286 (FF)
+Slack (hold path):      0.349ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 (FF)
   Destination:          MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.357ns (Levels of Logic = 0)
-  Clock Path Skew:      0.006ns (0.036 - 0.030)
+  Data Path Delay:      0.358ns (Levels of Logic = 0)
+  Clock Path Skew:      0.009ns (0.086 - 0.077)
   Source Clock:         clk_BUFGP rising at 30.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_286 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH
+  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X27Y7.CQ       Tcko                  0.198   MIPS_SC_PROCESSOR/IDEXs<287>
-                                                       MIPS_SC_PROCESSOR/IDEX/data_286
-    SLICE_X26Y5.D6       net (fanout=4)        0.148   MIPS_SC_PROCESSOR/IDEXs<286>
-    SLICE_X26Y5.CLK      Tah         (-Th)    -0.011   MIPS_SC_PROCESSOR/branch_taken
+    SLICE_X16Y17.CQ      Tcko                  0.200   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+                                                       MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
+    SLICE_X14Y17.D5      net (fanout=9)        0.215   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
+    SLICE_X14Y17.CLK     Tah         (-Th)     0.057   MIPS_SC_PROCESSOR/stateread<0>
                                                        MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.HIGH
     -------------------------------------------------  ---------------------------
-    Total                                      0.357ns (0.209ns logic, 0.148ns route)
-                                                       (58.5% logic, 41.5% route)
+    Total                                      0.358ns (0.143ns logic, 0.215ns route)
+                                                       (39.9% logic, 60.1% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW (SLICE_X26Y5.D6), 1 path
+Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW (SLICE_X14Y17.D5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.351ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               MIPS_SC_PROCESSOR/IDEX/data_286 (FF)
+Slack (hold path):      0.349ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 (FF)
   Destination:          MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.357ns (Levels of Logic = 0)
-  Clock Path Skew:      0.006ns (0.036 - 0.030)
+  Data Path Delay:      0.358ns (Levels of Logic = 0)
+  Clock Path Skew:      0.009ns (0.086 - 0.077)
   Source Clock:         clk_BUFGP rising at 30.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_286 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW
+  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X27Y7.CQ       Tcko                  0.198   MIPS_SC_PROCESSOR/IDEXs<287>
-                                                       MIPS_SC_PROCESSOR/IDEX/data_286
-    SLICE_X26Y5.D6       net (fanout=4)        0.148   MIPS_SC_PROCESSOR/IDEXs<286>
-    SLICE_X26Y5.CLK      Tah         (-Th)    -0.011   MIPS_SC_PROCESSOR/branch_taken
+    SLICE_X16Y17.CQ      Tcko                  0.200   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+                                                       MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
+    SLICE_X14Y17.D5      net (fanout=9)        0.215   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
+    SLICE_X14Y17.CLK     Tah         (-Th)     0.057   MIPS_SC_PROCESSOR/stateread<0>
                                                        MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/DP.LOW
     -------------------------------------------------  ---------------------------
-    Total                                      0.357ns (0.209ns logic, 0.148ns route)
-                                                       (58.5% logic, 41.5% route)
+    Total                                      0.358ns (0.143ns logic, 0.215ns route)
+                                                       (39.9% logic, 60.1% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH (SLICE_X26Y5.D6), 1 path
+Paths for end point MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH (SLICE_X14Y17.D5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.351ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               MIPS_SC_PROCESSOR/IDEX/data_286 (FF)
+Slack (hold path):      0.349ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 (FF)
   Destination:          MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.357ns (Levels of Logic = 0)
-  Clock Path Skew:      0.006ns (0.036 - 0.030)
+  Data Path Delay:      0.358ns (Levels of Logic = 0)
+  Clock Path Skew:      0.009ns (0.086 - 0.077)
   Source Clock:         clk_BUFGP rising at 30.000ns
   Destination Clock:    clk_BUFGP rising at 30.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_286 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH
+  Minimum Data Path at Fast Process Corner: MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22 to MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X27Y7.CQ       Tcko                  0.198   MIPS_SC_PROCESSOR/IDEXs<287>
-                                                       MIPS_SC_PROCESSOR/IDEX/data_286
-    SLICE_X26Y5.D6       net (fanout=4)        0.148   MIPS_SC_PROCESSOR/IDEXs<286>
-    SLICE_X26Y5.CLK      Tah         (-Th)    -0.011   MIPS_SC_PROCESSOR/branch_taken
+    SLICE_X16Y17.CQ      Tcko                  0.200   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_23
+                                                       MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
+    SLICE_X14Y17.D5      net (fanout=9)        0.215   MIPS_SC_PROCESSOR/IDEX/data_sliced_sliced_sliced_sliced_22
+    SLICE_X14Y17.CLK     Tah         (-Th)     0.057   MIPS_SC_PROCESSOR/stateread<0>
                                                        MIPS_SC_PROCESSOR/BRANCH_PREDICTION_BUFFER/Mram_REGS1/SP.HIGH
     -------------------------------------------------  ---------------------------
-    Total                                      0.357ns (0.209ns logic, 0.148ns route)
-                                                       (58.5% logic, 41.5% route)
+    Total                                      0.358ns (0.143ns logic, 0.215ns route)
+                                                       (39.9% logic, 60.1% route)
 
 --------------------------------------------------------------------------------
 
 Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 30 ns HIGH 50%;
 --------------------------------------------------------------------------------
+Slack: 24.197ns (period - min period limit)
+  Period: 30.000ns
+  Min period limit: 5.803ns (172.325MHz) (Tdspper_AREG_PREG)
+  Physical resource: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3/CLK
+  Logical resource: MIPS_SC_PROCESSOR/PATH2_ALU/Mmult_result3/CLK
+  Location pin: DSP48_X1Y4.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
 Slack: 26.155ns (period - min period limit)
   Period: 30.000ns
   Min period limit: 3.845ns (260.078MHz) (Trper_CLKA(Fmax))
-  Physical resource: INST_MEM/Mram_MEM/CLKAWRCLK
-  Logical resource: INST_MEM/Mram_MEM/CLKAWRCLK
-  Location pin: RAMB8_X0Y11.CLKAWRCLK
+  Physical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKAWRCLK
+  Logical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKAWRCLK
+  Location pin: RAMB8_X0Y14.CLKAWRCLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 26.155ns (period - min period limit)
   Period: 30.000ns
   Min period limit: 3.845ns (260.078MHz) (Trper_CLKB(Fmax))
-  Physical resource: INST_MEM/Mram_MEM/CLKBRDCLK
-  Logical resource: INST_MEM/Mram_MEM/CLKBRDCLK
-  Location pin: RAMB8_X0Y11.CLKBRDCLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 26.155ns (period - min period limit)
-  Period: 30.000ns
-  Min period limit: 3.845ns (260.078MHz) (Trper_CLKA(Fmax))
-  Physical resource: DATA_MEM/Mram_MEM/CLKAWRCLK
-  Logical resource: DATA_MEM/Mram_MEM/CLKAWRCLK
-  Location pin: RAMB8_X0Y13.CLKAWRCLK
+  Physical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKBRDCLK
+  Logical resource: MIPS_SC_PROCESSOR/REGISTER_F/Mram_REGS1/CLKBRDCLK
+  Location pin: RAMB8_X0Y14.CLKBRDCLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -1236,7 +612,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   24.783|    6.839|    7.448|         |
+clk            |   19.851|    8.711|    6.480|         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -1245,23 +621,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 140166994 paths, 0 nets, and 5320 connections
+Constraints cover 2559069 paths, 0 nets, and 5281 connections
 
 Design statistics:
-   Minimum period:  24.783ns{1}   (Maximum frequency:  40.350MHz)
+   Minimum period:  19.851ns{1}   (Maximum frequency:  50.375MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sun Nov 10 17:27:53 2013 
+Analysis completed Mon Nov 11 11:45:13 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 244 MB
+Peak Memory Usage: 232 MB
 
 
 

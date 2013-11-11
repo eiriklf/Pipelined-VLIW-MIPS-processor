@@ -2,27 +2,9 @@ Command line:
    tb_branchpredictor_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  51341
+     -socket  51414
 
-Sun Nov 10 15:54:46 2013
+Mon Nov 11 12:02:18 2013
 
 
  Elaboration Time: 0.156 sec
-
- Current Memory Usage: 846.434 Meg
-
- Total Signals          : 907
- Total Nets             : 22721
- Total Signal Drivers   : 487
- Total Blocks           : 127
- Total Primitive Blocks : 77
- Total Processes        : 448
- Total Traceable Variables  : 203
- Total Scalar Nets and Variables : 26874
-
- Total Simulation Time: 1.12321 sec
-
- Current Memory Usage: 689.148 Meg
-
-Sun Nov 10 16:11:05 2013
-

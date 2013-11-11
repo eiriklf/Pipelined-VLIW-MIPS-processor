@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd";
+static const char *ng0 = "C:/Users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -77,7 +77,7 @@ LAB5:    xsi_set_current_line(64, ng0);
     t7 = *((char **)t3);
     t3 = (t0 + 1672U);
     t8 = *((char **)t3);
-    t3 = (t0 + 7416U);
+    t3 = (t0 + 7356U);
     t9 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t8, t3);
     t10 = (t9 - 127);
     t11 = (t10 * -1);
@@ -118,7 +118,7 @@ LAB3:    t1 = (t0 + 2152U);
     t2 = *((char **)t1);
     t1 = (t0 + 1512U);
     t3 = *((char **)t1);
-    t1 = (t0 + 7400U);
+    t1 = (t0 + 7340U);
     t4 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t3, t1);
     t5 = (t4 - 127);
     t6 = (t5 * -1);

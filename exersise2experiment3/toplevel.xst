@@ -11,7 +11,7 @@ run
 -opt_level 2
 -power NO
 -iuc NO
--keep_hierarchy Soft
+-keep_hierarchy No
 -netlist_hierarchy As_Optimized
 -rtlview Yes
 -glob_opt AllClockNets

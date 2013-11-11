@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/quadputmux.vhd";
+static const char *ng0 = "C:/Users/eiriklf/dmkonsttdt4255_work/exersise2experiment3/file/quadputmux.vhd";
 
 
 
@@ -74,7 +74,7 @@ static void work_a_2594899943_3212880686_p_0(char *t0)
 LAB0:    xsi_set_current_line(44, ng0);
     t1 = (t0 + 1832U);
     t2 = *((char **)t1);
-    t1 = (t0 + 5642);
+    t1 = (t0 + 5606);
     t4 = 1;
     if (2U == 2U)
         goto LAB5;
@@ -86,7 +86,7 @@ LAB7:    if (t4 != 0)
 
 LAB4:    t14 = (t0 + 1832U);
     t15 = *((char **)t14);
-    t14 = (t0 + 5644);
+    t14 = (t0 + 5608);
     t17 = 1;
     if (2U == 2U)
         goto LAB13;
@@ -98,7 +98,7 @@ LAB15:    if (t17 != 0)
 
 LAB12:    t27 = (t0 + 1832U);
     t28 = *((char **)t27);
-    t27 = (t0 + 5646);
+    t27 = (t0 + 5610);
     t30 = 1;
     if (2U == 2U)
         goto LAB21;

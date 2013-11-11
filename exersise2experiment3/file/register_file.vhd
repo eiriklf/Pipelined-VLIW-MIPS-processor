@@ -64,7 +64,7 @@ begin
 	REGISTERS: process(CLK, RESET)
 	begin
 --the register updates itself on falling edge to avoid RAW hazards while data is being written. see the report
-		if falling_edge(CLK) then
+		if rising_edge(CLK) then
 			if  RW='1' then
 				REGS(to_integer(unsigned(RD_ADDR)))<=WRITE_DATA;
 				end if;
@@ -82,12 +82,7 @@ begin
 			
 	RT2 <= (others=>'0') when RT_ADDR2="00000"
          else REGS(to_integer(unsigned(RT_ADDR2)));
-			
---	RS2 <= (others=>'0') when RS_ADDR2="00000"
-   --      else REGS(to_integer(unsigned(RS_ADDR2)));
-			
-	--RT2 <= (others=>'0') when RT_ADDR2="00000"
-  --       else REGS(to_integer(unsigned(RT_ADDR2)));
+
 
 end Behavioral;
 
