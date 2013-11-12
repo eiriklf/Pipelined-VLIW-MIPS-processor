@@ -52,8 +52,3 @@ at 20 ns(3), Instance /tb_fpga/uut/DATA_MEM/ : Warning: NUMERIC_STD.TO_INTEGER: 
 # run 1.00us
 # run 1.00us
 # run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us

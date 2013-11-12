@@ -1,35 +1,34 @@
-Running: C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.exe -prj C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_beh.prj work.tb_FPGA 
+Running: C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.exe -prj C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_beh.prj work.tb_FPGA 
 ISim M.81d (signature 0x12940baa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/lookahead.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/mips_constant_pkg.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/full_adder.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu_1bit.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Vliw_multipliercontrol.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Vliw_alu.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/shift_register.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Regi.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Hazarddetection.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Forward.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/register_file.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/quadputmux.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/PC.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/control.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/ALUop.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/adder.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/branch_prediction_unit.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" into library work
-WARNING:HDLCompiler:946 - "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" Line 636: Actual for formal port data_in is neither a static name nor a globally static expression
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/memory.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/com.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/DMEMORY.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd" into library work
-Parsing VHDL file "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/TB_FPGA.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/lookahead.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/mips_constant_pkg.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/full_adder.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu_1bit.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Vliw_multipliercontrol.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Vliw_alu.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/shift_register.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Regi.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/predictionbuffer.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Hazarddetection.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Forward.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/register_file.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/quadputmux.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/PC.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/mux.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/control.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/ALUop.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/alu.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/adder.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/branch_prediction_unit.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/processor.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/memory.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/com.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/DMEMORY.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd" into library work
+Parsing VHDL file "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/TB_FPGA.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Using precompiled package standard from library std
@@ -73,8 +72,8 @@ Compiling architecture behavioral of entity processor [\PROCESSOR(32,32)\]
 Compiling architecture behavioral of entity toplevel [\toplevel(32,32)\]
 Compiling architecture behavior of entity tb_fpga
 Time Resolution for simulation is 1ps.
-Waiting for 16 sub-compilation(s) to finish...
+Waiting for 26 sub-compilation(s) to finish...
 Compiled 72 VHDL Units
-Built simulation executable C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.exe
-Fuse Memory Usage: 23136 KB
-Fuse CPU Usage: 561 ms
+Built simulation executable C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/tb_FPGA_isim_beh.exe
+Fuse Memory Usage: 23140 KB
+Fuse CPU Usage: 685 ms

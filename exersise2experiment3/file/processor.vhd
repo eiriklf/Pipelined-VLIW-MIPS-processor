@@ -85,7 +85,7 @@ architecture Behavioral of PROCESSOR is
     --This unit is responcible for everything related to branch-control hazards. It is also responcible for doing branch-predictions and everything related to it.
     component branchprediction is
     Port (
-                IFIDInstructionType           : in std_logic_vector(5 downto 0);
+                IDEXInstructionType           : in std_logic_vector(5 downto 0);
               IFIDreset                       : out STD_LOGIC;--syncronous reset for ifid register. Must be done when a branch prediction fails in order to prevent the wrong instructions to be executed
               IDEXreset                       : out std_logic; --resets idex register syncronously
               State                           : out std_logic_vector(1 downto 0); --the incremented state to be written back to the local branch prediction buffer (ID stage).
@@ -682,7 +682,7 @@ end component Forwarding;
 	 predicted_address_in<=idexs(137 downto 122)&idexs(284 downto 269);
     Branch_predicition_unit: branchprediction
     port map(
-                IFIDInstructionType          =>idexs(143 downto 138),--IFIDs(119 downto 114),
+                IDEXInstructionType          =>idexs(143 downto 138),
                 buffer_write                 =>buffer_write,
                 State_in                     =>stateread,
                 IDEX_state_in                =>idexs(267 downto 266),--branch information data read from the prediction buffer(IF stage, sent through pipeline to IDEX)
@@ -731,11 +731,11 @@ end component Forwarding;
             WRITE_DATA      =>BranchAdder(15 downto 0),--this address might fail in some occations
             Data_out        =>prediction_address
     );
-        --this is the register file where the branch prediction-counters are stored. The input signals are assigned here above the port map of the register
+
         prediction_readaddress<=global_prediction_out&pc_output(5 downto 1);
-        prediction_writeaddress<=idexs(287 downto 286)&idexs(265 downto 261); --the write address is "global_prediction_out&pc_output(3 downto 1)" in IDEX stage.-
-        --doing that is done because you want to ensure that the entry to be updated is on the same address as where the branching is done.
-        --We found out this by some extensive testing.
+        prediction_writeaddress<=idexs(287 downto 286)&idexs(265 downto 261); --the write address is "global_prediction_out&pc_output(4 downto 0)" in IDEX stage.-
+		  --this is the register file where the branch prediction-counters are stored. The input signals are assigned here above the port map of the register.
+        --need to ensure that the entry to be updated is on the same address as where the branching is done.
         BRANCH_PREDICTION_BUFFER: predictorbuffer
        generic map (N =>2, M=>128, K=>6)
     port map(

@@ -47,16 +47,16 @@ end Forwarding;
 architecture Behavioral of Forwarding is
 
 begin
-
+--we devided the forwarding unit into two processes because the content of process2 happens concurrently and independent of process1
 	Process1: process(MEMWBregwrite,wb2regwrite,Wb2registerRD,  EXMEMregwrite, MEMWbregisterRD, ExmemregisterRD, IDEX_Rs)
 	begin
 		if( (EXMEMregwrite='1' )and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= IDEX_RS) ) then
 			forwardA<="10";
 
-		elsif((MEMWBregwrite='1') and (not(MEMWBregisterRD="00000")) and (MEMWBregisterRD=IDEX_RS) ) then --and not (EXMEMregisterRD=RS))
+		elsif((MEMWBregwrite='1') and (not(MEMWBregisterRD="00000")) and (MEMWBregisterRD=IDEX_RS) ) then 
 			forwardA<="01";
 
-		elsif((WB2regwrite='1') and (not(WB2registerRD="00000")) and (WB2registerRD=IDEX_RS) ) then --and not (EXMEMregisterRD=RS))
+		elsif((WB2regwrite='1') and (not(WB2registerRD="00000")) and (WB2registerRD=IDEX_RS) ) then 
 			forwardA<="11";
 
 		else
@@ -73,10 +73,10 @@ begin
 		if( (EXMEMregwrite='1')and (not (ExmemregisterRD="00000")) and (EXMEMregisterRD= IDEX_RT)) then
 			forwardB<="10";
 
-		elsif((MEMWBregwrite='1') and (not(MEMWBregisterRD="00000"))  and (MEMWBregisterRD=IDEX_RT) ) then --and not (EXMEMregisterRD=RT))
+		elsif((MEMWBregwrite='1') and (not(MEMWBregisterRD="00000"))  and (MEMWBregisterRD=IDEX_RT) ) then 
 			forwardB<="01";
 
-		elsif((WB2regwrite='1') and (not(WB2registerRD="00000")) and (Wb2registerRD=IDEX_RT) ) then --and not (EXMEMregisterRD=RT))
+		elsif((WB2regwrite='1') and (not(WB2registerRD="00000")) and (Wb2registerRD=IDEX_RT) ) then 
 			forwardB<="11";
 
 		else

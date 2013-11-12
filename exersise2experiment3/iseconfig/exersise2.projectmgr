@@ -13,13 +13,13 @@
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/Addressincrementer - adder - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>uut - toplevel - Behavioral (C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd)</SelectedItem>
+         <SelectedItem>uut - toplevel - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
-      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >21</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >497</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000038e000000020000000000000000000000000000000064ffffffff0000008100000000000000020000038e0000000100000000000000000000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>uut - toplevel - Behavioral (C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd)</CurrentItem>
+      <CurrentItem>uut - toplevel - Behavioral (C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/file/toplevel.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -40,7 +40,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000131000000010000000100000000000000000000000064ffffffff000000810000000000000001000001310000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000132000000010000000100000000000000000000000064ffffffff000000810000000000000001000001320000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Generate Programming File</CurrentItem>
    </ItemView>
@@ -53,7 +53,7 @@
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000392000000040101000100000000000000000000000064ffffffff0000008100000000000000040000019d00000001000000000000004400000001000000000000006600000001000000000000014b0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>C:\Users\torbjlan\dmkonsttdt4255_work\exersise2experiment3\branch_prediction_unit.vhd</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -71,6 +71,7 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/tb_Multiplytoplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|exersise2experiment3|tb_toplevel_multiply.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ALUTD - alu - Behavioral</ClosedNode>
+         <ClosedNode>/tb_Multiplytoplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|exersise2experiment3|tb_toplevel_multiply.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/Addressincrementer - adder - Behavioral</ClosedNode>
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ADDRESSADDER - adder - Behavioral</ClosedNode>
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ALUTD - alu - Behavioral/BEGIN_ALU1B - alu_1bit - Behavioral</ClosedNode>
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/ALUTD - alu - Behavioral/LAST_ALU1B - alu_1bit - Behavioral</ClosedNode>
@@ -78,13 +79,13 @@
          <ClosedNode>/tb_toplevel - behavior C:|Users|eiriklf|git|dmkonsttdt4255_work|hardware|tb_toplevel.vhd/uut - toplevel - Behavioral/MIPS_SC_PROCESSOR - PROCESSOR - Behavioral/Addressincrementer - adder - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>TriputMux - Behavioral (C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/TriputMux.vhd)</SelectedItem>
+         <SelectedItem>tb_branchpredictor - behavior (C:/Users/eiriklf/git/dmkonsttdt4255_work/hardware/tb_toplevel.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
-      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000038e000000020000000000000000000000000000000064ffffffff0000008100000000000000020000038e0000000100000000000000000000000100000000</ViewHeaderState>
+      <ScrollbarPosition orientation="vertical" >60</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >22</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000395000000020000000000000000000000000000000064ffffffff000000810000000000000002000003950000000100000000000000000000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>TriputMux - Behavioral (C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/TriputMux.vhd)</CurrentItem>
+      <CurrentItem>tb_branchpredictor - behavior (C:/Users/eiriklf/git/dmkonsttdt4255_work/hardware/tb_toplevel.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -92,13 +93,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000131000000010000000100000000000000000000000064ffffffff000000810000000000000001000001310000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000132000000010000000100000000000000000000000064ffffffff000000810000000000000001000001320000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -109,7 +110,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000131000000010000000100000000000000000000000064ffffffff000000810000000000000001000001310000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000132000000010000000100000000000000000000000064ffffffff000000810000000000000001000001320000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
