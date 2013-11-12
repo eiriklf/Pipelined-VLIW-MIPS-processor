@@ -11,7 +11,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.52.76.2 $
-Mapped Date    : Mon Nov 11 22:15:05 2013
+Mapped Date    : Tue Nov 12 18:03:39 2013
 
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to
@@ -76,16 +76,16 @@ Phase 10.5  Local Placement Optimization
 Phase 10.5  Local Placement Optimization (Checksum:ddb76d0d) REAL time: 1 mins 11 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:589c8f18) REAL time: 1 mins 13 secs 
+Phase 11.18  Placement Optimization (Checksum:589c8f18) REAL time: 1 mins 14 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:589c8f18) REAL time: 1 mins 13 secs 
+Phase 12.5  Local Placement Optimization (Checksum:589c8f18) REAL time: 1 mins 14 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:4ad00ed8) REAL time: 1 mins 13 secs 
+Phase 13.34  Placement Validation (Checksum:4ad00ed8) REAL time: 1 mins 14 secs 
 
 Total REAL time to Placer completion: 1 mins 14 secs 
-Total CPU  time to Placer completion: 1 mins 13 secs 
+Total CPU  time to Placer completion: 1 mins 14 secs 
 Running post-placement packing...
 Writing output files...
 WARNING:PhysDesignRules:367 - The signal <DATA_MEM/Mram_MEM21_RAMD_O> is
@@ -251,9 +251,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                3.48
 
-Peak Memory Usage:  404 MB
+Peak Memory Usage:  402 MB
 Total REAL time to MAP completion:  1 mins 16 secs 
-Total CPU time to MAP completion:   1 mins 15 secs 
+Total CPU time to MAP completion:   1 mins 16 secs 
 
 Mapping completed.
 See MAP report file "toplevel_map.mrp" for details.

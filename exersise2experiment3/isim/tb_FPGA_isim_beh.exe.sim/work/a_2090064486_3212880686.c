@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/torbjlan/dmkonsttdt4255_work/exersise2experiment3/Forward.vhd";
+static const char *ng0 = "C:/Users/eiriklf/git/dmkonsttdt4255_work/exersise2experiment3/Forward.vhd";
 
 
 
@@ -106,7 +106,7 @@ LAB47:    if (t1 != 0)
         goto LAB43;
 
 LAB44:    xsi_set_current_line(63, ng0);
-    t3 = (t0 + 6953);
+    t3 = (t0 + 6997);
     t7 = (t0 + 4296);
     t8 = (t7 + 56U);
     t11 = *((char **)t8);
@@ -120,7 +120,7 @@ LAB3:    t3 = (t0 + 4200);
 
 LAB1:    return;
 LAB2:    xsi_set_current_line(54, ng0);
-    t20 = (t0 + 6937);
+    t20 = (t0 + 6981);
     t22 = (t0 + 4296);
     t23 = (t22 + 56U);
     t24 = *((char **)t23);
@@ -145,7 +145,7 @@ LAB19:    t1 = t17;
 
 LAB8:    t3 = (t0 + 1032U);
     t7 = *((char **)t3);
-    t3 = (t0 + 6932);
+    t3 = (t0 + 6976);
     t9 = 1;
     if (5U == 5U)
         goto LAB11;
@@ -187,7 +187,7 @@ LAB22:    t18 = (t18 + 1);
     goto LAB20;
 
 LAB23:    xsi_set_current_line(57, ng0);
-    t20 = (t0 + 6944);
+    t20 = (t0 + 6988);
     t22 = (t0 + 4296);
     t23 = (t22 + 56U);
     t24 = *((char **)t23);
@@ -212,7 +212,7 @@ LAB39:    t1 = t17;
 
 LAB28:    t3 = (t0 + 1192U);
     t7 = *((char **)t3);
-    t3 = (t0 + 6939);
+    t3 = (t0 + 6983);
     t9 = 1;
     if (5U == 5U)
         goto LAB31;
@@ -254,7 +254,7 @@ LAB42:    t18 = (t18 + 1);
     goto LAB40;
 
 LAB43:    xsi_set_current_line(60, ng0);
-    t20 = (t0 + 6951);
+    t20 = (t0 + 6995);
     t22 = (t0 + 4296);
     t23 = (t22 + 56U);
     t24 = *((char **)t23);
@@ -279,7 +279,7 @@ LAB59:    t1 = t17;
 
 LAB48:    t3 = (t0 + 2472U);
     t7 = *((char **)t3);
-    t3 = (t0 + 6946);
+    t3 = (t0 + 6990);
     t9 = 1;
     if (5U == 5U)
         goto LAB51;
@@ -403,7 +403,7 @@ LAB47:    if (t1 != 0)
         goto LAB43;
 
 LAB44:    xsi_set_current_line(83, ng0);
-    t3 = (t0 + 6976);
+    t3 = (t0 + 7020);
     t7 = (t0 + 4360);
     t8 = (t7 + 56U);
     t11 = *((char **)t8);
@@ -417,7 +417,7 @@ LAB3:    t3 = (t0 + 4216);
 
 LAB1:    return;
 LAB2:    xsi_set_current_line(74, ng0);
-    t20 = (t0 + 6960);
+    t20 = (t0 + 7004);
     t22 = (t0 + 4360);
     t23 = (t22 + 56U);
     t24 = *((char **)t23);
@@ -442,7 +442,7 @@ LAB19:    t1 = t17;
 
 LAB8:    t3 = (t0 + 1032U);
     t7 = *((char **)t3);
-    t3 = (t0 + 6955);
+    t3 = (t0 + 6999);
     t9 = 1;
     if (5U == 5U)
         goto LAB11;
@@ -484,7 +484,7 @@ LAB22:    t18 = (t18 + 1);
     goto LAB20;
 
 LAB23:    xsi_set_current_line(77, ng0);
-    t20 = (t0 + 6967);
+    t20 = (t0 + 7011);
     t22 = (t0 + 4360);
     t23 = (t22 + 56U);
     t24 = *((char **)t23);
@@ -509,7 +509,7 @@ LAB39:    t1 = t17;
 
 LAB28:    t3 = (t0 + 1192U);
     t7 = *((char **)t3);
-    t3 = (t0 + 6962);
+    t3 = (t0 + 7006);
     t9 = 1;
     if (5U == 5U)
         goto LAB31;
@@ -551,7 +551,7 @@ LAB42:    t18 = (t18 + 1);
     goto LAB40;
 
 LAB43:    xsi_set_current_line(80, ng0);
-    t20 = (t0 + 6974);
+    t20 = (t0 + 7018);
     t22 = (t0 + 4360);
     t23 = (t22 + 56U);
     t24 = *((char **)t23);
@@ -576,7 +576,7 @@ LAB59:    t1 = t17;
 
 LAB48:    t3 = (t0 + 2472U);
     t7 = *((char **)t3);
-    t3 = (t0 + 6969);
+    t3 = (t0 + 7013);
     t9 = 1;
     if (5U == 5U)
         goto LAB51;

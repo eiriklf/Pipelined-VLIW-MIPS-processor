@@ -12,6 +12,9 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 --There is an explaination for every component when it is declared. There is also a deeper explaination about the design of every component inside their respective files.
 --This is usually related to designchoices.
+
+--We also considered placing some of the components here inside their own files. However, we were also aware of that this also would make it much harder to 
+--perform changes to our design.
  
 entity PROCESSOR is
  generic ( MEM_ADDR_BUS: natural := 32; MEM_DATA_BUS : natural := 32);
@@ -136,15 +139,6 @@ end component branchprediction;
             );
     end component adder;
 
-    --this is a mux with 3 inputs, used to select if a datum should be forwarded or not
-    component TriputMux is
-    Port ( A : in  STD_LOGIC_VECTOR (31 downto 0);
-           B : in  STD_LOGIC_VECTOR (31 downto 0);
-           C : in  STD_LOGIC_VECTOR (31 downto 0);
-           R : out  STD_LOGIC_VECTOR (31 downto 0);
-           control : in  STD_LOGIC_VECTOR (1 downto 0));
-    end component TriputMux;
-
     --this is the registerfile which is used to store data. See it's file for more information
     component REGISTER_FILE is
     port(
@@ -171,7 +165,7 @@ end component branchprediction;
            data_out       : out  STD_LOGIC_VECTOR (N-1 downto 0);
            clock          : in  STD_LOGIC;
            reset          : in  STD_LOGIC;
-           write_enable   : in  STD_LOGIC);--remove this if not needed
+           write_enable   : in  STD_LOGIC);
     end component regi;
 
     --the primary alu
@@ -328,6 +322,7 @@ end component Forwarding;
 	 
 	 --wb2 output
 	 signal WB2s: std_logic_vector(37 downto 0);
+	 --wb2 input
 	 signal wb2_in:std_logic_vector(37 downto 0);
     
     --mux controlinputs
@@ -389,10 +384,6 @@ end component Forwarding;
     --signal generated from branch conditions(taken or not taken)
     signal branched1: std_logic;
     
-	 --output from the forwarding muxes after the register file
-	 signal ForwardRs_out: std_logic_vector(31 downto 0);
-    signal ForwardRt_out: std_logic_vector(31 downto 0);
-    
     --for wliv/multiplier datapath
     
     signal Signextended2 : STD_LOGIC_VECTOR (31 downto 0); -- Data output from Signextend2. Not used,was planned for use in immidiate opperations
@@ -434,9 +425,10 @@ end component Forwarding;
     Signextended(15 downto 0) <=IFIDs(103 downto 88);
     Signextended(31 downto 16) <= (31 downto 16 => IFIDs(103));
 
-    --signextended 2 is for the secound/multiply datapath but is not currently used
-    Signextended2(15 downto 0) <=IFIDs(71 downto 56);
-    Signextended2(31 downto 16) <= (31 downto 16 => IFIDs(71));
+    --signextended 2 is for the secound/multiply datapath but is not currently used. Uncomment this if used
+    --Signextended2(15 downto 0) <=IFIDs(71 downto 56);
+    --Signextended2(31 downto 16) <= (31 downto 16 => IFIDs(71));
+	 Signextended2<=zero32b;
 
     --assignments for alu controlsignals
     ALUControl.op0<=operation(0 );
@@ -631,6 +623,11 @@ end component Forwarding;
                 reset       => reset,
                 write_enable=>'1'
                 );
+		              --WB2 register mapping relations
+    --cchosenwritedata								->WB2s(31 downto 0)
+	 --chosenWriteReg/MEMWBs(4 downto 0)		->WB2s(36 downto 32)
+	 --regwrite/MEMWBs(69)							->MEMWBs(68 downto 37)			 
+					 
 	WB2_in<=MEMWBs(69)&MEMWBs(4 downto 0)&chosenwritedata;
 	 WB2: regi generic map (N=>38)
     port map(
@@ -645,12 +642,12 @@ end component Forwarding;
     Port map (
                  ExmemregisterRD =>EXMEMs(4 downto 0),
                  MEMWbregisterRD =>MEMWBs(4 downto 0),
-					  WB2regwrite=>WB2s(37),
+					  Wb2registerRD	=>wb2s(36 downto 32),
+					  WB2regwrite		=>WB2s(37),
                  MEMWBregwrite   =>MEMWBs(69),
                  EXMEMregwrite   =>EXMEMs(136),
-                 IDEX_RS              =>IDEXs(157 downto 153),--IDEX_RS signal
-                 IDEX_RT              =>IDEXs(9 downto 5),    --IDEX_RT signal
-					  Wb2registerRD					=>wb2s(36 downto 32),
+                 IDEX_RS         =>IDEXs(157 downto 153),--IDEX_RS1 signal
+                 IDEX_RT         =>IDEXs(9 downto 5),    --IDEX_RT1 signal
                  forwardA        =>ctForwardA,--output signal to control the forwardA mux
                  forwardB        =>ctForwardB --output signal to control the forwardB mux
 					  
